@@ -475,6 +475,38 @@
             padding: var(--section-padding) 0;
             background: var(--white);
             position: relative;
+            overflow: hidden;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(11,22,53,0.08) 1.2px, transparent 0);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .services::after {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,102,0,0.22) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: servicesGlowPulse 5s ease-in-out infinite;
+        }
+        @keyframes servicesGlowPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .services .sec-head,
+        .services-grid {
+            position: relative;
+            z-index: 1;
         }
         .services .sec-head {
             text-align: left;
@@ -589,8 +621,47 @@
             padding: var(--section-padding) 0;
             background: var(--white);
             position: relative;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            width:  min(90vw, 520px);
+            height: min(90vw, 520px);
+            left: -12%;
+            top: 20%;
+            background: radial-gradient(ellipse 55% 55% at center, rgba(11,22,53,0.06) 0%, rgba(11,22,53,0.02) 45%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: aboutFloatA 22s ease-in-out infinite;
+        }
+        .about::after {
+            content: '';
+            position: absolute;
+            width:  min(80vw, 440px);
+            height: min(80vw, 440px);
+            right: -15%;
+            bottom: 15%;
+            background: radial-gradient(ellipse 50% 50% at center, rgba(255,102,0,0.055) 0%, rgba(255,102,0,0.02) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: aboutFloatB 26s ease-in-out infinite;
+        }
+        @keyframes aboutFloatA {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+            33%      { transform: translate(4%, -3%) scale(1.05); opacity: 1; }
+            66%      { transform: translate(-2%, 2%) scale(0.98); opacity: 0.85; }
+        }
+        @keyframes aboutFloatB {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.9; }
+            40%      { transform: translate(-3%, 4%) scale(1.08) rotate(2deg); opacity: 1; }
+            70%      { transform: translate(2%, -2%) scale(0.95) rotate(-1deg); opacity: 0.8; }
         }
         .about-inner {
+            position: relative;
+            z-index: 1;
             max-width: var(--container);
             margin: 0 auto;
             padding: 0 1.5rem;
