@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC</title>
+    <meta name="description" content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark-blue: #0B1635;
+            --orange: #FF6600;
+            --light-grey: #BFBFBF;
+            --navy: #0B1635;
+            --gold: #FF6600;
+            --cream: #F5F5F5;
+            --charcoal: #1A1A1A;
+            --white: #FFFFFF;
+            --muted: #6B7280;
+            --border: rgba(0,0,0,0.08);
+            --dark-blue-deep: #070E24;
+            --container: 1120px;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --btn-padding: 0.875rem 1.75rem;
+            --btn-font-size: 0.9375rem;
+            --btn-radius: 6px;
+            --space-xs: 1rem;
+            --space-sm: 1.5rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 4.5rem;
+            --space-3xl: 5rem;
+            --section-padding: 5rem;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; }
+
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ——— NAVIGATION (Floating Pill) ——— */
+        nav {
+            position: fixed;
+            top: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1140px;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 100px;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
+            transition: box-shadow 0.35s var(--ease-out), top 0.3s var(--ease-out);
+        }
+        nav.scrolled {
+            box-shadow: 0 4px 28px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+            top: 1rem;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem 0.5rem 2rem;
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 2;
+            transition: opacity 0.2s var(--ease-out);
+        }
+        .logo:hover { opacity: 0.85; }
+        .logo-img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            transition: color 0.2s var(--ease-out);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0.25rem;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 1px;
+            transition: width 0.25s var(--ease-out);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-content {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(-2px);
+            background: rgba(255,255,255,0.99);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            min-width: 200px;
+            border-radius: 12px;
+            padding: 0.35rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out), visibility 0.2s;
+        }
+        .nav-dropdown:hover .nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .nav-dropdown-content a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--charcoal);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+        }
+        .nav-dropdown-content a:hover {
+            color: var(--navy);
+            background: rgba(11,22,53,0.04);
+        }
+        .nav-dropdown-content a::after { display: none; }
+        .cta-nav {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.55rem 1.35rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.04em;
+            transition: all 0.25s var(--ease-out);
+            border: none;
+            text-decoration: none;
+            z-index: 2;
+        }
+        .cta-nav:hover { background: #0d1b3d; color: var(--white); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: opacity 0.2s var(--ease-out);
+        }
+        .mobile-menu-btn:hover { opacity: 0.7; }
+
+        /* ——— PAGE HERO ——— */
+        .page-hero {
+            padding: 12rem 0 var(--space-3xl);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,102,0,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .page-hero-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .page-hero p {
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 640px;
+            margin: 0 auto var(--space-md);
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .btn-primary {
+            background: var(--white);
+            color: var(--navy);
+            padding: var(--btn-padding);
+            border-radius: var(--btn-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--btn-font-size);
+            letter-spacing: 0.02em;
+            transition: all 0.25s var(--ease-out);
+            border: 1px solid var(--white);
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--white);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: var(--btn-padding);
+            border-radius: var(--btn-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--btn-font-size);
+            letter-spacing: 0.02em;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            transition: all 0.25s var(--ease-out);
+            display: inline-block;
+        }
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* ——— SECTION HEADINGS ——— */
+        .sec-head {
+            text-align: left;
+            margin-bottom: var(--space-2xl);
+        }
+        .sec-head h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .sec-head p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            max-width: 420px;
+            margin: 0;
+        }
+
+        /* ——— WHY WORK WITH US (Bordered Grid) ——— */
+        .why-section {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .benefit-card {
+            padding: 2rem 1.75rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+        }
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .benefit-card:nth-child(3n) { border-right: none; }
+        .benefit-card:nth-last-child(-n+3) { border-bottom: none; }
+        .benefit-card:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+        .benefit-card:hover::before { transform: scaleY(1); }
+        .benefit-number {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--light-grey);
+            margin-bottom: 1.25rem;
+            transition: color 0.3s var(--ease-out);
+        }
+        .benefit-card:hover .benefit-number { color: var(--muted); }
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ——— WHAT WE FUND (Bordered Grid) ——— */
+        .fund-section {
+            padding: var(--section-padding) 0;
+            background: var(--cream);
+        }
+        .fund-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .fund-card {
+            padding: 2rem 1.75rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+        }
+        .fund-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .fund-card:nth-child(3n) { border-right: none; }
+        .fund-card:nth-last-child(-n+3) { border-bottom: none; }
+        .fund-card:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+        .fund-card:hover::before { transform: scaleY(1); }
+        .fund-number {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--light-grey);
+            margin-bottom: 1.25rem;
+            transition: color 0.3s var(--ease-out);
+        }
+        .fund-card:hover .fund-number { color: var(--muted); }
+        .fund-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .fund-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ——— SUBMISSION GUIDELINES (Bordered Grid) ——— */
+        .guidelines-section {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .guideline-card {
+            padding: 2rem 1.75rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+        }
+        .guideline-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .guideline-card:nth-child(3n) { border-right: none; }
+        .guideline-card:last-child { border-bottom: none; }
+        .guideline-card:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+        .guideline-card:hover::before { transform: scaleY(1); }
+        .guideline-number {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--light-grey);
+            margin-bottom: 1.25rem;
+            transition: color 0.3s var(--ease-out);
+        }
+        .guideline-card:hover .guideline-number { color: var(--muted); }
+        .guideline-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .guideline-card ul {
+            list-style: none;
+        }
+        .guideline-card ul li {
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .guideline-card ul li::before {
+            content: '→';
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* ——— TESTIMONIALS ——— */
+        .testimonials-section { padding: var(--section-padding) 0; background: var(--cream); position: relative; }
+        .testimonials-section .sec-head { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 1.5rem; }
+        .testimonials-section .sec-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .testimonials-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; margin: 0; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+        .testimonial-card { padding: 2.25rem 1.75rem; border-right: 1px solid var(--border); position: relative; transition: background 0.35s var(--ease-out); }
+        .testimonial-card:last-child { border-right: none; }
+        .testimonial-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-out); }
+        .testimonial-card:hover { background: var(--white); }
+        .testimonial-card:hover::before { transform: scaleX(1); }
+        .testimonial-quote-mark { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1; color: var(--gold); opacity: 0.3; margin-bottom: 0.75rem; display: block; }
+        .testimonial-card blockquote { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem; font-weight: 400; }
+        .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+        .testimonial-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; flex-shrink: 0; }
+        .testimonial-author-info h5 { font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+        .testimonial-author-info span { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+
+        /* ——— FAQ ——— */
+        .faq-section {
+            padding: var(--section-padding) 0;
+            background: var(--cream);
+        }
+        .faq-section .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-2xl);
+            align-items: start;
+            max-width: 900px;
+        }
+        .faq-section .sec-head {
+            margin-bottom: 0;
+            position: sticky;
+            top: 6rem;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.35s var(--ease-out);
+        }
+        .faq-item.open {
+            border-color: rgba(11,22,53,0.15);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .faq-q {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s var(--ease-out);
+        }
+        .faq-q:hover { color: var(--charcoal); }
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--cream);
+            color: var(--navy);
+            transition: all 0.35s var(--ease-out);
+        }
+        .faq-icon svg { display: block; }
+        .faq-item.open .faq-icon {
+            background: var(--navy);
+            color: var(--white);
+            transform: rotate(180deg);
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out);
+        }
+        .faq-item.open .faq-a { max-height: 300px; }
+        .faq-a p {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.7;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ——— CTA FORM (Compact Box) ——— */
+        .cta-section {
+            padding: var(--space-2xl) 0;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255,102,0,0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta-box {
+            max-width: 580px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+            overflow: hidden;
+            position: relative;
+            border-top: 3px solid var(--gold);
+        }
+        .cta-box-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            padding: 1.5rem 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box-header::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(255,102,0,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-box-header h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; position: relative; }
+        .cta-box-header > p { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.5; position: relative; }
+        .cta-trust-row { display: flex; gap: 1.25rem; margin-top: 1rem; flex-wrap: wrap; position: relative; }
+        .cta-trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.9); }
+        .cta-trust-item svg { flex-shrink: 0; width: 16px; height: 16px; color: var(--gold); }
+        .cta-box-body { padding: 1.5rem 1.75rem; }
+        .cta-form-section { margin-bottom: 1.25rem; }
+        .cta-form-section:last-of-type { margin-bottom: 0; }
+        .cta-form-section-title { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.75rem; }
+        .cta-box .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .cta-box .form-row.form-row-full { grid-template-columns: 1fr; }
+        .cta-box .form-group { margin-bottom: 1rem; }
+        .cta-box .form-group:last-child { margin-bottom: 0; }
+        .cta-box .form-group label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+        .cta-box input, .cta-box select, .cta-box textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            background: var(--cream);
+            transition: all 0.25s var(--ease-out);
+        }
+        .cta-box input::placeholder, .cta-box textarea::placeholder { color: rgba(0,0,0,0.4); }
+        .cta-box input:focus, .cta-box select:focus, .cta-box textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(255,102,0,0.12);
+        }
+        .cta-box select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6600' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+        .cta-box textarea { resize: vertical; min-height: 72px; }
+        .cta-submit-wrap { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+        .cta-box button[type="submit"] {
+            width: 100%;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: var(--btn-radius);
+            font-weight: 600;
+            font-size: var(--btn-font-size);
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s var(--ease-out);
+        }
+        .cta-box button[type="submit"]:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        /* ——— FOOTER ——— */
+        footer { background: var(--navy); color: rgba(255,255,255,0.65); position: relative; overflow: hidden; }
+        footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), rgba(255,102,0,0.3), transparent 80%); }
+        footer::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,102,0,0.06) 0%, transparent 70%); pointer-events: none; }
+        .footer-main { padding: var(--space-xl) 0 var(--space-lg); position: relative; z-index: 1; }
+        .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: var(--space-lg); }
+        .footer-brand .logo { display: inline-flex; margin-bottom: 1.25rem; transition: opacity 0.2s; }
+        .footer-brand .logo:hover { opacity: 0.8; }
+        .footer-brand .logo-img { height: 36px; filter: brightness(0) invert(1); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.75; max-width: 280px; margin-bottom: 1.75rem; color: rgba(255,255,255,0.55); }
+        .footer-social { display: flex; gap: 0.75rem; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); transition: all 0.25s var(--ease-out); }
+        .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); }
+        .footer-social svg { width: 16px; height: 16px; }
+        .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.625rem; }
+        .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s var(--ease-out), padding-left 0.2s var(--ease-out); display: inline-block; }
+        .footer-col a:hover { color: var(--white); padding-left: 4px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6; }
+        .footer-contact-item:last-child { margin-bottom: 0; }
+        .footer-contact-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .footer-contact-icon svg { width: 14px; height: 14px; color: var(--gold); }
+        .footer-contact-item a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+        .footer-contact-item a:hover { color: var(--white); }
+        .footer-divider { height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04), transparent); position: relative; z-index: 1; }
+        .footer-bottom { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem; color: rgba(255,255,255,0.35); position: relative; z-index: 1; }
+        .footer-bottom-left { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-license { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 100px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+        .footer-license-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.6; }
+        .footer-legal { display: flex; gap: 1.25rem; }
+        .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
+        .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+        .footer-back-top { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.25s var(--ease-out); }
+        .footer-back-top:hover { background: rgba(255,255,255,0.1); color: var(--white); transform: translateY(-2px); }
+        .footer-back-top svg { width: 14px; height: 14px; }
+
+        /* ——— ANIMATIONS ——— */
+        .reveal { opacity: 0; transform: translateY(32px); }
+        .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+
+        /* ——— RESPONSIVE ——— */
+
+        /* --- Tablet (1024px) --- */
+        @media (max-width: 1024px) {
+            /* Nav: mobile dropdown collapse */
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                left: 0.5rem;
+                right: 0.5rem;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0.5rem;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: all 0.3s var(--ease-out);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+                border-radius: 16px;
+                margin: 0 0.5rem;
+            }
+            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            .mobile-menu-btn { display: block; }
+            .cta-nav { display: none; }
+            .nav-dropdown-content {
+                position: static; box-shadow: none; opacity: 1; visibility: visible;
+                transform: none; display: none; padding-left: 1rem;
+                background: transparent; margin-top: 0.25rem; min-width: auto;
+            }
+            .nav-dropdown:hover .nav-dropdown-content { display: block; }
+            .nav-links a { padding: 0.625rem 0; }
+
+            /* Page hero: centered, reduced top padding */
+            .page-hero { padding: 10rem 0 var(--space-xl); }
+            .page-hero-inner { text-align: center; }
+
+            /* All content grids: 1 column */
+            .benefits-grid,
+            .fund-grid,
+            .guidelines-grid { grid-template-columns: 1fr; }
+
+            /* Card borders: border-right → border-bottom */
+            .benefit-card,
+            .fund-card,
+            .guideline-card {
+                border-right: none !important;
+                border-bottom: 1px solid var(--border);
+            }
+            .benefit-card:nth-child(3n),
+            .fund-card:nth-child(3n),
+            .guideline-card:nth-child(3n) { border-right: none; }
+            .benefit-card:last-child,
+            .fund-card:last-child,
+            .guideline-card:last-child { border-bottom: none; }
+
+            /* Testimonials grid: 1 column with border-bottom */
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .testimonial-card { border-right: none; border-bottom: 1px solid var(--border); }
+            .testimonial-card:last-child { border-bottom: none; }
+
+            /* FAQ: 1 column, unstick heading */
+            .faq-section .container { grid-template-columns: 1fr; gap: var(--space-lg); max-width: 640px; }
+            .faq-section .sec-head { position: static; }
+
+            /* CTA form: single column form rows */
+            .cta-box .form-row { grid-template-columns: 1fr; }
+
+            /* Footer: 2 columns, brand spanning */
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+
+        /* --- Mobile (768px) --- */
+        @media (max-width: 768px) {
+            /* Nav inner: tighter padding, smaller logo */
+            .nav-inner { padding: 0.4rem 1rem 0.4rem 1.25rem; }
+            .logo-img { height: 28px; }
+
+            /* Page hero: reduced top padding, stack hero buttons */
+            .page-hero { padding-top: 8.5rem; padding-bottom: var(--space-lg); }
+            .page-hero h1 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-secondary { width: 100%; max-width: 320px; text-align: center; }
+
+            /* Section padding: reduce */
+            .why-section,
+            .fund-section,
+            .guidelines-section,
+            .testimonials-section,
+            .faq-section { padding: 3.5rem 0; }
+
+            /* Cards: reduce padding */
+            .benefit-card,
+            .fund-card,
+            .guideline-card { padding: 1.5rem 1.25rem; }
+
+            /* Testimonials: reduce padding */
+            .testimonial-card { padding: 1.75rem 1.25rem; }
+
+            /* FAQ: smaller q/a padding */
+            .faq-q { padding: 1rem 1.25rem; font-size: 0.9375rem; }
+            .faq-a p { padding: 0 1.25rem 1rem 1.25rem; font-size: 0.875rem; }
+
+            /* CTA/form: tighter padding */
+            .cta-section { padding: var(--space-lg) 0; }
+            .cta-box-header { padding: 1.25rem; }
+            .cta-box-body { padding: 1.25rem; }
+            .cta-trust-row { flex-direction: column; gap: 0.75rem; }
+
+            /* Footer: 1 column, stack bottom */
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
+            .footer-brand { grid-column: auto; }
+            .footer-brand .logo-img { height: 32px; }
+            .footer-main { padding: var(--space-lg) 0 var(--space-md); }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .footer-bottom-left { flex-direction: column; gap: 0.75rem; }
+            .footer-legal { justify-content: center; }
+
+            /* Buttons: full width on mobile */
+            .btn-primary, .btn-secondary { display: block; width: 100%; text-align: center; }
+
+            /* Section headings */
+            .sec-head { margin-bottom: var(--space-lg); }
+        }
+
+        /* --- Small Phone (480px) --- */
+        @media (max-width: 480px) {
+            /* Container padding: 1rem */
+            .container { padding: 0 1rem; }
+            .page-hero-inner { padding: 0 1rem; }
+            .benefits-grid,
+            .fund-grid,
+            .guidelines-grid,
+            .testimonials-grid { padding: 0 1rem; }
+            .testimonials-section .sec-head { padding: 0 1rem; }
+
+            /* Hero padding: 7rem top */
+            .page-hero { padding-top: 7rem; padding-bottom: var(--space-md); }
+            .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+            .page-hero p { font-size: 0.9rem; margin-bottom: var(--space-sm); }
+
+            /* Further reduce card and section padding */
+            .why-section,
+            .fund-section,
+            .guidelines-section,
+            .testimonials-section,
+            .faq-section { padding: 2.75rem 0; }
+
+            .benefit-card,
+            .fund-card,
+            .guideline-card { padding: 1.25rem 1rem; }
+            .testimonial-card { padding: 1.5rem 1rem; }
+
+            /* FAQ compact */
+            .faq-q { padding: 0.875rem 1rem; font-size: 0.875rem; }
+            .faq-a p { padding: 0 1rem 0.875rem 1rem; font-size: 0.8125rem; }
+            .faq-icon { width: 24px; height: 24px; }
+
+            /* CTA form compact */
+            .cta-box-header { padding: 1rem; }
+            .cta-box-header h2 { font-size: 1.25rem; }
+            .cta-box-body { padding: 1rem; }
+            .cta-box input, .cta-box select, .cta-box textarea { padding: 0.65rem 0.875rem; font-size: 0.875rem; }
+            .cta-box .form-group { margin-bottom: 0.75rem; }
+
+            /* Smaller gaps */
+            .sec-head { margin-bottom: var(--space-md); }
+            .sec-head p { font-size: 0.875rem; }
+
+            /* Footer compact */
+            .footer-main { padding: var(--space-md) 0; }
+            .footer-col h4 { margin-bottom: 1rem; }
+            .footer-col li { margin-bottom: 0.5rem; }
+            .footer-brand p { font-size: 0.85rem; }
+
+            /* Nav compact */
+            nav { width: 94%; top: 0.75rem; }
+            .nav-inner { padding: 0.35rem 0.75rem 0.35rem 1rem; }
+            .logo-img { height: 26px; }
+
+            /* Touch-friendly targets */
+            .nav-links a { padding: 0.75rem 0; font-size: 0.9375rem; }
+            .footer-col a { padding: 0.25rem 0; }
+            .footer-social a { width: 40px; height: 40px; }
+            .footer-back-top { width: 40px; height: 40px; }
+
+            /* Hero buttons smaller */
+            .hero-ctas { gap: 0.75rem; }
+            .btn-primary, .btn-secondary { padding: 0.75rem 1.25rem; font-size: 0.875rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav"><div class="nav-inner">
+        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li class="nav-dropdown"><a href="#">Services ▾</a><div class="nav-dropdown-content"><a href="richview-borrowers.html">Borrowers</a><a href="richview-capital-mic.html">Investors</a><a href="richview-capital-brokers.html">Brokers</a></div></li>
+            <li><a href="richview-about.html">About</a></li>
+            <li class="nav-dropdown"><a href="#">Resources ▾</a><div class="nav-dropdown-content"><a href="richview-what-is-a-mic.html">What Is a MIC?</a><a href="home.html#faq">FAQ</a></div></li>
+        </ul>
+        <a href="#contact" class="cta-nav">Get Started</a>
+    </div></nav>
+
+    <section class="page-hero">
+        <div class="page-hero-inner reveal">
+            <h1>Private Mortgage Solutions for Ontario Mortgage Brokers</h1>
+            <p>Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for the private mortgage solutions your clients need when traditional banks say no.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-primary">Submit a Deal</a>
+                <a href="#guidelines" class="btn-secondary">View Guidelines</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="sec-head reveal" style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
+            <h2>Why Work With Richview Capital</h2>
+            <p>Your trusted partner for alternative lending solutions</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card reveal" style="--i: 0;">
+                <span class="benefit-number">01</span>
+                <h3>Fast Response Times</h3>
+                <p>Initial response within 24 hours. We understand timing is critical for your clients and your business. Direct access to decision-makers.</p>
+            </div>
+            <div class="benefit-card reveal" style="--i: 1;">
+                <span class="benefit-number">02</span>
+                <h3>Transparent Underwriting</h3>
+                <p>Clear communication throughout the process. No surprises at closing. You'll always know where your deal stands and what's needed to close.</p>
+            </div>
+            <div class="benefit-card reveal" style="--i: 2;">
+                <span class="benefit-number">03</span>
+                <h3>Competitive LTV Ratios</h3>
+                <p>Up to 75-80% LTV on residential first mortgages. Flexible structures for second mortgages and construction loans based on deal specifics.</p>
+            </div>
+            <div class="benefit-card reveal" style="--i: 3;">
+                <span class="benefit-number">04</span>
+                <h3>Relationship Focus</h3>
+                <p>We value long-term partnerships with brokers. Dedicated support, consistent service, and repeat business built on trust and reliability.</p>
+            </div>
+            <div class="benefit-card reveal" style="--i: 4;">
+                <span class="benefit-number">05</span>
+                <h3>Case-by-Case Evaluation</h3>
+                <p>Every deal gets individual attention. Not cookie-cutter decisions. We understand every client situation is unique and deserves thoughtful review.</p>
+            </div>
+            <div class="benefit-card reveal" style="--i: 5;">
+                <span class="benefit-number">06</span>
+                <h3>Experienced Team</h3>
+                <p>Decades of combined experience in alternative lending. We've seen it all and know how to structure deals that work for everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fund-section" id="products">
+        <div class="sec-head reveal" style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
+            <h2>What We Fund</h2>
+            <p>Flexible financing solutions for your clients across Ontario</p>
+        </div>
+        <div class="fund-grid">
+            <div class="fund-card reveal" style="--i: 0;">
+                <span class="fund-number">01</span>
+                <h3>First Mortgages</h3>
+                <p>Residential first mortgages up to 80% LTV. Fast approvals for clients who don't fit traditional bank criteria but have good equity positions.</p>
+            </div>
+            <div class="fund-card reveal" style="--i: 1;">
+                <span class="fund-number">02</span>
+                <h3>Second Mortgages</h3>
+                <p>Flexible second position financing for debt consolidation, renovations, or investment opportunities. Quick closings when timing matters.</p>
+            </div>
+            <div class="fund-card reveal" style="--i: 2;">
+                <span class="fund-number">03</span>
+                <h3>Construction Loans</h3>
+                <p>Residential construction financing with experienced oversight. Staged draw schedules for custom builds and development projects across Ontario.</p>
+            </div>
+            <div class="fund-card reveal" style="--i: 3;">
+                <span class="fund-number">04</span>
+                <h3>Bridge Financing</h3>
+                <p>Short-term bridge loans to solve timing challenges. Perfect for purchase-before-sale situations or quick access to capital during transitions.</p>
+            </div>
+            <div class="fund-card reveal" style="--i: 4;">
+                <span class="fund-number">05</span>
+                <h3>Land Mortgages</h3>
+                <p>Financing for land acquisition and development-ready properties. Flexible terms for clients with development plans and exit strategies.</p>
+            </div>
+            <div class="fund-card reveal" style="--i: 5;">
+                <span class="fund-number">06</span>
+                <h3>Refinancing</h3>
+                <p>Mortgage refinancing solutions for clients looking to consolidate debt, access equity, or improve their overall financial position.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="guidelines-section" id="guidelines">
+        <div class="sec-head reveal" style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
+            <h2>Submission Guidelines</h2>
+            <p>Everything you need to know to submit deals efficiently</p>
+        </div>
+        <div class="guidelines-grid">
+            <div class="guideline-card reveal" style="--i: 0;">
+                <span class="guideline-number">01</span>
+                <h3>Required Documentation</h3>
+                <ul>
+                    <li>Completed application form</li>
+                    <li>Property details and address</li>
+                    <li>Borrower financials (income verification)</li>
+                    <li>Credit report (recent)</li>
+                    <li>Property appraisal (current)</li>
+                    <li>Purpose of financing</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 1;">
+                <span class="guideline-number">02</span>
+                <h3>Appraisal Requirements</h3>
+                <ul>
+                    <li>Full appraisal from approved appraiser</li>
+                    <li>Recent (within 90 days preferred)</li>
+                    <li>MPAC assessment included</li>
+                    <li>Comparable sales analysis</li>
+                    <li>Property photos</li>
+                    <li>Appraisal list available on request</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 2;">
+                <span class="guideline-number">03</span>
+                <h3>Geographic Focus</h3>
+                <ul>
+                    <li>Greater Toronto Area (GTA)</li>
+                    <li>Ontario-wide coverage</li>
+                    <li>Urban and suburban markets</li>
+                    <li>Select rural properties (case-by-case)</li>
+                    <li>Primary residential focus</li>
+                    <li>Strong market knowledge</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="sec-head reveal">
+            <h2>What Brokers Say</h2>
+            <p>Trusted by mortgage professionals across Ontario</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal" style="--i:0">
+                <span class="testimonial-quote-mark">"</span>
+                <blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SC</div>
+                    <div class="testimonial-author-info">
+                        <h5>Sarah Chen</h5>
+                        <span>Mortgage Broker, Toronto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal" style="--i:1">
+                <span class="testimonial-quote-mark">"</span>
+                <blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JK</div>
+                    <div class="testimonial-author-info">
+                        <h5>James Kumar</h5>
+                        <span>Broker, Mississauga</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal" style="--i:2">
+                <span class="testimonial-quote-mark">"</span>
+                <blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MT</div>
+                    <div class="testimonial-author-info">
+                        <h5>Maria Thompson</h5>
+                        <span>Senior Broker, Oakville</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Frequently Asked</h2>
+                <p>Common questions from mortgage brokers</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal" style="--i: 0;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What is your typical turnaround time?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>We provide initial responses within 24 hours of receiving a complete submission. Once approved, we can close deals in as little as 7-10 business days, depending on the complexity of the transaction and completion of due diligence requirements.</p></div>
+                </div>
+                <div class="faq-item reveal" style="--i: 1;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What are your LTV limits?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>We typically offer up to 75-80% LTV on residential first mortgages. For second mortgages, construction loans, and other products, LTV ratios vary based on the specific property, location, borrower profile, and overall deal structure. Contact us to discuss your specific deal.</p></div>
+                </div>
+                <div class="faq-item reveal" style="--i: 2;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>Do you have broker fees or commission structures?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>Yes, we offer competitive broker compensation. Contact our team directly to discuss our fee structure and commission arrangements. We value our broker partnerships and ensure fair compensation for your referrals.</p></div>
+                </div>
+                <div class="faq-item reveal" style="--i: 3;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>Can I submit deals outside the GTA?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>Yes, we fund mortgages across Ontario, not just in the GTA. While we focus primarily on the Greater Toronto Area, we have extensive experience with properties throughout Southern Ontario and select markets province-wide. Contact us to discuss your specific location.</p></div>
+                </div>
+                <div class="faq-item reveal" style="--i: 4;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What credit scores do you accept?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>We evaluate each application on a case-by-case basis rather than using strict credit score cutoffs. While credit history is important, we also consider equity position, property quality, exit strategy, and overall borrower profile. We can often help clients who don't meet traditional lending criteria.</p></div>
+                </div>
+                <div class="faq-item reveal" style="--i: 5;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>How do I become an approved broker partner?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>Simply submit your first deal, or contact us directly to introduce yourself and your brokerage. We welcome new broker relationships and will provide you with all necessary submission guidelines, rate sheets, and contact information to get started.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-box reveal">
+                <div class="cta-box-header">
+                    <h2>Submit a Deal or Get in Touch</h2>
+                    <p>Complete the form below and our team will contact you within 24 hours.</p>
+                    <div class="cta-trust-row">
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Response within 24 hours</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Confidential & secure</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Licensed MIC #13171</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-box-body">
+                    <form id="brokerForm">
+                        <div class="cta-form-section">
+                            <div class="cta-form-section-title">Your Details</div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="e.g. Smith" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(416) 555-0123" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-form-section">
+                            <div class="cta-form-section-title">Deal Details</div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="brokerage">Brokerage Name</label>
+                                    <input type="text" id="brokerage" name="brokerage" placeholder="Your brokerage">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dealType">Deal Type</label>
+                                    <select id="dealType" name="dealType">
+                                        <option value="">Select deal type</option>
+                                        <option value="first">First Mortgage</option>
+                                        <option value="second">Second Mortgage</option>
+                                        <option value="construction">Construction Loan</option>
+                                        <option value="bridge">Bridge Financing</option>
+                                        <option value="land">Land Mortgage</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-full">
+                                <div class="form-group">
+                                    <label for="message">Deal Details or Message</label>
+                                    <textarea id="message" name="message" placeholder="Provide details about the deal or your inquiry..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-submit-wrap">
+                            <button type="submit">Submit Deal</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+                        <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                            <a href="mailto:info@richviewcapital.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="richview-borrowers.html">Borrowers</a></li>
+                            <li><a href="richview-capital-brokers.html">Brokers</a></li>
+                            <li><a href="richview-capital-mic.html">Investors</a></li>
+                            <li><a href="richview-what-is-a-mic.html">What Is a MIC?</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="richview-about.html">About Us</a></li>
+                            <li><a href="home.html#faq">FAQ</a></li>
+                            <li><a href="home.html#cta">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get in Touch</h4>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                            <span>Toronto, Ontario<br>Canada</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                            <a href="mailto:info@richviewcapital.com">info@richviewcapital.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"><div class="container"></div></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2026 Richview Capital Corp.</p>
+                    <span class="footer-license"><span class="footer-license-dot"></span> FSRA License #13171</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('brokerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fn = document.getElementById('firstName')?.value || '';
+            const dealType = document.getElementById('dealType')?.value;
+            if (dealType) {
+                alert('Thank you ' + fn + '! We\'ve received your ' + dealType + ' submission. Our underwriting team will review and contact you within 24 hours.');
+            } else {
+                alert('Thank you ' + fn + '! We\'ve received your inquiry. Our team will contact you within 24 hours.');
+            }
+            this.reset();
+        });
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 30);
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+        });
+
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+                btn.setAttribute('aria-expanded', !wasOpen);
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const h = this.getAttribute('href');
+                if (h && h !== '#' && !this.closest('.nav-dropdown')) {
+                    const t = document.querySelector(h);
+                    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

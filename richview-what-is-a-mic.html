@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a MIC? | Richview Capital</title>
+    <meta name="description" content="Learn how a Mortgage Investment Corporation (MIC) works, its benefits, and how it provides secure, asset-backed returns for investors in Ontario.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        :root{
+            --dark-blue:#0B1635;--orange:#FF6600;--light-grey:#BFBFBF;
+            --navy:#0B1635;--gold:#FF6600;--cream:#F5F5F5;
+            --charcoal:#1A1A1A;--white:#FFFFFF;--muted:#6B7280;
+            --border:rgba(0,0,0,0.08);--dark-blue-deep:#070E24;
+            --container:1120px;--ease-out:cubic-bezier(0.16,1,0.3,1);
+            --btn-padding:0.875rem 1.75rem;--btn-font-size:0.9375rem;--btn-radius:6px;
+            --space-xs:1rem;--space-sm:1.5rem;--space-md:2rem;--space-lg:3rem;--space-xl:4rem;--space-2xl:4.5rem;
+            --section-padding:5rem;
+        }
+        body{font-family:'Outfit',sans-serif;color:var(--charcoal);line-height:1.6;font-weight:400;background:var(--white);overflow-x:hidden;}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;}
+        a{text-decoration:none;color:inherit;}
+        .container{max-width:var(--container);margin:0 auto;padding:0 1.5rem;}
+
+        /* ── Nav ── */
+        nav{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);width:92%;max-width:1140px;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:100px;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,0.04),0 0 0 1px rgba(0,0,0,0.03);transition:box-shadow .35s var(--ease-out),top .3s var(--ease-out);}
+        nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);top:1rem;}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:.5rem 1.5rem .5rem 2rem;position:relative;}
+        .logo{display:flex;align-items:center;text-decoration:none;z-index:2;transition:opacity .2s var(--ease-out);}
+        .logo:hover{opacity:.85;}
+        .logo-img{height:32px;width:auto;object-fit:contain;display:block;}
+        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;position:absolute;left:50%;transform:translateX(-50%);z-index:1;}
+        .nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.875rem;letter-spacing:.025em;transition:color .2s var(--ease-out);position:relative;padding:.5rem 0;}
+        .nav-links a:hover{color:var(--navy);}
+        .nav-links a::after{content:'';position:absolute;bottom:.25rem;left:0;width:0;height:2px;background:var(--navy);border-radius:1px;transition:width .25s var(--ease-out);}
+        .nav-links a:hover::after{width:100%;}
+        .nav-dropdown{position:relative;}
+        .nav-dropdown-content{position:absolute;top:calc(100% + .5rem);left:50%;transform:translateX(-50%) translateY(-2px);background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);min-width:200px;border-radius:12px;padding:.35rem 0;box-shadow:0 8px 32px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);opacity:0;visibility:hidden;transition:opacity .2s var(--ease-out),transform .2s var(--ease-out),visibility .2s;}
+        .nav-dropdown:hover .nav-dropdown-content{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+        .nav-dropdown-content a{display:block;padding:.6rem 1.25rem;color:var(--charcoal);font-size:.8125rem;font-weight:500;letter-spacing:.02em;transition:color .2s var(--ease-out),background .2s var(--ease-out);}
+        .nav-dropdown-content a::after{display:none;}
+        .nav-dropdown-content a:hover{color:var(--navy);background:rgba(11,22,53,0.04);}
+        .cta-nav{background:var(--navy);color:var(--white);padding:.55rem 1.35rem;border-radius:100px;font-weight:600;font-size:.8125rem;letter-spacing:.04em;transition:all .25s var(--ease-out);border:none;z-index:2;white-space:nowrap;}
+        .cta-nav:hover{background:#0d1b3d;color:var(--white);}
+        .mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer;z-index:1001;padding:.5rem;line-height:1;transition:opacity .2s var(--ease-out);}
+        .mobile-menu-btn:hover{opacity:.7;}
+
+        /* ── Hero ── */
+        .page-hero{padding:11rem 0 5.5rem;background:linear-gradient(135deg,var(--navy),var(--dark-blue-deep));text-align:center;position:relative;overflow:hidden;}
+        .page-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 25% 50%,rgba(255,102,0,.06) 0%,transparent 55%),radial-gradient(circle at 80% 80%,rgba(255,102,0,.04) 0%,transparent 50%);pointer-events:none;}
+        .hero-content{max-width:780px;margin:0 auto;position:relative;padding:0 1.5rem;}
+        .page-hero h1{font-size:clamp(2.25rem,4vw,3.25rem);color:var(--white);margin-bottom:1.25rem;line-height:1.15;letter-spacing:-.02em;}
+        .page-hero p{font-size:1.125rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:2.25rem;max-width:600px;margin-left:auto;margin-right:auto;}
+        .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+        .btn-hero-primary{background:var(--white);color:var(--navy);padding:var(--btn-padding);border-radius:var(--btn-radius);font-weight:600;font-size:var(--btn-font-size);transition:all .25s;border:2px solid var(--white);}
+        .btn-hero-primary:hover{background:transparent;color:var(--white);}
+        .btn-hero-outline{background:transparent;color:var(--white);padding:var(--btn-padding);border-radius:var(--btn-radius);font-weight:600;font-size:var(--btn-font-size);transition:all .25s;border:2px solid rgba(255,255,255,.35);}
+        .btn-hero-outline:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+
+        /* ── Section Headings ── */
+        .section-heading{margin-bottom:var(--space-lg);}
+        .section-heading h2{font-size:clamp(1.75rem,2.5vw,2.25rem);color:var(--navy);letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.2;}
+        .section-heading p{color:var(--muted);font-size:.9375rem;max-width:420px;line-height:1.6;}
+        .section-heading.center{text-align:center;}
+        .section-heading.center p{margin:0 auto;}
+
+        /* ── Intro Section ── */
+        .intro-section{padding:var(--section-padding) 0;background:var(--white);}
+        .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:start;}
+        .intro-text h2{font-size:clamp(1.75rem,2.5vw,2.25rem);color:var(--navy);letter-spacing:-.02em;margin-bottom:var(--space-sm);line-height:1.2;}
+        .intro-text p{font-size:.9375rem;color:var(--muted);line-height:1.65;margin-bottom:var(--space-sm);}
+        .intro-text p:last-child{margin-bottom:0;}
+
+        /* ── Value Cards ── */
+        .benefits-section{padding:var(--section-padding) 0;background:var(--cream);}
+        .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);}
+        .benefit-card{background:var(--white);padding:2.25rem;border-radius:12px;transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out);}
+        .benefit-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08);}
+        .benefit-badge{width:36px;height:36px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8125rem;font-weight:700;font-family:'Outfit',sans-serif;margin-bottom:var(--space-sm);}
+        .benefit-card h3{font-family:'Outfit',sans-serif;font-size:1.125rem;font-weight:600;color:var(--navy);margin-bottom:.625rem;}
+        .benefit-card p{font-size:.9375rem;color:var(--muted);line-height:1.65;}
+
+        /* ── Lifecycle Bordered Grid ── */
+        .lifecycle-section{padding:var(--section-padding) 0;background:var(--white);}
+        .lifecycle-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+        .lifecycle-item{padding:2.25rem 2rem;border-right:1px solid var(--border);position:relative;transition:all .35s var(--ease-out);}
+        .lifecycle-item:last-child{border-right:none;}
+        .lifecycle-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--navy);opacity:0;transition:opacity .3s;}
+        .lifecycle-item:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+        .lifecycle-item:hover::before{opacity:1;}
+        .lifecycle-number{font-family:'Outfit',sans-serif;font-size:.8125rem;font-weight:700;color:var(--muted);margin-bottom:var(--space-sm);letter-spacing:.04em;}
+        .lifecycle-item h4{font-family:'Outfit',sans-serif;font-size:1.0625rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+        .lifecycle-item p{font-size:.9375rem;color:var(--muted);line-height:1.65;}
+
+        /* ── CTA Section ── */
+        .cta-section{padding:var(--section-padding) 0;background:var(--cream);}
+        .cta-box{text-align:center;max-width:620px;margin:0 auto;}
+        .cta-box h2{font-size:clamp(1.75rem,2.5vw,2.25rem);color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem;}
+        .cta-box p{color:var(--muted);font-size:.9375rem;line-height:1.65;margin-bottom:var(--space-md);}
+        .btn-primary{background:var(--navy);color:var(--white);padding:var(--btn-padding);border-radius:var(--btn-radius);font-weight:600;font-size:var(--btn-font-size);display:inline-block;transition:all .25s;border:none;cursor:pointer;}
+        .btn-primary:hover{background:var(--charcoal);}
+
+        /* ── Footer ── */
+        footer{background:var(--navy);color:rgba(255,255,255,0.65);position:relative;overflow:hidden;}
+        footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),rgba(255,102,0,0.3),transparent 80%);}
+        footer::after{content:'';position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,102,0,0.06) 0%,transparent 70%);pointer-events:none;}
+        .footer-main{padding:var(--space-xl) 0 var(--space-lg);position:relative;z-index:1;}
+        .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:var(--space-lg);}
+        .footer-brand .logo{display:inline-flex;margin-bottom:1.25rem;transition:opacity .2s;}
+        .footer-brand .logo:hover{opacity:.8;}
+        .footer-brand .logo-img{height:36px;filter:brightness(0) invert(1);}
+        .footer-brand p{font-size:.9rem;line-height:1.75;max-width:280px;margin-bottom:1.75rem;color:rgba(255,255,255,0.55);}
+        .footer-social{display:flex;gap:.75rem;}
+        .footer-social a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);transition:all .25s var(--ease-out);}
+        .footer-social a:hover{background:var(--gold);border-color:var(--gold);color:var(--white);transform:translateY(-2px);}
+        .footer-social svg{width:16px;height:16px;}
+        .footer-col h4{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;}
+        .footer-col ul{list-style:none;}
+        .footer-col li{margin-bottom:.625rem;}
+        .footer-col a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.9rem;font-weight:400;transition:color .2s var(--ease-out),padding-left .2s var(--ease-out);display:inline-block;}
+        .footer-col a:hover{color:var(--white);padding-left:4px;}
+        .footer-contact-item{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;font-size:.9rem;line-height:1.6;}
+        .footer-contact-item:last-child{margin-bottom:0;}
+        .footer-contact-icon{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+        .footer-contact-icon svg{width:14px;height:14px;color:var(--gold);}
+        .footer-contact-item a{color:rgba(255,255,255,0.65);text-decoration:none;transition:color .2s;}
+        .footer-contact-item a:hover{color:var(--white);}
+        .footer-divider{height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04),transparent);position:relative;z-index:1;}
+        .footer-bottom{padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.8125rem;color:rgba(255,255,255,0.35);position:relative;z-index:1;}
+        .footer-bottom-left{display:flex;align-items:center;gap:1.5rem;}
+        .footer-license{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;font-size:.7rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,0.4);text-transform:uppercase;}
+        .footer-license-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.6;}
+        .footer-legal{display:flex;gap:1.25rem;}
+        .footer-legal a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:.8125rem;transition:color .2s;}
+        .footer-legal a:hover{color:rgba(255,255,255,0.7);}
+        .footer-back-top{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);cursor:pointer;transition:all .25s var(--ease-out);}
+        .footer-back-top:hover{background:rgba(255,255,255,0.1);color:var(--white);transform:translateY(-2px);}
+        .footer-back-top svg{width:14px;height:14px;}
+
+        /* ── Reveal ── */
+        .reveal{opacity:0;transform:translateY(32px);}
+        .reveal.visible{opacity:1;transform:translateY(0);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);}
+
+        /* ── Responsive 1024 (tablet) ── */
+        @media(max-width:1024px){
+            .nav-links{position:absolute;top:calc(100% + .5rem);left:.5rem;right:.5rem;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);flex-direction:column;padding:1.5rem;gap:.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .3s var(--ease-out);box-shadow:0 12px 40px rgba(0,0,0,0.08),0 0 0 1px rgba(0,0,0,0.04);border-radius:16px;margin:0 .5rem;}
+            .nav-links.active{opacity:1;visibility:visible;transform:translateY(0);}
+            .mobile-menu-btn{display:block;}
+            .cta-nav{display:none;}
+            .nav-dropdown-content{position:static;box-shadow:none;opacity:1;visibility:visible;transform:none;display:none;padding-left:1rem;background:transparent;margin-top:.5rem;backdrop-filter:none;}
+            .nav-dropdown:hover .nav-dropdown-content{display:block;}
+            .page-hero{text-align:center;}
+            .intro-grid{grid-template-columns:1fr;gap:var(--space-md);}
+            .benefits-grid{grid-template-columns:1fr;}
+            .lifecycle-grid{grid-template-columns:1fr 1fr;}
+            .lifecycle-item{border-bottom:1px solid var(--border);}
+            .lifecycle-item:nth-child(2n){border-right:none;}
+            .lifecycle-item:nth-last-child(-n+2){border-bottom:none;}
+            .footer-grid{grid-template-columns:1fr 1fr;gap:var(--space-md);}
+            .footer-brand{grid-column:1 / -1;}
+        }
+
+        /* ── Responsive 768 (mobile) ── */
+        @media(max-width:768px){
+            :root{--section-padding:3.5rem;}
+            .logo-img{height:28px;}
+            .nav-inner{padding:.5rem 1rem .5rem 1.25rem;}
+            .page-hero{padding:8.5rem 0 3.5rem;}
+            .hero-buttons{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin:0 auto;}
+            .hero-buttons a{text-align:center;width:100%;}
+            .intro-text p{margin-bottom:1rem;}
+            .benefit-card{padding:1.75rem;}
+            .lifecycle-grid{grid-template-columns:1fr;}
+            .lifecycle-item{border-right:none;border-bottom:1px solid var(--border);}
+            .lifecycle-item:last-child{border-bottom:none;}
+            .footer-grid{grid-template-columns:1fr;}
+            .footer-brand{grid-column:auto;}
+            .footer-bottom{flex-direction:column;gap:var(--space-xs);text-align:center;}
+            .footer-bottom-left{flex-direction:column;gap:.75rem;}
+            .footer-legal{flex-wrap:wrap;justify-content:center;}
+        }
+
+        /* ── Responsive 480 (small phone) ── */
+        @media(max-width:480px){
+            :root{--section-padding:2.5rem;}
+            .container{padding:0 1rem;}
+            .page-hero{padding:7rem 0 2.5rem;}
+            .hero-content{padding:0 1rem;}
+            .page-hero h1{font-size:1.75rem;}
+            .page-hero p{font-size:1rem;margin-bottom:1.5rem;}
+            .section-heading h2{font-size:1.5rem;}
+            .intro-text h2{font-size:1.5rem;}
+            .cta-box h2{font-size:1.5rem;}
+            .benefit-card{padding:1.5rem;}
+            .benefits-grid{gap:1rem;}
+            .lifecycle-item{padding:1.5rem 1.25rem;}
+            .footer-grid{gap:var(--space-sm);}
+            .footer-brand p{font-size:.85rem;}
+            .footer-bottom{padding:1rem 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="mainNav"><div class="nav-inner">
+        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li class="nav-dropdown"><a href="#">Services ▾</a><div class="nav-dropdown-content"><a href="richview-borrowers.html">Borrowers</a><a href="richview-capital-mic.html">Investors</a><a href="richview-capital-brokers.html">Brokers</a></div></li>
+            <li><a href="richview-about.html">About</a></li>
+            <li class="nav-dropdown"><a href="#">Resources ▾</a><div class="nav-dropdown-content"><a href="richview-what-is-a-mic.html">What Is a MIC?</a><a href="home.html#faq">FAQ</a></div></li>
+        </ul>
+        <a href="richview-capital-mic.html" class="cta-nav">Start Investing</a>
+    </div></nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="hero-content reveal">
+            <h1>Understanding Mortgage Investment Corporations</h1>
+            <p>A proven, regulated way to invest in the Canadian real estate market without the hassle of property management.</p>
+            <div class="hero-buttons">
+                <a href="richview-capital-mic.html" class="btn-hero-primary">Become an Investor</a>
+                <a href="#how-it-works" class="btn-hero-outline">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro: What is a MIC? -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text reveal">
+                    <h2>What exactly is a MIC?</h2>
+                    <p>A Mortgage Investment Corporation (MIC) is an investment vehicle created by the Government of Canada under the Income Tax Act. It is designed to make it easier for individuals to invest in the Canadian real estate market.</p>
+                    <p>Essentially, a MIC pools capital from many investors to lend out as private mortgages to borrowers. The interest collected from these mortgages, after operational expenses, is passed directly to the investors in the form of dividends.</p>
+                </div>
+                <div class="intro-text reveal">
+                    <h2>Why invest in a MIC?</h2>
+                    <p>Unlike volatile equities, MIC returns are backed by tangible real estate. You earn consistent, passive income without the overhead of property management, tenant issues, or maintenance costs.</p>
+                    <p>MIC shares are eligible for registered accounts such as RRSPs, RRIFs, and TFSAs, giving you tax-advantaged access to the private mortgage market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-heading center reveal">
+                <h2>Key Benefits of a MIC</h2>
+                <p>Why thousands of Canadians choose this path to steady returns</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-badge">01</div>
+                    <h3>Regulated &amp; Secure</h3>
+                    <p>MICs are strictly regulated under Section 130.1 of the Income Tax Act, requiring an annual audit and specific portfolio compositions to ensure safety.</p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-badge">02</div>
+                    <h3>Tax-Advantaged Growth</h3>
+                    <p>Because MICs distribute 100% of their net income, they pay no corporate tax. Furthermore, shares in a MIC are an eligible investment for RRSPs, RRIFs, and TFSAs.</p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-badge">03</div>
+                    <h3>Asset-Backed Security</h3>
+                    <p>Unlike stocks which can be volatile, MIC investments are backed by tangible real estate assets. A registered mortgage is placed on the property to secure the loan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifecycle -->
+    <section class="lifecycle-section" id="how-it-works">
+        <div class="container">
+            <div class="section-heading reveal">
+                <h2>The MIC Life Cycle</h2>
+                <p>How your capital transforms into steady dividend returns</p>
+            </div>
+            <div class="lifecycle-grid reveal">
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">01</div>
+                    <h4>Pooling Capital</h4>
+                    <p>Investors purchase shares in the MIC, pooling their capital together to create a large lending fund.</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">02</div>
+                    <h4>Lending to Borrowers</h4>
+                    <p>The MIC lends this money to carefully vetted borrowers, securing the loans against Ontario real estate.</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">03</div>
+                    <h4>Collecting Interest</h4>
+                    <p>Borrowers make regular payments containing interest, which forms the revenue of the MIC.</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">04</div>
+                    <h4>Paying Dividends</h4>
+                    <p>The net income is distributed back to you, the investor, as consistent, stable dividends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2>Ready to Invest in a MIC?</h2>
+                <p>Join Richview Capital and start earning stable, asset-backed returns. Our team is here to walk you through the process.</p>
+                <a href="richview-capital-mic.html" class="btn-primary">Start Investing Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+                        <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                            <a href="mailto:info@richviewcapital.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="richview-borrowers.html">Borrowers</a></li>
+                            <li><a href="richview-capital-brokers.html">Brokers</a></li>
+                            <li><a href="richview-capital-mic.html">Investors</a></li>
+                            <li><a href="richview-what-is-a-mic.html">What Is a MIC?</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="richview-about.html">About Us</a></li>
+                            <li><a href="home.html#faq">FAQ</a></li>
+                            <li><a href="home.html#cta">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get in Touch</h4>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                            <span>Toronto, Ontario<br>Canada</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                            <a href="mailto:info@richviewcapital.com">info@richviewcapital.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"><div class="container"></div></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2026 Richview Capital Corp.</p>
+                    <span class="footer-license"><span class="footer-license-dot"></span> FSRA License #13171</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+        });
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 30);
+        });
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>

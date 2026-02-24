@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Richview Capital MIC | Our Team & Company Values</title>
+    <meta name="description" content="Meet the team and learn the values behind Richview Capital MIC. Industry experts driving strategic vision in private mortgage lending across Ontario.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark-blue: #0B1635;
+            --orange: #FF6600;
+            --light-grey: #BFBFBF;
+            --navy: #0B1635;
+            --gold: #FF6600;
+            --cream: #F5F5F5;
+            --charcoal: #1A1A1A;
+            --white: #FFFFFF;
+            --muted: #6B7280;
+            --border: rgba(0,0,0,0.08);
+            --dark-blue-deep: #070E24;
+            --container: 1120px;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --btn-padding: 0.875rem 1.75rem;
+            --btn-font-size: 0.9375rem;
+            --btn-radius: 6px;
+            --space-xs: 1rem;
+            --space-sm: 1.5rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 4.5rem;
+            --section-padding: 5rem;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; }
+
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ——— NAVIGATION ——— */
+        nav {
+            position: fixed;
+            top: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1140px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 100px;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.35s var(--ease-out), top 0.3s var(--ease-out);
+        }
+        nav.scrolled {
+            box-shadow: 0 4px 28px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            top: 1rem;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem 0.5rem 2rem;
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 2;
+            transition: opacity 0.2s var(--ease-out);
+        }
+        .logo:hover { opacity: 0.85; }
+        .logo-img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            transition: color 0.2s var(--ease-out);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0.25rem;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 1px;
+            transition: width 0.25s var(--ease-out);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-content {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(-2px);
+            background: rgba(255, 255, 255, 0.99);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            min-width: 200px;
+            border-radius: 12px;
+            padding: 0.35rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out), visibility 0.2s;
+        }
+        .nav-dropdown:hover .nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .nav-dropdown-content a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--charcoal);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+        }
+        .nav-dropdown-content a:hover {
+            color: var(--navy);
+            background: rgba(11, 22, 53, 0.04);
+        }
+        .nav-dropdown-content a::after { display: none; }
+        .cta-nav {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.55rem 1.35rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.04em;
+            transition: all 0.25s var(--ease-out);
+            border: none;
+            text-decoration: none;
+            z-index: 2;
+        }
+        .cta-nav:hover { background: #0d1b3d; color: var(--white); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: opacity 0.2s var(--ease-out);
+        }
+        .mobile-menu-btn:hover { opacity: 0.7; }
+
+        /* ——— PAGE HERO ——— */
+        .page-hero {
+            padding: clamp(9rem, 12vw, 11rem) 0 var(--section-padding);
+            background: linear-gradient(135deg, var(--navy), var(--dark-blue-deep));
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(255, 102, 0, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .page-hero .container { position: relative; z-index: 1; max-width: 800px; }
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .page-hero p {
+            font-size: 1.0625rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        /* ——— SECTION HEADINGS ——— */
+        .sec-head { margin-bottom: var(--space-2xl); }
+        .sec-head h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .sec-head p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            max-width: 420px;
+            line-height: 1.65;
+        }
+
+        /* ——— OUR STORY ——— */
+        .our-story {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+        .story-content {
+            max-width: 800px;
+            line-height: 1.65;
+        }
+        .story-content p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+        }
+        .story-content p:last-child { margin-bottom: 0; }
+
+        /* ——— OUR VALUES ——— */
+        .our-values {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+        .our-values .sec-head { text-align: center; }
+        .our-values .sec-head p { margin: 0 auto; }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+        .value-card {
+            padding: 2rem 1.75rem;
+            background: var(--cream);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            transition: all 0.4s var(--ease-out);
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+        .value-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--white);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .value-card:hover .value-badge { transform: scale(1.08); }
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.6rem;
+        }
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ——— TEAM SECTION ——— */
+        .team-section {
+            padding: var(--section-padding) 0;
+            background: var(--cream);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        .team-member {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+        .member-image {
+            width: 100%;
+            aspect-ratio: 1;
+            position: relative;
+            background-color: var(--navy);
+            overflow: hidden;
+        }
+        .member-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+        }
+        .member-content {
+            padding: 2rem 1.75rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+        .member-title {
+            font-size: 0.875rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .member-bio { flex-grow: 1; }
+        .member-bio p {
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.9375rem;
+            margin-bottom: 0.75rem;
+        }
+        .member-bio p:last-child { margin-bottom: 0; }
+        .member-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .member-email {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: color 0.2s var(--ease-out);
+        }
+        .member-email:hover { color: var(--gold); }
+        .linkedin-link {
+            width: 36px;
+            height: 36px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.25s var(--ease-out);
+            flex-shrink: 0;
+        }
+        .linkedin-link:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* ——— ADDITIONAL TEAM ——— */
+        .additional-team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+        .team-member-small {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .member-image-small {
+            width: 100%;
+            aspect-ratio: 1;
+            position: relative;
+            background-color: var(--navy);
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+        .member-image-small img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+        }
+        .member-name-small {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+        .member-title-small {
+            font-size: 0.8125rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .member-bio-small {
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+        .member-contact-small {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+        .member-contact-small .member-email { font-size: 0.8125rem; }
+        .member-contact-small .linkedin-link { width: 32px; height: 32px; }
+
+        /* ——— CONTACT FORM ——— */
+        .contact-form-section {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+        .contact-form-container {
+            max-width: 580px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+            overflow: hidden;
+            border-top: 3px solid var(--gold);
+        }
+        .contact-form-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            padding: 1.5rem 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-form-header::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .contact-form-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+            position: relative;
+        }
+        .contact-form-header p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5;
+            position: relative;
+        }
+        .contact-form-body { padding: 1.5rem 1.75rem; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-group { margin-bottom: 1rem; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-group label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.4rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            background: var(--cream);
+            transition: all 0.25s var(--ease-out);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(0,0,0,0.4); }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+        }
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6600' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-submit-wrap {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: var(--btn-radius);
+            font-weight: 600;
+            font-size: var(--btn-font-size);
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s var(--ease-out);
+        }
+        .btn-submit:hover { background: var(--charcoal); color: var(--white); }
+
+        /* ——— FOOTER ——— */
+        footer { background: var(--navy); color: rgba(255,255,255,0.65); position: relative; overflow: hidden; }
+        footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), rgba(255,102,0,0.3), transparent 80%); }
+        footer::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,102,0,0.06) 0%, transparent 70%); pointer-events: none; }
+        .footer-main { padding: var(--space-xl) 0 var(--space-lg); position: relative; z-index: 1; }
+        .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: var(--space-lg); }
+        .footer-brand .logo { display: inline-flex; margin-bottom: 1.25rem; transition: opacity 0.2s; }
+        .footer-brand .logo:hover { opacity: 0.8; }
+        .footer-brand .logo-img { height: 36px; filter: brightness(0) invert(1); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.75; max-width: 280px; margin-bottom: 1.75rem; color: rgba(255,255,255,0.55); }
+        .footer-social { display: flex; gap: 0.75rem; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); transition: all 0.25s var(--ease-out); }
+        .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); }
+        .footer-social svg { width: 16px; height: 16px; }
+        .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.625rem; }
+        .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s var(--ease-out), padding-left 0.2s var(--ease-out); display: inline-block; }
+        .footer-col a:hover { color: var(--white); padding-left: 4px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6; }
+        .footer-contact-item:last-child { margin-bottom: 0; }
+        .footer-contact-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .footer-contact-icon svg { width: 14px; height: 14px; color: var(--gold); }
+        .footer-contact-item a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+        .footer-contact-item a:hover { color: var(--white); }
+        .footer-divider { height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04), transparent); position: relative; z-index: 1; }
+        .footer-bottom { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem; color: rgba(255,255,255,0.35); position: relative; z-index: 1; }
+        .footer-bottom-left { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-license { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 100px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+        .footer-license-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.6; }
+        .footer-legal { display: flex; gap: 1.25rem; }
+        .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
+        .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+        .footer-back-top { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.25s var(--ease-out); }
+        .footer-back-top:hover { background: rgba(255,255,255,0.1); color: var(--white); transform: translateY(-2px); }
+        .footer-back-top svg { width: 14px; height: 14px; }
+
+        /* ——— ANIMATIONS ——— */
+        .reveal { opacity: 0; transform: translateY(32px); }
+        .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+
+        /* ——— RESPONSIVE ——— */
+
+        /* --- Tablet (1024px) --- */
+        @media (max-width: 1024px) {
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                left: 0.5rem;
+                right: 0.5rem;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0.5rem;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: all 0.3s var(--ease-out);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+                border-radius: 16px;
+                margin: 0 0.5rem;
+            }
+            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            .nav-links a { padding: 0.625rem 0; font-size: 0.9375rem; }
+            .nav-dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                backdrop-filter: none;
+                padding: 0 0 0 1rem;
+                opacity: 1;
+                visibility: visible;
+                min-width: 0;
+            }
+            .mobile-menu-btn { display: block; }
+            .cta-nav { display: none; }
+            .page-hero { text-align: center; padding-bottom: var(--space-lg); }
+            .page-hero .container { max-width: 640px; }
+            .page-hero p { margin: 0 auto; }
+            .values-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
+            .value-card { padding: 1.75rem 1.5rem; }
+            .team-grid { grid-template-columns: 1fr; }
+            .additional-team-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+            .footer-brand { grid-column: 1 / -1; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        /* --- Mobile (768px) --- */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 3.5rem;
+            }
+            .logo-img { height: 28px; }
+            .nav-inner { padding: 0.5rem 1rem 0.5rem 1.25rem; }
+            .page-hero { padding-top: 8.5rem; }
+            .page-hero h1 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+            .sec-head { margin-bottom: var(--space-lg); }
+            .sec-head h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
+            .value-card { padding: 1.5rem 1.25rem; }
+            .value-card h3 { font-size: 1.1rem; }
+            .team-grid { gap: var(--space-md); }
+            .member-content { padding: 1.5rem 1.25rem; }
+            .member-name { font-size: 1.3rem; }
+            .additional-team-grid { grid-template-columns: 1fr; }
+            .member-image-small { margin-bottom: 1rem; }
+            .contact-form-header,
+            .contact-form-body { padding: 1.25rem; }
+            .footer-brand .logo-img { height: 32px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-brand { grid-column: auto; }
+            .footer-brand p { max-width: 100%; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .footer-bottom-left { flex-direction: column; gap: 0.75rem; }
+            .footer-legal { justify-content: center; }
+        }
+
+        /* --- Small phone (480px) --- */
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 2.5rem;
+            }
+            .container { padding: 0 1rem; }
+            .page-hero { padding-top: 7rem; padding-bottom: 2.5rem; }
+            .page-hero h1 { font-size: 1.625rem; }
+            .page-hero p { font-size: 0.9375rem; }
+            .sec-head { margin-bottom: var(--space-md); }
+            .sec-head h2 { font-size: 1.375rem; }
+            .sec-head p { font-size: 0.875rem; }
+            .story-content p { font-size: 0.875rem; }
+            .values-grid { gap: 0.75rem; }
+            .value-card { padding: 1.25rem 1rem; }
+            .value-card h3 { font-size: 1rem; }
+            .value-card p { font-size: 0.8125rem; }
+            .value-badge { width: 32px; height: 32px; font-size: 0.75rem; margin-bottom: 1rem; }
+            .team-grid { gap: var(--space-sm); }
+            .member-content { padding: 1.25rem 1rem; }
+            .member-name { font-size: 1.2rem; }
+            .member-bio p { font-size: 0.875rem; }
+            .member-contact { margin-top: 1rem; padding-top: 1rem; }
+            .additional-team-grid { gap: var(--space-sm); }
+            .member-name-small { font-size: 1.05rem; }
+            .member-bio-small { font-size: 0.8125rem; }
+            .contact-form-container { border-radius: 12px; }
+            .contact-form-header { padding: 1rem; }
+            .contact-form-header h2 { font-size: 1.25rem; }
+            .contact-form-body { padding: 1rem; }
+            .form-group input,
+            .form-group select,
+            .form-group textarea { padding: 0.65rem 0.875rem; font-size: 0.875rem; }
+            .btn-submit { padding: 0.8rem 1.25rem; font-size: 0.875rem; min-height: 44px; }
+            .footer-col h4 { margin-bottom: 1rem; }
+            .footer-col li { margin-bottom: 0.5rem; }
+            .footer-contact-item { font-size: 0.8125rem; }
+            .footer-bottom { font-size: 0.75rem; gap: 0.75rem; }
+            .footer-legal { gap: 0.75rem; }
+            .footer-legal a { font-size: 0.75rem; }
+            .footer-social a { width: 40px; height: 40px; }
+            .linkedin-link { width: 40px; height: 40px; }
+            .member-contact-small .linkedin-link { width: 36px; height: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#services">Services ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="richview-borrowers.html">Borrowers</a>
+                        <a href="richview-capital-mic.html">Investors</a>
+                        <a href="richview-capital-brokers.html">Brokers</a>
+                    </div>
+                </li>
+                <li><a href="richview-about.html">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Resources ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="richview-what-is-a-mic.html">What Is a MIC?</a>
+                        <a href="home.html#faq">FAQ</a>
+                    </div>
+                </li>
+                <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get Started</a></li>
+            </ul>
+            <a href="#contact" class="cta-nav">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Richview Capital MIC</h1>
+            <p>Experience, governance, and strategic expertise backing every investment decision. Meet the team dedicated to your success.</p>
+        </div>
+    </section>
+
+    <section class="our-story">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Our Story</h2>
+                <p>Building trust through expertise and client-focused solutions</p>
+            </div>
+            <div class="story-content reveal">
+                <p>Richview Capital Mortgage Investment Corporation is focused on residential mortgage opportunities, filling the gap created by tighter lending guidelines at traditional banks and trust companies. Reputation and trust are earned. Experience solidifies our business foundation time and time again.</p>
+                <p>Reaching a customer's goal and receiving referrals from them are the measures of our success. We constantly aim for solutions. These ideals define us at Richview Capital.</p>
+                <p>Guided by corporate governance and strategic knowledge provided by a highly seasoned advisory board, Richview Capital MIC is led by a team of industry experts who have previously managed and guided operations of highly efficient alternative lenders in the Canadian marketplace.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-values">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal" style="--i: 0;">
+                    <span class="value-badge">1</span>
+                    <h3>Solutions-Oriented</h3>
+                    <p>We constantly aim for solutions, working tirelessly to help our clients achieve their financial goals through creative and disciplined approaches.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 1;">
+                    <span class="value-badge">2</span>
+                    <h3>Trust & Integrity</h3>
+                    <p>Reputation and trust are earned through consistent delivery, transparent communication, and ethical business practices in every transaction.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 2;">
+                    <span class="value-badge">3</span>
+                    <h3>Experience Matters</h3>
+                    <p>Decades of combined expertise in alternative lending solidifies our foundation and enables superior decision-making for our clients.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 3;">
+                    <span class="value-badge">4</span>
+                    <h3>Client-Focused</h3>
+                    <p>Your goals and success drive our decisions. We respond quickly, communicate clearly, and tailor solutions to fit your unique situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Our Leadership Team</h2>
+                <p>Industry experts driving strategic vision and operational excellence</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member reveal" style="--i: 0;">
+                    <div class="member-image">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3590acb5dc4d13a6d.jpg" alt="Guido Di Franco">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Guido Di Franco</h3>
+                        <p class="member-title">President and CEO, Founder</p>
+                        <div class="member-bio">
+                            <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
+                            <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
+                            <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales. Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
+                        </div>
+                        <div class="member-contact">
+                            <a href="mailto:guido@richviewcapital.com" class="member-email">Email Guido</a>
+                            <a href="https://www.linkedin.com/in/guido-di-franco-9b34a533/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member reveal" style="--i: 1;">
+                    <div class="member-image">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc52d590acb5154d16ddd.jpg" alt="Teresa Di Franco">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Teresa Di Franco</h3>
+                        <p class="member-title">Executive VP & COO, Co-Founder</p>
+                        <div class="member-bio">
+                            <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
+                            <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine.</p>
+                            <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation.</p>
+                        </div>
+                        <div class="member-contact">
+                            <a href="mailto:teresa@richviewcapital.com" class="member-email">Email Teresa</a>
+                            <a href="https://www.linkedin.com/in/teresadifranco/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec-head reveal" style="margin-top: var(--space-xl);">
+                <h2>Our Team</h2>
+                <p>Dedicated professionals committed to your success</p>
+            </div>
+
+            <div class="additional-team-grid">
+                <div class="team-member-small reveal" style="--i: 0;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b1001a54461f0128e.jpg" alt="Maurizio Sera">
+                    </div>
+                    <h4 class="member-name-small">Maurizio Sera</h4>
+                    <p class="member-title-small">Director of Investments/Underwriting</p>
+                    <p class="member-bio-small">22 years as entrepreneur and 10+ years as mortgage investor. Ensures meticulous internal processes with emphasis on risk mitigation and quality control.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:maurizio@richviewcapital.com" class="member-email">Email</a>
+                        <a href="https://www.linkedin.com/in/maurizio-sera-7249a020/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 1;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc523fdcb920de3e8c40e.jpg" alt="Natasha Barranca">
+                    </div>
+                    <h4 class="member-name-small">Natasha Barranca</h4>
+                    <p class="member-title-small">Director of Operations</p>
+                    <p class="member-bio-small">18+ years in financial management. Oversees accounting, general ledgers, auditing, and day-to-day operations with focus on investor relations.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:natasha@richviewcapital.com" class="member-email">Email</a>
+                        <a href="https://www.linkedin.com/in/natasha-barranca-958052142/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 2;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4c6373080fa2b8dd139.jpg" alt="Randall Olivares">
+                    </div>
+                    <h4 class="member-name-small">Randall Olivares</h4>
+                    <p class="member-title-small">Underwriting and Fulfillment Officer</p>
+                    <p class="member-bio-small">7+ years in mortgage industry. Evaluates loan applications, analyzes financial data, and manages mortgage fulfillment processes.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:randall@richviewcapital.com" class="member-email">Email</a>
+                        <a href="https://www.linkedin.com/in/randall-olivares-b84526158/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 3;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b3730805ef08dbd30.jpg" alt="Mark Leung">
+                    </div>
+                    <h4 class="member-name-small">Mark Leung</h4>
+                    <p class="member-title-small">Controller</p>
+                    <p class="member-bio-small">ACCA member with KPMG experience. Expert in IFRS, U.S. GAAP, and SOX compliance. Manages financial reporting and cash flow optimization.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:mark@richviewcapital.com" class="member-email">Email</a>
+                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 4;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc53d590acbae2dd1723b.jpg" alt="Emely Sanchez">
+                    </div>
+                    <h4 class="member-name-small">Emely Sanchez</h4>
+                    <p class="member-title-small">Director of Administration</p>
+                    <p class="member-bio-small">10+ years in office administration. University of Toronto graduate focused on environmental conservation and efficient resource management.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:emely@richviewcapital.com" class="member-email">Email</a>
+                        <a href="https://www.linkedin.com/in/emely-sanchez-170201250/" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 5;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3fdcb929808e89908.jpg" alt="Laura Novello">
+                    </div>
+                    <h4 class="member-name-small">Laura Novello</h4>
+                    <p class="member-title-small">Renewals Specialist</p>
+                    <p class="member-bio-small">Customer success expert ensuring seamless, personalized renewal experiences. Focuses on building trust and long-term client relationships.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:laura@richviewcapital.com" class="member-email">Email</a>
+                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-member-small reveal" style="--i: 6;">
+                    <div class="member-image-small">
+                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc505e54a3726e43466c4.jpg" alt="Gabriella Di Franco">
+                    </div>
+                    <h4 class="member-name-small">Gabriella Di Franco</h4>
+                    <p class="member-title-small">Executive Administrator</p>
+                    <p class="member-bio-small">Highly organized professional supporting executive operations. Expert in calendar management, stakeholder communication, and process improvement.</p>
+                    <div class="member-contact-small">
+                        <a href="mailto:gabriella@adminexec.com" class="member-email">Email</a>
+                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section" id="contact">
+        <div class="container">
+            <div class="contact-form-container reveal">
+                <div class="contact-form-header">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We'd love to hear from you</p>
+                </div>
+                <div class="contact-form-body">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="e.g. Smith" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(416) 555-0123" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="">Select a topic</option>
+                                <option value="borrowing">Borrowing Inquiry</option>
+                                <option value="investing">Investment Inquiry</option>
+                                <option value="broker">Broker Partnership</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+                        <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                            <a href="mailto:info@richviewcapital.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="richview-borrowers.html">Borrowers</a></li>
+                            <li><a href="richview-capital-brokers.html">Brokers</a></li>
+                            <li><a href="richview-capital-mic.html">Investors</a></li>
+                            <li><a href="richview-what-is-a-mic.html">What Is a MIC?</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="richview-about.html">About Us</a></li>
+                            <li><a href="home.html#faq">FAQ</a></li>
+                            <li><a href="home.html#cta">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get in Touch</h4>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                            <span>Toronto, Ontario<br>Canada</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                            <a href="mailto:info@richviewcapital.com">info@richviewcapital.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"><div class="container"></div></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2026 Richview Capital Corp.</p>
+                    <span class="footer-license"><span class="footer-license-dot"></span> FSRA License #13171</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const firstName = formData.get('firstName');
+            alert('Thank you ' + firstName + '! We\'ve received your message and will get back to you within 24 hours.');
+            e.target.reset();
+        });
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+            var m = document.querySelector('.mobile-cta-li');
+            if (m && window.innerWidth <= 1024) m.style.display = 'block';
+        });
+        document.querySelectorAll('#navLinks a').forEach(function(a) {
+            a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('active'); });
+        });
+
+        window.addEventListener('scroll', function() {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 30);
+        });
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var h = this.getAttribute('href');
+                if (h && h !== '#' && !this.closest('.nav-dropdown')) {
+                    var t = document.querySelector(h);
+                    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
