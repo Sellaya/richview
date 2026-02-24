@@ -116,6 +116,7 @@
         }
         .nav-links a:hover::after { width: 100%; }
         .nav-dropdown { position: relative; }
+        .nav-mobile-logo { display: none; }
         .nav-dropdown-content {
             position: absolute;
             top: calc(100% + 0.5rem);
@@ -757,29 +758,22 @@
                 pointer-events: none;
             }
             .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+            .nav-mobile-logo { display: flex !important; align-items: center; padding: 0 0 1rem 0; margin-bottom: 0.25rem; border-bottom: 1px solid rgba(0,0,0,0.06); flex-shrink: 0; }
+            .nav-mobile-logo a { padding: 0; min-height: 0; }
+            .nav-mobile-logo .logo-img { height: 28px; width: auto; display: block; }
             .nav-links > li { border-bottom: 1px solid rgba(0,0,0,0.06); flex-shrink: 0; }
             .nav-links > li:last-child { border-bottom: none; }
-            .nav-links > li > a {
-                display: block;
-                padding: 1rem 0;
-                font-size: 1rem;
-                font-weight: 600;
-                color: var(--navy);
-                min-height: 44px;
-            }
+            .nav-links > li > a { display: block; padding: 1rem 0; font-size: 1rem; font-weight: 600; color: var(--navy); min-height: 44px; }
             .nav-links > li > a::after { display: none; }
             .nav-dropdown-content {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: transparent;
-                padding: 0 0 0.75rem 0;
-                margin-top: -0.25rem;
-                min-width: auto;
-                border-radius: 0;
+                position: static; box-shadow: none; background: transparent; min-width: auto; border-radius: 0;
+                max-height: 0; overflow: hidden; opacity: 0; padding: 0; margin: 0; visibility: hidden;
+                transition: max-height 0.3s var(--ease-out), opacity 0.2s var(--ease-out), padding 0.2s var(--ease-out);
             }
+            .nav-dropdown.open .nav-dropdown-content { max-height: 220px; opacity: 1; visibility: visible; padding: 0 0 0.75rem 0; margin-top: -0.25rem; }
+            .nav-dropdown > a { display: flex; align-items: center; justify-content: space-between; }
+            .nav-dropdown > a::after { content: ''; width: 10px; height: 10px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); margin-left: 0.5rem; transition: transform 0.25s var(--ease-out); }
+            .nav-dropdown.open > a::after { transform: rotate(-135deg); }
             .nav-dropdown-content a {
                 display: block;
                 padding: 0.65rem 0 0.65rem 1rem;
@@ -974,6 +968,7 @@
                 <span class="icon-close" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
             </button>
         <ul class="nav-links" id="navLinks">
+            <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="logo.png" alt="Richview Capital" class="logo-img"></a></li>
             <li class="nav-dropdown"><a href="#">Services ▾</a><div class="nav-dropdown-content"><a href="richview-borrowers.html">Borrowers</a><a href="richview-capital-mic.html">Investors</a><a href="richview-capital-brokers.html">Brokers</a></div></li>
             <li><a href="richview-about.html">About</a></li>
             <li class="nav-dropdown"><a href="#">Resources ▾</a><div class="nav-dropdown-content"><a href="richview-what-is-a-mic.html">What Is a MIC?</a><a href="home.html#faq">FAQ</a></div></li>
@@ -1381,14 +1376,22 @@
                 btn.setAttribute('aria-expanded', isOpen);
                 btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
                 document.body.style.overflow = isOpen ? 'hidden' : '';
+                if (!isOpen) document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
             });
             document.querySelectorAll('#navLinks a').forEach(function(a) {
-                a.addEventListener('click', function() {
+                a.addEventListener('click', function(e) {
+                    var dropdown = this.closest('.nav-dropdown');
+                    if (dropdown && dropdown.querySelector(':scope > a') === this) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                        return;
+                    }
                     menu.classList.remove('active');
                     nav.classList.remove('menu-open');
                     btn.setAttribute('aria-expanded', 'false');
                     btn.setAttribute('aria-label', 'Open menu');
                     document.body.style.overflow = '';
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
                 });
             });
         })();
