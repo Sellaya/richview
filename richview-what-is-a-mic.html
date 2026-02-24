@@ -160,8 +160,9 @@
             .nav-links > li:last-child{border-bottom:none;}
             .nav-links > li > a{display:block;padding:1rem 0;font-size:1rem;font-weight:600;color:var(--navy);min-height:44px;}
             .nav-links > li > a::after{display:none;}
+            .nav-dropdown:hover .nav-dropdown-content{max-height:0;overflow:hidden;opacity:0;visibility:hidden;}
             .nav-dropdown-content{position:static;box-shadow:none;background:transparent;min-width:auto;max-height:0;overflow:hidden;opacity:0;padding:0;margin:0;visibility:hidden;transition:max-height .3s var(--ease-out),opacity .2s var(--ease-out),padding .2s var(--ease-out);}
-            .nav-dropdown.open .nav-dropdown-content{max-height:220px;opacity:1;visibility:visible;padding:0 0 .75rem 0;margin-top:-.25rem;}
+            .nav-dropdown.open .nav-dropdown-content{max-height:280px;opacity:1;visibility:visible;padding:0 0 .75rem 0;margin-top:-.25rem;}
             .nav-dropdown > a{display:flex;align-items:center;justify-content:space-between;}
             .nav-dropdown > a::after{content:'';width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-left:.5rem;transition:transform .25s var(--ease-out);}
             .nav-dropdown.open > a::after{transform:rotate(-135deg);}
@@ -423,8 +424,10 @@
             document.querySelectorAll('#navLinks a').forEach(function(a) {
                 a.addEventListener('click', function(e) {
                     var dropdown = this.closest('.nav-dropdown');
-                    if (dropdown && dropdown.querySelector(':scope > a') === this) {
+                    var isTrigger = dropdown && (dropdown.firstElementChild === this);
+                    if (isTrigger) {
                         e.preventDefault();
+                        e.stopPropagation();
                         dropdown.classList.toggle('open');
                         return;
                     }
