@@ -243,9 +243,10 @@
 
         /* ——— OUR STORY ——— */
         .our-story {
-            padding: var(--section-padding) 0;
+            padding: var(--section-padding) 0 var(--space-xl) 0;
             background: var(--white);
         }
+        .our-story .sec-head { margin-bottom: var(--space-xl); }
         .story-content {
             max-width: 800px;
             line-height: 1.65;
@@ -259,10 +260,10 @@
 
         /* ——— OUR VALUES ——— */
         .our-values {
-            padding: var(--section-padding) 0;
+            padding: var(--space-xl) 0 var(--section-padding) 0;
             background: var(--white);
         }
-        .our-values .sec-head { text-align: center; }
+        .our-values .sec-head { text-align: center; margin-bottom: var(--space-xl); }
         .our-values .sec-head p { margin: 0 auto; }
         .values-grid {
             display: grid;
@@ -316,31 +317,37 @@
             padding: var(--section-padding) 0;
             background: var(--cream);
         }
+        .team-section .sec-head { margin-bottom: var(--space-xl); }
         .team-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
+            gap: 1.25rem;
             margin-bottom: var(--space-xl);
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .team-member {
             background: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            transition: all 0.4s var(--ease-out);
+            transition: box-shadow 0.35s var(--ease-out), transform 0.35s var(--ease-out);
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
         .team-member:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.07);
         }
         .member-image {
             width: 100%;
-            aspect-ratio: 1;
+            height: 140px;
             position: relative;
             background-color: var(--navy);
             overflow: hidden;
+            flex-shrink: 0;
         }
         .member-image img {
             position: absolute;
@@ -348,55 +355,80 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center 15%;
+            object-fit: contain;
+            object-position: center top;
         }
         .member-content {
-            padding: 2rem 1.75rem;
-            flex-grow: 1;
+            padding: 1rem 1.15rem 1.15rem;
             display: flex;
             flex-direction: column;
+            flex: 1;
+            min-height: 0;
         }
         .member-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             color: var(--navy);
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.15rem;
             font-weight: 700;
         }
         .member-title {
-            font-size: 0.875rem;
+            font-size: 0.6875rem;
             color: var(--gold);
             font-weight: 600;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
         }
-        .member-bio { flex-grow: 1; }
-        .member-bio p {
+        .member-bio-wrap { position: relative; flex: 1; min-height: 0; }
+        .member-bio {
             color: var(--muted);
-            line-height: 1.65;
-            font-size: 0.9375rem;
-            margin-bottom: 0.75rem;
+            line-height: 1.55;
+            font-size: 0.75rem;
+            max-height: 4.65em;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out);
+        }
+        .team-member.is-expanded .member-bio { max-height: 1200px; }
+        .member-bio p {
+            margin-bottom: 0.4rem;
+            color: inherit;
+            font-size: inherit;
         }
         .member-bio p:last-child { margin-bottom: 0; }
+        .member-bio-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 0.35rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            cursor: pointer;
+            font-family: inherit;
+            transition: color 0.2s var(--ease-out);
+        }
+        .member-bio-toggle:hover { color: var(--navy); }
+        .member-bio-toggle:focus { outline: none; text-decoration: underline; }
         .member-contact {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
             border-top: 1px solid var(--border);
         }
         .member-email {
             color: var(--navy);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             transition: color 0.2s var(--ease-out);
         }
         .member-email:hover { color: var(--gold); }
         .linkedin-link {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             background: var(--navy);
             border-radius: 50%;
             display: flex;
@@ -701,7 +733,9 @@
             .page-hero p { margin: 0 auto; }
             .values-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
             .value-card { padding: 1.75rem 1.5rem; }
-            .team-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; max-width: 100%; gap: 1rem; }
+            .member-image { height: 120px; }
+            .member-content { padding: 0.95rem 1.1rem 1.1rem; }
             .additional-team-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
             .footer-brand { grid-column: 1 / -1; }
@@ -721,9 +755,12 @@
             .sec-head h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
             .value-card { padding: 1.5rem 1.25rem; }
             .value-card h3 { font-size: 1.1rem; }
-            .team-grid { gap: var(--space-md); }
-            .member-content { padding: 1.5rem 1.25rem; }
-            .member-name { font-size: 1.3rem; }
+            .team-grid { gap: 1rem; }
+            .member-image { height: 115px; }
+            .member-content { padding: 0.9rem 1rem 1rem; }
+            .member-name { font-size: 1rem; }
+            .member-bio { font-size: 0.75rem; }
+            .member-bio-toggle { font-size: 0.6875rem; }
             .additional-team-grid { grid-template-columns: 1fr; }
             .member-image-small { margin-bottom: 1rem; }
             .contact-form-header,
@@ -755,11 +792,15 @@
             .value-card h3 { font-size: 1rem; }
             .value-card p { font-size: 0.8125rem; }
             .value-badge { width: 32px; height: 32px; font-size: 0.75rem; margin-bottom: 1rem; }
-            .team-grid { gap: var(--space-sm); }
-            .member-content { padding: 1.25rem 1rem; }
-            .member-name { font-size: 1.2rem; }
-            .member-bio p { font-size: 0.875rem; }
-            .member-contact { margin-top: 1rem; padding-top: 1rem; }
+            .team-grid { gap: 0.85rem; }
+            .member-image { height: 100px; }
+            .member-content { padding: 0.8rem 1rem 1rem; }
+            .member-name { font-size: 0.95rem; }
+            .member-title { font-size: 0.65rem; margin-bottom: 0.4rem; }
+            .member-bio { font-size: 0.75rem; }
+            .member-bio p { margin-bottom: 0.35rem; }
+            .member-bio-toggle { font-size: 0.6875rem; margin-top: 0.25rem; }
+            .member-contact { margin-top: 0.6rem; padding-top: 0.6rem; }
             .additional-team-grid { gap: var(--space-sm); }
             .member-name-small { font-size: 1.05rem; }
             .member-bio-small { font-size: 0.8125rem; }
@@ -884,10 +925,13 @@
                     <div class="member-content">
                         <h3 class="member-name">Guido Di Franco</h3>
                         <p class="member-title">President and CEO, Founder</p>
-                        <div class="member-bio">
-                            <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
-                            <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
-                            <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales. Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
+                        <div class="member-bio-wrap">
+                            <div class="member-bio">
+                                <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
+                                <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
+                                <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales. Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
+                            </div>
+                            <button type="button" class="member-bio-toggle" aria-expanded="false">Read more</button>
                         </div>
                         <div class="member-contact">
                             <a href="mailto:guido@richviewcapital.com" class="member-email">Email Guido</a>
@@ -905,10 +949,13 @@
                     <div class="member-content">
                         <h3 class="member-name">Teresa Di Franco</h3>
                         <p class="member-title">Executive VP & COO, Co-Founder</p>
-                        <div class="member-bio">
-                            <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
-                            <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine.</p>
-                            <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation.</p>
+                        <div class="member-bio-wrap">
+                            <div class="member-bio">
+                                <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
+                                <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine.</p>
+                                <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation.</p>
+                            </div>
+                            <button type="button" class="member-bio-toggle" aria-expanded="false">Read more</button>
                         </div>
                         <div class="member-contact">
                             <a href="mailto:teresa@richviewcapital.com" class="member-email">Email Teresa</a>
@@ -1207,6 +1254,15 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
         document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+        document.querySelectorAll('.member-bio-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var card = this.closest('.team-member');
+                var expanded = card.classList.toggle('is-expanded');
+                this.setAttribute('aria-expanded', expanded);
+                this.textContent = expanded ? 'Show less' : 'Read more';
+            });
+        });
 
         document.querySelectorAll('a[href^="#"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
