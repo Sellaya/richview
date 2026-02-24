@@ -178,6 +178,7 @@
             border: none;
             color: var(--navy);
             cursor: pointer;
+            touch-action: manipulation;
             z-index: 1001;
             padding: 0;
             width: 44px;
@@ -1303,11 +1304,13 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 list-style: none;
+                pointer-events: none;
             }
             .nav-links.active {
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
+                pointer-events: auto;
             }
             .nav-links > li {
                 border-bottom: 1px solid rgba(0,0,0,0.06);

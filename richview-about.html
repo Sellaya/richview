@@ -170,6 +170,7 @@
             border: none;
             color: var(--navy);
             cursor: pointer;
+            touch-action: manipulation;
             z-index: 1001;
             padding: 0;
             width: 44px;
@@ -638,8 +639,9 @@
                 margin: 0;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
+                pointer-events: none;
             }
-            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
             .nav-links > li { border-bottom: 1px solid rgba(0,0,0,0.06); }
             .nav-links > li:last-child { border-bottom: none; }
             .nav-links > li > a {
