@@ -664,6 +664,7 @@
             pointer-events: none;
             z-index: 0;
             animation: aboutFloatA 22s ease-in-out infinite;
+            box-shadow: 0 0 80px rgba(11,22,53,0.08), 0 0 140px rgba(11,22,53,0.04);
         }
         .about::after {
             content: '';
@@ -677,6 +678,28 @@
             pointer-events: none;
             z-index: 0;
             animation: aboutFloatB 26s ease-in-out infinite;
+            box-shadow: 0 0 90px rgba(255,102,0,0.12), 0 0 160px rgba(255,102,0,0.06);
+        }
+        .about-inner {
+            position: relative;
+            z-index: 1;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .about-inner::before {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(ellipse 40% 40% at 20% 30%, rgba(255,102,0,0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse 35% 35% at 80% 70%, rgba(11,22,53,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: aboutNeonPulse 8s ease-in-out infinite;
+        }
+        @keyframes aboutNeonPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
         @keyframes aboutFloatA {
             0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
@@ -687,13 +710,6 @@
             0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.9; }
             40%      { transform: translate(-3%, 4%) scale(1.08) rotate(2deg); opacity: 1; }
             70%      { transform: translate(2%, -2%) scale(0.95) rotate(-1deg); opacity: 0.8; }
-        }
-        .about-inner {
-            position: relative;
-            z-index: 1;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 1.5rem;
         }
         .about .sec-head {
             text-align: left;
@@ -2058,7 +2074,7 @@
                     <a href="#">Resources ▾</a>
                     <div class="nav-dropdown-content">
                         <a href="richview-what-is-a-mic.html">What Is a MIC?</a>
-                        <a href="home.html#faq">FAQ</a>
+                        <a href="richview-faq.html">FAQ</a>
                     </div>
                 </li>
                 <li class="mobile-cta-li" style="display:none"><a href="#cta" style="color:var(--orange)">Get Started</a></li>
@@ -2445,7 +2461,7 @@
                                 <div class="form-group">
                                     <label for="consultInterest">I'm interested in *</label>
                                     <select id="consultInterest" name="consultInterest" required>
-                                        <option value="">Select your interest</option>
+                                        <option value="" disabled selected>Select your interest</option>
                                         <option value="borrowing">Borrowing — Private mortgage or construction financing</option>
                                         <option value="investing">Investing — MIC investment opportunities</option>
                                         <option value="brokering">Brokering — Partner with us</option>
@@ -2560,7 +2576,7 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="richview-about.html">About Us</a></li>
-                            <li><a href="home.html#faq">FAQ</a></li>
+                            <li><a href="richview-faq.html">FAQ</a></li>
                             <li><a href="#cta">Contact</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                         </ul>

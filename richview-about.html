@@ -243,27 +243,28 @@
 
         /* ——— OUR STORY ——— */
         .our-story {
-            padding: var(--section-padding) 0 var(--space-xl) 0;
+            padding: var(--space-xl) 0 var(--space-lg) 0;
             background: var(--white);
         }
-        .our-story .sec-head { margin-bottom: var(--space-xl); }
+        .our-story .sec-head { margin-bottom: var(--space-md); }
+        .our-story .sec-head p { margin-bottom: 0; }
         .story-content {
-            max-width: 800px;
-            line-height: 1.65;
+            max-width: 900px;
+            line-height: 1.7;
         }
         .story-content p {
             font-size: 0.9375rem;
             color: var(--muted);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         .story-content p:last-child { margin-bottom: 0; }
 
         /* ——— OUR VALUES ——— */
         .our-values {
-            padding: var(--space-xl) 0 var(--section-padding) 0;
+            padding: var(--space-lg) 0 var(--section-padding) 0;
             background: var(--white);
         }
-        .our-values .sec-head { text-align: center; margin-bottom: var(--space-xl); }
+        .our-values .sec-head { text-align: center; margin-bottom: var(--space-md); }
         .our-values .sec-head p { margin: 0 auto; }
         .values-grid {
             display: grid;
@@ -852,7 +853,7 @@
                     <a href="#">Resources ▾</a>
                     <div class="nav-dropdown-content">
                         <a href="richview-what-is-a-mic.html">What Is a MIC?</a>
-                        <a href="home.html#faq">FAQ</a>
+                        <a href="richview-faq.html">FAQ</a>
                     </div>
                 </li>
                 <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get Started</a></li>
@@ -1116,7 +1117,7 @@
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <select id="subject" name="subject">
-                                <option value="">Select a topic</option>
+                                <option value="" disabled selected>Select a topic</option>
                                 <option value="borrowing">Borrowing Inquiry</option>
                                 <option value="investing">Investment Inquiry</option>
                                 <option value="broker">Broker Partnership</option>
@@ -1161,7 +1162,7 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="richview-about.html">About Us</a></li>
-                            <li><a href="home.html#faq">FAQ</a></li>
+                            <li><a href="richview-faq.html">FAQ</a></li>
                             <li><a href="home.html#cta">Contact</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                         </ul>
