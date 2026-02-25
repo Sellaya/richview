@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | Richview Capital MIC</title>
     <meta name="description" content="Frequently asked questions about private mortgages, borrowing, MIC investing, and broker partnerships. Richview Capital serves Ontario.">
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta name="theme-color" content="#0B1635">
+    <link rel="canonical" href="richview-faq.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAQ | Richview Capital MIC">
+    <meta property="og:description" content="Frequently asked questions about private mortgages, borrowing, MIC investing, and broker partnerships. Richview Capital serves Ontario.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="richview-faq.html">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,6 +49,10 @@
         body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; }
 
         .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+
+        .skip-link { position: absolute; top: -3rem; left: 1rem; z-index: 10000; padding: 0.6rem 1rem; background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-radius: 6px; transition: top 0.2s var(--ease-out); }
+        .skip-link:focus { top: 1rem; outline: 2px solid var(--gold); outline-offset: 2px; }
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
         /* ——— NAVIGATION ——— */
         nav {
@@ -846,6 +858,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
             <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
@@ -879,7 +892,7 @@
         </div>
     </nav>
 
-    <section class="page-hero">
+    <section class="page-hero" id="main">
         <div class="container">
             <h1 class="reveal">Frequently Asked Questions</h1>
             <p class="reveal">Quick answers for borrowers, investors, and brokers. Find what you need below or <a href="home.html#cta" style="color: var(--gold); text-decoration: underline;">get in touch</a>.</p>
@@ -1043,7 +1056,7 @@
                             <li><a href="richview-about.html">About Us</a></li>
                             <li><a href="richview-faq.html">FAQ</a></li>
                             <li><a href="home.html#cta">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -1072,9 +1085,9 @@
                     <span class="footer-license"><span class="footer-license-dot"></span> Mortgage Administrator License # - 13171</span>
                 </div>
                 <div class="footer-legal">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Disclaimer</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="terms.html#disclaimer">Disclaimer</a>
                 </div>
                 <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>

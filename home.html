@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Mortgage Lending & Construction Financing in Ontario | Richview Capital MIC</title>
     <meta name="description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta name="theme-color" content="#0B1635">
+    <link rel="canonical" href="home.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Private Mortgage Lending & Construction Financing in Ontario | Richview Capital MIC">
+    <meta property="og:description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="home.html">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,6 +49,32 @@
         body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; }
 
         .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ——— SKIP LINK (accessibility) ——— */
+        .skip-link {
+            position: absolute;
+            top: -3rem;
+            left: 1rem;
+            z-index: 10000;
+            padding: 0.6rem 1rem;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: top 0.2s var(--ease-out);
+        }
+        .skip-link:focus {
+            top: 1rem;
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        /* Visible focus for keyboard users (accessibility) */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
 
         /* ——— NAVIGATION ——— */
         nav {
@@ -1475,7 +1509,18 @@
         }
         .cta-box textarea { min-height: 64px; }
         .cta-submit-wrap { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-        .cta-box button[type="submit"] { padding: 0.75rem 1.25rem; font-size: 0.875rem; }
+        .cta-box button[type="submit"] { padding: 0.75rem 1.25rem; font-size: 0.875rem; transition: opacity 0.2s, background 0.2s; }
+        .cta-box button[type="submit"]:disabled { opacity: 0.7; cursor: not-allowed; }
+        .cta-form-success { display: none; padding: 1.5rem 0; text-align: center; }
+        .cta-form-success.is-visible { display: block; }
+        .cta-form-success h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .cta-form-success p { font-size: 0.9375rem; color: var(--muted); margin: 0; }
+        .cta-box-body.is-success .cta-form-success { display: block; }
+        .cta-box-body.is-success .cta-form-fields { display: none; }
+        .hero-form-success { display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--navy); font-weight: 500; }
+        .hero-form-success.is-visible { display: block; }
+        .hero-form-wrap.is-success .hero-form-success { display: block; }
+        .hero-form-wrap.is-success form { display: none; }
         .cta-box select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6600' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
         .cta-box textarea { resize: vertical; min-height: 72px; }
         .cta-box .form-row-full .form-group { margin-bottom: 1rem; }
@@ -2055,6 +2100,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
             <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
@@ -2088,7 +2134,7 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
+    <main id="main"><section class="hero" id="home">
         <div class="hero-grid">
             <div class="hero-content">
                 <div class="hero-dots">
@@ -2194,8 +2240,9 @@
                             <option value="broker">Brokering</option>
                         </select>
                     </div>
-                    <button type="submit">Submit Request</button>
+                    <button type="submit" id="heroSubmitBtn">Submit Request</button>
                 </form>
+                <p class="hero-form-success" id="heroFormSuccess" aria-live="polite">Thank you! We've received your inquiry and will contact you within 24 hours.</p>
             </div>
         </div>
         <div class="hero-trust">
@@ -2435,7 +2482,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="cta-box-body">
+                <div class="cta-box-body" id="ctaBoxBody">
+                    <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
+                        <h3>Thank you!</h3>
+                        <p>We've received your consultation request. Our team will confirm shortly.</p>
+                    </div>
+                    <div class="cta-form-fields">
                     <form id="consultationForm">
                         <div class="cta-form-section">
                             <div class="cta-form-section-title">Your Details</div>
@@ -2529,9 +2581,10 @@
                             </div>
                         </div>
                         <div class="cta-submit-wrap">
-                            <button type="submit">Schedule Consultation</button>
+                            <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2555,6 +2608,7 @@
             <a href="https://www.google.com/maps/search/?api=1&query=7681+Highway+27+Unit+15+Suite+200+Woodbridge+ON+L4L+4M5" target="_blank" rel="noopener noreferrer">7681 Highway 27 Unit 15, Suite 200 · Woodbridge ON, L4L 4M5</a>
         </p>
     </section>
+    </main>
 
     <footer>
         <div class="footer-main">
@@ -2583,7 +2637,7 @@
                             <li><a href="richview-about.html">About Us</a></li>
                             <li><a href="richview-faq.html">FAQ</a></li>
                             <li><a href="#cta">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -2612,9 +2666,9 @@
                     <span class="footer-license"><span class="footer-license-dot"></span> Mortgage Administrator License # - 13171</span>
                 </div>
                 <div class="footer-legal">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Disclaimer</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="terms.html#disclaimer">Disclaimer</a>
                 </div>
                 <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
@@ -2686,11 +2740,22 @@
             setActiveSet('borrowers');
         })();
 
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! We\'ve received your inquiry and will contact you within 24 hours.');
-            this.reset();
-        });
+        var newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var wrap = this.closest('.hero-form-wrap');
+                var btn = document.getElementById('heroSubmitBtn');
+                var successEl = document.getElementById('heroFormSuccess');
+                if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+                setTimeout(function() {
+                    if (successEl) successEl.classList.add('is-visible');
+                    if (wrap) wrap.classList.add('is-success');
+                    newsletterForm.reset();
+                    if (btn) { btn.disabled = false; btn.textContent = 'Submit Request'; }
+                }, 500);
+            });
+        }
         (function() {
             var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
             function pad(n) { return n < 10 ? '0' + n : '' + n; }
@@ -2843,22 +2908,33 @@
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    var fn = document.getElementById('consultFirstName') && document.getElementById('consultFirstName').value;
-                    var date = dateInput && dateInput.value;
-                    var time = timeInput && timeInput.value;
-                    var msg = fn ? 'Thank you ' + fn + '! ' : 'Thank you! ';
-                    msg += 'We\'ve received your consultation request.';
-                    if (date && time) msg += ' You requested ' + formatDate(date) + ' at ' + (timeValueEl && timeValueEl.classList.contains('placeholder') ? time : timeValueEl.textContent) + '.';
-                    msg += ' Our team will confirm shortly.';
-                    alert(msg);
-                    form.reset();
-                    dateValueEl.textContent = 'Choose date';
-                    dateValueEl.classList.add('placeholder');
-                    timeValueEl.textContent = 'Choose time';
-                    timeValueEl.classList.add('placeholder');
-                    timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
-                    viewDate = new Date();
-                    renderCalendar();
+                    var submitBtn = document.getElementById('consultSubmitBtn');
+                    var boxBody = document.getElementById('ctaBoxBody');
+                    var successEl = document.getElementById('ctaFormSuccess');
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending...';
+                    }
+                    setTimeout(function() {
+                        if (successEl) {
+                            var fn = document.getElementById('consultFirstName') && document.getElementById('consultFirstName').value;
+                            if (fn) successEl.querySelector('h3').textContent = 'Thank you, ' + fn + '!';
+                            successEl.classList.add('is-visible');
+                        }
+                        if (boxBody) boxBody.classList.add('is-success');
+                        form.reset();
+                        dateValueEl.textContent = 'Choose date';
+                        dateValueEl.classList.add('placeholder');
+                        timeValueEl.textContent = 'Choose time';
+                        timeValueEl.classList.add('placeholder');
+                        timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
+                        viewDate = new Date();
+                        renderCalendar();
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Schedule Consultation';
+                        }
+                    }, 600);
                 });
             }
             renderCalendar();
