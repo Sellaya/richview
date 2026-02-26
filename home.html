@@ -1592,22 +1592,92 @@
             width: 100%;
             background: var(--cream);
             border-top: 1px solid var(--border);
+            transition: box-shadow 0.35s var(--ease-out), background 0.35s var(--ease-out);
+        }
+        .map-strip:hover {
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.04);
         }
         .map-strip-heading {
             margin: 0;
-            padding: 1rem 1.5rem 0.5rem;
+            padding: 1rem 1.5rem 0.35rem;
             font-family: 'Playfair Display', serif;
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--navy);
             text-align: center;
             letter-spacing: -0.02em;
+            transition: color 0.25s var(--ease-out);
         }
+        .map-strip:hover .map-strip-heading { color: var(--navy); }
+        .map-strip-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0 1.5rem 0.75rem;
+        }
+        .map-strip-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--white);
+            border: 2px solid rgba(11,22,53,0.12);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: color 0.25s var(--ease-out), background 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.2s var(--ease-out);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .map-strip-btn:hover {
+            color: var(--white);
+            background: var(--navy);
+            border-color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(11,22,53,0.2);
+        }
+        .map-strip-btn:focus { outline: none; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4); }
+        .map-strip-btn svg { flex-shrink: 0; width: 18px; height: 18px; }
         .map-strip-inner {
             width: 100%;
-            height: 220px;
+            height: 240px;
             overflow: hidden;
             position: relative;
+            cursor: pointer;
+            transition: height 0.35s var(--ease-out);
+        }
+        .map-strip.is-interactive .map-strip-inner { cursor: default; }
+        .map-strip-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.92);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            transition: opacity 0.4s var(--ease-out), visibility 0.4s;
+            z-index: 2;
+        }
+        .map-strip.is-interactive .map-strip-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .map-strip-overlay-text {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-align: center;
+            margin: 0;
+        }
+        .map-strip-overlay-hint {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin: 0;
         }
         .map-strip-inner iframe {
             position: absolute;
@@ -1616,10 +1686,14 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            transition: filter 0.3s var(--ease-out);
+        }
+        .map-strip.is-interactive .map-strip-inner iframe {
+            pointer-events: auto;
         }
         .map-strip-address {
             margin: 0;
-            padding: 0.6rem 1.5rem;
+            padding: 0.6rem 1.5rem 1rem;
             font-size: 0.8125rem;
             color: var(--muted);
             text-align: center;
@@ -1629,8 +1703,9 @@
             color: var(--navy);
             text-decoration: none;
             transition: color 0.2s var(--ease-out);
+            border-bottom: 1px solid transparent;
         }
-        .map-strip-address a:hover { color: var(--gold); }
+        .map-strip-address a:hover { color: var(--gold); border-bottom-color: rgba(212, 175, 55, 0.5); }
 
         /* ——— FOOTER ——— */
         footer {
@@ -2125,8 +2200,11 @@
             .cta-box input, .cta-box select, .cta-box textarea { padding: 0.55rem 0.7rem; font-size: 0.8125rem; min-height: 44px; }
             .cta-box button[type="submit"] { padding: 0.65rem 1rem; font-size: 0.8125rem; min-height: 44px; }
             .cta-submit-wrap { margin-top: 0.75rem; padding-top: 0.75rem; }
-            .map-strip-heading { padding: 0.85rem 1rem 0.4rem; font-size: 1.1rem; }
-            .map-strip-inner { height: 180px; }
+            .map-strip-heading { padding: 0.85rem 1rem 0.25rem; font-size: 1.1rem; }
+            .map-strip-actions { padding: 0 1rem 0.5rem; gap: 0.5rem; }
+            .map-strip-btn { padding: 0.45rem 0.85rem; font-size: 0.75rem; }
+            .map-strip-btn svg { width: 16px; height: 16px; }
+            .map-strip-inner { height: 200px; }
             .map-strip-address { padding: 0.5rem 1rem; font-size: 0.75rem; }
             .logo-img { height: 40px; }
             .nav-inner { padding: 0.5rem 0.75rem 0.5rem 1rem; min-height: 52px; }
@@ -2637,9 +2715,23 @@
         </div>
     </section>
 
-    <section class="map-strip" aria-label="Office location">
+    <section class="map-strip" aria-label="Office location" id="map-strip">
         <h2 class="map-strip-heading">Find Us</h2>
-        <div class="map-strip-inner">
+        <div class="map-strip-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=7681+Highway+27+Unit+15+Suite+200+Woodbridge+ON+L4L+4M5" target="_blank" rel="noopener noreferrer" class="map-strip-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Open in Google Maps
+            </a>
+            <a href="https://www.google.com/maps/dir//7681+Highway+27+Unit+15+Suite+200+Woodbridge+ON+L4L+4M5" target="_blank" rel="noopener noreferrer" class="map-strip-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+                Get directions
+            </a>
+        </div>
+        <div class="map-strip-inner" role="button" tabindex="0" aria-label="Click to interact with map">
+            <div class="map-strip-overlay">
+                <p class="map-strip-overlay-text">Click to pan & zoom the map</p>
+                <p class="map-strip-overlay-hint">Then drag or scroll to explore</p>
+            </div>
             <iframe
                 src="https://www.google.com/maps?q=7681+Highway+27+Unit+15+Suite+200+Woodbridge+ON+L4L+4M5&z=15&output=embed"
                 width="100%"
@@ -2803,6 +2895,26 @@
                 }, 500);
             });
         }
+
+        (function() {
+            var mapStrip = document.getElementById('map-strip');
+            var mapInner = mapStrip && mapStrip.querySelector('.map-strip-inner');
+            if (!mapInner) return;
+            function enableMap() {
+                mapStrip.classList.add('is-interactive');
+                mapInner.setAttribute('aria-label', 'Map active – drag to pan, scroll to zoom');
+            }
+            mapInner.addEventListener('click', function() {
+                if (!mapStrip.classList.contains('is-interactive')) enableMap();
+            });
+            mapInner.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (!mapStrip.classList.contains('is-interactive')) enableMap();
+                }
+            });
+        })();
+
         (function() {
             var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
             function pad(n) { return n < 10 ? '0' + n : '' + n; }
