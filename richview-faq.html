@@ -365,15 +365,16 @@
 
         /* ——— TEAM SECTION ——— */
         .team-section {
-            padding: var(--section-padding) 0;
+            padding: 2.5rem 0 3rem;
             background: var(--cream);
         }
-        .team-section .sec-head { margin-bottom: var(--space-xl); }
+        .team-section > .container > .sec-head:first-child { margin-bottom: 1.5rem; }
+        .team-section .team-grid + .sec-head { margin-top: 1.75rem; margin-bottom: 1.25rem; }
         .team-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin-bottom: var(--space-xl);
+            gap: 1rem;
+            margin-bottom: 0;
             max-width: 720px;
             margin-left: auto;
             margin-right: auto;
@@ -396,7 +397,7 @@
             width: 100%;
             max-width: 110px;
             aspect-ratio: 1;
-            margin: 1.25rem auto 0;
+            margin: 0.75rem auto 0;
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -419,7 +420,7 @@
             object-position: center 30%;
         }
         .member-content {
-            padding: 1rem 1.15rem 1.15rem;
+            padding: 0.85rem 1rem 1rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -443,7 +444,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
         }
         .member-bio-wrap { position: relative; flex: 1; min-height: 0; }
         .member-bio {
@@ -479,8 +480,8 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
             border-top: 1px solid var(--border);
         }
         .member-email {
@@ -512,7 +513,7 @@
         .additional-team-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md);
+            gap: 1.25rem;
         }
         .team-member-small {
             text-align: center;
@@ -523,7 +524,7 @@
             width: 100%;
             max-width: 88px;
             aspect-ratio: 1;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.6rem;
             position: relative;
             overflow: hidden;
             border-radius: 50%;
@@ -550,13 +551,13 @@
             font-size: 0.8125rem;
             color: var(--gold);
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         .member-bio-small {
             color: var(--muted);
-            line-height: 1.65;
+            line-height: 1.55;
             font-size: 0.875rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.75rem;
             flex-grow: 1;
         }
         .member-contact-small {
@@ -845,14 +846,17 @@
             .sec-head h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
             .value-card { padding: 1.5rem 1.25rem; }
             .value-card h3 { font-size: 1.1rem; }
+            .team-section { padding: 2rem 0 2.5rem; }
+            .team-section > .container > .sec-head:first-child { margin-bottom: 1.25rem; }
+            .team-section .team-grid + .sec-head { margin-top: 1.5rem; margin-bottom: 1rem; }
             .team-grid { gap: 1rem; }
             .member-image { max-width: 85px; }
             .member-content { padding: 0.9rem 1rem 1rem; }
             .member-name { font-size: 1rem; }
             .member-bio { font-size: 0.75rem; }
             .member-bio-toggle { font-size: 0.6875rem; }
-            .additional-team-grid { grid-template-columns: 1fr; }
-            .member-image-small { margin-bottom: 1rem; }
+            .additional-team-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .member-image-small { margin-bottom: 0.5rem; }
             .contact-form-header,
             .contact-form-body { padding: 1.25rem; }
             .footer-brand .logo-img { height: 32px; }
@@ -882,8 +886,10 @@
             .value-card h3 { font-size: 1rem; }
             .value-card p { font-size: 0.8125rem; }
             .value-badge { width: 32px; height: 32px; font-size: 0.75rem; margin-bottom: 1rem; }
+            .team-section { padding: 1.75rem 0 2rem; }
+            .team-section .team-grid + .sec-head { margin-top: 1.25rem; margin-bottom: 0.85rem; }
             .team-grid { gap: 0.85rem; }
-            .member-image { max-width: 78px; }
+            .member-image { max-width: 78px; margin-top: 0.5rem; }
             .member-content { padding: 0.8rem 1rem 1rem; }
             .member-name { font-size: 0.95rem; }
             .member-title { font-size: 0.65rem; margin-bottom: 0.4rem; }
@@ -891,9 +897,11 @@
             .member-bio p { margin-bottom: 0.35rem; }
             .member-bio-toggle { font-size: 0.6875rem; margin-top: 0.25rem; }
             .member-contact { margin-top: 0.6rem; padding-top: 0.6rem; }
-            .additional-team-grid { gap: var(--space-sm); }
+            .additional-team-grid { gap: 0.85rem; }
+            .member-image-small { margin-bottom: 0.5rem; }
+            .member-title-small { margin-bottom: 0.4rem; }
+            .member-bio-small { margin-bottom: 0.6rem; font-size: 0.8125rem; }
             .member-name-small { font-size: 1.05rem; }
-            .member-bio-small { font-size: 0.8125rem; }
             .contact-form-container { border-radius: 12px; }
             .contact-form-header { padding: 1rem; }
             .contact-form-header h2 { font-size: 1.25rem; }
