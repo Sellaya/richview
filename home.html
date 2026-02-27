@@ -406,17 +406,98 @@
             50% { opacity: 0.92; box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.06); }
         }
 
-        .hero-slider { position: relative; min-height: clamp(220px, 32vw, 320px); width: 100%; margin-bottom: var(--space-md); padding-bottom: 3.25rem; }
-        .hero-slide-set { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; transition: opacity 0.5s var(--ease-out); pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; }
+        .hero-slider {
+            position: relative;
+            min-height: clamp(220px, 32vw, 320px);
+            width: 100%;
+            margin-bottom: var(--space-md);
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-slide-set {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s var(--ease-out);
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
         .hero-slide-set.active { opacity: 1; visibility: visible; pointer-events: auto; }
-        .hero-slide { position: absolute; top: 0; left: 0; right: 0; padding-bottom: 3.5rem; box-sizing: border-box; opacity: 0; visibility: hidden; transition: opacity 0.5s var(--ease-out); }
+        .hero-slides-track {
+            flex: 1 1 auto;
+            min-height: 0;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 0.25rem;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-bottom: 0;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s var(--ease-out);
+        }
         .hero-slide.active { opacity: 1; visibility: visible; }
         .hero-slide h1 { margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem); }
         .hero-slide p { margin-bottom: clamp(1.25rem, 2.5vw, 2rem); padding-bottom: 0.5rem; font-size: clamp(0.95rem, 1.5vw, 1.1rem); max-width: 100%; }
-        .hero-slider-nav { display: flex; align-items: center; justify-content: center; gap: 0.5rem; position: absolute; left: 0; right: 0; bottom: 0; padding: 0.75rem 0 0.5rem; min-height: 44px; flex-shrink: 0; z-index: 2; pointer-events: auto; }
-        .hero-slider-dot { width: 10px; height: 10px; min-width: 10px; min-height: 10px; border-radius: 50%; background: rgba(0,0,0,0.18); border: none; cursor: pointer; padding: 0; transition: all 0.25s var(--ease-out); }
-        .hero-slider-dot.active { background: var(--navy); transform: scale(1.15); }
-        .hero-slider-dot:hover { background: rgba(0,0,0,0.35); }
+        .hero-slider-nav {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1rem 0.6rem;
+            min-height: 52px;
+            z-index: 2;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+            background: linear-gradient(to top, rgba(0,0,0,0.04) 0%, transparent 85%);
+            border-radius: 0 0 12px 12px;
+        }
+        .hero-slider-dot {
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            min-height: 8px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.22);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+            flex-shrink: 0;
+            position: relative;
+        }
+        .hero-slider-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+        .hero-slider-dot.active {
+            background: var(--navy);
+            transform: scale(1.35);
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.95), 0 2px 6px rgba(11,22,53,0.2);
+        }
+        .hero-slider-dot:hover { background: rgba(0,0,0,0.45); }
+        .hero-slider-dot.active:hover { background: var(--navy); }
+        .hero-slider-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
         .hero .btn-pri, .btn-pri {
             background: var(--navy);
             color: var(--white);
@@ -2091,11 +2172,12 @@
             .hero-content p, .hero-slide p { margin-left: auto; margin-right: auto; text-align: center; }
             .hero-ctas { justify-content: center; }
             .hero-dots { justify-content: center; margin-bottom: var(--space-sm); }
-            .hero-slider { min-height: clamp(240px, 45vw, 280px); margin-bottom: var(--space-sm); padding-bottom: 3.75rem; }
-            .hero-slider-nav { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.75rem 0 0.5rem; min-height: 44px; justify-content: center; }
-            .hero-slide { top: 0; padding-bottom: 4rem; }
+            .hero-slider { min-height: clamp(260px, 45vw, 300px); margin-bottom: var(--space-sm); }
+            .hero-slider-nav { min-height: 54px; padding: 0.8rem 1rem 0.6rem; gap: 0.6rem; }
+            .hero-slides-track { padding-bottom: 0.35rem; }
             .hero-slide p { margin-bottom: 1rem; padding-bottom: 0.5rem; }
-            .hero-slider-dot { width: 10px; height: 10px; }
+            .hero-slider-dot { width: 8px; height: 8px; min-width: 8px; min-height: 8px; }
+            .hero-slider-dot::before { width: 36px; height: 36px; }
             .hero-form-wrap { max-width: min(400px, 100%); margin: 0 auto; }
             .hero-trust { margin-top: var(--space-lg); }
             .hero-trust-inner { text-align: center; }
@@ -2139,11 +2221,12 @@
             .hero-ctas .btn-sec { width: 100%; text-align: center; padding: 0.7rem 1.25rem; font-size: 0.875rem; }
             .hero-form-wrap { padding: clamp(1.25rem, 2.5vw, 2rem); }
             .hero-dots { flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
-            .hero-slider { min-height: clamp(280px, 55vw, 340px); margin-bottom: var(--space-sm); padding-bottom: 3.75rem; }
-            .hero-slider-nav { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.75rem 0 0.6rem; min-height: 48px; justify-content: center; gap: 0.5rem; }
-            .hero-slide { top: 0; padding-bottom: 4.25rem; }
+            .hero-slider { min-height: clamp(300px, 55vw, 360px); margin-bottom: var(--space-sm); }
+            .hero-slider-nav { min-height: 56px; padding: 0.85rem 1rem 0.65rem; gap: 0.65rem; }
+            .hero-slides-track { padding-bottom: 0.4rem; }
             .hero-slide p { margin-bottom: 0.85rem; padding-bottom: 0.5rem; }
-            .hero-slider-dot { width: 10px; height: 10px; min-width: 10px; min-height: 10px; }
+            .hero-slider-dot { width: 9px; height: 9px; min-width: 9px; min-height: 9px; }
+            .hero-slider-dot::before { width: 40px; height: 40px; }
 
             .service-card { padding: 1.5rem 1.25rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
@@ -2216,9 +2299,11 @@
             .faq-a p { padding: 0 1rem 0.875rem 1rem; }
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
             .hero-dot-item { font-size: 0.85rem; }
-            .hero-slider { min-height: clamp(300px, 70vw, 380px); padding-bottom: 3.75rem; }
-            .hero-slider-nav { padding: 0.75rem 0 0.6rem; min-height: 48px; }
-            .hero-slide { top: 0; padding-bottom: 4.5rem; }
+            .hero-slider { min-height: clamp(320px, 72vw, 400px); }
+            .hero-slider-nav { min-height: 56px; padding: 0.9rem 1rem 0.7rem; gap: 0.6rem; }
+            .hero-slides-track { padding-bottom: 0.4rem; }
+            .hero-slider-dot { width: 9px; height: 9px; min-width: 9px; min-height: 9px; }
+            .hero-slider-dot::before { width: 44px; height: 44px; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
         }
@@ -2278,17 +2363,19 @@
                 </div>
                 <div class="hero-slider">
                     <div class="hero-slide-set active" data-set="borrowers">
-                        <div class="hero-slide active" data-slide="0">
-                            <h1><span class="hl">Private Mortgage Financing</span> for Ontario Borrowers</h1>
-                            <p>Fast approvals on residential mortgages, second mortgages, and construction financing. Alternative lending when traditional banks say no.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="1">
-                            <h1>First Mortgages, <span class="hl">Second Mortgages</span> & Construction Loans</h1>
-                            <p>Flexible financing for renovations, debt consolidation, custom builds, and development. Up to 80% LTV on residential first mortgages.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="2">
-                            <h1>Decisions in <span class="hl">24–48 Hours</span>. Closings in 7–10 Days.</h1>
-                            <p>Case-by-case evaluation. Direct communication with decision-makers. No call centers—just experienced professionals who understand your needs.</p>
+                        <div class="hero-slides-track">
+                            <div class="hero-slide active" data-slide="0">
+                                <h1><span class="hl">Private Mortgage Financing</span> for Ontario Borrowers</h1>
+                                <p>Fast approvals on residential mortgages, second mortgages, and construction financing. Alternative lending when traditional banks say no.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="1">
+                                <h1>First Mortgages, <span class="hl">Second Mortgages</span> & Construction Loans</h1>
+                                <p>Flexible financing for renovations, debt consolidation, custom builds, and development. Up to 80% LTV on residential first mortgages.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="2">
+                                <h1>Decisions in <span class="hl">24–48 Hours</span>. Closings in 7–10 Days.</h1>
+                                <p>Case-by-case evaluation. Direct communication with decision-makers. No call centers—just experienced professionals who understand your needs.</p>
+                            </div>
                         </div>
                         <div class="hero-slider-nav">
                             <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
@@ -2297,17 +2384,19 @@
                         </div>
                     </div>
                     <div class="hero-slide-set" data-set="investors">
-                        <div class="hero-slide active" data-slide="0">
-                            <h1>Invest in a <span class="hl">MIC</span> in Ontario</h1>
-                            <p>Earn stable returns through asset-backed mortgage investing. RRSP-eligible income from professionally managed residential and construction mortgages.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="1">
-                            <h1><span class="hl">Asset-Backed</span>. Professionally Managed.</h1>
-                            <p>Every investment secured by real estate. Diversified portfolio. Conservative LTV ratios. Decades of combined experience in alternative lending.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="2">
-                            <h1>Regular <span class="hl">Distributions</span> from Mortgage Income</h1>
-                            <p>Monthly or quarterly income from mortgage interest. Capital preservation focus. Hold in RRSP, RRIF, or TFSA for tax-advantaged growth.</p>
+                        <div class="hero-slides-track">
+                            <div class="hero-slide active" data-slide="0">
+                                <h1>Invest in a <span class="hl">MIC</span> in Ontario</h1>
+                                <p>Earn stable returns through asset-backed mortgage investing. RRSP-eligible income from professionally managed residential and construction mortgages.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="1">
+                                <h1><span class="hl">Asset-Backed</span>. Professionally Managed.</h1>
+                                <p>Every investment secured by real estate. Diversified portfolio. Conservative LTV ratios. Decades of combined experience in alternative lending.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="2">
+                                <h1>Regular <span class="hl">Distributions</span> from Mortgage Income</h1>
+                                <p>Monthly or quarterly income from mortgage interest. Capital preservation focus. Hold in RRSP, RRIF, or TFSA for tax-advantaged growth.</p>
+                            </div>
                         </div>
                         <div class="hero-slider-nav">
                             <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
@@ -2316,17 +2405,19 @@
                         </div>
                     </div>
                     <div class="hero-slide-set" data-set="brokers">
-                        <div class="hero-slide active" data-slide="0">
-                            <h1><span class="hl">Private Mortgage Solutions</span> for Ontario Brokers</h1>
-                            <p>Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for the solutions your clients need when banks say no.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="1">
-                            <h1>Fast Response. <span class="hl">Transparent Terms</span>. Reliable Closings.</h1>
-                            <p>Initial response within 24 hours. No surprises at closing. Up to 75–80% LTV on residential first mortgages. Flexible second and construction structures.</p>
-                        </div>
-                        <div class="hero-slide" data-slide="2">
-                            <h1>Direct Access to <span class="hl">Decision-Makers</span></h1>
-                            <p>Relationship-focused partnership. Dedicated support. Case-by-case review. We value long-term broker relationships built on trust.</p>
+                        <div class="hero-slides-track">
+                            <div class="hero-slide active" data-slide="0">
+                                <h1><span class="hl">Private Mortgage Solutions</span> for Ontario Brokers</h1>
+                                <p>Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for the solutions your clients need when banks say no.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="1">
+                                <h1>Fast Response. <span class="hl">Transparent Terms</span>. Reliable Closings.</h1>
+                                <p>Initial response within 24 hours. No surprises at closing. Up to 75–80% LTV on residential first mortgages. Flexible second and construction structures.</p>
+                            </div>
+                            <div class="hero-slide" data-slide="2">
+                                <h1>Direct Access to <span class="hl">Decision-Makers</span></h1>
+                                <p>Relationship-focused partnership. Dedicated support. Case-by-case review. We value long-term broker relationships built on trust.</p>
+                            </div>
                         </div>
                         <div class="hero-slider-nav">
                             <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
