@@ -631,16 +631,26 @@
             line-height: 1.7;
         }
 
-        /* ——— TESTIMONIALS ——— */
+        /* ——— TESTIMONIALS (infinite scroll) ——— */
         .testimonials-section { padding: var(--section-padding) 0; background: linear-gradient(180deg, #F5F6F8 0%, var(--cream) 40%, #F8F9FA 100%); position: relative; overflow: hidden; }
         .testimonials-section::before { content: ''; position: absolute; width: 40%; height: 60%; top: 20%; left: -5%; background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 70%); pointer-events: none; }
         .testimonials-section .section-header,
-        .testimonials-section .testimonials-grid { position: relative; z-index: 1; }
+        .testimonials-section .testimonials-slider { position: relative; z-index: 1; }
         .testimonials-section .section-header { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter); }
         .testimonials-section .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
         .testimonials-section .section-header p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; margin: 0; }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+        .testimonials-slider { position: relative; overflow: hidden; margin: 0 calc(-1 * var(--gutter)); padding: 0.5rem 0 2rem; }
+        .testimonials-slider::before,
+        .testimonials-slider::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; max-width: 12vw; z-index: 2; pointer-events: none; }
+        .testimonials-slider::before { left: 0; background: linear-gradient(90deg, #F5F6F8 0%, transparent 100%); }
+        .testimonials-slider::after { right: 0; background: linear-gradient(270deg, #F5F6F8 0%, transparent 100%); }
+        .testimonials-track { display: flex; gap: 1.25rem; width: max-content; will-change: transform; animation: testimonialScroll 42s linear infinite; }
+        .testimonials-track:hover { animation-play-state: paused; }
+        @keyframes testimonialScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .testimonial-card {
+            flex-shrink: 0;
+            width: 380px;
+            max-width: 90vw;
             padding: 1.75rem 1.5rem;
             background: var(--white);
             border: 1px solid var(--border);
@@ -1014,8 +1024,8 @@
             .process-card:last-child,
             .benefit-card:last-child { border-bottom: none; }
 
-            /* Testimonials grid: 1 column with border-bottom */
-            .testimonials-grid { grid-template-columns: 1fr; }
+            /* Testimonials: slider card width on tablet */
+            .testimonial-card { width: 340px; }
 
             /* FAQ: unstick heading, ensure 1 column */
             .faq-section .section-header { position: static; }
@@ -1358,37 +1368,72 @@
             <h2>What Our Clients Say</h2>
             <p>Real experiences from borrowers who trust Richview Capital</p>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card reveal" style="--i:0">
-                <span class="testimonial-quote-mark">"</span>
-                <blockquote>When the bank turned us down for our construction project, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MD</div>
-                    <div class="testimonial-author-info">
-                        <h5>Michael Davidson</h5>
-                        <span>Real Estate Developer</span>
+        <div class="testimonials-slider" aria-label="Testimonials carousel">
+            <div class="testimonials-track">
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>When the bank turned us down for our construction project, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MD</div>
+                        <div class="testimonial-author-info">
+                            <h5>Michael Davidson</h5>
+                            <span>Real Estate Developer</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-card reveal" style="--i:1">
-                <span class="testimonial-quote-mark">"</span>
-                <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">JT</div>
-                    <div class="testimonial-author-info">
-                        <h5>Jennifer Torres</h5>
-                        <span>Homeowner</span>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JT</div>
+                        <div class="testimonial-author-info">
+                            <h5>Jennifer Torres</h5>
+                            <span>Homeowner</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-card reveal" style="--i:2">
-                <span class="testimonial-quote-mark">"</span>
-                <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward with our plans.</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">RP</div>
-                    <div class="testimonial-author-info">
-                        <h5>Robert Patterson</h5>
-                        <span>Property Owner</span>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward with our plans.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RP</div>
+                        <div class="testimonial-author-info">
+                            <h5>Robert Patterson</h5>
+                            <span>Property Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>When the bank turned us down for our construction project, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MD</div>
+                        <div class="testimonial-author-info">
+                            <h5>Michael Davidson</h5>
+                            <span>Real Estate Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JT</div>
+                        <div class="testimonial-author-info">
+                            <h5>Jennifer Torres</h5>
+                            <span>Homeowner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward with our plans.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RP</div>
+                        <div class="testimonial-author-info">
+                            <h5>Robert Patterson</h5>
+                            <span>Property Owner</span>
+                        </div>
                     </div>
                 </div>
             </div>
