@@ -3217,8 +3217,8 @@
             });
 
             slideSets.forEach(set => {
-                set.querySelectorAll('.hero-slider-dot').forEach((dot, idx) => {
-                    dot.addEventListener('click', () => {
+                set.querySelectorAll('.hero-slider-progress-segment').forEach((seg, idx) => {
+                    seg.addEventListener('click', () => {
                         const setId = set.dataset.set;
                         goToSlide(setId, idx);
                         startAutoAdvance(setId);
