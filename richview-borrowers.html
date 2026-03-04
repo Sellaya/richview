@@ -30,7 +30,7 @@
             --border: rgba(0,0,0,0.08);
             --orange-light: rgba(255, 102, 0, 0.15);
             --dark-blue-deep: #070E24;
-            --container: 1120px;
+            --container: 1200px;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --btn-padding: 0.875rem 1.75rem;
             --btn-font-size: 0.9375rem;
@@ -43,16 +43,20 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            /* Mobile-first: standard horizontal spacing by device */
-            --gutter: clamp(0.75rem, 2vw, 1rem);
+            /* Standard horizontal spacing by device (match homepage) */
+            --gutter: 16px;
         }
+        @media (min-width: 640px) { :root { --gutter: 24px; } }
+        @media (min-width: 768px) { :root { --gutter: 32px; } }
+        @media (min-width: 1024px) { :root { --gutter: 48px; } }
+        @media (min-width: 1280px) { :root { --gutter: 64px; } }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; overflow-wrap: break-word; }
         main { overflow-x: hidden; min-width: 0; }
 
         img { max-width: 100%; height: auto; display: block; }
-        .container { max-width: 100%; margin: 0 auto; padding: 0 var(--gutter); width: 100%; min-width: 0; box-sizing: border-box; }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); width: 100%; min-width: 0; box-sizing: border-box; }
 
         .skip-link { position: absolute; top: -3rem; left: 1rem; z-index: 10000; padding: 0.6rem 1rem; background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-radius: 6px; transition: top 0.2s var(--ease-out); }
         .skip-link:focus { top: 1rem; outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -803,7 +807,6 @@
 
         /* ——— 1024px (TABLET) ——— */
         @media (max-width: 1024px) {
-            :root { --gutter: 1rem; }
             .container { padding: 0 var(--gutter); }
             nav { left: 4%; right: 4%; width: auto; transform: none; }
             nav.nav-hidden { transform: translateY(calc(-100% - 2rem)); }
@@ -921,7 +924,6 @@
 
         /* ——— 768px (MOBILE) ——— */
         @media (max-width: 768px) {
-            :root { --gutter: 0.875rem; }
             .container { padding: 0 var(--gutter); }
             /* Nav: smaller logo, tighter padding */
             .logo-img { height: 50px; }
@@ -995,7 +997,6 @@
 
         /* ——— 480px (SMALL PHONE) ——— */
         @media (max-width: 480px) {
-            :root { --gutter: 0.75rem; }
             .container { padding: 0 var(--gutter); }
             .section-header { padding: 0 var(--gutter); }
 

@@ -22,7 +22,7 @@
             --muted: #6B7280;
             --border: rgba(0,0,0,0.06);
             --dark-blue-deep: #070E24;
-            --container: 1120px;
+            --container: 1200px;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --btn-radius: 12px;
             --card-radius: 16px;
@@ -36,9 +36,13 @@
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
             --shadow-card-hover: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-            /* Mobile-first: standard horizontal spacing by device */
-            --gutter: clamp(0.75rem, 2vw, 1rem);
+            /* Standard horizontal spacing by device (match homepage) */
+            --gutter: 16px;
         }
+        @media (min-width: 640px) { :root { --gutter: 24px; } }
+        @media (min-width: 768px) { :root { --gutter: 32px; } }
+        @media (min-width: 1024px) { :root { --gutter: 48px; } }
+        @media (min-width: 1280px) { :root { --gutter: 64px; } }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
@@ -308,14 +312,12 @@
 
         /* ——— RESPONSIVE ——— */
         @media (max-width: 1024px) {
-            :root { --gutter: 1rem; }
             .container { padding: 0 var(--gutter); }
             nav { left: 4%; right: 4%; width: auto; transform: none; }
             nav.nav-hidden { transform: translateY(calc(-100% - 2rem)); }
             .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
         }
         @media (max-width: 768px) {
-            :root { --gutter: 0.75rem; }
             .container { padding: 0 var(--gutter); }
             .nav-links {
                 position: fixed; inset: 0; width: 100%; height: 100%; min-height: 100vh; min-height: 100dvh; z-index: 999;
@@ -349,7 +351,6 @@
             .footer-legal { justify-content: center; }
         }
         @media (max-width: 480px) {
-            :root { --gutter: 0.75rem; }
             .container { padding: 0 var(--gutter); }
             .page-hero { padding-top: 7rem; padding-bottom: 2.5rem; }
             .page-hero h1 { font-size: 1.625rem; }
