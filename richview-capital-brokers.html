@@ -42,13 +42,15 @@
             --space-xl: 4rem;
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
-            --section-padding: 5rem;
+            --section-padding: 2.5rem;
         }
 
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; overflow-wrap: break-word; }
+        main { overflow-x: hidden; min-width: 0; }
 
-        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; width: 100%; min-width: 0; box-sizing: border-box; }
 
         .skip-link { position: absolute; top: -3rem; left: 1rem; z-index: 10000; padding: 0.6rem 1rem; background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-radius: 6px; transition: top 0.2s var(--ease-out); }
         .skip-link:focus { top: 1rem; outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -247,7 +249,7 @@
         /* ——— PAGE HERO ——— */
         .page-hero {
             padding: 12rem 0 var(--space-3xl);
-            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            background: linear-gradient(135deg, rgba(11,22,53,0.9) 0%, rgba(11,22,53,0.95) 100%), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&q=80') center/cover no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -784,6 +786,7 @@
 
         /* --- Tablet (1024px) --- */
         @media (max-width: 1024px) {
+            .container { padding: 0 1.25rem; }
             nav { left: 4%; right: 4%; width: auto; transform: none; }
             nav.nav-hidden { transform: translateY(calc(-100% - 2rem)); }
             /* Nav: full-screen mobile menu (viewport-relative) */
