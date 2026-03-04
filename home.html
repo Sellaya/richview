@@ -922,7 +922,7 @@
         }
         .services-panel {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 2rem;
             align-items: center;
             position: absolute;
@@ -1009,64 +1009,6 @@
         .services-cta:hover svg {
             transform: translateX(3px);
         }
-        .services-visual {
-            position: relative;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(11,22,53,0.06) 0%, rgba(255,102,0,0.06) 100%);
-            min-height: 240px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
-        .services-panel:hover .services-visual {
-            transform: scale(1.02);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-        }
-        .services-visual img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .services-callout {
-            position: absolute;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 2;
-            background: var(--white);
-            padding: 1.25rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease-out);
-            border: 1px solid var(--border);
-            max-width: 200px;
-        }
-        .services-callout-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.25rem;
-        }
-        .services-callout-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1.2;
-        }
-        .services-callout-note {
-            font-size: 0.8125rem;
-            color: var(--muted);
-            margin-top: 0.25rem;
-        }
-
         /* ——— ABOUT (Who We Are) ——— */
         .about {
             padding: var(--section-padding) 0;
@@ -2486,7 +2428,6 @@
             .hero-trust-number { font-size: clamp(1.5rem, 4.5vw, 1.875rem); }
 
             .services-panel { grid-template-columns: 1fr; gap: 2rem; }
-            .services-visual { min-height: 220px; order: -1; }
             .services-tabs { margin-right: 0; }
             .services-tab { margin-right: 1.5rem; padding: 0.75rem 1rem 0.75rem 0; font-size: 0.9375rem; }
             .about-values { grid-template-columns: 1fr; gap: var(--space-sm); }
@@ -2601,8 +2542,6 @@
             .hero-trust-number { font-size: 1.5rem; }
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
-            .services-callout { padding: 1rem 1.25rem; bottom: 1rem; right: 1rem; max-width: 160px; }
-            .services-callout-value { font-size: 1.25rem; }
             .testimonial-card { padding: 1.5rem 1.25rem; width: 300px; }
             .testimonials-slider::before,
             .testimonials-slider::after { width: 40px; }
@@ -2842,14 +2781,6 @@
                         </ul>
                         <a href="richview-borrowers.html" class="services-cta">Explore Financing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
-                    <div class="services-visual">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="" loading="lazy">
-                        <div class="services-callout">
-                            <span class="services-callout-label">Typical turnaround</span>
-                            <div class="services-callout-value">7–10 days</div>
-                            <div class="services-callout-note">To close</div>
-                        </div>
-                    </div>
                 </div>
                 <div class="services-panel" id="panel-investors" role="tabpanel" aria-labelledby="tab-investors" aria-hidden="true">
                     <div class="services-panel-content">
@@ -2862,14 +2793,6 @@
                         </ul>
                         <a href="richview-capital-mic.html" class="services-cta">Start Investing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
-                    <div class="services-visual">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="" loading="lazy">
-                        <div class="services-callout">
-                            <span class="services-callout-label">Licensed MIC</span>
-                            <div class="services-callout-value">#13171</div>
-                            <div class="services-callout-note">ONMICA member</div>
-                        </div>
-                    </div>
                 </div>
                 <div class="services-panel" id="panel-brokers" role="tabpanel" aria-labelledby="tab-brokers" aria-hidden="true">
                     <div class="services-panel-content">
@@ -2881,14 +2804,6 @@
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Reliable partner for tough deals</li>
                         </ul>
                         <a href="richview-capital-brokers.html" class="services-cta">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                    <div class="services-visual">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" alt="" loading="lazy">
-                        <div class="services-callout">
-                            <span class="services-callout-label">Experience</span>
-                            <div class="services-callout-value">20+ years</div>
-                            <div class="services-callout-note">In alternative lending</div>
-                        </div>
                     </div>
                 </div>
             </div>
