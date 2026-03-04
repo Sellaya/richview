@@ -13,7 +13,9 @@
     <meta property="og:description" content="Earn stable returns through asset-backed mortgage investing. RRSP-eligible income from residential and construction mortgages across Ontario.">
     <meta property="og:image" content="logo.png">
     <meta property="og:url" content="richview-capital-mic.html">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -32,9 +34,17 @@
             --dark-blue-deep: #070E24;
             --container: 1200px;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --btn-padding: 0.875rem 1.75rem;
+            --ease-btn: cubic-bezier(0.22, 1, 0.36, 1);
+            --btn-padding: 0.75rem 1.5rem;
+            --btn-padding-lg: 0.875rem 1.75rem;
             --btn-font-size: 0.9375rem;
-            --btn-radius: 6px;
+            --btn-font-weight: 600;
+            --btn-letter-spacing: 0.025em;
+            --btn-radius: 12px;
+            --btn-radius-lg: 14px;
+            --btn-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
+            --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
+            --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
             --space-xs: 1rem;
             --space-sm: 1.5rem;
             --space-md: 2rem;
@@ -53,7 +63,7 @@
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
-            font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden;
             background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.35) 28%, transparent 52%),
                         radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
                         linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
@@ -245,19 +255,30 @@
         .nav-dropdown-content a:first-child { border-radius: 12px 12px 0 0; }
         .nav-dropdown-content a:last-child { border-radius: 0 0 12px 12px; }
         .cta-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--navy);
             color: var(--white);
-            padding: 0.5rem 1.15rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.8125rem;
-            letter-spacing: 0.03em;
-            transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
-            border: none;
+            padding: 0.625rem 1.5rem;
+            border-radius: var(--btn-radius-lg);
+            font-weight: var(--btn-font-weight);
+            font-size: 0.875rem;
+            letter-spacing: var(--btn-letter-spacing);
             text-decoration: none;
+            border: none;
             z-index: 2;
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
-        .cta-nav:hover { background: #0d1b3d; color: var(--white); }
+        .cta-nav:hover {
+            background: #0a1530;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--btn-shadow-hover);
+        }
+        .cta-nav:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
+        .cta-nav:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -307,7 +328,7 @@
             z-index: 1;
         }
         .page-hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: clamp(2rem, 4.5vw, 3.25rem);
             font-weight: 700;
             color: var(--white);
@@ -330,40 +351,52 @@
             justify-content: center;
         }
         .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--white);
             color: var(--navy);
-            padding: var(--btn-padding);
-            border-radius: var(--btn-radius);
+            padding: var(--btn-padding-lg);
+            border-radius: var(--btn-radius-lg);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: 0.02em;
-            transition: all 0.25s var(--ease-out);
-            border: 1px solid var(--white);
-            display: inline-block;
+            letter-spacing: var(--btn-letter-spacing);
+            border: 2px solid var(--white);
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .btn-primary:hover {
             background: transparent;
             color: var(--white);
             border-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -4px rgba(0,0,0,0.2);
         }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-primary:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
         .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: transparent;
             color: var(--white);
-            padding: var(--btn-padding);
-            border-radius: var(--btn-radius);
+            padding: var(--btn-padding-lg);
+            border-radius: var(--btn-radius-lg);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: 0.02em;
-            border: 1.5px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.25s var(--ease-out);
-            display: inline-block;
+            letter-spacing: var(--btn-letter-spacing);
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: background 0.25s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn);
         }
         .btn-secondary:hover {
             border-color: var(--white);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-2px);
         }
+        .btn-secondary:active { transform: translateY(0); }
+        .btn-secondary:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
 
         /* ——— SECTION HEADINGS ——— */
         .sec-head {
@@ -371,7 +404,7 @@
             margin-bottom: var(--space-2xl);
         }
         .sec-head h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: clamp(1.75rem, 2.5vw, 2.25rem);
             font-weight: 700;
             color: var(--navy);
@@ -435,7 +468,7 @@
         }
         .process-card:hover .process-number { color: var(--muted); }
         .process-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--navy);
@@ -509,7 +542,7 @@
         }
         .benefit-card:hover .benefit-number { color: var(--muted); }
         .benefit-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--navy);
@@ -561,7 +594,7 @@
         }
         .value-card:hover .value-badge { transform: scale(1.08); }
         .value-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--navy);
@@ -579,7 +612,7 @@
         .testimonials-section .sec-head,
         .testimonials-section .testimonials-slider { position: relative; z-index: 1; }
         .testimonials-section .sec-head { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter); }
-        .testimonials-section .sec-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .testimonials-section .sec-head h2 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
         .testimonials-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; margin: 0; }
         .testimonials-slider { position: relative; overflow: hidden; margin: 0 calc(-1 * var(--gutter)); padding: 0.5rem 0 2rem; }
         .testimonials-slider::before,
@@ -603,11 +636,11 @@
         }
         .testimonial-card::before { display: none; }
         .testimonial-card:hover { border-color: rgba(255, 102, 0, 0.2); box-shadow: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04); transform: translateY(-4px); }
-        .testimonial-quote-mark { font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1; color: var(--gold); opacity: 0.25; margin-bottom: 0.5rem; display: block; }
+        .testimonial-quote-mark { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 2.5rem; line-height: 1; color: var(--gold); opacity: 0.25; margin-bottom: 0.5rem; display: block; }
         .testimonial-card blockquote { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.65; font-style: italic; margin-bottom: 1rem; font-weight: 400; overflow-wrap: break-word; }
         .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
         .testimonial-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; flex-shrink: 0; }
-        .testimonial-author-info h5 { font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+        .testimonial-author-info h5 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
         .testimonial-author-info span { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
 
         /* ——— FAQ ——— */
@@ -746,7 +779,7 @@
             pointer-events: none;
         }
         .contact-box-header h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
@@ -838,19 +871,30 @@
         .submit-wrap { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
         .btn-submit {
             width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--navy);
             color: var(--white);
-            padding: 0.875rem 1.5rem;
+            padding: var(--btn-padding-lg);
             border: none;
-            border-radius: var(--btn-radius);
-            font-weight: 600;
+            border-radius: var(--btn-radius-lg);
+            font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: 0.02em;
+            letter-spacing: var(--btn-letter-spacing);
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.25s var(--ease-out);
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
-        .btn-submit:hover { background: var(--charcoal); color: var(--white); }
+        .btn-submit:hover {
+            background: #0a1530;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--btn-shadow-hover);
+        }
+        .btn-submit:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
+        .btn-submit:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
 
         /* ——— FOOTER ——— */
         footer { background: var(--navy); color: rgba(255,255,255,0.65); position: relative; overflow: hidden; }
@@ -868,7 +912,7 @@
         .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); transition: all 0.25s var(--ease-out); }
         .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); box-shadow: 0 0 16px rgba(255,102,0,0.5), 0 0 32px rgba(255,102,0,0.2); }
         .footer-social svg { width: 16px; height: 16px; }
-        .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+        .footer-col h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 0.625rem; }
         .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s var(--ease-out), padding-left 0.2s var(--ease-out); display: inline-block; }

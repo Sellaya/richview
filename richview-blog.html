@@ -8,7 +8,9 @@
     <link rel="icon" href="logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
     <link rel="canonical" href="richview-blog.html">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -46,7 +48,7 @@
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--charcoal);
             line-height: 1.6;
             overflow-x: hidden;
@@ -117,10 +119,30 @@
         }
         .nav-dropdown-content a:hover { color: var(--navy); background: rgba(11, 22, 53, 0.04); padding-left: 1.5rem; }
         .cta-nav {
-            background: var(--navy); color: var(--white); padding: 0.5rem 1.15rem; border-radius: 10px; font-weight: 600; font-size: 0.8125rem;
-            letter-spacing: 0.03em; transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out); border: none; text-decoration: none; z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.625rem 1.5rem;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            text-decoration: none;
+            border: none;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
+            transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .cta-nav:hover { background: #0d1b3d; color: var(--white); }
+        .cta-nav:hover {
+            background: #0a1530;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
+        }
+        .cta-nav:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(11, 22, 53, 0.12); }
+        .cta-nav:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
         .mobile-menu-btn {
             display: none; background: none; border: none; color: var(--navy); cursor: pointer; touch-action: manipulation; z-index: 1001;
             padding: 0; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 10px; transition: background 0.2s var(--ease-out); position: relative;
@@ -145,7 +167,7 @@
         }
         .page-hero .container { position: relative; z-index: 1; max-width: 700px; }
         .page-hero h1 {
-            font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white);
             margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.02em;
         }
         .page-hero p { font-size: 1.0625rem; color: rgba(255, 255, 255, 0.75); line-height: 1.7; }
@@ -172,7 +194,7 @@
         .blog-section .blog-grid { position: relative; z-index: 1; }
         .blog-section .sec-head { margin-bottom: var(--space-lg); }
         .blog-section .sec-head h2 {
-            font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy);
             margin-bottom: 0.5rem; letter-spacing: -0.02em;
         }
         .blog-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; line-height: 1.65; }
@@ -223,7 +245,7 @@
             margin-bottom: 0.5rem;
         }
         .blog-card-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--navy);
@@ -282,7 +304,7 @@
         .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); transition: all 0.25s var(--ease-out); }
         .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); }
         .footer-social svg { width: 16px; height: 16px; }
-        .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+        .footer-col h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 0.625rem; }
         .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s var(--ease-out), padding-left 0.2s var(--ease-out); display: inline-block; }
