@@ -49,6 +49,7 @@
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
             --shadow-card-hover: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --gutter: clamp(0.5rem, 2vw, 1rem);
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -64,7 +65,7 @@
         }
         main { overflow-x: hidden; min-width: 0; }
 
-        .container { max-width: 100%; margin: 0 auto; padding: 0 0.5rem; width: 100%; min-width: 0; box-sizing: border-box; }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); width: 100%; min-width: 0; box-sizing: border-box; }
         img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
         a, button { -webkit-tap-highlight-color: transparent; }
 
@@ -309,7 +310,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: clamp(7rem, 10vw, 9rem) 0.5rem var(--space-lg);
+            padding: clamp(7rem, 10vw, 9rem) var(--gutter) var(--space-lg);
             background: var(--cream);
             position: relative;
             overflow: hidden;
@@ -361,9 +362,9 @@
             grid-template-columns: 1fr 1fr;
             gap: clamp(1rem, 2.5vw, 1.75rem);
             align-items: start;
-            max-width: 100%;
+            max-width: var(--container);
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
             position: relative;
             z-index: 1;
             width: 100%;
@@ -694,7 +695,7 @@
         .hero-trust-inner {
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
         }
         .hero-trust-experience {
             font-family: 'Outfit', sans-serif;
@@ -791,9 +792,9 @@
             pointer-events: none;
         }
         .services .container {
-            max-width: 100%;
+            max-width: var(--container);
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
             width: 100%;
             position: relative;
             z-index: 1;
@@ -1030,9 +1031,9 @@
         .about-inner {
             position: relative;
             z-index: 1;
-            max-width: 100%;
+            max-width: var(--container);
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
             width: 100%;
             min-width: 0;
         }
@@ -1163,7 +1164,7 @@
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
         }
         .testimonials-section .sec-head h2 {
             font-family: 'Playfair Display', serif;
@@ -1183,9 +1184,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
-            max-width: 100%;
+            max-width: var(--container);
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
         }
         .testimonial-card {
             padding: 1.5rem 1.5rem;
@@ -1283,7 +1284,7 @@
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
         }
         .blog-section .sec-head h2 {
             font-family: 'Playfair Display', serif;
@@ -1305,7 +1306,7 @@
             gap: 1rem;
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
             width: 100%;
             min-width: 0;
         }
@@ -1419,6 +1420,8 @@
             gap: var(--space-md);
             align-items: start;
             max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--gutter);
             position: relative;
             z-index: 1;
         }
@@ -1535,6 +1538,9 @@
             pointer-events: none;
         }
         .cta-section .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
             position: relative;
             z-index: 1;
         }
@@ -1902,7 +1908,7 @@
         }
         .map-strip-heading {
             margin: 0;
-            padding: 1rem 1.5rem 0.35rem;
+            padding: 1rem var(--gutter) 0.35rem;
             font-family: 'Playfair Display', serif;
             font-size: 1.25rem;
             font-weight: 700;
@@ -1916,7 +1922,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.75rem;
-            padding: 0 0.5rem 0.75rem;
+            padding: 0 var(--gutter) 0.75rem;
         }
         .map-strip-btn {
             display: inline-flex;
@@ -1997,7 +2003,7 @@
         }
         .map-strip-address {
             margin: 0;
-            padding: 0.6rem 1.5rem 1rem;
+            padding: 0.6rem var(--gutter) 1rem;
             font-size: 0.8125rem;
             color: var(--muted);
             text-align: center;
@@ -2028,7 +2034,7 @@
             background: rgba(255,255,255,0.08);
         }
         .footer-main {
-            padding: var(--space-xl) 0 var(--space-lg);
+            padding: var(--space-xl) var(--gutter) var(--space-lg);
             position: relative;
             z-index: 1;
         }
@@ -2214,7 +2220,8 @@
 
         /* Tablet */
         @media (max-width: 1024px) {
-            .container { padding: 0 0.5rem; }
+            :root { --gutter: 0.875rem; }
+            .container { padding: 0 var(--gutter); }
             nav {
                 left: 4%;
                 right: 4%;
@@ -2409,13 +2416,13 @@
 
         /* Mobile */
         @media (max-width: 768px) {
-            :root { --section-padding: 2.75rem; }
+            :root { --section-padding: 2.75rem; --gutter: 0.875rem; }
 
-            .container { padding: 0 0.5rem; }
+            .container { padding: 0 var(--gutter); }
             .logo-img { height: 50px; }
             .nav-inner { padding: 0.55rem 1rem 0.55rem 1.25rem; min-height: 58px; }
 
-            .hero { padding-top: 7.5rem; padding-left: 0.5rem; padding-right: 0.5rem; }
+            .hero { padding-top: 7.5rem; padding-left: var(--gutter); padding-right: var(--gutter); }
             .hero-ctas { flex-direction: column; width: 100%; max-width: 280px; margin-left: auto; margin-right: auto; gap: 0.75rem; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { width: 100%; text-align: center; padding: 0.7rem 1.25rem; font-size: 0.875rem; }
@@ -2462,17 +2469,17 @@
             .footer-bottom-left { flex-direction: column; gap: 0.75rem; }
         }
 
-        /* Small phone */
+        /* Small phone - mobile first */
         @media (max-width: 480px) {
-            :root { --section-padding: 2rem; }
-            .container { padding: 0 0.5rem; }
-            .services .container { padding: 0 0.5rem; }
+            :root { --section-padding: 2rem; --gutter: 0.75rem; }
+            .container { padding: 0 var(--gutter); }
+            .services .container { padding: 0 var(--gutter); }
             .about-inner,
             .testimonials-section .sec-head,
-            .blog-section .sec-head { padding-left: 0.5rem; padding-right: 0.5rem; }
-            .faq-section .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+            .blog-section .sec-head { padding-left: var(--gutter); padding-right: var(--gutter); }
+            .faq-section .container { padding-left: var(--gutter); padding-right: var(--gutter); }
             .faq-section .sec-head p { max-width: 100%; }
-            .cta-section .container { padding: 0 0.5rem; }
+            .cta-section .container { padding: 0 var(--gutter); }
             .cta-section { padding: var(--space-md) 0; }
             .cta-box { margin-left: 0; margin-right: 0; border-radius: 10px; max-width: 100%; }
             .cta-box-header, .cta-box-body { padding: 0.85rem 0.9rem; }
@@ -2499,7 +2506,7 @@
             .map-strip-address { padding: 0.5rem 1rem; font-size: 0.75rem; }
             .logo-img { height: 40px; }
             .nav-inner { padding: 0.5rem 0.75rem 0.5rem 1rem; min-height: 52px; }
-            .hero { padding-top: 7rem; padding-left: 0.5rem; padding-right: 0.5rem; }
+            .hero { padding-top: 7rem; padding-left: var(--gutter); padding-right: var(--gutter); }
             .hero-grid { padding-left: 0; padding-right: 0; }
             .hero-trust-experience { padding-bottom: 0.25rem; font-size: 1.2rem; }
             .hero-trust-number { font-size: 1.5rem; }
