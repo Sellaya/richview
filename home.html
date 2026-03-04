@@ -544,8 +544,8 @@
             display: flex;
             align-items: stretch;
             gap: 5px;
-            padding: 0.65rem 0 0;
-            margin: 0.5rem 0 0;
+            padding: 0.85rem 0 0;
+            margin: 0.7rem 0 0;
             min-height: 20px;
             z-index: 2;
             pointer-events: auto;
@@ -691,23 +691,41 @@
         }
 
         .hero-trust { margin-top: var(--space-lg); width: 100%; position: relative; z-index: 1; }
-        .hero-trust-inner { max-width: var(--container); margin: 0 auto; padding: 0 1.25rem; }
+        .hero-trust-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
         .hero-trust-experience {
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            font-weight: 700;
+            font-size: clamp(1.375rem, 3.5vw, 1.75rem);
+            font-weight: 600;
             color: var(--charcoal);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
             margin: 0;
             display: inline-flex;
             align-items: baseline;
-            gap: 0.35rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
+            position: relative;
+            padding-bottom: 0.35rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hero-trust-experience::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            opacity: 0.5;
+            border-radius: 1px;
         }
         .hero-trust-number {
             color: var(--gold);
-            font-size: clamp(1.5rem, 3vw, 1.875rem);
-            font-weight: 800;
+            font-size: clamp(1.75rem, 4vw, 2.125rem);
+            font-weight: 700;
             letter-spacing: -0.03em;
         }
 
@@ -2356,7 +2374,7 @@
             .hero-ctas { justify-content: center; margin-top: 1rem; }
             .hero-dots { justify-content: center; margin-left: auto; margin-right: auto; margin-bottom: 0.5rem; }
             .hero-slider { min-height: clamp(240px, 42vw, 300px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.55rem 0 0; margin: 0.45rem 0 0; margin-left: 0; margin-right: auto; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
+            .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.3rem 0 0; margin-left: auto; margin-right: auto; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { height: 3px; min-width: 20px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
             .hero-slide h1 { margin-bottom: 0.4rem; }
@@ -2364,7 +2382,12 @@
             .hero-form-wrap { max-width: min(400px, 100%); margin: 0 auto; }
             .hero-trust { margin-top: var(--space-lg); }
             .hero-trust-inner { text-align: center; }
-            .hero-trust-experience { justify-content: center; }
+            .hero-trust-experience {
+                justify-content: center;
+                padding-bottom: 0.3rem;
+                font-size: clamp(1.25rem, 4vw, 1.5rem);
+            }
+            .hero-trust-number { font-size: clamp(1.5rem, 4.5vw, 1.875rem); }
 
             .services-panel { grid-template-columns: 1fr; gap: 2rem; }
             .services-visual { min-height: 220px; order: -1; }
@@ -2399,7 +2422,7 @@
             .hero-form-wrap { padding: clamp(1.25rem, 2.5vw, 2rem); }
             .hero-dots { flex-wrap: wrap; justify-content: center; margin-left: auto; margin-right: auto; gap: 0.2rem; padding: 0.3rem; }
             .hero-slider { min-height: clamp(250px, 48vw, 320px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.4rem auto 0.6rem; margin-left: auto; margin-right: auto; max-width: min(170px, 100%); min-height: 18px; }
+            .hero-slider-progress { padding: 0.28rem 0 0; margin: 0.28rem auto 0.5rem; margin-left: auto; margin-right: auto; max-width: min(170px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { min-width: 24px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
             .hero-slide h1 { margin-bottom: 0.35rem; }
@@ -2478,6 +2501,8 @@
             .nav-inner { padding: 0.5rem 0.75rem 0.5rem 1rem; min-height: 52px; }
             .hero { padding-top: 7rem; padding-left: 0.875rem; padding-right: 0.875rem; }
             .hero-grid { padding-left: 0; padding-right: 0; }
+            .hero-trust-experience { padding-bottom: 0.25rem; font-size: 1.2rem; }
+            .hero-trust-number { font-size: 1.5rem; }
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
             .services-callout { padding: 1rem 1.25rem; bottom: 1rem; right: 1rem; max-width: 160px; }
@@ -2489,7 +2514,7 @@
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
             .hero-dot-item { font-size: 0.8125rem; padding: 0.5rem 0.9rem; }
             .hero-slider { min-height: clamp(260px, 55vw, 340px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.3rem 0 0; margin: 0.35rem auto 0.55rem; margin-left: auto; margin-right: auto; max-width: min(150px, 100%); min-height: 20px; }
+            .hero-slider-progress { padding: 0.25rem 0 0; margin: 0.25rem auto 0.45rem; margin-left: auto; margin-right: auto; max-width: min(150px, 100%); min-height: 20px; }
             .hero-slider-progress-segment { min-width: 28px; height: 4px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
             .hero-slide h1 { margin-bottom: 0.35rem; }
