@@ -64,7 +64,7 @@
         }
         main { overflow-x: hidden; min-width: 0; }
 
-        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; width: 100%; min-width: 0; box-sizing: border-box; }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 1.25rem; width: 100%; min-width: 0; box-sizing: border-box; }
         img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
         a, button { -webkit-tap-highlight-color: transparent; }
 
@@ -309,7 +309,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: clamp(7rem, 10vw, 9rem) clamp(1.5rem, 4vw, 2rem) var(--space-lg);
+            padding: clamp(7rem, 10vw, 9rem) clamp(1rem, 3vw, 1.5rem) var(--space-lg);
             background: var(--cream);
             position: relative;
             overflow: hidden;
@@ -363,7 +363,7 @@
             align-items: start;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 clamp(1rem, 4vw, 1.5rem);
+            padding: 0 clamp(0.75rem, 2.5vw, 1.25rem);
             position: relative;
             z-index: 1;
             width: 100%;
@@ -691,7 +691,7 @@
         }
 
         .hero-trust { margin-top: var(--space-lg); width: 100%; position: relative; z-index: 1; }
-        .hero-trust-inner { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+        .hero-trust-inner { max-width: var(--container); margin: 0 auto; padding: 0 1.25rem; }
         .hero-trust-experience {
             font-family: 'Outfit', sans-serif;
             font-size: clamp(1.25rem, 2.5vw, 1.5rem);
@@ -775,7 +775,7 @@
         .services .container {
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             width: 100%;
             position: relative;
             z-index: 1;
@@ -1014,7 +1014,7 @@
             z-index: 1;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             width: 100%;
             min-width: 0;
         }
@@ -1145,7 +1145,7 @@
             max-width: var(--container);
             margin-left: auto;
             margin-right: auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
         }
         .testimonials-section .sec-head h2 {
             font-family: 'Playfair Display', serif;
@@ -1167,7 +1167,7 @@
             gap: 1rem;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
         }
         .testimonial-card {
             padding: 1.5rem 1.5rem;
@@ -1265,7 +1265,7 @@
             max-width: var(--container);
             margin-left: auto;
             margin-right: auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
         }
         .blog-section .sec-head h2 {
             font-family: 'Playfair Display', serif;
@@ -1287,7 +1287,7 @@
             gap: 1rem;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             width: 100%;
             min-width: 0;
         }
@@ -1898,7 +1898,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.75rem;
-            padding: 0 1.5rem 0.75rem;
+            padding: 0 1.25rem 0.75rem;
         }
         .map-strip-btn {
             display: inline-flex;
@@ -2196,7 +2196,7 @@
 
         /* Tablet */
         @media (max-width: 1024px) {
-            .container { padding: 0 1.25rem; }
+            .container { padding: 0 1rem; }
             nav {
                 left: 4%;
                 right: 4%;
@@ -2388,7 +2388,7 @@
         @media (max-width: 768px) {
             :root { --section-padding: 2.75rem; }
 
-            .container { padding: 0 1.25rem; }
+            .container { padding: 0 1rem; }
             .logo-img { height: 50px; }
             .nav-inner { padding: 0.55rem 1rem 0.55rem 1.25rem; min-height: 58px; }
 
@@ -2442,14 +2442,14 @@
         /* Small phone */
         @media (max-width: 480px) {
             :root { --section-padding: 2rem; }
-            .container { padding: 0 1rem; }
-            .services .container { padding: 0 1rem; }
+            .container { padding: 0 0.875rem; }
+            .services .container { padding: 0 0.875rem; }
             .about-inner,
             .testimonials-section .sec-head,
-            .blog-section .sec-head { padding-left: 1rem; padding-right: 1rem; }
-            .faq-section .container { padding-left: 1rem; padding-right: 1rem; }
+            .blog-section .sec-head { padding-left: 0.875rem; padding-right: 0.875rem; }
+            .faq-section .container { padding-left: 0.875rem; padding-right: 0.875rem; }
             .faq-section .sec-head p { max-width: 100%; }
-            .cta-section .container { padding: 0 1rem; }
+            .cta-section .container { padding: 0 0.875rem; }
             .cta-section { padding: var(--space-md) 0; }
             .cta-box { margin-left: 0; margin-right: 0; border-radius: 10px; max-width: 100%; }
             .cta-box-header, .cta-box-body { padding: 0.85rem 0.9rem; }
@@ -2476,7 +2476,7 @@
             .map-strip-address { padding: 0.5rem 1rem; font-size: 0.75rem; }
             .logo-img { height: 40px; }
             .nav-inner { padding: 0.5rem 0.75rem 0.5rem 1rem; min-height: 52px; }
-            .hero { padding-top: 7rem; padding-left: 1rem; padding-right: 1rem; }
+            .hero { padding-top: 7rem; padding-left: 0.875rem; padding-right: 0.875rem; }
             .hero-grid { padding-left: 0; padding-right: 0; }
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
