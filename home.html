@@ -347,7 +347,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: clamp(1.5rem, 3vw, 2.5rem);
-            align-items: center;
+            align-items: start;
             max-width: var(--container);
             margin: 0 auto;
             padding: 0 clamp(1rem, 4vw, 1.5rem);
@@ -356,7 +356,15 @@
             width: 100%;
             min-width: 0;
         }
-        .hero-content { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            min-width: 0;
+            position: relative;
+            z-index: 2;
+        }
         .hero-content h1, .hero-slide h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4.2vw, 3.5rem);
@@ -380,64 +388,79 @@
             animation: fadeUp 0.8s var(--ease-out) 0.6s forwards;
         }
         .hero-dots {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: 0.25rem;
             margin-bottom: var(--space-sm);
             flex-wrap: wrap;
             opacity: 0;
             animation: fadeUp 0.8s var(--ease-out) 0.15s forwards;
+            padding: 0.35rem;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 9999px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            width: fit-content;
         }
         .hero-dot-item {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            background: none;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
             border: none;
             cursor: pointer;
             color: var(--muted);
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             font-family: inherit;
-            padding: 0.4rem 0;
-            transition: color 0.3s, transform 0.3s var(--ease-out);
+            padding: 0.55rem 1.15rem;
+            border-radius: 9999px;
+            transition: color 0.35s var(--ease-out), background 0.4s var(--ease-spring), transform 0.3s var(--ease-out), box-shadow 0.35s var(--ease-out);
+            position: relative;
+            letter-spacing: 0.02em;
         }
-        .hero-dot-item:hover { color: var(--charcoal); }
-        .hero-dot-item.active { color: var(--charcoal); }
+        .hero-dot-item:hover:not(.active) {
+            color: var(--charcoal);
+            background: rgba(0, 0, 0, 0.06);
+            transform: scale(1.02);
+        }
+        .hero-dot-item.active {
+            color: var(--white);
+            background: var(--navy);
+            box-shadow: 0 4px 14px rgba(11, 22, 53, 0.25);
+        }
+        .hero-dot-item:nth-child(2).active {
+            background: #1e8f5e;
+            box-shadow: 0 4px 14px rgba(30, 143, 94, 0.3);
+        }
+        .hero-dot-item:nth-child(3).active {
+            background: var(--gold);
+            box-shadow: 0 4px 14px rgba(255, 102, 0, 0.3);
+        }
+        .hero-dot-item.active:hover {
+            box-shadow: 0 6px 20px rgba(11, 22, 53, 0.3);
+        }
+        .hero-dot-item:nth-child(2).active:hover { box-shadow: 0 6px 20px rgba(30, 143, 94, 0.35); }
+        .hero-dot-item:nth-child(3).active:hover { box-shadow: 0 6px 20px rgba(255, 102, 0, 0.35); }
         .hero-dot {
-            width: 14px;
-            height: 14px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             flex-shrink: 0;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.35s var(--ease-spring), opacity 0.3s var(--ease-out), background 0.35s var(--ease-out);
         }
         .hero-dot-item:nth-child(1) .hero-dot { background: var(--dark-blue); }
         .hero-dot-item:nth-child(2) .hero-dot { background: #28B676; }
         .hero-dot-item:nth-child(3) .hero-dot { background: var(--orange); }
-        .hero-dot-item:hover .hero-dot { transform: scale(1.2); }
+        .hero-dot-item:hover:not(.active) .hero-dot { transform: scale(1.15); }
         .hero-dot-item.active .hero-dot {
-            transform: scale(1.2);
-            animation: dotPulse 3s ease-in-out infinite;
-        }
-        .hero-dot-item:nth-child(1).active .hero-dot { animation-name: dotPulseBlue; }
-        .hero-dot-item:nth-child(2).active .hero-dot { animation-name: dotPulseGreen; }
-        .hero-dot-item:nth-child(3).active .hero-dot { animation-name: dotPulseOrange; }
-        @keyframes dotPulseBlue {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(11, 22, 53, 0.12); }
-            50% { opacity: 0.92; box-shadow: 0 0 0 4px rgba(11, 22, 53, 0.06); }
-        }
-        @keyframes dotPulseGreen {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(40, 182, 118, 0.12); }
-            50% { opacity: 0.92; box-shadow: 0 0 0 4px rgba(40, 182, 118, 0.06); }
-        }
-        @keyframes dotPulseOrange {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.12); }
-            50% { opacity: 0.92; box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.06); }
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1);
         }
 
         .hero-slider {
             position: relative;
-            min-height: clamp(220px, 32vw, 320px);
+            min-height: clamp(280px, 42vw, 380px);
             width: 100%;
             margin-bottom: var(--space-md);
             display: flex;
@@ -451,13 +474,19 @@
             bottom: 0;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s var(--ease-out);
+            transform: translateY(10px);
+            transition: opacity 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.42s;
             pointer-events: none;
             display: flex;
             flex-direction: column;
             min-height: 100%;
         }
-        .hero-slide-set.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .hero-slide-set.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
         .hero-slides-track {
             flex: 1 1 auto;
             min-height: 0;
@@ -475,58 +504,81 @@
             box-sizing: border-box;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s var(--ease-out);
+            transform: translateY(6px);
+            transition: opacity 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.38s;
         }
-        .hero-slide.active { opacity: 1; visibility: visible; }
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
         .hero-slide h1 { margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem); }
-        .hero-slide p { margin-bottom: clamp(1.25rem, 2.5vw, 2rem); padding-bottom: 0.5rem; font-size: clamp(0.95rem, 1.5vw, 1.1rem); max-width: 100%; }
-        .hero-slider-nav {
+        .hero-slide p {
+            margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+            padding-bottom: 0.5rem;
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            max-width: 100%;
+            overflow-wrap: break-word;
+            line-height: 1.7;
+        }
+        .hero-slider-progress {
             flex-shrink: 0;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            padding: 0.75rem 1rem 0.6rem;
-            min-height: 52px;
+            align-items: stretch;
+            gap: 6px;
+            padding: 0.85rem 0 0.5rem;
+            min-height: 28px;
             z-index: 2;
             pointer-events: auto;
             -webkit-tap-highlight-color: transparent;
-            background: linear-gradient(to top, rgba(0,0,0,0.04) 0%, transparent 85%);
-            border-radius: 0 0 12px 12px;
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto;
         }
-        .hero-slider-dot {
-            width: 8px;
-            height: 8px;
-            min-width: 8px;
-            min-height: 8px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.22);
+        .hero-slider-progress-segment {
+            flex: 1;
+            min-width: 0;
+            height: 4px;
+            border-radius: 9999px;
             border: none;
             cursor: pointer;
             padding: 0;
             margin: 0;
-            transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
-            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: background 0.3s var(--ease-out);
             position: relative;
+            display: block;
         }
-        .hero-slider-dot::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+        .hero-slider-progress-segment:hover {
+            background: rgba(0, 0, 0, 0.18);
         }
-        .hero-slider-dot.active {
-            background: var(--navy);
-            transform: scale(1.35);
-            box-shadow: 0 0 0 2px rgba(255,255,255,0.95), 0 2px 6px rgba(11,22,53,0.2);
+        .hero-slider-progress-segment:focus {
+            outline: none;
         }
-        .hero-slider-dot:hover { background: rgba(0,0,0,0.45); }
-        .hero-slider-dot.active:hover { background: var(--navy); }
-        .hero-slider-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+        .hero-slider-progress-segment:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+        .hero-slider-progress-fill {
+            display: block;
+            height: 100%;
+            width: 0;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--navy), var(--gold));
+            transform-origin: left;
+        }
+        .hero-slider-progress-segment:not(.active) .hero-slider-progress-fill {
+            width: 0;
+            animation: none;
+        }
+        .hero-slider-progress-segment.active .hero-slider-progress-fill {
+            animation: heroProgressFill 5s linear forwards;
+        }
+        @keyframes heroProgressFill {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
         .hero .btn-pri, .btn-pri {
             background: var(--navy);
             color: var(--white);
@@ -2280,13 +2332,12 @@
             .hero-content { align-items: center; }
             .hero-content p, .hero-slide p { margin-left: auto; margin-right: auto; text-align: center; }
             .hero-ctas { justify-content: center; }
-            .hero-dots { justify-content: center; margin-bottom: var(--space-sm); }
-            .hero-slider { min-height: clamp(260px, 45vw, 300px); margin-bottom: var(--space-sm); }
-            .hero-slider-nav { min-height: 54px; padding: 0.8rem 1rem 0.6rem; gap: 0.6rem; }
+            .hero-dots { justify-content: center; margin-left: auto; margin-right: auto; }
+            .hero-slider { min-height: clamp(320px, 55vw, 380px); margin-bottom: var(--space-sm); }
+            .hero-slider-progress { padding: 0.75rem 0 0.45rem; gap: 5px; max-width: 160px; }
+            .hero-slider-progress-segment { height: 3px; }
             .hero-slides-track { padding-bottom: 0.35rem; }
             .hero-slide p { margin-bottom: 1rem; padding-bottom: 0.5rem; }
-            .hero-slider-dot { width: 8px; height: 8px; min-width: 8px; min-height: 8px; }
-            .hero-slider-dot::before { width: 36px; height: 36px; }
             .hero-form-wrap { max-width: min(400px, 100%); margin: 0 auto; }
             .hero-trust { margin-top: var(--space-lg); }
             .hero-trust-inner { text-align: center; }
@@ -2323,13 +2374,11 @@
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { width: 100%; text-align: center; padding: 0.7rem 1.25rem; font-size: 0.875rem; }
             .hero-form-wrap { padding: clamp(1.25rem, 2.5vw, 2rem); }
-            .hero-dots { flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
-            .hero-slider { min-height: clamp(300px, 55vw, 360px); margin-bottom: var(--space-sm); }
-            .hero-slider-nav { min-height: 56px; padding: 0.85rem 1rem 0.65rem; gap: 0.65rem; }
+            .hero-dots { flex-wrap: wrap; justify-content: center; margin-left: auto; margin-right: auto; gap: 0.2rem; padding: 0.3rem; }
+            .hero-slider { min-height: clamp(340px, 60vw, 400px); margin-bottom: var(--space-sm); }
+            .hero-slider-progress { padding: 0.8rem 0 0.5rem; max-width: 170px; }
             .hero-slides-track { padding-bottom: 0.4rem; }
             .hero-slide p { margin-bottom: 0.85rem; padding-bottom: 0.5rem; }
-            .hero-slider-dot { width: 9px; height: 9px; min-width: 9px; min-height: 9px; }
-            .hero-slider-dot::before { width: 40px; height: 40px; }
 
             .services-panel-content h3 { font-size: 1.375rem; }
             .services-panels { min-height: 280px; }
@@ -2413,12 +2462,10 @@
             .faq-q { padding: 0.875rem 1rem; }
             .faq-a p { padding: 0 1rem 0.875rem 1rem; }
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
-            .hero-dot-item { font-size: 0.85rem; }
-            .hero-slider { min-height: clamp(320px, 72vw, 400px); }
-            .hero-slider-nav { min-height: 56px; padding: 0.9rem 1rem 0.7rem; gap: 0.6rem; }
+            .hero-dot-item { font-size: 0.8125rem; padding: 0.5rem 0.9rem; }
+            .hero-slider { min-height: clamp(360px, 75vw, 420px); }
+            .hero-slider-progress { padding: 0.85rem 0 0.5rem; max-width: 150px; }
             .hero-slides-track { padding-bottom: 0.4rem; }
-            .hero-slider-dot { width: 9px; height: 9px; min-width: 9px; min-height: 9px; }
-            .hero-slider-dot::before { width: 44px; height: 44px; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
         }
@@ -2493,10 +2540,10 @@
                                 <p>Case-by-case evaluation. Direct communication with decision-makers. No call centers—just experienced professionals who understand your needs.</p>
                             </div>
                         </div>
-                        <div class="hero-slider-nav">
-                            <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="1" aria-label="Slide 2"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="2" aria-label="Slide 3"></button>
+                        <div class="hero-slider-progress" role="tablist" aria-label="Slide progress">
+                            <button type="button" class="hero-slider-progress-segment active" data-slide-idx="0" role="tab" aria-label="Slide 1" aria-selected="true"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="1" role="tab" aria-label="Slide 2" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="2" role="tab" aria-label="Slide 3" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
                         </div>
                     </div>
                     <div class="hero-slide-set" data-set="investors">
@@ -2514,10 +2561,10 @@
                                 <p>Monthly or quarterly income from mortgage interest. Capital preservation focus. Hold in RRSP, RRIF, or TFSA for tax-advantaged growth.</p>
                             </div>
                         </div>
-                        <div class="hero-slider-nav">
-                            <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="1" aria-label="Slide 2"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="2" aria-label="Slide 3"></button>
+                        <div class="hero-slider-progress" role="tablist" aria-label="Slide progress">
+                            <button type="button" class="hero-slider-progress-segment active" data-slide-idx="0" role="tab" aria-label="Slide 1" aria-selected="true"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="1" role="tab" aria-label="Slide 2" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="2" role="tab" aria-label="Slide 3" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
                         </div>
                     </div>
                     <div class="hero-slide-set" data-set="brokers">
@@ -2535,10 +2582,10 @@
                                 <p>Relationship-focused partnership. Dedicated support. Case-by-case review. We value long-term broker relationships built on trust.</p>
                             </div>
                         </div>
-                        <div class="hero-slider-nav">
-                            <button type="button" class="hero-slider-dot active" data-slide-idx="0" aria-label="Slide 1"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="1" aria-label="Slide 2"></button>
-                            <button type="button" class="hero-slider-dot" data-slide-idx="2" aria-label="Slide 3"></button>
+                        <div class="hero-slider-progress" role="tablist" aria-label="Slide progress">
+                            <button type="button" class="hero-slider-progress-segment active" data-slide-idx="0" role="tab" aria-label="Slide 1" aria-selected="true"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="1" role="tab" aria-label="Slide 2" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
+                            <button type="button" class="hero-slider-progress-segment" data-slide-idx="2" role="tab" aria-label="Slide 3" aria-selected="false"><span class="hero-slider-progress-fill"></span></button>
                         </div>
                     </div>
                 </div>
@@ -3113,9 +3160,12 @@
                 const set = document.querySelector('.hero-slide-set[data-set="' + setId + '"]');
                 if (!set) return;
                 const slides = set.querySelectorAll('.hero-slide');
-                const navDots = set.querySelectorAll('.hero-slider-dot');
+                const segments = set.querySelectorAll('.hero-slider-progress-segment');
                 slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-                navDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+                segments.forEach((seg, i) => {
+                    seg.classList.toggle('active', i === idx);
+                    seg.setAttribute('aria-selected', i === idx);
+                });
             }
 
             function nextSlide(setId) {
