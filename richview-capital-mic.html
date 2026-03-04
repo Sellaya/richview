@@ -43,7 +43,8 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            --gutter: clamp(0.5rem, 2vw, 1rem);
+            /* Mobile-first: standard horizontal spacing by device */
+            --gutter: clamp(0.75rem, 2vw, 1rem);
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }

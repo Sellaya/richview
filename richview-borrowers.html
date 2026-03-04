@@ -43,7 +43,8 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            --gutter: clamp(0.5rem, 2vw, 1rem);
+            /* Mobile-first: standard horizontal spacing by device */
+            --gutter: clamp(0.75rem, 2vw, 1rem);
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -338,7 +339,7 @@
             max-width: var(--container);
             margin-left: auto;
             margin-right: auto;
-            padding: 0 0.5rem;
+            padding: 0 var(--gutter);
         }
         .section-header h2 {
             font-family: 'Playfair Display', serif;
@@ -554,10 +555,10 @@
 
         /* ——— TESTIMONIALS ——— */
         .testimonials-section { padding: var(--section-padding) 0; background: var(--cream); position: relative; }
-        .testimonials-section .section-header { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 0.5rem; }
+        .testimonials-section .section-header { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter); }
         .testimonials-section .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
         .testimonials-section .section-header p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; margin: 0; }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: var(--container); margin: 0 auto; padding: 0 0.5rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
         .testimonial-card { padding: 2.25rem 1.75rem; border-right: 1px solid var(--border); position: relative; transition: background 0.35s var(--ease-out); }
         .testimonial-card:last-child { border-right: none; }
         .testimonial-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-out); }
@@ -802,7 +803,8 @@
 
         /* ——— 1024px (TABLET) ——— */
         @media (max-width: 1024px) {
-            .container { padding: 0 0.5rem; }
+            :root { --gutter: 1rem; }
+            .container { padding: 0 var(--gutter); }
             nav { left: 4%; right: 4%; width: auto; transform: none; }
             nav.nav-hidden { transform: translateY(calc(-100% - 2rem)); }
             /* Nav: full-screen mobile menu (viewport-relative) */
@@ -919,7 +921,8 @@
 
         /* ——— 768px (MOBILE) ——— */
         @media (max-width: 768px) {
-            .container { padding: 0 0.5rem; }
+            :root { --gutter: 0.875rem; }
+            .container { padding: 0 var(--gutter); }
             /* Nav: smaller logo, tighter padding */
             .logo-img { height: 50px; }
             .nav-inner { padding: 0.55rem 1rem 0.55rem 1.25rem; min-height: 58px; }
@@ -992,12 +995,12 @@
 
         /* ——— 480px (SMALL PHONE) ——— */
         @media (max-width: 480px) {
-            /* Container padding: 1rem */
-            .container { padding: 0 0.5rem; }
-            .section-header { padding: 0 0.5rem; }
+            :root { --gutter: 0.75rem; }
+            .container { padding: 0 var(--gutter); }
+            .section-header { padding: 0 var(--gutter); }
 
             /* Hero padding-top: 7rem */
-            .page-hero { padding-top: 7rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 2.75rem; }
+            .page-hero { padding-top: 7rem; padding-left: var(--gutter); padding-right: var(--gutter); padding-bottom: 2.75rem; }
             .page-hero h1 { font-size: 1.75rem; margin-bottom: var(--space-sm); }
             .page-hero p { font-size: 0.9375rem; margin-bottom: var(--space-md); }
             .hero-ctas { margin-top: var(--space-sm); }
@@ -1031,7 +1034,7 @@
             .cta-text p { font-size: 0.875rem; }
 
             /* Testimonials grid padding */
-            .testimonials-grid { padding: 0 0.5rem; }
+            .testimonials-grid { padding: 0 var(--gutter); }
 
             /* Touch-friendly button sizes (min 44px tap target) */
             .btn-primary,

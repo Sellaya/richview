@@ -43,7 +43,8 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            --gutter: clamp(0.625rem, 2.5vw, 1.25rem);
+            /* Mobile-first: standard horizontal spacing by device */
+            --gutter: clamp(0.75rem, 2vw, 1rem);
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -787,7 +788,8 @@
 
         /* --- Tablet (1024px) --- */
         @media (max-width: 1024px) {
-            .container { padding: 0 0.5rem; }
+            :root { --gutter: 1rem; }
+            .container { padding: 0 var(--gutter); }
             nav { left: 4%; right: 4%; width: auto; transform: none; }
             nav.nav-hidden { transform: translateY(calc(-100% - 2rem)); }
             /* Nav: full-screen mobile menu (viewport-relative) */
@@ -962,17 +964,17 @@
 
         /* --- Small Phone (480px) --- */
         @media (max-width: 480px) {
-            /* Container padding: 1rem */
-            .container { padding: 0 0.5rem; }
-            .page-hero-inner { padding: 0 0.5rem; }
+            :root { --gutter: 0.75rem; }
+            .container { padding: 0 var(--gutter); }
+            .page-hero-inner { padding: 0 var(--gutter); }
             .page-hero h1 { margin-bottom: var(--space-sm); }
             .page-hero p { margin-bottom: var(--space-md); }
             .hero-ctas { margin-top: var(--space-sm); }
             .benefits-grid,
             .fund-grid,
             .guidelines-grid,
-            .testimonials-grid { padding: 0 0.5rem; }
-            .testimonials-section .sec-head { padding: 0 0.5rem; }
+            .testimonials-grid { padding: 0 var(--gutter); }
+            .testimonials-section .sec-head { padding: 0 var(--gutter); }
 
             /* Hero padding: 7rem top */
             .page-hero { padding-top: 7rem; padding-bottom: var(--space-md); }
