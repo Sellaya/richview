@@ -45,6 +45,14 @@
             --section-padding: 2.5rem;
             /* Standard horizontal spacing by device (match homepage) */
             --gutter: 16px;
+            /* iOS-style glass (investors page) */
+            --glass-bg: rgba(255, 255, 255, 0.62);
+            --glass-bg-strong: rgba(255, 255, 255, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.55);
+            --glass-border-subtle: rgba(0, 0, 0, 0.06);
+            --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            --glass-blur: 20px;
+            --glass-blur-strong: 28px;
         }
         @media (min-width: 640px) { :root { --gutter: 24px; } }
         @media (min-width: 768px) { :root { --gutter: 32px; } }
@@ -94,7 +102,7 @@
         .skip-link:focus { top: 1rem; outline: 2px solid var(--gold); outline-offset: 2px; }
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-        /* ——— NAVIGATION (minimal UI) ——— */
+        /* ——— NAVIGATION (glass UI) ——— */
         nav {
             position: fixed;
             top: 1.25rem;
@@ -102,20 +110,21 @@
             transform: translateX(-50%);
             width: 98%;
             max-width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-radius: 16px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur-strong)) saturate(180%);
+            -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(180%);
+            border-radius: 20px;
             z-index: 1000;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-            transition: box-shadow 0.25s var(--ease-out), top 0.25s var(--ease-out), border-color 0.2s, transform 0.35s var(--ease-out);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            transition: box-shadow 0.25s var(--ease-out), top 0.25s var(--ease-out), background 0.25s var(--ease-out), border-color 0.2s, transform 0.35s var(--ease-out);
             overflow: visible;
         }
         nav.scrolled {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
             top: 1rem;
-            border-color: rgba(0, 0, 0, 0.06);
+            border-color: rgba(255, 255, 255, 0.65);
         }
         nav.nav-hidden {
             transform: translateX(-50%) translateY(calc(-100% - 2rem));
@@ -173,13 +182,13 @@
             left: 0;
             margin-top: 0.5rem;
             min-width: 200px;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 12px;
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(var(--glass-blur-strong));
+            -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            border-radius: 14px;
             padding: 0.5rem 0;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 12px 24px -8px rgba(0, 0, 0, 0.08), 0 24px 48px -12px rgba(0, 0, 0, 0.06);
             z-index: 1001;
             pointer-events: auto;
             display: none;
@@ -195,8 +204,8 @@
             left: 20px;
             width: 12px;
             height: 12px;
-            background: rgba(255, 255, 255, 0.98);
-            border-left: 1px solid rgba(0, 0, 0, 0.06);
+            background: var(--glass-bg-strong);
+            border-left: 1px solid var(--glass-border);
             border-top: 1px solid rgba(0, 0, 0, 0.06);
             transform: rotate(45deg);
             box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
@@ -387,23 +396,28 @@
         .sec-head-center { text-align: center; }
         .sec-head-center p { margin: 0 auto; }
 
-        /* ——— HOW MIC INVESTING WORKS (Bordered Grid) ——— */
+        /* ——— HOW MIC INVESTING WORKS (Glass panels) ——— */
         .mic-process {
             padding: var(--section-padding) 0;
-            background: var(--white);
+            background: transparent;
+            position: relative;
         }
         .process-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0;
+            gap: 1rem;
         }
         .process-card {
             padding: 2rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
             position: relative;
             overflow: hidden;
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+            box-shadow: var(--glass-shadow);
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
         }
         .process-card::before {
             content: '';
@@ -416,13 +430,13 @@
             transform: scaleY(0);
             transform-origin: center bottom;
             transition: transform 0.35s var(--ease-out);
+            border-radius: 16px 0 0 16px;
         }
-        .process-card:nth-child(4n) { border-right: none; }
-        .process-card:nth-last-child(-n+4) { border-bottom: none; }
         .process-card:hover {
-            background: var(--cream);
+            background: rgba(255, 255, 255, 0.78);
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            border-color: rgba(255, 255, 255, 0.8);
         }
         .process-card:hover::before { transform: scaleY(1); }
         .process-number {
@@ -468,16 +482,19 @@
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
+            gap: 1rem;
         }
         .benefit-card {
             padding: 2rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
             position: relative;
             overflow: hidden;
-            background: var(--white);
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+            box-shadow: var(--glass-shadow);
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
         }
         .benefit-card::before {
             content: '';
@@ -490,13 +507,13 @@
             transform: scaleY(0);
             transform-origin: center bottom;
             transition: transform 0.35s var(--ease-out);
+            border-radius: 16px 0 0 16px;
         }
-        .benefit-card:nth-child(3n) { border-right: none; }
-        .benefit-card:nth-last-child(-n+3) { border-bottom: none; }
         .benefit-card:hover {
-            background: var(--cream);
+            background: rgba(255, 255, 255, 0.78);
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            border-color: rgba(255, 255, 255, 0.8);
         }
         .benefit-card:hover::before { transform: scaleY(1); }
         .benefit-number {
@@ -521,10 +538,11 @@
             line-height: 1.65;
         }
 
-        /* ——— WHY INVEST (Value Cards) ——— */
+        /* ——— WHY INVEST (Value Cards – glass) ——— */
         .why-invest {
             padding: var(--section-padding) 0;
-            background: var(--white);
+            background: transparent;
+            position: relative;
         }
         .values-grid {
             display: grid;
@@ -533,17 +551,20 @@
         }
         .value-card {
             padding: 2rem 1.75rem;
-            background: var(--cream);
-            border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.04);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             position: relative;
             transition: all 0.4s var(--ease-out);
         }
         .value-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-            background: var(--white);
-            border: 1px solid var(--border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            background: var(--glass-bg-strong);
+            border-color: rgba(255, 255, 255, 0.8);
         }
         .value-badge {
             display: inline-flex;
@@ -584,15 +605,22 @@
         .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
         .testimonial-card {
             padding: 1.75rem 1.5rem;
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
             border-radius: 16px;
             position: relative;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--glass-shadow);
+            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s var(--ease-out);
         }
         .testimonial-card::before { display: none; }
-        .testimonial-card:hover { border-color: rgba(255, 102, 0, 0.2); box-shadow: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04); transform: translateY(-4px); }
+        .testimonial-card:hover {
+            background: var(--glass-bg-strong);
+            border-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+            transform: translateY(-4px);
+        }
         .testimonial-quote-mark { font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1; color: var(--gold); opacity: 0.25; margin-bottom: 0.5rem; display: block; }
         .testimonial-card blockquote { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.65; font-style: italic; margin-bottom: 1rem; font-weight: 400; overflow-wrap: break-word; }
         .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
@@ -637,15 +665,19 @@
             gap: var(--space-sm);
         }
         .faq-item {
-            background: var(--white);
-            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             transition: all 0.35s var(--ease-out);
         }
         .faq-item.open {
-            border-color: rgba(11, 22, 53, 0.15);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            background: var(--glass-bg-strong);
+            border-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
         }
         .faq-q {
             width: 100%;
@@ -713,11 +745,14 @@
         .contact-box {
             max-width: 580px;
             margin: 0 auto;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(var(--glass-blur-strong));
+            -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+            border-radius: 20px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
             overflow: hidden;
             position: relative;
+            border: 1px solid var(--glass-border);
             border-top: 3px solid var(--gold);
         }
         .contact-box-header {
