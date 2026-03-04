@@ -740,42 +740,65 @@
 
         /* ——— CONTACT / CTA BOX ——— */
         .contact-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 35%, #F8F9FA 100%);
+            padding: calc(var(--section-padding) * 1.4) 0;
+            background:
+                linear-gradient(165deg, #EEF0F3 0%, #F5F6F8 25%, #FAFBFC 50%, #F3F4F6 75%, #EEF0F3 100%);
             position: relative;
             overflow: hidden;
         }
         .contact-section::before {
             content: '';
             position: absolute;
-            width: 55%;
-            height: 60%;
-            top: 15%;
-            right: -10%;
-            background: radial-gradient(ellipse at 70% 30%, rgba(255, 102, 0, 0.04) 0%, transparent 55%);
+            inset: 0;
+            background:
+                radial-gradient(ellipse 90% 70% at 30% 40%, rgba(255, 102, 0, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 50% at 80% 70%, rgba(11, 22, 53, 0.05) 0%, transparent 50%);
             pointer-events: none;
+        }
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(11,22,53,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(11,22,53,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            opacity: 0.7;
         }
         .contact-section .container { position: relative; z-index: 1; }
         .cta-box {
-            max-width: var(--container);
+            max-width: min(960px, calc(100% - 2 * var(--gutter)));
             margin: 0 auto;
-            background: var(--navy);
-            border-radius: 16px;
-            padding: var(--space-xl) var(--space-xl);
+            background: linear-gradient(155deg, var(--navy) 0%, #0d1a3d 50%, #070e24 100%);
+            border-radius: 20px;
+            padding: 2rem 2.25rem;
             display: grid;
             grid-template-columns: 1fr 1.1fr;
-            gap: var(--space-xl);
+            gap: 2rem;
             align-items: start;
             position: relative;
             overflow: hidden;
+            box-shadow:
+                0 4px 6px -1px rgba(0,0,0,0.08),
+                0 16px 36px -12px rgba(0,0,0,0.2),
+                0 0 0 1px rgba(255,255,255,0.06) inset;
         }
         .cta-box::before {
             content: '';
             position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--gold) 0%, rgba(255,102,0,0.6) 100%);
+            z-index: 1;
+        }
+        .cta-box::after {
+            content: '';
+            position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background:
-                radial-gradient(circle at 10% 50%, rgba(255,102,0,0.06) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(255,102,0,0.04) 0%, transparent 50%);
+                radial-gradient(circle at 15% 50%, rgba(255,102,0,0.08) 0%, transparent 45%),
+                radial-gradient(circle at 88% 85%, rgba(255,102,0,0.05) 0%, transparent 45%);
             pointer-events: none;
         }
         .cta-text { position: relative; }
