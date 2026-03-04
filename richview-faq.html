@@ -312,8 +312,21 @@
         /* ——— OUR STORY ——— */
         .our-story {
             padding: var(--space-xl) 0 var(--space-lg) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 40%, #F8F9FA 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .our-story::before {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 70%;
+            top: 10%;
+            left: -8%;
+            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .our-story .container, .our-story .sec-head, .our-story .story-content { position: relative; z-index: 1; }
         .our-story .sec-head { margin-bottom: var(--space-md); }
         .our-story .sec-head p { margin-bottom: 0; }
         .story-content {
@@ -330,8 +343,21 @@
         /* ——— OUR VALUES ——— */
         .our-values {
             padding: var(--space-lg) 0 var(--section-padding) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #F8F9FA 0%, #FAFAFA 50%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .our-values::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 60%;
+            bottom: 10%;
+            right: -10%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .our-values .container, .our-values .sec-head, .our-values .values-grid { position: relative; z-index: 1; }
         .our-values .sec-head { text-align: center; margin-bottom: var(--space-md); }
         .our-values .sec-head p { margin: 0 auto; }
         .values-grid {
@@ -384,8 +410,23 @@
         /* ——— TEAM SECTION ——— */
         .team-section {
             padding: 2.5rem 0 3rem;
-            background: var(--cream);
+            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #F5F6F8 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .team-section::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 65%;
+            bottom: 15%;
+            right: -10%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .team-section .container,
+        .team-section .sec-head,
+        .team-section .team-grid { position: relative; z-index: 1; }
         .team-section > .container > .sec-head:first-child { margin-bottom: 1.5rem; }
         .team-section .team-grid + .sec-head { margin-top: 1.75rem; margin-bottom: 1.25rem; }
         .team-grid {
@@ -591,8 +632,21 @@
         /* ——— CONTACT FORM ——— */
         .contact-form-section {
             padding: var(--section-padding) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 50%, #F5F6F8 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 80%;
+            top: 5%;
+            right: -5%;
+            background: radial-gradient(ellipse at 80% 30%, rgba(11, 22, 53, 0.025) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .contact-form-section .container { position: relative; z-index: 1; }
         .contact-form-container {
             max-width: 580px;
             margin: 0 auto;

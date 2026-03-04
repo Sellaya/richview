@@ -48,7 +48,7 @@
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: var(--white); font-weight: 400; overflow-wrap: break-word; }
+        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); line-height: 1.6; overflow-x: hidden; background: linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 35%, #FAFAFA 70%, #FFFFFF 100%); background-attachment: fixed; font-weight: 400; overflow-wrap: break-word; }
         main { overflow-x: hidden; min-width: 0; }
 
         img { max-width: 100%; height: auto; display: block; }
@@ -348,8 +348,22 @@
         /* ——— WHY WORK WITH US (Bordered Grid) ——— */
         .why-section {
             padding: var(--section-padding) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .why-section::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 65%;
+            top: 15%;
+            right: -10%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .why-section .sec-head,
+        .why-section .benefits-grid { position: relative; z-index: 1; }
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -411,8 +425,22 @@
         /* ——— WHAT WE FUND (Bordered Grid) ——— */
         .fund-section {
             padding: var(--section-padding) 0;
-            background: var(--cream);
+            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #FAFBFC 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .fund-section::before {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 65%;
+            bottom: 15%;
+            left: -8%;
+            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .fund-section .sec-head,
+        .fund-section .fund-grid { position: relative; z-index: 1; }
         .fund-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -475,8 +503,22 @@
         /* ——— SUBMISSION GUIDELINES (Bordered Grid) ——— */
         .guidelines-section {
             padding: var(--section-padding) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 40%, #F8F9FA 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .guidelines-section::before {
+            content: '';
+            position: absolute;
+            width: 55%;
+            height: 70%;
+            top: 10%;
+            right: -12%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.04) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .guidelines-section .sec-head,
+        .guidelines-section .guidelines-grid { position: relative; z-index: 1; }
         .guidelines-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -550,7 +592,19 @@
         }
 
         /* ——— TESTIMONIALS ——— */
-        .testimonials-section { padding: var(--section-padding) 0; background: var(--cream); position: relative; }
+        .testimonials-section { padding: var(--section-padding) 0; background: linear-gradient(180deg, var(--cream) 0%, #FAFBFC 50%, #F5F6F8 100%); position: relative; overflow: hidden; }
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 65%;
+            top: 20%;
+            right: -8%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.04) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .testimonials-section .sec-head,
+        .testimonials-section .testimonials-grid { position: relative; z-index: 1; }
         .testimonials-section .sec-head { text-align: left; margin-bottom: var(--space-2xl); max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 0.5rem; }
         .testimonials-section .sec-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
         .testimonials-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; margin: 0; }
@@ -570,8 +624,21 @@
         /* ——— FAQ ——— */
         .faq-section {
             padding: var(--section-padding) 0;
-            background: var(--cream);
+            background: linear-gradient(180deg, #F5F6F8 0%, var(--cream) 50%, #FAFBFC 100%);
+            position: relative;
+            overflow: hidden;
         }
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 70%;
+            bottom: 10%;
+            left: -12%;
+            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .faq-section .container { position: relative; z-index: 1; }
         .faq-section .container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
