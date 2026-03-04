@@ -709,68 +709,31 @@
 
         /* ——— CONTACT FORM ——— */
         .contact-section {
-            padding: calc(var(--space-2xl) * 1.2) 0;
-            background:
-                linear-gradient(165deg, #EEF0F3 0%, #F5F6F8 25%, var(--cream) 50%, #F8F9FA 75%, #EEF0F3 100%);
+            padding: var(--space-2xl) 0;
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
             position: relative;
-            overflow: hidden;
         }
         .contact-section::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(ellipse 90% 70% at 50% 30%, rgba(255, 102, 0, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(11, 22, 53, 0.04) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 102, 0, 0.06) 0%, transparent 60%);
             pointer-events: none;
-        }
-        .contact-section::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(rgba(11,22,53,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(11,22,53,0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            opacity: 0.75;
         }
         .contact-section .container { position: relative; z-index: 1; }
         .contact-box {
-            max-width: min(960px, calc(100% - 2 * var(--gutter)));
+            max-width: 580px;
             margin: 0 auto;
-            background: linear-gradient(165deg, #FFFFFF 0%, #FCFCFD 100%);
-            border-radius: 20px;
-            box-shadow:
-                0 4px 6px -1px rgba(0,0,0,0.04),
-                0 12px 28px -8px rgba(11, 22, 53, 0.1),
-                0 24px 56px -16px rgba(11, 22, 53, 0.06),
-                0 0 0 1px rgba(0,0,0,0.04),
-                inset 0 1px 0 0 rgba(255,255,255,0.9);
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
             overflow: hidden;
             position: relative;
-            border: 1px solid rgba(0,0,0,0.06);
-            transition: box-shadow 0.35s var(--ease-out);
-        }
-        .contact-box::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--gold) 0%, rgba(255,102,0,0.7) 100%);
-            z-index: 1;
-        }
-        .contact-box:hover {
-            box-shadow:
-                0 8px 16px -4px rgba(0,0,0,0.06),
-                0 20px 40px -12px rgba(11, 22, 53, 0.14),
-                0 32px 64px -20px rgba(11, 22, 53, 0.1),
-                0 0 0 1px rgba(0,0,0,0.05),
-                inset 0 1px 0 0 rgba(255,255,255,0.95);
+            border-top: 3px solid var(--gold);
         }
         .contact-box-header {
-            background: linear-gradient(155deg, var(--navy) 0%, #0d1a3d 50%, var(--dark-blue-deep) 100%);
-            padding: 1.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            padding: 1.5rem 1.75rem;
             position: relative;
             overflow: hidden;
         }
@@ -778,8 +741,8 @@
             content: '';
             position: absolute;
             top: 0; right: 0;
-            width: 140px; height: 140px;
-            background: radial-gradient(circle, rgba(255, 102, 0, 0.15) 0%, transparent 65%);
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
             pointer-events: none;
         }
         .contact-box-header h2 {
