@@ -58,6 +58,11 @@
             --btn-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
             --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
             --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
+            --btn-pri-hover: #0c1838;
+            --btn-sec-hover-bg: rgba(11, 22, 53, 0.08);
+            --btn-sec-hover-border: rgba(11, 22, 53, 0.35);
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
+            --btn-orange-hover: #e65c00;
             --btn-border: 1px solid rgba(0, 0, 0, 0.08);
             --btn-outline: 2px solid rgba(255, 102, 0, 0.5);
             --btn-outline-offset: 2px;
@@ -106,6 +111,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
         main { overflow-x: hidden; min-width: 0; }
+
+        /* Fewer awkward single-word line breaks in section descriptions (responsive) */
+        .sec-head p, .services-desc { text-wrap: balance; }
 
         /* Base heading hierarchy — bold, confident, modern */
         h1, h2, h3, h4, h5, h6 {
@@ -336,10 +344,10 @@
             transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .cta-nav:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .cta-nav:active {
             transform: translateY(0);
@@ -464,7 +472,7 @@
             color: var(--charcoal);
             letter-spacing: var(--tracking-tight);
         }
-        .hero-content h1 .hl, .hero-slide h1 .hl { color: var(--gold); font-style: italic; font-weight: 600; }
+        .hero-content h1 .hl, .hero-slide h1 .hl { color: var(--gold); font-weight: 600; }
         .hero-content p, .hero-slide p {
             font-size: clamp(1rem, 1.5vw, 1.125rem);
             color: var(--muted);
@@ -707,10 +715,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .hero .btn-pri:hover, .btn-pri:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .hero .btn-pri:active, .btn-pri:active {
             transform: translateY(0);
@@ -738,11 +746,11 @@
             transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .hero .btn-sec:hover, .btn-sec:hover {
-            background: rgba(11, 22, 53, 0.04);
+            background: var(--btn-sec-hover-bg);
             color: var(--navy);
-            border-color: rgba(11, 22, 53, 0.2);
+            border-color: var(--btn-sec-hover-border);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(11, 22, 53, 0.08);
         }
         .hero .btn-sec:active, .btn-sec:active {
             transform: translateY(0);
@@ -752,7 +760,14 @@
             outline-offset: var(--btn-outline-offset);
         }
         .btn-sec-light { color: var(--navy); border: 2px solid var(--navy); }
-        .btn-sec-light:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+        .btn-sec-light:hover {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+        }
+        .btn-sec-light:active { transform: translateY(0); }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
         .hero-form-wrap {
@@ -804,10 +819,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .hero-form-wrap button[type="submit"]:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .hero-form-wrap button[type="submit"]:active {
             transform: translateY(0);
@@ -824,6 +839,9 @@
             margin: 0 auto;
             padding: 0 var(--gutter);
             animation: heroTrustReveal 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .hero-trust-experience {
             font-family: var(--font-sans);
@@ -872,27 +890,51 @@
             transform: scale(1.04);
         }
         .hero-license {
-            margin: 0.75rem 0 0;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            color: var(--muted);
-            letter-spacing: 0.02em;
+            margin: 0.85rem 0 0;
+            font-family: var(--font-sans);
+            font-size: clamp(1.125rem, 2.75vw, 1.375rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            align-items: baseline;
+            gap: 0.35rem;
             flex-wrap: wrap;
+            position: relative;
+            padding-bottom: 0.35rem;
+            -webkit-tap-highlight-color: transparent;
+            animation: heroTrustReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s both;
+        }
+        .hero-license::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold) 0%, rgba(255, 102, 0, 0.35) 55%, transparent 100%);
+            opacity: 0.55;
+            border-radius: 1px;
+            animation: heroTrustLineExpand 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both;
+            transform-origin: left center;
         }
         .hero-license-number {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.3rem 0.65rem;
-            background: rgba(11, 22, 53, 0.08);
-            color: var(--navy);
+            display: inline-block;
+            color: var(--gold);
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
             font-weight: 700;
-            font-size: 0.875rem;
-            letter-spacing: 0.04em;
-            border-radius: 8px;
-            border: 1px solid rgba(11, 22, 53, 0.12);
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #e65c00 0%, var(--gold) 50%, #ff8533 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: heroTrustNumberPulse 3s ease-in-out 2s infinite;
+            transition: transform 0.3s var(--ease-out);
+        }
+        .hero-license-number:hover {
+            animation: none;
+            transform: scale(1.04);
         }
 
         /* ——— FLOATING TRUST BAR (Marquee) ——— */
@@ -900,7 +942,8 @@
             position: relative;
             padding: 0.75rem 0;
             background: var(--white);
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(255, 102, 0, 0.45);
+            border-bottom: 1px solid rgba(255, 102, 0, 0.45);
             overflow: hidden;
         }
         .trust-strip-inner {
@@ -1017,11 +1060,13 @@
             color: var(--muted);
             cursor: pointer;
             position: relative;
-            transition: color 0.25s var(--ease-out);
+            border-radius: 8px;
+            transition: color 0.25s var(--ease-out), background 0.2s var(--ease-out);
             -webkit-tap-highlight-color: transparent;
         }
         .services-tab:hover {
-            color: var(--charcoal);
+            color: var(--navy);
+            background: rgba(11, 22, 53, 0.04);
         }
         .services-tab.active {
             color: var(--navy);
@@ -1375,7 +1420,6 @@
             font-size: 0.9375rem;
             color: var(--charcoal);
             line-height: 1.65;
-            font-style: italic;
             margin-bottom: 1rem;
             font-weight: 400;
             overflow-wrap: break-word;
@@ -2031,7 +2075,7 @@
             border-radius: 6px;
             transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
         }
-        .cta-calendar-action:hover { background: rgba(255, 102, 0, 0.12); color: var(--navy); }
+        .cta-calendar-action:hover { background: rgba(255, 102, 0, 0.2); color: var(--navy); }
         /* ——— Time slots (single column) ——— */
         .cta-time-inner { max-height: 200px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
         .cta-time-grid {
@@ -2052,8 +2096,9 @@
             transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.15s var(--ease-out);
         }
         .cta-time-slot:hover {
-            background: rgba(255, 102, 0, 0.1);
-            border-color: rgba(255, 102, 0, 0.3);
+            background: rgba(255, 102, 0, 0.18);
+            border-color: rgba(255, 102, 0, 0.45);
+            color: var(--navy);
         }
         .cta-time-slot.selected {
             background: var(--navy);
@@ -2077,8 +2122,6 @@
         }
         .cta-box textarea { min-height: 64px; }
         .cta-submit-wrap { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-        .cta-box button[type="submit"] { padding: 0.75rem 1.25rem; font-size: 0.875rem; transition: opacity 0.2s, background 0.2s; }
-        .cta-box button[type="submit"]:disabled { opacity: 0.7; cursor: not-allowed; }
         .cta-form-success { display: none; padding: 1.5rem 0; text-align: center; }
         .cta-form-success.is-visible { display: block; }
         .cta-form-success h3 { font-family: var(--font-sans); font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; }
@@ -2112,10 +2155,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .cta-box button[type="submit"]:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .cta-box button[type="submit"]:active {
             transform: translateY(0);
@@ -2177,10 +2220,10 @@
         }
         .map-strip-btn:hover {
             color: var(--white);
-            background: var(--navy);
-            border-color: var(--navy);
+            background: var(--btn-orange-hover);
+            border-color: var(--btn-orange-hover);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(230, 92, 0, 0.4);
         }
         .map-strip-btn:active {
             transform: translateY(0);
@@ -2666,7 +2709,13 @@
                 align-items: center;
                 justify-content: center;
             }
-            .mobile-cta-li a:hover { background: var(--charcoal); color: var(--white) !important; }
+            .mobile-cta-li a:hover {
+                background: var(--gold);
+                color: var(--white) !important;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+            }
+            .mobile-cta-li a { transition: background 0.25s var(--ease-out), color 0.2s, transform 0.2s var(--ease-out), box-shadow 0.25s var(--ease-out); }
             .mobile-menu-btn { display: flex; }
             .cta-nav { display: none; }
 
@@ -2683,15 +2732,15 @@
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
             .hero-form-wrap { max-width: min(400px, 100%); margin: 0 auto; }
             .hero-trust { margin-top: var(--space-lg); }
-            .hero-trust-inner { text-align: center; }
+            .hero-trust-inner { text-align: center; align-items: center; }
             .hero-trust-experience {
                 justify-content: center;
                 padding-bottom: 0.3rem;
                 font-size: clamp(1.25rem, 4vw, 1.5rem);
             }
             .hero-trust-number { font-size: clamp(1.5rem, 4.5vw, 1.875rem); }
-            .hero-license { justify-content: center; margin-top: 0.6rem; font-size: 0.75rem; }
-            .hero-license-number { font-size: 0.8125rem; padding: 0.25rem 0.5rem; }
+            .hero-license { justify-content: center; margin-top: 0.7rem; }
+            .hero-license-number { font-size: clamp(1.15rem, 3.5vw, 1.35rem); }
 
             .services-panel { grid-template-columns: 1fr; gap: 2rem; }
             .services-tabs { margin-right: 0; }
@@ -2808,6 +2857,8 @@
             .hero-grid { padding-left: 0; padding-right: 0; }
             .hero-trust-experience { padding-bottom: 0.25rem; font-size: 1.2rem; }
             .hero-trust-number { font-size: 1.5rem; }
+            .hero-license { font-size: 1rem; margin-top: 0.6rem; }
+            .hero-license-number { font-size: 1.2rem; }
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
             .testimonial-card { padding: 1.5rem 1.25rem; width: 300px; }
@@ -2987,7 +3038,7 @@
         <div class="hero-trust">
             <div class="hero-trust-inner">
                 <p class="hero-trust-experience"><span class="hero-trust-number">20+</span> years of experience</p>
-                <p class="hero-license">Licensed Mortgage Investment Corporation <span class="hero-license-number">MIC #13171</span></p>
+                <p class="hero-license"><span class="hero-license-number">MIC #13171</span></p>
             </div>
         </div>
         <div class="hero-divider" aria-hidden="true"></div>
@@ -3044,7 +3095,7 @@
                 <div class="services-panel active" id="panel-borrowers" role="tabpanel" aria-labelledby="tab-borrowers" aria-hidden="false">
                     <div class="services-panel-content">
                         <h3>Private mortgage & construction financing</h3>
-                        <p class="services-desc">When traditional banks say no, we offer private mortgages, second mortgages, and construction financing with flexible terms tailored to your situation.</p>
+                        <p class="services-desc">When traditional banks say no, we offer private mortgages, second mortgages, and construction financing with flexible terms tailored to your&nbsp;situation.</p>
                         <ul class="services-features">
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Flexible terms and faster approvals</li>
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>24–48 hour initial response</li>
@@ -3068,7 +3119,7 @@
                 <div class="services-panel" id="panel-brokers" role="tabpanel" aria-labelledby="tab-brokers" aria-hidden="true">
                     <div class="services-panel-content">
                         <h3>Fast underwriting & broker partnership</h3>
-                        <p class="services-desc">Direct decision access, transparent terms, and fast underwriting. We partner with brokers to close tough deals and support your clients when banks decline.</p>
+                        <p class="services-desc">Direct decision access, transparent terms, and fast underwriting. We partner with brokers to close tough deals and support your&nbsp;clients when banks decline.</p>
                         <ul class="services-features">
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Direct decision access</li>
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Transparent terms & pricing</li>
@@ -3085,7 +3136,7 @@
         <div class="about-inner">
             <div class="sec-head reveal">
                 <h2>Who We Are</h2>
-                <p>Our values guide everything we do</p>
+                <p>Our values guide everything we&nbsp;do</p>
             </div>
             <div class="about-visual reveal">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="" loading="lazy">
@@ -3267,7 +3318,7 @@
                         <span>Bank turned me down—can you help?</span>
                         <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </button>
-                    <div class="faq-a"><p>Yes. We evaluate each application individually, focusing on property value and your situation.</p></div>
+                    <div class="faq-a"><p>Yes. We evaluate each application individually, focusing on property value and your&nbsp;situation.</p></div>
                 </div>
                 <div class="faq-item reveal" style="--i: 3;">
                     <button class="faq-q" aria-expanded="false">

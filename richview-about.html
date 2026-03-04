@@ -45,6 +45,8 @@
             --btn-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
             --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
             --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
+            --btn-pri-hover: #0c1838;
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
             --card-radius: 16px;
             --space-xs: 1rem;
             --space-sm: 1.5rem;
@@ -256,10 +258,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .cta-nav:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .cta-nav:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
         .cta-nav:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
@@ -334,6 +336,7 @@
             color: var(--muted);
             max-width: 420px;
             line-height: 1.65;
+            text-wrap: balance;
         }
 
         /* ——— OUR STORY ——— */
@@ -773,10 +776,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .btn-submit:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .btn-submit:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
         .btn-submit:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
@@ -820,7 +823,7 @@
         .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
         .footer-legal a:hover { color: rgba(255,255,255,0.7); }
         .footer-back-top { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.25s var(--ease-out); }
-        .footer-back-top:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); box-shadow: 0 0 14px rgba(255,102,0,0.5), 0 0 28px rgba(255,102,0,0.25); }
+        .footer-back-top:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-2px); box-shadow: 0 0 14px rgba(255,102,0,0.5), 0 0 28px rgba(255,102,0,0.25), 0 4px 16px rgba(255,102,0,0.3); }
         .footer-back-top svg { width: 14px; height: 14px; }
 
         /* ——— ANIMATIONS ——— */
@@ -903,7 +906,7 @@
                 font-weight: 600;
                 font-size: 1rem;
             }
-            .mobile-cta-li a:hover { background: var(--charcoal); color: var(--white) !important; }
+            .mobile-cta-li a:hover { background: var(--gold); color: var(--white) !important; transform: translateY(-2px); box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4); }
             .mobile-menu-btn { display: flex; }
             .cta-nav { display: none; }
             .page-hero { text-align: center; padding-bottom: var(--space-lg); }
@@ -1067,7 +1070,7 @@
         <div class="container">
             <div class="sec-head reveal">
                 <h2>Our Values</h2>
-                <p>The principles that guide everything we do</p>
+                <p>The principles that guide everything we&nbsp;do</p>
             </div>
             <div class="values-grid">
                 <div class="value-card reveal" style="--i: 0;">
@@ -1270,7 +1273,7 @@
             <div class="contact-form-container reveal">
                 <div class="contact-form-header">
                     <h2>Get in Touch</h2>
-                    <p>Have questions? We'd love to hear from you</p>
+                    <p>Have questions? We'd love to hear from&nbsp;you</p>
                 </div>
                 <div class="contact-form-body">
                     <form id="contactForm">

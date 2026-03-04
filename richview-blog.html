@@ -38,6 +38,9 @@
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
             --shadow-card-hover: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --btn-pri-hover: #0c1838;
+            --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
             /* Standard horizontal spacing by device (match homepage) */
             --gutter: 16px;
         }
@@ -136,10 +139,10 @@
             transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .cta-nav:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .cta-nav:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(11, 22, 53, 0.12); }
         .cta-nav:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
@@ -197,7 +200,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; color: var(--navy);
             margin-bottom: 0.5rem; letter-spacing: -0.02em;
         }
-        .blog-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; line-height: 1.65; }
+        .blog-section .sec-head p { font-size: 0.9375rem; color: var(--muted); max-width: 420px; line-height: 1.65; text-wrap: balance; }
 
         .blog-grid {
             display: grid;
@@ -431,7 +434,7 @@
             <div class="container">
                 <div class="sec-head reveal">
                     <h2>Latest Articles</h2>
-                    <p>Updates and thought leadership from the Richview Capital team</p>
+                    <p>Updates and thought leadership from the Richview Capital&nbsp;team</p>
                 </div>
 
                 <div class="blog-grid">

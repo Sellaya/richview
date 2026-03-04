@@ -45,6 +45,9 @@
             --btn-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
             --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
             --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
+            --btn-pri-hover: #0c1838;
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
+            --btn-orange-hover: #e65c00;
             --space-xs: 1rem;
             --space-sm: 1.5rem;
             --space-md: 2rem;
@@ -272,10 +275,10 @@
             transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .cta-nav:hover {
-            background: #0a1530;
+            background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
         .cta-nav:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
         .cta-nav:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
@@ -370,11 +373,11 @@
             transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .btn-primary:hover {
-            background: transparent;
+            background: var(--gold);
             color: var(--white);
-            border-color: var(--white);
+            border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px -4px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px -2px rgba(255,102,0,0.4);
         }
         .btn-primary:active { transform: translateY(0); }
         .btn-primary:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
@@ -394,9 +397,11 @@
             transition: background 0.25s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn);
         }
         .btn-secondary:hover {
-            border-color: var(--white);
-            background: rgba(255,255,255,0.12);
+            border-color: var(--gold);
+            background: rgba(255,102,0,0.2);
+            color: var(--white);
             transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255,102,0,0.2);
         }
         .btn-secondary:active { transform: translateY(0); }
         .btn-secondary:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
@@ -423,6 +428,7 @@
             color: var(--muted);
             max-width: 420px;
             margin: 0;
+            text-wrap: balance;
         }
 
         /* ——— BORDERED GRID CARDS ——— */
@@ -695,7 +701,7 @@
         .testimonial-card::before { display: none; }
         .testimonial-card:hover { border-color: rgba(255, 102, 0, 0.2); box-shadow: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0,0,0,0.04); transform: translateY(-4px); }
         .testimonial-quote-mark { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 2.5rem; line-height: 1; color: var(--gold); opacity: 0.25; margin-bottom: 0.5rem; display: block; }
-        .testimonial-card blockquote { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.65; font-style: italic; margin-bottom: 1rem; font-weight: 400; overflow-wrap: break-word; }
+        .testimonial-card blockquote { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.65; margin-bottom: 1rem; font-weight: 400; overflow-wrap: break-word; }
         .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
         .testimonial-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; flex-shrink: 0; }
         .testimonial-author-info h5 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
@@ -899,13 +905,16 @@
             transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
         .btn-submit:hover {
-            background: var(--white);
-            color: var(--navy);
-            border-color: var(--white);
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px -4px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
-        .btn-submit:active { transform: translateY(0); }
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
         .btn-submit:focus-visible { outline: 2px solid rgba(255, 102, 0, 0.5); outline-offset: 2px; }
 
         /* ——— FOOTER ——— */
@@ -1041,7 +1050,7 @@
                 font-weight: 600;
                 font-size: 1rem;
             }
-            .mobile-cta-li a:hover { background: var(--charcoal); color: var(--white) !important; }
+            .mobile-cta-li a:hover { background: var(--gold); color: var(--white) !important; transform: translateY(-2px); box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4); }
             .mobile-menu-btn { display: flex; }
             .cta-nav { display: none; }
 
@@ -1262,7 +1271,7 @@
     <section class="loan-products" id="products">
         <div class="section-header reveal">
             <h2>What We Fund</h2>
-            <p>Flexible financing solutions designed to meet your unique needs</p>
+            <p>Flexible financing solutions designed to meet your unique&nbsp;needs</p>
         </div>
         <div class="products-grid reveal">
             <div class="product-card">
