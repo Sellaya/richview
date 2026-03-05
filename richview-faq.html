@@ -323,7 +323,9 @@
             color: var(--muted);
             max-width: 420px;
             line-height: 1.65;
-            text-wrap: balance;
+        }
+        @media (min-width: 480px) {
+            .sec-head p { white-space: nowrap; }
         }
 
         /* ——— OUR STORY ——— */
@@ -785,45 +787,241 @@
             outline-offset: 2px;
         }
 
-        /* ——— FAQ PAGE ——— */
-        .faq-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #F5F6F8 100%);
+        /* ——— FAQ PAGE (advanced, interactive) ——— */
+        .faq-page .faq-jump-nav {
+            position: sticky;
+            top: calc(1.25rem + 64px);
+            z-index: 100;
+            padding: 0.5rem 0;
+            margin-bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.25s var(--ease-out);
+        }
+        .faq-page .faq-jump-nav.scrolled { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04); }
+        .faq-jump-nav .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .faq-jump-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 100px;
+            transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+        }
+        .faq-jump-link:hover {
+            color: var(--navy);
+            background: rgba(11, 22, 53, 0.06);
+        }
+        .faq-jump-link:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .faq-jump-link.active {
+            color: var(--white);
+            background: var(--navy);
+        }
+        .faq-jump-link.active:hover {
+            color: var(--white);
+            background: var(--navy);
+            opacity: 0.95;
+        }
+
+        .faq-page .faq-section {
+            padding: clamp(2.5rem, 5vw, 3.5rem) 0;
             position: relative;
             overflow: hidden;
         }
-        .faq-section:nth-child(even) { background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 50%, #FFFFFF 100%); }
-        .faq-section::before {
+        /* Section 1 — General: grid + soft navy orb */
+        .faq-page .faq-section:nth-of-type(2) {
+            background: linear-gradient(180deg, #eef1f7 0%, #f2f4f8 45%, #f6f7fb 100%);
+        }
+        .faq-page .faq-section:nth-of-type(2)::before {
             content: '';
             position: absolute;
-            width: 50%;
-            height: 80%;
-            top: 10%;
-            right: -10%;
-            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.04) 0%, transparent 60%);
+            inset: 0;
+            z-index: 0;
+            background-image:
+                linear-gradient(to right, rgba(11, 22, 53, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(11, 22, 53, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
         }
-        .faq-section .container { max-width: 800px; position: relative; z-index: 1; }
-        .faq-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+        .faq-page .faq-section:nth-of-type(2)::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 55%;
+            height: 80%;
+            z-index: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(11, 22, 53, 0.06) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        /* Section 2 — Borrowers: dots + warm orange tint orb */
+        .faq-page .faq-section:nth-of-type(3) {
+            background: linear-gradient(180deg, #f6f7fb 0%, #faf8f6 50%, #f5f4f2 100%);
+        }
+        .faq-page .faq-section:nth-of-type(3)::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: radial-gradient(circle at center, rgba(11, 22, 53, 0.05) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+        .faq-page .faq-section:nth-of-type(3)::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 50%;
+            height: 70%;
+            z-index: 0;
+            background: radial-gradient(ellipse at 20% 80%, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        /* Section 3 — Investors: fine grid + dual orbs */
+        .faq-page .faq-section:nth-of-type(4) {
+            background: linear-gradient(165deg, #f5f4f2 0%, #eef2f6 40%, #f0f3f8 100%);
+        }
+        .faq-page .faq-section:nth-of-type(4)::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                linear-gradient(to right, rgba(11, 22, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(11, 22, 53, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+        .faq-page .faq-section:nth-of-type(4)::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 90% 20%, rgba(11, 22, 53, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 10% 90%, rgba(255, 102, 0, 0.04) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        /* Section 4 — Brokers: dots + diagonal lines + navy orb */
+        .faq-page .faq-section:nth-of-type(5) {
+            background: linear-gradient(180deg, #f0f3f8 0%, #f8f6f4 50%, #faf9f7 100%);
+        }
+        .faq-page .faq-section:nth-of-type(5)::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                repeating-linear-gradient(-45deg, transparent, transparent 24px, rgba(11, 22, 53, 0.025) 24px, rgba(11, 22, 53, 0.025) 25px),
+                radial-gradient(circle at center, rgba(255, 102, 0, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px;
+            pointer-events: none;
+        }
+        .faq-page .faq-section:nth-of-type(5)::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: -5%;
+            width: 45%;
+            height: 60%;
+            z-index: 0;
+            background: radial-gradient(ellipse at 0% 40%, rgba(11, 22, 53, 0.07) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .faq-page .faq-section .container { max-width: 720px; margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 1; }
+        .faq-page .faq-section .sec-head {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(255, 102, 0, 0.35);
+        }
+        .faq-page .faq-section .sec-head h2 {
+            font-size: clamp(1.375rem, 2vw, 1.625rem);
+            margin-bottom: 0.25rem;
+        }
+        .faq-page .faq-section .sec-head p { font-size: 0.875rem; max-width: 100%; }
+        .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
         .faq-item {
             background: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.06);
-            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.25s var(--ease-out);
         }
-        .faq-item:hover { border-color: rgba(0,0,0,0.09); box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-        .faq-section:nth-child(even) .faq-item { background: var(--cream); }
-        .faq-section:nth-child(even) .faq-item.open { background: var(--white); }
-        .faq-item.open { border-color: rgba(255, 102, 0, 0.25); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-        .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--navy); cursor: pointer; text-align: left; transition: color 0.2s var(--ease-out); }
+        .faq-item.reveal.visible { transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.25s var(--ease-out); transition-delay: calc(0.06s * var(--i, 0)); }
+        .faq-item:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+        .faq-item.open {
+            border-color: rgba(255, 102, 0, 0.3);
+            box-shadow: 0 8px 28px rgba(11, 22, 53, 0.1), 0 0 0 1px rgba(255, 102, 0, 0.12);
+        }
+        .faq-item.open:hover { box-shadow: 0 10px 32px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(255, 102, 0, 0.15); }
+        .faq-q {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s var(--ease-out);
+            -webkit-tap-highlight-color: transparent;
+        }
         .faq-q:hover { color: var(--charcoal); }
-        .faq-icon { width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--cream); color: var(--navy); transition: all 0.35s var(--ease-out); }
-        .faq-item.open .faq-icon { background: var(--navy); color: var(--white); transform: rotate(180deg); }
-        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
+        .faq-item.open .faq-q { color: var(--navy); }
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: rgba(11, 22, 53, 0.06);
+            color: var(--navy);
+            transition: all 0.3s var(--ease-out);
+        }
+        .faq-item.open .faq-icon {
+            background: var(--navy);
+            color: var(--white);
+            transform: rotate(180deg);
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out);
+        }
         .faq-item.open .faq-a { max-height: 1200px; }
-        .faq-a p { padding: 0 0.5rem 1.5rem 1.5rem; font-size: 0.9375rem; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); }
+        .faq-a p {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.7;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
         /* ——— FOOTER ——— */
         footer {
@@ -956,6 +1154,13 @@
             .page-hero { text-align: center; padding-bottom: var(--space-lg); }
             .page-hero .container { max-width: 640px; }
             .page-hero p { margin: 0 auto; }
+            .faq-page .faq-jump-nav { top: calc(1rem + 58px); padding: 0.4rem 0; }
+            .faq-jump-link { padding: 0.45rem 0.85rem; font-size: 0.75rem; }
+            .faq-page .faq-section { padding: 2rem 0; }
+            .faq-page .faq-section .sec-head { margin-bottom: 1.25rem; }
+            .faq-item { border-radius: 10px; }
+            .faq-q { padding: 0.9rem 1rem; font-size: 0.9rem; }
+            .faq-a p { padding: 0 1rem 1rem 1rem; font-size: 0.875rem; }
             .values-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
             .value-card { padding: 1.75rem 1.5rem; }
             .team-grid { grid-template-columns: 1fr; max-width: 100%; gap: 1rem; }
@@ -1011,6 +1216,14 @@
             .sec-head { margin-bottom: var(--space-md); }
             .sec-head h2 { font-size: 1.375rem; }
             .sec-head p { font-size: 0.875rem; }
+            .faq-page .faq-jump-nav { top: calc(0.75rem + 52px); padding: 0.35rem 0; }
+            .faq-jump-nav .container { gap: 0.35rem; }
+            .faq-jump-link { padding: 0.4rem 0.75rem; font-size: 0.7rem; }
+            .faq-page .faq-section { padding: 1.75rem 0; }
+            .faq-page .faq-section .sec-head { margin-bottom: 1rem; padding-bottom: 0.5rem; }
+            .faq-item { border-radius: 10px; }
+            .faq-q { padding: 0.85rem 1rem; font-size: 0.875rem; }
+            .faq-a p { padding: 0 1rem 0.9rem 1rem; font-size: 0.8125rem; }
             .story-content p { font-size: 0.875rem; }
             .values-grid { gap: 0.75rem; }
             .value-card { padding: 1.25rem 1rem; }
@@ -1053,7 +1266,7 @@
         }
     </style>
 </head>
-<body>
+<body class="faq-page">
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
@@ -1095,11 +1308,20 @@
         </div>
     </section>
 
+    <nav class="faq-jump-nav" aria-label="Jump to FAQ section">
+        <div class="container">
+            <a href="#faq" class="faq-jump-link">General</a>
+            <a href="#faq-borrowers" class="faq-jump-link">Borrowers</a>
+            <a href="#faq-investors" class="faq-jump-link">Investors</a>
+            <a href="#faq-brokers" class="faq-jump-link">Brokers</a>
+        </div>
+    </nav>
+
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="sec-head reveal">
                 <h2>General FAQ</h2>
-                <p>Quick answers to common questions</p>
+                <p>Quick answers to common&nbsp;questions</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal" style="--i: 0;">
@@ -1157,7 +1379,7 @@
         <div class="container">
             <div class="sec-head reveal">
                 <h2>FAQ for Investors</h2>
-                <p>MIC investing and Richview Capital</p>
+                <p>MIC investing and Richview&nbsp;Capital</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal" style="--i: 0;">
@@ -1192,7 +1414,7 @@
         <div class="container">
             <div class="sec-head reveal">
                 <h2>FAQ for Brokers</h2>
-                <p>Partnering with Richview Capital</p>
+                <p>Partnering with Richview&nbsp;Capital</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal" style="--i: 0;">
@@ -1356,6 +1578,32 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
         document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+        (function() {
+            var jumpNav = document.querySelector('.faq-jump-nav');
+            var sections = [
+                { id: 'faq', link: document.querySelector('.faq-jump-link[href="#faq"]') },
+                { id: 'faq-borrowers', link: document.querySelector('.faq-jump-link[href="#faq-borrowers"]') },
+                { id: 'faq-investors', link: document.querySelector('.faq-jump-link[href="#faq-investors"]') },
+                { id: 'faq-brokers', link: document.querySelector('.faq-jump-link[href="#faq-brokers"]') }
+            ].filter(function(s) { return s.link && document.getElementById(s.id); });
+            function updateJumpNav() {
+                var y = window.pageYOffset || document.documentElement.scrollTop;
+                if (jumpNav) jumpNav.classList.toggle('scrolled', y > 200);
+                var active = null;
+                sections.forEach(function(s) {
+                    var el = document.getElementById(s.id);
+                    if (!el) return;
+                    var rect = el.getBoundingClientRect();
+                    if (rect.top <= 120 && rect.bottom >= 120) active = s;
+                });
+                sections.forEach(function(s) {
+                    if (s.link) s.link.classList.toggle('active', s === active);
+                });
+            }
+            window.addEventListener('scroll', updateJumpNav, { passive: true });
+            updateJumpNav();
+        })();
 
         document.querySelectorAll('a[href^="#"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
