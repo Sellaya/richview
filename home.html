@@ -1305,30 +1305,18 @@
         .about-cta:hover { color: var(--charcoal); gap: 0.65rem; }
         .about-cta:hover svg { transform: translateX(3px); }
 
-        /* ——— TESTIMONIALS ——— */
+        /* ——— TESTIMONIALS (minimal, advanced) ——— */
         .testimonials-section {
             padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #F5F6F8 0%, var(--cream) 40%, #F8F9FA 100%);
+            background: var(--cream);
             position: relative;
             overflow: hidden;
-        }
-        .testimonials-section::after {
-            content: '';
-            position: absolute;
-            width: 40%;
-            height: 60%;
-            top: 20%;
-            left: -5%;
-            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 70%);
-            pointer-events: none;
         }
         .testimonials-section .sec-head {
             position: relative;
             z-index: 1;
-        }
-        .testimonials-section .sec-head {
             text-align: left;
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-lg);
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -1336,25 +1324,28 @@
         }
         .testimonials-section .sec-head h2 {
             font-family: var(--font-sans);
-            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+            font-size: clamp(1.5rem, 2.2vw, 1.875rem);
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.03em;
         }
         .testimonials-section .sec-head p {
-            font-size: 0.9375rem;
+            font-size: 0.875rem;
             color: var(--muted);
-            max-width: 420px;
+            max-width: 380px;
             margin: 0;
+            letter-spacing: 0.01em;
         }
-        /* Testimonials slider: right-to-left auto-scroll */
+        @media (min-width: 480px) {
+            .testimonials-section .sec-head p { white-space: nowrap; }
+        }
         .testimonials-slider {
             position: relative;
             z-index: 1;
             overflow: hidden;
             margin: 0 calc(-1 * var(--gutter));
-            padding: 0.5rem 0 2rem;
+            padding: 0.25rem 0 1.5rem;
         }
         .testimonials-slider::before,
         .testimonials-slider::after {
@@ -1362,22 +1353,22 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 80px;
-            max-width: 12vw;
+            width: 64px;
+            max-width: 10vw;
             z-index: 2;
             pointer-events: none;
         }
         .testimonials-slider::before {
             left: 0;
-            background: linear-gradient(90deg, #F5F6F8 0%, transparent 100%);
+            background: linear-gradient(90deg, var(--cream) 0%, transparent 100%);
         }
         .testimonials-slider::after {
             right: 0;
-            background: linear-gradient(270deg, #F5F6F8 0%, transparent 100%);
+            background: linear-gradient(270deg, var(--cream) 0%, transparent 100%);
         }
         .testimonials-track {
             display: flex;
-            gap: 1.25rem;
+            gap: 1rem;
             width: max-content;
             will-change: transform;
             animation: testimonialScroll 42s linear infinite;
@@ -1391,35 +1382,30 @@
         }
         .testimonial-card {
             flex-shrink: 0;
-            width: 380px;
+            width: 340px;
             max-width: 90vw;
-            padding: 1.75rem 1.5rem;
+            padding: 1.5rem 1.35rem;
             background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            border-left: 3px solid rgba(255, 102, 0, 0.4);
             position: relative;
-            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.35s var(--ease-spring);
-            box-shadow: var(--shadow-sm);
+            transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
         .testimonial-card::before { display: none; }
         .testimonial-card:hover {
-            border-color: rgba(255, 102, 0, 0.2);
-            box-shadow: var(--shadow-card-hover);
-            transform: translateY(-4px);
+            border-left-color: var(--gold);
+            box-shadow: 0 8px 24px -6px rgba(11, 22, 53, 0.08);
+            transform: translateY(-2px);
         }
         .testimonial-quote-mark {
-            font-family: var(--font-sans);
-            font-size: 2.5rem;
-            line-height: 1;
-            color: var(--gold);
-            opacity: 0.25;
-            margin-bottom: 0.5rem;
-            display: block;
+            display: none;
         }
         .testimonial-card blockquote {
-            font-size: 0.9375rem;
+            font-size: 0.9rem;
             color: var(--charcoal);
-            line-height: 1.65;
+            line-height: 1.6;
             margin-bottom: 1rem;
             font-weight: 400;
             overflow-wrap: break-word;
@@ -1427,31 +1413,31 @@
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.65rem;
         }
         .testimonial-avatar {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: var(--navy);
-            color: var(--white);
+            background: rgba(11, 22, 53, 0.08);
+            color: var(--navy);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
             flex-shrink: 0;
         }
         .testimonial-author-info h5 {
             font-family: var(--font-sans);
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 600;
             color: var(--navy);
             line-height: 1.3;
         }
         .testimonial-author-info span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--muted);
             font-weight: 400;
         }
@@ -2747,7 +2733,7 @@
             .services-tab { margin-right: 1.5rem; padding: 0.75rem 1rem 0.75rem 0; font-size: 0.9375rem; }
             .about-values { grid-template-columns: 1fr; gap: var(--space-sm); }
             .about-value-card { padding: 1.75rem 1.5rem; }
-            .testimonial-card { width: 340px; }
+            .testimonial-card { width: 320px; }
             .blog-grid { grid-template-columns: 1fr; }
 
             .faq-section .container { grid-template-columns: 1fr; gap: var(--space-xl); }
@@ -2783,7 +2769,7 @@
             .services-panel-content h3 { font-size: 1.375rem; }
             .services-panels { min-height: 280px; }
             .about-value-card { padding: 1.5rem 1.25rem; }
-            .testimonial-card { padding: 1.75rem 1.25rem; width: 320px; }
+            .testimonial-card { padding: 1.35rem 1.15rem; width: 300px; }
 
             .faq-q { padding: 1rem 1.25rem; }
             .faq-a p { padding: 0 0.5rem 1rem 0.5rem; }
@@ -2861,9 +2847,9 @@
             .hero-license-number { font-size: 1.2rem; }
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
-            .testimonial-card { padding: 1.5rem 1.25rem; width: 300px; }
+            .testimonial-card { padding: 1.25rem 1rem; width: 280px; }
             .testimonials-slider::before,
-            .testimonials-slider::after { width: 40px; }
+            .testimonials-slider::after { width: 32px; }
             .about-value-card { padding: 1.25rem 1rem; }
             .faq-q { padding: 0.875rem 1rem; }
             .faq-a p { padding: 0 0.5rem 0.875rem 0.5rem; }
@@ -3175,7 +3161,7 @@
     <section class="testimonials-section" id="testimonials">
         <div class="sec-head reveal">
             <h2>What Our Clients Say</h2>
-            <p>Real experiences from clients who trust Richview Capital</p>
+            <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
         </div>
         <div class="testimonials-slider" aria-label="Testimonials carousel">
             <div class="testimonials-track">
