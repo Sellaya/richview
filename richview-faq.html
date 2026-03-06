@@ -430,7 +430,7 @@
 
         /* ——— PAGE HERO ——— */
         .page-hero {
-            padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--section-padding);
+            padding: clamp(8rem, 12vw, 10rem) var(--gutter) clamp(2rem, 4vw, 2.5rem);
             background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
             position: relative;
             overflow: hidden;
@@ -455,6 +455,7 @@
             position: relative;
             z-index: 1;
             max-width: 800px;
+            text-align: center;
         }
 
         .page-hero h1 {
@@ -462,16 +463,18 @@
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
         .page-hero p {
-            font-size: 1.0625rem;
-            color: rgba(255, 255, 255, 0.75);
+            font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
             max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ——— SECTION HEADINGS ——— */
@@ -1104,44 +1107,35 @@
         }
 
         /* ——— FAQ PAGE (advanced, interactive) ——— */
-        .faq-page .faq-jump-nav {
-            position: sticky;
-            top: calc(1.25rem + 64px);
-            z-index: 100;
-            padding: 0.5rem 0;
-            margin-bottom: 0;
-            background: #ffffff;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.25s var(--ease-out);
-        }
-
-        .faq-page .faq-jump-nav.scrolled {
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .faq-jump-nav .container {
+        .faq-hero .faq-jump-nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.5rem;
+            align-items: center;
+            gap: clamp(0.4rem, 1.5vw, 0.65rem);
+            margin-top: 1.25rem;
+            padding: 0;
+            background: transparent;
+            border: none;
         }
 
         .faq-jump-link {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            font-size: 0.8125rem;
+            padding: clamp(0.45rem, 1.2vw, 0.55rem) clamp(0.9rem, 2vw, 1.1rem);
+            font-size: clamp(0.75rem, 1.5vw, 0.8125rem);
             font-weight: 600;
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             border-radius: 100px;
-            transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.1);
+            transition: color 0.25s var(--ease-out), background 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.2s var(--ease-out);
         }
 
         .faq-jump-link:hover {
-            color: var(--navy);
-            background: rgba(11, 22, 53, 0.06);
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .faq-jump-link:focus-visible {
@@ -1150,13 +1144,14 @@
         }
 
         .faq-jump-link.active {
-            color: var(--white);
-            background: var(--navy);
+            color: var(--navy);
+            background: var(--white);
+            border-color: var(--white);
         }
 
         .faq-jump-link.active:hover {
-            color: var(--white);
-            background: var(--navy);
+            color: var(--navy);
+            background: var(--white);
             opacity: 0.95;
         }
 
@@ -1164,6 +1159,13 @@
             padding: clamp(2.5rem, 5vw, 3.5rem) 0;
             position: relative;
             overflow: hidden;
+            isolation: isolate;
+            scroll-margin-top: 5rem;
+        }
+
+        .faq-page .faq-section::before,
+        .faq-page .faq-section::after {
+            z-index: -1;
         }
 
         /* Section 1 — General: grid + soft navy orb */
@@ -1285,28 +1287,40 @@
             padding: 0 var(--gutter);
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
         .faq-page .faq-section .sec-head {
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
+            flex-shrink: 0;
+            margin: 0 0 1.5rem 0;
+            padding: 0 0 0.75rem 0;
             border-bottom: 2px solid rgba(255, 102, 0, 0.35);
+            text-align: center;
         }
 
         .faq-page .faq-section .sec-head h2 {
             font-size: clamp(1.375rem, 2vw, 1.625rem);
-            margin-bottom: 0.25rem;
+            margin: 0 0 0.25rem 0;
         }
 
         .faq-page .faq-section .sec-head p {
-            font-size: 0.875rem;
+            font-size: clamp(0.8125rem, 1.2vw, 0.875rem);
             max-width: 100%;
+            margin: 0 auto;
+            white-space: normal;
+            line-height: 1.5;
         }
 
-        .faq-list {
+        .faq-page .faq-list {
+            flex: 1 1 auto;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: clamp(0.5rem, 1.5vw, 0.75rem);
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .faq-item {
@@ -1386,7 +1400,7 @@
         .faq-a {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s var(--ease-out);
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .faq-item.open .faq-a {
@@ -1906,9 +1920,8 @@
                 margin: 0 auto;
             }
 
-            .faq-page .faq-jump-nav {
-                top: calc(1rem + 58px);
-                padding: 0.4rem 0;
+            .faq-hero .faq-jump-nav {
+                margin-top: 1rem;
             }
 
             .faq-jump-link {
@@ -2141,12 +2154,8 @@
                 font-size: 0.875rem;
             }
 
-            .faq-page .faq-jump-nav {
-                top: calc(0.75rem + 52px);
-                padding: 0.35rem 0;
-            }
-
-            .faq-jump-nav .container {
+            .faq-hero .faq-jump-nav {
+                margin-top: 0.85rem;
                 gap: 0.35rem;
             }
 
@@ -3414,22 +3423,19 @@
         </div>
     </nav>
 
-    <section class="page-hero" id="main">
+    <section class="page-hero faq-hero" id="main">
         <div class="container">
             <h1 class="reveal">Frequently Asked Questions</h1>
             <p class="reveal">Quick answers for borrowers, investors, and brokers. Find what you need below or <a
                     href="home.html#contact" style="color: var(--gold); text-decoration: underline;">get in touch</a>.</p>
+            <nav class="faq-jump-nav" aria-label="Jump to FAQ section">
+                <a href="#faq" class="faq-jump-link">General</a>
+                <a href="#faq-borrowers" class="faq-jump-link">Borrowers</a>
+                <a href="#faq-investors" class="faq-jump-link">Investors</a>
+                <a href="#faq-brokers" class="faq-jump-link">Brokers</a>
+            </nav>
         </div>
     </section>
-
-    <nav class="faq-jump-nav" aria-label="Jump to FAQ section">
-        <div class="container">
-            <a href="#faq" class="faq-jump-link">General</a>
-            <a href="#faq-borrowers" class="faq-jump-link">Borrowers</a>
-            <a href="#faq-investors" class="faq-jump-link">Investors</a>
-            <a href="#faq-brokers" class="faq-jump-link">Brokers</a>
-        </div>
-    </nav>
 
     <section class="faq-section" id="faq">
         <div class="container">
