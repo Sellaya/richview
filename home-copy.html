@@ -261,10 +261,12 @@
             left: 50%;
             transform: translateX(-50%);
             min-width: 200px;
+            width: max-content;
+            max-width: min(280px, 90vw);
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
+            border-radius: 8px;
             padding: 0.5rem;
             border: 1px solid rgba(0, 0, 0, 0.05);
             box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
@@ -299,8 +301,9 @@
             font-weight: 500;
             letter-spacing: 0.01em;
             line-height: 1.4;
+            white-space: nowrap;
             transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
-            border-radius: 10px;
+            border-radius: 6px;
             position: relative;
         }
         .nav-dropdown-content a:hover {
@@ -322,6 +325,7 @@
             margin-bottom: 0.2rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             pointer-events: none;
+            white-space: nowrap;
         }
         .cta-nav {
             display: inline-flex;
@@ -2600,8 +2604,10 @@
                 display: block;
                 box-shadow: none;
                 background: rgba(11, 22, 53, 0.04);
-                min-width: auto;
-                border-radius: 12px;
+                min-width: 200px;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 8px;
                 max-height: 0;
                 overflow: hidden;
                 opacity: 0;
@@ -2633,6 +2639,7 @@
                 padding: 0.4rem 0.75rem 0.3rem;
                 margin: 0 0 0.2rem 0;
                 border-bottom: 1px solid rgba(0,0,0,0.06);
+                white-space: nowrap;
             }
             .nav-links > li > a {
                 -webkit-tap-highlight-color: transparent;
@@ -2667,6 +2674,7 @@
                 border-radius: 8px;
                 min-height: 48px;
                 -webkit-tap-highlight-color: transparent;
+                white-space: nowrap;
             }
             .nav-dropdown-content a:hover {
                 color: var(--navy);
@@ -2993,8 +3001,10 @@
                 display: block !important;
                 box-shadow: none !important;
                 background: rgba(11, 22, 53, 0.06) !important;
-                min-width: auto !important;
-                border-radius: 12px !important;
+                min-width: 200px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                border-radius: 8px !important;
                 max-height: 0 !important;
                 overflow: hidden !important;
                 padding: 0 !important;
@@ -3013,7 +3023,7 @@
                 opacity: 1 !important;
                 visibility: visible !important;
             }
-            .nav-dropdown-content .nav-dropdown-label { display: block !important; margin: 0 0 0.25rem 0 !important; color: #6B7280 !important; font-size: 0.6875rem !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; padding-bottom: 0.25rem !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+            .nav-dropdown-content .nav-dropdown-label { display: block !important; margin: 0 0 0.25rem 0 !important; color: #6B7280 !important; font-size: 0.6875rem !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; padding-bottom: 0.25rem !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; white-space: nowrap !important; }
             .nav-dropdown-content a {
                 display: flex !important;
                 align-items: center !important;
@@ -3023,8 +3033,9 @@
                 color: #1A1A1A !important;
                 border-left: 3px solid transparent !important;
                 margin-left: 0.25rem !important;
-                border-radius: 8px !important;
+                border-radius: 6px !important;
                 min-height: 48px !important;
+                white-space: nowrap !important;
             }
             .nav-dropdown-content a:hover { color: var(--navy) !important; background: rgba(11, 22, 53, 0.07) !important; border-left-color: var(--gold) !important; }
             .nav-dropdown > a::after { transform: rotate(45deg) !important; }
@@ -3084,15 +3095,14 @@
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false" aria-controls="navMenuResources">Resources</a>
                     <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
-                        <span class="nav-dropdown-label">Learn more</span>
                         <a href="richview-what-is-a-mic.html" role="menuitem">What Is a MIC?</a>
                         <a href="richview-faq.html" role="menuitem">FAQ</a>
                     </div>
                 </li>
                 <li><a href="richview-blog.html">Blog</a></li>
-                <li class="mobile-cta-li" style="display:none"><a href="#cta" style="color:var(--orange)">Get Started</a></li>
+                <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get Started</a></li>
             </ul>
-            <a href="#cta" class="cta-nav">Get Started</a>
+            <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
@@ -3180,7 +3190,7 @@
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#cta" class="btn-pri">Apply Now</a>
+                    <a href="#contact" class="btn-pri">Apply Now</a>
                     <a href="#services" class="btn-sec">View Services</a>
                 </div>
             </div>

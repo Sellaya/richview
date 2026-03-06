@@ -261,10 +261,12 @@
             left: 50%;
             transform: translateX(-50%);
             min-width: 200px;
+            width: max-content;
+            max-width: min(280px, 90vw);
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
+            border-radius: 8px;
             padding: 0.5rem;
             border: 1px solid rgba(0, 0, 0, 0.05);
             box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
@@ -299,8 +301,9 @@
             font-weight: 500;
             letter-spacing: 0.01em;
             line-height: 1.4;
+            white-space: nowrap;
             transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
-            border-radius: 10px;
+            border-radius: 6px;
             position: relative;
         }
         .nav-dropdown-content a:hover {
@@ -322,6 +325,7 @@
             margin-bottom: 0.2rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             pointer-events: none;
+            white-space: nowrap;
         }
         .cta-nav {
             display: inline-flex;
@@ -1843,6 +1847,13 @@
             width: 18px;
             height: 18px;
         }
+        /* Contact/CTA form same width as hero form */
+        .cta-section .cta-box {
+            max-width: 520px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .cta-box {
             background: var(--white);
             border-radius: var(--card-radius);
@@ -2635,8 +2646,10 @@
                 display: block;
                 box-shadow: none;
                 background: rgba(11, 22, 53, 0.06);
-                min-width: auto;
-                border-radius: 12px;
+                min-width: 200px;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 8px;
                 max-height: 0;
                 overflow: hidden;
                 padding: 0;
@@ -2666,6 +2679,7 @@
                 padding: 0.4rem 0.75rem 0.25rem 0;
                 margin: 0 0 0.25rem 0;
                 border-bottom: 1px solid rgba(0,0,0,0.08);
+                white-space: nowrap;
             }
             .nav-links > li > a {
                 -webkit-tap-highlight-color: transparent;
@@ -2697,9 +2711,10 @@
                 color: #1A1A1A !important;
                 border-left: 3px solid transparent;
                 margin-left: 0.25rem;
-                border-radius: 8px;
+                border-radius: 6px;
                 min-height: 48px;
                 -webkit-tap-highlight-color: transparent;
+                white-space: nowrap;
             }
             .nav-dropdown-content a:hover {
                 color: var(--navy);
@@ -2849,6 +2864,7 @@
             .cta-grid { gap: 1.5rem; }
             .cta-intro-title { font-size: 1.5rem; }
             .cta-intro-desc { margin-bottom: 1.25rem; }
+            .cta-section .cta-box { max-width: 100%; }
             .cta-box { margin-left: 0; margin-right: 0; border-radius: 12px; max-width: 100%; }
             .cta-box-body { padding: 0.85rem 0.9rem; }
             .cta-trust-list-item { font-size: 0.875rem; }
@@ -2925,15 +2941,14 @@
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false" aria-controls="navMenuResources">Resources</a>
                     <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
-                        <span class="nav-dropdown-label">Learn more</span>
                         <a href="richview-what-is-a-mic.html" role="menuitem">What Is a MIC?</a>
                         <a href="richview-faq.html" role="menuitem">FAQ</a>
                     </div>
                 </li>
                 <li><a href="richview-blog.html">Blog</a></li>
-                <li class="mobile-cta-li" style="display:none"><a href="#cta" style="color:var(--orange)">Get Started</a></li>
+                <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get Started</a></li>
             </ul>
-            <a href="#cta" class="cta-nav">Get Started</a>
+            <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
@@ -3021,7 +3036,7 @@
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#cta" class="btn-pri">Apply Now</a>
+                    <a href="#contact" class="btn-pri">Apply Now</a>
                     <a href="#services" class="btn-sec">View Services</a>
                 </div>
             </div>
@@ -3464,7 +3479,7 @@
         </div>
     </section>
 
-    <section class="cta-section" id="cta">
+    <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-intro reveal">
@@ -3659,7 +3674,7 @@
                         <ul>
                             <li><a href="richview-about.html">About Us</a></li>
                             <li><a href="richview-faq.html">FAQ</a></li>
-                            <li><a href="#cta">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                             <li><a href="privacy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
