@@ -369,8 +369,8 @@
         }
 
         .page-hero {
-            padding: clamp(9rem, 12vw, 11rem) 0 var(--section-padding);
-            background: linear-gradient(135deg, rgba(11, 22, 53, 0.92) 0%, rgba(11, 22, 53, 0.96) 100%), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80') center/cover no-repeat;
+            padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--section-padding);
+            background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
             position: relative;
             overflow: hidden;
         }
@@ -379,7 +379,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 70% 50% at 70% 30%, rgba(255, 102, 0, 0.06) 0%, transparent 55%);
+            background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.4) 0%, transparent 50%);
             pointer-events: none;
         }
 
