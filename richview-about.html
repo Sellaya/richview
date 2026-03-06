@@ -661,292 +661,292 @@
             line-height: 1.65;
         }
 
-        /* ——— TEAM SECTION ——— */
+        /* ——— TEAM SECTION (unified cards) ——— */
         .team-section {
-            padding: 2.5rem 0 3rem;
+            padding: clamp(3rem, 6vw, 4.5rem) 0;
             background: linear-gradient(180deg, #F5F6F8 0%, var(--cream) 40%, #F8F9FA 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .team-section::after {
+        .team-section::before {
             content: '';
             position: absolute;
-            width: 40%;
-            height: 50%;
-            top: 30%;
-            right: -5%;
-            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 65%);
+            width: 50%;
+            height: 60%;
+            top: 10%;
+            right: -10%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.03) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .team-section .container,
-        .team-section .sec-head,
-        .team-section .team-grid {
+        .team-section .container {
             position: relative;
             z-index: 1;
         }
 
-        .team-section>.container>.sec-head:first-child {
-            margin-bottom: 1.5rem;
-        }
-
-        .team-section .team-grid+.sec-head {
-            margin-top: 1.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 0;
-            max-width: 860px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .team-member {
-            background: var(--white);
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .team-member:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-card-hover);
-            border-color: rgba(255, 102, 0, 0.15);
-            transition: box-shadow 0.35s var(--ease-out), transform 0.35s var(--ease-spring), border-color 0.3s var(--ease-out);
-        }
-
-        .member-image {
-            width: 100%;
-            max-width: 150px;
-            aspect-ratio: 1;
-            margin: 1.5rem auto 0;
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-            border-radius: 50%;
-            border: 3px solid rgba(212, 175, 55, 0.35);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.04);
-            transition: box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
-        }
-
-        .team-member:hover .member-image {
-            border-color: var(--gold);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(212, 175, 55, 0.15);
-        }
-
-        .member-image img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-        }
-
-        .member-content {
-            padding: 1.25rem 1.5rem 1.5rem;
+        .team-section .sec-head {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            min-height: 0;
+            margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
         }
 
-        .member-content .member-bio-wrap,
-        .member-content .member-contact {
+        .team-section .sec-head p {
+            margin: 0 auto;
+        }
+
+        /* Mission quote */
+        .team-mission {
+            max-width: 680px;
+            margin: 0 auto clamp(2rem, 4vw, 3rem);
+            font-size: clamp(0.9rem, 1.4vw, 1rem);
+            color: var(--muted);
+            line-height: 1.75;
+            font-style: italic;
+            padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+            border-left: 3px solid var(--gold);
+            background: rgba(255, 102, 0, 0.035);
+            border-radius: 0 12px 12px 0;
             text-align: left;
         }
 
-        .member-name {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
-            color: var(--navy);
-            margin-bottom: 0.25rem;
-            font-weight: 700;
+        /* Leadership 2-col grid */
+        .team-leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2.5vw, 1.75rem);
+            max-width: 820px;
+            margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
         }
 
-        .member-title {
-            font-size: 0.75rem;
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-bottom: 0.5rem;
+        /* Team sub-heading */
+        .team-sub-head {
+            margin-top: 0 !important;
+            margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
         }
 
-        .member-bio-wrap {
+        /* Team 3-col grid */
+        .team-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        /* ——— UNIFIED TEAM CARD ——— */
+        .team-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
             position: relative;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), rgba(255, 102, 0, 0.35));
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-out);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1), 0 4px 14px rgba(0, 0, 0, 0.05);
+            border-color: rgba(255, 102, 0, 0.18);
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Card header */
+        .tc-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.75rem 1.25rem 0.85rem;
+            text-align: center;
+        }
+
+        .tc-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-bottom: 0.85rem;
+            border: 3px solid rgba(255, 102, 0, 0.22);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+            background: #f0f0f0;
+        }
+
+        .team-card:hover .tc-photo {
+            border-color: var(--gold);
+            box-shadow: 0 6px 22px rgba(255, 102, 0, 0.15);
+        }
+
+        /* Larger photo for leadership */
+        .team-leaders-grid .tc-photo {
+            width: 116px;
+            height: 116px;
+        }
+
+        .tc-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 22%;
+            display: block;
+        }
+
+        .tc-name {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: clamp(1rem, 1.4vw, 1.125rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 0.25rem;
+            line-height: 1.2;
+        }
+
+        .tc-role {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 0;
+            line-height: 1.35;
+        }
+
+        /* Card body */
+        .tc-body {
+            padding: 0.85rem 1.25rem 1rem;
             flex: 1;
+            display: flex;
+            flex-direction: column;
             min-height: 0;
         }
 
-        .member-bio {
+        .tc-teaser {
+            font-size: 0.875rem;
             color: var(--muted);
             line-height: 1.6;
-            font-size: 0.875rem;
-            max-height: 4.8em;
+            margin: 0 0 0.75rem;
+        }
+
+        /* Expandable bio */
+        .tc-bio {
+            max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s var(--ease-out);
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
         }
 
-        .team-member.is-expanded .member-bio {
+        .team-card.is-open .tc-bio {
             max-height: 1200px;
+            opacity: 1;
         }
 
-        .member-bio p {
-            margin-bottom: 0.4rem;
-            color: inherit;
-            font-size: inherit;
+        .tc-bio-inner {
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+            margin-bottom: 0.5rem;
         }
 
-        .member-bio p:last-child {
-            margin-bottom: 0;
+        .tc-bio-inner p {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin: 0 0 0.55rem;
         }
 
-        .member-bio-toggle {
+        .tc-bio-inner p:last-child { margin-bottom: 0; }
+
+        /* Toggle button */
+        .tc-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
             background: none;
             border: none;
             padding: 0;
-            margin-top: 0.35rem;
-            font-size: 0.875rem;
+            margin-top: auto;
+            font-family: inherit;
+            font-size: 0.8125rem;
             font-weight: 600;
             color: var(--gold);
             cursor: pointer;
-            font-family: inherit;
             transition: color 0.2s var(--ease-out);
+            -webkit-tap-highlight-color: transparent;
+            align-self: flex-start;
         }
 
-        .member-bio-toggle:hover {
-            color: var(--navy);
+        .tc-toggle:hover { color: var(--navy); }
+
+        .tc-toggle:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
-        .member-bio-toggle:focus {
-            outline: none;
-            text-decoration: underline;
+        .tc-toggle-icon {
+            flex-shrink: 0;
+            transition: transform 0.3s var(--ease-out);
         }
 
-        .member-contact {
+        .team-card.is-open .tc-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Card footer */
+        .tc-footer {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 0.7rem 1.25rem;
             border-top: 1px solid var(--border);
         }
 
-        .member-email {
+        .tc-email {
+            font-size: 0.8rem;
+            font-weight: 600;
             color: var(--navy);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
             transition: color 0.2s var(--ease-out);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            min-width: 0;
         }
 
-        .member-email:hover {
-            color: var(--gold);
-        }
+        .tc-email:hover { color: var(--gold); }
 
-        .linkedin-link {
-            width: 32px;
-            height: 32px;
+        .tc-linkedin {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
             background: var(--navy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            transition: all 0.25s var(--ease-out);
-            flex-shrink: 0;
+            transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
         }
 
-        .linkedin-link:hover {
+        .tc-linkedin:hover {
             background: var(--gold);
             transform: translateY(-2px);
-        }
-
-        /* ——— ADDITIONAL TEAM ——— */
-        .additional-team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .team-member-small {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .member-image-small {
-            width: 100%;
-            max-width: 120px;
-            aspect-ratio: 1;
-            margin: 0 auto 1rem;
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        }
-
-        .member-image-small img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 28%;
-        }
-
-        .member-name-small {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
-            color: var(--navy);
-            margin-bottom: 0.35rem;
-            font-weight: 700;
-        }
-
-        .member-title-small {
-            font-size: 0.875rem;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-bio-small {
-            color: var(--muted);
-            line-height: 1.6;
-            font-size: 0.9375rem;
-            margin-bottom: 0.75rem;
-            flex-grow: 1;
-        }
-
-        .member-contact-small {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.75rem;
-            margin-top: auto;
-        }
-
-        .member-contact-small .member-email {
-            font-size: 0.875rem;
-        }
-
-        .member-contact-small .linkedin-link {
-            width: 32px;
-            height: 32px;
         }
 
         /* ——— CONTACT FORM ——— */
@@ -1621,23 +1621,18 @@
                 padding: 1.75rem 1.5rem;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr;
+            .team-leaders-grid {
                 max-width: 100%;
                 gap: 1rem;
             }
 
-            .member-image {
-                max-width: 90px;
-            }
-
-            .member-content {
-                padding: 0.95rem 1.1rem 1.1rem;
-            }
-
-            .additional-team-grid {
+            .team-cards-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
+
+            .tc-photo { width: 80px; height: 80px; }
+            .team-leaders-grid .tc-photo { width: 100px; height: 100px; }
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1701,47 +1696,19 @@
                 padding: 2rem 0 2.5rem;
             }
 
-            .team-section>.container>.sec-head:first-child {
-                margin-bottom: 1.25rem;
-            }
-
-            .team-section .team-grid+.sec-head {
-                margin-top: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .team-grid {
-                gap: 1rem;
-            }
-
-            .member-image {
-                max-width: 85px;
-            }
-
-            .member-content {
-                padding: 0.9rem 1rem 1rem;
-            }
-
-            .member-name {
-                font-size: 1rem;
-            }
-
-            .member-bio {
-                font-size: 0.75rem;
-            }
-
-            .member-bio-toggle {
-                font-size: 0.6875rem;
-            }
-
-            .additional-team-grid {
+            .team-leaders-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .member-image-small {
-                margin-bottom: 0.5rem;
+            .team-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
+
+            .tc-name { font-size: 0.975rem; }
+            .tc-bio-inner p { font-size: 0.78125rem; }
 
             .contact-form-header,
             .contact-form-body {
@@ -1846,74 +1813,24 @@
                 padding: 1.75rem 0 2rem;
             }
 
-            .team-section .team-grid+.sec-head {
-                margin-top: 1.25rem;
-                margin-bottom: 0.85rem;
+            .team-leaders-grid,
+            .team-cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .team-grid {
-                gap: 0.85rem;
+            .team-leaders-grid {
+                margin-bottom: 2rem;
             }
 
-            .member-image {
-                max-width: 78px;
-                margin-top: 0.5rem;
-            }
-
-            .member-content {
-                padding: 0.8rem 1rem 1rem;
-            }
-
-            .member-name {
-                font-size: 0.95rem;
-            }
-
-            .member-title {
-                font-size: 0.65rem;
-                margin-bottom: 0.4rem;
-            }
-
-            .member-bio {
-                font-size: 0.75rem;
-            }
-
-            .member-bio p {
-                margin-bottom: 0.35rem;
-            }
-
-            .member-bio-toggle {
-                font-size: 0.6875rem;
-                margin-top: 0.25rem;
-            }
-
-            .member-contact {
-                margin-top: 0.6rem;
-                padding-top: 0.6rem;
-            }
-
-            .additional-team-grid {
-                gap: 0.85rem;
-            }
-
-            .member-image-small {
-                margin-bottom: 0.5rem;
-            }
-
-            .member-title-small {
-                margin-bottom: 0.4rem;
-            }
-
-            .member-bio-small {
-                margin-bottom: 0.6rem;
-            }
-
-            .member-name-small {
-                font-size: 1.05rem;
-            }
-
-            .member-bio-small {
-                font-size: 0.8125rem;
-            }
+            .tc-header { padding: 1.5rem 1rem 0.7rem; }
+            .tc-photo { width: 76px; height: 76px; }
+            .team-leaders-grid .tc-photo { width: 90px; height: 90px; }
+            .tc-name { font-size: 0.95rem; }
+            .tc-body { padding: 0.75rem 1rem 0.85rem; }
+            .tc-footer { padding: 0.6rem 1rem; }
 
             .contact-form-container {
                 border-radius: 12px;
@@ -3123,233 +3040,314 @@
 
     <section class="team-section">
         <div class="container">
+
+            <!-- Section Header -->
             <div class="sec-head reveal">
                 <h2>Our Leadership Team</h2>
                 <p>Industry experts driving strategic vision and operational excellence</p>
             </div>
 
-            <div class="team-grid">
-                <div class="team-member reveal" style="--i: 0;">
-                    <div class="member-image">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3590acb5dc4d13a6d.jpg"
-                            alt="Guido Di Franco">
-                    </div>
-                    <div class="member-content">
-                        <h3 class="member-name">Guido Di Franco</h3>
-                        <p class="member-title">President and CEO, Founder</p>
-                        <div class="member-bio-wrap">
-                            <div class="member-bio">
-                                <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending
-                                    parameters and guidelines, and ensuring our company is constantly adapting to
-                                    changing dynamics in the industry.</p>
-                                <p>Guido has over 15 years of personal lending experience which brought him extensive
-                                    knowledge of real estate investing and residential home building.</p>
-                                <p>Guido was a business entrepreneur for over 25 years building start-ups and turning
-                                    them into successful businesses grossing multi-million dollars in sales. Currently,
-                                    Guido is a principal broker for a mortgage brokerage with over 10 years of industry
-                                    experience.</p>
-                            </div>
-                            <button type="button" class="member-bio-toggle" aria-expanded="false">Read more</button>
-                        </div>
-                        <div class="member-contact">
-                            <a href="mailto:guido@richviewcapital.com" class="member-email">Email Guido</a>
-                            <a href="https://www.linkedin.com/in/guido-di-franco-9b34a533/" class="linkedin-link"
-                                target="_blank" aria-label="LinkedIn">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Mission quote -->
+            <blockquote class="team-mission reveal">
+                Reputation and trust are earned. Experience solidifies our business foundation time after time.
+                Reaching a customer's goal and receiving referrals from them are the measures of our success.
+                We constantly aim for solutions. These ideals define us at Richview Capital.
+            </blockquote>
 
-                <div class="team-member reveal" style="--i: 1;">
-                    <div class="member-image">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc52d590acb5154d16ddd.jpg"
-                            alt="Teresa Di Franco">
-                    </div>
-                    <div class="member-content">
-                        <h3 class="member-name">Teresa Di Franco</h3>
-                        <p class="member-title">Executive VP & COO, Co-Founder</p>
-                        <div class="member-bio-wrap">
-                            <div class="member-bio">
-                                <p>Teresa is primarily responsible for business development and day-to-day operations.
-                                    She holds the oversight on risk and human resources. Teresa has over 30 years of
-                                    experience in banking, investments and credit adjudication, starting with a
-                                    productive management career with The Toronto Dominion Bank.</p>
-                                <p>Teresa has won multiple awards in the industry including the prestigious "Women of
-                                    Influence 2016," from the CMP-Canadian Mortgage Professional Magazine.</p>
-                                <p>Teresa is also an accredited financial planner having earned the Personal Financial
-                                    Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP)
-                                    designation.</p>
-                            </div>
-                            <button type="button" class="member-bio-toggle" aria-expanded="false">Read more</button>
-                        </div>
-                        <div class="member-contact">
-                            <a href="mailto:teresa@richviewcapital.com" class="member-email">Email Teresa</a>
-                            <a href="https://www.linkedin.com/in/teresadifranco/" class="linkedin-link" target="_blank"
-                                aria-label="LinkedIn">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- ── Leadership: 2-col ── -->
+            <div class="team-leaders-grid">
 
-            <div class="sec-head reveal">
+                <!-- Guido Di Franco -->
+                <article class="team-card reveal" style="--i:0;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3590acb5dc4d13a6d.jpg" alt="Guido Di Franco" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Guido Di Franco</h3>
+                        <p class="tc-role">President &amp; CEO, Founder</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Sets lending parameters and leads portfolio quality with 15+ years of lending experience and 25+ years as an entrepreneur.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
+                                <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
+                                <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales.</p>
+                                <p>Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:guido@richviewcapital.com" class="tc-email">guido@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/guido-di-franco-9b34a533/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Guido Di Franco on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Teresa Di Franco -->
+                <article class="team-card reveal" style="--i:1;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc52d590acb5154d16ddd.jpg" alt="Teresa Di Franco" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Teresa Di Franco</h3>
+                        <p class="tc-role">Executive VP &amp; COO, Co-Founder</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">30+ years in banking, investments, and credit adjudication. Award-winning industry leader, PFP and AMP designations.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
+                                <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine, awarded to women who made a difference in the mortgage industry, and the Canada-wide 2018 Spotlight Achievement Award.</p>
+                                <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation. Currently, Teresa is the principal broker and general manager of Mortgage Architects Experts, Inc., a multi award-winning mortgage brokerage.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:teresa@richviewcapital.com" class="tc-email">teresa@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/teresadifranco/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Teresa Di Franco on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div><!-- /team-leaders-grid -->
+
+            <!-- ── Our Team sub-heading ── -->
+            <div class="sec-head team-sub-head reveal">
                 <h2>Our Team</h2>
-                <p>Dedicated professionals committed to your&nbsp;success</p>
+                <p>Dedicated professionals committed to your success</p>
             </div>
 
-            <div class="additional-team-grid">
-                <div class="team-member-small reveal" style="--i: 0;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b1001a54461f0128e.jpg"
-                            alt="Maurizio Sera">
-                    </div>
-                    <h4 class="member-name-small">Maurizio Sera</h4>
-                    <p class="member-title-small">Director of Investments/Underwriting</p>
-                    <p class="member-bio-small">22 years as entrepreneur and 10+ years as mortgage investor. Ensures
-                        meticulous internal processes with emphasis on risk mitigation and quality control.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:maurizio@richviewcapital.com" class="member-email">Email</a>
-                        <a href="https://www.linkedin.com/in/maurizio-sera-7249a020/" class="linkedin-link"
-                            target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+            <!-- ── Team: 3-col ── -->
+            <div class="team-cards-grid">
 
-                <div class="team-member-small reveal" style="--i: 1;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc523fdcb920de3e8c40e.jpg"
-                            alt="Natasha Barranca">
+                <!-- Maurizio Sera -->
+                <article class="team-card reveal" style="--i:0;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b1001a54461f0128e.jpg" alt="Maurizio Sera" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Maurizio Sera</h3>
+                        <p class="tc-role">Director of Investments / Underwriting</p>
                     </div>
-                    <h4 class="member-name-small">Natasha Barranca</h4>
-                    <p class="member-title-small">Director of Operations</p>
-                    <p class="member-bio-small">18+ years in financial management. Oversees accounting, general ledgers,
-                        auditing, and day-to-day operations with focus on investor relations.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:natasha@richviewcapital.com" class="member-email">Email</a>
-                        <a href="https://www.linkedin.com/in/natasha-barranca-958052142/" class="linkedin-link"
-                            target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">22 years as entrepreneur and 10+ years as mortgage investor — oversees investor relations and underwriting precision.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Maurizio Sera is our Director of Investor Relations and Underwriting. Prior to joining Richview Capital MIC Inc, Maurizio accumulated 22 years of experience as a successful entrepreneur and over 10 years of experience as a mortgage investor.</p>
+                                <p>Maurizio's hands-on experience in personal financial discipline enables him to fully understand the goals and objectives of a client, whether as an investor or as a borrower.</p>
+                                <p>As part of the executive team, Maurizio ensures the meticulous internal business processes are adhered to with precision and with emphasis on risk mitigation and quality control. Maurizio also oversees investor relations including ensuring timely delivery of information and documentation.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:maurizio@richviewcapital.com" class="tc-email">maurizio@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/maurizio-sera-7249a020/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Maurizio Sera on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="team-member-small reveal" style="--i: 2;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4c6373080fa2b8dd139.jpg"
-                            alt="Randall Olivares">
+                <!-- Natasha Barranca -->
+                <article class="team-card reveal" style="--i:1;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc523fdcb920de3e8c40e.jpg" alt="Natasha Barranca" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Natasha Barranca</h3>
+                        <p class="tc-role">Director of Operations</p>
                     </div>
-                    <h4 class="member-name-small">Randall Olivares</h4>
-                    <p class="member-title-small">Underwriting and Fulfillment Officer</p>
-                    <p class="member-bio-small">7+ years in mortgage industry. Evaluates loan applications, analyzes
-                        financial data, and manages mortgage fulfillment processes.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:randall@richviewcapital.com" class="member-email">Email</a>
-                        <a href="https://www.linkedin.com/in/randall-olivares-b84526158/" class="linkedin-link"
-                            target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">18+ years in financial management, overseeing accounting, auditing, and investor relations across all operations.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Natasha has over 18 years of extensive financial management and administration experience encompassing various industries. In her current role, Natasha manages the accounting department and oversees all financial operations, including general ledgers, cost accounting, bookkeeping, auditing, and day-to-day administrative operations.</p>
+                                <p>Additionally, she assists in investor relations and managing client portfolios. Her solid experience and love for business and finance has allowed her to achieve exceptional growth and continued success.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:natasha@richviewcapital.com" class="tc-email">natasha@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/natasha-barranca-958052142/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Natasha Barranca on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="team-member-small reveal" style="--i: 3;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b3730805ef08dbd30.jpg"
-                            alt="Mark Leung">
+                <!-- Randall Olivares -->
+                <article class="team-card reveal" style="--i:2;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4c6373080fa2b8dd139.jpg" alt="Randall Olivares" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Randall Olivares</h3>
+                        <p class="tc-role">Underwriting &amp; Fulfillment Officer</p>
                     </div>
-                    <h4 class="member-name-small">Mark Leung</h4>
-                    <p class="member-title-small">Controller</p>
-                    <p class="member-bio-small">ACCA member with KPMG experience. Expert in IFRS, U.S. GAAP, and SOX
-                        compliance. Manages financial reporting and cash flow optimization.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:mark@richviewcapital.com" class="member-email">Email</a>
-                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">7+ years evaluating loan applications, analyzing financial data, and managing the end-to-end mortgage fulfillment process.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Randall is our Underwriting and Fulfillment Officer and comes with over 7 years of experience in the mortgage industry. His role involves meticulously evaluating loan applications, analyzing financial data, and managing the intricate process of mortgage fulfillment.</p>
+                                <p>Thanks to his expertise, he has consistently facilitated seamless transactions, mitigated risks, and plays a pivotal role in the company's continued growth and success.</p>
+                                <p>Beyond underwriting, his sales and management experience have allowed him to effectively collaborate with clients and team members alike, fostering relationships that drive business growth and operational efficiency.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:randall@richviewcapital.com" class="tc-email">randall@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/randall-olivares-b84526158/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Randall Olivares on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="team-member-small reveal" style="--i: 4;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc53d590acbae2dd1723b.jpg"
-                            alt="Emely Sanchez">
+                <!-- Emely Sanchez -->
+                <article class="team-card reveal" style="--i:3;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc53d590acbae2dd1723b.jpg" alt="Emely Sanchez" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Emely Sanchez</h3>
+                        <p class="tc-role">Accountant</p>
                     </div>
-                    <h4 class="member-name-small">Emely Sanchez</h4>
-                    <p class="member-title-small">Director of Administration</p>
-                    <p class="member-bio-small">10+ years in office administration. University of Toronto graduate
-                        focused on environmental conservation and efficient resource management.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:emely@richviewcapital.com" class="member-email">Email</a>
-                        <a href="https://www.linkedin.com/in/emely-sanchez-170201250/" class="linkedin-link"
-                            target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">10+ years in office administration and records management, continuously expanding expertise in private lending.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Emely Sanchez is our Director of Administration. She brings over 10 years of experience in office administration and records maintenance.</p>
+                                <p>Emely has developed a profound interest in developing her career in the mortgage industry. Her knowledge of the private lending sector is continuously expanding as her role evolves to meet the needs of the company's steady growth.</p>
+                                <p>Emely proudly capitalizes on her Bachelor's degree at the University of Toronto with a focus in environmental conservation, ensuring that maximum conservation of resources are observed in our firm. She consistently maintains efficient procedures, allowing her to maximize her contribution to the team's success.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:emely@richviewcapital.com" class="tc-email">emely@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/emely-sanchez-170201250/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Emely Sanchez on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="team-member-small reveal" style="--i: 5;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3fdcb929808e89908.jpg"
-                            alt="Laura Novello">
+                <!-- Laura Novello -->
+                <article class="team-card reveal" style="--i:4;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc4a3fdcb929808e89908.jpg" alt="Laura Novello" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Laura Novello</h3>
+                        <p class="tc-role">Renewals</p>
                     </div>
-                    <h4 class="member-name-small">Laura Novello</h4>
-                    <p class="member-title-small">Renewals Specialist</p>
-                    <p class="member-bio-small">Customer success expert ensuring seamless, personalized renewal
-                        experiences. Focuses on building trust and long-term client relationships.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:laura@richviewcapital.com" class="member-email">Email</a>
-                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Renewal Specialist turning every client interaction into a smooth, personalized experience built on genuine connection.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Laura Novello is an energetic and outgoing Renewal Specialist who thrives on building genuine connections with clients and making every interaction count. With a strong background in customer success and account management, she brings a fresh, positive energy to the renewal process — turning what could feel transactional into a smooth, personalized experience.</p>
+                                <p>Known for her proactive communication style and attention to detail, Laura works closely with clients to ensure renewals are seamless, timely, and aligned with their goals. She's passionate about helping customers feel supported and valued at every stage of their journey.</p>
+                                <p>It's not just about closing renewals — it's about strengthening relationships, creating trust, and keeping customers excited to stay.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:laura@richviewcapital.com" class="tc-email">laura@richviewcapital.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Laura Novello on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="team-member-small reveal" style="--i: 6;">
-                    <div class="member-image-small">
-                        <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc505e54a3726e43466c4.jpg"
-                            alt="Gabriella Di Franco">
+                <!-- Mark Shun-Yin Leung -->
+                <article class="team-card reveal" style="--i:5;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc48b3730805ef08dbd30.jpg" alt="Mark Leung" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Mark Shun-Yin Leung</h3>
+                        <p class="tc-role">Controller</p>
                     </div>
-                    <h4 class="member-name-small">Gabriella Di Franco</h4>
-                    <p class="member-title-small">Executive Administrator</p>
-                    <p class="member-bio-small">Highly organized professional supporting executive operations. Expert in
-                        calendar management, stakeholder communication, and process improvement.</p>
-                    <div class="member-contact-small">
-                        <a href="mailto:gabriella@adminexec.com" class="member-email">Email</a>
-                        <a href="#" class="linkedin-link" target="_blank" aria-label="LinkedIn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                    <div class="tc-body">
+                        <p class="tc-teaser">ACCA member and former KPMG auditor specializing in IFRS, U.S. GAAP, SOX compliance, and mortgage loan servicing.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Mark Leung is our Controller. He is a member in good standing of the Association of Chartered Certified Accountants (ACCA), having completed his Bachelor's degree at Staffordshire University (U.K.) and built his wealth of auditing and financial reporting experience at KPMG. He is highly experienced with the International Financial Reporting Standards (IFRS) and the U.S. GAAP, including SOX-Sarbanes compliance.</p>
+                                <p>Mark has also gained valuable years of experience in the mortgage loan industry that includes loan origination, underwriting, regulations, compliance, and account servicing.</p>
+                                <p>Mark is appreciated for his exceptional skills in analytical and strategic thinking, attention to detail, and effective communication. He has a proven track record of delivering high-quality work in a timely and efficient manner with focus on optimizing cash balances, reducing idle cash, and managing cash flow.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:mark@richviewcapital.com" class="tc-email">mark@richviewcapital.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Mark Leung on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
-                </div>
-            </div>
+                </article>
+
+                <!-- Gabriella Di Franco -->
+                <article class="team-card reveal" style="--i:6;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc505e54a3726e43466c4.jpg" alt="Gabriella Di Franco" loading="lazy">
+                        </div>
+                        <h3 class="tc-name">Gabriella Di Franco</h3>
+                        <p class="tc-role">Executive Administrator</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Highly organized Executive Administrator supporting leadership with expertise in scheduling, coordination, and process improvement.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Gabriella Di Franco is a highly organized and detail-oriented Executive Administrator with years of experience supporting day-to-day operations. Known for exceptional communication skills and a proactive approach, she excels in calendar management, meeting coordination, stakeholder communication, and process improvement.</p>
+                                <p>Gabriella is committed to maintaining professionalism and efficiency in fast-paced environments, contributing significantly to organizational growth and leadership effectiveness.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:gabriella@adminexec.com" class="tc-email">gabriella@adminexec.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Gabriella Di Franco on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div><!-- /team-cards-grid -->
+
         </div>
     </section>
 
@@ -3687,12 +3685,14 @@
         }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
         document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
 
-        document.querySelectorAll('.member-bio-toggle').forEach(function (btn) {
+        document.querySelectorAll('.tc-toggle').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var card = this.closest('.team-member');
-                var expanded = card.classList.toggle('is-expanded');
-                this.setAttribute('aria-expanded', expanded);
-                this.textContent = expanded ? 'Show less' : 'Read more';
+                var card = this.closest('.team-card');
+                var isOpen = card.classList.toggle('is-open');
+                this.setAttribute('aria-expanded', isOpen);
+                this.querySelector('.tc-toggle-text').textContent = isOpen ? 'Show less' : 'Read more';
+                var bio = card.querySelector('.tc-bio');
+                if (bio) bio.setAttribute('aria-hidden', !isOpen);
             });
         });
 
