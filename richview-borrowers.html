@@ -771,13 +771,17 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            padding: 0 var(--gutter);
         }
 
         .process-card {
             padding: var(--space-lg) var(--space-md);
             border-right: 1px solid var(--border);
             position: relative;
-            transition: all 0.3s var(--ease-out);
+            overflow: hidden;
+            background: var(--white);
+            border-radius: 10px;
+            transition: background 0.4s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.4s var(--ease-out), color 0.35s var(--ease-out);
         }
 
         .process-card:last-child {
@@ -789,21 +793,30 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 3px;
+            width: 4px;
             height: 100%;
             background: var(--navy);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease-out);
+            transform: scaleY(0);
+            transform-origin: center top;
+            transition: transform 0.4s var(--ease-out), background 0.35s var(--ease-out);
         }
 
-        .process-card:hover {
-            transform: translateY(-2px);
-            background: var(--white);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        .process-card:hover,
+        .process-card:focus-within {
+            background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(11, 22, 53, 0.2), 0 0 0 1px rgba(11, 22, 53, 0.06);
         }
 
-        .process-card:hover::before {
-            opacity: 1;
+        .process-card:hover::before,
+        .process-card:focus-within::before {
+            transform: scaleY(1);
+            background: var(--gold);
+        }
+
+        .process-card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
         }
 
         .process-number {
@@ -814,6 +827,12 @@
             text-transform: uppercase;
             margin-bottom: var(--space-xs);
             display: block;
+            transition: color 0.35s var(--ease-out);
+        }
+
+        .process-card:hover .process-number,
+        .process-card:focus-within .process-number {
+            color: rgba(255, 102, 0, 0.95);
         }
 
         .process-card h4 {
@@ -823,12 +842,24 @@
             color: var(--navy);
             margin-bottom: 0.75rem;
             letter-spacing: -0.01em;
+            transition: color 0.35s var(--ease-out);
+        }
+
+        .process-card:hover h4,
+        .process-card:focus-within h4 {
+            color: var(--white);
         }
 
         .process-card p {
             font-size: 0.875rem;
             color: var(--muted);
             line-height: 1.7;
+            transition: color 0.35s var(--ease-out);
+        }
+
+        .process-card:hover p,
+        .process-card:focus-within p {
+            color: rgba(255, 255, 255, 0.85);
         }
 
         /* ——— BENEFITS (BORDERED GRID) ——— */
@@ -3234,22 +3265,22 @@
             <p>A simple, transparent process from application to&nbsp;funding</p>
         </div>
         <div class="process-grid reveal">
-            <div class="process-card">
+            <div class="process-card" tabindex="0">
                 <span class="process-number">01</span>
                 <h4>Initial Consultation</h4>
                 <p>Connect with our team to discuss your financing needs and property details</p>
             </div>
-            <div class="process-card">
+            <div class="process-card" tabindex="0">
                 <span class="process-number">02</span>
                 <h4>Application & Documentation</h4>
                 <p>Submit your application with required documents for review</p>
             </div>
-            <div class="process-card">
+            <div class="process-card" tabindex="0">
                 <span class="process-number">03</span>
                 <h4>Underwriting & Approval</h4>
                 <p>Our team reviews and approves your application, typically within 24-48 hours</p>
             </div>
-            <div class="process-card">
+            <div class="process-card" tabindex="0">
                 <span class="process-number">04</span>
                 <h4>Funding & Closing</h4>
                 <p>Receive your funds and close your deal in as little as 7-10 business days</p>
