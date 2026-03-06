@@ -1,202 +1,1647 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Richview Capital MIC</title>
-    <meta name="description" content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
+    <meta name="description"
+        content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
     <link rel="icon" href="logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
     <link rel="canonical" href="privacy.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Privacy Policy | Richview Capital MIC">
-    <meta property="og:description" content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
+    <meta property="og:description"
+        content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
     <meta property="og:image" content="logo.png">
     <meta property="og:url" content="privacy.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        :root{--navy:#0B1635;--gold:#FF6600;--charcoal:#1A1A1A;--white:#FFFFFF;--muted:#6B7280;--border:rgba(0,0,0,0.08);--dark-blue-deep:#070E24;--container:1120px;--ease-out:cubic-bezier(0.16,1,0.3,1);--section-padding:2.5rem;--gutter:clamp(0.75rem,2vw,1rem);--btn-pri-hover:#0c1838;--btn-gold-glow:0 6px 20px -2px rgba(212,175,55,0.25);}
-        html{scroll-behavior:smooth;overflow-x:hidden;}
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--charcoal);font-size:1rem;line-height:1.65;background:linear-gradient(180deg,#FAFBFC 0%,#F5F6F8 35%,#FAFAFA 70%,#FFFFFF 100%);background-attachment:fixed;overflow-x:hidden;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-        main{overflow-x:hidden;min-width:0;}
-        img{max-width:100%;height:auto;display:block;}
-        .container{max-width:100%;margin:0 auto;padding:0 var(--gutter);width:100%;min-width:0;box-sizing:border-box;}
-        .skip-link{position:absolute;top:-3rem;left:1rem;z-index:10000;padding:0.6rem 1rem;background:var(--navy);color:var(--white);font-weight:600;font-size:0.875rem;text-decoration:none;border-radius:6px;transition:top 0.2s var(--ease-out);}
-        .skip-link:focus{top:1rem;outline:2px solid var(--gold);outline-offset:2px;}
-        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
-        nav{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);width:98%;max-width:100%;background:rgba(255,255,255,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:16px;z-index:1000;border:1px solid rgba(0,0,0,0.05);box-shadow:0 1px 2px rgba(0,0,0,0.04);transition:box-shadow .25s var(--ease-out),top .25s var(--ease-out),border-color .2s;}
-        nav.scrolled{box-shadow:0 4px 16px rgba(0,0,0,0.06);top:1rem;border-color:rgba(0,0,0,0.06);}
-        .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1.25rem 0.5rem 1.75rem;min-height:56px;position:relative;}
-        .logo{display:flex;align-items:center;text-decoration:none;z-index:2;}
-        .logo:hover{opacity:0.82;}
-        .logo-img{height:58px;width:auto;object-fit:contain;display:block;}
-        .nav-links{display:flex;gap:2.25rem;list-style:none;align-items:center;position:absolute;left:50%;transform:translateX(-50%);z-index:1;}
-        .nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:0.8125rem;letter-spacing:0.03em;}
-        .nav-links a:hover{color:var(--navy);}
-        .nav-dropdown{position:relative;}
-        nav{overflow:visible;}
-        .nav-inner{overflow:visible;}
-        .nav-dropdown-content{position:absolute;top:100%;left:0;margin-top:0.5rem;min-width:200px;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:12px;padding:0.5rem 0;border:1px solid rgba(0,0,0,0.06);box-shadow:0 0 0 1px rgba(0,0,0,0.04),0 4px 6px -2px rgba(0,0,0,0.05),0 12px 24px -8px rgba(0,0,0,0.08),0 24px 48px -12px rgba(0,0,0,0.06);z-index:1001;pointer-events:auto;display:none;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.22s,visibility 0.22s,transform 0.22s var(--ease-out);}
-        .nav-dropdown-content::before{content:'';position:absolute;top:-6px;left:20px;width:12px;height:12px;background:rgba(255,255,255,0.98);border-left:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);transform:rotate(45deg);box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-        .nav-dropdown:hover .nav-dropdown-content,.nav-dropdown.open .nav-dropdown-content{display:block;opacity:1;visibility:visible;transform:translateY(0);}
-        .nav-dropdown-content a{display:flex;align-items:center;padding:0.625rem 1.25rem;color:var(--charcoal);font-size:0.875rem;font-weight:500;letter-spacing:0.02em;position:relative;z-index:1;transition:color 0.2s,background 0.2s,padding-left 0.2s;}
-        .nav-dropdown-content a::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:linear-gradient(180deg,var(--gold),rgba(255,102,0,0.85));border-radius:0 2px 2px 0;transition:height 0.2s;}
-        .nav-dropdown-content a:hover{color:var(--navy);background:rgba(11,22,53,0.04);padding-left:1.5rem;}
-        .nav-dropdown-content a:hover::before{height:20px;}
-        .cta-nav{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);color:var(--white);padding:0.625rem 1.5rem;border-radius:14px;font-weight:600;font-size:0.875rem;letter-spacing:0.025em;text-decoration:none;border:none;box-shadow:0 2px 8px rgba(11,22,53,0.15);transition:background .25s,transform .2s,box-shadow .25s;}
-        .cta-nav:hover{background:var(--gold);color:var(--white);transform:translateY(-2px);box-shadow:0 6px 20px -2px rgba(255,102,0,0.4);}
-        .cta-nav:active{transform:translateY(0);box-shadow:0 1px 4px rgba(11,22,53,0.12);}
-        .cta-nav:focus-visible{outline:2px solid rgba(255,102,0,0.5);outline-offset:2px;}
-        .mobile-menu-btn{display:none;background:none;border:none;color:var(--navy);cursor:pointer;z-index:1001;padding:0;width:44px;height:44px;}
-        .page-hero{padding:clamp(9rem,12vw,11rem) 0 var(--section-padding);background:linear-gradient(135deg,rgba(11,22,53,0.92) 0%,rgba(11,22,53,0.96) 100%),url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80') center/cover no-repeat;position:relative;overflow:hidden;}
-        .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 70% 30%,rgba(255,102,0,0.06) 0%,transparent 55%);pointer-events:none;}
-        .page-hero .container{position:relative;z-index:1;max-width:800px;}
-        .page-hero h1{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);font-weight:700;letter-spacing:-0.02em;}
-        .legal-content{padding:var(--section-padding) 0;position:relative;background:linear-gradient(180deg,#FFFFFF 0%,#FAFBFC 30%,#F8F9FA 70%,#FFFFFF 100%);overflow:hidden;}
-        .legal-content::before{content:'';position:absolute;top:0;right:-15%;width:50%;height:80%;background:radial-gradient(ellipse at 70% 30%,rgba(11,22,53,0.03) 0%,transparent 60%);pointer-events:none;}
-        .legal-content .container{position:relative;z-index:1;}
-        .legal-content h2{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1.375rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;letter-spacing:-0.02em;}
-        .legal-content h2:first-child{margin-top:0;}
-        .legal-content p{color:var(--muted);font-size:0.9375rem;margin-bottom:1rem;}
-        .legal-content ul{margin:0 0 1rem 1.5rem;color:var(--muted);font-size:0.9375rem;}
-        .legal-content li{margin-bottom:0.5rem;}
-        footer{background:linear-gradient(180deg,#0d1a3a 0%,var(--navy) 40%,#070E24 100%);color:rgba(255,255,255,0.65);position:relative;overflow:hidden;}
-        footer::after{content:'';position:absolute;bottom:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,102,0,0.06) 0%,transparent 70%);pointer-events:none;}
-        .footer-main{padding:4rem 0 2rem;position:relative;z-index:1;}
-        .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:2rem;}
-        .footer-brand .logo{display:inline-flex;margin-bottom:1.25rem;}
-        .footer-brand .logo-img{height:36px;filter:brightness(0) invert(1);}
-        .footer-brand p{font-size:0.9rem;line-height:1.75;max-width:280px;margin-bottom:1.75rem;color:rgba(255,255,255,0.55);}
-        .footer-social{display:flex;gap:0.75rem;}
-        .footer-social a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);}
-        .footer-social a:hover{background:var(--gold);color:var(--white);}
-        .footer-col h4{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;}
-        .footer-col ul{list-style:none;}
-        .footer-col li{margin-bottom:0.625rem;}
-        .footer-col a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.9rem;}
-        .footer-col a:hover{color:var(--white);}
-        .footer-contact-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1rem;font-size:0.9rem;}
-        .footer-contact-item a{color:rgba(255,255,255,0.65);}
-        .footer-divider{height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.08),transparent);}
-        .footer-bottom{padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;font-size:0.8125rem;color:rgba(255,255,255,0.35);}
-        .footer-bottom-left{display:flex;align-items:center;gap:1.5rem;}
-        .footer-license{display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.75rem;background:rgba(255,255,255,0.04);border-radius:100px;font-size:0.7rem;}
-        .footer-legal{display:flex;gap:1.25rem;}
-        .footer-legal a{color:rgba(255,255,255,0.35);text-decoration:none;}
-        .footer-legal a:hover{color:rgba(255,255,255,0.7);}
-        .footer-back-top{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);cursor:pointer;border:none;transition:background .25s,color .2s,transform .2s,box-shadow .25s;}
-        .footer-back-top:hover{background:var(--gold);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(255,102,0,0.35);}
-@media (max-width:1024px){:root{--gutter:1rem;}.container{padding:0 var(--gutter);}.footer-grid{grid-template-columns:1fr 1fr;}.footer-brand{grid-column:1/-1;}}
-@media (max-width:768px){:root{--gutter:0.875rem;}.container{padding:0 var(--gutter);}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;gap:1rem;text-align:center;}.footer-bottom-left{flex-direction:column;}.footer-legal{justify-content:center;}}
-@media (max-width:480px){:root{--gutter:0.75rem;}.container{padding:0 var(--gutter);}.page-hero{padding-top:7rem;padding-bottom:2.5rem;}.legal-content{padding:2.5rem 0;}.legal-content h2{font-size:1.25rem;}.legal-content p,.legal-content ul{font-size:0.875rem;}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0B1635;
+            --gold: #FF6600;
+            --charcoal: #1A1A1A;
+            --white: #FFFFFF;
+            --muted: #6B7280;
+            --border: rgba(0, 0, 0, 0.08);
+            --dark-blue-deep: #070E24;
+            --container: min(90vw, 1400px);
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --section-padding: 2.5rem;
+            --gutter: clamp(0.75rem, 2vw, 1rem);
+            --btn-pri-hover: #0c1838;
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
+
+            --space-xs: 0.75rem;
+            --space-sm: 1.25rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3.5rem;
+            --space-2xl: 4rem;
+            --space-3xl: 5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.65;
+            background: linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 35%, #FAFAFA 70%, #FFFFFF 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        main {
+            overflow-x: hidden;
+            min-width: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -3rem;
+            left: 1rem;
+            z-index: 10000;
+            padding: 0.6rem 1rem;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: top 0.2s var(--ease-out);
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        nav {
+            position: fixed;
+            top: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(94%, 1200px);
+            max-width: 100%;
+            background: #ffffff;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 999px;
+            z-index: 1000;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+            transition: box-shadow .25s var(--ease-out), top .25s var(--ease-out), border-color .2s;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            top: 1rem;
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.25rem 0.5rem 1.75rem;
+            min-height: 56px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 2;
+        }
+
+        .logo:hover {
+            opacity: 0.82;
+        }
+
+        .logo-img {
+            height: 58px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.25rem;
+            list-style: none;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.8125rem;
+            letter-spacing: 0.03em;
+        }
+
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown>a {
+            white-space: nowrap;
+        }
+
+        .nav-dropdown>a::after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.3rem;
+            border-left: 3.5px solid transparent;
+            border-right: 3.5px solid transparent;
+            border-top: 3.5px solid currentColor;
+            opacity: 0.5;
+            vertical-align: middle;
+            transition: transform 0.25s var(--ease-out);
+        }
+
+        .nav-dropdown:hover>a::after,
+        .nav-dropdown.open>a::after {
+            transform: rotate(180deg);
+        }
+
+        .nav-mobile-logo {
+            display: none;
+        }
+
+        .nav-dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 200px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            z-index: 1001;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.22s var(--ease-out), visibility 0.22s, transform 0.22s var(--ease-out);
+        }
+
+        .nav-dropdown-content::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: rgba(255, 255, 255, 0.96);
+            margin-bottom: -1px;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-content,
+        .nav-dropdown.open .nav-dropdown-content {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-content a {
+            display: block;
+            padding: 0.6rem 0.9rem;
+            color: #334155;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+            transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .nav-dropdown-content a:hover {
+            color: var(--navy);
+            background: rgba(15, 23, 42, 0.06);
+        }
+
+        .nav-dropdown-content a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .nav-dropdown-label {
+            display: block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 0.4rem 0.9rem 0.3rem;
+            margin-bottom: 0.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+        }
+
+        .cta-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.625rem 1.5rem;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            text-decoration: none;
+            border: none;
+            box-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
+            transition: background .25s, transform .2s, box-shadow .25s;
+        }
+
+        .cta-nav:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+        }
+
+        .cta-nav:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 4px rgba(11, 22, 53, 0.12);
+        }
+
+        .cta-nav:focus-visible {
+            outline: 2px solid rgba(255, 102, 0, 0.5);
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--navy);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0;
+            width: 44px;
+            height: 44px;
+        }
+
+        .page-hero {
+            padding: clamp(9rem, 12vw, 11rem) 0 var(--section-padding);
+            background: linear-gradient(135deg, rgba(11, 22, 53, 0.92) 0%, rgba(11, 22, 53, 0.96) 100%), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 70% 30%, rgba(255, 102, 0, 0.06) 0%, transparent 55%);
+            pointer-events: none;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        
+        .legal-content {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        .legal-content::before {
+            display: none;
+        }
+
+        .legal-content .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .legal-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .legal-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2rem 0 0.8rem;
+        }
+
+        .legal-content p {
+            color: #334155;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .legal-content strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .legal-content ul {
+            margin: 0 0 1.5rem 2rem;
+            color: #334155;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: linear-gradient(180deg, #0d1a3a 0%, var(--navy) 30%, #070E24 100%);
+            color: rgba(255, 255, 255, 0.65);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-main {
+            padding: var(--space-xl) var(--gutter) var(--space-lg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+            gap: var(--space-lg);
+        }
+
+        .footer-brand .logo {
+            display: inline-flex;
+            margin-bottom: 1.25rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-brand .logo:hover {
+            opacity: 0.8;
+        }
+
+        .footer-brand .logo-img {
+            height: 108px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            max-width: 280px;
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.25s var(--ease-out);
+        }
+
+        .footer-social a:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.625rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s var(--ease-out), padding-left 0.2s var(--ease-out);
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-contact-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-contact-icon svg {
+            width: 14px;
+            height: 14px;
+            color: var(--gold);
+            filter: drop-shadow(0 0 4px rgba(255, 102, 0, 0.4));
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04), transparent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.35);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-license {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+        }
+
+        .footer-license-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold), 0 0 16px rgba(255, 102, 0, 0.4);
+            animation: footerDotPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes footerDotPulse {
+
+            0%,
+            100% {
+                opacity: 0.7;
+                box-shadow: 0 0 8px var(--gold), 0 0 16px rgba(255, 102, 0, 0.4);
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 12px var(--gold), 0 0 24px rgba(255, 102, 0, 0.6);
+            }
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.35);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-back-top {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--btn-radius);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: background 0.25s var(--ease-btn), border-color 0.2s var(--ease-btn), color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
+        }
+
+        .footer-back-top:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 102, 0, 0.35);
+        }
+
+        .footer-back-top:active {
+            transform: translateY(0);
+        }
+
+        .footer-back-top:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.6);
+            outline-offset: 2px;
+        }
+
+        .footer-back-top svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            nav,
+            .nav-inner,
+            .nav-dropdown-content,
+            .nav-links {
+                transition-duration: 0.1s;
+            }
+
+            .nav-links.active>li {
+                animation: none;
+            }
+        }
+
+        .mobile-menu-btn .icon-menu,
+        .mobile-menu-btn .icon-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s var(--ease-out);
+        }
+
+        .mobile-menu-btn .icon-close {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+        }
+
+        nav.menu-open .mobile-menu-btn .icon-menu {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        nav.menu-open .mobile-menu-btn .icon-close {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 1024px) {
+            nav {
+                left: 4%;
+                right: 4%;
+                width: auto;
+                transform: none;
+            }
+
+            nav.nav-hidden {
+                transform: translateY(calc(-100% - 2rem));
+            }
+
+            .nav-links {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                min-height: 100vh;
+                min-height: 100dvh;
+                z-index: 999;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                padding: max(5.5rem, calc(5.5rem + env(safe-area-inset-top))) 1.25rem max(1.5rem, env(safe-area-inset-bottom)) 1.25rem;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: opacity 0.3s var(--ease-out), visibility 0.3s, transform 0.3s var(--ease-out);
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                list-style: none;
+                pointer-events: none;
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .nav-mobile-logo {
+                display: flex !important;
+                align-items: center;
+                padding: 0 0 1rem 0;
+                margin-bottom: 0.25rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                flex-shrink: 0;
+            }
+
+            .nav-mobile-logo a {
+                padding: 0;
+                min-height: 0;
+            }
+
+            .nav-mobile-logo .logo-img {
+                height: 40px;
+                width: auto;
+                display: block;
+            }
+
+            .nav-links>li {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                flex-shrink: 0;
+            }
+
+            .nav-links>li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links>li>a {
+                display: block;
+                padding: 1rem 0;
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--navy);
+                min-height: 44px;
+            }
+
+            .nav-links>li>a::after {
+                display: none;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-content {
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .nav-dropdown-content {
+                position: static;
+                display: block;
+                box-shadow: none;
+                background: transparent;
+                min-width: auto;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                padding: 0;
+                margin: 0;
+                visibility: hidden;
+                transition: max-height 0.3s var(--ease-out), opacity 0.2s var(--ease-out), padding 0.2s var(--ease-out);
+            }
+
+            .nav-dropdown-content::before {
+                display: none;
+            }
+
+            .nav-dropdown.open .nav-dropdown-content {
+                max-height: 280px;
+                overflow: visible;
+                opacity: 1;
+                visibility: visible;
+                display: block;
+                padding: 0 0 0.75rem 0;
+                margin-top: -0.25rem;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-dropdown>a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .nav-dropdown>a::after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-right: 2px solid currentColor;
+                border-bottom: 2px solid currentColor;
+                transform: rotate(45deg);
+                margin-left: 0.5rem;
+                transition: transform 0.25s var(--ease-out);
+            }
+
+            .nav-dropdown.open>a::after {
+                transform: rotate(-135deg);
+            }
+
+            .nav-dropdown-content a {
+                display: block !important;
+                padding: 0.65rem 0 0.65rem 1rem;
+                font-size: 0.9375rem;
+                font-weight: 500;
+                color: var(--charcoal) !important;
+                border-left: 2px solid transparent;
+                margin-left: 0.5rem;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-dropdown-content a:hover {
+                color: var(--navy);
+                background: rgba(11, 22, 53, 0.06);
+                border-left-color: var(--gold);
+            }
+
+            .mobile-cta-li {
+                display: block !important;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(0, 0, 0, 0.08);
+            }
+
+            .mobile-cta-li a {
+                display: block;
+                text-align: center;
+                background: var(--navy);
+                color: var(--white) !important;
+                padding: 1rem 1.25rem;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            .mobile-cta-li a:hover {
+                background: var(--gold);
+                color: var(--white) !important;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .cta-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 50px;
+            }
+
+            .nav-inner {
+                padding: 0.55rem 1rem 0.55rem 1.25rem;
+                min-height: 58px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .logo-img {
+                height: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
+
+            .footer-brand .logo-img {
+                height: 102px;
+            }
+        }
+    
+        /* --- GLOBAL MOBILE NAV/FOOTER FIXES (Injected by fix_mobile.py) --- */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--navy);
+            cursor: pointer;
+            touch-action: manipulation;
+            z-index: 1001;
+            padding: 0;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+            position: relative;
+        }
+        .mobile-menu-btn:hover { background: rgba(11, 22, 53, 0.06); }
+        .mobile-menu-btn:focus { outline: none; }
+        .mobile-menu-btn .icon-menu, .mobile-menu-btn .icon-close { display: flex; align-items: center; justify-content: center; transition: opacity 0.25s var(--ease-out); }
+        .mobile-menu-btn .icon-close { display: none; }
+        nav.menu-open .mobile-menu-btn .icon-menu { display: none; }
+        nav.menu-open .mobile-menu-btn .icon-close { display: block; }
+        .cta-nav { display: inline-flex; }
+
+        @media (max-width: 1024px) {
+            .nav-inner { padding: 0.4rem 1.35rem !important; min-height: 60px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
+            nav.menu-open .nav-inner { z-index: 1001 !important; position: relative !important; }
+            nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
+            nav.menu-open .logo, nav.menu-open .mobile-menu-btn { z-index: 1002 !important; position: relative !important; }
+            .nav-links {
+                position: fixed !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 100vh !important;
+                z-index: 999 !important;
+                background: rgba(255, 255, 255, 0.98) !important;
+                backdrop-filter: blur(24px) !important;
+                -webkit-backdrop-filter: blur(24px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                padding: max(5.5rem, calc(5.5rem + env(safe-area-inset-top))) max(1.25rem, env(safe-area-inset-right)) max(2rem, calc(1.5rem + env(safe-area-inset-bottom))) max(1.25rem, env(safe-area-inset-left)) !important;
+                gap: 0 !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(-8px) !important;
+                transition: opacity 0.25s var(--ease-out), visibility 0.25s, transform 0.25s var(--ease-out) !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                pointer-events: none !important;
+            }
+            .nav-links.active {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+                pointer-events: auto !important;
+            }
+            .nav-mobile-logo { display: none !important; }
+            .nav-links > li { border-bottom: 1px solid rgba(0,0,0,0.05) !important; flex-shrink: 0 !important; }
+            .nav-links > li:last-child { border-bottom: none !important; }
+            .nav-links > li > a { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 1rem 0 !important; font-size: 1rem !important; font-weight: 600 !important; color: var(--navy) !important; min-height: 48px !important; border-radius: 0 !important; margin: 0 !important; }
+            .nav-dropdown-content {
+                position: static !important;
+                transform: none !important;
+                display: block !important;
+                box-shadow: none !important;
+                background: rgba(11, 22, 53, 0.06) !important;
+                min-width: auto !important;
+                border-radius: 12px !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0.5rem 0 0 0 !important;
+                border: 1px solid rgba(0,0,0,0.06) !important;
+                transition: max-height 0.32s var(--ease-out), padding 0.22s var(--ease-out), margin 0.22s var(--ease-out) !important;
+            }
+            .nav-dropdown.open .nav-dropdown-content,
+            .nav-dropdown.open:hover .nav-dropdown-content {
+                max-height: 320px !important;
+                overflow: visible !important;
+                padding: 0.4rem !important;
+                margin-top: 0.5rem !important;
+                color: #1A1A1A !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .nav-dropdown-content .nav-dropdown-label { display: block !important; margin: 0 0 0.25rem 0 !important; color: #6B7280 !important; font-size: 0.6875rem !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; padding-bottom: 0.25rem !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+            .nav-dropdown-content a {
+                display: flex !important;
+                align-items: center !important;
+                padding: 0.75rem 1rem !important;
+                font-size: 0.9375rem !important;
+                font-weight: 500 !important;
+                color: #1A1A1A !important;
+                border-left: 3px solid transparent !important;
+                margin-left: 0.25rem !important;
+                border-radius: 8px !important;
+                min-height: 48px !important;
+            }
+            .nav-dropdown-content a:hover { color: var(--navy) !important; background: rgba(11, 22, 53, 0.07) !important; border-left-color: var(--gold) !important; }
+            .nav-dropdown > a::after { transform: rotate(45deg) !important; }
+            .nav-dropdown.open > a::after { transform: rotate(-135deg) !important; }
+            .mobile-cta-li { display: block !important; margin-top: 1.25rem !important; padding-top: 1.25rem !important; border-top: 1px solid rgba(0,0,0,0.08) !important; width: 100% !important; }
+            li.mobile-cta-li > a { display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; background: var(--navy) !important; color: var(--white) !important; padding: 1rem 1.25rem !important; border-radius: 12px !important; font-weight: 600 !important; min-height: 48px !important; font-size: 1rem !important; }
+            li.mobile-cta-li > a:hover { background: var(--gold) !important; color: var(--white) !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .cta-nav { display: none !important; }
+            
+            /* Form / Footer fixes */
+            .cta-box .form-row { grid-template-columns: 1fr !important; }
+            .footer-grid { grid-template-columns: 1fr 1fr !important; gap: var(--space-md) !important; }
+            .footer-brand { grid-column: 1 / -1 !important; }
+        }
+        @media (max-width: 768px) {
+            .nav-inner { padding: 0.5rem 1rem !important; min-height: 56px !important; }
+            .logo-img { height: 48px !important; }
+            .cta-box { margin-left: 0.75rem !important; margin-right: 0.75rem !important; max-width: none !important; }
+            
+            .footer-grid { grid-template-columns: 1fr !important; }
+            .footer-brand { grid-column: auto !important; }
+            .footer-bottom { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
+            .footer-bottom-left { flex-direction: column !important; gap: 0.75rem !important; }
+        }
+        @media (max-width: 480px) {
+            .nav-inner { padding: 0.5rem 0.75rem !important; min-height: 52px !important; }
+            .logo-img { height: 40px !important; }
+            .cta-box { margin-left: 0 !important; margin-right: 0 !important; max-width: 100% !important; border-radius: 12px !important; padding: 1.5rem !important; }
+            .cta-grid { gap: 1.5rem !important; }
+        }
+
     </style>
 </head>
+
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
             <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false"><span aria-hidden="true">☰</span></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg></span>
+                <span class="icon-close" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg></span>
+            </button>
             <ul class="nav-links" id="navLinks">
+                <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="logo.png"
+                            alt="Richview Capital" class="logo-img"></a></li>
                 <li><a href="home.html">Home</a></li>
-                <li class="nav-dropdown"><a href="home.html#services">Services ▾</a>
-                    <div class="nav-dropdown-content"><a href="richview-borrowers.html">Borrowers</a><a href="richview-capital-mic.html">Investors</a><a href="richview-capital-brokers.html">Brokers</a></div>
+                <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#services" id="navTriggerServices" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="navMenuServices">Services</a>
+                    <div class="nav-dropdown-content" id="navMenuServices" role="menu" aria-label="Services">
+                        <span class="nav-dropdown-label">Who we serve</span>
+                        <a href="richview-borrowers.html" role="menuitem">Borrowers</a>
+                        <a href="richview-capital-brokers.html" role="menuitem">Brokers</a>
+                        <a href="richview-capital-mic.html" role="menuitem">Investors</a>
+                    </div>
                 </li>
                 <li><a href="richview-about.html">About</a></li>
-                <li><a href="richview-blog.html">Blog</a></li>
-                <li class="nav-dropdown"><a href="#">Resources ▾</a>
-                    <div class="nav-dropdown-content"><a href="richview-what-is-a-mic.html">What Is a MIC?</a><a href="richview-faq.html">FAQ</a></div>
+                <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="navMenuResources">Resources</a>
+                    <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
+                        <span class="nav-dropdown-label">Learn more</span>
+                        <a href="richview-what-is-a-mic.html" role="menuitem">What Is a MIC?</a>
+                        <a href="richview-faq.html" role="menuitem">FAQ</a>
+                    </div>
                 </li>
+                <li><a href="richview-blog.html">Blog</a></li>
+                <li class="mobile-cta-li" style="display:none"><a href="#cta" style="color:var(--orange)">Get
+                        Started</a></li>
             </ul>
-            <a href="home.html#cta" class="cta-nav">Get Started</a>
+            <a href="#cta" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
     <section class="page-hero" id="main">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p style="color:rgba(255,255,255,0.75);font-size:1.0625rem;margin-top:0.5rem;">How we collect, use, and protect your information.</p>
+            <p style="color:rgba(255,255,255,0.75);font-size:1.0625rem;margin-top:0.5rem;">How we collect, use, and
+                protect your information.</p>
         </div>
     </section>
 
     <section class="legal-content">
         <div class="container">
-            <p><strong>Last updated:</strong> February 2026. Richview Capital Corp. and its affiliates (“we,” “us,” “our”) are committed to protecting your privacy. This policy describes how we collect, use, and safeguard your personal information when you use our website or services.</p>
+            <h3><strong>Privacy Policy</strong></h3>
+            <p>How Richview Capital Corp. collects, uses, and protects your personal information.
+            </p>
+            <p>Effective Date: January 1, 2025  | Last Updated: March 2025  | Richview Capital Corp. — Woodbridge,
+                Ontario</p>
+            <p>This Privacy Policy applies to Richview Capital Corp. ("Richview Capital," "we," "us," or "our"), a
+                licensed Mortgage Investment Corporation (MIC #13171) registered in Ontario. It governs the collection,
+                use, and disclosure of personal information through our website at richviewcapitalmic.com and through
+                our lending, investing, and brokerage partnership services.</p>
+            <h3><strong>1. Our Commitment to Your Privacy</strong></h3>
+            <p>Richview Capital Corp. is committed to protecting the privacy and confidentiality of all personal
+                information we receive in connection with our services. We comply with the <em>Personal Information
+                    Protection and Electronic Documents Act</em> (PIPEDA), the <em>Financial Services Regulatory
+                    Authority of Ontario</em> (FSRA) requirements, and all applicable Ontario privacy legislation.</p>
+            <h3><strong>2. What Personal Information We Collect</strong></h3>
+            <p>Depending on how you interact with us, we may collect the following types of personal information:</p>
+            <p><strong>Identity information:</strong> Full name, date of birth, government-issued identification</p>
+            <p><strong>Contact information:</strong> Email address, phone number, mailing address</p>
+            <p><strong>Financial information:</strong> Income, employment status, credit history, assets and
+                liabilities, banking details</p>
+            <p><strong>Property information:</strong> Address, legal description, appraisal details, mortgage history
+            </p>
+            <p><strong>Investment information:</strong> RRSP/RRIF/TFSA account details, investment objectives, risk
+                profile</p>
+            <p><strong>Website usage data:</strong> IP address, browser type, pages visited, time on site, referral
+                sources (collected via cookies and analytics tools)</p>
+            <p><strong>Communications:</strong> Records of your inquiries, emails, and consultation requests</p>
+            <h3><strong>3. How We Collect Your Information</strong></h3>
+            <p>We collect personal information through:</p>
+            <p>Online inquiry forms and consultation booking requests on our website</p>
+            <p>Direct communications (phone, email, in-person meetings)</p>
+            <p>Mortgage applications and supporting documentation submitted by you or your broker</p>
+            <p>Third-party sources such as credit bureaus, land registry databases, and appraisal firms (with your
+                consent where required)</p>
+            <p>Automated collection through cookies and web analytics tools when you visit our website</p>
+            <h3><strong>4. How We Use Your Information</strong></h3>
+            <p>We use personal information for the following purposes:</p>
+            <p>Evaluating and processing mortgage and financing applications</p>
+            <p>Assessing investor applications and administering MIC investments</p>
+            <p>Verifying identity and conducting anti-money laundering (AML) and know-your-client (KYC) checks as
+                required by law</p>
+            <p>Communicating with you about your application, account, or inquiry</p>
+            <p>Administering loan servicing, payments, and investor distributions</p>
+            <p>Improving our website and services</p>
+            <p>Complying with legal, regulatory, and reporting obligations</p>
+            <p>Sending relevant updates or information about our services (with your consent)</p>
+            <h3><strong>5. Disclosure of Your Information</strong></h3>
+            <p>We do not sell, rent, or trade your personal information. We may share your information only in the
+                following circumstances:</p>
+            <p><strong>Service providers:</strong> Legal counsel, accountants, appraisers, title insurers, mortgage
+                administrators, and IT providers who assist us in delivering our services — under confidentiality
+                obligations</p>
+            <p><strong>Regulatory bodies:</strong> FSRA, FINTRAC, and other government or regulatory authorities as
+                required by law</p>
+            <p><strong>Affiliated brokers:</strong> With your explicit consent, when your file is submitted by or
+                referred to a licensed mortgage broker</p>
+            <p><strong>Business transactions:</strong> In the event of a merger, acquisition, or sale of assets, subject
+                to confidentiality protections</p>
+            <p><strong>Legal requirements:</strong> Where required by court order, subpoena, or applicable law</p>
+            <h3><strong>6. Marketing Communications and CASL Compliance</strong></h3>
+            <p>Richview Capital Corp. complies with Canada's Anti-Spam Legislation (CASL). We will only send you
+                commercial electronic messages (CEMs) — including emails, newsletters, and follow-up communications
+                about our products and services — if we have your express or implied consent to do so.</p>
+            <p><strong>Express consent:</strong> When you submit an inquiry or consultation request through our website
+                forms, you may be asked to indicate whether you wish to receive future marketing communications from us.
+                Consent checkboxes are never pre-checked. You must actively opt in. Your consent, along with the date,
+                time, and manner it was obtained, is recorded and retained.</p>
+            <p><strong>Implied consent:</strong> If you submit an inquiry, application, or consultation request, we may
+                contact you in relation to that specific request under an implied existing business relationship for up
+                to two (2) years from your last transaction or inquiry with us, or six (6) months from an inquiry that
+                did not result in a transaction, in accordance with CASL.</p>
+            <p><strong>Unsubscribe:</strong> Every commercial electronic message we send will include a clear and
+                functional unsubscribe mechanism. We will honour all unsubscribe requests within 10 business days. To
+                opt out at any time, click "Unsubscribe" in any email we send, or contact us at .</p>
+            <p>Transactional messages — such as confirmation of your inquiry submission, responses to your consultation
+                request, or communications directly related to a mortgage or investment application you have initiated —
+                are not commercial electronic messages under CASL and may be sent without a separate marketing consent.
+            </p>
+            <h3><strong>7. Information Collected Through Our Website Forms</strong></h3>
+            <p>When you submit a form on this Site (inquiry form, consultation booking, or application), we collect the
+                personal information you provide (such as name, email, phone number, and your stated interest). This
+                information is used to:</p>
+            <p>Respond to your inquiry within our standard 24-hour response window</p>
+            <p>Assess your eligibility for our lending or investment products</p>
+            <p>Schedule and conduct consultations you have requested</p>
+            <p>Comply with KYC, AML, and other regulatory obligations that may arise</p>
+            <p>Contact you regarding your specific inquiry or related services (under implied consent)</p>
+            <p>Send marketing communications, if you have provided express consent to do so</p>
+            <p>By submitting a form on this Site, you acknowledge that you have read this Privacy Policy and consent to
+                the collection and use of your information as described herein for the purpose of responding to your
+                inquiry. Marketing communications are separate and require your express opt-in consent.</p>
+            <h3><strong>8. Cookies and Website Tracking</strong></h3>
+            <p>Our website uses cookies and similar tracking technologies to understand how visitors use our site and to
+                improve user experience. This may include analytics tools such as Google Analytics. You can disable
+                cookies through your browser settings; however, some features of our website may not function properly
+                as a result.</p>
+            <p>We do not use cookies for targeted advertising or sell browsing data to third-party advertisers.</p>
+            <h3><strong>9. Data Retention</strong></h3>
+            <p>We retain personal information for as long as necessary to fulfill the purposes for which it was
+                collected, and as required by applicable law and regulation. For mortgage and financial records, this is
+                typically a minimum of seven (7) years following the conclusion of a transaction. Website inquiry data
+                is retained for a reasonable period to address your request and for internal reporting purposes.</p>
+            <h3><strong>10. Security</strong></h3>
+            <p>We implement reasonable physical, administrative, and technical safeguards to protect your personal
+                information against unauthorized access, disclosure, loss, or alteration. These measures include secure
+                data storage, restricted access controls, and confidentiality obligations for all staff and service
+                providers with access to personal data.</p>
+            <p>While we take reasonable precautions, no method of electronic transmission or storage is completely
+                secure. We encourage you to exercise caution when transmitting sensitive information.</p>
+            <h3><strong>11. Your Rights</strong></h3>
+            <p>Subject to applicable law, you have the right to:</p>
+            <p>Request access to the personal information we hold about you</p>
+            <p>Request correction of inaccurate or incomplete information</p>
+            <p>Withdraw consent to the use of your information for non-essential purposes (subject to legal and
+                contractual limitations)</p>
+            <p>Request information about how your data is being used</p>
+            <p>To exercise any of these rights, please contact our Privacy Officer using the contact details below.</p>
+            <h3><strong>12. Third-Party Links</strong></h3>
+            <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices
+                of those sites and encourage you to review their privacy policies before submitting any personal
+                information.</p>
+            <h3><strong>13. Changes to This Policy</strong></h3>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal
+                requirements. The updated version will be posted on our website with the revised effective date. We
+                encourage you to review this page periodically.</p>
+            <h3><strong>13. AML/KYC and Mandatory Reporting</strong></h3>
+            <p>As of October 11, 2024, Richview Capital Corp. is a reporting entity under the <em>Proceeds of Crime
+                    (Money Laundering) and Terrorist Financing Act</em> (PCMLTFA) as a mortgage administrator and
+                lender. We are required by law to collect, verify, and retain identity information from borrowers and
+                investors, and to report certain transactions and suspicious activities to FINTRAC. These obligations
+                override consent requirements under PIPEDA and are non-negotiable conditions of using our services.</p>
+            <h3><strong>14. Transfer of Information Outside Canada</strong></h3>
+            <p>In some cases, personal information we collect may be transferred to, processed, or stored by service
+                providers located outside of Canada (for example, cloud-based software providers). When this occurs, the
+                information may be subject to the laws of the jurisdiction in which it is processed, which may differ
+                from Canadian privacy law. We take reasonable contractual steps to ensure such providers maintain
+                appropriate privacy protections. By using our Site and services, you acknowledge and consent to such
+                transfers where necessary.</p>
+            <h3><strong>15. Contact Us</strong></h3>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy or how we handle your personal
+                information, please contact our Privacy Officer:</p>
+            <p><strong>Richview Capital Corp.</strong>
+                Privacy Officer
+                7681 Highway 27, Unit 15, Suite 200
+                Woodbridge, ON  L4L 4M5
 
-            <h2>Information We Collect</h2>
-            <p>We may collect information you provide directly, such as name, email address, phone number, and property or financing details when you submit an inquiry, application, or contact form. We may also collect information automatically when you visit our website, including IP address, browser type, and pages visited.</p>
-
-            <h2>How We Use Your Information</h2>
-            <p>We use your information to respond to inquiries, process applications, provide mortgage and investment services, send relevant updates (with your consent), and improve our website and services. We may also use it to comply with legal obligations and protect our rights.</p>
-
-            <h2>Sharing and Disclosure</h2>
-            <p>We do not sell your personal information. We may share it with service providers who assist our operations (e.g. legal, accounting), with regulators when required by law, or in connection with a business transfer. We require such parties to protect your information appropriately.</p>
-
-            <h2>Security and Retention</h2>
-            <p>We use reasonable administrative, technical, and physical measures to protect your personal information. We retain your information only as long as necessary to fulfill the purposes described in this policy or as required by law.</p>
-
-            <h2>Your Rights and Contact</h2>
-            <p>Depending on applicable law, you may have rights to access, correct, or delete your personal information or to withdraw consent. To exercise these rights or for questions about this policy, contact us at <a href="mailto:info@richviewcapitalmic.com" style="color:var(--gold);">info@richviewcapitalmic.com</a> or 416 307 2336.</p>
+                Email: 
+                Phone: </p>
+            <p>If you are not satisfied with our response, you may contact the <strong>Office of the Privacy
+                    Commissioner of Canada</strong> at .</p>
         </div>
     </section>
-
     <footer>
         <div class="footer-main">
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
-                        <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed Mortgage Investment Corporation serving Ontario.</p>
+                        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital"
+                                class="logo-img"></a>
+                        <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
+                            Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
-                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
-                            <a href="mailto:info@richviewcapitalmic.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg></a>
+                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg></a>
+                            <a href="mailto:info@richviewcapitalmic.com" aria-label="Email"><svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg></a>
                         </div>
                     </div>
-                    <div class="footer-col"><h4>Services</h4><ul><li><a href="richview-borrowers.html">Borrowers</a></li><li><a href="richview-capital-brokers.html">Brokers</a></li><li><a href="richview-capital-mic.html">Investors</a></li></ul></div>
-                    <div class="footer-col"><h4>Company</h4><ul><li><a href="richview-about.html">About Us</a></li><li><a href="richview-faq.html">FAQ</a></li><li><a href="home.html#cta">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="richview-borrowers.html">Borrowers</a></li>
+                            <li><a href="richview-capital-brokers.html">Brokers</a></li>
+                            <li><a href="richview-capital-mic.html">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="richview-about.html">About Us</a></li>
+                            <li><a href="richview-faq.html">FAQ</a></li>
+                            <li><a href="#cta">Contact</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
                     <div class="footer-col">
                         <h4>Get in Touch</h4>
-                        <div class="footer-contact-item"><span>7681 Highway 27 Unit 15, Suite 200<br>Woodbridge ON, L4L 4M5</span></div>
-                        <div class="footer-contact-item"><a href="mailto:info@richviewcapitalmic.com">info@richviewcapitalmic.com</a></div>
-                        <div class="footer-contact-item"><a href="tel:+14163072336">416 307 2336</a></div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=7681+Highway+27+Unit+15%2C+Suite+200%2C+Woodbridge+ON%2C+L4L+4M5"
+                                target="_blank" rel="noopener">
+                                7681 Highway 27 Unit 15, Suite 200<br>Woodbridge ON, L4L 4M5
+                            </a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg></span>
+                            <a href="mailto:info@richviewcapitalmic.com">info@richviewcapitalmic.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg></span>
+                            <a href="tel:+14163072336">416 307 2336</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-divider"><div class="container"></div></div>
+        <div class="footer-divider">
+            <div class="container"></div>
+        </div>
         <div class="container">
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
                     <p>&copy; 2026 Richview Capital Corp.</p>
-                    <span class="footer-license">Mortgage Administrator License # - 13171</span>
+                    <span class="footer-license"><span class="footer-license-dot"></span> Mortgage Administrator License
+                        # - 13171</span>
                 </div>
                 <div class="footer-legal">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
-                    <a href="terms.html#disclaimer">Disclaimer</a>
+                    <a href="disclaimer.html">Disclaimer</a>
                 </div>
-                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                    aria-label="Back to top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15" />
+                    </svg>
+                </button>
             </div>
         </div>
     </footer>
 
+
     <script>
-        window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.pageYOffset>30);});
-        (function(){
-            var menu=document.getElementById('navLinks');
-            if(!menu) return;
-            document.querySelectorAll('#navLinks .nav-dropdown > a').forEach(function(trigger){
-                trigger.addEventListener('click',function(e){
-                    e.preventDefault();
-                    var dropdown=this.closest('.nav-dropdown');
-                    if(dropdown) dropdown.classList.toggle('open');
+        (function () {
+            var nav = document.getElementById('mainNav');
+            var btn = document.getElementById('mobileMenuBtn');
+            var menu = document.getElementById('navLinks');
+            if (!btn || !menu) return;
+            if (btn.hasAttribute('data-listener-attached')) return;
+            btn.setAttribute('data-listener-attached', 'true');
+            btn.addEventListener('click', function () {
+                var isOpen = menu.classList.toggle('active');
+                nav.classList.toggle('menu-open', isOpen);
+                btn.setAttribute('aria-expanded', isOpen);
+                btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                if (!isOpen) {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
+                } else {
+                    var first = menu.querySelector('li a[href]');
+                    if (first) setTimeout(function () { first.focus(); }, 100);
+                }
+            });
+            document.querySelectorAll('#navLinks a').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    var dropdown = this.closest('.nav-dropdown');
+                    var isTrigger = dropdown && dropdown.firstElementChild === this;
+                    if (isTrigger) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var isOpen = dropdown.classList.toggle('open');
+                        dropdown.setAttribute('aria-expanded', isOpen);
+                        dropdown.querySelector('a').setAttribute('aria-expanded', isOpen);
+                        document.querySelectorAll('#navLinks .nav-dropdown').forEach(function (d) {
+                            if (d !== dropdown) {
+                                d.classList.remove('open');
+                                d.setAttribute('aria-expanded', 'false');
+                                var t = d.querySelector('a[aria-haspopup="true"]');
+                                if (t) t.setAttribute('aria-expanded', 'false');
+                            }
+                        });
+                        return;
+                    }
+                    menu.classList.remove('active');
+                    nav.classList.remove('menu-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', 'Open menu');
+                    document.body.style.overflow = '';
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function (d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
                 });
             });
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth < 1025) return;
+                var open = document.querySelector('#navLinks .nav-dropdown.open');
+                if (!open || open.contains(e.target)) return;
+                open.classList.remove('open');
+                open.setAttribute('aria-expanded', 'false');
+                var t = open.querySelector('a[aria-haspopup="true"]');
+                if (t) t.setAttribute('aria-expanded', 'false');
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function (d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                    if (nav.classList.contains('menu-open')) {
+                        menu.classList.remove('active');
+                        nav.classList.remove('menu-open');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.setAttribute('aria-label', 'Open menu');
+                        document.body.style.overflow = '';
+                        btn.focus();
+                    }
+                    return;
+                }
+                if (window.innerWidth >= 1025) {
+                    var trigger = e.target.closest('a[aria-haspopup="true"]');
+                    if (trigger && (e.key === 'Enter' || e.key === ' ')) {
+                        e.preventDefault();
+                        var dd = trigger.closest('.nav-dropdown');
+                        if (dd) {
+                            var isOpen = dd.classList.toggle('open');
+                            dd.setAttribute('aria-expanded', isOpen);
+                            trigger.setAttribute('aria-expanded', isOpen);
+                            document.querySelectorAll('#navLinks .nav-dropdown').forEach(function (d) {
+                                if (d !== dd) {
+                                    d.classList.remove('open');
+                                    d.setAttribute('aria-expanded', 'false');
+                                    var t = d.querySelector('a[aria-haspopup="true"]');
+                                    if (t) t.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            if (isOpen) {
+                                var first = dd.querySelector('[role="menuitem"]');
+                                if (first) first.focus();
+                            }
+                        }
+                    }
+                }
+            });
+        })();
+
+        (function () {
+            var nav = document.getElementById('mainNav');
+            var lastScrollY = 0;
+            var scrollThreshold = 120;
+            function onScroll() {
+                if (!nav) return;
+                var y = window.pageYOffset || document.documentElement.scrollTop;
+                nav.classList.toggle('scrolled', y > 30);
+                if (nav.classList.contains('menu-open')) { lastScrollY = y; return; }
+                if (y <= scrollThreshold) {
+                    nav.classList.remove('nav-hidden');
+                } else if (y > lastScrollY) {
+                    nav.classList.add('nav-hidden');
+                } else {
+                    nav.classList.remove('nav-hidden');
+                }
+                lastScrollY = y;
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
         })();
     </script>
+<script>
+        (function() {
+            var nav = document.getElementById('mainNav');
+            var btn = document.getElementById('mobileMenuBtn');
+            var menu = document.getElementById('navLinks');
+            if (!btn || !menu) return;
+            // Prevent multiple listeners if already injected
+            if (btn.hasAttribute('data-listener-attached')) return;
+            btn.setAttribute('data-listener-attached', 'true');
+            
+            btn.addEventListener('click', function() {
+                var isOpen = menu.classList.toggle('active');
+                nav.classList.toggle('menu-open', isOpen);
+                btn.setAttribute('aria-expanded', isOpen);
+                btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                if (!isOpen) {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+                } else {
+                    var first = menu.querySelector('li a[href]');
+                    if (first) setTimeout(function() { first.focus(); }, 100);
+                }
+            });
+            document.querySelectorAll('#navLinks a').forEach(function(a) {
+                // Ensure no duplicate listener
+                if (a.hasAttribute('data-listener-attached')) return;
+                a.setAttribute('data-listener-attached', 'true');
+                
+                a.addEventListener('click', function(e) {
+                    var dropdown = this.closest('.nav-dropdown');
+                    var isTrigger = dropdown && dropdown.firstElementChild === this;
+                    if (isTrigger) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var isOpen = dropdown.classList.toggle('open');
+                        dropdown.setAttribute('aria-expanded', isOpen);
+                        dropdown.querySelector('a').setAttribute('aria-expanded', isOpen);
+                        document.querySelectorAll('#navLinks .nav-dropdown').forEach(function(d) {
+                            if (d !== dropdown) {
+                                d.classList.remove('open');
+                                d.setAttribute('aria-expanded', 'false');
+                                var t = d.querySelector('a[aria-haspopup="true"]');
+                                if (t) t.setAttribute('aria-expanded', 'false');
+                            }
+                        });
+                        return;
+                    }
+                    menu.classList.remove('active');
+                    nav.classList.remove('menu-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', 'Open menu');
+                    document.body.style.overflow = '';
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                    if (nav.classList.contains('menu-open')) {
+                        menu.classList.remove('active');
+                        nav.classList.remove('menu-open');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.setAttribute('aria-label', 'Open menu');
+                        document.body.style.overflow = '';
+                        btn.focus();
+                    }
+                }
+            });
+        })();
+
+    </script>
 </body>
+
 </html>

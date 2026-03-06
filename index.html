@@ -7,5 +7,86 @@
 </head>
 <body>
     <p>Redirecting to <a href="home.html">Richview Capital</a>...</p>
+<script>
+        (function() {
+            var nav = document.getElementById('mainNav');
+            var btn = document.getElementById('mobileMenuBtn');
+            var menu = document.getElementById('navLinks');
+            if (!btn || !menu) return;
+            // Prevent multiple listeners if already injected
+            if (btn.hasAttribute('data-listener-attached')) return;
+            btn.setAttribute('data-listener-attached', 'true');
+            
+            btn.addEventListener('click', function() {
+                var isOpen = menu.classList.toggle('active');
+                nav.classList.toggle('menu-open', isOpen);
+                btn.setAttribute('aria-expanded', isOpen);
+                btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                if (!isOpen) {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+                } else {
+                    var first = menu.querySelector('li a[href]');
+                    if (first) setTimeout(function() { first.focus(); }, 100);
+                }
+            });
+            document.querySelectorAll('#navLinks a').forEach(function(a) {
+                // Ensure no duplicate listener
+                if (a.hasAttribute('data-listener-attached')) return;
+                a.setAttribute('data-listener-attached', 'true');
+                
+                a.addEventListener('click', function(e) {
+                    var dropdown = this.closest('.nav-dropdown');
+                    var isTrigger = dropdown && dropdown.firstElementChild === this;
+                    if (isTrigger) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var isOpen = dropdown.classList.toggle('open');
+                        dropdown.setAttribute('aria-expanded', isOpen);
+                        dropdown.querySelector('a').setAttribute('aria-expanded', isOpen);
+                        document.querySelectorAll('#navLinks .nav-dropdown').forEach(function(d) {
+                            if (d !== dropdown) {
+                                d.classList.remove('open');
+                                d.setAttribute('aria-expanded', 'false');
+                                var t = d.querySelector('a[aria-haspopup="true"]');
+                                if (t) t.setAttribute('aria-expanded', 'false');
+                            }
+                        });
+                        return;
+                    }
+                    menu.classList.remove('active');
+                    nav.classList.remove('menu-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', 'Open menu');
+                    document.body.style.overflow = '';
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function(d) {
+                        d.classList.remove('open');
+                        d.setAttribute('aria-expanded', 'false');
+                        var t = d.querySelector('a[aria-haspopup="true"]');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                    if (nav.classList.contains('menu-open')) {
+                        menu.classList.remove('active');
+                        nav.classList.remove('menu-open');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.setAttribute('aria-label', 'Open menu');
+                        document.body.style.overflow = '';
+                        btn.focus();
+                    }
+                }
+            });
+        })();
+
+    </script>
 </body>
 </html>
