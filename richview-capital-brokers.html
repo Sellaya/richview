@@ -763,7 +763,8 @@
             position: relative;
             overflow: hidden;
             background: var(--white);
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+            border-radius: 10px;
+            transition: background 0.4s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.4s var(--ease-out), color 0.35s var(--ease-out);
         }
 
         .fund-card::before {
@@ -772,11 +773,11 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
+            width: 4px;
             background: var(--navy);
             transform: scaleY(0);
             transform-origin: center bottom;
-            transition: transform 0.35s var(--ease-out);
+            transition: transform 0.4s var(--ease-out), background 0.35s var(--ease-out);
         }
 
         .fund-card:nth-child(3n) {
@@ -787,14 +788,22 @@
             border-bottom: none;
         }
 
-        .fund-card:hover {
-            background: var(--cream);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        .fund-card:hover,
+        .fund-card:focus-within {
+            background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(11, 22, 53, 0.2), 0 0 0 1px rgba(11, 22, 53, 0.06);
         }
 
-        .fund-card:hover::before {
+        .fund-card:hover::before,
+        .fund-card:focus-within::before {
             transform: scaleY(1);
+            background: var(--gold);
+        }
+
+        .fund-card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
         }
 
         .fund-number {
@@ -803,11 +812,12 @@
             letter-spacing: 0.15em;
             color: var(--light-grey);
             margin-bottom: 1.25rem;
-            transition: color 0.3s var(--ease-out);
+            transition: color 0.35s var(--ease-out);
         }
 
-        .fund-card:hover .fund-number {
-            color: var(--muted);
+        .fund-card:hover .fund-number,
+        .fund-card:focus-within .fund-number {
+            color: rgba(255, 102, 0, 0.95);
         }
 
         .fund-card h3 {
@@ -816,12 +826,24 @@
             font-weight: 600;
             color: var(--navy);
             margin-bottom: 0.75rem;
+            transition: color 0.35s var(--ease-out);
+        }
+
+        .fund-card:hover h3,
+        .fund-card:focus-within h3 {
+            color: var(--white);
         }
 
         .fund-card p {
             font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.65;
+            transition: color 0.35s var(--ease-out);
+        }
+
+        .fund-card:hover p,
+        .fund-card:focus-within p {
+            color: rgba(255, 255, 255, 0.85);
         }
 
         /* ——— SUBMISSION GUIDELINES (Bordered Grid) ——— */
@@ -3451,37 +3473,37 @@
             <p>Flexible financing solutions for your&nbsp;clients across Ontario</p>
         </div>
         <div class="fund-grid">
-            <div class="fund-card reveal" style="--i: 0;">
+            <div class="fund-card reveal" style="--i: 0;" tabindex="0">
                 <span class="fund-number">01</span>
                 <h3>First Mortgages</h3>
                 <p>Residential first mortgages up to 80% LTV. Fast approvals for clients who don't fit traditional bank
                     criteria but have good equity positions.</p>
             </div>
-            <div class="fund-card reveal" style="--i: 1;">
+            <div class="fund-card reveal" style="--i: 1;" tabindex="0">
                 <span class="fund-number">02</span>
                 <h3>Second Mortgages</h3>
                 <p>Flexible second position financing for debt consolidation, renovations, or investment opportunities.
                     Quick closings when timing matters.</p>
             </div>
-            <div class="fund-card reveal" style="--i: 2;">
+            <div class="fund-card reveal" style="--i: 2;" tabindex="0">
                 <span class="fund-number">03</span>
                 <h3>Construction Loans</h3>
                 <p>Residential construction financing with experienced oversight. Staged draw schedules for custom
                     builds and development projects across Ontario.</p>
             </div>
-            <div class="fund-card reveal" style="--i: 3;">
+            <div class="fund-card reveal" style="--i: 3;" tabindex="0">
                 <span class="fund-number">04</span>
                 <h3>Bridge Financing</h3>
                 <p>Short-term bridge loans to solve timing challenges. Perfect for purchase-before-sale situations or
                     quick access to capital during transitions.</p>
             </div>
-            <div class="fund-card reveal" style="--i: 4;">
+            <div class="fund-card reveal" style="--i: 4;" tabindex="0">
                 <span class="fund-number">05</span>
                 <h3>Land Mortgages</h3>
                 <p>Financing for land acquisition and development-ready properties. Flexible terms for clients with
                     development plans and exit strategies.</p>
             </div>
-            <div class="fund-card reveal" style="--i: 5;">
+            <div class="fund-card reveal" style="--i: 5;" tabindex="0">
                 <span class="fund-number">06</span>
                 <h3>Refinancing</h3>
                 <p>Mortgage refinancing solutions for clients looking to consolidate debt, access equity, or improve
