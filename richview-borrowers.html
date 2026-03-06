@@ -950,7 +950,7 @@
             grid-column: 1 / -1;
         }
 
-        /* ——— TESTIMONIALS (minimal, advanced) ——— */
+        /* ——— TESTIMONIALS (same as home: minimal, advanced) ——— */
         .testimonials-section {
             padding: var(--section-padding) 0;
             background: var(--cream);
@@ -958,22 +958,26 @@
             overflow: hidden;
         }
 
-        .testimonials-section .section-header,
+        .testimonials-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            width: 100%;
+            min-width: 0;
+        }
+
+        .testimonials-section .sec-head,
         .testimonials-section .testimonials-slider {
             position: relative;
             z-index: 1;
         }
 
-        .testimonials-section .section-header {
+        .testimonials-section .sec-head {
             text-align: left;
             margin-bottom: var(--space-lg);
-            max-width: var(--container);
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 var(--gutter);
         }
 
-        .testimonials-section .section-header h2 {
+        .testimonials-section .sec-head h2 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: clamp(1.5rem, 2.2vw, 1.875rem);
             font-weight: 700;
@@ -982,7 +986,7 @@
             letter-spacing: -0.03em;
         }
 
-        .testimonials-section .section-header p {
+        .testimonials-section .sec-head p {
             font-size: 0.875rem;
             color: var(--muted);
             max-width: 380px;
@@ -991,7 +995,8 @@
         }
 
         @media (min-width: 480px) {
-            .section-header p {
+            .testimonials-section .sec-head p,
+            .loan-products .section-header p {
                 white-space: nowrap;
             }
         }
@@ -1009,20 +1014,20 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 64px;
-            max-width: 10vw;
+            width: 48px;
+            max-width: 8vw;
             z-index: 2;
             pointer-events: none;
         }
 
         .testimonials-slider::before {
             left: 0;
-            background: linear-gradient(90deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(90deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-slider::after {
             right: 0;
-            background: linear-gradient(270deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(270deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-track {
@@ -1038,13 +1043,8 @@
         }
 
         @keyframes testimonialScroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
         }
 
         .testimonial-card {
@@ -3133,7 +3133,7 @@
     <section class="loan-products" id="products">
         <div class="section-header reveal">
             <h2>What We Fund</h2>
-            <p>Flexible financing solutions designed to meet your unique&nbsp;needs</p>
+            <p>Flexible&nbsp;financing solutions designed to&nbsp;meet your unique&nbsp;needs</p>
         </div>
         <div class="products-grid reveal">
             <div class="product-card">
@@ -3282,12 +3282,13 @@
         </div>
     </section>
 
-    <section class="testimonials-section">
-        <div class="section-header reveal">
-            <h2>What Our Clients Say</h2>
-            <p>Real experiences from borrowers who&nbsp;trust Richview&nbsp;Capital</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="sec-head reveal">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
+            </div>
+            <div class="testimonials-slider" aria-label="Testimonials carousel">
             <div class="testimonials-track">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-mark">"</span>
@@ -3365,7 +3366,47 @@
                         </div>
                     </div>
                 </div>
+                <!-- Third set for continuous flow -->
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>When the bank turned us down for our construction project, Richview Capital stepped in
+                        with a fast approval and competitive terms. Their team understood our vision and made it happen.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MD</div>
+                        <div class="testimonial-author-info">
+                            <h5>Michael Davidson</h5>
+                            <span>Real Estate Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>The process was incredibly smooth. From application to funding took less than two weeks.
+                        The team was professional, transparent, and actually returned my calls.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JT</div>
+                        <div class="testimonial-author-info">
+                            <h5>Jennifer Torres</h5>
+                            <span>Homeowner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible
+                        approach and quick turnaround helped us consolidate debt and move forward with our plans.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RP</div>
+                        <div class="testimonial-author-info">
+                            <h5>Robert Patterson</h5>
+                            <span>Property Owner</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -3494,11 +3535,11 @@
                                             <label for="consultInterest">I'm interested in *</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
-                                                <option value="borrowing">Borrowing — Private mortgage or construction
+                                                <option value="borrowing">Borrowing: Private mortgage or construction
                                                     financing</option>
-                                                <option value="investing">Investing — MIC investment opportunities
+                                                <option value="investing">Investing: MIC investment opportunities
                                                 </option>
-                                                <option value="brokering">Brokering — Partner with us</option>
+                                                <option value="brokering">Brokering: Partner with us</option>
                                             </select>
                                         </div>
                                     </div>

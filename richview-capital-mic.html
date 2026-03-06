@@ -861,6 +861,14 @@
             overflow: hidden;
         }
 
+        .testimonials-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            width: 100%;
+            min-width: 0;
+        }
+
         .testimonials-section .sec-head,
         .testimonials-section .testimonials-slider {
             position: relative;
@@ -870,10 +878,6 @@
         .testimonials-section .sec-head {
             text-align: left;
             margin-bottom: var(--space-lg);
-            max-width: var(--container);
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 var(--gutter);
         }
 
         .testimonials-section .sec-head h2 {
@@ -912,20 +916,20 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 64px;
-            max-width: 10vw;
+            width: 48px;
+            max-width: 8vw;
             z-index: 2;
             pointer-events: none;
         }
 
         .testimonials-slider::before {
             left: 0;
-            background: linear-gradient(90deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(90deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-slider::after {
             right: 0;
-            background: linear-gradient(270deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(270deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-track {
@@ -941,13 +945,8 @@
         }
 
         @keyframes testimonialScroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
         }
 
         .testimonial-card {
@@ -3200,12 +3199,13 @@
         </div>
     </section>
 
-    <section class="testimonials-section">
-        <div class="sec-head reveal">
-            <h2>What Investors Say</h2>
-            <p>Real experiences from investors who&nbsp;trust Richview&nbsp;Capital MIC</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="sec-head reveal">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
+            </div>
+            <div class="testimonials-slider" aria-label="Testimonials carousel">
             <div class="testimonials-track">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-mark">"</span>
@@ -3286,7 +3286,48 @@
                         </div>
                     </div>
                 </div>
+                <!-- Third set for continuous flow -->
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>The consistent returns and professional management make Richview Capital MIC an
+                        excellent addition to my investment portfolio. The asset-backed security gives me confidence.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RP</div>
+                        <div class="testimonial-author-info">
+                            <h5>Robert Patterson</h5>
+                            <span>Private Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>I've been investing with Richview Capital for several years. Their transparent reporting
+                        and regular distributions have made this a cornerstone of my retirement income strategy.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div class="testimonial-author-info">
+                            <h5>Jennifer Morrison</h5>
+                            <span>RRSP Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>As a sophisticated investor, I appreciate their disciplined underwriting and focus on
+                        principal protection. The management team's experience is evident in every decision.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DK</div>
+                        <div class="testimonial-author-info">
+                            <h5>David Kim</h5>
+                            <span>Accredited Investor</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -3435,11 +3476,11 @@
                                             <label for="consultInterest">I'm interested in *</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
-                                                <option value="borrowing">Borrowing — Private mortgage or construction
+                                                <option value="borrowing">Borrowing: Private mortgage or construction
                                                     financing</option>
-                                                <option value="investing">Investing — MIC investment opportunities
+                                                <option value="investing">Investing: MIC investment opportunities
                                                 </option>
-                                                <option value="brokering">Brokering — Partner with us</option>
+                                                <option value="brokering">Brokering: Partner with us</option>
                                             </select>
                                         </div>
                                     </div>

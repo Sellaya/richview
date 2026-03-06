@@ -928,12 +928,20 @@
             flex-shrink: 0;
         }
 
-        /* ——— TESTIMONIALS (minimal, advanced) ——— */
+        /* ——— TESTIMONIALS (same as home: minimal, advanced) ——— */
         .testimonials-section {
             padding: var(--section-padding) 0;
             background: var(--cream);
             position: relative;
             overflow: hidden;
+        }
+
+        .testimonials-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            width: 100%;
+            min-width: 0;
         }
 
         .testimonials-section .sec-head,
@@ -945,10 +953,6 @@
         .testimonials-section .sec-head {
             text-align: left;
             margin-bottom: var(--space-lg);
-            max-width: var(--container);
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 var(--gutter);
         }
 
         .testimonials-section .sec-head h2 {
@@ -987,20 +991,20 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 64px;
-            max-width: 10vw;
+            width: 48px;
+            max-width: 8vw;
             z-index: 2;
             pointer-events: none;
         }
 
         .testimonials-slider::before {
             left: 0;
-            background: linear-gradient(90deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(90deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-slider::after {
             right: 0;
-            background: linear-gradient(270deg, var(--cream) 0%, transparent 100%);
+            background: linear-gradient(270deg, var(--cream) 60%, transparent 100%);
         }
 
         .testimonials-track {
@@ -1016,13 +1020,8 @@
         }
 
         @keyframes testimonialScroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
         }
 
         .testimonial-card {
@@ -3517,12 +3516,13 @@
         </div>
     </section>
 
-    <section class="testimonials-section">
-        <div class="sec-head reveal">
-            <h2>What Brokers Say</h2>
-            <p>Trusted by mortgage&nbsp;professionals across&nbsp;Ontario</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="sec-head reveal">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
+            </div>
+            <div class="testimonials-slider" aria-label="Testimonials carousel">
             <div class="testimonials-track">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-mark">"</span>
@@ -3600,7 +3600,47 @@
                         </div>
                     </div>
                 </div>
+                <!-- Third set for continuous flow -->
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises
+                        with fast approvals and transparent communication. My clients trust them because I trust them.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SC</div>
+                        <div class="testimonial-author-info">
+                            <h5>Sarah Chen</h5>
+                            <span>Mortgage Broker, Toronto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>I've worked with many private lenders, but Richview stands out for their professionalism
+                        and reliability. They close deals on time, every time. That's invaluable in this business.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JK</div>
+                        <div class="testimonial-author-info">
+                            <h5>James Kumar</h5>
+                            <span>Broker, Mississauga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-mark">"</span>
+                    <blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case
+                        approach means they actually listen and find solutions instead of just saying no.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div class="testimonial-author-info">
+                            <h5>Maria Thompson</h5>
+                            <span>Senior Broker, Oakville</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -3621,7 +3661,7 @@
                     </button>
                     <div class="faq-a">
                         <p>We provide initial responses within 24 hours of receiving a complete submission. Once
-                            approved, we can close deals in as little as 7-10 business days, depending on the complexity
+                            approved, we can close deals in as little as 7 to 10 business days, depending on the complexity
                             of the transaction and completion of due diligence requirements.</p>
                     </div>
                 </div>
@@ -3771,10 +3811,10 @@
                                         <label for="consultInterest">I'm interested in *</label>
                                         <select id="consultInterest" name="consultInterest" required>
                                             <option value="" disabled selected>Select your interest</option>
-                                            <option value="borrowing">Borrowing — Private mortgage or construction
+                                            <option value="borrowing">Borrowing: Private mortgage or construction
                                                 financing</option>
-                                            <option value="investing">Investing — MIC investment opportunities</option>
-                                            <option value="brokering">Brokering — Partner with us</option>
+                                            <option value="investing">Investing: MIC investment opportunities</option>
+                                            <option value="brokering">Brokering: Partner with us</option>
                                         </select>
                                     </div>
                                 </div>
