@@ -1657,6 +1657,20 @@
         })();
 
     </script>
+<script>
+    document.querySelectorAll('a.cta-nav, .mobile-cta-li > a').forEach(function(link) {
+        if (link.getAttribute('href') !== '#contact') return;
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById('contact');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                window.location.href = 'home.html#contact';
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
