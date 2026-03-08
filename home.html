@@ -1022,6 +1022,142 @@
             margin: 0 0.25rem;
         }
 
+        /* ——— PARTNERS SECTION ——— */
+        .partners-section {
+            padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+            background: #f8f9fb;
+            border-top: 1px solid rgba(11,22,53,0.06);
+            border-bottom: 1px solid rgba(11,22,53,0.06);
+            overflow: hidden;
+        }
+        .partners-head {
+            text-align: center;
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        .partners-head h2 {
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 0.4rem;
+            letter-spacing: -0.01em;
+        }
+        .partners-head p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin: 0;
+        }
+        .partners-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.25rem;
+            margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+        }
+        .partners-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .partners-category::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+        .partners-scroll-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+        .partners-scroll-wrap::before,
+        .partners-scroll-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: clamp(40px, 6vw, 80px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .partners-scroll-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, #f8f9fb, transparent);
+        }
+        .partners-scroll-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, #f8f9fb, transparent);
+        }
+        .partners-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 1.25rem;
+            padding: 0.5rem 0;
+            animation: partnersMarquee 50s linear infinite;
+        }
+        .partners-scroll-wrap:hover .partners-track {
+            animation-play-state: paused;
+        }
+        @keyframes partnersMarquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .partner-logo-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.5rem;
+            background: #ffffff;
+            border: 1px solid rgba(11,22,53,0.08);
+            border-radius: 10px;
+            flex-shrink: 0;
+            min-width: 150px;
+            height: 68px;
+            box-shadow: 0 1px 4px rgba(11,22,53,0.04);
+            transition: box-shadow 0.22s var(--ease-out), border-color 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+            cursor: default;
+        }
+        .partner-logo-card:hover {
+            box-shadow: 0 6px 20px rgba(11,22,53,0.08);
+            border-color: rgba(255,102,0,0.28);
+            transform: translateY(-3px);
+        }
+        .partner-logo-card img {
+            max-height: 40px;
+            max-width: 130px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(0.25) brightness(0.95);
+            opacity: 0.82;
+            transition: filter 0.22s, opacity 0.22s;
+            display: block;
+        }
+        .partner-logo-card:hover img {
+            filter: grayscale(0) brightness(1);
+            opacity: 1;
+        }
+        .partner-logo-text {
+            font-family: var(--font-sans);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            opacity: 0.72;
+            transition: opacity 0.22s;
+        }
+        .partner-logo-card:hover .partner-logo-text {
+            opacity: 1;
+        }
+
         /* ——— SERVICES (Tabbed – Who We Serve) ——— */
         .services {
             padding: var(--section-padding) 0;
@@ -1179,6 +1315,15 @@
             line-height: 1.5;
         }
         .services-features li:last-child {
+            margin-bottom: 0;
+        }
+        .services-features--grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .services-features--grid li {
             margin-bottom: 0;
         }
         .services-features .icon {
@@ -2830,6 +2975,9 @@
 
             .services-panel-content h3 { font-size: 1.375rem; }
             .services-panels { min-height: 280px; }
+            .services-features--grid { grid-template-columns: 1fr; }
+            .partners-categories { gap: 0.35rem 1rem; }
+            .partner-logo-card { min-width: 130px; height: 60px; padding: 0.7rem 1.1rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
             .testimonial-card { padding: 1.35rem 1.15rem; width: 300px; }
 
@@ -3177,7 +3325,7 @@
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>Instant</strong> Response</span>
             <span class="trust-divider"></span>
-            <span class="trust-item"><strong>7 to 10 Days</strong> to Close</span>
+            <span class="trust-item">Close in as little as&nbsp;<strong>24 Hours</strong></span>
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>RRSP</strong> Eligible</span>
             <span class="trust-divider"></span>
@@ -3193,7 +3341,7 @@
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>Instant</strong> Response</span>
             <span class="trust-divider"></span>
-            <span class="trust-item"><strong>7 to 10 Days</strong> to Close</span>
+            <span class="trust-item">Close in as little as&nbsp;<strong>24 Hours</strong></span>
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>RRSP</strong> Eligible</span>
         </div>
@@ -3215,10 +3363,15 @@
                     <div class="services-panel-content">
                         <h3>Private mortgage & construction financing</h3>
                         <p class="services-desc">When traditional banks say no, we offer private mortgages, second mortgages, and construction financing with flexible terms tailored to your&nbsp;situation.</p>
-                        <ul class="services-features">
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Flexible terms and faster approvals</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>24 to 48 hour initial response</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Ontario province-wide service</li>
+                        <ul class="services-features services-features--grid">
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>First Mortgages</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Second Mortgages</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Construction Financing</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Bridge Financing</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Land Financing</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Commercial Mortgages</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Development Loans</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Home Equity Loans / HELOCs</li>
                         </ul>
                         <a href="richview-borrowers.html" class="services-cta">Explore Financing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
@@ -3228,6 +3381,7 @@
                         <h3>MIC investing & RRSP-eligible returns</h3>
                         <p class="services-desc">Asset-backed returns from a professionally managed residential mortgage portfolio. MIC investments are RRSP-eligible and offer a disciplined approach to income and growth.</p>
                         <ul class="services-features">
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>7–8% Return on Investment</li>
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>RRSP-eligible investment</li>
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Asset-backed security</li>
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Professionally managed portfolio</li>
@@ -3247,6 +3401,48 @@
                         <a href="richview-capital-brokers.html" class="services-cta">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— PARTNERS / WHO WE WORK WITH ——— -->
+    <section class="partners-section" aria-label="Partners and who we work with">
+        <div class="container">
+            <div class="partners-head">
+                <h2>Partners &amp; Who We Work With</h2>
+                <p>Trusted relationships across the mortgage industry</p>
+            </div>
+            <div class="partners-categories">
+                <span class="partners-category">Mortgage Brokerages</span>
+                <span class="partners-category">Lawyers</span>
+                <span class="partners-category">Appraisers</span>
+                <span class="partners-category">Lending Partners</span>
+            </div>
+        </div>
+        <div class="partners-scroll-wrap">
+            <div class="partners-track">
+                <!-- Set 1 -->
+                <div class="partner-logo-card"><span class="partner-logo-text">Vantage Law</span></div>
+                <div class="partner-logo-card"><img src="partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Damiani Law</span></div>
+                <div class="partner-logo-card"><img src="partner-axess.png" alt="Axess Law" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Capital" loading="lazy"></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Save You Tax</span></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Gosbee Law</span></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Brook Street Law</span></div>
+                <div class="partner-logo-card"><img src="partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
+                <!-- Set 2 — duplicate for seamless infinite loop -->
+                <div class="partner-logo-card"><span class="partner-logo-text">Vantage Law</span></div>
+                <div class="partner-logo-card"><img src="partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Damiani Law</span></div>
+                <div class="partner-logo-card"><img src="partner-axess.png" alt="Axess Law" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Capital" loading="lazy"></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Save You Tax</span></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Gosbee Law</span></div>
+                <div class="partner-logo-card"><span class="partner-logo-text">Brook Street Law</span></div>
+                <div class="partner-logo-card"><img src="partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
             </div>
         </div>
     </section>
