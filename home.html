@@ -1999,6 +1999,66 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* ——— FORM HEADER ——— */
+        .cta-box-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            padding: 1.25rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--card-radius) var(--card-radius) 0 0;
+        }
+        .cta-box-header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(255,102,0,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-box-header h2 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0 0 0.3rem;
+            position: relative;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
+        .cta-box-header > p {
+            font-size: 0.8375rem;
+            color: rgba(255,255,255,0.78);
+            margin: 0 0 0.875rem;
+            line-height: 1.5;
+            position: relative;
+        }
+        .cta-trust-row {
+            display: flex;
+            gap: clamp(0.4rem, 1.5vw, 0.85rem);
+            flex-wrap: nowrap;
+            align-items: center;
+            position: relative;
+        }
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
+            font-weight: 600;
+            color: rgba(255,255,255,0.88);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .cta-trust-item svg {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            color: var(--gold);
+        }
+
         .cta-box {
             background: var(--white);
             border-radius: var(--card-radius);
@@ -3012,6 +3072,10 @@
 
         /* Small phone - mobile first */
         @media (max-width: 480px) {
+            .cta-box-header { padding: 1rem 1.1rem; }
+            .cta-box-header h2 { font-size: 1.125rem; }
+            /* .cta-trust-row gap handled by clamp() */
+
             :root { --section-padding: 2rem; }
             .container { padding: 0 var(--gutter); }
             .services .container { padding: 0 var(--gutter); }
@@ -3202,6 +3266,24 @@
                 </div>
             </div>
             <div class="hero-form-wrap cta-box">
+                <div class="cta-box-header">
+                    <h2>Book a Free Consultation</h2>
+                    <p>Get expert guidance — no&nbsp;obligation.</p>
+                    <div class="cta-trust-row">
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Instant Response</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Confidential &amp; secure</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Licensed MIC #13171</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="cta-box-body" id="heroCtaBoxBody">
                     <div class="cta-form-success" id="heroCtaFormSuccess" aria-live="polite">
                         <h3>Thank you!</h3>
@@ -3244,54 +3326,6 @@
                                             <option value="brokering">Brokering: Partner with us</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="cta-schedule-block">
-                                    <div class="cta-schedule-heading">
-                                        <svg class="cta-schedule-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                        <span class="cta-schedule-title">Schedule your call</span>
-                                    </div>
-                                    <div class="cta-schedule-fields">
-                                        <div class="cta-schedule-field cta-picker-wrap">
-                                            <label>Date</label>
-                                            <div class="cta-picker-trigger" id="heroDatePickerTrigger" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose date">
-                                                <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                                <span class="cta-picker-value placeholder" id="heroDatePickerValue">Choose date</span>
-                                                <svg class="cta-picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                                            </div>
-                                            <input type="hidden" id="heroConsultDate" name="heroConsultDate" required>
-                                            <div class="cta-picker-dropdown cta-date-dropdown" id="heroDatePickerDropdown" role="dialog" aria-modal="true" aria-label="Date picker">
-                                                <div class="cta-picker-dropdown-inner">
-                                                    <div class="cta-calendar-header">
-                                                        <button type="button" class="cta-calendar-nav" id="heroDatePrevMonth" aria-label="Previous month">&larr;</button>
-                                                        <div class="cta-calendar-month-year" id="heroDateMonthYear">February 2026</div>
-                                                        <button type="button" class="cta-calendar-nav" id="heroDateNextMonth" aria-label="Next month">&rarr;</button>
-                                                    </div>
-                                                    <div class="cta-calendar-weekdays">
-                                                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                                                    </div>
-                                                    <div class="cta-calendar-days" id="heroDateCalendarDays"></div>
-                                                    <div class="cta-calendar-footer">
-                                                        <button type="button" class="cta-calendar-action" id="heroDateToday">Today</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="cta-schedule-field cta-picker-wrap">
-                                            <label>Time</label>
-                                            <div class="cta-picker-trigger" id="heroTimePickerTrigger" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose time">
-                                                <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                                                <span class="cta-picker-value placeholder" id="heroTimePickerValue">Choose time</span>
-                                                <svg class="cta-picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                                            </div>
-                                            <input type="hidden" id="heroConsultTime" name="heroConsultTime" required>
-                                            <div class="cta-picker-dropdown cta-time-dropdown" id="heroTimePickerDropdown" role="dialog" aria-modal="true" aria-label="Time picker">
-                                                <div class="cta-picker-dropdown-inner cta-time-inner">
-                                                    <div class="cta-time-grid" id="heroTimePickerSlots"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="cta-schedule-hint">We’ll confirm your slot by email. Eastern Time (ET).</p>
                                 </div>
                                 <div class="form-row form-row-full">
                                     <div class="form-group">
@@ -3603,6 +3637,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <section class="blog-section" id="blog">
@@ -3717,6 +3752,24 @@
                     </ul>
                 </div>
                 <div class="cta-box reveal">
+                <div class="cta-box-header">
+                    <h2>Request a Consultation</h2>
+                    <p>Fill out the form and we'll respond instantly.</p>
+                    <div class="cta-trust-row">
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Instant Response</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Confidential &amp; secure</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Licensed MIC #13171</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="cta-box-body" id="ctaBoxBody">
                     <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
                         <h3>Thank you!</h3>
@@ -3759,54 +3812,6 @@
                                         <option value="brokering">Brokering: Partner with us</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="cta-schedule-block">
-                                <div class="cta-schedule-heading">
-                                    <svg class="cta-schedule-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    <span class="cta-schedule-title">Schedule your call</span>
-                                </div>
-                                <div class="cta-schedule-fields">
-                                    <div class="cta-schedule-field cta-picker-wrap">
-                                        <label>Date</label>
-                                        <div class="cta-picker-trigger" id="datePickerTrigger" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose date">
-                                            <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                            <span class="cta-picker-value" id="datePickerValue">Choose date</span>
-                                            <svg class="cta-picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                                        </div>
-                                        <input type="hidden" id="consultDate" name="consultDate" required>
-                                        <div class="cta-picker-dropdown cta-date-dropdown" id="datePickerDropdown" role="dialog" aria-modal="true" aria-label="Date picker">
-                                            <div class="cta-picker-dropdown-inner">
-                                                <div class="cta-calendar-header">
-                                                    <button type="button" class="cta-calendar-nav" id="datePrevMonth" aria-label="Previous month">&larr;</button>
-                                                    <div class="cta-calendar-month-year" id="dateMonthYear">February 2026</div>
-                                                    <button type="button" class="cta-calendar-nav" id="dateNextMonth" aria-label="Next month">&rarr;</button>
-                                                </div>
-                                                <div class="cta-calendar-weekdays">
-                                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                                                </div>
-                                                <div class="cta-calendar-days" id="dateCalendarDays"></div>
-                                                <div class="cta-calendar-footer">
-                                                    <button type="button" class="cta-calendar-action" id="dateToday">Today</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cta-schedule-field cta-picker-wrap">
-                                        <label>Time</label>
-                                        <div class="cta-picker-trigger" id="timePickerTrigger" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose time">
-                                            <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                                            <span class="cta-picker-value" id="timePickerValue">Choose time</span>
-                                            <svg class="cta-picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                                        </div>
-                                        <input type="hidden" id="consultTime" name="consultTime" required>
-                                        <div class="cta-picker-dropdown cta-time-dropdown" id="timePickerDropdown" role="dialog" aria-modal="true" aria-label="Time picker">
-                                            <div class="cta-picker-dropdown-inner cta-time-inner">
-                                                <div class="cta-time-grid" id="timePickerSlots"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="cta-schedule-hint">We’ll confirm your slot by email. Eastern Time (ET).</p>
                             </div>
                             <div class="form-row form-row-full">
                                 <div class="form-group">
@@ -4029,373 +4034,79 @@
         })();
 
         (function() {
-            var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-            function pad(n) { return n < 10 ? '0' + n : '' + n; }
-            function formatDate(date) {
-                var d = new Date(date);
-                return MONTHS[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-            }
-            function formatTime(hh, mm) {
-                var h = parseInt(hh, 10), m = parseInt(mm, 10);
-                var am = h < 12;
-                var h12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
-                return h12 + ':' + pad(m) + ' ' + (am ? 'AM' : 'PM');
-            }
-
-            var dateTrigger = document.getElementById('datePickerTrigger');
-            var dateValueEl = document.getElementById('datePickerValue');
-            var dateInput = document.getElementById('consultDate');
-            var dateDropdown = document.getElementById('datePickerDropdown');
-            var dateMonthYear = document.getElementById('dateMonthYear');
-            var dateDaysEl = document.getElementById('dateCalendarDays');
-            var datePrev = document.getElementById('datePrevMonth');
-            var dateNext = document.getElementById('dateNextMonth');
-            var dateTodayBtn = document.getElementById('dateToday');
-
-            var timeTrigger = document.getElementById('timePickerTrigger');
-            var timeValueEl = document.getElementById('timePickerValue');
-            var timeInput = document.getElementById('consultTime');
-            var timeDropdown = document.getElementById('timePickerDropdown');
-            var timeSlotsEl = document.getElementById('timePickerSlots');
-
-            var viewDate = new Date();
-            var today = new Date();
-            today.setHours(0,0,0,0);
-
-            function isSameDay(a, b) {
-                return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-            }
-            function toYMD(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-
-            function renderCalendar() {
-                var y = viewDate.getFullYear(), m = viewDate.getMonth();
-                dateMonthYear.textContent = MONTHS[m] + ' ' + y;
-                var first = new Date(y, m, 1);
-                var start = new Date(first);
-                start.setDate(start.getDate() - start.getDay());
-                var end = new Date(y, m + 1, 0);
-                var endPad = new Date(end);
-                endPad.setDate(endPad.getDate() + (6 - endPad.getDay()));
-                var current = new Date(start);
-                var html = '';
-                while (current <= endPad) {
-                    var isOther = current.getMonth() !== m;
-                    var isDisabled = current < today && !isOther;
-                    var isToday = isSameDay(current, today);
-                    var selected = dateInput && dateInput.value === toYMD(current);
-                    var cls = 'cta-calendar-day';
-                    if (isOther) cls += ' other-month';
-                    if (isDisabled) cls += ' disabled';
-                    if (isToday) cls += ' today';
-                    if (selected) cls += ' selected';
-                    var dayNum = current.getDate();
-                    html += '<button type="button" class="' + cls + '" data-date="' + toYMD(current) + '" ' + (isDisabled ? 'disabled' : '') + '>' + dayNum + '</button>';
-                    current.setDate(current.getDate() + 1);
-                }
-                dateDaysEl.innerHTML = html;
-                dateDaysEl.querySelectorAll('button:not(.disabled)').forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        var val = this.getAttribute('data-date');
-                        dateInput.value = val;
-                        dateValueEl.textContent = formatDate(val);
-                        dateValueEl.classList.remove('placeholder');
-                        dateDropdown.classList.remove('is-open');
-                        dateTrigger.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-
-            if (datePrev) datePrev.addEventListener('click', function() { viewDate.setMonth(viewDate.getMonth() - 1); renderCalendar(); });
-            if (dateNext) dateNext.addEventListener('click', function() { viewDate.setMonth(viewDate.getMonth() + 1); renderCalendar(); });
-            if (dateTodayBtn) dateTodayBtn.addEventListener('click', function() {
-                var t = new Date();
-                viewDate = new Date(t);
-                dateInput.value = toYMD(t);
-                dateValueEl.textContent = formatDate(t);
-                dateValueEl.classList.remove('placeholder');
-                renderCalendar();
-                dateDropdown.classList.remove('is-open');
-                dateTrigger.setAttribute('aria-expanded', 'false');
-            });
-
-            if (dateTrigger && dateDropdown) {
-                dateTrigger.addEventListener('click', function() {
-                    var open = dateDropdown.classList.toggle('is-open');
-                    dateTrigger.setAttribute('aria-expanded', open);
-                    if (open) renderCalendar();
-                    timeDropdown.classList.remove('is-open');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                });
-            }
-
-            var timeSlots = [];
-            for (var h = 9; h <= 17; h++) {
-                for (var m = 0; m < 60; m += 30) {
-                    if (h === 17 && m > 0) break;
-                    timeSlots.push({ h: h, m: m, label: formatTime(h, m), value: pad(h) + ':' + pad(m) });
-                }
-            }
-            timeSlots.forEach(function(slot) {
-                var btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'cta-time-slot';
-                btn.textContent = slot.label;
-                btn.setAttribute('data-value', slot.value);
-                btn.addEventListener('click', function() {
-                    timeInput.value = slot.value;
-                    timeValueEl.textContent = slot.label;
-                    timeValueEl.classList.remove('placeholder');
-                    timeDropdown.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
-                    this.classList.add('selected');
-                    timeDropdown.classList.remove('is-open');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                });
-                timeSlotsEl.appendChild(btn);
-            });
-
-            if (timeTrigger && timeDropdown) {
-                timeTrigger.addEventListener('click', function() {
-                    var open = timeDropdown.classList.toggle('is-open');
-                    timeTrigger.setAttribute('aria-expanded', open);
-                    if (open) {
-                        timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) {
-                            b.classList.toggle('selected', b.getAttribute('data-value') === timeInput.value);
-                        });
-                    }
-                    dateDropdown.classList.remove('is-open');
-                    dateTrigger.setAttribute('aria-expanded', 'false');
-                });
-            }
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.cta-picker-wrap')) {
-                    dateDropdown.classList.remove('is-open');
-                    timeDropdown.classList.remove('is-open');
-                    dateTrigger.setAttribute('aria-expanded', 'false');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                }
-            });
-
+            var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/49ff2688-166c-4060-90c4-8e7defa0721c';
             var form = document.getElementById('consultationForm');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    var submitBtn = document.getElementById('consultSubmitBtn');
-                    var boxBody = document.getElementById('ctaBoxBody');
-                    var successEl = document.getElementById('ctaFormSuccess');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.textContent = 'Sending...';
-                    }
-                    setTimeout(function() {
-                        if (successEl) {
-                            var fn = document.getElementById('consultFirstName') && document.getElementById('consultFirstName').value;
-                            if (fn) successEl.querySelector('h3').textContent = 'Thank you, ' + fn + '!';
-                            successEl.classList.add('is-visible');
-                        }
-                        if (boxBody) boxBody.classList.add('is-success');
-                        form.reset();
-                        dateValueEl.textContent = 'Choose date';
-                        dateValueEl.classList.add('placeholder');
-                        timeValueEl.textContent = 'Choose time';
-                        timeValueEl.classList.add('placeholder');
-                        timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
-                        viewDate = new Date();
-                        renderCalendar();
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Schedule Consultation';
-                        }
-                    }, 600);
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var submitBtn = document.getElementById('consultSubmitBtn');
+                var boxBody   = document.getElementById('ctaBoxBody');
+                var successEl = document.getElementById('ctaFormSuccess');
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var payload = {
+                    first_name: (document.getElementById('consultFirstName')  || {}).value || '',
+                    last_name:  (document.getElementById('consultLastName')   || {}).value || '',
+                    email:      (document.getElementById('consultEmail')      || {}).value || '',
+                    phone:      (document.getElementById('consultPhone')      || {}).value || '',
+                    interest:   (document.getElementById('consultInterest')   || {}).value || '',
+                    message:    (document.getElementById('consultMessage')    || {}).value || '',
+                    source:     'Richview Capital — ' + window.location.pathname
+                };
+                fetch(GHL_WEBHOOK, {
+                    method:  'POST',
+                    mode:     'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify(payload)
+                })
+                .then(function() {
+                    form.reset();
+                    var dest = 'thank-you.html';
+                    if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
+                    window.location.href = dest;
+                })
+                .catch(function() {
+                    alert('Something went wrong. Please try again or call us directly.');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 });
-            }
-            renderCalendar();
+            });
         })();
 
         (function() {
-            var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-            function pad(n) { return n < 10 ? '0' + n : '' + n; }
-            function formatDate(date) {
-                var d = new Date(date);
-                return MONTHS[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-            }
-            function formatTime(hh, mm) {
-                var h = parseInt(hh, 10), m = parseInt(mm, 10);
-                var am = h < 12;
-                var h12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
-                return h12 + ':' + pad(m) + ' ' + (am ? 'AM' : 'PM');
-            }
-
-            var dateTrigger = document.getElementById('heroDatePickerTrigger');
-            var dateValueEl = document.getElementById('heroDatePickerValue');
-            var dateInput = document.getElementById('heroConsultDate');
-            var dateDropdown = document.getElementById('heroDatePickerDropdown');
-            var dateMonthYear = document.getElementById('heroDateMonthYear');
-            var dateDaysEl = document.getElementById('heroDateCalendarDays');
-            var datePrev = document.getElementById('heroDatePrevMonth');
-            var dateNext = document.getElementById('heroDateNextMonth');
-            var dateTodayBtn = document.getElementById('heroDateToday');
-
-            var timeTrigger = document.getElementById('heroTimePickerTrigger');
-            var timeValueEl = document.getElementById('heroTimePickerValue');
-            var timeInput = document.getElementById('heroConsultTime');
-            var timeDropdown = document.getElementById('heroTimePickerDropdown');
-            var timeSlotsEl = document.getElementById('heroTimePickerSlots');
-
-            if (!dateTrigger || !dateDropdown || !timeTrigger || !timeDropdown) return;
-
-            var viewDate = new Date();
-            var today = new Date();
-            today.setHours(0,0,0,0);
-
-            function isSameDay(a, b) {
-                return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-            }
-            function toYMD(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-
-            function renderCalendar() {
-                var y = viewDate.getFullYear(), m = viewDate.getMonth();
-                dateMonthYear.textContent = MONTHS[m] + ' ' + y;
-                var first = new Date(y, m, 1);
-                var start = new Date(first);
-                start.setDate(start.getDate() - start.getDay());
-                var end = new Date(y, m + 1, 0);
-                var endPad = new Date(end);
-                endPad.setDate(endPad.getDate() + (6 - endPad.getDay()));
-                var current = new Date(start);
-                var html = '';
-                while (current <= endPad) {
-                    var isOther = current.getMonth() !== m;
-                    var isDisabled = current < today && !isOther;
-                    var isToday = isSameDay(current, today);
-                    var selected = dateInput && dateInput.value === toYMD(current);
-                    var cls = 'cta-calendar-day';
-                    if (isOther) cls += ' other-month';
-                    if (isDisabled) cls += ' disabled';
-                    if (isToday) cls += ' today';
-                    if (selected) cls += ' selected';
-                    var dayNum = current.getDate();
-                    html += '<button type="button" class="' + cls + '" data-date="' + toYMD(current) + '" ' + (isDisabled ? 'disabled' : '') + '>' + dayNum + '</button>';
-                    current.setDate(current.getDate() + 1);
-                }
-                dateDaysEl.innerHTML = html;
-                dateDaysEl.querySelectorAll('button:not(.disabled)').forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        var val = this.getAttribute('data-date');
-                        dateInput.value = val;
-                        dateValueEl.textContent = formatDate(val);
-                        dateValueEl.classList.remove('placeholder');
-                        dateDropdown.classList.remove('is-open');
-                        dateTrigger.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-
-            if (datePrev) datePrev.addEventListener('click', function() { viewDate.setMonth(viewDate.getMonth() - 1); renderCalendar(); });
-            if (dateNext) dateNext.addEventListener('click', function() { viewDate.setMonth(viewDate.getMonth() + 1); renderCalendar(); });
-            if (dateTodayBtn) dateTodayBtn.addEventListener('click', function() {
-                var t = new Date();
-                viewDate = new Date(t);
-                dateInput.value = toYMD(t);
-                dateValueEl.textContent = formatDate(t);
-                dateValueEl.classList.remove('placeholder');
-                renderCalendar();
-                dateDropdown.classList.remove('is-open');
-                dateTrigger.setAttribute('aria-expanded', 'false');
-            });
-
-            if (dateTrigger && dateDropdown) {
-                dateTrigger.addEventListener('click', function() {
-                    var open = dateDropdown.classList.toggle('is-open');
-                    dateTrigger.setAttribute('aria-expanded', open);
-                    if (open) renderCalendar();
-                    timeDropdown.classList.remove('is-open');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                });
-            }
-
-            var timeSlots = [];
-            for (var h = 9; h <= 17; h++) {
-                for (var m = 0; m < 60; m += 30) {
-                    if (h === 17 && m > 0) break;
-                    timeSlots.push({ h: h, m: m, label: formatTime(h, m), value: pad(h) + ':' + pad(m) });
-                }
-            }
-            timeSlots.forEach(function(slot) {
-                var btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'cta-time-slot';
-                btn.textContent = slot.label;
-                btn.setAttribute('data-value', slot.value);
-                btn.addEventListener('click', function() {
-                    timeInput.value = slot.value;
-                    timeValueEl.textContent = slot.label;
-                    timeValueEl.classList.remove('placeholder');
-                    timeDropdown.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
-                    this.classList.add('selected');
-                    timeDropdown.classList.remove('is-open');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                });
-                timeSlotsEl.appendChild(btn);
-            });
-
-            if (timeTrigger && timeDropdown) {
-                timeTrigger.addEventListener('click', function() {
-                    var open = timeDropdown.classList.toggle('is-open');
-                    timeTrigger.setAttribute('aria-expanded', open);
-                    if (open) {
-                        timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) {
-                            b.classList.toggle('selected', b.getAttribute('data-value') === timeInput.value);
-                        });
-                    }
-                    dateDropdown.classList.remove('is-open');
-                    dateTrigger.setAttribute('aria-expanded', 'false');
-                });
-            }
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.cta-picker-wrap')) {
-                    dateDropdown.classList.remove('is-open');
-                    timeDropdown.classList.remove('is-open');
-                    dateTrigger.setAttribute('aria-expanded', 'false');
-                    timeTrigger.setAttribute('aria-expanded', 'false');
-                }
-            });
-
+            var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/49ff2688-166c-4060-90c4-8e7defa0721c';
             var form = document.getElementById('heroConsultationForm');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    var submitBtn = document.getElementById('heroConsultSubmitBtn');
-                    var boxBody = document.getElementById('heroCtaBoxBody');
-                    var successEl = document.getElementById('heroCtaFormSuccess');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.textContent = 'Sending...';
-                    }
-                    setTimeout(function() {
-                        if (successEl) {
-                            var fn = document.getElementById('heroConsultFirstName') && document.getElementById('heroConsultFirstName').value;
-                            if (fn) successEl.querySelector('h3').textContent = 'Thank you, ' + fn + '!';
-                            successEl.classList.add('is-visible');
-                        }
-                        if (boxBody) boxBody.classList.add('is-success');
-                        form.reset();
-                        dateValueEl.textContent = 'Choose date';
-                        dateValueEl.classList.add('placeholder');
-                        timeValueEl.textContent = 'Choose time';
-                        timeValueEl.classList.add('placeholder');
-                        timeSlotsEl.querySelectorAll('.cta-time-slot').forEach(function(b) { b.classList.remove('selected'); });
-                        viewDate = new Date();
-                        renderCalendar();
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Schedule Consultation';
-                        }
-                    }, 600);
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var submitBtn = document.getElementById('heroConsultSubmitBtn');
+                var boxBody   = document.getElementById('heroCtaBoxBody');
+                var successEl = document.getElementById('heroCtaFormSuccess');
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var payload = {
+                    first_name: (document.getElementById('heroConsultFirstName') || {}).value || '',
+                    last_name:  (document.getElementById('heroConsultLastName')  || {}).value || '',
+                    email:      (document.getElementById('heroConsultEmail')     || {}).value || '',
+                    phone:      (document.getElementById('heroConsultPhone')     || {}).value || '',
+                    interest:   (document.getElementById('heroConsultInterest')  || {}).value || '',
+                    message:    (document.getElementById('heroConsultMessage')   || {}).value || '',
+                    source:     'Richview Capital — Hero Form'
+                };
+                fetch(GHL_WEBHOOK, {
+                    method:  'POST',
+                    mode:     'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify(payload)
+                })
+                .then(function() {
+                    form.reset();
+                    var dest = 'thank-you.html';
+                    if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
+                    window.location.href = dest;
+                })
+                .catch(function() {
+                    alert('Something went wrong. Please try again or call us directly.');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 });
-            }
-            renderCalendar();
+            });
         })();
 
         (function() {
