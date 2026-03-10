@@ -4043,14 +4043,21 @@
                 var boxBody   = document.getElementById('ctaBoxBody');
                 var successEl = document.getElementById('ctaFormSuccess');
                 if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
+                var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
                 var payload = {
-                    first_name: (document.getElementById('consultFirstName')  || {}).value || '',
-                    last_name:  (document.getElementById('consultLastName')   || {}).value || '',
-                    email:      (document.getElementById('consultEmail')      || {}).value || '',
-                    phone:      (document.getElementById('consultPhone')      || {}).value || '',
-                    interest:   (document.getElementById('consultInterest')   || {}).value || '',
-                    message:    (document.getElementById('consultMessage')    || {}).value || '',
-                    source:     'Richview Capital — ' + window.location.pathname
+                    form_name:    'Book a Free Consultation',
+                    first_name:   _fn,
+                    last_name:    _ln,
+                    name:         (_fn + ' ' + _ln).trim(),
+                    email:        ((document.getElementById('consultEmail')    || {}).value || '').trim(),
+                    phone:        ((document.getElementById('consultPhone')    || {}).value || '').trim(),
+                    service:      ((document.getElementById('consultInterest') || {}).value || '').trim(),
+                    message:      ((document.getElementById('consultMessage')  || {}).value || '').trim(),
+                    source_url:   window.location.href,
+                    page_url:     window.location.href,
+                    submitted_at: new Date().toISOString(),
+                    user_agent:   navigator.userAgent
                 };
                 fetch(GHL_WEBHOOK, {
                     method:  'POST',
@@ -4064,7 +4071,8 @@
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
                     window.location.href = dest;
                 })
-                .catch(function() {
+                .catch(function(err) {
+                    console.error('GHL webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
                     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 });
@@ -4081,14 +4089,21 @@
                 var boxBody   = document.getElementById('heroCtaBoxBody');
                 var successEl = document.getElementById('heroCtaFormSuccess');
                 if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var _fn = ((document.getElementById('heroConsultFirstName') || {}).value || '').trim();
+                var _ln = ((document.getElementById('heroConsultLastName')  || {}).value || '').trim();
                 var payload = {
-                    first_name: (document.getElementById('heroConsultFirstName') || {}).value || '',
-                    last_name:  (document.getElementById('heroConsultLastName')  || {}).value || '',
-                    email:      (document.getElementById('heroConsultEmail')     || {}).value || '',
-                    phone:      (document.getElementById('heroConsultPhone')     || {}).value || '',
-                    interest:   (document.getElementById('heroConsultInterest')  || {}).value || '',
-                    message:    (document.getElementById('heroConsultMessage')   || {}).value || '',
-                    source:     'Richview Capital — Hero Form'
+                    form_name:    'Book a Free Consultation',
+                    first_name:   _fn,
+                    last_name:    _ln,
+                    name:         (_fn + ' ' + _ln).trim(),
+                    email:        ((document.getElementById('heroConsultEmail')    || {}).value || '').trim(),
+                    phone:        ((document.getElementById('heroConsultPhone')    || {}).value || '').trim(),
+                    service:      ((document.getElementById('heroConsultInterest') || {}).value || '').trim(),
+                    message:      ((document.getElementById('heroConsultMessage')  || {}).value || '').trim(),
+                    source_url:   window.location.href,
+                    page_url:     window.location.href,
+                    submitted_at: new Date().toISOString(),
+                    user_agent:   navigator.userAgent
                 };
                 fetch(GHL_WEBHOOK, {
                     method:  'POST',
@@ -4102,7 +4117,8 @@
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
                     window.location.href = dest;
                 })
-                .catch(function() {
+                .catch(function(err) {
+                    console.error('GHL webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
                     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 });
