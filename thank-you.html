@@ -162,8 +162,7 @@
 
         /* ——— THANK YOU HERO SECTION ——— */
         .ty-section {
-            min-height: calc(100vh - 80px);
-            display: flex; align-items: center; justify-content: center;
+            display: flex; align-items: flex-start; justify-content: center;
             padding: 9rem var(--gutter) 5rem;
             position: relative; overflow: hidden;
         }
@@ -178,7 +177,7 @@
         .ty-inner {
             position: relative; z-index: 1;
             display: flex; flex-direction: column; align-items: center;
-            text-align: center; max-width: 680px; width: 100%;
+            text-align: center; max-width: 820px; width: 100%;
             animation: tyFadeUp 0.75s var(--ease-out) forwards;
         }
         @keyframes tyFadeUp {
@@ -225,34 +224,31 @@
             line-height: 1.65; max-width: 500px; margin: 0 auto 2.5rem;
         }
 
-        /* ——— WHAT HAPPENS NEXT CARDS ——— */
-        .ty-steps {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-            width: 100%; margin-bottom: 2.75rem;
+        /* ——— CALENDAR SECTION ——— */
+        .ty-calendar {
+            width: 100%; margin-bottom: 2.5rem; text-align: center;
         }
-        .ty-step {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: var(--card-radius); padding: 1.5rem 1.25rem;
-            text-align: left; position: relative;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+        .ty-calendar-label {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
         }
-        .ty-step:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-2px); }
-        .ty-step-num {
-            width: 36px; height: 36px; border-radius: 10px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
-            color: var(--white); font-size: 0.8125rem; font-weight: 700;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 0.875rem; flex-shrink: 0;
+        .ty-calendar-heading {
+            font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700;
+            color: var(--navy); margin-bottom: 0.5rem; line-height: 1.25;
         }
-        .ty-step h4 {
-            font-size: 0.9375rem; font-weight: 700; color: var(--navy);
-            margin-bottom: 0.35rem; line-height: 1.3;
+        .ty-calendar-sub {
+            font-size: 0.9375rem; color: var(--muted); line-height: 1.6;
+            max-width: 440px; margin: 0 auto 1.5rem;
         }
-        .ty-step p {
-            font-size: 0.8375rem; color: var(--muted); line-height: 1.55; margin: 0;
+        .ty-calendar-frame {
+            width: 100%; background: var(--white);
+            border: 1px solid var(--border); border-radius: var(--card-radius);
+            overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            min-height: 580px;
         }
-        .ty-step-accent { border-top: 2px solid var(--gold); }
+        .ty-calendar-frame iframe {
+            width: 100%; min-height: 580px; display: block; border: none;
+        }
 
         /* ——— CTA BUTTONS ——— */
         .ty-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
@@ -378,9 +374,9 @@
 
         /* ——— RESPONSIVE — THANK YOU PAGE ——— */
         @media (max-width: 768px) {
-            .ty-steps { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .footer-brand { grid-column: 1 / -1; }
+            .ty-calendar-frame, .ty-calendar-frame iframe { min-height: 680px; }
         }
         @media (max-width: 640px) {
             .ty-section { padding-top: 7.5rem; padding-bottom: 3rem; }
@@ -390,6 +386,10 @@
             .btn-pri, .btn-sec { width: 100%; justify-content: center; }
             .ty-contact-row { flex-direction: column; gap: 0.875rem; align-items: flex-start; }
             .ty-contact-divider { display: none; }
+            .ty-calendar-frame, .ty-calendar-frame iframe { min-height: 720px; }
+        }
+        @media (max-width: 480px) {
+            .ty-calendar-frame, .ty-calendar-frame iframe { min-height: 780px; }
         }
         @media (max-width: 480px) {
             .footer-grid { grid-template-columns: 1fr; }
@@ -455,22 +455,13 @@
                     Your request has been sent to our team. We review every inquiry personally and will be in touch within&nbsp;<strong>24&nbsp;hours</strong>.
                 </p>
 
-                <!-- What happens next -->
-                <div class="ty-steps" role="list">
-                    <div class="ty-step ty-step-accent" role="listitem">
-                        <div class="ty-step-num">1</div>
-                        <h4>We Review Your Request</h4>
-                        <p>Our team reads every submission personally — no automated responses, no call&nbsp;centres.</p>
-                    </div>
-                    <div class="ty-step ty-step-accent" role="listitem">
-                        <div class="ty-step-num">2</div>
-                        <h4>We Reach Out</h4>
-                        <p>Expect a call or email within <strong>24 hours</strong> from a licensed member of our&nbsp;team.</p>
-                    </div>
-                    <div class="ty-step ty-step-accent" role="listitem">
-                        <div class="ty-step-num">3</div>
-                        <h4>We Find a Solution</h4>
-                        <p>We'll walk through your options, answer questions, and move forward at your&nbsp;pace.</p>
+                <!-- Calendar booking -->
+                <div class="ty-calendar">
+                    <p class="ty-calendar-label">Next Step</p>
+                    <h2 class="ty-calendar-heading">Book Your Free Consultation</h2>
+                    <p class="ty-calendar-sub">Pick a time that works for you and we'll confirm it right away.</p>
+                    <div class="ty-calendar-frame">
+                        <iframe src="https://api.leadconnectorhq.com/widget/booking/nak6g7HbyB9tvLyjHTK8" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="nak6g7HbyB9tvLyjHTK8_1773202172770" title="Book a free consultation"></iframe>
                     </div>
                 </div>
 
@@ -577,6 +568,7 @@
         </div>
     </footer>
 
+    <script src="https://api.leadconnectorhq.com/js/form_embed.js" type="text/javascript"></script>
     <script>
         /* Personalise the headline from URL ?name=FirstName */
         (function() {
