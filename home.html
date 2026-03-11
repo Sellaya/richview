@@ -1024,7 +1024,7 @@
 
         /* ——— PARTNERS SECTION ——— */
         .partners-section {
-            padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+            padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(0.75rem, 2vw, 1.25rem);
             background: #f8f9fb;
             border-top: 1px solid rgba(11,22,53,0.06);
             border-bottom: 1px solid rgba(11,22,53,0.06);
@@ -1113,48 +1113,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.85rem 1.5rem;
-            background: #ffffff;
-            border: 1px solid rgba(11,22,53,0.08);
-            border-radius: 10px;
+            padding: 0.5rem 1.25rem;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
             flex-shrink: 0;
-            min-width: 150px;
-            height: 68px;
-            box-shadow: 0 1px 4px rgba(11,22,53,0.04);
-            transition: box-shadow 0.22s var(--ease-out), border-color 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+            min-width: 130px;
+            height: 64px;
+            transition: transform 0.22s var(--ease-out), opacity 0.22s;
             cursor: default;
         }
         .partner-logo-card:hover {
-            box-shadow: 0 6px 20px rgba(11,22,53,0.08);
-            border-color: rgba(255,102,0,0.28);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
         .partner-logo-card img {
-            max-height: 40px;
-            max-width: 130px;
+            max-height: 44px;
+            max-width: 140px;
             width: auto;
             height: auto;
             object-fit: contain;
-            filter: grayscale(0.25) brightness(0.95);
-            opacity: 0.82;
+            mix-blend-mode: multiply;
+            filter: grayscale(0.15) brightness(0.97);
+            opacity: 0.8;
             transition: filter 0.22s, opacity 0.22s;
             display: block;
         }
         .partner-logo-card:hover img {
             filter: grayscale(0) brightness(1);
-            opacity: 1;
-        }
-        .partner-logo-text {
-            font-family: var(--font-sans);
-            font-size: 0.9375rem;
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: -0.01em;
-            white-space: nowrap;
-            opacity: 0.72;
-            transition: opacity 0.22s;
-        }
-        .partner-logo-card:hover .partner-logo-text {
             opacity: 1;
         }
 
@@ -3037,7 +3023,7 @@
             .services-panels { min-height: 280px; }
             .services-features--grid { grid-template-columns: 1fr; }
             .partners-categories { gap: 0.35rem 1rem; }
-            .partner-logo-card { min-width: 130px; height: 60px; padding: 0.7rem 1.1rem; }
+            .partner-logo-card { min-width: 110px; height: 56px; padding: 0.4rem 1rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
             .testimonial-card { padding: 1.35rem 1.15rem; width: 300px; }
 
@@ -3456,25 +3442,21 @@
         <div class="partners-scroll-wrap">
             <div class="partners-track">
                 <!-- Set 1 -->
-                <div class="partner-logo-card"><span class="partner-logo-text">Vantage Law</span></div>
+                <div class="partner-logo-card"><img src="partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Damiani Law</span></div>
+                <div class="partner-logo-card"><img src="partner-damiani.png" alt="Damiani Jewellers" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-axess.png" alt="Axess Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Capital" loading="lazy"></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Save You Tax</span></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Gosbee Law</span></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Brook Street Law</span></div>
+                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Building Maintenance" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
                 <!-- Set 2 — duplicate for seamless infinite loop -->
-                <div class="partner-logo-card"><span class="partner-logo-text">Vantage Law</span></div>
+                <div class="partner-logo-card"><img src="partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Damiani Law</span></div>
+                <div class="partner-logo-card"><img src="partner-damiani.png" alt="Damiani Jewellers" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-axess.png" alt="Axess Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Capital" loading="lazy"></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Save You Tax</span></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Gosbee Law</span></div>
-                <div class="partner-logo-card"><span class="partner-logo-text">Brook Street Law</span></div>
+                <div class="partner-logo-card"><img src="partner-marbro.png" alt="Marbro Building Maintenance" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
             </div>
