@@ -3900,10 +3900,10 @@
 
 
         (function() {
-            var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/72d00ca0-93ce-4f90-95bf-b6d9d01919be';
+            var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/1482385e-eb24-4f97-a2c5-78bba944934d';
             var form = document.getElementById('consultationForm');
             if (!form) return;
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 var submitBtn = document.getElementById('consultSubmitBtn');
                 var boxBody   = document.getElementById('ctaBoxBody');
@@ -3925,23 +3925,28 @@
                     submitted_at: new Date().toISOString(),
                     user_agent:   navigator.userAgent
                 };
-                fetch(GHL_WEBHOOK, {
-                    method:  'POST',
-                    mode:     'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body:    JSON.stringify(payload)
-                })
-                .then(function() {
+                console.log('[GHL] Form submit triggered');
+                console.log('[GHL] Payload:', JSON.stringify(payload, null, 2));
+                try {
+                    var response = await fetch(GHL_WEBHOOK, {
+                        method:  'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept':        'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
+                    if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
                     var dest = 'thank-you.html';
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
                     window.location.href = dest;
-                })
-                .catch(function(err) {
-                    console.error('GHL webhook submission failed:', err);
+                } catch (err) {
+                    console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
                     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
-                });
+                }
             });
         })();
     </script>
