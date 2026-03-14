@@ -1,0 +1,270 @@
+/* FAQ Section — Redesigned: mobile-first, modern layout, subtle patterns, premium fintech aesthetic */
+
+/* ——— Base: Section wrapper ——— */
+.faq-section {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(165deg, #f8f9fc 0%, #f2f4f8 35%, #eef1f7 60%, #f5f6fa 100%);
+    background-attachment: scroll;
+}
+@media (min-width: 768px) {
+    .faq-section {
+        padding: clamp(3rem, 7vw, 5rem) 0;
+    }
+}
+
+/* Subtle grid pattern overlay */
+.faq-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(to right, rgba(11, 22, 53, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 22, 53, 0.03) 1px, transparent 1px);
+    background-size: clamp(24px, 5vw, 40px) clamp(24px, 5vw, 40px);
+    pointer-events: none;
+}
+
+/* Soft navy/orange gradient orbs for depth */
+.faq-section::after {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 50%;
+    height: 70%;
+    z-index: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(11, 22, 53, 0.05) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+/* ——— Container (supports .container and .faq-container) ——— */
+.faq-section .container,
+.faq-section .faq-container {
+    position: relative;
+    z-index: 1;
+    max-width: min(90vw, 720px);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* ——— Section headers (supports .sec-head and .section-header) ——— */
+.faq-section .sec-head,
+.faq-section .section-header {
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+    width: 100%;
+    max-width: 480px;
+}
+.faq-section .sec-head h2,
+.faq-section .section-header h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+    font-weight: 700;
+    color: #0B1635;
+    margin: 0 0 0.35rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+.faq-section .sec-head p,
+.faq-section .section-header p {
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
+    color: #6B7280;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* ——— FAQ list / grid ——— */
+.faq-section .faq-list,
+.faq-section .faq-grid {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ——— FAQ item (card-style accordion) ——— */
+.faq-section .faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(11, 22, 53, 0.08);
+    box-shadow: 0 1px 3px rgba(11, 22, 53, 0.04), 0 0 0 0 rgba(255, 102, 0, 0);
+    transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, transform 0.2s;
+}
+.faq-section .faq-item:hover {
+    box-shadow: 0 4px 16px rgba(11, 22, 53, 0.06), 0 0 0 1px rgba(11, 22, 53, 0.06);
+}
+.faq-section .faq-item.open,
+.faq-section .faq-item.active {
+    border-color: rgba(255, 102, 0, 0.25);
+    box-shadow: 0 8px 24px rgba(11, 22, 53, 0.08), 0 0 0 1px rgba(255, 102, 0, 0.15);
+}
+
+/* ——— Question button (standard structure: .faq-q) ——— */
+.faq-section .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 3vw, 1.25rem);
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
+    font-weight: 600;
+    color: #0B1635;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 52px;
+}
+.faq-section .faq-q:hover {
+    color: #0c1838;
+}
+.faq-section .faq-q span:first-child {
+    flex: 1;
+    min-width: 0;
+}
+.faq-section .faq-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(11, 22, 53, 0.06);
+    color: #0B1635;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-section .faq-icon svg {
+    display: block;
+    width: 10px;
+    height: 6px;
+}
+.faq-section .faq-item.open .faq-icon,
+.faq-section .faq-item.active .faq-icon {
+    background: #0B1635;
+    color: #ffffff;
+    transform: rotate(180deg);
+}
+
+/* ——— Alternative structure: .faq-question (richview-borrowers) ——— */
+.faq-section .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 3vw, 1.25rem);
+    cursor: pointer;
+    min-height: 52px;
+    -webkit-tap-highlight-color: transparent;
+}
+.faq-section .faq-question h4 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
+    font-weight: 600;
+    color: #0B1635;
+    margin: 0;
+    line-height: 1.35;
+    flex: 1;
+    min-width: 0;
+}
+.faq-section .faq-toggle {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(11, 22, 53, 0.06);
+    color: #0B1635;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-section .faq-item.active .faq-toggle {
+    background: #0B1635;
+    color: #ffffff;
+    transform: rotate(45deg);
+}
+
+/* ——— Answer (.faq-a and .faq-answer) ——— */
+.faq-section .faq-a,
+.faq-section .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-section .faq-item.open .faq-a,
+.faq-section .faq-item.active .faq-answer {
+    max-height: 1200px;
+}
+.faq-section .faq-a p,
+.faq-section .faq-answer p {
+    padding: 0 clamp(1rem, 3vw, 1.25rem) clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 3vw, 1.25rem);
+    margin: 0;
+    padding-top: 0;
+    font-size: clamp(0.9rem, 1.8vw, 0.9375rem);
+    color: #6B7280;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+}
+
+/* ——— FAQ page: preserve alternating section backgrounds ——— */
+.faq-page .faq-section:nth-of-type(2) { background: linear-gradient(180deg, #eef1f7 0%, #f2f4f8 45%, #f6f7fb 100%); }
+.faq-page .faq-section:nth-of-type(3) { background: linear-gradient(180deg, #f6f7fb 0%, #faf8f6 50%, #f5f4f2 100%); }
+.faq-page .faq-section:nth-of-type(4) { background: linear-gradient(165deg, #f5f4f2 0%, #eef2f6 40%, #f0f3f8 100%); }
+.faq-page .faq-section:nth-of-type(5) { background: linear-gradient(180deg, #f0f3f8 0%, #f8f6f4 50%, #faf9f7 100%); }
+.faq-page .faq-section::before {
+    background-image:
+        linear-gradient(to right, rgba(11, 22, 53, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 22, 53, 0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+}
+
+/* ——— Mobile: tighter spacing, touch targets ——— */
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 2rem 0;
+    }
+    .faq-section .container,
+    .faq-section .faq-container {
+        padding: 0 1rem;
+    }
+    .faq-section .sec-head,
+    .faq-section .section-header {
+        margin-bottom: 1.25rem;
+    }
+    .faq-section .faq-q,
+    .faq-section .faq-question {
+        padding: 0.95rem 1rem;
+        min-height: 48px;
+    }
+    .faq-section .faq-a p,
+    .faq-section .faq-answer p {
+        padding: 0 1rem 1rem 1rem;
+        font-size: 0.9rem;
+    }
+}
