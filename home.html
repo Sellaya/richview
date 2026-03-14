@@ -2652,8 +2652,10 @@
         .footer-bottom {
             padding: 1.5rem 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem 1.5rem;
             font-size: 0.8125rem;
             color: rgba(255,255,255,0.35);
             position: relative;
@@ -2662,7 +2664,17 @@
         .footer-bottom-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+        }
+        .footer-bottom-left p {
+            margin: 0;
+        }
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
         }
         .footer-license {
             display: inline-flex;
@@ -2690,8 +2702,15 @@
             0%, 100% { opacity: 0.7; box-shadow: 0 0 8px var(--gold), 0 0 16px rgba(255,102,0,0.4); }
             50% { opacity: 1; box-shadow: 0 0 12px var(--gold), 0 0 24px rgba(255,102,0,0.6); }
         }
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-shrink: 0;
+        }
         .footer-legal {
             display: flex;
+            flex-wrap: wrap;
             gap: 1.25rem;
         }
         .footer-legal a {
@@ -3902,16 +3921,18 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
                     <p>&copy; 2026 Richview Capital Corp.</p>
-                    <span class="footer-license"><span class="footer-license-dot"></span> Mortgage Administrator License # - 13171</span>
+                    <span class="footer-license"><span class="footer-license-dot"></span> Mortgage Administrator License #13171</span>
                 </div>
-                <div class="footer-legal">
-                    <a href="privacy.html">Privacy</a>
-                    <a href="terms.html">Terms</a>
-                    <a href="disclaimer.html">Disclaimer</a>
+                <div class="footer-bottom-right">
+                    <div class="footer-legal">
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                    <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                    </button>
                 </div>
-                <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-                </button>
             </div>
         </div>
     </footer>
