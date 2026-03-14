@@ -90,6 +90,9 @@
             font-weight: 400;
             overflow-wrap: break-word;
         }
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+        }
 
         main {
             overflow-x: hidden;
@@ -1404,12 +1407,14 @@
             nav.menu-open .nav-inner { z-index: 1001 !important; position: relative !important; }
             nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
             nav.menu-open .logo, nav.menu-open .mobile-menu-btn { z-index: 1002 !important; position: relative !important; }
+            nav.menu-open::before { content: ''; position: fixed; inset: 0; z-index: 998; background: rgba(11, 22, 53, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; animation: navBackdropIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+            @keyframes navBackdropIn { to { opacity: 1; } }
+            nav.menu-open::after { content: ''; position: fixed; inset: 0; z-index: 997; pointer-events: auto; }
             .nav-links {
-                position: fixed !important;
-                inset: 0 !important;
+                position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
                 width: 100% !important;
-                height: 100% !important;
-                min-height: 100vh !important;
+                max-height: clamp(75vh, 88dvh, 92vh) !important;
+                min-height: min(320px, 70vh) !important;
                 z-index: 999 !important;
                 background: #ffffff !important;
                 backdrop-filter: blur(0) !important;
@@ -1421,7 +1426,7 @@
                 gap: 0 !important;
                 opacity: 0 !important;
                 visibility: hidden !important;
-                transform: translateY(-10px) !important;
+                transform: translateY(100%) !important;
                 transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), visibility 0.3s, transform 0.3s cubic-bezier(0.4,0,0.2,1) !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
@@ -1519,6 +1524,8 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
+    <link rel="stylesheet" href="css/button-contrast.css">
 </head>
 
 <body>

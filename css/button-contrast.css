@@ -1,0 +1,31 @@
+/* Fix button text visibility: ensure white text on navy/blue buttons site-wide */
+.cta-box button[type="submit"],
+.hero-form-wrap button[type="submit"],
+.btn-pri,
+a.btn-pri,
+.cta-nav,
+li.mobile-cta-li > a,
+.hero-ctas .btn-pri,
+.hero-ctas .btn-sec {
+    color: #ffffff !important;
+}
+/* Hover states keep white text */
+.cta-box button[type="submit"]:hover,
+.hero-form-wrap button[type="submit"]:hover,
+.btn-pri:hover,
+a.btn-pri:hover,
+li.mobile-cta-li > a:hover,
+li.mobile-cta-li > a:active {
+    color: #ffffff !important;
+}
+/* Hero section buttons on dark background (btn-sec/secondary = outline, need white text) */
+.hero .btn-pri,
+.hero .btn-sec,
+.hero-ctas .btn-sec,
+.hero-ctas .btn-secondary {
+    color: #ffffff !important;
+}
+.hero .btn-sec:hover,
+.hero-ctas .btn-secondary:hover {
+    color: #ffffff !important;
+}

@@ -63,6 +63,10 @@
             background: linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 35%, #FAFAFA 70%, #FFFFFF 100%);
             background-attachment: fixed;
             overflow-x: hidden;
+        }
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+        }
             overflow-wrap: break-word;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -1024,41 +1028,101 @@
 
         @media (max-width: 1024px) {
             .nav-inner { padding: 0.4rem 1.35rem !important; min-height: 60px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
-            nav.menu-open .nav-inner { z-index: 1001 !important; position: relative !important; }
             nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
-            nav.menu-open .logo, nav.menu-open .mobile-menu-btn { z-index: 1002 !important; position: relative !important; }
+            /* ——— Mobile menu: full-screen overlay (matches homepage) ——— */
             .nav-links {
-                position: fixed !important;
-                inset: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-                min-height: 100vh !important;
-                z-index: 999 !important;
-                background: #ffffff !important;
-                backdrop-filter: blur(0) !important;
-                -webkit-backdrop-filter: blur(0) !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: stretch !important;
-                padding: max(5.5rem, calc(5.5rem + env(safe-area-inset-top))) max(1.5rem, env(safe-area-inset-right)) max(2.5rem, calc(2rem + env(safe-area-inset-bottom))) max(1.5rem, env(safe-area-inset-left)) !important;
-                gap: 0 !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transform: translateY(-10px) !important;
-                transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), visibility 0.3s, transform 0.3s cubic-bezier(0.4,0,0.2,1) !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                margin: 0 !important;
-                overflow-y: auto !important;
-                -webkit-overflow-scrolling: touch !important;
-                pointer-events: none !important;
+                display: none !important;
+                position: absolute;
+                left: 0; right: 0; top: 0; bottom: 0;
                 list-style: none !important;
             }
-            .nav-links.active {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) !important;
-                pointer-events: auto !important;
+            nav.menu-open {
+                position: fixed !important;
+                top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+                width: 100% !important; height: 100% !important;
+                min-height: 100vh; min-height: 100dvh;
+                max-height: 100vh; max-height: 100dvh;
+                z-index: 9999 !important;
+                transform: none !important;
+                margin: 0 !important;
+                background: #ffffff !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden;
+            }
+            nav.menu-open .nav-inner {
+                flex: 1;
+                min-height: 0;
+                display: grid !important;
+                grid-template-rows: minmax(60px, auto) 1fr;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: "menu-header menu-header" "menu-links menu-links";
+                gap: 0;
+                padding: 0;
+                background: #ffffff;
+                width: 100%;
+            }
+            nav.menu-open .logo {
+                grid-area: menu-header;
+                grid-column: 1;
+                align-self: center;
+                justify-self: start;
+                margin: 0; padding: 0;
+                padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem;
+                padding-left: max(1rem, env(safe-area-inset-left));
+            }
+            nav.menu-open .mobile-menu-btn {
+                grid-area: menu-header;
+                grid-column: 2;
+                align-self: center;
+                justify-self: end;
+                margin: 0; padding: 0;
+                padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem;
+                padding-right: max(1rem, env(safe-area-inset-right));
+                padding-left: 1rem;
+                min-width: 48px !important;
+                min-height: 48px !important;
+            }
+            nav.menu-open .cta-nav { display: none !important; }
+            nav.menu-open .nav-links {
+                display: flex !important;
+                grid-area: menu-links;
+                grid-column: 1 / -1;
+                flex-direction: column;
+                align-items: stretch;
+                align-self: stretch;
+                justify-self: stretch;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                min-height: 0;
+                margin: 0;
+                padding: 1rem max(1rem, env(safe-area-inset-right)) max(1.5rem, calc(1rem + env(safe-area-inset-bottom))) max(1rem, env(safe-area-inset-left)) !important;
+                gap: 0;
+                background: #ffffff;
+                border-top: 1px solid rgba(11, 22, 53, 0.08);
+                border-radius: 0;
+                box-shadow: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+                touch-action: manipulation;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(6px);
+                transition: opacity 0.25s ease, visibility 0.25s, transform 0.25s ease;
+                pointer-events: none;
+            }
+            nav.menu-open .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
             }
             .nav-mobile-logo { display: none !important; }
             .nav-links > li { border-bottom: 1px solid rgba(11,22,53,0.06) !important; flex-shrink: 0 !important; }
@@ -1142,6 +1206,8 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
+    <link rel="stylesheet" href="css/button-contrast.css">
 </head>
 
 <body>
