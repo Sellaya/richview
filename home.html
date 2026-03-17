@@ -961,6 +961,129 @@
         }
         .hero-form-submit:hover { background: var(--gold); box-shadow: 0 4px 16px rgba(255, 102, 0, 0.35); }
 
+        /* ——— Hero form: design consistency (placeholders, trust row, buttons, pickers) ——— */
+        .hero-form-wrap.cta-box .cta-box-header {
+            padding: 1rem 1.25rem;
+        }
+        .hero-form-wrap.cta-box .cta-box-header h2 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        .hero-form-wrap.cta-box .cta-box-header > p {
+            font-size: 0.8125rem;
+            margin-bottom: 0.75rem;
+        }
+        .hero-form-wrap .cta-trust-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.75rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .hero-form-wrap .cta-trust-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .hero-form-wrap .cta-trust-item svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+        .hero-form-wrap .hero-form-btn {
+            min-height: 44px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        .hero-form-wrap button[type="submit"] {
+            min-height: 44px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8125rem;
+            border-radius: 8px;
+        }
+        .hero-form-wrap .form-group label,
+        .hero-form-wrap .cta-schedule-field label {
+            font-size: 0.75rem;
+            margin-bottom: 0.35rem;
+        }
+        .hero-form-wrap .hero-step-title {
+            font-size: 0.8125rem;
+            margin-bottom: 0.75rem;
+        }
+        .hero-form-wrap .hero-form-steps {
+            margin-bottom: 0.85rem;
+            gap: 0.5rem;
+        }
+        .hero-form-wrap .hero-form-nav {
+            margin-top: 1rem;
+            padding-top: 0.85rem;
+            gap: 0.5rem;
+        }
+        .hero-form-wrap .cta-box-body {
+            padding: 1rem 1.25rem;
+        }
+        .hero-form-wrap .form-row {
+            gap: 0.6rem;
+        }
+        .hero-form-wrap .form-group {
+            margin-bottom: 0;
+        }
+        .hero-form-wrap .form-row .form-group {
+            margin-bottom: 0;
+        }
+        .hero-form-wrap .hero-schedule-block {
+            padding: 0.75rem 0.85rem;
+            margin-bottom: 0;
+        }
+        .hero-form-wrap .cta-schedule-fields {
+            gap: 0.65rem;
+        }
+        @media (max-width: 480px) {
+            .hero-form-wrap.cta-box .cta-box-header {
+                padding: 0.85rem 1rem;
+            }
+            .hero-form-wrap.cta-box .cta-box-header h2 { font-size: 1.0625rem; }
+            .hero-form-wrap .cta-trust-row {
+                gap: 0.4rem 0.6rem;
+            }
+            .hero-form-wrap .cta-trust-item {
+                font-size: 0.625rem;
+            }
+            .hero-form-wrap .cta-trust-item svg {
+                width: 11px;
+                height: 11px;
+            }
+            .hero-form-wrap .cta-box-body {
+                padding: 0.85rem 1rem;
+            }
+            .hero-form-wrap .hero-form-nav {
+                margin-top: 0.85rem;
+                padding-top: 0.75rem;
+                gap: 0.45rem;
+            }
+            .hero-form-wrap .hero-form-btn,
+            .hero-form-wrap button[type="submit"] {
+                min-height: 44px;
+                padding: 0.55rem 0.85rem;
+                font-size: 0.8125rem;
+            }
+            .hero-form-wrap .hero-schedule-block {
+                padding: 0.6rem 0.75rem;
+            }
+            .hero-form-wrap .cta-schedule-fields {
+                grid-template-columns: 1fr;
+                gap: 0.55rem;
+            }
+        }
+
         .hero-trust { margin-top: var(--space-lg); width: 100%; position: relative; z-index: 1; }
         .hero-trust-inner {
             max-width: 100%;
@@ -2178,110 +2301,8 @@
             transform: translateY(0) scale(1);
         }
         .cta-picker-dropdown-inner { padding: 0.5rem; }
-        /* ——— Calendly-style date & time (compact, device-friendly) ——— */
         .cta-picker-wrap { overflow: visible; }
-        .hero-date-dropdown, .hero-time-dropdown {
-            min-width: 280px;
-            width: max(280px, 100%);
-            left: 50%;
-            right: auto;
-            margin-left: -140px;
-        }
-        @media (max-width: 400px) {
-            .hero-date-dropdown, .hero-time-dropdown {
-                width: calc(100vw - 1.5rem);
-                min-width: 0;
-                left: 50%;
-                margin-left: calc(-50vw + 50% + 0.75rem);
-            }
-        }
-        .cta-calendar-card {
-            background: #fff;
-            padding: 0.5rem 0.4rem;
-        }
-        .cta-calendar-card .cta-calendar-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 0 0.5rem;
-            padding: 0;
-            background: none;
-            border: none;
-        }
-        .cta-calendar-card .cta-calendar-nav {
-            min-width: clamp(32px, 8vw, 36px);
-            min-height: clamp(32px, 8vw, 36px);
-            padding: 0;
-            border-radius: 50%;
-            background: #f3f4f6;
-            color: #6b7280;
-        }
-        .cta-calendar-card .cta-calendar-nav:hover {
-            background: #e5e7eb;
-            color: var(--navy);
-        }
-        .cta-calendar-card .cta-calendar-nav svg { width: 14px; height: 14px; }
-        .cta-calendar-card .cta-calendar-month-year {
-            font-size: clamp(0.75rem, 2vw, 0.8125rem);
-            font-weight: 600;
-            color: #111827;
-        }
-        .cta-calendar-card .cta-calendar-weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0;
-            margin-bottom: 0.25rem;
-            font-size: 0.6rem;
-            font-weight: 600;
-            color: #9ca3af;
-            text-align: center;
-        }
-        .cta-calendar-card .cta-calendar-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 2px;
-        }
-        .cta-calendar-card .cta-calendar-day {
-            aspect-ratio: 1;
-            min-height: clamp(24px, 6.5vw, 32px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(0.65rem, 1.8vw, 0.75rem);
-            font-weight: 500;
-            color: #374151;
-            border-radius: 50%;
-            background: transparent;
-            border: none;
-        }
-        .cta-calendar-card .cta-calendar-day:hover:not(.other-month):not(.disabled) {
-            background: #f3f4f6;
-            color: #111827;
-        }
-        .cta-calendar-card .cta-calendar-day.selected {
-            background: var(--navy);
-            color: #fff;
-        }
-        .cta-calendar-card .cta-calendar-day.today:not(.selected) {
-            background: rgba(255, 102, 0, 0.15);
-            color: var(--navy);
-        }
-        .cta-calendar-card .cta-calendar-day.other-month { color: #d1d5db; }
-        .cta-calendar-card .cta-calendar-day.disabled { color: #e5e7eb; cursor: not-allowed; }
-        .cta-calendar-card .cta-calendar-footer {
-            margin: 0.4rem 0 0;
-            padding: 0.3rem 0 0;
-            border-top: 1px solid #f3f4f6;
-        }
-        .cta-calendar-card .cta-calendar-action {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: var(--gold);
-            padding: 0.2rem 0.5rem;
-            background: none;
-            border-radius: 4px;
-        }
-        .cta-calendar-card .cta-calendar-action:hover { background: rgba(255, 102, 0, 0.12); }
+        /* Hero date/time calendar styling in calendly-style-picker.css (mobile-first, min-width 280px) */
         /* ——— Time card (premium selection UI) ——— */
         .cta-time-card {
             background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,251,252,1) 100%);
@@ -4693,22 +4714,25 @@
                     else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                     return;
                 }
-                var scheduleFormatted = '';
                 var dtStr = _time.length === 5 ? _date + 'T' + _time + ':00' : _date + 'T' + _time;
-                if (_date && _time) {
-                    var d = new Date(dtStr);
-                    if (!isNaN(d.getTime())) {
-                        var pad = function(n) { return (n < 10 ? '0' : '') + n; };
-                        var m = d.getMonth(), day = d.getDate(), y = d.getFullYear();
-                        var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
-                        h = h % 12 || 12;
-                        var timeStr = pad(h) + ':' + pad(min) + ' ' + ampm;
-                        var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-                        scheduleFormatted = pad(m+1) + '-' + pad(day) + '-' + y + ' ' + timeStr + ', ' +
-                            pad(day) + '-' + months[m] + '-' + y + ' ' + timeStr + ', ' +
-                            y + '-' + pad(m+1) + '-' + pad(day) + ' ' + timeStr;
-                    }
+                var d = new Date(dtStr);
+                var pad = function(n) { return (n < 10 ? '0' : '') + n; };
+                var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+                var formatTime = function(d) {
+                    var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
+                    h = h % 12 || 12;
+                    return pad(h) + ':' + pad(min) + ' ' + ampm;
+                };
+                var timeStr = !isNaN(d.getTime()) ? formatTime(d) : '';
+                var schedule_mm_dd_yyyy = '';
+                var schedule_dd_mmm_yyyy = '';
+                var schedule_yyyy_mm_dd = '';
+                if (!isNaN(d.getTime()) && timeStr) {
+                    schedule_mm_dd_yyyy = pad(d.getMonth()+1) + '-' + pad(d.getDate()) + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_dd_mmm_yyyy = pad(d.getDate()) + '-' + months[d.getMonth()] + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + timeStr;
                 }
+                var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
                 var payload = {
                     form_name:    'Hero Consultation (Schedule)',
                     first_name:   _fn,
@@ -4720,32 +4744,10 @@
                     message:      ((document.getElementById('heroConsultMessage')  || {}).value || '').trim(),
                     consultation_date: _date,
                     consultation_time: _time,
-                    schedule_call: scheduleFormatted,
-                    schedule_mm_dd_yyyy: _date && _time ? (function(){
-                        var d = new Date(_date + 'T' + _time);
-                        if (isNaN(d.getTime())) return '';
-                        var pad = function(n) { return (n < 10 ? '0' : '') + n; };
-                        var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
-                        h = h % 12 || 12;
-                        return pad(d.getMonth()+1) + '-' + pad(d.getDate()) + '-' + d.getFullYear() + ' ' + pad(h) + ':' + pad(min) + ' ' + ampm;
-                    })() : '',
-                    schedule_dd_mmm_yyyy: _date && _time ? (function(){
-                        var d = new Date(_date + 'T' + _time);
-                        if (isNaN(d.getTime())) return '';
-                        var pad = function(n) { return (n < 10 ? '0' : '') + n; };
-                        var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-                        var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
-                        h = h % 12 || 12;
-                        return pad(d.getDate()) + '-' + months[d.getMonth()] + '-' + d.getFullYear() + ' ' + pad(h) + ':' + pad(min) + ' ' + ampm;
-                    })() : '',
-                    schedule_yyyy_mm_dd: _date && _time ? (function(){
-                        var d = new Date(_date + 'T' + _time);
-                        if (isNaN(d.getTime())) return '';
-                        var pad = function(n) { return (n < 10 ? '0' : '') + n; };
-                        var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
-                        h = h % 12 || 12;
-                        return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + pad(h) + ':' + pad(min) + ' ' + ampm;
-                    })() : '',
+                    schedule_call: schedule_call,
+                    schedule_mm_dd_yyyy: schedule_mm_dd_yyyy,
+                    schedule_dd_mmm_yyyy: schedule_dd_mmm_yyyy,
+                    schedule_yyyy_mm_dd: schedule_yyyy_mm_dd,
                     source_url:   window.location.href,
                     page_url:     window.location.href,
                     submitted_at: new Date().toISOString(),

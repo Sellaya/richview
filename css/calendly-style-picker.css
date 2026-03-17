@@ -1,12 +1,198 @@
-/* Calendly-style date & time picker - mobile first, compact, device-friendly */
+/* Calendly-style date & time picker - 100% mobile first, fluid scaling */
 
-/* Shared container tokens */
+/* Shared container tokens - fluid, scale with viewport */
 :root {
-    --form-radius: 10px;
-    --form-radius-lg: 12px;
-    --form-padding-sm: 0.5rem;
-    --form-padding-md: 0.65rem;
-    --form-padding-lg: 0.85rem;
+    --form-radius: clamp(8px, 2.5vw, 10px);
+    --form-radius-lg: clamp(10px, 3vw, 12px);
+    --form-padding-sm: clamp(0.4rem, 1.5vw, 0.55rem);
+    --form-padding-md: clamp(0.5rem, 2vw, 0.7rem);
+    --form-padding-lg: clamp(0.65rem, 2.5vw, 0.9rem);
+    --form-field-min-h: clamp(44px, 12vw, 48px);
+    --form-btn-min-h: 44px;
+    --form-font: 0.9375rem;
+    --form-font-sm: 0.8125rem;
+    --form-placeholder-color: rgba(11, 22, 53, 0.45);
+    --form-placeholder-font: 0.8125rem;
+}
+
+/* ========== MOBILE FIRST: Hero form - all elements fluid ========== */
+/* CRITICAL: overflow:visible so date/time dropdowns are not clipped by cta-box */
+.hero-form-wrap.cta-box {
+    width: 100%;
+    max-width: min(100%, 360px);
+    padding: 0;
+    overflow: visible !important;
+    border-radius: var(--form-radius-lg);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    min-width: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+}
+.hero-form-wrap .cta-box-body,
+.hero-form-wrap .cta-box-header {
+    overflow: visible !important;
+}
+
+/* Form rows: 1 column base, fluid gap */
+.hero-form-wrap .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(0.4rem, 1.5vw, 0.75rem);
+}
+.hero-form-wrap .form-row.form-row-full {
+    grid-template-columns: 1fr;
+}
+
+/* Form groups - fluid margins */
+.hero-form-wrap .form-group {
+    margin-bottom: clamp(0.4rem, 1.5vw, 0.6rem);
+    min-width: 0;
+}
+.hero-form-wrap .form-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Labels - fluid font, scale with screen */
+.hero-form-wrap .form-group label,
+.hero-form-wrap .cta-schedule-field label {
+    display: block;
+    font-size: clamp(0.7rem, 1.8vw, 0.8125rem);
+    font-weight: 600;
+    color: var(--navy, #0B1635);
+    margin-bottom: clamp(0.25rem, 0.8vw, 0.4rem);
+    text-align: left;
+}
+
+/* Inputs, select, textarea - consistent size, padding, min-height, border */
+.hero-form-wrap input,
+.hero-form-wrap select,
+.hero-form-wrap textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: var(--form-field-min-h);
+    padding: 0.6rem 0.75rem;
+    font-size: var(--form-font);
+    line-height: 1.4;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    border-radius: var(--form-radius);
+    border: 1px solid rgba(11, 22, 53, 0.1);
+    background: var(--cream, #fafbfc);
+    color: var(--navy, #0B1635);
+}
+.hero-form-wrap input:hover,
+.hero-form-wrap select:hover,
+.hero-form-wrap textarea:hover {
+    border-color: rgba(11, 22, 53, 0.16);
+}
+.hero-form-wrap input:focus,
+.hero-form-wrap select:focus,
+.hero-form-wrap textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+    background: #fff;
+}
+.hero-form-wrap input::placeholder,
+.hero-form-wrap textarea::placeholder {
+    font-size: var(--form-placeholder-font);
+    color: var(--form-placeholder-color);
+    line-height: 1.4;
+    opacity: 1;
+}
+.hero-form-wrap textarea {
+    min-height: 88px;
+    resize: vertical;
+}
+.hero-form-wrap select {
+    padding-right: 2.25rem;
+    cursor: pointer;
+}
+@media (max-width: 480px) {
+    .hero-form-wrap input,
+    .hero-form-wrap select,
+    .hero-form-wrap textarea {
+        font-size: 16px; /* prevents iOS zoom on focus */
+    }
+    .hero-form-wrap input::placeholder,
+    .hero-form-wrap textarea::placeholder {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Picker triggers - match input height and typography */
+.hero-form-wrap .cta-picker-trigger {
+    width: 100%;
+    max-width: 100%;
+    min-height: var(--form-field-min-h);
+    padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+    font-size: var(--form-font);
+    line-height: 1.4;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+.hero-form-wrap .cta-picker-value.placeholder {
+    font-size: var(--form-placeholder-font);
+    color: var(--form-placeholder-color);
+    line-height: 1.4;
+}
+.hero-form-wrap .cta-picker-wrap .cta-schedule-input-icon {
+    left: 0.75rem;
+    width: 14px;
+    height: 14px;
+}
+
+/* Trust row - fluid wrap */
+.hero-form-wrap .cta-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.35rem, 1.5vw, 0.65rem);
+    align-items: center;
+}
+.hero-form-wrap .cta-trust-item {
+    font-size: clamp(0.58rem, 1.6vw, 0.75rem);
+    white-space: nowrap;
+}
+
+/* Picker wrap: full width */
+.hero-form-wrap .cta-picker-wrap {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Step title - fluid */
+.hero-form-wrap .hero-step-title {
+    font-size: clamp(0.8rem, 2vw, 0.9375rem);
+    font-weight: 600;
+    margin-bottom: clamp(0.35rem, 1.2vw, 0.5rem);
+}
+
+/* Step dots - fluid size and gap */
+.hero-form-wrap .hero-form-steps {
+    gap: clamp(0.35rem, 1.2vw, 0.5rem);
+}
+.hero-form-wrap .hero-step-dot {
+    width: clamp(8px, 2.2vw, 10px);
+    height: clamp(8px, 2.2vw, 10px);
+    min-width: 8px;
+    min-height: 8px;
+}
+
+/* Form header (inside cta-box) - fluid */
+.hero-form-wrap .cta-box-header h2 {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+}
+.hero-form-wrap .cta-box-header > p {
+    font-size: clamp(0.75rem, 2vw, 0.8375rem);
+}
+
+/* ========== Progressive enhancement (tablet+) ========== */
+@media (min-width: 480px) {
+    .hero-form-wrap .form-row:not(.form-row-full) {
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(0.5rem, 2vw, 0.85rem);
+    }
 }
 
 /* ========== Unified container styling - smooth, flexible, consistent ========== */
@@ -16,7 +202,7 @@
     overflow: visible;
     border-radius: var(--form-radius-lg);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
-    min-width: 0; /* Prevent flex overflow on mobile */
+    min-width: 0;
 }
 .hero-form-wrap .cta-form-fields,
 .hero-form-wrap form {
@@ -50,34 +236,28 @@
 .hero-form-wrap .cta-schedule-field {
     border-radius: var(--form-radius);
 }
-/* Picker triggers - rounded like dropdowns, 3D touch */
+/* Picker triggers - match input styling (border, radius, focus) */
 .hero-form-wrap .cta-picker-trigger {
-    border-radius: 12px;
-    background: linear-gradient(180deg, #fafbfc 0%, #f3f4f6 100%) !important;
-    border: 1px solid rgba(0,0,0,0.06) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9),
-                0 1px 3px rgba(0,0,0,0.05) !important;
-    transition: all 0.15s ease !important;
+    border-radius: var(--form-radius);
+    background: var(--cream, #fafbfc) !important;
+    border: 1px solid rgba(11, 22, 53, 0.1) !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
 }
 .hero-form-wrap .cta-picker-trigger:hover {
-    background: linear-gradient(180deg, #f5f6f7 0%, #eef0f2 100%) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),
-                0 2px 6px rgba(0,0,0,0.08) !important;
+    border-color: rgba(11, 22, 53, 0.16) !important;
+    background: #fff !important;
 }
-.hero-form-wrap .cta-picker-trigger:active,
 .hero-form-wrap .cta-picker-trigger[aria-expanded="true"] {
-    transform: scale(0.985);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7),
-                0 0 0 transparent !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12) !important;
+    background: #fff !important;
 }
 .hero-form-wrap .cta-picker-trigger:has(.cta-picker-value:not(.placeholder)) {
-    background: linear-gradient(180deg, rgba(255,102,0,0.08) 0%, rgba(255,102,0,0.04) 100%) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9),
-                0 1px 3px rgba(255,102,0,0.08) !important;
+    border-color: rgba(255, 102, 0, 0.35) !important;
+    background: rgba(255, 102, 0, 0.04) !important;
 }
 .hero-form-wrap .cta-picker-trigger:has(.cta-picker-value:not(.placeholder)):hover {
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),
-                0 2px 6px rgba(255,102,0,0.12) !important;
+    border-color: rgba(255, 102, 0, 0.5) !important;
 }
 .hero-form-wrap .hero-form-nav {
     margin-top: clamp(0.7rem, 2.5vw, 0.95rem);
@@ -89,18 +269,22 @@
     margin-bottom: clamp(0.75rem, 2.5vw, 0.95rem);
 }
 @media (min-width: 375px) {
-    .hero-form-wrap { max-width: min(100%, 380px); }
+    .hero-form-wrap,
+    .hero-form-wrap.cta-box { max-width: min(100%, 380px); }
 }
 @media (min-width: 480px) {
-    .hero-form-wrap { max-width: min(100%, 400px); }
+    .hero-form-wrap,
+    .hero-form-wrap.cta-box { max-width: min(100%, 400px); }
 }
 @media (min-width: 640px) {
-    .hero-form-wrap { max-width: min(100%, 420px); }
+    .hero-form-wrap,
+    .hero-form-wrap.cta-box { max-width: min(100%, 420px); }
 }
 
 /* Mobile: safe area, prevent overflow, ensure containers work */
 @media (max-width: 480px) {
-    .hero-form-wrap {
+    .hero-form-wrap,
+    .hero-form-wrap.cta-box {
         max-width: 100%;
         width: 100%;
     }
@@ -109,41 +293,71 @@
         padding-left: max(0.7rem, env(safe-area-inset-left, 0.5rem));
         padding-right: max(0.7rem, env(safe-area-inset-right, 0.5rem));
     }
-}
-@media (max-width: 360px) {
-    .hero-form-wrap .hero-form-submit {
-        min-height: 38px;
-        padding: 0.4rem 0.7rem;
-        font-size: 0.75rem;
+    /* Picker dropdowns: match trigger width, respect safe area */
+    .hero-form-wrap .hero-date-dropdown,
+    .hero-form-wrap .hero-time-dropdown {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: calc(100vw - 1rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
     }
 }
-
-/* ========== Schedule consultation button - compact, device-proportional ========== */
+/* ========== Schedule consultation button - fluid, mobile first ========== */
 .hero-form-wrap .hero-form-submit {
     flex: 0 1 auto;
-    min-height: clamp(36px, 10vw, 42px);
-    padding: clamp(0.4rem, 1.8vw, 0.5rem) clamp(0.75rem, 3.5vw, 1rem);
-    font-size: clamp(0.75rem, 2vw, 0.8125rem);
+    min-height: var(--form-btn-min-h);
+    padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.65rem, 3vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 0.9375rem);
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: var(--form-radius-lg);
 }
 .hero-form-wrap .hero-form-back,
 .hero-form-wrap .hero-form-next {
-    min-height: clamp(36px, 10vw, 42px);
-    padding: clamp(0.4rem, 1.8vw, 0.5rem) clamp(0.55rem, 2.5vw, 0.75rem);
-    font-size: clamp(0.75rem, 2vw, 0.8125rem);
-    border-radius: 10px;
-}
-@media (min-width: 375px) {
-    .hero-form-wrap .hero-form-submit { font-size: 0.8125rem; }
-    .hero-form-wrap .hero-form-back,
-    .hero-form-wrap .hero-form-next { font-size: 0.8125rem; }
-}
-@media (min-width: 480px) {
-    .hero-form-wrap .hero-form-submit { font-size: 0.875rem; padding: 0.5rem 1rem; min-height: 40px; }
+    min-height: var(--form-btn-min-h);
+    padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.5rem, 2.2vw, 0.8rem);
+    font-size: clamp(0.8rem, 2vw, 0.9375rem);
+    border-radius: var(--form-radius-lg);
 }
 
-/* ========== Picker dropdowns - mobile first, always visible ========== */
+/* Step dots - fluid size */
+.hero-form-wrap .hero-step-dot {
+    width: clamp(8px, 2.5vw, 10px);
+    height: clamp(8px, 2.5vw, 10px);
+    min-width: 8px;
+    min-height: 8px;
+}
+.hero-form-wrap .hero-form-steps {
+    gap: clamp(0.25rem, 1vw, 0.4rem);
+}
+
+/* Header h2 & p - fluid typography */
+.hero-form-wrap .cta-box-header h2 {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    line-height: 1.3;
+}
+.hero-form-wrap .cta-box-header > p {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+/* ========== Picker dropdowns - above all content, never clipped ========== */
+/* CRITICAL: hero section has overflow:hidden which clips dropdowns - allow overflow when form is present */
+/* CRITICAL: hero must stack above trust-strip (which follows in DOM) so dropdowns are visible */
+.hero:has(.hero-form-wrap) {
+    overflow: visible !important;
+    position: relative;
+    z-index: 10;
+}
+.hero:has(.hero-form-wrap) .hero-grid {
+    overflow: visible !important;
+}
+/* Hero form: allow dropdowns to overflow (override cta-box overflow:hidden) */
+.hero-form-wrap.cta-box,
+.hero-form-wrap .cta-box-body,
+.hero-form-wrap .cta-form-fields,
+.hero-form-wrap .hero-schedule-block,
+.hero-form-wrap .cta-schedule-field {
+    overflow: visible !important;
+}
 .cta-picker-wrap {
     position: relative;
     overflow: visible;
@@ -154,17 +368,58 @@
     left: 0;
     right: 0;
     width: 100%;
-    min-width: 260px;
-    max-width: min(320px, calc(100vw - 1rem));
-    z-index: 200;
+    min-width: 0;
+    max-width: min(320px, calc(100vw - 1rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)));
+    z-index: 9998 !important; /* Above trust strip, hero content - never clipped */
+    background: #fff;
     background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
-    border-radius: 16px;
+    border-radius: 12px;
+    overflow: visible !important;
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+}
+/* Hero form: attach dropdowns below triggers; date dropdown has min width for readable calendar */
+.hero-form-wrap .cta-picker-wrap .hero-date-dropdown,
+.hero-form-wrap .cta-picker-wrap .hero-time-dropdown {
+    top: 100%;
+    margin-top: 6px;
+    left: 0;
+    right: auto;
+    margin-left: 0;
+    max-width: none;
+}
+.hero-form-wrap .cta-picker-wrap .hero-date-dropdown {
+    width: 100%;
+    min-width: 280px;
+    max-width: calc(100vw - 1.5rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+}
+.hero-form-wrap .cta-picker-wrap .hero-time-dropdown {
+    width: 100%;
+    min-width: 0;
+}
+@media (min-width: 480px) {
+    .hero-form-wrap .cta-picker-wrap .hero-date-dropdown {
+        width: max(100%, 280px);
+        max-width: 320px;
+    }
+}
+/* Time picker: ensure scrollbar has room and is never clipped */
+.hero-time-dropdown .cta-time-inner {
+    padding-right: 0.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+/* Override home.html cta-picker-dropdown overflow:hidden on mobile - hero dropdowns must stay visible */
+@media (max-width: 768px) {
+    .hero-date-dropdown,
+    .hero-time-dropdown {
+        overflow: visible !important;
+    }
+}
+/* Inner cards: clip content but not the dropdown itself */
+.hero-date-dropdown .cta-calendar-card,
+.hero-time-dropdown .cta-time-card {
     overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),
-                inset 0 -1px 0 rgba(0,0,0,0.03),
-                0 4px 12px rgba(0,0,0,0.08),
-                0 12px 32px rgba(0,0,0,0.12),
-                0 0 0 1px rgba(0,0,0,0.06);
 }
 /* On wider viewports, dropdown can grow */
 @media (min-width: 380px) {
@@ -173,118 +428,116 @@
         max-width: 320px;
     }
 }
-/* Schedule fields: 1 column on mobile so pickers get full width */
+/* Schedule fields: 1 column on mobile, 2 on tablet+ */
 .hero-schedule-block .cta-schedule-fields {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 0.65rem;
 }
-@media (min-width: 640px) {
+@media (min-width: 480px) {
     .hero-schedule-block .cta-schedule-fields {
         grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
     }
 }
 
-/* ========== Calendar card - rounded (match time picker), 3D touch ========== */
+/* ========== Calendar card – mobile-first, readable width ========== */
 .cta-calendar-card {
-    background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
-    padding: 0.55rem 0.5rem 0.5rem;
-    border-radius: 16px;
+    background: #fff;
+    padding: 0.75rem 0.65rem;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),
-                inset 0 -1px 0 rgba(0,0,0,0.02);
+    min-width: 0;
+    box-sizing: border-box;
 }
 .cta-calendar-card .cta-calendar-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 0 0.4rem;
-    padding: 0;
+    margin: 0 0 0.5rem;
+    padding: 0 0.1rem;
     background: none;
     border: none;
+    gap: 0.5rem;
 }
 .cta-calendar-card .cta-calendar-nav {
-    min-width: 36px;
-    min-height: 36px;
+    min-width: 28px;
+    min-height: 28px;
+    width: 28px;
+    height: 28px;
     padding: 0;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #f8f9fa 0%, #eef0f2 100%);
+    border-radius: 8px;
+    background: rgba(11, 22, 53, 0.06);
     color: #6b7280;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.15s ease;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
 }
 .cta-calendar-card .cta-calendar-nav:hover {
-    background: linear-gradient(180deg, #eef0f2 0%, #e5e7eb 100%);
-    color: #111827;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    background: rgba(11, 22, 53, 0.1);
+    color: #0B1635;
 }
 .cta-calendar-card .cta-calendar-nav:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 transparent;
+    transform: scale(0.96);
 }
 .cta-calendar-card .cta-calendar-nav svg {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
 }
 .cta-calendar-card .cta-calendar-month-year {
     font-size: 0.8125rem;
-    font-weight: 600;
-    color: #111827;
+    font-weight: 700;
+    color: #0B1635;
     text-align: center;
+    flex: 1;
+    letter-spacing: 0.01em;
 }
 .cta-calendar-card .cta-calendar-weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0;
-    margin-bottom: 0.3rem;
-    font-size: 0.6rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.625rem;
     font-weight: 600;
-    color: #9ca3af;
+    color: rgba(11, 22, 53, 0.5);
     text-align: center;
 }
 .cta-calendar-card .cta-calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 3px;
+    gap: 4px;
 }
 .cta-calendar-card .cta-calendar-day {
     aspect-ratio: 1;
-    min-height: 28px;
+    min-height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: #374151;
-    border-radius: 50%;
+    border-radius: 8px;
     background: transparent;
-    border: 1px solid transparent;
+    border: none;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 .cta-calendar-card .cta-calendar-day:hover:not(.other-month):not(.disabled) {
-    background: linear-gradient(180deg, #f0f2f4 0%, #e8eaed 100%);
-    color: #111827;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    background: rgba(11, 22, 53, 0.08);
+    color: #0B1635;
 }
 .cta-calendar-card .cta-calendar-day:active:not(.other-month):not(.disabled) {
-    transform: scale(0.92);
-    box-shadow: 0 0 0 transparent;
+    transform: scale(0.95);
 }
 .cta-calendar-card .cta-calendar-day.selected {
-    background: linear-gradient(180deg, #0d1a3a 0%, #0B1635 100%);
+    background: #0B1635;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(11, 22, 53, 0.35);
 }
 .cta-calendar-card .cta-calendar-day.today:not(.selected) {
-    background: linear-gradient(180deg, rgba(255, 102, 0, 0.18) 0%, rgba(255, 102, 0, 0.1) 100%);
+    background: rgba(255, 102, 0, 0.12);
     color: #0B1635;
-    box-shadow: 0 1px 3px rgba(255, 102, 0, 0.2);
 }
 .cta-calendar-card .cta-calendar-day.other-month {
     color: #d1d5db;
@@ -297,36 +550,63 @@
 .cta-calendar-card [data-today] {
     display: block;
     width: 100%;
-    margin: 0.35rem 0 0;
-    padding: 0.35rem 0.5rem;
+    margin: 0.5rem 0 0;
+    padding: 0.4rem 0.6rem;
     font-size: 0.75rem;
     font-weight: 600;
     color: #FF6600;
-    background: linear-gradient(180deg, rgba(255, 102, 0, 0.12) 0%, rgba(255, 102, 0, 0.06) 100%);
-    border: 1px solid rgba(255, 102, 0, 0.15);
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(255, 102, 0, 0.1);
+    background: rgba(255, 102, 0, 0.08);
+    border: 1px solid rgba(255, 102, 0, 0.2);
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background 0.2s ease;
 }
 .cta-calendar-card .cta-calendar-today:hover,
 .cta-calendar-card [data-today]:hover {
-    background: linear-gradient(180deg, rgba(255, 102, 0, 0.18) 0%, rgba(255, 102, 0, 0.1) 100%);
-    box-shadow: 0 2px 6px rgba(255, 102, 0, 0.18);
+    background: rgba(255, 102, 0, 0.12);
 }
 .cta-calendar-card .cta-calendar-today:active,
 .cta-calendar-card [data-today]:active {
     transform: scale(0.98);
 }
+/* Mobile: larger touch targets for days */
+@media (max-width: 480px) {
+    .cta-calendar-card {
+        padding: 0.85rem 0.75rem;
+    }
+    .cta-calendar-card .cta-calendar-day {
+        min-height: 36px;
+        font-size: 0.875rem;
+    }
+    .cta-calendar-card .cta-calendar-days {
+        gap: 5px;
+    }
+    .cta-calendar-card .cta-calendar-month-year {
+        font-size: 0.875rem;
+    }
+    .cta-calendar-card .cta-calendar-nav {
+        min-width: 32px;
+        min-height: 32px;
+        width: 32px;
+        height: 32px;
+    }
+    .cta-calendar-card .cta-calendar-nav svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+@media (min-width: 481px) {
+    .cta-calendar-card .cta-calendar-day {
+        min-height: 34px;
+    }
+}
 
 /* ========== Time card - rounded (match calendar), 3D touch ========== */
 .cta-time-card {
-    background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
-    padding: 0.55rem 0.5rem 0.5rem;
-    border-radius: 16px;
+    background: #fff;
+    padding: 0.6rem 0.65rem;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),
-                inset 0 -1px 0 rgba(0,0,0,0.03);
 }
 .cta-time-header {
     font-size: 0.6875rem;
@@ -349,9 +629,9 @@
     gap: 4px;
 }
 .cta-time-card .cta-time-slot {
-    min-height: 40px;
-    padding: 0.5rem 0.6rem;
-    font-size: 0.8125rem;
+    min-height: clamp(38px, 10vw, 44px);
+    padding: clamp(0.4rem, 1.5vw, 0.55rem) clamp(0.5rem, 2vw, 0.65rem);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     font-weight: 500;
     color: #374151;
     border-radius: 10px;
@@ -382,9 +662,6 @@
     font-weight: 700;
 }
 
-/* Touch targets on small screens */
-@media (max-width: 480px) {
-    .cta-calendar-card .cta-calendar-day { min-height: 32px; }
-    .cta-calendar-card .cta-calendar-nav { min-width: 40px; min-height: 40px; }
-    .cta-time-card .cta-time-slot { min-height: 44px; }
+.cta-time-card .cta-time-slot {
+    min-height: clamp(40px, 11vw, 46px);
 }
