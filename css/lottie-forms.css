@@ -1,0 +1,108 @@
+/**
+ * Lottie/Form states — Loading spinner & success
+ * Mobile-first, fintech-appropriate
+ * Works without Lottie (CSS fallback)
+ */
+
+/* ——— Button loading state ——— */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+  min-height: 44px; /* Touch target (mobile-first) */
+}
+.btn-loading .btn-text {
+  visibility: hidden;
+}
+.btn-loading .btn-spinner-wrap,
+.btn-loading .lottie-spinner-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* CSS fallback spinner (2px stroke, navy/gold) */
+.btn-spinner-css {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btnSpinnerSpin 0.8s linear infinite;
+}
+.cta-box button[type="submit"] .btn-spinner-css,
+.hero-form-wrap button[type="submit"] .btn-spinner-css {
+  border-color: rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+}
+@media (max-width: 640px) {
+  .btn-spinner-css {
+    width: 18px;
+    height: 18px;
+    border-width: 1.5px;
+  }
+}
+@keyframes btnSpinnerSpin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-spinner-css {
+    animation: none;
+    border-top-color: currentColor;
+  }
+  .lottie-spinner-arc {
+    animation: none;
+  }
+}
+
+/* SVG spinner arc (lottie-utils fallback) */
+.lottie-spinner-arc {
+  transform-origin: 12px 12px;
+  animation: btnSpinnerSpin 0.8s linear infinite;
+}
+.lottie-spinner-fallback svg {
+  color: inherit;
+}
+
+/* Success checkmark draw */
+@keyframes lottieSuccessDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Lottie container (replaces CSS when Lottie loads) */
+.btn-spinner-lottie {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 640px) {
+  .btn-spinner-lottie {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ——— Success check (thank-you, in-page) ——— */
+.ty-success-lottie {
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 640px) {
+  .ty-success-lottie {
+    width: 32px;
+    height: 32px;
+  }
+}
+.cta-form-success .success-check-lottie {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+@media (max-width: 640px) {
+  .cta-form-success .success-check-lottie {
+    width: 40px;
+    height: 40px;
+  }
+}

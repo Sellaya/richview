@@ -2664,6 +2664,7 @@
     <link rel="stylesheet" href="css/responsive-spacing.css">
     <link rel="stylesheet" href="css/benefit-cards-shared.css">
     <link rel="stylesheet" href="css/what-is-a-mic-layout.css">
+    <link rel="stylesheet" href="css/lottie-forms.css">
 </head>
 
 <body>
@@ -3125,7 +3126,7 @@
         </div>
     </footer>
 
-
+    <script src="js/lottie-utils.js"></script>
     <script>
         (function () {
             var nav = document.getElementById('mainNav');
@@ -3178,7 +3179,13 @@
                 var submitBtn = document.getElementById('consultSubmitBtn');
                 var boxBody   = document.getElementById('ctaBoxBody');
                 var successEl = document.getElementById('ctaFormSuccess');
-                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var spinnerHandle = null;
+                if (submitBtn && window.RichviewLottie) {
+                    spinnerHandle = window.RichviewLottie.showButtonSpinner(submitBtn, { size: window.innerWidth < 640 ? 18 : 20 });
+                } else if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
                 var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
                 var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
                 var payload = {
@@ -3215,7 +3222,8 @@
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
-                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 }
             });
         })();
