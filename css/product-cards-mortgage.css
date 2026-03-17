@@ -1,0 +1,266 @@
+/**
+ * Mortgage product cards — light background, white rounded cards, clean interactive points
+ * Mobile-first: 1 col → 2 cols → 3 cols
+ */
+
+/* ——— MOBILE (base) ——— */
+.loan-products {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.loan-products::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.loan-products .section-header,
+.loan-products .sec-head,
+.loan-products .products-grid,
+.loan-products .products-disclaimer {
+    position: relative;
+    z-index: 1;
+}
+
+.loan-products .section-header,
+.loan-products .sec-head {
+    max-width: var(--container, 1200px);
+    margin: 0 auto clamp(2rem, 4vw, 2.5rem);
+    padding: 0 var(--gutter, 1rem);
+}
+
+.loan-products .section-header h2,
+.loan-products .sec-head h2 {
+    color: var(--navy, #0B1635);
+    margin: 0 0 0.5rem 0;
+    display: block;
+}
+
+.loan-products .section-header p,
+.loan-products .sec-head p {
+    color: var(--muted, #6B7280);
+    margin: 0;
+    display: block;
+}
+
+/* ——— Products disclaimer (mobile-first) ——— */
+.loan-products .products-disclaimer-wrap {
+    width: 100%;
+    max-width: var(--container, 1200px);
+    margin: clamp(1.5rem, 5vw, 2rem) auto 0;
+    padding: 0 var(--gutter, 1rem) clamp(0.5rem, 2vw, 1rem);
+    position: relative;
+    z-index: 1;
+}
+
+.loan-products .products-disclaimer {
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 1.25rem) 0 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    max-width: 42rem;
+    color: var(--muted, #6B7280);
+    font-size: clamp(0.75rem, 1.8vw, 0.8125rem);
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.products-grid {
+    max-width: var(--container, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--gutter, 1rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.product-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-card, 14px);
+    padding: 1.25rem 1rem;
+    position: relative;
+    box-shadow: var(--shadow-card, 0 1px 3px rgba(0, 0, 0, 0.06));
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: var(--transition-card, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease);
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover, 0 8px 24px rgba(0, 0, 0, 0.08));
+    border-color: rgba(11, 22, 53, 0.08);
+}
+
+.product-card-top {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 0;
+}
+
+.product-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--navy, #0B1635);
+}
+
+.product-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+}
+
+.product-number {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--muted, #6B7280);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.product-card h3 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--charcoal, #1A1A1A);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.product-card-top > p {
+    font-size: 0.8125rem;
+    color: var(--muted, #6B7280);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.product-card-bottom {
+    padding-top: 1rem;
+}
+
+.product-highlights-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--charcoal, #1A1A1A);
+    margin: 0 0 0.625rem 0;
+    letter-spacing: 0.02em;
+}
+
+.product-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.product-features li {
+    padding: 0.5rem 0.75rem;
+    color: var(--charcoal, #1A1A1A);
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    line-height: 1.4;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.product-features li:hover {
+    background: rgba(255, 102, 0, 0.06);
+}
+
+.product-features li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    min-width: 1.125rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--gold, #FF6600);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.product-features li:hover::before {
+    transform: scale(1.1);
+}
+
+/* ——— TABLET (640px+) ——— */
+@media (min-width: 640px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 var(--gutter);
+    }
+
+    .product-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.125rem;
+    }
+
+    .product-card-top > p {
+        font-size: 0.875rem;
+    }
+
+    .product-features li {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.625rem;
+    }
+}
+
+/* ——— TABLET (768px+) ——— */
+@media (min-width: 768px) {
+    .products-grid {
+        gap: 1.5rem;
+    }
+
+    .product-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ——— DESKTOP (1024px+) ——— */
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .product-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .product-card:nth-child(8) {
+        grid-column: 2 / 3;
+    }
+}

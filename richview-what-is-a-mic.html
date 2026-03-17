@@ -619,9 +619,15 @@
 
         .intro-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
             align-items: start;
+        }
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-xl);
+            }
         }
 
         .intro-text h2 {
@@ -644,6 +650,109 @@
         }
 
         /* ── Value Cards ── */
+        /* Term sheet, protected, comparison tables */
+        .term-sheet-section,
+        .protected-section,
+        .comparison-section {
+            padding: var(--section-padding) 0;
+        }
+        .term-sheet-section { background: #FFFFFF; }
+        .protected-section { background: #F8F9FA; }
+        .comparison-section { background: #FAFBFC; }
+        .term-sheet-table-wrap,
+        .comparison-table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .term-sheet-table,
+        .comparison-table {
+            width: 100%;
+            min-width: min(100%, 480px);
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .term-sheet-table td,
+        .comparison-table td,
+        .comparison-table th {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .term-sheet-table tr:last-child td,
+        .comparison-table tbody tr:last-child td { border-bottom: none; }
+        .term-sheet-table td:first-child {
+            font-weight: 500;
+            color: var(--muted);
+            width: 40%;
+        }
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--navy);
+            background: rgba(11, 22, 53, 0.04);
+        }
+        .comparison-table td:first-child { font-weight: 500; }
+        .protected-list {
+            list-style: none;
+            counter-reset: protected;
+            padding: 0;
+        }
+        .protected-list li {
+            counter-increment: protected;
+            padding: 0.75rem 0 0.75rem 3rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+        .protected-list li:last-child { border-bottom: none; }
+        .protected-list li::before {
+            content: counter(protected);
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 1.75rem;
+            height: 1.75rem;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .term-sheet-section,
+            .protected-section,
+            .comparison-section {
+                padding: 2rem 0;
+            }
+            .term-sheet-table-wrap,
+            .comparison-table-wrap {
+                margin: 0 calc(-1 * var(--gutter));
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .term-sheet-table td:first-child { width: 35%; }
+            .comparison-table { font-size: 0.8125rem; min-width: 480px; }
+            .comparison-table td,
+            .comparison-table th { padding: 0.6rem 0.75rem; }
+            .protected-list li { padding: 0.65rem 0 0.65rem 2.5rem; font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .term-sheet-section,
+            .protected-section,
+            .comparison-section {
+                padding: 1.75rem 0;
+            }
+            .term-sheet-table,
+            .comparison-table { font-size: 0.8125rem; }
+            .term-sheet-table td,
+            .comparison-table td,
+            .comparison-table th { padding: 0.5rem 0.65rem; }
+        }
+
         .benefits-section {
             padding: var(--section-padding) 0;
             background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #F5F6F8 100%);
@@ -676,14 +785,34 @@
 
         .benefit-card {
             background: var(--white);
-            padding: 2.25rem;
+            padding: 2rem 1.75rem;
             border-radius: 12px;
-            transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-out);
         }
 
         .benefit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
         }
 
         .benefit-badge {
@@ -2643,16 +2772,19 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/button-contrast.css">
+    <link rel="stylesheet" href="css/responsive-spacing.css">
+    <link rel="stylesheet" href="css/benefit-cards-shared.css">
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-            <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <a href="home.html" class="logo"><img src="logo.png" alt="Richview Capital" class="logo-img"></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -2664,8 +2796,8 @@
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
+        </button>
+        <ul class="nav-links" id="navLinks">
                 <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
                 <li><a href="home.html">Home</a></li>
@@ -2679,7 +2811,7 @@
                         <a href="richview-capital-mic.html" role="menuitem">Investors</a>
                     </div>
                 </li>
-                <li><a href="richview-about.html">About</a></li>
+            <li><a href="richview-about.html">About</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuResources">Resources</a>
@@ -2688,10 +2820,10 @@
                         <a href="richview-faq.html" role="menuitem">FAQ</a>
                     </div>
                 </li>
-                <li><a href="richview-blog.html">Blog</a></li>
+            <li><a href="richview-blog.html">Blog</a></li>
                 <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get
                         Started</a></li>
-            </ul>
+        </ul>
             <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
@@ -2703,7 +2835,7 @@
             <p>A proven, regulated way to invest in the Canadian real estate market without the hassle of property
                 management.</p>
             <div class="hero-buttons">
-                <a href="richview-capital-mic.html" class="btn-hero-primary">Become an Investor</a>
+                <a href="richview-capital-mic.html" class="btn-hero-primary">Ready to invest? →</a>
                 <a href="#how-it-works" class="btn-hero-outline">See How It Works</a>
             </div>
         </div>
@@ -2721,6 +2853,7 @@
                     <p>Essentially, a MIC pools capital from many investors to lend out as private mortgages to
                         borrowers. The interest collected from these mortgages, after operational expenses, is passed
                         directly to the investors in the form of dividends.</p>
+                    <p>Key regulatory requirements: MICs must have at least 20 shareholders; no single shareholder (plus related persons) may own more than 25% of shares; MICs must distribute 100% of net income and pay no corporate tax; at least 50% of assets must be in residential mortgages or cash; MIC shares are qualified investments for RRSP, RRIF, and TFSA.</p>
                 </div>
                 <div class="intro-text reveal">
                     <h2>Why invest in a MIC?</h2>
@@ -2730,6 +2863,88 @@
                     <p>MIC shares are eligible for registered accounts such as RRSPs, RRIFs, and TFSAs, giving you
                         tax-advantaged access to the private mortgage market.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Term Sheet -->
+    <section class="term-sheet-section">
+        <div class="container">
+            <div class="section-heading reveal">
+                <h2>Investment Term Sheet</h2>
+                <p>Key terms for Richview Capital MIC&nbsp;investments</p>
+            </div>
+            <div class="term-sheet-table-wrap reveal">
+                <table class="term-sheet-table">
+                    <tbody>
+                        <tr><td>Investment type</td><td>Preference Class Shares of Richview Capital MIC Inc.</td></tr>
+                        <tr><td>Share price</td><td>$10.00 per share</td></tr>
+                        <tr><td>Minimum investment</td><td>$100,000</td></tr>
+                        <tr><td>Minimum hold period</td><td>2 years, quarterly liquidity thereafter</td></tr>
+                        <tr><td>Target annual return</td><td>7-8%</td></tr>
+                        <tr><td>Distributions</td><td>Quarterly by direct deposit</td></tr>
+                        <tr><td>Distribution dates</td><td>March 30, June 30, September 30, December 31</td></tr>
+                        <tr><td>Eligible accounts</td><td>RRSP, RRIF, TFSA, LIRA, RESP, LIF, and non-registered (cash)</td></tr>
+                        <tr><td>Fees — registered accounts</td><td>Fees apply for registered and self-directed accounts</td></tr>
+                        <tr><td>Fees — non-registered (cash)</td><td>No fees charged</td></tr>
+                        <tr><td>Portfolio</td><td>Short-term 1st and 2nd mortgages, GTA</td></tr>
+                        <tr><td>Property types</td><td>Mixed residential, high-rise condos (max 20 years old), construction</td></tr>
+                        <tr><td>Max LTV</td><td>75%</td></tr>
+                        <tr><td>Min borrower credit score</td><td>600</td></tr>
+                        <tr><td>Financial statements</td><td>Audited annually</td></tr>
+                        <tr><td>Dividend statements</td><td>Issued every quarter</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Your Investment Is Protected -->
+    <section class="protected-section">
+        <div class="container">
+            <div class="section-heading reveal">
+                <h2>How Your Investment Is Protected</h2>
+                <p>Risk management and security measures for your&nbsp;capital</p>
+            </div>
+            <ol class="protected-list reveal">
+                <li>Maximum 75% loan-to-value ratio on all mortgages</li>
+                <li>Minimum 600 credit score on every borrower application</li>
+                <li>Lending diversified across the GTA — multiple properties and borrowers</li>
+                <li>Property types: mixed residential, condos max 20 years old, construction</li>
+                <li>Every deal sourced through select network of top-tier mortgage professionals</li>
+                <li>Financial statements audited annually</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- MIC vs Traditional Investments -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-heading center reveal">
+                <h2>MIC vs. Traditional Investments</h2>
+                <p>Compare MIC investing to other asset&nbsp;classes</p>
+            </div>
+            <div class="comparison-table-wrap reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MIC</th>
+                            <th>Public REITs</th>
+                            <th>Mutual Funds</th>
+                            <th>Direct Property</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Backed by real estate</td><td>Yes</td><td>Yes</td><td>Varies</td><td>Yes</td></tr>
+                        <tr><td>Daily price fluctuation</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+                        <tr><td>Quarterly income</td><td>Yes</td><td>Varies</td><td>Varies</td><td>Rental income</td></tr>
+                        <tr><td>RRSP/TFSA eligible</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Generally no</td></tr>
+                        <tr><td>Property management</td><td>None</td><td>None</td><td>None</td><td>Required</td></tr>
+                        <tr><td>Minimum investment</td><td>$100,000</td><td>Low</td><td>Low</td><td>High</td></tr>
+                        <tr><td>Liquidity</td><td>Quarterly after 2-year hold</td><td>Daily</td><td>Daily</td><td>Low</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -2820,7 +3035,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="cta-box reveal">
+            <div class="cta-box reveal">
                 <div class="cta-box-header">
                     <h2>Explore MIC Investing</h2>
                     <p>Take the first step toward secure, asset-backed&nbsp;returns.</p>
@@ -2850,24 +3065,24 @@
                                     <div class="cta-form-section-title">Your Details</div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="consultFirstName">First Name *</label>
+                                            <label for="consultFirstName">First Name</label>
                                             <input type="text" id="consultFirstName" name="consultFirstName"
                                                 placeholder="e.g. John" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="consultLastName">Last Name *</label>
+                                            <label for="consultLastName">Last Name</label>
                                             <input type="text" id="consultLastName" name="consultLastName"
                                                 placeholder="e.g. Smith" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="consultEmail">Email Address *</label>
+                                            <label for="consultEmail">Email Address</label>
                                             <input type="email" id="consultEmail" name="consultEmail"
                                                 placeholder="john@example.com" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="consultPhone">Phone Number *</label>
+                                            <label for="consultPhone">Phone Number</label>
                                             <input type="tel" id="consultPhone" name="consultPhone"
                                                 placeholder="(416) 555-0123" required>
                                         </div>
@@ -2877,7 +3092,7 @@
                                     <div class="cta-form-section-title">Consultation Details</div>
                             <div class="form-row form-row-full">
                                         <div class="form-group">
-                                            <label for="consultInterest">I'm interested in *</label>
+                                            <label for="consultInterest">I'm interested in</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
                                                 <option value="borrowing">Borrowing: Private mortgage or construction
@@ -2890,7 +3105,7 @@
                                     </div>
                             <div class="form-row form-row-full">
                                         <div class="form-group">
-                                            <label for="consultMessage">How can we help? *</label>
+                                            <label for="consultMessage">How can we help?</label>
                                             <textarea id="consultMessage" name="consultMessage"
                                                 placeholder="Tell us about your project, financing needs, or any questions you have."
                                                 required></textarea>
@@ -2950,7 +3165,7 @@
                             <li><a href="richview-borrowers.html">Borrowers</a></li>
                             <li><a href="richview-capital-brokers.html">Brokers</a></li>
                             <li><a href="richview-capital-mic.html">Investors</a></li>
-                        </ul>
+                            </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Company</h4>
@@ -3006,7 +3221,7 @@
                         # - 13171</span>
                 </div>
                 <div class="footer-bottom-right">
-                    <div class="footer-legal">
+                <div class="footer-legal">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
                     <a href="disclaimer.html">Disclaimer</a>

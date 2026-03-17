@@ -1,0 +1,48 @@
+/**
+ * Responsive spacing & alignment — mobile-first, consistent across pages
+ * Ensures grids, sections, and content have proper padding on all devices
+ */
+
+/* ——— Mobile: prevent content from touching screen edges ——— */
+@media (max-width: 768px) {
+    /* Products grid (borrowers): horizontal padding when stacked */
+    .loan-products .products-grid {
+        padding: 0 var(--gutter, 1rem);
+        max-width: 100%;
+    }
+
+    /* Fund grid (brokers): horizontal padding when stacked */
+    .fund-section .fund-grid {
+        padding: 0 var(--gutter, 1rem);
+    }
+
+    /* Guidelines grid (brokers): horizontal padding */
+    .guidelines-section .guidelines-grid {
+        padding: 0 var(--gutter, 1rem);
+    }
+
+    /* Benefits grid: horizontal padding */
+    .benefits-section .benefits-grid {
+        padding: 0 var(--gutter, 1rem);
+    }
+
+    /* Products disclaimer wrap: match grid padding */
+    .loan-products .products-disclaimer-wrap {
+        padding-left: var(--gutter, 1rem);
+        padding-right: var(--gutter, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .loan-products .products-grid,
+    .fund-section .fund-grid,
+    .guidelines-section .guidelines-grid,
+    .benefits-section .benefits-grid {
+        padding: 0 var(--gutter, 0.75rem);
+    }
+
+    .loan-products .products-disclaimer-wrap {
+        padding-left: var(--gutter, 0.75rem);
+        padding-right: var(--gutter, 0.75rem);
+    }
+}

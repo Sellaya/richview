@@ -451,13 +451,13 @@
             visibility: visible;
         }
 
-        /* ——— PAGE HERO (matches brokers/what-is-a-mic sizing) ——— */
+        /* ——— PAGE HERO (office image with dark blue mask) ——— */
         .page-hero {
             padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--space-3xl);
             min-height: clamp(340px, 42vw, 420px);
             display: flex;
             align-items: center;
-            background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
+            background: linear-gradient(145deg, rgba(11, 22, 53, 0.78) 0%, rgba(13, 31, 74, 0.72) 45%, rgba(10, 19, 48, 0.82) 100%), url('about-hero-office.png') center center / cover no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -466,14 +466,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.08) 0%, transparent 50%);
+            background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
         .page-hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.4) 0%, transparent 50%);
+            background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.25) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -495,9 +495,9 @@
 
         .page-hero p {
             font-size: 1.0625rem;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
-            max-width: 560px;
+            max-width: 640px;
         }
 
         /* ——— SECTION HEADINGS ——— */
@@ -549,28 +549,36 @@
         .our-story .container {
             position: relative;
             z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .our-story .sec-head {
             margin-bottom: var(--space-md);
+            text-align: center;
         }
 
         .our-story .sec-head p {
             margin-bottom: 0;
         }
 
-        .story-content {
-            max-width: 900px;
+        .our-story .story-content {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
             line-height: 1.7;
+            text-align: center;
         }
 
-        .story-content p {
+        .our-story .story-content p {
             font-size: 0.9375rem;
             color: var(--muted);
             margin-bottom: 1rem;
         }
 
-        .story-content p:last-child {
+        .our-story .story-content p:last-child {
             margin-bottom: 0;
         }
 
@@ -2719,6 +2727,7 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/button-contrast.css">
 </head>
@@ -2775,8 +2784,7 @@
     <section class="page-hero" id="main">
         <div class="container">
             <h1>About Richview Capital MIC</h1>
-            <p>Experience, governance, and strategic expertise backing every investment decision. Meet the team
-                dedicated to your success.</p>
+            <p>A licensed Ontario MIC with 30+ years of combined experience in private lending, construction financing, and mortgage investing. Based in Woodbridge, serving the entire GTA.</p>
         </div>
     </section>
 
@@ -3197,24 +3205,24 @@
                                     <div class="cta-form-section-title">Your Details</div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="consultFirstName">First Name *</label>
+                                            <label for="consultFirstName">First Name</label>
                                             <input type="text" id="consultFirstName" name="consultFirstName"
                                                 placeholder="e.g. John" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="consultLastName">Last Name *</label>
+                                            <label for="consultLastName">Last Name</label>
                                             <input type="text" id="consultLastName" name="consultLastName"
                                                 placeholder="e.g. Smith" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="consultEmail">Email Address *</label>
+                                            <label for="consultEmail">Email Address</label>
                                             <input type="email" id="consultEmail" name="consultEmail"
                                                 placeholder="john@example.com" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="consultPhone">Phone Number *</label>
+                                            <label for="consultPhone">Phone Number</label>
                                             <input type="tel" id="consultPhone" name="consultPhone"
                                                 placeholder="(416) 555-0123" required>
                                         </div>
@@ -3224,7 +3232,7 @@
                                     <div class="cta-form-section-title">Consultation Details</div>
                             <div class="form-row form-row-full">
                                         <div class="form-group">
-                                            <label for="consultInterest">I'm interested in *</label>
+                                            <label for="consultInterest">I'm interested in</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
                                                 <option value="borrowing">Borrowing: Private mortgage or construction
@@ -3237,7 +3245,7 @@
                                     </div>
                             <div class="form-row form-row-full">
                                         <div class="form-group">
-                                            <label for="consultMessage">How can we help? *</label>
+                                            <label for="consultMessage">How can we help?</label>
                                             <textarea id="consultMessage" name="consultMessage"
                                                 placeholder="Tell us about your project, financing needs, or any questions you have."
                                                 required></textarea>

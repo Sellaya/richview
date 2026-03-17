@@ -1,0 +1,255 @@
+/* Hero design — mobile-first, shared across Borrowers, Brokers, Investors */
+
+/* ——— MOBILE (base) ——— */
+.page-hero {
+    text-align: center;
+}
+
+.page-hero .page-hero-content,
+.page-hero .page-hero-inner {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .hero-tagline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: var(--space-lg, 1.5rem);
+}
+.page-hero .hero-tagline-line {
+    width: 2rem;
+    min-width: 2rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+}
+.page-hero .hero-tagline-text {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.page-hero .hero-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 0 var(--space-xl, 2.5rem);
+    padding: 0;
+}
+.page-hero .hero-points li {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.page-hero .hero-points li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--gold, #FF6600);
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.page-hero .hero-stat-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: var(--space-lg, 1.5rem) 0;
+    width: 100%;
+    max-width: 100%;
+}
+.page-hero .hero-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    position: relative;
+}
+.page-hero .hero-stat-item::before {
+    display: none;
+}
+.page-hero .hero-stat-item:not(:last-child)::after {
+    display: none;
+}
+.page-hero .hero-stat-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 0.4rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+.page-hero .hero-stat-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+}
+
+.page-hero .hero-stat-disclaimer {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    margin: 0.75rem auto 1.25rem;
+}
+.page-hero .hero-stat-disclaimer a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.page-hero .hero-stat-disclaimer a:hover {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.page-hero .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.625rem;
+    margin-top: 0.25rem;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.page-hero .hero-ctas .btn-primary,
+.page-hero .hero-ctas .btn-secondary,
+.page-hero .hero-ctas .btn-pri,
+.page-hero .hero-ctas .btn-sec {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.page-hero .hero-ctas .btn-primary,
+.page-hero .hero-ctas .btn-pri {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--navy, #0B1635);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.page-hero .hero-ctas .btn-primary:hover,
+.page-hero .hero-ctas .btn-pri:hover {
+    background: var(--gold, #FF6600);
+    color: #ffffff;
+    border-color: var(--gold, #FF6600);
+}
+.page-hero .hero-ctas .btn-secondary,
+.page-hero .hero-ctas .btn-sec {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.page-hero .hero-ctas .btn-secondary:hover,
+.page-hero .hero-ctas .btn-sec:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ——— TABLET (640px+) ——— */
+@media (min-width: 640px) {
+    .page-hero .hero-tagline {
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+    .page-hero .hero-tagline-line {
+        width: 3rem;
+        min-width: 3rem;
+    }
+    .page-hero .hero-tagline-text {
+        width: auto;
+    }
+
+    .page-hero .hero-points {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0 2rem;
+        row-gap: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 640px;
+    }
+
+    .page-hero .hero-stat-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .page-hero .hero-stat-item {
+        padding: 0 1.5rem;
+    }
+    .page-hero .hero-stat-item:not(:last-child)::after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        bottom: 0.5rem;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.35);
+    }
+    .page-hero .hero-stat-icon {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-hero .hero-stat-disclaimer {
+        max-width: 640px;
+    }
+
+    .page-hero .hero-ctas {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: none;
+        width: auto;
+    }
+    .page-hero .hero-ctas .btn-primary,
+    .page-hero .hero-ctas .btn-secondary,
+    .page-hero .hero-ctas .btn-pri,
+    .page-hero .hero-ctas .btn-sec {
+        padding: 0.625rem 1.25rem;
+        min-height: 44px;
+    }
+}
+
+/* ——— 768px: tablet polish ——— */
+@media (min-width: 768px) {
+    .page-hero .hero-ctas .btn-primary,
+    .page-hero .hero-ctas .btn-secondary,
+    .page-hero .hero-ctas .btn-pri,
+    .page-hero .hero-ctas .btn-sec {
+        padding: 0.6875rem 1.5rem;
+    }
+}

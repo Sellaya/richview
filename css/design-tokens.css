@@ -1,0 +1,15 @@
+/**
+ * Shared design tokens — fintech premium aesthetic
+ * Shadows, transitions, focus states used across product/benefit cards, FAQ, forms
+ */
+
+:root {
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-faq: 0 4px 16px rgba(11, 22, 53, 0.06);
+    --shadow-faq-active: 0 8px 24px rgba(11, 22, 53, 0.08);
+    --transition-card: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    --transition-btn: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    --radius-card: 14px;
+    --radius-btn: 10px;
+}

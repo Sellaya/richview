@@ -1,0 +1,273 @@
+/**
+ * Benefit & guideline cards — white rounded style (matches product cards)
+ * Applied across Borrowers, Brokers, Investors, What is a MIC
+ * Mobile-first: 1 col → 2 cols → 3 cols
+ */
+
+/* ——— BENEFITS SECTION ——— */
+.benefits-section {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-section::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.benefits-section .section-header,
+.benefits-section .sec-head,
+.benefits-section .section-heading,
+.benefits-section .container .sec-head,
+.benefits-section .benefits-grid {
+    position: relative;
+    z-index: 1;
+}
+
+.benefits-section .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: var(--container, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--gutter, 1rem);
+}
+
+.benefits-section .benefit-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.benefits-section .benefit-card::before {
+    display: none !important;
+}
+
+.benefits-section .benefit-card:nth-child(3n),
+.benefits-section .benefit-card:nth-last-child(-n+3) {
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.benefits-section .benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(11, 22, 53, 0.08);
+    background: #FFFFFF !important;
+}
+
+.benefits-section .benefit-number,
+.benefits-section .benefit-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--muted, #6B7280);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.benefits-section .benefit-card h3,
+.benefits-section .benefit-card h4 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--charcoal, #1A1A1A);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.benefits-section .benefit-card p {
+    font-size: 0.8125rem;
+    color: var(--muted, #6B7280);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ——— GUIDELINES SECTION (Brokers) ——— */
+.guidelines-section {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.guidelines-section::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.guidelines-section .sec-head,
+.guidelines-section .guidelines-grid {
+    position: relative;
+    z-index: 1;
+}
+
+.guidelines-section .guidelines-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: var(--container, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--gutter, 1rem);
+}
+
+.guidelines-section .guideline-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guidelines-section .guideline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.guidelines-section .guideline-number {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--muted, #6B7280);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.guidelines-section .guideline-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--charcoal, #1A1A1A);
+    margin: 0 0 0.625rem 0;
+}
+
+.guidelines-section .guideline-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.guidelines-section .guideline-card ul li {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    line-height: 1.4;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.guidelines-section .guideline-card ul li:hover {
+    background: rgba(255, 102, 0, 0.06);
+}
+
+.guidelines-section .guideline-card ul li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    min-width: 1.125rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--gold, #FF6600);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ——— TABLET (640px+) ——— */
+@media (min-width: 640px) {
+    .benefits-section .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .benefits-section .benefit-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .benefits-section .benefit-card h3,
+    .benefits-section .benefit-card h4 {
+        font-size: 1.125rem;
+    }
+
+    .benefits-section .benefit-card p {
+        font-size: 0.875rem;
+    }
+
+    .guidelines-section .guidelines-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .guidelines-section .guideline-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ——— TABLET (768px+) ——— */
+@media (min-width: 768px) {
+    .benefits-section .benefit-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .guidelines-section .guideline-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ——— DESKTOP (1024px+) ——— */
+@media (min-width: 1024px) {
+    .benefits-section .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .benefits-section .benefit-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .guidelines-section .guidelines-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .guidelines-section .guideline-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .guidelines-section .guideline-card:nth-child(4) {
+        grid-column: 2 / 3;
+    }
+}

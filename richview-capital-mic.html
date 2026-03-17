@@ -101,8 +101,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.35) 28%, transparent 52%),
-                radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
-                linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
+                        radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
+                        linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
             background-attachment: fixed;
             font-weight: 400;
             overflow-wrap: break-word;
@@ -116,7 +116,7 @@
             inset: 0;
             z-index: -1;
             background-image: linear-gradient(rgba(11, 22, 53, 0.016) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(11, 22, 53, 0.016) 1px, transparent 1px);
+                              linear-gradient(90deg, rgba(11, 22, 53, 0.016) 1px, transparent 1px);
             background-size: 56px 56px;
             -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
             mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
@@ -131,8 +131,8 @@
             inset: 0;
             z-index: -1;
             background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 42%, rgba(11, 22, 53, 0.012) 100%),
-                radial-gradient(ellipse 95% 95% at 102% -5%, rgba(255, 102, 0, 0.038) 0%, rgba(255, 102, 0, 0.008) 40%, transparent 62%),
-                radial-gradient(ellipse 95% 95% at -2% 102%, rgba(11, 22, 53, 0.032) 0%, rgba(11, 22, 53, 0.006) 38%, transparent 58%);
+                        radial-gradient(ellipse 95% 95% at 102% -5%, rgba(255, 102, 0, 0.038) 0%, rgba(255, 102, 0, 0.008) 40%, transparent 62%),
+                        radial-gradient(ellipse 95% 95% at -2% 102%, rgba(11, 22, 53, 0.032) 0%, rgba(11, 22, 53, 0.006) 38%, transparent 58%);
             pointer-events: none;
         }
 
@@ -592,6 +592,76 @@
         .btn-secondary:focus-visible {
             outline: 2px solid rgba(255, 255, 255, 0.8);
             outline-offset: 2px;
+        }
+
+        /* ——— LEADERSHIP BLOCK ——— */
+        .leadership-block {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+        }
+        .leadership-block .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .leadership-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            border: 3px solid rgba(11, 22, 53, 0.08);
+        }
+        .leadership-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .leadership-block h3 {
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+        .leadership-block .leadership-title {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .leadership-block .leadership-desc {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--charcoal);
+            margin-bottom: 1.25rem;
+        }
+        .leadership-block .leadership-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.2s, gap 0.2s;
+        }
+        .leadership-block .leadership-link:hover {
+            color: var(--navy);
+            gap: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .leadership-block { padding: 2rem 0; }
+            .leadership-block .container { padding: 0 var(--gutter); max-width: 100%; }
+            .leadership-photo { width: 120px; height: 120px; margin-bottom: 1rem; }
+            .leadership-block h3 { font-size: 1.2rem; }
+            .leadership-block .leadership-desc { font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .leadership-block { padding: 1.75rem 0; }
+            .leadership-photo { width: 100px; height: 100px; }
+            .leadership-block h3 { font-size: 1.1rem; }
         }
 
         /* ——— SECTION HEADINGS ——— */
@@ -2804,9 +2874,14 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/button-contrast.css">
     <link rel="stylesheet" href="css/faq-section.css">
+    <link rel="stylesheet" href="css/responsive-spacing.css">
+    <link rel="stylesheet" href="css/hero-stat-bar.css">
+    <link rel="stylesheet" href="css/hero-services.css">
+    <link rel="stylesheet" href="css/benefit-cards-shared.css">
 </head>
 
 <body>
@@ -2861,8 +2936,36 @@
     <section class="page-hero" id="main">
         <div class="page-hero-content reveal">
             <h1>Invest in a Mortgage Investment Corporation (MIC) in Ontario</h1>
-            <p>Earn stable returns through asset-backed mortgage investing. RRSP-eligible income from professionally
-                managed residential and construction mortgages across Ontario.</p>
+            <p class="hero-tagline"><span class="hero-tagline-line"></span><span class="hero-tagline-text">Stable returns. Asset-backed. RRSP-eligible.</span><span class="hero-tagline-line"></span></p>
+            <ul class="hero-points" role="list">
+                <li>Target 7–8% annual returns</li>
+                <li>$100,000 minimum investment</li>
+                <li>Quarterly distributions by direct deposit</li>
+                <li>RRSP, TFSA & RRIF eligible</li>
+            </ul>
+            <div class="hero-stat-bar" aria-label="Key investment terms">
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                    <span class="hero-stat-value">7-8%</span>
+                    <span class="hero-stat-label">Target Annual Return</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                    <span class="hero-stat-value">$100K</span>
+                    <span class="hero-stat-label">Minimum Investment</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                    <span class="hero-stat-value">Quarterly</span>
+                    <span class="hero-stat-label">Distributions</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+                    <span class="hero-stat-value">75%</span>
+                    <span class="hero-stat-label">Max LTV</span>
+                </div>
+            </div>
+            <p class="hero-stat-disclaimer"><a href="disclaimer.html">Terms and conditions apply. See full disclaimers.</a></p>
             <div class="hero-ctas">
                 <a href="#contact" class="btn-primary">Schedule Consultation</a>
                 <a href="#how-it-works" class="btn-secondary">Learn More</a>
@@ -2996,13 +3099,27 @@
         </div>
     </section>
 
+    <section class="leadership-block">
+        <div class="container">
+            <div class="leadership-card">
+                <div class="leadership-photo"><img src="Guido.jpeg" alt="Guido Di Franco" loading="lazy"></div>
+                <div class="leadership-info">
+                    <h3>Guido Di Franco</h3>
+                    <p class="leadership-role">President &amp; CEO, Founder</p>
+                    <p class="leadership-bio">Focus on maintaining high-quality mortgage portfolios and adapting to market dynamics.</p>
+                </div>
+            </div>
+            <p class="leadership-cta"><a href="richview-about.html">Meet our team →</a></p>
+        </div>
+    </section>
+
     <section class="testimonials-section" id="testimonials">
         <div class="testimonials-inner">
-            <div class="sec-head reveal">
+        <div class="sec-head reveal">
                 <h2>What Our Clients Say</h2>
                 <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
-            </div>
-            <div class="testimonials-slider" aria-label="Testimonials carousel">
+        </div>
+        <div class="testimonials-slider" aria-label="Testimonials carousel">
             <div class="testimonials-track">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-mark">"</span>
@@ -3121,10 +3238,10 @@
                             <h5>David Kim</h5>
                             <span>Accredited Investor</span>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -3160,10 +3277,7 @@
                             </svg></span>
                     </button>
                     <div class="faq-a">
-                        <p>Returns vary based on market conditions and portfolio performance. MICs typically provide
-                            distributions from mortgage interest income. Past performance is not indicative of future
-                            results. Contact our team for current distribution information and historical performance
-                            data.</p>
+                        <p>Target rate of return is 7-8% annually, paid through quarterly distributions from mortgage interest income.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal" style="--i: 2;">
@@ -3175,9 +3289,7 @@
                             </svg></span>
                     </button>
                     <div class="faq-a">
-                        <p>Yes, investments in Richview Capital MIC can be held within registered accounts including
-                            RRSPs, RRIFs, and TFSAs, subject to meeting specific regulatory requirements. This allows
-                            investors to earn tax-advantaged income from mortgage investments.</p>
+                        <p>Yes. Eligible for RRSP, RRIF, TFSA, LIRA, RESP, and LIF. Fees apply for registered and self-directed accounts. No fees on non-registered (cash) accounts.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal" style="--i: 3;">
@@ -3189,9 +3301,7 @@
                             </svg></span>
                     </button>
                     <div class="faq-a">
-                        <p>Minimum investment amounts vary depending on the investment structure and account type.
-                            Contact our investor relations team to discuss minimum investment requirements and available
-                            investment options that suit your financial goals.</p>
+                        <p>$100,000 minimum. $10.00 per share. Minimum 2-year hold, quarterly liquidity thereafter.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal" style="--i: 4;">
@@ -3203,10 +3313,7 @@
                             </svg></span>
                     </button>
                     <div class="faq-a">
-                        <p>All mortgages in the MIC portfolio are secured by real estate assets. We employ conservative
-                            loan-to-value ratios and rigorous underwriting standards. The diversified portfolio spreads
-                            risk across multiple properties and borrowers, providing additional security for investors.
-                        </p>
+                        <p>All mortgages secured by real estate at max 75% LTV. Minimum 600 credit score on all borrowers. Portfolio diversified across the GTA. Annual audited financials.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal" style="--i: 5;">
@@ -3218,10 +3325,7 @@
                             </svg></span>
                     </button>
                     <div class="faq-a">
-                        <p>Distribution frequency depends on your investment structure and preferences. Options
-                            typically include monthly or quarterly distributions. Our team will work with you to
-                            establish a distribution schedule that aligns with your income needs and investment
-                            strategy.</p>
+                        <p>Quarterly by direct deposit — March 30, June 30, September 30, December 31.</p>
                     </div>
                 </div>
             </div>
@@ -3255,7 +3359,7 @@
                             <span>Licensed MIC #13171</span>
                         </li>
                     </ul>
-                </div>
+                        </div>
                 <div class="cta-box reveal">
                     <div class="cta-box-header">
                         <h2>Start Investing with Richview</h2>
@@ -3264,17 +3368,17 @@
                             <div class="cta-trust-item">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                                 <span>Instant Response</span>
-                            </div>
+                        </div>
                             <div class="cta-trust-item">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                 <span>Confidential &amp; secure</span>
                             </div>
                             <div class="cta-trust-item">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                <span>Licensed MIC #13171</span>
-                            </div>
+                            <span>Licensed MIC #13171</span>
                         </div>
                     </div>
+                </div>
                     <div class="cta-box-body" id="ctaBoxBody">
                         <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
                             <h3>Thank you!</h3>
@@ -3284,57 +3388,62 @@
                             <form id="consultationForm">
                                 <div class="cta-form-section">
                                     <div class="cta-form-section-title">Your Details</div>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="consultFirstName">First Name *</label>
+                            <div class="form-row">
+                                <div class="form-group">
+                                            <label for="consultFirstName">First Name</label>
                                             <input type="text" id="consultFirstName" name="consultFirstName" placeholder="e.g. John" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="consultLastName">Last Name *</label>
-                                            <input type="text" id="consultLastName" name="consultLastName" placeholder="e.g. Smith" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="consultEmail">Email Address *</label>
-                                            <input type="email" id="consultEmail" name="consultEmail" placeholder="john@example.com" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="consultPhone">Phone Number *</label>
-                                            <input type="tel" id="consultPhone" name="consultPhone" placeholder="(416) 555-0123" required>
-                                        </div>
-                                    </div>
                                 </div>
+                                <div class="form-group">
+                                            <label for="consultLastName">Last Name</label>
+                                            <input type="text" id="consultLastName" name="consultLastName" placeholder="e.g. Smith" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                            <label for="consultEmail">Email Address</label>
+                                            <input type="email" id="consultEmail" name="consultEmail" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                            <label for="consultPhone">Phone Number</label>
+                                            <input type="tel" id="consultPhone" name="consultPhone" placeholder="(416) 555-0123" required>
+                                </div>
+                            </div>
+                        </div>
                                 <div class="cta-form-section">
                                     <div class="cta-form-section-title">Consultation Details</div>
                                     <div class="form-row form-row-full">
-                                        <div class="form-group">
-                                            <label for="consultInterest">I'm interested in *</label>
+                                <div class="form-group">
+                                            <label for="consultInterest">I'm interested in</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
                                                 <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
                                                 <option value="investing">Investing: MIC investment opportunities</option>
                                                 <option value="brokering">Brokering: Partner with us</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-row form-row-full">
-                                        <div class="form-group">
-                                            <label for="consultMessage">How can we help? *</label>
-                                            <textarea id="consultMessage" name="consultMessage" placeholder="Tell us about your project, financing needs, or any questions you have." required></textarea>
-                                        </div>
-                                    </div>
+                                    </select>
                                 </div>
+                            </div>
+                            <div class="form-row form-row-full">
+                                <div class="form-group">
+                                            <label for="consultMessage">How can we help?</label>
+                                            <textarea id="consultMessage" name="consultMessage" placeholder="Tell us about your project, financing needs, or any questions you have." required></textarea>
+                                </div>
+                            </div>
+                        </div>
                                 <div class="cta-submit-wrap">
                                     <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
-                                </div>
-                            </form>
+                        </div>
+                    </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="bottom-investor-cta">
+        <div class="container">
+            <a href="richview-what-is-a-mic.html">Learn how MIC investing works →</a>
+        </div>
+    </div>
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -3374,7 +3483,7 @@
                             <li><a href="richview-borrowers.html">Borrowers</a></li>
                             <li><a href="richview-capital-brokers.html">Brokers</a></li>
                             <li><a href="richview-capital-mic.html">Investors</a></li>
-                        </ul>
+                            </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Company</h4>
@@ -3414,10 +3523,10 @@
                                         d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg></span>
                             <a href="tel:+14163072336">416 307 2336</a>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="footer-divider">
             <div class="container"></div>
@@ -3430,7 +3539,7 @@
                         # - 13171</span>
                 </div>
                 <div class="footer-bottom-right">
-                    <div class="footer-legal">
+                <div class="footer-legal">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
                     <a href="disclaimer.html">Disclaimer</a>
@@ -3495,9 +3604,15 @@
             btn.addEventListener('click', () => {
                 const item = btn.closest('.faq-item');
                 const wasOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                if (!wasOpen) item.classList.add('open');
-                btn.setAttribute('aria-expanded', !wasOpen);
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    const b = i.querySelector('.faq-q');
+                    if (b) b.setAttribute('aria-expanded', 'false');
+                });
+                if (!wasOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
             });
         });
 
