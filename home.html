@@ -4424,6 +4424,18 @@
             var viewMonth = new Date().getMonth();
 
             function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function isWorkingDay(dateObj) {
+                var day = dateObj.getDay();
+                return day >= 1 && day <= 5;
+            }
+            function nextWorkingDay(fromDate) {
+                var d = new Date(fromDate);
+                d.setHours(0, 0, 0, 0);
+                while (!isWorkingDay(d)) {
+                    d.setDate(d.getDate() + 1);
+                }
+                return d;
+            }
 
             function renderCalendar() {
                 var first = new Date(viewYear, viewMonth, 1);
@@ -4448,13 +4460,14 @@
                     cell.type = 'button';
                     var date = new Date(viewYear, viewMonth, d);
                     var isPast = date < today;
+                    var isWeekend = !isWorkingDay(date);
                     var isToday = date.getTime() === today.getTime();
                     var isSelected = selectedDate === (viewYear + '-' + pad(viewMonth + 1) + '-' + pad(d));
-                    cell.className = 'cta-calendar-day' + (isSelected ? ' selected' : '') + (isToday ? ' today' : '') + (isPast ? ' disabled' : '');
+                    cell.className = 'cta-calendar-day' + (isSelected ? ' selected' : '') + (isToday ? ' today' : '') + ((isPast || isWeekend) ? ' disabled' : '');
                     cell.textContent = d;
                     cell.dataset.ymd = viewYear + '-' + pad(viewMonth + 1) + '-' + pad(d);
                     cell.setAttribute('aria-label', date.toLocaleDateString());
-                    if (!isPast) cell.addEventListener('click', dayClick);
+                    if (!isPast && !isWeekend) cell.addEventListener('click', dayClick);
                     calendarDays.appendChild(cell);
                 }
                 var remaining = 42 - calendarDays.children.length;
@@ -4494,9 +4507,9 @@
 
             function renderTimeSlots() {
                 timeGrid.innerHTML = '';
-                for (var h = 8; h <= 17; h++) {
+                for (var h = 9; h <= 18; h++) {
                     for (var m = 0; m < 60; m += 30) {
-                        if (h === 17 && m > 0) break;
+                        if (h === 18 && m > 0) break;
                         var hour = h, min = m;
                         var h12 = hour % 12 || 12;
                         var ampm = hour < 12 ? 'AM' : 'PM';
@@ -4579,7 +4592,7 @@
             });
 
             if (todayBtn) todayBtn.addEventListener('click', function() {
-                var t = new Date();
+                var t = nextWorkingDay(new Date());
                 selectedDate = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());
                 viewYear = t.getFullYear();
                 viewMonth = t.getMonth();
