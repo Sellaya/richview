@@ -1797,6 +1797,22 @@
             z-index: 1;
         }
 
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        @media (min-width: 900px) {
+            .cta-grid {
+                grid-template-columns: 1fr 1.15fr;
+                gap: 3rem;
+                align-items: start;
+            }
+        }
+
         .cta-box-header {
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
             padding: 1.25rem 1.5rem;
@@ -2810,41 +2826,6 @@
         </div>
     </section>
 
-    <section class="our-values">
-        <div class="container">
-            <div class="sec-head reveal">
-                <h2>Our Values</h2>
-                <p>The principles that guide everything we&nbsp;do</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card reveal" style="--i: 0;">
-                    <span class="value-badge">1</span>
-                    <h3>Solutions-Oriented</h3>
-                    <p>We constantly aim for solutions, working tirelessly to help our clients achieve their financial
-                        goals through creative and disciplined approaches.</p>
-                </div>
-                <div class="value-card reveal" style="--i: 1;">
-                    <span class="value-badge">2</span>
-                    <h3>Trust & Integrity</h3>
-                    <p>Reputation and trust are earned through consistent delivery, transparent communication, and
-                        ethical business practices in every transaction.</p>
-                </div>
-                <div class="value-card reveal" style="--i: 2;">
-                    <span class="value-badge">3</span>
-                    <h3>Experience Matters</h3>
-                    <p>Decades of combined expertise in alternative lending solidifies our foundation and enables
-                        superior decision-making for our clients.</p>
-                </div>
-                <div class="value-card reveal" style="--i: 3;">
-                    <span class="value-badge">4</span>
-                    <h3>Client-Focused</h3>
-                    <p>Your goals and success drive our decisions. We respond quickly, communicate clearly, and tailor
-                        solutions to fit your unique situation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="team-section">
         <div class="container">
 
@@ -2856,9 +2837,7 @@
 
             <!-- Mission quote -->
             <blockquote class="team-mission reveal">
-                Reputation and trust are earned. Experience solidifies our business foundation time after time.
-                Reaching a customer's goal and receiving referrals from them are the measures of our success.
-                We constantly aim for solutions. These ideals define us at Richview Capital.
+                Over 20+ years of combined experience in private lending, banking, and mortgage investing. We've funded thousands of deals across the GTA, and we pick up the phone when you call.
             </blockquote>
 
             <!-- ── Leadership: 2-col ── -->
@@ -3155,6 +3134,41 @@
         </div>
     </section>
 
+    <section class="our-values">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we&nbsp;do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal" style="--i: 0;">
+                    <span class="value-badge">1</span>
+                    <h3>Solutions-Oriented</h3>
+                    <p>We constantly aim for solutions, working tirelessly to help our clients achieve their financial
+                        goals through creative and disciplined approaches.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 1;">
+                    <span class="value-badge">2</span>
+                    <h3>Trust & Integrity</h3>
+                    <p>Reputation and trust are earned through consistent delivery, transparent communication, and
+                        ethical business practices in every transaction.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 2;">
+                    <span class="value-badge">3</span>
+                    <h3>Experience Matters</h3>
+                    <p>Decades of combined expertise in alternative lending solidifies our foundation and enables
+                        superior decision-making for our clients.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 3;">
+                    <span class="value-badge">4</span>
+                    <h3>Client-Focused</h3>
+                    <p>Your goals and success drive our decisions. We respond quickly, communicate clearly, and tailor
+                        solutions to fit your unique situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-grid">
@@ -3178,25 +3192,25 @@
                     </ul>
                 </div>
                 <div class="cta-box reveal">
-                <div class="cta-box-header">
-                    <h2>Connect With Our Team</h2>
-                    <p>We'd love to hear from you — reach out&nbsp;today.</p>
-                    <div class="cta-trust-row">
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span>Instant Response</span>
-                        </div>
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <span>Confidential &amp; secure</span>
-                        </div>
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Licensed MIC #13171</span>
+                    <div class="cta-box-header">
+                        <h2>Connect With Our Team</h2>
+                        <p>We'd love to hear from you — reach out&nbsp;today.</p>
+                        <div class="cta-trust-row">
+                            <div class="cta-trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                <span>Instant Response</span>
+                            </div>
+                            <div class="cta-trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>Confidential &amp; secure</span>
+                            </div>
+                            <div class="cta-trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>Licensed MIC #13171</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cta-box-body" id="ctaBoxBody">
+                    <div class="cta-box-body" id="ctaBoxBody">
                         <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
                             <h3>Thank you!</h3>
                             <p>We've received your consultation request. Our team will confirm shortly.</p>
@@ -3208,49 +3222,41 @@
                                     <div class="form-row">
                                         <div class="form-group">
                                             <label for="consultFirstName">First Name</label>
-                                            <input type="text" id="consultFirstName" name="consultFirstName"
-                                                placeholder="e.g. John" required>
+                                            <input type="text" id="consultFirstName" name="consultFirstName" placeholder="e.g. John" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="consultLastName">Last Name</label>
-                                            <input type="text" id="consultLastName" name="consultLastName"
-                                                placeholder="e.g. Smith" required>
+                                            <input type="text" id="consultLastName" name="consultLastName" placeholder="e.g. Smith" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
                                             <label for="consultEmail">Email Address</label>
-                                            <input type="email" id="consultEmail" name="consultEmail"
-                                                placeholder="john@example.com" required>
+                                            <input type="email" id="consultEmail" name="consultEmail" placeholder="john@example.com" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="consultPhone">Phone Number</label>
-                                            <input type="tel" id="consultPhone" name="consultPhone"
-                                                placeholder="(416) 555-0123" required>
+                                            <input type="tel" id="consultPhone" name="consultPhone" placeholder="(416) 555-0123" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="cta-form-section">
                                     <div class="cta-form-section-title">Consultation Details</div>
-                            <div class="form-row form-row-full">
+                                    <div class="form-row form-row-full">
                                         <div class="form-group">
                                             <label for="consultInterest">I'm interested in</label>
                                             <select id="consultInterest" name="consultInterest" required>
                                                 <option value="" disabled selected>Select your interest</option>
-                                                <option value="borrowing">Borrowing: Private mortgage or construction
-                                                    financing</option>
-                                                <option value="investing">Investing: MIC investment opportunities
-                                                </option>
+                                                <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
+                                                <option value="investing">Investing: MIC investment opportunities</option>
                                                 <option value="brokering">Brokering: Partner with us</option>
                                             </select>
                                         </div>
                                     </div>
-                            <div class="form-row form-row-full">
+                                    <div class="form-row form-row-full">
                                         <div class="form-group">
                                             <label for="consultMessage">How can we help?</label>
-                                            <textarea id="consultMessage" name="consultMessage"
-                                                placeholder="Tell us about your project, financing needs, or any questions you have."
-                                                required></textarea>
+                                            <textarea id="consultMessage" name="consultMessage" placeholder="Tell us about your project, financing needs, or any questions you have." required></textarea>
                                         </div>
                                     </div>
                                 </div>
