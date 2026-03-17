@@ -164,13 +164,12 @@ def fix_file(path):
     return False, "pattern not found"
 
 def main():
-    root = '/Users/ali/Desktop/Cursor Work/RichviewCapital'
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pages = [
         'terms.html', 'privacy.html', 'disclaimer.html', 'thank-you.html',
         'richview-about.html', 'richview-faq.html', 'richview-blog.html',
         'richview-borrowers.html', 'richview-what-is-a-mic.html',
-        'richview-capital-brokers.html', 'richview-capital-mic.html',
-        'home-copy.html'
+        'richview-capital-brokers.html', 'richview-capital-mic.html'
     ]
     for name in pages:
         path = os.path.join(root, name)
