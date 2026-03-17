@@ -594,74 +594,192 @@
             outline-offset: 2px;
         }
 
-        /* ——— LEADERSHIP BLOCK ——— */
+        /* ——— LEADERSHIP BLOCK (mobile-first) ——— */
         .leadership-block {
-            padding: var(--section-padding) 0;
+            padding: clamp(1.75rem, 6vw, 2.5rem) 0;
             background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+            overflow: hidden;
         }
         .leadership-block .container {
+            max-width: var(--container, 1200px);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            width: 100%;
+            min-width: 0;
+        }
+        .leadership-block .leadership-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            max-width: 400px;
-            margin: 0 auto;
+            gap: 0;
         }
-        .leadership-photo {
-            width: 140px;
-            height: 140px;
+        .leadership-block .leadership-photo {
+            width: clamp(100px, 28vw, 140px);
+            height: clamp(100px, 28vw, 140px);
+            flex-shrink: 0;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 1.25rem;
             border: 3px solid rgba(11, 22, 53, 0.08);
         }
-        .leadership-photo img {
+        .leadership-block .leadership-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+            vertical-align: middle;
+        }
+        .leadership-block .leadership-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+            max-width: 100%;
         }
         .leadership-block h3 {
-            font-size: 1.35rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-weight: 700;
             color: var(--navy);
-            margin-bottom: 0.25rem;
+            margin: 0;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            overflow-wrap: break-word;
         }
-        .leadership-block .leadership-title {
-            font-size: 0.9rem;
+        .leadership-block .leadership-role {
+            font-size: clamp(0.8125rem, 1.8vw, 0.9rem);
             color: var(--muted);
             font-weight: 500;
-            margin-bottom: 0.75rem;
+            margin: 0;
+            line-height: 1.4;
+            overflow-wrap: break-word;
         }
-        .leadership-block .leadership-desc {
-            font-size: 0.9375rem;
-            line-height: 1.6;
+        .leadership-block .leadership-bio {
+            font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
+            line-height: 1.65;
             color: var(--charcoal);
-            margin-bottom: 1.25rem;
+            margin: 0.75rem 0 0 0;
+            max-width: 42ch;
+            overflow-wrap: break-word;
         }
-        .leadership-block .leadership-link {
+        .leadership-block .leadership-cta {
+            margin: 1.5rem 0 0 0;
+            padding: 0;
+            text-align: center;
+        }
+        .leadership-block .leadership-cta a {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            min-height: 2.75rem;
+            min-width: 2.75rem;
+            padding: 0.5rem 0.75rem;
             gap: 0.35rem;
             font-weight: 600;
             font-size: 0.9375rem;
             color: var(--gold);
             text-decoration: none;
             transition: color 0.2s, gap 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .leadership-block .leadership-link:hover {
+        .leadership-block .leadership-cta a:hover,
+        .leadership-block .leadership-cta a:focus-visible {
             color: var(--navy);
             gap: 0.5rem;
         }
-        @media (max-width: 768px) {
-            .leadership-block { padding: 2rem 0; }
-            .leadership-block .container { padding: 0 var(--gutter); max-width: 100%; }
-            .leadership-photo { width: 120px; height: 120px; margin-bottom: 1rem; }
-            .leadership-block h3 { font-size: 1.2rem; }
-            .leadership-block .leadership-desc { font-size: 0.9rem; }
+        .leadership-block .leadership-cta a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
         }
-        @media (max-width: 480px) {
-            .leadership-block { padding: 1.75rem 0; }
-            .leadership-photo { width: 100px; height: 100px; }
-            .leadership-block h3 { font-size: 1.1rem; }
+        @media (min-width: 480px) {
+            .leadership-block .leadership-photo {
+                width: clamp(112px, 22vw, 140px);
+                height: clamp(112px, 22vw, 140px);
+                margin-bottom: 1.5rem;
+            }
+            .leadership-block .leadership-cta { margin-top: 1.75rem; }
+        }
+        @media (min-width: 768px) {
+            .leadership-block .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .leadership-block .leadership-card {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 1.5rem;
+                max-width: 560px;
+            }
+            .leadership-block .leadership-photo {
+                margin-bottom: 0;
+                width: 140px;
+                height: 140px;
+                flex-shrink: 0;
+            }
+            .leadership-block .leadership-info {
+                align-items: flex-start;
+                text-align: left;
+                flex: 1;
+                min-width: 0;
+            }
+            .leadership-block .leadership-bio {
+                margin-top: 0.5rem;
+                max-width: 38ch;
+            }
+            .leadership-block .leadership-cta {
+                margin-top: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        /* ——— BOTTOM INVESTOR CTA (mobile-first, matches leadership CTA) ——— */
+        .bottom-investor-cta {
+            padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+            background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .bottom-investor-cta .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 3.5rem;
+            padding: clamp(0.75rem, 2vw, 1rem) 0;
+        }
+        .bottom-investor-cta-inner {
+            margin: 0;
+            line-height: 1;
+            padding: 0;
+        }
+        .bottom-investor-cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.75rem;
+            min-width: 2.75rem;
+            padding: 0.5rem 1rem;
+            gap: 0.35rem;
+            font-weight: 600;
+            font-size: clamp(0.9375rem, 2vw, 1rem);
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.2s, gap 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            overflow-wrap: break-word;
+        }
+        .bottom-investor-cta a:hover,
+        .bottom-investor-cta a:focus-visible {
+            color: var(--navy);
+            gap: 0.5rem;
+        }
+        .bottom-investor-cta a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
         }
 
         /* ——— SECTION HEADINGS ——— */
@@ -3441,7 +3559,9 @@
     </section>
     <div class="bottom-investor-cta">
         <div class="container">
-            <a href="richview-what-is-a-mic.html">Learn how MIC investing works →</a>
+            <p class="bottom-investor-cta-inner">
+                <a href="richview-what-is-a-mic.html">Learn how MIC investing works →</a>
+            </p>
         </div>
     </div>
     <footer>

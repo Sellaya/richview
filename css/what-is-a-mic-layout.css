@@ -1,0 +1,345 @@
+/**
+ * What is a MIC — advanced, professional, mobile-first layout
+ * Upgrades hero, grids, tables, typography, and section styling
+ */
+
+/* ——— Mobile-first base: hero ——— */
+.page-hero {
+    padding: clamp(6.5rem, 14vw, 10rem) var(--gutter) clamp(2.25rem, 6vw, 3.5rem);
+    padding-top: clamp(7rem, 16vw, 10rem);
+}
+
+.page-hero h1 {
+    font-size: clamp(1.875rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--white, #fff);
+}
+
+.page-hero p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* Hero CTAs use hero-services.css (.hero-ctas, .btn-primary, .btn-secondary) */
+
+/* ——— Section headings ——— */
+.section-heading h2,
+.intro-text h2,
+.cta-box h2,
+.cta-intro-title {
+    color: var(--navy, #0B1635);
+}
+
+.section-heading h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    letter-spacing: -0.02em;
+}
+
+.section-heading p,
+.intro-text p,
+.benefits-section .benefit-card p,
+.lifecycle-item p,
+.cta-box > p,
+.cta-intro-desc {
+    color: var(--muted, #6B7280);
+}
+
+.section-heading p {
+    font-size: clamp(0.9rem, 1.8vw, 0.9375rem);
+    text-wrap: balance;
+}
+
+@media (max-width: 480px) {
+    .section-heading p {
+        white-space: normal;
+    }
+}
+
+.section-heading.center p {
+    margin: 0 auto;
+}
+
+/* ——— Benefits grid (mobile-first) ——— */
+.benefits-section .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+    .benefits-section .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .benefits-section .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+    }
+}
+
+.benefits-section .benefit-card h3 {
+    color: var(--navy, #0B1635);
+}
+
+.benefits-section .benefit-card:hover h3 {
+    color: var(--navy, #0B1635);
+}
+
+/* ——— Benefit badge as number circle (What is a MIC) + hover ——— */
+.benefits-section .benefit-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.85rem;
+    row-gap: 0.35rem;
+    align-items: flex-start;
+}
+
+.benefits-section .benefit-badge {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    background: var(--navy, #0B1635);
+    color: var(--white, #fff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: inherit;
+    margin: 0;
+    letter-spacing: 0;
+    text-transform: none;
+    transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.benefits-section .benefit-card:hover .benefit-badge {
+    background: var(--gold, #FF6600);
+    color: var(--white, #fff);
+    transform: scale(1.08);
+}
+
+.benefits-section .benefit-card h3 {
+    grid-row: 1;
+    grid-column: 2;
+    margin-bottom: 0.35rem;
+}
+
+.benefits-section .benefit-card p {
+    grid-column: 1 / -1;
+}
+
+/* ——— Lifecycle grid (mobile-first) ——— */
+.lifecycle-grid {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-card, 14px);
+    overflow: hidden;
+    box-shadow: var(--shadow-card, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.lifecycle-item {
+    padding: clamp(1.25rem, 4vw, 2rem) clamp(1rem, 3vw, 2rem);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition-card, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease);
+}
+
+.lifecycle-item:last-child {
+    border-bottom: none;
+}
+
+.lifecycle-item h4 {
+    color: var(--navy, #0B1635);
+}
+
+.lifecycle-item:hover h4 {
+    color: var(--navy, #0B1635);
+}
+
+/* Lifecycle number hover (consistent with benefit badges) */
+.lifecycle-number {
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+.lifecycle-item:hover .lifecycle-number {
+    color: var(--gold, #FF6600);
+}
+
+@media (min-width: 600px) {
+    .lifecycle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lifecycle-item {
+        border-bottom: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+    }
+    .lifecycle-item:nth-child(2n) {
+        border-right: none;
+    }
+    .lifecycle-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .lifecycle-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .lifecycle-item {
+        border-right: 1px solid var(--border);
+        border-bottom: none;
+    }
+    .lifecycle-item:nth-child(2n) {
+        border-right: 1px solid var(--border);
+    }
+    .lifecycle-item:last-child {
+        border-right: none;
+    }
+}
+
+/* ——— Footer grid (mobile-first) ——— */
+.footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.footer-brand {
+    grid-column: 1;
+}
+
+.footer-col h4 {
+    color: var(--white, #fff);
+}
+
+.footer-col a:hover,
+.footer-contact-item a:hover {
+    color: var(--white, #fff);
+}
+
+.footer-legal a:hover {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 600px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+    }
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+/* ——— Tables: improved mobile ——— */
+.term-sheet-section,
+.protected-section,
+.comparison-section {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+}
+
+@media (max-width: 600px) {
+    .term-sheet-table-wrap,
+    .comparison-table-wrap {
+        margin: 0 calc(-1 * var(--gutter));
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+/* ——— Body: premium background ——— */
+body {
+    background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.4) 28%, transparent 52%),
+                radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.7) 0%, transparent 65%),
+                linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 25%, #FAFAFA 50%, #F8F9FA 75%, #FAFBFC 100%);
+}
+
+/* ——— Sections: refined spacing ——— */
+.intro-section,
+.benefits-section,
+.lifecycle-section {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 0;
+}
+
+.cta-section {
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.footer-main {
+    padding: clamp(2rem, 5vw, var(--space-xl)) var(--gutter) var(--space-lg);
+}
+
+/* ——— CTA box header ——— */
+.cta-box-header h2 {
+    color: var(--white, #fff);
+}
+
+.cta-box-header > p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* ——— Reveal animation (smooth, consistent) ——— */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ——— Hover text colours ——— */
+.nav-links a:hover,
+.nav-dropdown-content a:hover {
+    color: var(--navy, #0B1635);
+}
+
+.cta-nav:hover {
+    color: var(--white, #fff);
+}
+
+/* Card hover transitions */
+.benefits-section .benefit-card {
+    transition: var(--transition-card, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease);
+}
+
+/* ——— Buttons: consistent size & style (hero uses hero-services.css) ——— */
+.btn-primary,
+.cta-box button[type="submit"] {
+    min-height: 2.75rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover,
+.cta-box button[type="submit"]:hover {
+    color: var(--white, #fff);
+}
+
+.cta-nav {
+    min-height: 2.5rem;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 14px;
+}

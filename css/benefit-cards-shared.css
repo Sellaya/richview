@@ -73,7 +73,10 @@
     background: #FFFFFF !important;
 }
 
-.benefits-section .benefit-number,
+.benefits-section .benefit-number {
+    display: none;
+}
+
 .benefits-section .benefit-badge {
     font-size: 0.6875rem;
     font-weight: 600;
@@ -151,12 +154,7 @@
 }
 
 .guidelines-section .guideline-number {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--muted, #6B7280);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    display: none;
 }
 
 .guidelines-section .guideline-card h3 {

@@ -39,11 +39,14 @@
             --border: rgba(0, 0, 0, 0.08);
             --orange-light: rgba(255, 102, 0, 0.15);
             --dark-blue-deep: #070E24;
-            --container: min(90vw, 1400px);
+            --container: min(92vw, 1200px);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-btn: cubic-bezier(0.22, 1, 0.36, 1);
             --btn-padding: 0.875rem 1.75rem;
             --btn-font-size: 0.9375rem;
-            --btn-radius: 6px;
+            --btn-radius: 12px;
+            --card-radius: 14px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --space-xs: 1rem;
             --space-sm: 1.5rem;
             --space-md: 2rem;
@@ -55,6 +58,8 @@
             --btn-pri-hover: #0c1838;
             --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
             --gutter: 16px;
+            --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         @media (min-width:640px) {
@@ -92,7 +97,9 @@
             font-size: 1rem;
             line-height: 1.65;
             font-weight: 400;
-            background: linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 35%, #FAFAFA 70%, #FFFFFF 100%);
+            background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.35) 28%, transparent 52%),
+                        radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
+                        linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
             background-attachment: fixed;
             overflow-x: hidden;
             overflow-wrap: break-word;
@@ -449,7 +456,7 @@
 
         /* ── Hero ── */
         .page-hero {
-            padding: clamp(8rem, 12vw, 10rem) var(--gutter) clamp(2.5rem, 5vw, 3.5rem);
+            padding: clamp(7rem, 14vw, 10rem) var(--gutter) clamp(2.25rem, 5vw, 3.5rem);
             background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
             text-align: center;
             position: relative;
@@ -578,10 +585,8 @@
             line-height: 1.6;
         }
 
-        @media (min-width:480px) {
-            .section-heading p {
-                white-space: nowrap;
-            }
+        .section-heading p {
+            max-width: 38ch;
         }
 
         .section-heading.center {
@@ -753,121 +758,7 @@
             .comparison-table th { padding: 0.5rem 0.65rem; }
         }
 
-        .benefits-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #F5F6F8 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits-section::before {
-            content: '';
-            position: absolute;
-            width: 45%;
-            height: 60%;
-            bottom: 15%;
-            left: -10%;
-            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.025) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .benefits-section .container,
-        .benefits-section .benefits-grid {
-            position: relative;
-            z-index: 1;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-        }
-
-        .benefit-card {
-            background: var(--white);
-            padding: 2rem 1.75rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
-        }
-
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--navy);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease-out);
-        }
-
-        .benefit-card:hover {
-            background: var(--cream);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        .benefit-card:hover::before {
-            opacity: 1;
-        }
-
-        .benefit-badge {
-            width: 36px;
-            height: 36px;
-            background: var(--navy);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .8125rem;
-            font-weight: 700;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            margin-bottom: var(--space-sm);
-        }
-
-        .benefit-card h3 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: .625rem;
-        }
-
-        .benefit-card p {
-            font-size: .9375rem;
-            color: var(--muted);
-            line-height: 1.65;
-        }
-
-        /* Blurb cards: number + title side by side */
-        .benefit-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            column-gap: .85rem;
-            row-gap: .35rem;
-            align-items: flex-start;
-        }
-
-        .benefit-badge {
-            grid-row: 1;
-            grid-column: 1;
-            margin-bottom: 0;
-        }
-
-        .benefit-card h3 {
-            grid-row: 1;
-            grid-column: 2;
-            margin-bottom: .35rem;
-        }
-
-        .benefit-card p {
-            grid-column: 1 / -1;
-        }
+        /* Benefits section styled by benefit-cards-shared.css + what-is-a-mic-layout.css */
 
         /* ── Lifecycle Bordered Grid ── */
         .lifecycle-section {
@@ -896,21 +787,23 @@
 
         .lifecycle-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr;
+            gap: 0;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--radius-card, 12px);
             overflow: hidden;
         }
 
         .lifecycle-item {
-            padding: 2.25rem 2rem;
-            border-right: 1px solid var(--border);
+            padding: clamp(1.25rem, 4vw, 2.25rem) clamp(1rem, 3vw, 2rem);
+            border-right: none;
+            border-bottom: 1px solid var(--border);
             position: relative;
             transition: all .35s var(--ease-out);
         }
 
         .lifecycle-item:last-child {
-            border-right: none;
+            border-bottom: none;
         }
 
         .lifecycle-item::before {
@@ -1122,7 +1015,7 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+            grid-template-columns: 1fr;
             gap: var(--space-lg);
         }
 
@@ -1670,10 +1563,6 @@
                 margin-bottom: 1rem;
             }
 
-            .benefit-card {
-                padding: 1.75rem;
-            }
-
             .lifecycle-grid {
                 grid-template-columns: 1fr;
             }
@@ -1758,10 +1647,6 @@
 
             .cta-box h2 {
                 font-size: 1.5rem;
-            }
-
-            .benefit-card {
-                padding: 1.5rem;
             }
 
             .benefits-grid {
@@ -2773,10 +2658,12 @@
 
     </style>
     <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/hero-services.css">
     <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/button-contrast.css">
     <link rel="stylesheet" href="css/responsive-spacing.css">
     <link rel="stylesheet" href="css/benefit-cards-shared.css">
+    <link rel="stylesheet" href="css/what-is-a-mic-layout.css">
 </head>
 
 <body>
@@ -2830,13 +2717,13 @@
 
     <!-- Hero -->
     <section class="page-hero" id="main">
-        <div class="hero-content reveal">
+        <div class="hero-content reveal page-hero-content">
             <h1>Understanding Mortgage Investment Corporations</h1>
             <p>A proven, regulated way to invest in the Canadian real estate market without the hassle of property
                 management.</p>
-            <div class="hero-buttons">
-                <a href="richview-capital-mic.html" class="btn-hero-primary">Ready to invest? →</a>
-                <a href="#how-it-works" class="btn-hero-outline">See How It Works</a>
+            <div class="hero-ctas">
+                <a href="richview-capital-mic.html" class="btn-primary">Ready to invest? →</a>
+                <a href="#how-it-works" class="btn-secondary">See How It Works</a>
             </div>
         </div>
     </section>

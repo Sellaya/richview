@@ -1,31 +1,49 @@
-/* Fix button text visibility: ensure white text on navy/blue buttons site-wide */
+/* Fix button text visibility: ensure white text on navy/gold/dark buttons site-wide */
 .cta-box button[type="submit"],
 .hero-form-wrap button[type="submit"],
 .btn-pri,
 a.btn-pri,
+.btn-primary,
 .cta-nav,
 li.mobile-cta-li > a,
 .hero-ctas .btn-pri,
-.hero-ctas .btn-sec {
+.hero-ctas .btn-sec,
+.hero-ctas .btn-primary,
+.hero-ctas .btn-secondary {
     color: #ffffff !important;
 }
-/* Hover states keep white text */
+
+/* Primary hero button: default is white bg + navy text (override only on dark) */
+.page-hero .hero-ctas .btn-primary,
+.page-hero .hero-ctas .btn-pri {
+    color: var(--navy, #0B1635) !important;
+}
+
+/* Hover/active: white text on gold or dark backgrounds */
 .cta-box button[type="submit"]:hover,
+.cta-box button[type="submit"]:active,
 .hero-form-wrap button[type="submit"]:hover,
 .btn-pri:hover,
 a.btn-pri:hover,
+.btn-primary:hover,
+.hero-ctas .btn-primary:hover,
+.hero-ctas .btn-pri:hover,
 li.mobile-cta-li > a:hover,
 li.mobile-cta-li > a:active {
     color: #ffffff !important;
 }
-/* Hero section buttons on dark background (btn-sec/secondary = outline, need white text) */
+
+/* Hero secondary/outline: white text (transparent on dark bg) */
 .hero .btn-pri,
 .hero .btn-sec,
-.hero-ctas .btn-sec,
-.hero-ctas .btn-secondary {
+.page-hero .hero-ctas .btn-secondary,
+.page-hero .hero-ctas .btn-sec {
     color: #ffffff !important;
 }
 .hero .btn-sec:hover,
-.hero-ctas .btn-secondary:hover {
+.hero .btn-sec:active,
+.page-hero .hero-ctas .btn-secondary:hover,
+.page-hero .hero-ctas .btn-secondary:active,
+.page-hero .hero-ctas .btn-sec:hover {
     color: #ffffff !important;
 }
