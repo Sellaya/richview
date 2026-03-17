@@ -631,84 +631,9 @@
             z-index: 1;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-        }
+        /* benefits-grid, benefit-card: styled by benefit-cards-shared.css (when inside .benefits-section) */
 
-        .benefit-card {
-            padding: 2rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
-        }
-
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--navy);
-            transform: scaleY(0);
-            transform-origin: center bottom;
-            transition: transform 0.35s var(--ease-out);
-        }
-
-        .benefit-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .benefit-card:nth-last-child(-n+3) {
-            border-bottom: none;
-        }
-
-        .benefit-card:hover {
-            background: var(--cream);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        .benefit-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .benefit-number {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            color: var(--light-grey);
-            margin-bottom: 1.25rem;
-            transition: color 0.3s var(--ease-out);
-        }
-
-        .benefit-card:hover .benefit-number {
-            color: var(--muted);
-        }
-
-        .benefit-card h3 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-        }
-
-        .benefit-card p {
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.65;
-        }
-
-        /* Blurb cards: number + title side by side */
-        .benefit-card,
+        /* Blurb cards: number + title side by side (fund-card only; benefit-card uses benefit-cards-shared) */
         .fund-card {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -717,21 +642,18 @@
             align-items: flex-start;
         }
 
-        .benefit-number,
         .fund-number {
             grid-row: 1;
             grid-column: 1;
             margin-bottom: 0;
         }
 
-        .benefit-card h3,
         .fund-card h3 {
             grid-row: 1;
             grid-column: 2;
             margin-bottom: 0.35rem;
         }
 
-        .benefit-card p,
         .fund-card p {
             grid-column: 1 / -1;
         }
@@ -1865,21 +1787,18 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Card borders: border-right → border-bottom */
-            .benefit-card,
+            /* Card borders: border-right → border-bottom (fund, guideline; benefit uses shared) */
             .fund-card,
             .guideline-card {
                 border-right: none !important;
                 border-bottom: 1px solid var(--border);
             }
 
-            .benefit-card:nth-child(3n),
             .fund-card:nth-child(3n),
             .guideline-card:nth-child(3n) {
                 border-right: none;
             }
 
-            .benefit-card:last-child,
             .fund-card:last-child,
             .guideline-card:last-child {
                 border-bottom: none;
@@ -1965,8 +1884,7 @@
                 padding: 3.5rem 0;
             }
 
-            /* Cards: reduce padding */
-            .benefit-card,
+            /* Cards: reduce padding (fund, guideline; benefit uses shared) */
             .fund-card,
             .guideline-card {
                 padding: 1.5rem 1.25rem;
@@ -2113,7 +2031,6 @@
                 padding: 2.75rem 0;
             }
 
-            .benefit-card,
             .fund-card,
             .guideline-card {
                 padding: 1.25rem 1rem;
@@ -3226,6 +3143,7 @@
     <link rel="stylesheet" href="css/lottie-forms.css">
     <link rel="stylesheet" href="css/testimonials-google.css">
     <script src="js/testimonials-expand.js" defer></script>
+    <script src="js/product-cards-expand.js" defer></script>
 </head>
 
 <body>
@@ -3317,7 +3235,7 @@
         </div>
     </section>
 
-    <section class="why-section">
+    <section class="why-section benefits-section">
         <div class="sec-head reveal"
             style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
             <h2>Why Work With Richview Capital</h2>
@@ -3373,6 +3291,7 @@
                     </div>
                     <h3>First Mortgages</h3>
                     <p>Residential first mortgages for clients who don't fit traditional bank criteria. Same-day feedback, close in as little as 24 hours.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3393,6 +3312,7 @@
                     </div>
                     <h3>Second Mortgages</h3>
                     <p>Flexible second position financing for debt consolidation, renovations, or investment. Quick closings when timing matters.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3414,6 +3334,7 @@
                     </div>
                     <h3>Construction Loans</h3>
                     <p>Construction financing with staged draws. 24-hour on-site inspections and funds advanced within 24 hours of inspection.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3434,6 +3355,7 @@
                     </div>
                     <h3>Bridge Financing</h3>
                     <p>Short-term bridge loans for purchase-before-sale or quick capital during transitions.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3452,6 +3374,7 @@
                     </div>
                     <h3>Land Financing</h3>
                     <p>Financing for land acquisition and development-ready properties across Ontario.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3469,6 +3392,7 @@
                     </div>
                     <h3>HELOC</h3>
                     <p>Home Equity Line of Credit with open terms and flexible access for your clients.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3488,6 +3412,7 @@
                     </div>
                     <h3>Commercial Loans</h3>
                     <p>Income-producing commercial properties: multi-family, office, retail, industrial, mixed-use.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3507,6 +3432,7 @@
                     </div>
                     <h3>Refinancing</h3>
                     <p>Refinancing for clients looking to consolidate debt, access equity, or improve terms.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>

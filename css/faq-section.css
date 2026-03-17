@@ -152,18 +152,23 @@
     border-radius: 8px;
     background: rgba(11, 22, 53, 0.06);
     color: #0B1635;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .faq-section .faq-icon svg {
+    display: none;
+}
+.faq-section .faq-icon::before {
+    content: '+';
     display: block;
-    width: 10px;
-    height: 6px;
 }
 .faq-section .faq-item.open .faq-icon,
 .faq-section .faq-item.active .faq-icon {
     background: #0B1635;
     color: #ffffff;
-    transform: rotate(180deg);
+    transform: rotate(45deg);
 }
 
 /* ——— Alternative structure: .faq-question (richview-borrowers) ——— */

@@ -649,98 +649,9 @@
             z-index: 1;
         }
 
-        .products-grid {
-            max-width: var(--container);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 0 var(--gutter);
-        }
+        /* products-grid and product-card: styled by product-cards-mortgage.css (expandable) */
 
-        .product-card {
-            padding: var(--space-lg) var(--space-md);
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            position: relative;
-            transition: all 0.3s var(--ease-out);
-        }
-
-        .product-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .product-card:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--navy);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease-out);
-        }
-
-        .product-card:hover {
-            transform: translateY(-2px);
-            background: var(--cream);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-
-        .product-card:hover::before {
-            opacity: 1;
-        }
-
-        .product-number {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--muted);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: var(--space-xs);
-            display: block;
-        }
-
-        .product-card h3 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
-        }
-
-        .product-card>p {
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.7;
-            margin-bottom: var(--space-xs);
-        }
-
-        .product-features {
-            list-style: none;
-            margin-top: 0.75rem;
-        }
-
-        .product-features li {
-            padding: 0.3rem 0;
-            color: var(--charcoal);
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .product-features li::before {
-            content: '✓';
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
+        /* product-card: styled by product-cards-mortgage.css (expandable) */
 
         /* ——— PROCESS SECTION (BORDERED GRID) ——— */
         .process-section {
@@ -958,9 +869,8 @@
             line-height: 1.7;
         }
 
-        /* Blurb cards: number + title side by side */
-        .benefit-card,
-        .product-card {
+        /* Blurb cards: number + title side by side (benefit-card only; product-card uses product-cards-mortgage.css) */
+        .benefit-card {
             display: grid;
             grid-template-columns: auto 1fr;
             column-gap: 0.85rem;
@@ -968,24 +878,20 @@
             align-items: flex-start;
         }
 
-        .benefit-number,
-        .product-number {
+        .benefit-number {
             grid-row: 1;
             grid-column: 1;
             margin-bottom: 0;
             display: inline-flex;
         }
 
-        .benefit-card h4,
-        .product-card h3 {
+        .benefit-card h4 {
             grid-row: 1;
             grid-column: 2;
             margin-bottom: 0.35rem;
         }
 
-        .benefit-card p,
-        .product-card>p,
-        .product-features {
+        .benefit-card p {
             grid-column: 1 / -1;
         }
 
@@ -1655,15 +1561,13 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Card borders: switch from border-right to border-bottom */
-            .product-card,
+            /* Card borders: switch from border-right to border-bottom (process, benefit; product-card has its own) */
             .process-card,
             .benefit-card {
                 border-right: none !important;
                 border-bottom: 1px solid var(--border);
             }
 
-            .product-card:last-child,
             .process-card:last-child,
             .benefit-card:last-child {
                 border-bottom: none;
@@ -1821,8 +1725,7 @@
                 margin-right: auto;
             }
 
-            /* Cards: reduce padding */
-            .product-card,
+            /* Cards: reduce padding (process, benefit; product-card has its own) */
             .process-card,
             .benefit-card {
                 padding: 1.75rem 1.25rem;
@@ -1874,7 +1777,6 @@
                 font-size: 1rem;
             }
 
-            .product-card>p,
             .process-card p,
             .benefit-card p {
                 font-size: 0.875rem;
@@ -1926,8 +1828,7 @@
                 margin-top: var(--space-sm);
             }
 
-            /* Further reduce card padding */
-            .product-card,
+            /* Further reduce card padding (process, benefit; product-card has its own) */
             .process-card,
             .benefit-card {
                 padding: 1.5rem 1rem;
@@ -3027,6 +2928,7 @@
     <link rel="stylesheet" href="css/lottie-forms.css">
     <link rel="stylesheet" href="css/testimonials-google.css">
     <script src="js/testimonials-expand.js" defer></script>
+    <script src="js/product-cards-expand.js" defer></script>
 </head>
 
 <body>
@@ -3133,6 +3035,7 @@
                     </div>
                     <h3>First Mortgages</h3>
                     <p>Purchase or refinance residential properties with competitive rates and flexible terms. No annual renewal fee on 3-year terms.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3153,6 +3056,7 @@
                     </div>
                     <h3>Second Mortgages</h3>
                     <p>Access your home equity for renovations, debt consolidation, or investment. Low-LTV second mortgages may not require an appraisal.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3174,6 +3078,7 @@
                     </div>
                     <h3>Construction Loans</h3>
                     <p>Financing for custom home builds, renovations, and development projects. Fast draw system with 24-hour inspections and same-day funding.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3194,6 +3099,7 @@
                     </div>
                     <h3>Bridge Financing</h3>
                     <p>Short-term financing from 1 to 90 days. Close on a new property before selling, or access fast capital for time-sensitive deals.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3212,6 +3118,7 @@
                     </div>
                     <h3>Land Financing</h3>
                     <p>Financing for land acquisition and development-ready properties across Ontario.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3229,6 +3136,7 @@
                     </div>
                     <h3>HELOC</h3>
                     <p>Home Equity Line of Credit with open terms and flexible access to your equity.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3248,6 +3156,7 @@
                     </div>
                     <h3>Commercial Loans</h3>
                     <p>Financing for income-producing commercial properties including multi-family, office, retail, industrial, and mixed-use.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3267,6 +3176,7 @@
                     </div>
                     <h3>Refinancing</h3>
                     <p>Consolidate debt, access equity, or secure better terms on your existing mortgage.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
                 </div>
                 <div class="product-card-bottom">
                     <h4 class="product-highlights-title">Highlights</h4>
@@ -3326,8 +3236,7 @@
             <div class="benefit-card">
                 <span class="benefit-number">01</span>
                 <h4>Fast Approvals</h4>
-                <p>Initial decisions within 24-48 hours. Close your deal in 7-10 business days when time is critical.
-                </p>
+                <p>Close in as little as 24 hours with a complete application and appraisal. Same-day feedback when time matters.</p>
             </div>
             <div class="benefit-card">
                 <span class="benefit-number">02</span>
