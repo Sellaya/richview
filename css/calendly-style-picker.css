@@ -7,9 +7,9 @@
     --form-padding-sm: clamp(0.4rem, 1.5vw, 0.55rem);
     --form-padding-md: clamp(0.5rem, 2vw, 0.7rem);
     --form-padding-lg: clamp(0.65rem, 2.5vw, 0.9rem);
-    --form-field-min-h: clamp(44px, 12vw, 48px);
-    --form-btn-min-h: 44px;
-    --form-font: 0.9375rem;
+    --form-field-min-h: clamp(36px, 9vw, 38px);
+    --form-btn-min-h: 36px;
+    --form-font: 0.875rem;
     --form-font-sm: 0.8125rem;
     --form-placeholder-color: rgba(11, 22, 53, 0.45);
     --form-placeholder-font: 0.8125rem;
@@ -71,7 +71,7 @@
     width: 100%;
     max-width: 100%;
     min-height: var(--form-field-min-h);
-    padding: 0.6rem 0.75rem;
+    padding: 0.48rem 0.65rem;
     font-size: var(--form-font);
     line-height: 1.4;
     -webkit-tap-highlight-color: transparent;
@@ -102,7 +102,7 @@
     opacity: 1;
 }
 .hero-form-wrap textarea {
-    min-height: 88px;
+    min-height: 76px;
     resize: vertical;
 }
 .hero-form-wrap select {
@@ -126,7 +126,7 @@
     width: 100%;
     max-width: 100%;
     min-height: var(--form-field-min-h);
-    padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+    padding: 0.48rem 0.65rem 0.48rem 2rem;
     font-size: var(--form-font);
     line-height: 1.4;
     -webkit-tap-highlight-color: transparent;
@@ -138,9 +138,9 @@
     line-height: 1.4;
 }
 .hero-form-wrap .cta-picker-wrap .cta-schedule-input-icon {
-    left: 0.75rem;
-    width: 14px;
-    height: 14px;
+    left: 0.65rem;
+    width: 13px;
+    height: 13px;
 }
 
 /* Trust row - fluid wrap */
@@ -604,37 +604,37 @@
 /* ========== Time card - rounded (match calendar), 3D touch ========== */
 .cta-time-card {
     background: #fff;
-    padding: 0.6rem 0.65rem;
+    padding: 0.45rem 0.5rem;
     border-radius: 10px;
     overflow: hidden;
 }
 .cta-time-header {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #9ca3af;
-    margin-bottom: 0.4rem;
-    padding-bottom: 0.3rem;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.25rem;
     border-bottom: 1px solid #f3f4f6;
 }
 .cta-time-card .cta-time-inner {
-    max-height: 180px;
+    max-height: 156px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 .cta-time-card .cta-time-grid {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 .cta-time-card .cta-time-slot {
-    min-height: clamp(38px, 10vw, 44px);
-    padding: clamp(0.4rem, 1.5vw, 0.55rem) clamp(0.5rem, 2vw, 0.65rem);
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    min-height: clamp(32px, 8vw, 36px);
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: #374151;
-    border-radius: 10px;
+    border-radius: 8px;
     background: linear-gradient(180deg, #f8f9fa 0%, #f2f3f5 100%);
     border: 1px solid rgba(0,0,0,0.04);
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -662,6 +662,4 @@
     font-weight: 700;
 }
 
-.cta-time-card .cta-time-slot {
-    min-height: clamp(40px, 11vw, 46px);
-}
+.cta-time-card .cta-time-slot { min-height: clamp(32px, 8vw, 36px); }
