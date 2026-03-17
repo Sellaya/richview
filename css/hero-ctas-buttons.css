@@ -1,0 +1,39 @@
+/**
+ * Hero CTA buttons — reduced size, uniform height, mobile-first
+ * Applies to home hero and page-hero across the site
+ */
+.hero-ctas .btn-pri,
+.hero-ctas .btn-sec,
+.hero-ctas .btn-primary,
+.hero-ctas .btn-secondary {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.8125rem !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+/* Ensure secondary (with border) matches primary height */
+.hero-ctas .btn-sec,
+.hero-ctas .btn-secondary {
+  border-width: 2px !important;
+}
+@media (min-width: 640px) {
+  .hero-ctas .btn-pri,
+  .hero-ctas .btn-sec,
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    padding: 0.55rem 1.125rem !important;
+    font-size: 0.875rem !important;
+    min-height: 44px !important;
+  }
+}
+@media (min-width: 768px) {
+  .hero-ctas .btn-pri,
+  .hero-ctas .btn-sec,
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    padding: 0.6rem 1.25rem !important;
+  }
+}
