@@ -254,7 +254,8 @@
 /* Expanded state: show content */
 .product-card.expanded .product-card-top > p,
 .product-card.expanded .product-card-bottom {
-    max-height: 800px;
+    max-height: 2000px;
+    overflow: visible;
     opacity: 1;
 }
 
@@ -318,10 +319,6 @@
     word-break: break-word;
 }
 
-.product-features li:hover {
-    background: rgba(11, 22, 53, 0.05);
-    color: var(--navy, #0B1635);
-}
 
 .product-features li::before {
     content: '✓';
@@ -340,10 +337,6 @@
     transition: transform 0.2s ease;
 }
 
-.product-features li:hover::before {
-    transform: scale(1.08);
-}
-
 /* Desktop/web only hover effects */
 @media (hover: hover) and (pointer: fine) {
     .product-card:hover .product-card-chevron {
@@ -355,7 +348,8 @@
 
     .product-card:hover .product-card-top > p,
     .product-card:hover .product-card-bottom {
-        max-height: 800px;
+        max-height: 2000px;
+        overflow: visible;
         opacity: 1;
     }
 
@@ -386,38 +380,6 @@
 
     .product-features li:hover::before {
         transform: scale(1.08);
-    }
-}
-
-/* Touch devices: hover doesn't work, rely on .expanded from click */
-@media (hover: none) {
-    .product-card:hover .product-card-top > p,
-    .product-card:hover .product-card-bottom,
-    .product-card:hover .product-card-top {
-        max-height: 0;
-        opacity: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-        border-bottom: none;
-        margin-top: 0;
-    }
-    .product-card:hover .product-card-chevron {
-        transform: none;
-        color: var(--muted, #6B7280);
-    }
-    .product-card:hover {
-        transform: none;
-        box-shadow: 0 4px 16px rgba(11, 22, 53, 0.06);
-        border-color: rgba(11, 22, 53, 0.08);
-    }
-    .product-card.expanded:hover .product-card-top > p,
-    .product-card.expanded:hover .product-card-bottom,
-    .product-card.expanded:hover .product-card-top {
-        max-height: 800px;
-        opacity: 1;
-        padding-bottom: 0.75rem;
-        padding-top: 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 }
 
