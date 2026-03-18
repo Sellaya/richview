@@ -1805,6 +1805,37 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: var(--space-sm);
+            position: relative;
+            isolation: isolate;
+            padding: 0.2rem 0;
+        }
+        .about-values::before {
+            content: '';
+            position: absolute;
+            left: 12%;
+            right: 12%;
+            top: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(11, 22, 53, 0.24) 0%, rgba(255, 102, 0, 0.52) 50%, rgba(11, 22, 53, 0.24) 100%);
+            transform: translateY(-50%) scaleX(0.96);
+            transform-origin: center;
+            z-index: 0;
+            animation: aboutConnectorX 0.7s var(--ease-out) 0.2s both;
+            box-shadow: 0 1px 6px rgba(11, 22, 53, 0.12);
+        }
+        .about-values::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            bottom: 10%;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(11, 22, 53, 0.24) 0%, rgba(255, 102, 0, 0.52) 50%, rgba(11, 22, 53, 0.24) 100%);
+            transform: translateX(-50%) scaleY(0.96);
+            transform-origin: center;
+            z-index: 0;
+            animation: aboutConnectorY 0.7s var(--ease-out) 0.25s both;
+            box-shadow: 0 1px 6px rgba(11, 22, 53, 0.12);
         }
         .about-value-card {
             padding: 1.5rem 1.5rem;
@@ -1814,6 +1845,7 @@
             position: relative;
             transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
             box-shadow: var(--shadow-sm);
+            z-index: 1;
         }
         .about-value-header {
             display: flex;
@@ -1876,6 +1908,14 @@
         .about-cta svg { flex-shrink: 0; transition: transform 0.3s var(--ease-out); }
         .about-cta:hover { color: var(--charcoal); gap: 0.65rem; }
         .about-cta:hover svg { transform: translateX(3px); }
+        @keyframes aboutConnectorX {
+            from { opacity: 0; transform: translateY(-50%) scaleX(0.7); }
+            to { opacity: 1; transform: translateY(-50%) scaleX(0.96); }
+        }
+        @keyframes aboutConnectorY {
+            from { opacity: 0; transform: translateX(-50%) scaleY(0.7); }
+            to { opacity: 1; transform: translateX(-50%) scaleY(0.96); }
+        }
 
         /* ——— BLOG ——— */
         .blog-section {
@@ -3224,7 +3264,19 @@
             .services-panel { grid-template-columns: 1fr; gap: 2rem; }
             .services-tabs { margin-right: 0; }
             .services-tab { margin-right: 1.5rem; padding: 0.75rem 1rem 0.75rem 0; font-size: 0.9375rem; }
-            .about-values { grid-template-columns: 1fr; gap: var(--space-sm); }
+            .about-values { grid-template-columns: 1fr; gap: var(--space-sm); padding-left: 0.72rem; }
+            .about-values::before {
+                left: 0.22rem;
+                right: auto;
+                top: 0.75rem;
+                bottom: 0.75rem;
+                width: 2px;
+                height: auto;
+                transform: none;
+                background: linear-gradient(180deg, rgba(11, 22, 53, 0.24) 0%, rgba(255, 102, 0, 0.52) 50%, rgba(11, 22, 53, 0.24) 100%);
+                animation: none;
+            }
+            .about-values::after { display: none; }
             .about-value-card { padding: 1.75rem 1.5rem; }
             .blog-grid { grid-template-columns: 1fr; }
 
@@ -3264,6 +3316,8 @@
             .partners-categories { gap: 0.35rem 1rem; }
             .partner-logo-card { min-width: 110px; height: 56px; padding: 0.4rem 1rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
+            .about-values { padding-left: 0.62rem; }
+            .about-values::before { left: 0.2rem; }
 
             .faq-q { padding: 1rem 1.25rem; }
             .faq-a p { padding: 0 0.5rem 1rem 0.5rem; }
@@ -3356,6 +3410,8 @@
             .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
             .about-value-card { padding: 1.25rem 1rem; }
+            .about-values { padding-left: 0.55rem; }
+            .about-values::before { left: 0.18rem; }
             .faq-q { padding: 0.875rem 1rem; }
             .faq-a p { padding: 0 0.5rem 0.875rem 0.5rem; }
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
@@ -3368,6 +3424,12 @@
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; font-size: 0.875rem; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .about-values::before,
+            .about-values::after {
+                animation: none;
+            }
         }
     </style>
     <link rel="stylesheet" href="css/design-tokens.css">
