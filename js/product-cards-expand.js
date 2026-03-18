@@ -10,6 +10,7 @@
 
         grids.forEach(function (grid) {
             var cards = grid.querySelectorAll('.product-card');
+            var isTouchLike = window.matchMedia('(hover: none), (pointer: coarse)').matches;
         cards.forEach(function (card) {
             if (card.hasAttribute('data-expand-inited')) return;
             card.setAttribute('data-expand-inited', 'true');
@@ -62,6 +63,14 @@
                     handleChevronToggle(e);
                 }
             });
+
+            // Mobile/touch: allow tapping anywhere on the card to toggle.
+            if (isTouchLike) {
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.product-card-chevron')) return;
+                    toggle();
+                });
+            }
 
             // Keyboard accessibility for focused card container.
             card.addEventListener('keydown', function (e) {
