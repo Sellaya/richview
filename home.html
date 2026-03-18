@@ -1693,10 +1693,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+            transform-origin: center;
         }
         .services-features .icon svg {
             width: 12px;
             height: 12px;
+            transition: transform 0.25s var(--ease-out);
+        }
+        .services-features li:hover .icon {
+            animation: servicesIconPulse 0.45s var(--ease-out);
+            background: rgba(255, 102, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.25);
+            transform: translateY(-1px);
+        }
+        .services-features li:hover .icon svg {
+            transform: scale(1.08);
+        }
+        @keyframes servicesIconPulse {
+            0% { transform: scale(1) translateY(0); }
+            45% { transform: scale(1.14) translateY(-1px); }
+            100% { transform: scale(1) translateY(-1px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .services-features .icon,
+            .services-features .icon svg {
+                transition: none;
+                animation: none;
+            }
         }
         .services-cta {
             display: inline-flex;
