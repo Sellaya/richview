@@ -229,30 +229,47 @@
             line-height: 1.65; max-width: 500px; margin: 0 auto 2.5rem;
         }
 
-        /* ——— CALENDAR SECTION ——— */
-        .ty-calendar {
-            width: 100%; margin-bottom: 2.5rem; text-align: center;
+        /* ——— SUBMITTED DETAILS ——— */
+        .ty-details {
+            width: 100%;
+            margin-bottom: 2.5rem;
+            text-align: left;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            padding: 1.25rem 1.1rem;
+            max-width: 720px;
         }
-        .ty-calendar-label {
+        .ty-details-label {
             font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
             text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
         }
-        .ty-calendar-heading {
-            font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700;
-            color: var(--navy); margin-bottom: 0.5rem; line-height: 1.25;
+        .ty-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem 1rem;
         }
-        .ty-calendar-sub {
-            font-size: 0.9375rem; color: var(--muted); line-height: 1.6;
-            max-width: 440px; margin: 0 auto 1.5rem;
+        .ty-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 12px;
+            background: rgba(11,22,53,0.03);
         }
-        .ty-calendar-frame {
-            width: 100%; background: var(--white);
-            border: 1px solid var(--border); border-radius: var(--card-radius);
-            overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-            min-height: 580px;
+        .ty-detail-k {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(11,22,53,0.6);
         }
-        .ty-calendar-frame iframe {
-            width: 100%; min-height: 580px; display: block; border: none;
+        .ty-detail-v {
+            font-size: 0.95rem;
+            color: var(--navy);
+            line-height: 1.4;
+            word-break: break-word;
         }
 
         /* ——— CTA BUTTONS ——— */
@@ -477,13 +494,16 @@
                     Your request has been sent to our team. We review every inquiry personally and will be in touch within&nbsp;<strong>24&nbsp;hours</strong>.
                 </p>
 
-                <!-- Calendar booking -->
-                <div class="ty-calendar">
-                    <p class="ty-calendar-label">Next Step</p>
-                    <h2 class="ty-calendar-heading">Book Your Free Consultation</h2>
-                    <p class="ty-calendar-sub">Pick a time that works for you and we'll confirm it right away.</p>
-                    <div class="ty-calendar-frame">
-                        <iframe src="https://api.leadconnectorhq.com/widget/booking/nak6g7HbyB9tvLyjHTK8" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="nak6g7HbyB9tvLyjHTK8_1773202172770" title="Book a free consultation"></iframe>
+                <!-- Submitted details -->
+                <div class="ty-details" aria-label="Submitted details">
+                    <p class="ty-details-label">Submitted Details</p>
+                    <div class="ty-details-grid">
+                        <div class="ty-detail-item"><span class="ty-detail-k">Name</span><span class="ty-detail-v" id="tyUserName">—</span></div>
+                        <div class="ty-detail-item"><span class="ty-detail-k">Email</span><span class="ty-detail-v" id="tyUserEmail">—</span></div>
+                        <div class="ty-detail-item"><span class="ty-detail-k">Phone</span><span class="ty-detail-v" id="tyUserPhone">—</span></div>
+                        <div class="ty-detail-item"><span class="ty-detail-k">Interest</span><span class="ty-detail-v" id="tyUserService">—</span></div>
+                        <div class="ty-detail-item"><span class="ty-detail-k">Message</span><span class="ty-detail-v" id="tyUserMessage">—</span></div>
+                        <div class="ty-detail-item"><span class="ty-detail-k">Consultation</span><span class="ty-detail-v" id="tyUserSchedule">—</span></div>
                     </div>
                 </div>
 
@@ -592,16 +612,39 @@
         </div>
     </footer>
 
-    <script src="https://api.leadconnectorhq.com/js/form_embed.js" type="text/javascript"></script>
     <script>
-        /* Personalise the headline from URL ?name=FirstName */
         (function() {
             var params = new URLSearchParams(window.location.search);
-            var name   = params.get('name');
-            var el     = document.getElementById('tyName');
-            if (name && el) {
-                el.textContent = name + '!';
+            var nameFromQuery = params.get('name');
+
+            var data = null;
+            try {
+                var raw = sessionStorage.getItem('tyFormData');
+                if (raw) data = JSON.parse(raw);
+            } catch (e) {}
+
+            // Fill UI
+            var name = (data && (data.name || data.first_name)) ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery;
+            var elName = document.getElementById('tyName');
+            if (name && elName) elName.textContent = name.trim() + '!';
+
+            function safeText(v) {
+                if (v === undefined || v === null) return '—';
+                var s = String(v).trim();
+                return s ? s : '—';
             }
+
+            var set = function(id, val) {
+                var el = document.getElementById(id);
+                if (el) el.textContent = safeText(val);
+            };
+
+            set('tyUserName', data ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery);
+            set('tyUserEmail', data ? data.email : params.get('email'));
+            set('tyUserPhone', data ? data.phone : params.get('phone'));
+            set('tyUserService', data ? (data.service || data.interest) : params.get('service'));
+            set('tyUserMessage', data ? data.message : params.get('message'));
+            set('tyUserSchedule', data ? (data.schedule_call || (data.consultation_date && data.consultation_time ? (data.consultation_date + ' ' + data.consultation_time) : '—')) : (params.get('schedule') || params.get('consultation_date')));
         })();
 
         /* Nav: scroll state + mobile toggle */

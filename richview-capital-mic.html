@@ -2426,6 +2426,55 @@
             border-top: 1px solid var(--border);
         }
 
+        /* ——— Consultation schedule step (mobile-first) ——— */
+        .consult-next-wrap { margin-top: 0.75rem; }
+        .consult-schedule-section { display: none; margin-top: 0.75rem; }
+        #consultSubmitWrap { display: none; }
+        #consultBackWrap { display: none; }
+
+        .consult-form-next,
+        .consult-form-back {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--btn-radius-lg);
+            padding: 0.875rem 1.5rem;
+            font-family: var(--font-sans);
+            font-weight: var(--btn-font-weight);
+            font-size: var(--btn-font-size);
+            letter-spacing: var(--btn-letter-spacing);
+            cursor: pointer;
+            transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
+            box-shadow: var(--btn-shadow);
+            border: none;
+            touch-action: manipulation;
+        }
+
+        .consult-form-next {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .consult-form-next:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+        }
+
+        .consult-form-back {
+            background: transparent;
+            color: var(--navy);
+            border: 1px solid rgba(11, 22, 53, 0.18);
+            box-shadow: none;
+        }
+
+        .consult-form-back:hover {
+            background: rgba(255, 102, 0, 0.06);
+            border-color: rgba(255, 102, 0, 0.35);
+        }
+
         .hero-form-wrap .cta-form-section:last-of-type .form-row-full:last-child .form-group {
             margin-bottom: 0;
         }
@@ -3261,8 +3310,14 @@
                                 </div>
                             </div>
                         </div>
-                                <div class="cta-form-section">
+                                <div class="consult-next-wrap" id="consultNextWrap">
+                                    <button type="button" id="consultFormNextBtn" class="consult-form-next">Next</button>
+                                </div>
+                                <div class="cta-form-section consult-schedule-section" id="consultScheduleSection">
                                     <div class="cta-form-section-title">Schedule Your Call</div>
+                                    <div class="consult-back-wrap" id="consultBackWrap">
+                                        <button type="button" id="consultFormBackBtn" class="consult-form-back">Back</button>
+                                    </div>
                                     <div class="cta-schedule-block hero-schedule-block">
                                         <div class="cta-schedule-fields">
                                             <div class="cta-schedule-field">
@@ -3309,7 +3364,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cta-submit-wrap">
+                                <div class="cta-submit-wrap" id="consultSubmitWrap">
                                     <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
                         </div>
                     </form>
@@ -3594,6 +3649,7 @@
                     form.reset();
                     var dest = 'thank-you.html';
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
+                    try { sessionStorage.setItem('tyFormData', JSON.stringify(payload)); } catch (e) {}
                     window.location.href = dest;
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
@@ -3856,6 +3912,64 @@
                 dateTrigger.setAttribute('aria-expanded', 'false');
                 timeTrigger.setAttribute('aria-expanded', 'false');
             });
+        })();
+    </script>
+
+    <script>
+        (function consultScheduleStepNav() {
+            var form = document.getElementById('consultationForm');
+            if (!form) return;
+
+            var nextWrap = document.getElementById('consultNextWrap');
+            var nextBtn = document.getElementById('consultFormNextBtn');
+            var backWrap = document.getElementById('consultBackWrap');
+            var backBtn = document.getElementById('consultFormBackBtn');
+            var scheduleSection = document.getElementById('consultScheduleSection');
+            var submitWrap = document.getElementById('consultSubmitWrap');
+
+            if (!nextWrap || !nextBtn || !scheduleSection || !submitWrap) return;
+
+            function validateStep1() {
+                var requiredEls = form.querySelectorAll('[required]');
+                for (var i = 0; i < requiredEls.length; i++) {
+                    var el = requiredEls[i];
+                    if (el.offsetParent === null) continue;
+                    if (!el.value || (typeof el.value === 'string' && !el.value.trim())) {
+                        if (el.reportValidity) el.reportValidity();
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function showSchedule() {
+                scheduleSection.style.display = 'block';
+                submitWrap.style.display = 'block';
+                if (backWrap) backWrap.style.display = 'block';
+                if (nextWrap) nextWrap.style.display = 'none';
+            }
+
+            function hideSchedule() {
+                scheduleSection.style.display = 'none';
+                submitWrap.style.display = 'none';
+                if (backWrap) backWrap.style.display = 'none';
+                if (nextWrap) nextWrap.style.display = '';
+            }
+
+            hideSchedule();
+
+            nextBtn.addEventListener('click', function() {
+                if (!validateStep1()) return;
+                showSchedule();
+                try { scheduleSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+            });
+
+            if (backBtn) {
+                backBtn.addEventListener('click', function() {
+                    hideSchedule();
+                    try { nextWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+                });
+            }
         })();
     </script>
 
