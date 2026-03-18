@@ -50,11 +50,20 @@
                 chevron.setAttribute('aria-label', isOpen ? 'Collapse details' : 'Expand details');
             }
 
-            // Chevron click: accordion behavior (mobile + desktop)
-            chevron.addEventListener('click', function (e) {
+            function handleChevronToggle(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 toggle();
+            }
+
+            // Chevron click: accordion behavior (mobile + desktop)
+            chevron.addEventListener('click', handleChevronToggle);
+            chevron.addEventListener('touchend', handleChevronToggle, { passive: false });
+            chevron.addEventListener('pointerup', handleChevronToggle);
+            chevron.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    handleChevronToggle(e);
+                }
             });
 
             // Mobile/touch: allow tapping anywhere on the card to toggle.
