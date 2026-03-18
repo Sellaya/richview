@@ -3002,6 +3002,54 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="cta-form-section">
+                                    <div class="cta-form-section-title">Schedule Your Call</div>
+                                    <div class="cta-schedule-block hero-schedule-block">
+                                        <div class="cta-schedule-fields">
+                                            <div class="cta-schedule-field">
+                                                <label for="consultDateTrigger">Select Date</label>
+                                                <div class="cta-picker-wrap">
+                                                    <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
+                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+                                                        <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
+                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                    </button>
+                                                    <div class="cta-picker-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
+                                                        <div class="cta-picker-dropdown-inner">
+                                                            <div class="cta-calendar-header">
+                                                                <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
+                                                                <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
+                                                                <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
+                                                            </div>
+                                                            <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                                                            <div class="cta-calendar-days" id="consultCalendarDays"></div>
+                                                            <button type="button" class="cta-calendar-action" data-today>Today</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="consultDate" name="consultDate" required>
+                                            </div>
+                                            <div class="cta-schedule-field">
+                                                <label for="consultTimeTrigger">Select time</label>
+                                                <div class="cta-picker-wrap">
+                                                    <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
+                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                                        <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
+                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                    </button>
+                                                    <div class="cta-picker-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
+                                                        <div class="cta-picker-dropdown-inner">
+                                                            <div class="cta-time-inner">
+                                                                <div class="cta-time-grid" id="consultTimeGrid"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="consultTime" name="consultTime" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="cta-submit-wrap">
                                     <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
                                 </div>
@@ -3190,6 +3238,36 @@
                 }
                 var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
                 var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
+                var _date = ((document.getElementById('consultDate') || {}).value || '').trim();
+                var _time = ((document.getElementById('consultTime') || {}).value || '').trim();
+
+                if (!_date || !_time) {
+                    alert('Please select both date and time for your consultation.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    return;
+                }
+
+                var pad = function(n) { return (n < 10 ? '0' : '') + n; };
+                var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+                var formatTime = function(d) {
+                    var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
+                    h = h % 12 || 12;
+                    return pad(h) + ':' + pad(min) + ' ' + ampm;
+                };
+                var dtStr = _time.length === 5 ? _date + 'T' + _time + ':00' : _date + 'T' + _time;
+                var d = new Date(dtStr);
+                var timeStr = !isNaN(d.getTime()) ? formatTime(d) : '';
+
+                var schedule_mm_dd_yyyy = '';
+                var schedule_dd_mmm_yyyy = '';
+                var schedule_yyyy_mm_dd = '';
+                if (!isNaN(d.getTime()) && timeStr) {
+                    schedule_mm_dd_yyyy = pad(d.getMonth()+1) + '-' + pad(d.getDate()) + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_dd_mmm_yyyy = pad(d.getDate()) + '-' + months[d.getMonth()] + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + timeStr;
+                }
+                var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
                 var payload = {
                     form_name:    'Book a Free Consultation',
                     first_name:   _fn,
@@ -3199,6 +3277,12 @@
                     phone:        ((document.getElementById('consultPhone')    || {}).value || '').trim(),
                     service:      ((document.getElementById('consultInterest') || {}).value || '').trim(),
                     message:      ((document.getElementById('consultMessage')  || {}).value || '').trim(),
+                    consultation_date: _date,
+                    consultation_time: _time,
+                    schedule_call: schedule_call,
+                    schedule_mm_dd_yyyy: schedule_mm_dd_yyyy,
+                    schedule_dd_mmm_yyyy: schedule_dd_mmm_yyyy,
+                    schedule_yyyy_mm_dd: schedule_yyyy_mm_dd,
                     source_url:   window.location.href,
                     page_url:     window.location.href,
                     submitted_at: new Date().toISOString(),
@@ -3227,6 +3311,255 @@
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
                     else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                 }
+            });
+        })();
+
+        (function consultPickerInit() {
+            var dateTrigger = document.getElementById('consultDateTrigger');
+            var timeTrigger = document.getElementById('consultTimeTrigger');
+            var dateDropdown = document.getElementById('consultDateDropdown');
+            var timeDropdown = document.getElementById('consultTimeDropdown');
+            var dateValueEl = document.getElementById('consultDateValue');
+            var timeValueEl = document.getElementById('consultTimeValue');
+            var calendarDays = document.getElementById('consultCalendarDays');
+            var calendarMonthYear = document.getElementById('consultCalendarMonthYear');
+            var timeGrid = document.getElementById('consultTimeGrid');
+            var dateInput = document.getElementById('consultDate');
+            var timeInput = document.getElementById('consultTime');
+
+            if (!dateTrigger || !timeTrigger || !dateDropdown || !timeDropdown || !calendarDays || !timeGrid || !dateInput || !timeInput) return;
+
+            var selectedDate = null;
+            var selectedTime = null;
+            var viewYear = new Date().getFullYear();
+            var viewMonth = new Date().getMonth();
+
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function isWorkingDay(dateObj) {
+                var day = dateObj.getDay();
+                return day >= 1 && day <= 5; // Mon-Fri only
+            }
+            function nextWorkingDay(fromDate) {
+                var d = new Date(fromDate);
+                d.setHours(0, 0, 0, 0);
+                while (!isWorkingDay(d)) d.setDate(d.getDate() + 1);
+                return d;
+            }
+
+            function formatDateDisplay(ymd) {
+                if (!ymd) return '';
+                var p = ymd.split('-');
+                if (p.length !== 3) return ymd;
+                var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                return months[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10) + ', ' + p[0];
+            }
+
+            function closeDropdown(dd) { if (dd) dd.classList.remove('is-open'); }
+            function openDropdown(dd, trigger) {
+                closeDropdown(dateDropdown);
+                closeDropdown(timeDropdown);
+                if (dd) dd.classList.add('is-open');
+                if (trigger) trigger.setAttribute('aria-expanded', 'true');
+            }
+
+            function dayClick(e) {
+                var btn = e.currentTarget;
+                if (btn.classList.contains('disabled') || btn.classList.contains('other-month')) return;
+                selectedDate = btn.dataset.ymd;
+                dateInput.value = selectedDate;
+                if (dateValueEl) {
+                    dateValueEl.textContent = formatDateDisplay(selectedDate);
+                    dateValueEl.classList.remove('placeholder');
+                }
+                renderCalendar();
+                setTimeout(function() {
+                    closeDropdown(dateDropdown);
+                    dateTrigger.setAttribute('aria-expanded', 'false');
+                }, 150);
+            }
+
+            function renderCalendar() {
+                var first = new Date(viewYear, viewMonth, 1);
+                var last = new Date(viewYear, viewMonth + 1, 0);
+                var startOffset = first.getDay();
+
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                calendarDays.innerHTML = '';
+
+                for (var i = 0; i < startOffset; i++) {
+                    var d = new Date(viewYear, viewMonth, 1 - (startOffset - i));
+                    var isPast = d < today;
+                    var isWeekend = !isWorkingDay(d);
+                    var cell = document.createElement('button');
+                    cell.type = 'button';
+                    cell.className = 'cta-calendar-day other-month' + ((isPast || isWeekend) ? ' disabled' : '');
+                    cell.textContent = d.getDate();
+                    cell.dataset.ymd = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+                    cell.setAttribute('aria-label', d.toLocaleDateString());
+                    calendarDays.appendChild(cell);
+                }
+
+                for (var day = 1; day <= last.getDate(); day++) {
+                    var date = new Date(viewYear, viewMonth, day);
+                    var isPast = date < today;
+                    var isWeekend = !isWorkingDay(date);
+                    var isToday = date.getTime() === today.getTime();
+                    var ymd = viewYear + '-' + pad(viewMonth + 1) + '-' + pad(day);
+                    var isSelected = selectedDate === ymd;
+
+                    var cell = document.createElement('button');
+                    cell.type = 'button';
+                    cell.className =
+                        'cta-calendar-day' +
+                        (isSelected ? ' selected' : '') +
+                        (isToday ? ' today' : '') +
+                        ((isPast || isWeekend) ? ' disabled' : '');
+                    cell.textContent = day;
+                    cell.dataset.ymd = ymd;
+                    cell.setAttribute('aria-label', date.toLocaleDateString());
+                    if (!isPast && !isWeekend) cell.addEventListener('click', dayClick);
+                    calendarDays.appendChild(cell);
+                }
+
+                var remaining = 42 - calendarDays.children.length;
+                for (var j = 0; j < remaining; j++) {
+                    var nd = new Date(viewYear, viewMonth + 1, j + 1);
+                    var isPast2 = nd < today;
+                    var isWeekend2 = !isWorkingDay(nd);
+                    var cell = document.createElement('button');
+                    cell.type = 'button';
+                    cell.className = 'cta-calendar-day other-month' + ((isPast2 || isWeekend2) ? ' disabled' : '');
+                    cell.textContent = nd.getDate();
+                    cell.dataset.ymd = nd.getFullYear() + '-' + pad(nd.getMonth() + 1) + '-' + pad(nd.getDate());
+                    calendarDays.appendChild(cell);
+                }
+
+                if (calendarMonthYear) {
+                    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                    calendarMonthYear.textContent = monthNames[viewMonth] + ' ' + viewYear;
+                }
+            }
+
+            function timeClick(e) {
+                var btn = e.currentTarget;
+                selectedTime = btn.dataset.value;
+                timeInput.value = selectedTime;
+                if (timeValueEl) {
+                    timeValueEl.textContent = btn.dataset.display;
+                    timeValueEl.classList.remove('placeholder');
+                }
+                renderTimeSlots();
+                setTimeout(function() {
+                    closeDropdown(timeDropdown);
+                    timeTrigger.setAttribute('aria-expanded', 'false');
+                }, 150);
+            }
+
+            function renderTimeSlots() {
+                timeGrid.innerHTML = '';
+                for (var h = 9; h <= 18; h++) {
+                    for (var m = 0; m < 60; m += 30) {
+                        if (h === 18 && m > 0) break;
+                        var hour = h, min = m;
+                        var h12 = hour % 12 || 12;
+                        var ampm = hour < 12 ? 'AM' : 'PM';
+                        var display = pad(h12) + ':' + pad(min) + ' ' + ampm;
+                        var value24 = pad(hour) + ':' + pad(min);
+
+                        var btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'cta-time-slot' + (selectedTime === value24 ? ' selected' : '');
+                        btn.textContent = display;
+                        btn.dataset.value = value24;
+                        btn.dataset.display = display;
+                        btn.setAttribute('aria-label', display);
+                        btn.addEventListener('click', timeClick);
+                        timeGrid.appendChild(btn);
+                    }
+                }
+            }
+
+            dateTrigger.addEventListener('click', function() {
+                var isOpen = dateDropdown.classList.contains('is-open');
+                if (isOpen) {
+                    closeDropdown(dateDropdown);
+                    dateTrigger.setAttribute('aria-expanded', 'false');
+                    return;
+                }
+
+                if (selectedDate) {
+                    var parts = selectedDate.split('-');
+                    viewYear = parseInt(parts[0], 10);
+                    viewMonth = parseInt(parts[1], 10) - 1;
+                } else {
+                    var t = new Date();
+                    viewYear = t.getFullYear();
+                    viewMonth = t.getMonth();
+                }
+                renderCalendar();
+                openDropdown(dateDropdown, dateTrigger);
+            });
+
+            timeTrigger.addEventListener('click', function() {
+                var isOpen = timeDropdown.classList.contains('is-open');
+                if (isOpen) {
+                    closeDropdown(timeDropdown);
+                    timeTrigger.setAttribute('aria-expanded', 'false');
+                    return;
+                }
+                if (!dateInput.value) {
+                    alert('Please select a date first.');
+                    return;
+                }
+                renderTimeSlots();
+                openDropdown(timeDropdown, timeTrigger);
+            });
+
+            var prevBtn = dateDropdown.querySelector('.cta-calendar-prev');
+            var nextBtn = dateDropdown.querySelector('.cta-calendar-next');
+            if (prevBtn) prevBtn.addEventListener('click', function() {
+                viewMonth--;
+                if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+                renderCalendar();
+            });
+            if (nextBtn) nextBtn.addEventListener('click', function() {
+                viewMonth++;
+                if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+                renderCalendar();
+            });
+
+            var todayBtn = dateDropdown.querySelector('[data-today]');
+            if (todayBtn) todayBtn.addEventListener('click', function() {
+                var t = nextWorkingDay(new Date());
+                selectedDate = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());
+                viewYear = t.getFullYear();
+                viewMonth = t.getMonth();
+                dateInput.value = selectedDate;
+                if (dateValueEl) {
+                    dateValueEl.textContent = formatDateDisplay(selectedDate);
+                    dateValueEl.classList.remove('placeholder');
+                }
+                renderCalendar();
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!dateTrigger.contains(e.target) && !dateDropdown.contains(e.target) &&
+                    !timeTrigger.contains(e.target) && !timeDropdown.contains(e.target)) {
+                    closeDropdown(dateDropdown);
+                    closeDropdown(timeDropdown);
+                    dateTrigger.setAttribute('aria-expanded', 'false');
+                    timeTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key !== 'Escape') return;
+                closeDropdown(dateDropdown);
+                closeDropdown(timeDropdown);
+                dateTrigger.setAttribute('aria-expanded', 'false');
+                timeTrigger.setAttribute('aria-expanded', 'false');
             });
         })();
     </script>
