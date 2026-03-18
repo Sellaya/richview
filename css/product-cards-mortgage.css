@@ -293,6 +293,8 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
+/* Remove "HIGHLIGHTS" label per design request */
+.product-highlights-title { display: none; }
 
 .product-features {
     list-style: none;
@@ -312,9 +314,10 @@
     gap: 0.5rem;
     line-height: 1.4;
     border-radius: 6px;
-    background: rgba(11, 22, 53, 0.02);
-    border: 1px solid rgba(11, 22, 53, 0.05);
-    transition: background 0.2s ease, color 0.2s ease;
+    background: linear-gradient(180deg, rgba(255, 102, 0, 0.08) 0%, rgba(255, 102, 0, 0.03) 100%);
+    border: 1px solid rgba(255, 102, 0, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(255, 102, 0, 0.08);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     overflow-wrap: anywhere;
     word-break: break-word;
 }
@@ -331,10 +334,11 @@
     font-size: 0.52rem;
     font-weight: 700;
     color: #fff;
-    background: var(--navy, #0B1635);
+    background: linear-gradient(180deg, #ff7d20 0%, #ff6600 100%);
     border-radius: 50%;
     flex-shrink: 0;
-    transition: transform 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 2px 5px rgba(255, 102, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Desktop/web only hover effects */
@@ -374,12 +378,15 @@
     }
 
     .product-features li:hover {
-        background: rgba(11, 22, 53, 0.05);
+        background: linear-gradient(180deg, rgba(255, 102, 0, 0.14) 0%, rgba(255, 102, 0, 0.07) 100%);
+        border-color: rgba(255, 102, 0, 0.28);
         color: var(--navy, #0B1635);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 3px 8px rgba(255, 102, 0, 0.16);
     }
 
     .product-features li:hover::before {
         transform: scale(1.08);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 3px 8px rgba(255, 102, 0, 0.45);
     }
 }
 
