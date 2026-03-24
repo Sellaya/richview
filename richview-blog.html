@@ -513,14 +513,12 @@
         .blog-section .sec-head p {
             font-size: 0.9375rem;
             color: var(--muted);
-            max-width: 420px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
+            text-wrap: pretty;
             line-height: 1.65;
-        }
-
-        @media (min-width: 480px) {
-            .blog-section .sec-head p {
-                white-space: nowrap;
-            }
+            white-space: normal;
         }
 
         .blog-grid {

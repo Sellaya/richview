@@ -53,6 +53,12 @@
     color: var(--muted, #6B7280);
     margin: 0;
     display: block;
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    text-wrap: pretty;
+    white-space: normal;
 }
 
 /* ——— Products disclaimer (mobile-first) ——— */

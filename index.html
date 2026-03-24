@@ -115,8 +115,8 @@
         }
         main { overflow-x: hidden; min-width: 0; }
 
-        /* Fewer awkward single-word line breaks in section descriptions (responsive) */
-        .sec-head p, .services-desc { text-wrap: balance; }
+        /* Section descriptions: natural wraps across full container width */
+        .sec-head p, .services-desc { text-wrap: pretty; }
 
         /* Base heading hierarchy — bold, confident, modern */
         h1, h2, h3, h4, h5, h6 {
@@ -475,7 +475,10 @@
             font-size: clamp(1rem, 1.5vw, 1.125rem);
             color: rgba(255, 255, 255, 0.88);
             line-height: var(--leading-relaxed);
-            max-width: min(440px, 100%);
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
+            text-wrap: pretty;
         }
         .hero-ctas {
             display: flex;
@@ -1420,6 +1423,17 @@
             flex-wrap: wrap;
             gap: 0.4rem 1.25rem;
             margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+            animation: partnersCategoriesReveal 0.9s var(--ease-out) both;
+        }
+        @keyframes partnersCategoriesReveal {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .partners-category {
             font-size: 0.7rem;
@@ -1430,6 +1444,25 @@
             display: flex;
             align-items: center;
             gap: 0.35rem;
+            animation: partnersCategoryBlink 3.2s ease-in-out infinite backwards;
+            will-change: opacity;
+        }
+        .partners-category:nth-child(1) { animation-delay: 0s; }
+        .partners-category:nth-child(2) { animation-delay: 0.4s; }
+        .partners-category:nth-child(3) { animation-delay: 0.8s; }
+        .partners-category:nth-child(4) { animation-delay: 1.2s; }
+        @keyframes partnersCategoryBlink {
+            0%, 32%, 100% {
+                opacity: 0.45;
+            }
+            14% {
+                opacity: 1;
+                color: var(--navy);
+            }
+            20% {
+                opacity: 0.45;
+                color: var(--muted);
+            }
         }
         .partners-category::before {
             content: '';
@@ -1439,6 +1472,26 @@
             border-radius: 50%;
             background: var(--gold);
             flex-shrink: 0;
+            animation: partnersCategoryDot 3.2s ease-in-out infinite backwards;
+            box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+        }
+        .partners-category:nth-child(1)::before { animation-delay: 0s; }
+        .partners-category:nth-child(2)::before { animation-delay: 0.4s; }
+        .partners-category:nth-child(3)::before { animation-delay: 0.8s; }
+        .partners-category:nth-child(4)::before { animation-delay: 1.2s; }
+        @keyframes partnersCategoryDot {
+            0%, 32%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+            }
+            14% {
+                transform: scale(1.25);
+                box-shadow: 0 0 12px rgba(255, 102, 0, 0.38);
+            }
+            20% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+            }
         }
         .partners-scroll-wrap {
             overflow: hidden;
@@ -1577,7 +1630,9 @@
         }
         .services-tabs {
             display: flex;
-            gap: 0;
+            gap: 0.35rem;
+            justify-content: center;
+            align-items: stretch;
             border-bottom: 1px solid var(--border);
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
@@ -1585,8 +1640,8 @@
         .services-tab {
             background: none;
             border: none;
-            padding: 0.85rem 1.25rem 0.85rem 0;
-            margin-right: 2rem;
+            padding: 0.75rem 1.5rem;
+            margin: 0;
             font-family: inherit;
             font-size: 1rem;
             font-weight: 500;
@@ -1594,6 +1649,8 @@
             cursor: pointer;
             position: relative;
             border-radius: 8px;
+            text-align: center;
+            min-width: 7.25rem;
             transition: color 0.25s var(--ease-out), background 0.2s var(--ease-out);
             -webkit-tap-highlight-color: transparent;
         }
@@ -1608,17 +1665,18 @@
         .services-tab::after {
             content: '';
             position: absolute;
-            left: 0;
+            left: 50%;
             bottom: -1px;
             width: 100%;
+            max-width: calc(100% - 0.5rem);
             height: 2px;
             background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
             transition: transform 0.3s var(--ease-out);
         }
         .services-tab.active::after {
-            transform: scaleX(1);
+            transform: translateX(-50%) scaleX(1);
         }
         .services-panels {
             position: relative;
@@ -1658,6 +1716,9 @@
             color: var(--muted);
             line-height: 1.7;
             margin-bottom: 1.5rem;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
         }
         .services-features {
             list-style: none;
@@ -1787,8 +1848,11 @@
         .about .sec-head p {
             font-size: 0.9375rem;
             color: var(--muted);
-            max-width: 360px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
             margin: 0;
+            text-wrap: pretty;
         }
         .about-visual {
             margin-bottom: var(--space-lg);
@@ -2039,118 +2103,6 @@
             transform: translateX(3px);
         }
 
-        /* ——— FAQ (minimal, professional) ——— */
-        .faq-section {
-            padding: var(--section-padding) 0;
-            background: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-        .faq-section .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-            position: relative;
-            z-index: 1;
-        }
-        .faq-section .sec-head {
-            text-align: center;
-            margin-bottom: var(--space-md);
-            position: static;
-            top: auto;
-        }
-        .faq-section .sec-head h2 {
-            font-family: var(--font-sans);
-            font-size: clamp(1.5rem, 2.2vw, 1.875rem);
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 0.35rem;
-            letter-spacing: -0.02em;
-        }
-        .faq-section .sec-head p {
-            font-size: 0.875rem;
-            color: var(--muted);
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .faq-list {
-            width: 100%;
-            max-width: 520px;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .faq-item {
-            background: var(--white);
-            overflow: hidden;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            transition: background 0.2s var(--ease-out);
-        }
-        .faq-item:first-child { border-top: 1px solid rgba(0, 0, 0, 0.06); }
-        .faq-item.reveal.visible { transition-delay: calc(0.05s * var(--i, 0)); }
-        .faq-item:hover { background: rgba(255, 255, 255, 0.85); }
-        .faq-item.open {
-            background: var(--white);
-            border-left: 3px solid rgba(255, 102, 0, 0.5);
-        }
-        .faq-q {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: none;
-            border: none;
-            font-family: inherit;
-            font-size: 0.9375rem;
-            font-weight: 600;
-            color: var(--navy);
-            cursor: pointer;
-            text-align: left;
-            transition: color 0.2s var(--ease-out);
-            -webkit-tap-highlight-color: transparent;
-        }
-        .faq-q:hover { color: var(--charcoal); }
-        .faq-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            background: rgba(11, 22, 53, 0.06);
-            color: var(--navy);
-            transition: all 0.25s var(--ease-out);
-        }
-        .faq-icon svg { display: block; }
-        .faq-item.open .faq-icon {
-            background: var(--navy);
-            color: var(--white);
-            transform: rotate(180deg);
-        }
-        .faq-a {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s var(--ease-out);
-        }
-        .faq-item.open .faq-a {
-            max-height: 1200px;
-        }
-        .faq-a p {
-            padding: 0 1.25rem 1rem 1.25rem;
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.65;
-            overflow-wrap: break-word;
-        }
-
         /* ——— CTA SECTION (Book Consultation) ——— */
         .cta-section {
             padding: clamp(3rem, 6vw, 4.5rem) 0;
@@ -2216,7 +2168,10 @@
             font-size: 1rem;
             color: var(--muted);
             line-height: 1.65;
-            max-width: 420px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
+            text-wrap: pretty;
             margin-bottom: 1.75rem;
         }
         .cta-trust-list {
@@ -3286,15 +3241,12 @@
             .hero-license-number { font-size: clamp(1.15rem, 3.5vw, 1.35rem); }
 
             .services-panel { grid-template-columns: 1fr; gap: 2rem; }
-            .services-tabs { margin-right: 0; }
-            .services-tab { margin-right: 1.5rem; padding: 0.75rem 1rem 0.75rem 0; font-size: 0.9375rem; }
+            .services-tabs { margin-right: 0; gap: 0.25rem; }
+            .services-tab { padding: 0.7rem 1.1rem; min-width: 6.5rem; font-size: 0.9375rem; }
             .about-values { grid-template-columns: 1fr; gap: var(--space-sm); padding-left: 0; }
             .about-value-card { padding: 1.75rem 1.5rem; }
             .blog-grid { grid-template-columns: 1fr; }
             .blog-card-body { padding: 0.9rem 0.95rem 0.85rem; }
-
-            .faq-section .container { grid-template-columns: 1fr; gap: var(--space-xl); }
-            .faq-section .sec-head { position: static; margin-bottom: 1.5rem; }
 
             .cta-box .form-row { grid-template-columns: 1fr; }
 
@@ -3334,9 +3286,6 @@
             .blog-card-image { aspect-ratio: 16/8.8; }
             .blog-card h3 { font-size: 0.95rem; }
             .blog-card .blog-excerpt { font-size: 0.84rem; }
-
-            .faq-q { padding: 1rem 1.25rem; }
-            .faq-a p { padding: 0 0.5rem 1rem 0.5rem; }
 
             .cta-section { padding: var(--space-lg) 0; }
             .cta-grid { gap: 2rem; }
@@ -3385,8 +3334,6 @@
             .about-inner,
             .testimonials-inner,
             .blog-inner { padding-left: var(--gutter); padding-right: var(--gutter); }
-            .faq-section .container { padding-left: var(--gutter); padding-right: var(--gutter); }
-            .faq-section .sec-head p { max-width: 100%; }
             .cta-section .container { padding: 0 var(--gutter); }
             .cta-section { padding: var(--space-md) 0; }
             .cta-grid { gap: 1.5rem; }
@@ -3423,11 +3370,9 @@
             .hero-trust-number { font-size: 1.5rem; }
             .hero-license { font-size: 1rem; margin-top: 0.6rem; }
             .hero-license-number { font-size: 1.2rem; }
-            .services-tab { margin-right: 1rem; padding: 0.65rem 0.75rem 0.65rem 0; font-size: 0.875rem; }
+            .services-tab { padding: 0.65rem 0.85rem; min-width: 5.75rem; font-size: 0.875rem; }
             .services-panel-content .services-desc { font-size: 0.9375rem; }
             .about-value-card { padding: 1.25rem 1rem; }
-            .faq-q { padding: 0.875rem 1rem; }
-            .faq-a p { padding: 0 0.5rem 0.875rem 0.5rem; }
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
             .hero-dot-item { font-size: 0.8125rem; padding: 0.5rem 0.9rem; }
             .hero-slider { min-height: clamp(320px, 58vw, 380px); margin-bottom: 1.25rem; }
@@ -3440,7 +3385,19 @@
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
         }
         @media (prefers-reduced-motion: reduce) {
-            /* no about connector animations */
+            .partners-categories {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .partners-category,
+            .partners-category::before {
+                animation: none;
+                opacity: 1;
+                transform: none;
+                box-shadow: none;
+                color: var(--muted);
+            }
         }
     </style>
     <link rel="stylesheet" href="css/design-tokens.css">
@@ -3842,18 +3799,14 @@
                 <!-- Set 1 -->
                 <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="images/partner-damiani.png" alt="Damiani Jewellers" loading="lazy"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="images/partner-marbro.png" alt="Marbro Building Maintenance" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
                 <!-- Set 2 — duplicate for seamless infinite loop -->
                 <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="images/partner-damiani.png" alt="Damiani Jewellers" loading="lazy"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
-                <div class="partner-logo-card"><img src="images/partner-marbro.png" alt="Marbro Building Maintenance" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>

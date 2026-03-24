@@ -517,9 +517,12 @@
             color: rgba(255, 255, 255, 0.75);
             line-height: 1.7;
             margin-bottom: var(--space-xl);
-            max-width: 560px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
             margin-left: auto;
             margin-right: auto;
+            text-wrap: pretty;
         }
         .hero-ctas {
             display: flex;
@@ -619,9 +622,11 @@
         .section-header p {
             font-size: 0.9375rem;
             color: var(--muted);
-            max-width: 420px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
             margin: 0;
-            text-wrap: balance;
+            text-wrap: pretty;
         }
 
         /* ——— BORDERED GRID CARDS ——— */
@@ -895,131 +900,7 @@
             grid-column: 1 / -1;
         }
 
-        /* ——— FAQ (minimal, professional) ——— */
-        .faq-section {
-            padding: var(--section-padding) 0;
-            background: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .faq-section .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .faq-container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-        }
-
-        .faq-section .section-header {
-            margin-bottom: var(--space-lg);
-            padding: 0;
-        }
-
-        .faq-section .section-header h2 {
-            font-size: clamp(1.5rem, 2.2vw, 1.875rem);
-            margin-bottom: 0.35rem;
-        }
-
-        .faq-section .section-header p {
-            font-size: 0.875rem;
-            max-width: 100%;
-        }
-
-        .faq-grid {
-            margin-top: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            transition: background 0.2s var(--ease-out);
-        }
-
-        .faq-item:first-of-type {
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .faq-item:hover {
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .faq-item.active {
-            background: var(--white);
-            border-left: 3px solid rgba(255, 102, 0, 0.5);
-        }
-
-        .faq-question {
-            padding: 1rem 1.25rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            transition: color 0.2s var(--ease-out);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .faq-question:hover {
-            background: transparent;
-        }
-
-        .faq-question h4 {
-            font-size: 0.9375rem;
-            color: var(--navy);
-            font-weight: 600;
-            margin: 0;
-            padding-right: 0;
-            line-height: 1.4;
-            letter-spacing: -0.01em;
-        }
-
-        .faq-item.active .faq-question h4 {
-            color: var(--navy);
-        }
-
-        .faq-toggle {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.125rem;
-            color: var(--muted);
-            font-weight: 400;
-            transition: transform 0.25s var(--ease-out), color 0.2s var(--ease-out);
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
-            color: var(--navy);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s var(--ease-out);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            padding: 0 1.25rem 1rem 1.25rem;
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.65;
-            font-size: 0.9rem;
-        }
+        /* FAQ: css/faq-section.css */
 
         /* Old CONTACT / CTA BOX CSS removed - using home.html CTA CSS */
 
@@ -1715,7 +1596,9 @@
             .process-section,
             .benefits-section,
             .testimonials-section,
-            .faq-section,
+            .faq-section {
+                padding: 3.5rem 0;
+            }
 
             /* Section headers centered on mobile */
             .section-header {
@@ -1845,7 +1728,9 @@
             .process-section,
             .benefits-section,
             .testimonials-section,
-            .faq-section,
+            .faq-section {
+                padding: 2.75rem 0;
+            }
 
             /* Section header spacing */
             .section-header {
@@ -2130,7 +2015,10 @@
             font-size: 1rem;
             color: var(--muted);
             line-height: 1.65;
-            max-width: 420px;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
+            text-wrap: pretty;
             margin-bottom: 1.75rem;
         }
 
@@ -3476,7 +3364,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>How long does the approval process take?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>Our streamlined approval process typically takes 24-48 hours for initial decisions. Once
@@ -3487,7 +3375,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>What types of properties do you finance?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>We finance residential properties including single-family homes, multi-family residences,
@@ -3499,7 +3387,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>What are your loan-to-value (LTV) ratios?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>We offer LTV ratios up to 75% on residential first mortgages (case by case). Construction projects: up to 65% of end value. Second mortgage LTV varies by property and risk profile.</p>
@@ -3508,7 +3396,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>What documentation do I need to apply?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>Typically, you'll need: property details and appraisal, proof of income, credit report,
@@ -3519,7 +3407,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>Do you finance construction projects?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>Yes. We offer construction financing for custom home builds, renovations, and development projects. Our draw system includes 3-5 draws per project. Our in-house inspectors can be on-site within 24 hours, and funds are advanced to the borrower's account within 24 hours of inspection. To apply, you'll need: an appraisal (as-is and as-if completed), all building permits, your builder's portfolio, a detailed construction budget, and a completed mortgage application.</p>
@@ -3528,7 +3416,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h4>Can I get approved if the bank turned me down?</h4>
-                        <span class="faq-toggle">+</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></span>
                     </div>
                     <div class="faq-answer">
                         <p>Absolutely. We specialize in alternative lending solutions for situations where traditional
