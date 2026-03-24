@@ -1,0 +1,5 @@
+# Homepage: serve index at /; legacy /home.html → /
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^home\.html$ / [R=301,L]
+</IfModule>

@@ -1,0 +1,190 @@
+/**
+ * Benefits section — elevated UI + motion (GPU-friendly)
+ * Loads after benefit-cards-shared.css [+ what-is-a-mic-layout.css on MIC page]
+ */
+
+.benefits-section {
+    /* Calmer scroll-in: short duration, gentle ease (no stagger — avoids hover/transition-delay bugs) */
+    --benefit-reveal: 0.42s;
+    --benefit-ease: cubic-bezier(0.33, 1, 0.68, 1);
+    --benefit-stagger: 0ms;
+    padding: clamp(2rem, 5vw, 3rem) 0;
+    background:
+        linear-gradient(165deg, #ffffff 0%, #f4f6fa 42%, #eef1f7 100%);
+}
+
+.benefits-section::before {
+    width: min(72vw, 920px);
+    height: min(48vh, 420px);
+    top: 8%;
+    background: radial-gradient(
+        ellipse 80% 70% at 50% 45%,
+        rgba(11, 22, 53, 0.07) 0%,
+        rgba(255, 102, 0, 0.04) 38%,
+        transparent 72%
+    );
+    /* Static wash — no looping motion (less distracting) */
+}
+
+.benefits-section::after {
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 35%;
+    bottom: 5%;
+    right: -8%;
+    background: radial-gradient(
+        circle at 70% 50%,
+        rgba(255, 102, 0, 0.06) 0%,
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .benefits-section .benefit-card.reveal.visible {
+        transition-delay: 0ms !important;
+    }
+}
+
+.benefits-section .benefits-grid {
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+/* Stagger index when pages omit inline --i */
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(1) {
+    --i: 0;
+}
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(2) {
+    --i: 1;
+}
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(3) {
+    --i: 2;
+}
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(4) {
+    --i: 3;
+}
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(5) {
+    --i: 4;
+}
+.benefits-section .benefits-grid > .benefit-card.reveal:nth-child(6) {
+    --i: 5;
+}
+
+/* Softer initial offset than page default .reveal (often 32px) */
+.benefits-section .benefit-card.reveal {
+    transform: translateY(12px);
+}
+
+@media (max-width: 768px) {
+    .benefits-section .benefit-card.reveal {
+        transform: translateY(8px);
+    }
+}
+
+/* Full opacity + transform (page .reveal + base card transition were fighting each other) */
+.benefits-section .benefit-card.reveal.visible {
+    transition:
+        opacity var(--benefit-reveal) var(--benefit-ease),
+        transform var(--benefit-reveal) var(--benefit-ease),
+        box-shadow 0.35s var(--benefit-ease),
+        border-color 0.35s var(--benefit-ease);
+    transition-delay: 0s;
+}
+
+/* Brokers “Why” block: slightly quicker, softer offset */
+.why-section.benefits-section {
+    --benefit-reveal: 0.38s;
+}
+
+.why-section.benefits-section .benefit-card.reveal {
+    transform: translateY(10px);
+}
+
+@media (max-width: 768px) {
+    .why-section.benefits-section .benefit-card.reveal {
+        transform: translateY(6px);
+    }
+}
+
+.benefits-section .benefit-card {
+    position: relative;
+    border-radius: 16px;
+    padding: 1.35rem 1.15rem;
+    border: 1px solid rgba(11, 22, 53, 0.09);
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(255, 255, 255, 0.92) 100%
+    );
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.85) inset,
+        0 12px 32px -12px rgba(11, 22, 53, 0.12),
+        0 4px 12px -4px rgba(0, 0, 0, 0.05);
+    /* Do not set transform transition here — it overrides .reveal opacity (see .reveal.visible) */
+    transition:
+        box-shadow 0.35s var(--benefit-ease),
+        border-color 0.35s var(--benefit-ease);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.benefits-section .benefit-card::before {
+    display: none !important;
+}
+
+.benefits-section .benefit-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(11, 22, 53, 0.14);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 20px 40px -16px rgba(11, 22, 53, 0.16),
+        0 0 0 1px rgba(255, 102, 0, 0.1);
+    transition:
+        transform 0.22s var(--benefit-ease),
+        box-shadow 0.35s var(--benefit-ease),
+        border-color 0.35s var(--benefit-ease);
+}
+
+/* Keep hover transform when reveal visible (override stacked transforms) */
+.benefits-section .benefit-card.reveal.visible:hover {
+    transform: translateY(-4px);
+    transition:
+        opacity var(--benefit-reveal) var(--benefit-ease),
+        transform 0.22s var(--benefit-ease),
+        box-shadow 0.35s var(--benefit-ease),
+        border-color 0.35s var(--benefit-ease);
+}
+
+.benefits-section .benefit-card h3,
+.benefits-section .benefit-card h4 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(1.05rem, 1.1vw + 0.95rem, 1.2rem);
+    letter-spacing: -0.02em;
+}
+
+.benefits-section .benefit-card p {
+    position: relative;
+    z-index: 2;
+    line-height: 1.65;
+}
+
+/* What is a MIC: preserve badge + title grid */
+.benefits-section .benefit-card .benefit-badge {
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 640px) {
+    .benefits-section .benefit-card {
+        padding: 1.55rem 1.35rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .benefits-section .benefit-card {
+        padding: 1.75rem 1.5rem;
+    }
+}

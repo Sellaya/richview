@@ -1299,7 +1299,9 @@
 
         .footer-brand .logo-img {
             height: 108px;
-            filter: brightness(0) invert(1);
+            width: auto;
+            object-fit: contain;
+            
         }
 
         .footer-brand p {
@@ -1936,6 +1938,8 @@
 
             .footer-brand .logo-img {
                 height: 32px;
+            width: auto;
+            object-fit: contain;
             }
 
             .footer-main {
@@ -2245,7 +2249,9 @@
 
         .footer-brand .logo-img {
             height: 108px;
-            filter: brightness(0) invert(1);
+            width: auto;
+            object-fit: contain;
+            
         }
 
         .footer-col h4 {
@@ -2271,6 +2277,8 @@
 
             .footer-brand .logo-img {
                 height: 102px;
+            width: auto;
+            object-fit: contain;
             }
         }
 
@@ -3189,6 +3197,7 @@
     <link rel="stylesheet" href="css/hero-ctas-buttons.css">
     <link rel="stylesheet" href="css/product-cards-mortgage.css">
     <link rel="stylesheet" href="css/benefit-cards-shared.css">
+    <link rel="stylesheet" href="css/benefits-section-premium.css">
     <link rel="stylesheet" href="css/lottie-forms.css">
     <link rel="stylesheet" href="css/testimonials-google.css">
     <script src="js/testimonials-expand.js" defer></script>
@@ -3199,7 +3208,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-        <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
+        <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -3214,9 +3223,9 @@
                     </svg></span>
             </button>
         <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="images/logo.png"
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#services" id="navTriggerServices" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuServices">Services</a>
@@ -3499,7 +3508,7 @@
         <div class="sec-head reveal"
             style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
                 <h2>Submission Guidelines</h2>
-                <p>Everything you need to know to submit deals efficiently</p>
+                <p>Six topic areas—from documentation and appraisals to timelines and eligibility—to help you submit complete files faster</p>
             </div>
             <div class="guidelines-grid">
             <div class="guideline-card reveal" style="--i: 0;">
@@ -3547,6 +3556,30 @@
                     <li>Builder's portfolio: background, experience, completed projects, credentials</li>
                     <li>Detailed construction budget with line-item costs</li>
                     <li>Mortgage application and additional documentation</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 4;">
+                <span class="guideline-number">05</span>
+                <h3>Timelines &amp; communication</h3>
+                <ul>
+                    <li>Same-day feedback when the file is complete</li>
+                    <li>Submit through your usual BDM or dedicated channel contact</li>
+                    <li>One consolidated email thread per deal reduces delays</li>
+                    <li>Flag rush or financing-due dates in the subject line</li>
+                    <li>Underwriting may request clarifications—reply promptly</li>
+                    <li>Closing windows depend on appraisal and solicitor readiness</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 5;">
+                <span class="guideline-number">06</span>
+                <h3>Eligible property &amp; deal types</h3>
+                <ul>
+                    <li>Residential first and second mortgages (Ontario)</li>
+                    <li>Owner-occupied, rental, and select investment properties</li>
+                    <li>Construction and renovation (with required docs above)</li>
+                    <li>Case-by-case exceptions—ask before you decline the client</li>
+                    <li>LTV and loan size follow published product guidelines</li>
+                    <li>Commercial-only or non-Ontario deals: confirm eligibility first</li>
                 </ul>
             </div>
         </div>
@@ -3946,8 +3979,7 @@
             <div class="container">
                 <div class="footer-grid">
             <div class="footer-brand">
-                        <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital"
-                                class="logo-img"></a>
+                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">

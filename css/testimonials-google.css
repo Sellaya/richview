@@ -49,13 +49,22 @@
   letter-spacing: -0.02em;
 }
 .testimonials-section .sec-head p {
-  font-size: 0.75rem;
-  color: #6B7280;
+  font-size: clamp(0.875rem, 0.22vw + 0.82rem, 1.0625rem);
+  line-height: 1.55;
+  color: var(--muted, #6B7280);
   margin: 0;
+  max-width: none;
+  width: 100%;
+  text-wrap: pretty;
 }
 @media (min-width: 640px) {
   .testimonials-section .sec-head { margin-bottom: 1.25rem; }
   .testimonials-section .sec-head h2 { font-size: 1.25rem; }
+}
+@media (max-width: 768px) {
+  .testimonials-section .sec-head p {
+    line-height: 1.58;
+  }
 }
 
 /* ——— Slider (standard across all pages) ——— */

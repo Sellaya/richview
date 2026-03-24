@@ -1,0 +1,2 @@
+# Netlify-style redirects (ignored by Apache; use .htaccess there)
+/home.html  /  301

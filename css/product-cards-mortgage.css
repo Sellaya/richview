@@ -1,6 +1,7 @@
 /**
  * Mortgage product cards — expandable, compact by default
- * Hover (desktop) / click (mobile) to reveal full content
+ * Click the card or chevron to reveal full content (no hover-to-open).
+ * Grids: .products-grid or .expandable-card-grid (same markup / .product-card children).
  * Mobile-first: 1 col → 2 cols → 3 cols
  */
 
@@ -27,6 +28,7 @@
 .loan-products .section-header,
 .loan-products .sec-head,
 .loan-products .products-grid,
+.loan-products .expandable-card-grid,
 .loan-products .products-disclaimer {
     position: relative;
     z-index: 1;
@@ -75,7 +77,8 @@
     text-align: center;
 }
 
-.products-grid {
+.products-grid,
+.expandable-card-grid {
     max-width: var(--container, 1200px);
     margin: 0 auto;
     padding: 0 var(--gutter, 1rem);
@@ -163,16 +166,6 @@
     content: '›';
     display: block;
     transform: rotate(90deg);
-}
-
-/* Desktop: card has pointer for hover; mobile: only chevron is interactive */
-@media (hover: none) {
-    .product-card {
-        cursor: default;
-    }
-    .product-card-chevron {
-        cursor: pointer;
-    }
 }
 
 .product-card.expanded .product-card-chevron {
@@ -341,58 +334,10 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Desktop/web only hover effects */
-@media (hover: hover) and (pointer: fine) {
-    .product-card:hover .product-card-chevron {
-        transform: rotate(180deg);
-        color: var(--gold, #FF6600);
-        background: #eef2f7;
-        border-color: rgba(11, 22, 53, 0.2);
-    }
-
-    .product-card:hover .product-card-top > p,
-    .product-card:hover .product-card-bottom {
-        max-height: 2000px;
-        overflow: visible;
-        opacity: 1;
-    }
-
-    .product-card:hover .product-card-top {
-        padding-bottom: 0.7rem;
-        border-bottom: 1px solid rgba(11, 22, 53, 0.08);
-        margin-bottom: 0;
-    }
-
-    .product-card:hover .product-card-top > p {
-        margin-top: 0.5rem;
-    }
-
-    .product-card:hover .product-card-bottom {
-        padding-top: 0.85rem;
-    }
-
-    .product-card:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 8px 20px rgba(11, 22, 53, 0.1);
-        border-color: rgba(11, 22, 53, 0.16);
-    }
-
-    .product-features li:hover {
-        background: linear-gradient(180deg, rgba(255, 102, 0, 0.14) 0%, rgba(255, 102, 0, 0.07) 100%);
-        border-color: rgba(255, 102, 0, 0.28);
-        color: var(--navy, #0B1635);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 3px 8px rgba(255, 102, 0, 0.16);
-    }
-
-    .product-features li:hover::before {
-        transform: scale(1.08);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 3px 8px rgba(255, 102, 0, 0.45);
-    }
-}
-
 /* Mobile bug fixes: prevent clipping and oversized cards */
 @media (max-width: 639px) {
-    .products-grid {
+    .products-grid,
+    .expandable-card-grid {
         grid-template-columns: 1fr;
         gap: 0.75rem;
         padding: 0 max(0.75rem, var(--gutter, 1rem));
@@ -419,7 +364,6 @@
     .product-features li {
         align-items: flex-start;
     }
-    .product-card:hover,
     .product-card.expanded {
         transform: none;
         box-shadow: 0 6px 16px rgba(11, 22, 53, 0.09);
@@ -428,7 +372,8 @@
 
 /* ——— TABLET (640px+) ——— */
 @media (min-width: 640px) {
-    .products-grid {
+    .products-grid,
+    .expandable-card-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: clamp(1rem, 2.5vw, 1.5rem);
         padding: 0 var(--gutter);
@@ -454,7 +399,8 @@
 
 /* ——— TABLET (768px+) ——— */
 @media (min-width: 768px) {
-    .products-grid {
+    .products-grid,
+    .expandable-card-grid {
         gap: 1.5rem;
     }
 
@@ -465,7 +411,8 @@
 
 /* ——— DESKTOP (1024px+) ——— */
 @media (min-width: 1024px) {
-    .products-grid {
+    .products-grid,
+    .expandable-card-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }

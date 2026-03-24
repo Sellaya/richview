@@ -507,7 +507,9 @@
 
         .footer-brand .logo-img {
             height: 108px;
-            filter: brightness(0) invert(1);
+            width: auto;
+            object-fit: contain;
+            
         }
 
         .footer-brand p {
@@ -1019,6 +1021,8 @@
 
             .footer-brand .logo-img {
                 height: 102px;
+            width: auto;
+            object-fit: contain;
             }
         }
     
@@ -1185,7 +1189,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-            <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
+            <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -1200,9 +1204,9 @@
                     </svg></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="images/logo.png"
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#services" id="navTriggerServices" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuServices">Services</a>
@@ -1362,8 +1366,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital"
-                                class="logo-img"></a>
+                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
@@ -1690,7 +1693,7 @@
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
-                window.location.href = 'home.html#contact';
+                window.location.href = '/#contact';
             }
         });
     });

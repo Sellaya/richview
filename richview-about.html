@@ -517,14 +517,11 @@
         .sec-head p {
             font-size: 0.9375rem;
             color: var(--muted);
-            max-width: 420px;
+            max-width: min(40rem, 92vw);
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.65;
-        }
-
-        @media (min-width: 480px) {
-            .sec-head p {
-                white-space: nowrap;
-            }
+            text-wrap: pretty;
         }
 
         /* ——— OUR STORY ——— */
@@ -562,20 +559,26 @@
 
         .our-story .sec-head p {
             margin-bottom: 0;
+            max-width: min(34rem, 92vw);
+            line-height: 1.6;
         }
 
         .our-story .story-content {
-            max-width: 680px;
+            max-width: 42rem;
             width: 100%;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.75;
             text-align: center;
+            text-wrap: pretty;
+            hyphens: none;
+            -webkit-hyphens: none;
         }
 
         .our-story .story-content p {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             color: var(--muted);
-            margin-bottom: 1rem;
+            margin-bottom: 1.125rem;
+            letter-spacing: 0.01em;
         }
 
         .our-story .story-content p:last-child {
@@ -1165,7 +1168,9 @@
 
         .footer-brand .logo-img {
             height: 108px;
-            filter: brightness(0) invert(1);
+            width: auto;
+            object-fit: contain;
+            
         }
 
         .footer-brand p {
@@ -1714,6 +1719,10 @@
                 font-size: clamp(1.5rem, 4vw, 1.875rem);
             }
 
+            .our-story .story-content p {
+                font-size: 0.9375rem;
+            }
+
             .value-card {
                 padding: 1.5rem 1.25rem;
             }
@@ -1747,6 +1756,8 @@
 
             .footer-brand .logo-img {
                 height: 32px;
+            width: auto;
+            object-fit: contain;
             }
 
             .footer-grid {
@@ -2803,7 +2814,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-            <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
+            <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -2818,9 +2829,9 @@
                     </svg></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="home.html"><img src="images/logo.png"
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#services" id="navTriggerServices" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuServices">Services</a>
@@ -2859,18 +2870,12 @@
         <div class="container">
             <div class="sec-head reveal">
                 <h2>Our Story</h2>
-                <p>Building trust through expertise and client-focused&nbsp;solutions</p>
+                <p>Building trust through expertise and client-focused solutions.</p>
             </div>
             <div class="story-content reveal">
-                <p>Richview Capital Mortgage Investment Corporation is focused on residential mortgage opportunities,
-                    filling the gap created by tighter lending guidelines at traditional banks and trust companies.
-                    Reputation and trust are earned. Experience solidifies our business foundation time and time again.
-                </p>
-                <p>Reaching a customer's goal and receiving referrals from them are the measures of our success. We
-                    constantly aim for solutions. These ideals define us at Richview Capital.</p>
-                <p>Guided by corporate governance and strategic knowledge provided by a highly seasoned advisory board,
-                    Richview Capital MIC is led by a team of industry experts who have previously managed and guided
-                    operations of highly efficient alternative lenders in the Canadian marketplace.</p>
+                <p>Richview Capital Mortgage Investment Corporation focuses on residential mortgage opportunities, filling the gap created by tighter lending guidelines at traditional banks and trust companies. Reputation and trust are earned; experience reinforces our foundation again and again.</p>
+                <p>We measure success by helping clients reach their goals and earning their referrals. We lean toward practical solutions, and those ideals define Richview Capital.</p>
+                <p>Guided by strong corporate governance and a seasoned advisory board, Richview Capital MIC is led by experts who have previously managed and guided operations at highly efficient alternative lenders across Canada.</p>
             </div>
         </div>
     </section>
@@ -3378,8 +3383,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <a href="home.html" class="logo"><img src="images/logo.png" alt="Richview Capital"
-                                class="logo-img"></a>
+                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">

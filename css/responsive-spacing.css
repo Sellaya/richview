@@ -6,7 +6,8 @@
 /* ——— Mobile: prevent content from touching screen edges ——— */
 @media (max-width: 768px) {
     /* Products grid (borrowers): horizontal padding when stacked */
-    .loan-products .products-grid {
+    .loan-products .products-grid,
+    .loan-products .expandable-card-grid {
         padding: 0 var(--gutter, 1rem);
         max-width: 100%;
     }
@@ -35,6 +36,7 @@
 
 @media (max-width: 480px) {
     .loan-products .products-grid,
+    .loan-products .expandable-card-grid,
     .fund-section .fund-grid,
     .guidelines-section .guidelines-grid,
     .benefits-section .benefits-grid {

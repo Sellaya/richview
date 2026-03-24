@@ -22,9 +22,64 @@
   color: #FF6600 !important;
   background: rgba(255, 102, 0, 0.06) !important;
 }
+/* Dropdown links & labels — no underlines / divider lines under headings */
+#mainNav .nav-dropdown-content a,
+#mainNav .nav-dropdown-content a:link,
+#mainNav .nav-dropdown-content a:visited,
+#mainNav .nav-dropdown-content a:hover,
+#mainNav .nav-dropdown-content a:active,
+#mainNav .nav-dropdown-content a:focus,
+#mainNav .nav-dropdown-content a:focus-visible {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+#mainNav .nav-dropdown-content .nav-dropdown-label {
+  border-bottom: none !important;
+}
 /* Smooth transition for nav links */
 #mainNav .nav-links > li > a,
 #mainNav .nav-links a,
 #mainNav .nav-dropdown-content a {
   transition: color 0.2s ease, background 0.2s ease !important;
+}
+
+/* Footer — orange hovers (match nav #FF6600) */
+footer .footer-col a:hover,
+footer .footer-col a:focus-visible,
+footer .footer-col a:active {
+  color: #FF6600 !important;
+}
+footer .footer-contact-item a:hover,
+footer .footer-contact-item a:focus-visible,
+footer .footer-contact-item a:active {
+  color: #FF6600 !important;
+}
+footer .footer-legal a:hover,
+footer .footer-legal a:focus-visible,
+footer .footer-legal a:active {
+  color: #FF6600 !important;
+}
+footer .footer-social a:hover,
+footer .footer-social a:focus-visible,
+footer .footer-social a:active {
+  color: #FF6600 !important;
+  border-color: rgba(255, 102, 0, 0.55) !important;
+  background: rgba(255, 102, 0, 0.12) !important;
+}
+footer .footer-back-top:hover,
+footer .footer-back-top:focus-visible,
+footer .footer-back-top:active {
+  color: #ffffff !important;
+  background: #FF6600 !important;
+  border-color: #FF6600 !important;
+  box-shadow: 0 4px 14px rgba(255, 102, 0, 0.35) !important;
+}
+footer .footer-brand .logo:hover,
+footer .footer-brand .logo:focus-visible {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5)) !important;
+}
+footer .footer-brand .logo:focus-visible {
+  outline: 2px solid #FF6600 !important;
+  outline-offset: 4px !important;
 }
