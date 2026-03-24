@@ -838,8 +838,11 @@
             opacity: 0;
             animation: fadeUp 0.8s var(--ease-out) 0.4s forwards;
             border: 1px solid var(--border);
-            width: 100%;
+            /* Hug right edge of hero grid (same content width as nav); stays below fixed nav via .hero padding-top */
+            justify-self: end;
+            width: min(100%, clamp(300px, 92vw, 420px));
             max-width: min(100%, clamp(300px, 92vw, 420px));
+            box-sizing: border-box;
         }
         .hero-form-wrap h3 { font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
         .hero-form-wrap > p { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1rem; }
@@ -1403,6 +1406,7 @@
 
         /* ——— PARTNERS SECTION ——— */
         .partners-section {
+            --partner-slot: 148px;
             padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(0.75rem, 2vw, 1.25rem);
             background: #f8f9fb;
             border-top: 1px solid rgba(11,22,53,0.06);
@@ -1410,7 +1414,7 @@
             overflow: hidden;
         }
         .partners-head {
-            text-align: center;
+            text-align: left;
             margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
         }
         .partners-head h2 {
@@ -1427,7 +1431,7 @@
         }
         .partners-categories {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             gap: 0.4rem 1.25rem;
             margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -1535,20 +1539,24 @@
             animation-play-state: paused;
         }
         @keyframes partnersMarquee {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(0); }
+            /* Three identical sets in markup → move exactly one set width */
+            100% { transform: translateX(-33.3333333333%); }
         }
         .partner-logo-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 1.25rem;
+            padding: 0.5rem 0.65rem;
             background: transparent;
             border: none;
             box-shadow: none;
             border-radius: 0;
-            flex-shrink: 0;
-            min-width: 130px;
+            flex: 0 0 var(--partner-slot);
+            width: var(--partner-slot);
+            min-width: var(--partner-slot);
+            max-width: var(--partner-slot);
+            box-sizing: border-box;
             height: 64px;
             transition: transform 0.22s var(--ease-out), opacity 0.22s;
             cursor: default;
@@ -1559,7 +1567,7 @@
         .partner-logo-card img {
             height: 44px;
             width: auto;
-            max-width: 115px;
+            max-width: 100%;
             object-fit: contain;
             mix-blend-mode: multiply;
             filter: grayscale(0.15) brightness(0.97);
@@ -3240,7 +3248,12 @@
             .hero-slides-track { padding-bottom: 0.2rem; }
             .hero-slide h1 { margin-bottom: 0.4rem; }
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
-            .hero-form-wrap { max-width: min(480px, 100%); margin: 0 auto; }
+            .hero-form-wrap {
+                justify-self: center;
+                width: 100%;
+                max-width: min(480px, 100%);
+                margin: 0 auto;
+            }
             .hero-trust { margin-top: var(--space-lg); }
             .hero-trust-inner { text-align: center; align-items: center; }
             .hero-trust-experience {
@@ -3293,7 +3306,8 @@
             .services-header p,
             .blog-section .sec-head p { line-height: 1.58; }
             .partners-categories { gap: 0.35rem 1rem; }
-            .partner-logo-card { min-width: 110px; height: 56px; padding: 0.4rem 1rem; }
+            .partners-section { --partner-slot: 118px; }
+            .partner-logo-card { height: 56px; padding: 0.4rem 0.5rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
             .blog-card-image { aspect-ratio: 16/8.8; }
             .blog-card h3 { font-size: 0.95rem; }
@@ -3409,6 +3423,10 @@
                 transform: none;
                 box-shadow: none;
                 color: var(--muted);
+            }
+            .partners-track {
+                animation: none;
+                transform: translateX(0);
             }
         }
     </style>
@@ -3816,6 +3834,13 @@
                 <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
                 <!-- Set 2 — duplicate for seamless infinite loop -->
+                <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
+                <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="images/partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
+                <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
+                <!-- Set 3 — same sequence (wider track, no end gap on large screens) -->
                 <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
