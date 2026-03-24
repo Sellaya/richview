@@ -158,15 +158,17 @@
         }
 
         /* ——— NAVIGATION (premium floating, Framer/Linear/Vercel-inspired) ——— */
+        /* Match hero: same width as .hero-grid — min(container, viewport minus hero gutters), centered */
         nav {
             position: fixed;
             top: 1.5rem;
-            left: clamp(0.4rem, 1.2vw, 1rem);
-            right: clamp(0.4rem, 1.2vw, 1rem);
-            width: auto;
-            max-width: none;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            width: min(var(--container), calc(100vw - 2 * var(--gutter)));
+            max-width: var(--container);
+            box-sizing: border-box;
             background: #ffffff;
-            
             border-radius: clamp(14px, 2.4vw, 999px);
             z-index: 1000;
             border: 1px solid rgba(0, 0, 0, 0.04);
@@ -179,20 +181,22 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 48px -12px rgba(0, 0, 0, 0.1);
             top: 1rem;
             border-color: rgba(0, 0, 0, 0.06);
+            transform: translateX(-50%);
         }
         nav.nav-hidden {
-            transform: translateY(calc(-100% - 2rem));
+            transform: translate(-50%, calc(-100% - 2rem));
             pointer-events: none;
         }
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.42rem clamp(0.9rem, 2vw, 2.2rem);
-            min-height: 68px;
+            padding: 0.42rem var(--gutter);
+            min-height: 58px;
             position: relative;
             overflow: visible;
-            gap: clamp(0.8rem, 1.8vw, 1.5rem);
+            gap: clamp(0.45rem, 1.2vw, 1rem);
+            box-sizing: border-box;
         }
         .logo {
             display: flex;
@@ -205,14 +209,14 @@
         }
         .logo:hover { opacity: 0.8; }
         .logo-img {
-            height: 68px;
+            height: clamp(44px, 3.8vw, 56px);
             width: auto;
             object-fit: contain;
             display: block;
         }
         .nav-links {
             display: flex;
-            gap: 0.25rem;
+            gap: 0.05rem;
             list-style: none;
             align-items: center;
             position: absolute;
@@ -221,15 +225,19 @@
             z-index: 1;
             margin: 0;
             padding: 0;
+            max-width: calc(100% - 14rem);
+            min-width: 0;
+            justify-content: center;
+            flex-wrap: nowrap;
         }
         .nav-links > li > a {
             text-decoration: none;
             color: #0f172a;
             font-weight: var(--text-nav);
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             letter-spacing: var(--tracking-nav);
             transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out);
-            padding: 0.5rem 0.875rem;
+            padding: 0.45rem 0.65rem;
             border-radius: 12px;
             position: relative;
         }
@@ -337,11 +345,11 @@
             text-align: center;
             background: var(--navy);
             color: var(--white);
-            padding: 0.7rem 1.8rem;
+            padding: 0.55rem 1.25rem;
             border-radius: 999px;
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             letter-spacing: var(--btn-letter-spacing);
             text-decoration: none;
             border: none;
@@ -2936,14 +2944,18 @@
             .hero { padding-left: var(--gutter); padding-right: var(--gutter); }
             .hero-grid { padding-left: 0; padding-right: 0; }
             nav {
-                left: 4%;
-                right: 4%;
-                width: auto;
-                transform: none;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                width: min(var(--container), calc(100vw - 2 * var(--gutter)));
+                max-width: var(--container);
                 border-radius: 999px;
             }
+            nav.scrolled {
+                transform: translateX(-50%);
+            }
             nav.nav-hidden {
-                transform: translateY(calc(-100% - 2rem));
+                transform: translate(-50%, calc(-100% - 2rem));
             }
             /* ——— Mobile menu: full-screen overlay ——— */
             .nav-links {
@@ -4274,9 +4286,7 @@
                         <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
-                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                            <a href="mailto:info@richviewcapitalmic.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                            <a href="https://www.instagram.com/richviewcapitalmic" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
                         </div>
                     </div>
                     <div class="footer-col">

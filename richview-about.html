@@ -551,19 +551,21 @@
         .our-story .container {
             position: relative;
             z-index: 1;
-            text-align: center;
+            text-align: left;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .our-story .sec-head {
             margin-bottom: var(--space-md);
-            text-align: center;
+            text-align: left;
         }
 
         .our-story .sec-head p {
             margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
             max-width: 100%;
             width: 100%;
             min-width: 0;
@@ -573,9 +575,9 @@
         .our-story .story-content {
             max-width: 42rem;
             width: 100%;
-            margin: 0 auto;
+            margin: 0;
             line-height: 1.75;
-            text-align: center;
+            text-align: left;
             text-wrap: pretty;
             hyphens: none;
             -webkit-hyphens: none;
@@ -710,18 +712,18 @@
         }
 
         .team-section .sec-head {
-            text-align: center;
+            text-align: left;
             margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
         }
 
         .team-section .sec-head p {
-            margin: 0 auto;
+            margin: 0;
         }
 
         /* Mission quote */
         .team-mission {
             max-width: 680px;
-            margin: 0 auto clamp(2rem, 4vw, 3rem);
+            margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
             font-size: clamp(0.9rem, 1.4vw, 1rem);
             color: var(--muted);
             line-height: 1.75;
@@ -730,7 +732,7 @@
             border-left: 3px solid var(--gold);
             background: rgba(255, 102, 0, 0.035);
             border-radius: 0 12px 12px 0;
-            text-align: center;
+            text-align: left;
         }
 
         /* Leadership 2-col grid */
@@ -3397,26 +3399,12 @@
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
-                            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                    <rect x="2" y="9" width="4" height="12" />
-                                    <circle cx="4" cy="4" r="2" />
-                                </svg></a>
-                            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                            <a href="https://www.instagram.com/richviewcapitalmic" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
                                     <rect x="2" y="2" width="20" height="20" rx="5" />
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                                </svg></a>
-                            <a href="mailto:info@richviewcapitalmic.com" aria-label="Email"><svg viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
                                 </svg></a>
                         </div>
                     </div>
