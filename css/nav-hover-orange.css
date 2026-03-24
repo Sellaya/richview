@@ -43,6 +43,49 @@
   transition: color 0.2s ease, background 0.2s ease !important;
 }
 
+/* Primary nav — all caps, slightly smaller labels for a tighter bar */
+#mainNav .nav-links > li > a,
+#mainNav .nav-dropdown > a {
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+#mainNav .cta-nav {
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+}
+#mainNav .nav-dropdown-content a {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+/* Mobile / fullscreen menu — override inline 600 !important blocks on some pages */
+@media (max-width: 1024px) {
+  #mainNav.menu-open .nav-links > li > a,
+  #mainNav.menu-open .nav-dropdown > a {
+    font-weight: 400 !important;
+  }
+  #mainNav.menu-open .nav-dropdown-content a {
+    font-weight: 400 !important;
+  }
+  #mainNav.menu-open .nav-dropdown-content .nav-dropdown-label {
+    font-weight: 400 !important;
+  }
+  #mainNav.menu-open .cta-nav {
+    font-weight: 400 !important;
+  }
+}
+@media (max-width: 1024px) {
+  #mainNav.menu-open .nav-links > li > a {
+    font-size: clamp(0.875rem, 2.5vw, 1rem) !important;
+    letter-spacing: 0.06em;
+  }
+}
+
 /* Footer — orange hovers (match nav #FF6600) */
 footer .footer-col a:hover,
 footer .footer-col a:focus-visible,

@@ -1393,7 +1393,8 @@
         }
         .trust-item strong { color: var(--navy); font-weight: 600; margin-right: 0.35em; }
         .trust-item-license strong { color: var(--gold); }
-        .trust-item-license { color: var(--navy); padding: 0.15rem 0.45rem; background: rgba(255, 102, 0, 0.08); border-radius: 4px; font-size: 0.7rem; }
+        /* Explicit gap between “Licensed” and MIC# (flex can swallow a lone nbsp) */
+        .trust-item-license { color: var(--navy); padding: 0.15rem 0.45rem; background: rgba(255, 102, 0, 0.08); border-radius: 4px; font-size: 0.7rem; gap: 0.35em; }
         .trust-divider {
             width: 3px;
             height: 3px;
@@ -3717,7 +3718,7 @@
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>Ontario</strong> GTA & Province-Wide</span>
             <span class="trust-divider"></span>
-            <span class="trust-item trust-item-license">Licensed <strong>MIC #13171</strong></span>
+            <span class="trust-item trust-item-license"><span>Licensed</span><strong>MIC #13171</strong></span>
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>ONMICA</strong> Member</span>
             <span class="trust-divider"></span>
@@ -3733,7 +3734,7 @@
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>Ontario</strong> GTA & Province-Wide</span>
             <span class="trust-divider"></span>
-            <span class="trust-item trust-item-license">Licensed <strong>MIC #13171</strong></span>
+            <span class="trust-item trust-item-license"><span>Licensed</span><strong>MIC #13171</strong></span>
             <span class="trust-divider"></span>
             <span class="trust-item"><strong>ONMICA</strong> Member</span>
             <span class="trust-divider"></span>

@@ -137,8 +137,8 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: clamp(0.6rem, 2vw, 0.85rem) 0 !important;
-        font-size: clamp(1rem, 2.5vw, 1.125rem) !important;
-        font-weight: 600 !important;
+        font-size: clamp(0.875rem, 2.5vw, 1rem) !important;
+        font-weight: 400 !important;
         color: var(--navy, #0b1635) !important;
         min-height: 48px !important;
         -webkit-tap-highlight-color: transparent !important;
@@ -201,7 +201,7 @@
     }
     nav.menu-open .nav-dropdown-content .nav-dropdown-label {
         font-size: 0.625rem !important;
-        font-weight: 600 !important;
+        font-weight: 400 !important;
         letter-spacing: 0.08em !important;
         text-transform: uppercase !important;
         color: var(--muted, #6B7280) !important;
@@ -237,7 +237,7 @@
         align-items: center !important;
         gap: 0 !important;
         padding: clamp(0.6rem, 1.5vw, 0.75rem) 0 !important;
-        font-size: clamp(0.9375rem, 2vw, 1rem) !important;
+        font-size: clamp(0.8125rem, 2vw, 0.9375rem) !important;
         font-weight: 500 !important;
         color: var(--muted, #6B7280) !important;
         border: none !important;
@@ -280,7 +280,7 @@
         border-radius: 14px !important;
         font-weight: 700 !important;
         min-height: 52px !important;
-        font-size: 1rem !important;
+        font-size: 0.9375rem !important;
         -webkit-tap-highlight-color: transparent !important;
         text-decoration: none !important;
     }
