@@ -82,7 +82,7 @@
 
 .page-hero .hero-stat-disclaimer {
     font-size: clamp(0.6875rem, 2vw, 0.75rem);
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     text-align: center;
     width: 100%;

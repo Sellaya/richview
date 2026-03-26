@@ -1,0 +1,343 @@
+/**
+ * Professional Animations & Micro-interactions
+ * Subtle, performant animations for premium fintech experience
+ */
+
+/* Fade in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Bounce animation for buttons */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Rotate animation for loading spinners */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Scroll reveal - staggered fade in */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(80ms * var(--i, 0));
+}
+
+/* Stagger children animation */
+.stagger-children > * {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(80ms * var(--i, 0));
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Button ripple effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Smooth page transitions */
+.page-transition {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--color-gray-200) 0%,
+        var(--color-gray-100) 50%,
+        var(--color-gray-200) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+
+/* Hero stat bar entrance animation */
+.hero-stat-item {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(100ms * var(--i, 0) + 200ms);
+}
+
+/* Product card entrance */
+.product-card {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(100ms * var(--i, 0));
+}
+
+/* FAQ item entrance */
+.faq-item {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(60ms * var(--i, 0));
+}
+
+/* Testimonial card entrance */
+.testimonial-card {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(120ms * var(--i, 0));
+}
+
+/* CTA button attention animation */
+.cta-attention {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Navigation dropdown slide */
+.nav-dropdown-content {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modal fade in */
+.modal-backdrop {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-content {
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Form input focus animation */
+input:focus,
+textarea:focus,
+select:focus {
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Number counter animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter {
+    animation: countUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Link underline animation */
+.link-animate {
+    position: relative;
+    text-decoration: none;
+}
+
+.link-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold, #FF6600);
+    transition: width var(--transition-base);
+}
+
+.link-animate:hover::after {
+    width: 100%;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--color-gold, #FF6600);
+    z-index: var(--z-notification, 1080);
+    transition: width 0.1s linear;
+}
+
+/* Toast notification slide in */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast {
+    animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section entrance animation */
+section {
+    animation: fadeIn 0.6s ease-in-out backwards;
+    animation-delay: calc(100ms * var(--section-index, 0));
+}
+
+/* Image lazy load fade in */
+img.lazy-loaded {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Checkbox check animation */
+@keyframes checkmark {
+    0% {
+        stroke-dashoffset: 50;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+input[type="checkbox"]:checked + label::after {
+    animation: checkmark 0.3s ease-in-out;
+}
+
+/* Accordion expand animation */
+.accordion-content {
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Parallax scroll effect for backgrounds */
+.parallax {
+    transform: translateY(calc(var(--scroll-position, 0) * 0.5px));
+    transition: transform 0.1s linear;
+}
+
+/* Smooth color transitions */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: var(--transition-base);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable specific transitions */
+a,
+button,
+input,
+select,
+textarea {
+    transition-property: none;
+}
+
+/* Re-enable for specific elements */
+.btn-pri,
+.btn-primary,
+.btn-sec,
+.btn-secondary {
+    transition: var(--transition-btn);
+}

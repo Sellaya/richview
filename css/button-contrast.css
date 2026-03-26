@@ -1,49 +1,138 @@
-/* Fix button text visibility: ensure white text on navy/gold/dark buttons site-wide */
+/**
+ * Professional Button System - Mobile-first, accessible touch targets
+ * Ensures proper contrast, consistent sizing, and smooth interactions
+ */
+
+/* Base button styles - all buttons */
+.btn-pri,
+.btn-primary,
+.btn-sec,
+.btn-secondary,
+.cta-nav,
+a.btn-pri,
+a.btn-primary,
+a.btn-sec,
+a.btn-secondary,
+li.mobile-cta-li > a,
 .cta-box button[type="submit"],
 .hero-form-wrap button[type="submit"],
-.btn-pri,
-a.btn-pri,
-.btn-primary,
-.cta-nav,
-li.mobile-cta-li > a,
 .hero-ctas .btn-pri,
 .hero-ctas .btn-sec,
 .hero-ctas .btn-primary,
 .hero-ctas .btn-secondary {
-    color: #ffffff !important;
+    min-height: var(--btn-height-md, 48px);
+    min-width: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold, 600);
+    line-height: var(--line-height-tight);
+    border-radius: var(--radius-btn);
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition-btn);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Primary hero button: default is white bg + navy text (override only on dark) */
+/* Primary button - gold */
+.btn-pri,
+.btn-primary,
+a.btn-pri,
+a.btn-primary,
+.cta-nav,
+li.mobile-cta-li > a,
+.cta-box button[type="submit"],
+.hero-form-wrap button[type="submit"] {
+    background: var(--color-gold, #FF6600);
+    color: var(--color-white, #ffffff);
+    border-color: var(--color-gold, #FF6600);
+    box-shadow: var(--shadow-button);
+}
+
+.btn-pri:hover,
+.btn-primary:hover,
+a.btn-pri:hover,
+a.btn-primary:hover,
+.cta-nav:hover,
+li.mobile-cta-li > a:hover,
+.cta-box button[type="submit"]:hover,
+.hero-form-wrap button[type="submit"]:hover {
+    background: #e55a00;
+    border-color: #e55a00;
+    color: var(--color-white, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.btn-pri:active,
+.btn-primary:active,
+a.btn-pri:active,
+a.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary button - outline */
+.btn-sec,
+.btn-secondary,
+a.btn-sec,
+a.btn-secondary {
+    background: transparent;
+    color: var(--color-navy, #0B1635);
+    border-color: var(--color-gray-300, #d1d5db);
+}
+
+.btn-sec:hover,
+.btn-secondary:hover,
+a.btn-sec:hover,
+a.btn-secondary:hover {
+    background: var(--color-gray-50, #fafbfc);
+    border-color: var(--color-gold, #FF6600);
+    color: var(--color-gold, #FF6600);
+}
+
+/* Hero context overrides - on dark backgrounds */
+.hero .btn-primary,
+.hero .btn-pri,
 .page-hero .hero-ctas .btn-primary,
 .page-hero .hero-ctas .btn-pri {
-    color: var(--navy, #0B1635) !important;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-navy, #0B1635);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover/active: white text on gold or dark backgrounds */
-.cta-box button[type="submit"]:hover,
-.cta-box button[type="submit"]:active,
-.hero-form-wrap button[type="submit"]:hover,
-.btn-pri:hover,
-a.btn-pri:hover,
-.btn-primary:hover,
-.hero-ctas .btn-primary:hover,
-.hero-ctas .btn-pri:hover,
-li.mobile-cta-li > a:hover,
-li.mobile-cta-li > a:active {
-    color: #ffffff !important;
+.hero .btn-primary:hover,
+.hero .btn-pri:hover,
+.page-hero .hero-ctas .btn-primary:hover,
+.page-hero .hero-ctas .btn-pri:hover {
+    background: var(--color-gold, #FF6600);
+    color: var(--color-white, #ffffff);
+    border-color: var(--color-gold, #FF6600);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.3);
 }
 
-/* Hero secondary/outline: white text (transparent on dark bg) */
-.hero .btn-pri,
 .hero .btn-sec,
+.hero .btn-secondary,
 .page-hero .hero-ctas .btn-secondary,
 .page-hero .hero-ctas .btn-sec {
-    color: #ffffff !important;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.5);
 }
+
 .hero .btn-sec:hover,
-.hero .btn-sec:active,
+.hero .btn-secondary:hover,
 .page-hero .hero-ctas .btn-secondary:hover,
-.page-hero .hero-ctas .btn-secondary:active,
 .page-hero .hero-ctas .btn-sec:hover {
-    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-white, #ffffff);
+    border-color: rgba(255, 255, 255, 0.7);
 }

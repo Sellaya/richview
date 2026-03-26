@@ -1,0 +1,134 @@
+/**
+ * Professional Focus States - Keyboard Navigation & Accessibility
+ * Provides clear, consistent focus indicators across all interactive elements
+ */
+
+/* Universal focus-visible for all interactive elements */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--color-gold, #FF6600));
+    outline-offset: var(--focus-ring-offset, 3px);
+    transition: outline-offset var(--transition-fast, 150ms);
+}
+
+/* Buttons - enhanced focus with ring */
+.btn-pri:focus-visible,
+.btn-primary:focus-visible,
+.btn-sec:focus-visible,
+.btn-secondary:focus-visible,
+.cta-nav:focus-visible,
+button:focus-visible,
+a.btn-pri:focus-visible,
+a.btn-primary:focus-visible,
+a.btn-sec:focus-visible,
+a.btn-secondary:focus-visible {
+    box-shadow: var(--focus-ring, 0 0 0 3px var(--color-white), 0 0 0 5px var(--color-gold));
+    outline: none;
+}
+
+/* Navigation links */
+#mainNav a:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Form inputs and textareas */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 0;
+    border-color: var(--color-gold, #FF6600);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+}
+
+/* Product cards */
+.product-card:focus-within,
+.benefit-card:focus-within {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+}
+
+/* FAQ items */
+.faq-item button:focus-visible,
+.faq-q:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: -2px;
+}
+
+/* Testimonial cards */
+.testimonial-card:focus-within {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+}
+
+/* Calendar and date picker elements */
+.cta-calendar-day:focus-visible,
+.cta-time-slot:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: -2px;
+    z-index: 10;
+}
+
+/* Links in content */
+a:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Skip links for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-navy, #0B1635);
+    color: var(--color-white, #ffffff);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 9999;
+    border-radius: 0 0 var(--radius-md) 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+}
+
+/* Mobile menu toggle */
+.nav-toggle:focus-visible,
+.mobile-menu-toggle:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 3px;
+}
+
+/* Footer links */
+footer a:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Social media icons */
+.footer-social a:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+/* Checkbox and radio focus */
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+    outline-offset: 2px;
+}
+
+/* Ensure focus is visible even on hover */
+*:hover:focus-visible {
+    outline: 2px solid var(--color-gold, #FF6600);
+}
