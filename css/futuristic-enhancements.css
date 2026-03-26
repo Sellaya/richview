@@ -1,0 +1,491 @@
+/**
+ * Futuristic Design Enhancements
+ * Advanced styling, glassmorphism, subtle animations
+ * Modern fintech aesthetic with premium visual polish
+ */
+
+/* Advanced Card Styling */
+.card-futuristic {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 32px rgba(11, 22, 53, 0.08),
+        0 2px 8px rgba(11, 22, 53, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-futuristic:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 60px rgba(11, 22, 53, 0.12),
+        0 4px 16px rgba(11, 22, 53, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 102, 0, 0.1);
+}
+
+/* Glassmorphism Effects */
+.glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+    background: rgba(11, 22, 53, 0.8);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-gold {
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 102, 0, 0.05));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+/* Premium Gradient Backgrounds */
+.bg-gradient-navy {
+    background: linear-gradient(135deg, #0B1635 0%, #1a2a5e 50%, #0B1635 100%);
+}
+
+.bg-gradient-navy-radial {
+    background: radial-gradient(ellipse at top, #1a2a5e 0%, #0B1635 50%);
+}
+
+.bg-gradient-gold {
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+}
+
+.bg-gradient-premium {
+    background: linear-gradient(135deg, #0B1635 0%, #1a2a5e 50%, #FF6600 100%);
+}
+
+.bg-gradient-mesh {
+    background:
+        radial-gradient(at 0% 0%, rgba(255, 102, 0, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(11, 22, 53, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(255, 102, 0, 0.05) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(11, 22, 53, 0.05) 0px, transparent 50%);
+}
+
+/* Advanced Shadow System */
+.shadow-futuristic {
+    box-shadow:
+        0 20px 60px -12px rgba(11, 22, 53, 0.12),
+        0 8px 24px -8px rgba(11, 22, 53, 0.08),
+        0 0 0 1px rgba(11, 22, 53, 0.04);
+}
+
+.shadow-glow-gold {
+    box-shadow:
+        0 8px 32px rgba(255, 102, 0, 0.2),
+        0 0 0 1px rgba(255, 102, 0, 0.1);
+}
+
+.shadow-glow-navy {
+    box-shadow:
+        0 8px 32px rgba(11, 22, 53, 0.2),
+        0 0 0 1px rgba(11, 22, 53, 0.1);
+}
+
+.shadow-elevated {
+    box-shadow:
+        0 30px 90px -20px rgba(11, 22, 53, 0.15),
+        0 10px 40px -10px rgba(11, 22, 53, 0.1),
+        0 0 0 1px rgba(11, 22, 53, 0.04);
+}
+
+/* Border Gradients */
+.border-gradient-gold {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.border-gradient-gold::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #FF6600, #ff8533);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.border-gradient-premium {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.border-gradient-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #0B1635, #FF6600);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Animated Gradient Backgrounds */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.bg-animated-gradient {
+    background: linear-gradient(270deg, #0B1635, #1a2a5e, #0B1635);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+/* Subtle Pulse Animation */
+@keyframes subtle-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.02);
+    }
+}
+
+.pulse-subtle {
+    animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Shine Effect on Hover */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+
+.shine-effect:hover::after {
+    left: 100%;
+}
+
+/* Micro-Interactions */
+.interactive-scale {
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-scale:hover {
+    transform: scale(1.02);
+}
+
+.interactive-scale:active {
+    transform: scale(0.98);
+}
+
+.interactive-lift {
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-lift:hover {
+    transform: translateY(-2px);
+}
+
+.interactive-lift:active {
+    transform: translateY(0);
+}
+
+/* Advanced Button Styling */
+.btn-futuristic {
+    position: relative;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.btn-futuristic::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.btn-futuristic:hover::before {
+    opacity: 1;
+}
+
+.btn-primary-futuristic {
+    background: linear-gradient(135deg, #0B1635 0%, #1a2a5e 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(11, 22, 53, 0.2);
+}
+
+.btn-primary-futuristic:hover {
+    box-shadow: 0 8px 32px rgba(11, 22, 53, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-gold-futuristic {
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(255, 102, 0, 0.25);
+}
+
+.btn-gold-futuristic:hover {
+    box-shadow: 0 8px 32px rgba(255, 102, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Premium Input Styling */
+.input-futuristic {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 12px;
+    border: 2px solid rgba(11, 22, 53, 0.1);
+    background: white;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-primary);
+}
+
+.input-futuristic:focus {
+    outline: none;
+    border-color: rgba(255, 102, 0, 0.5);
+    box-shadow:
+        0 0 0 4px rgba(255, 102, 0, 0.1),
+        0 4px 16px rgba(11, 22, 53, 0.08);
+}
+
+.input-futuristic::placeholder {
+    color: rgba(107, 114, 128, 0.7);
+}
+
+/* Divider Styles */
+.divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(11, 22, 53, 0.1), transparent);
+    margin: 3rem 0;
+}
+
+.divider-gold {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FF6600, transparent);
+    margin: 3rem 0;
+}
+
+/* Badge Styling */
+.badge-futuristic {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    border-radius: 999px;
+    background: rgba(255, 102, 0, 0.1);
+    color: #FF6600;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.badge-navy {
+    background: rgba(11, 22, 53, 0.1);
+    color: #0B1635;
+    border-color: rgba(11, 22, 53, 0.2);
+}
+
+/* Icon Container */
+.icon-container-futuristic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 102, 0, 0.05));
+    border: 1px solid rgba(255, 102, 0, 0.2);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-container-futuristic:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.2);
+}
+
+/* Stat Counter Animation */
+@keyframes count-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-animated {
+    animation: count-up 0.6s ease-out;
+}
+
+/* Responsive Grid Enhancements */
+.grid-futuristic {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (min-width: 1024px) {
+    .grid-futuristic {
+        gap: 3rem;
+    }
+}
+
+/* Section Spacing */
+.section-futuristic {
+    padding: 5rem 0;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .section-futuristic {
+        padding: 7rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-futuristic {
+        padding: 9rem 0;
+    }
+}
+
+/* Container Enhancements */
+.container-futuristic {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container-futuristic {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-futuristic {
+        padding: 0 3rem;
+    }
+}
+
+/* Scroll Reveal Animation */
+@keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-on-scroll {
+    animation: reveal-up 0.8s ease-out;
+}
+
+/* Backdrop Blur Utilities */
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+    backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .float-animation,
+    .pulse-subtle,
+    .bg-animated-gradient {
+        animation: none !important;
+    }
+}
