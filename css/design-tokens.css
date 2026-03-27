@@ -78,7 +78,7 @@
 
     /* Component Specific Radius */
     --radius-card: var(--radius-2xl);
-    --radius-btn: var(--radius-xl);
+    --radius-btn: var(--radius-3xl);
     --radius-input: var(--radius-md);
 
     /* Shadow System */
