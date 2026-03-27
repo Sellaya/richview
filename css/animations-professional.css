@@ -111,11 +111,12 @@
 
 /* Card hover effects */
 .card-hover {
-    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .card-hover:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Button ripple effect */
