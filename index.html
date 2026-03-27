@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <link rel="stylesheet" href="css/typography-futuristic.css">
     <link rel="stylesheet" href="css/futuristic-enhancements.css">
     <style>
@@ -5462,6 +5463,99 @@
                     var pasted = (e.clipboardData || window.clipboardData).getData('text');
                     this.value = pasted.replace(/\D/g, '').slice(0, 10);
                     fmtCA(this);
+                });
+            });
+        })();
+    </script>
+
+    <script src="js/lottie-utils.js"></script>
+    <script>
+        (function initLottieAnimations() {
+            if (typeof lottie === 'undefined' || !lottie) {
+                console.warn('Lottie library not loaded, using CSS fallbacks');
+                return;
+            }
+
+            var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                console.log('User prefers reduced motion, skipping Lottie animations');
+                return;
+            }
+
+            var heroBgGrid = document.querySelector('.hero-bg-grid');
+            if (heroBgGrid && window.IntersectionObserver) {
+                var heroAnim = null;
+                var heroObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            if (!heroAnim) {
+                                var lottieContainer = document.createElement('div');
+                                lottieContainer.className = 'hero-lottie-container';
+                                lottieContainer.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.06;pointer-events:none;z-index:0;';
+                                heroBgGrid.appendChild(lottieContainer);
+
+                                heroAnim = lottie.loadAnimation({
+                                    container: lottieContainer,
+                                    renderer: 'svg',
+                                    loop: true,
+                                    autoplay: true,
+                                    path: 'lottie/hero/hero-bg-grid.json'
+                                });
+
+                                heroAnim.addEventListener('data_failed', function() {
+                                    console.warn('Failed to load hero background animation');
+                                    if (lottieContainer && lottieContainer.parentNode) {
+                                        lottieContainer.parentNode.removeChild(lottieContainer);
+                                    }
+                                });
+                            } else if (heroAnim.isPaused) {
+                                heroAnim.play();
+                            }
+                        } else {
+                            if (heroAnim && !heroAnim.isPaused) {
+                                heroAnim.pause();
+                            }
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                heroObserver.observe(heroBgGrid);
+            }
+
+            var successContainers = document.querySelectorAll('.cta-form-success');
+            successContainers.forEach(function(container) {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                            var display = window.getComputedStyle(container).display;
+                            if (display !== 'none') {
+                                var lottieWrap = container.querySelector('.lottie-success-icon');
+                                if (!lottieWrap) {
+                                    lottieWrap = document.createElement('div');
+                                    lottieWrap.className = 'lottie-success-icon';
+                                    lottieWrap.style.cssText = 'width:64px;height:64px;margin:0 auto 1rem;';
+                                    var h3 = container.querySelector('h3');
+                                    if (h3 && h3.parentNode) {
+                                        h3.parentNode.insertBefore(lottieWrap, h3);
+                                    } else {
+                                        container.insertBefore(lottieWrap, container.firstChild);
+                                    }
+
+                                    if (window.RichviewLottie && window.RichviewLottie.showSuccessCheck) {
+                                        window.RichviewLottie.showSuccessCheck(lottieWrap, {
+                                            size: 64,
+                                            useLottie: true
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(container, {
+                    attributes: true,
+                    attributeFilter: ['style']
                 });
             });
         })();
