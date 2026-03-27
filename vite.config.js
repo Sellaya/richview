@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite';
+import { copyFileSync } from 'fs';
+import { resolve } from 'path';
 
 export default defineConfig({
   server: {
@@ -20,5 +22,19 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  plugins: [
+    {
+      name: 'copy-static-files',
+      closeBundle() {
+        try {
+          copyFileSync(resolve(__dirname, 'sitemap.xml'), resolve(__dirname, 'dist/sitemap.xml'));
+          copyFileSync(resolve(__dirname, 'robots.txt'), resolve(__dirname, 'dist/robots.txt'));
+          console.log('Copied sitemap.xml and robots.txt to dist/');
+        } catch (err) {
+          console.warn('Could not copy static files:', err.message);
+        }
+      }
+    }
+  ]
 });
