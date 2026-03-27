@@ -240,38 +240,51 @@
             border: 1px solid var(--border);
             border-radius: var(--card-radius);
             box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-            padding: 1.25rem 1.1rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
             max-width: 720px;
         }
         .ty-details-label {
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
-            text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+            font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: clamp(0.65rem, 1.8vw, 0.85rem);
         }
         .ty-details-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 0.75rem 1rem;
+            gap: clamp(0.65rem, 1.8vw, 0.85rem);
         }
         .ty-detail-item {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
-            padding: 0.65rem 0.75rem;
-            border-radius: 12px;
+            gap: clamp(0.25rem, 0.8vw, 0.35rem);
+            padding: clamp(0.65rem, 2vw, 0.85rem) clamp(0.75rem, 2.5vw, 1rem);
+            border-radius: clamp(10px, 2.5vw, 12px);
             background: rgba(11,22,53,0.03);
+            transition: background 0.2s ease;
+        }
+        .ty-detail-item:hover {
+            background: rgba(11,22,53,0.05);
         }
         .ty-detail-k {
-            font-size: 0.6875rem;
+            font-size: clamp(0.625rem, 1.4vw, 0.6875rem);
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: rgba(11,22,53,0.6);
         }
         .ty-detail-v {
-            font-size: 0.95rem;
+            font-size: clamp(0.875rem, 2vw, 0.95rem);
             color: var(--navy);
-            line-height: 1.4;
+            line-height: 1.5;
             word-break: break-word;
+            font-weight: 500;
+        }
+        .ty-detail-v:empty::before {
+            content: '—';
+            color: rgba(11,22,53,0.3);
         }
 
         /* ——— CTA BUTTONS ——— */
@@ -411,6 +424,15 @@
         }
 
         /* ——— RESPONSIVE — THANK YOU PAGE ——— */
+        @media (min-width: 640px) {
+            .ty-details-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: clamp(0.75rem, 2vw, 1rem);
+            }
+            .ty-detail-item:nth-last-child(1):nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+        }
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .footer-brand { grid-column: 1 / -1; }
@@ -615,37 +637,83 @@
 
     <script>
         (function() {
+            console.log('[Thank You Page] Initializing...');
+
             var params = new URLSearchParams(window.location.search);
             var nameFromQuery = params.get('name');
 
             var data = null;
             try {
                 var raw = sessionStorage.getItem('tyFormData');
-                if (raw) data = JSON.parse(raw);
-            } catch (e) {}
+                console.log('[Thank You Page] SessionStorage raw:', raw);
+                if (raw) {
+                    data = JSON.parse(raw);
+                    console.log('[Thank You Page] Parsed data:', data);
+                }
+            } catch (e) {
+                console.error('[Thank You Page] Error parsing sessionStorage:', e);
+            }
 
-            // Fill UI
-            var name = (data && (data.name || data.first_name)) ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery;
-            var elName = document.getElementById('tyName');
-            if (name && elName) elName.textContent = name.trim() + '!';
-
+            // Helper function to safely get text
             function safeText(v) {
                 if (v === undefined || v === null) return '—';
                 var s = String(v).trim();
                 return s ? s : '—';
             }
 
+            // Helper to set element text
             var set = function(id, val) {
                 var el = document.getElementById(id);
-                if (el) el.textContent = safeText(val);
+                if (el) {
+                    var text = safeText(val);
+                    el.textContent = text;
+                    console.log('[Thank You Page] Set', id, '=', text);
+                }
             };
 
-            set('tyUserName', data ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery);
+            // Extract name for headline
+            var fullName = '';
+            if (data) {
+                if (data.name) {
+                    fullName = data.name;
+                } else if (data.first_name || data.last_name) {
+                    fullName = ((data.first_name || '') + ' ' + (data.last_name || '')).trim();
+                }
+            }
+            if (!fullName && nameFromQuery) {
+                fullName = nameFromQuery;
+            }
+
+            var elName = document.getElementById('tyName');
+            if (fullName && elName) {
+                elName.textContent = fullName + '!';
+                console.log('[Thank You Page] Name in headline:', fullName);
+            }
+
+            // Populate detail fields
+            set('tyUserName', fullName || params.get('name'));
             set('tyUserEmail', data ? data.email : params.get('email'));
             set('tyUserPhone', data ? data.phone : params.get('phone'));
             set('tyUserService', data ? (data.service || data.interest) : params.get('service'));
             set('tyUserMessage', data ? data.message : params.get('message'));
-            set('tyUserSchedule', data ? (data.schedule_call || (data.consultation_date && data.consultation_time ? (data.consultation_date + ' ' + data.consultation_time) : '—')) : (params.get('schedule') || params.get('consultation_date')));
+
+            // Handle schedule/consultation datetime
+            var scheduleText = '—';
+            if (data) {
+                if (data.schedule_call) {
+                    scheduleText = data.schedule_call;
+                } else if (data.consultation_date && data.consultation_time) {
+                    scheduleText = data.consultation_date + ' at ' + data.consultation_time;
+                } else if (data.consultation_date) {
+                    scheduleText = data.consultation_date;
+                }
+            } else {
+                var scheduleParam = params.get('schedule') || params.get('consultation_date');
+                if (scheduleParam) scheduleText = scheduleParam;
+            }
+            set('tyUserSchedule', scheduleText);
+
+            console.log('[Thank You Page] All fields populated');
         })();
 
         /* Nav: scroll state + mobile toggle */
