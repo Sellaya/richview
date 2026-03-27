@@ -5156,6 +5156,7 @@
                     form.reset();
                     var dest = 'thank-you.html';
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
+                    try { sessionStorage.setItem('tyFormData', JSON.stringify(payload)); } catch (e) {}
                     window.location.href = dest;
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
