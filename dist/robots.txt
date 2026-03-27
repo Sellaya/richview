@@ -1,0 +1,9 @@
+# robots.txt for Richview Capital MIC
+User-agent: *
+Allow: /
+
+# Disallow sensitive pages
+Disallow: /thank-you.html
+
+# Sitemap location
+Sitemap: https://www.richviewcapital.ca/sitemap.xml
