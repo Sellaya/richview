@@ -291,7 +291,7 @@ body:not(.faq-page) .faq-section::after {
     margin: 0;
     padding-top: 0;
     font-size: clamp(0.9rem, 1.6vw, 0.9375rem);
-    color: #5c6370;
+    color: var(--color-gray-600, #4b5563);
     line-height: 1.65;
     overflow-wrap: break-word;
     opacity: 0;

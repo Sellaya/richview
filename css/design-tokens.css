@@ -1,15 +1,152 @@
 /**
- * Shared design tokens — fintech premium aesthetic
- * Shadows, transitions, focus states used across product/benefit cards, FAQ, forms
+ * Professional Fintech Design System
+ * Mobile-first, accessible, consistent design tokens
  */
 
 :root {
-    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --shadow-faq: 0 4px 16px rgba(11, 22, 53, 0.06);
-    --shadow-faq-active: 0 8px 24px rgba(11, 22, 53, 0.08);
-    --transition-card: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    --transition-btn: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    --radius-card: 14px;
-    --radius-btn: 10px;
+    /* Color System - Brand */
+    --color-navy: #0B1635;
+    --color-gold: #FF6600;
+    --color-white: #ffffff;
+
+    /* Color System - Neutrals */
+    --color-gray-50: #fafbfc;
+    --color-gray-100: #f2f3f5;
+    --color-gray-200: #e8eaed;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+
+    /* Color System - Semantic */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+
+    /* Typography Scale */
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+    --font-size-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.25rem);
+    --font-size-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+
+    /* Line Height Scale */
+    --line-height-tight: 1.2;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 1.75;
+
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+
+    /* Spacing Scale (8px system) */
+    --space-1: 0.5rem;   /* 8px */
+    --space-2: 1rem;     /* 16px */
+    --space-3: 1.5rem;   /* 24px */
+    --space-4: 2rem;     /* 32px */
+    --space-5: 2.5rem;   /* 40px */
+    --space-6: 3rem;     /* 48px */
+    --space-8: 4rem;     /* 64px */
+    --space-10: 5rem;    /* 80px */
+    --space-12: 6rem;    /* 96px */
+    --space-16: 8rem;    /* 128px */
+
+    /* Border Radius Scale */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-2xl: 14px;
+    --radius-3xl: 16px;
+    --radius-full: 9999px;
+
+    /* Component Specific Radius */
+    --radius-card: var(--radius-2xl);
+    --radius-btn: var(--radius-3xl);
+    --radius-input: var(--radius-md);
+
+    /* Shadow System */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.1);
+
+    /* Component Specific Shadows */
+    --shadow-card: var(--shadow-sm);
+    --shadow-card-hover: var(--shadow-lg);
+    --shadow-faq: var(--shadow-md);
+    --shadow-faq-active: var(--shadow-lg);
+    --shadow-button: 0 2px 8px rgba(255, 102, 0, 0.15);
+    --shadow-button-hover: 0 4px 16px rgba(255, 102, 0, 0.25);
+
+    /* Focus State */
+    --focus-ring-width: 2px;
+    --focus-ring-offset: 3px;
+    --focus-ring-color: var(--color-gold);
+    --focus-ring: 0 0 0 var(--focus-ring-offset) var(--color-white), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-card: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    --transition-btn: background var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
+
+    /* Z-Index Scale */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-notification: 1080;
+
+    /* Component Sizes */
+    --btn-height-sm: 40px;
+    --btn-height-md: 48px;
+    --btn-height-lg: 56px;
+    --input-height: 48px;
+    --touch-target-min: 48px;
+
+    /* Container Widths */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+
+    /* Backdrop Blur */
+    --backdrop-blur-sm: blur(4px);
+    --backdrop-blur-md: blur(8px);
+    --backdrop-blur-lg: blur(12px);
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
