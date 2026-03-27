@@ -1048,15 +1048,20 @@
 
         /* ——— Hero form: design consistency (placeholders, trust row, buttons, pickers) ——— */
         .hero-form-wrap.cta-box .cta-box-header {
-            padding: 1rem 1.25rem;
+            padding: 1.25rem 1.5rem;
         }
         .hero-form-wrap.cta-box .cta-box-header h2 {
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
+            font-size: clamp(1.375rem, 2.5vw, 1.625rem);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
         }
         .hero-form-wrap.cta-box .cta-box-header > p {
-            font-size: 0.8125rem;
-            margin-bottom: 0.75rem;
+            font-size: clamp(1rem, 2vw, 1.0625rem);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: rgba(11, 22, 53, 0.7);
         }
         /* Trust badge styles moved to trust-badges-responsive.css */
         .hero-form-wrap .hero-form-btn {
@@ -1164,9 +1169,16 @@
         }
         @media (max-width: 480px) {
             .hero-form-wrap.cta-box .cta-box-header {
-                padding: 0.85rem 1rem;
+                padding: 1rem 1.25rem;
             }
-            .hero-form-wrap.cta-box .cta-box-header h2 { font-size: 1.0625rem; }
+            .hero-form-wrap.cta-box .cta-box-header h2 {
+                font-size: clamp(1.25rem, 4vw, 1.375rem);
+                margin-bottom: 0.4rem;
+            }
+            .hero-form-wrap.cta-box .cta-box-header > p {
+                font-size: clamp(0.9375rem, 3vw, 1rem);
+                line-height: 1.55;
+            }
             /* Trust badge responsive styles moved to trust-badges-responsive.css */
             .hero-form-wrap .cta-box-body {
                 padding: 0.75rem 0.85rem;
@@ -2231,19 +2243,19 @@
         }
         .cta-box-header h2 {
             font-family: var(--font-sans);
-            font-size: 1.25rem;
+            font-size: clamp(1.375rem, 2.5vw, 1.625rem);
             font-weight: 700;
             color: var(--white);
-            margin: 0 0 0.3rem;
+            margin: 0 0 0.5rem;
             position: relative;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
         }
         .cta-box-header > p {
-            font-size: 0.8375rem;
-            color: rgba(255,255,255,0.78);
-            margin: 0 0 0.875rem;
-            line-height: 1.5;
+            font-size: clamp(1rem, 2vw, 1.0625rem);
+            color: rgba(255,255,255,0.9);
+            margin: 0 0 1rem;
+            line-height: 1.6;
             position: relative;
         }
         .cta-trust-row {
@@ -2256,17 +2268,17 @@
         .cta-trust-item {
             display: flex;
             align-items: center;
-            gap: 0.3rem;
-            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
+            gap: 0.45rem;
+            font-size: clamp(0.875rem, 2vw, 0.9375rem);
             font-weight: 600;
-            color: rgba(255,255,255,0.88);
+            color: rgba(255,255,255,0.92);
             white-space: nowrap;
             flex-shrink: 0;
         }
         .cta-trust-item svg {
             flex-shrink: 0;
-            width: 12px;
-            height: 12px;
+            width: clamp(16px, 2.5vw, 18px);
+            height: clamp(16px, 2.5vw, 18px);
             color: var(--gold);
         }
 
