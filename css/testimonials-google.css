@@ -1,9 +1,9 @@
 /**
- * Testimonials — Google Reviews style
+ * Testimonials - Google Reviews style
  * Standard slider across all pages. Small cards, 3D effect, mobile-first.
  */
 
-/* ——— Section ——— */
+/* --- Section --- */
 .testimonials-section {
   padding: 1.5rem 0;
   background: #f8f9fa;
@@ -25,7 +25,7 @@
   .testimonials-inner { padding: 0 32px; }
 }
 
-/* ——— Section header ——— */
+/* --- Section header --- */
 .testimonials-section .sec-head {
   position: relative;
   z-index: 1;
@@ -67,7 +67,7 @@
   }
 }
 
-/* ——— Slider (standard across all pages) ——— */
+/* --- Slider (standard across all pages) --- */
 .testimonials-slider {
   position: relative;
   z-index: 1;
@@ -99,7 +99,7 @@
   .testimonials-slider::after { width: 36px; }
 }
 
-/* ——— Track ——— */
+/* --- Track --- */
 .testimonials-track {
   display: flex;
   gap: 1rem;
@@ -127,7 +127,7 @@
   }
 }
 
-/* ——— Card: smaller, 3D, animations ——— */
+/* --- Card: smaller, 3D, animations --- */
 .testimonials-slider {
   perspective: 1200px;
 }
@@ -168,14 +168,14 @@
   display: none;
 }
 
-/* ——— Card layout: stars | blockquote | author ——— */
+/* --- Card layout: stars | blockquote | author --- */
 .testimonial-card {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* ——— Stars ——— */
+/* --- Stars --- */
 .testimonial-stars {
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@
   .testimonial-stars .star { font-size: 0.8125rem; }
 }
 
-/* ——— Blockquote ——— */
+/* --- Blockquote --- */
 .testimonial-quote-wrap {
   flex: 1;
   min-height: 0;
@@ -232,7 +232,7 @@
   }
 }
 
-/* ——— Read more ——— */
+/* --- Read more --- */
 .testimonial-read-more {
   display: inline-block;
   background: none;
@@ -260,7 +260,7 @@
   .testimonial-read-more { font-size: 0.6875rem; }
 }
 
-/* ——— Author: avatar + name + job (fixed layout) ——— */
+/* --- Author: avatar + name + job (fixed layout) --- */
 .testimonial-author {
   display: flex;
   align-items: center;
@@ -317,7 +317,7 @@
   .testimonial-author-info span { font-size: 0.5rem; }
 }
 
-/* ——— Responsive sizes ——— */
+/* --- Responsive sizes --- */
 @media (min-width: 480px) {
   .testimonial-card { width: 168px; padding: 0.9rem 1rem; }
 }

@@ -1,10 +1,10 @@
 /**
- * Benefits section — elevated UI + motion (GPU-friendly)
+ * Benefits section - elevated UI + motion (GPU-friendly)
  * Loads after benefit-cards-shared.css [+ what-is-a-mic-layout.css on MIC page]
  */
 
 .benefits-section {
-    /* Calmer scroll-in: short duration, gentle ease (no stagger — avoids hover/transition-delay bugs) */
+    /* Calmer scroll-in: short duration, gentle ease (no stagger - avoids hover/transition-delay bugs) */
     --benefit-reveal: 0.42s;
     --benefit-ease: cubic-bezier(0.33, 1, 0.68, 1);
     --benefit-stagger: 0ms;
@@ -23,7 +23,7 @@
         rgba(255, 102, 0, 0.04) 38%,
         transparent 72%
     );
-    /* Static wash — no looping motion (less distracting) */
+    /* Static wash - no looping motion (less distracting) */
 }
 
 .benefits-section::after {
@@ -122,7 +122,7 @@
         0 1px 0 rgba(255, 255, 255, 0.85) inset,
         0 12px 32px -12px rgba(11, 22, 53, 0.12),
         0 4px 12px -4px rgba(0, 0, 0, 0.05);
-    /* Do not set transform transition here — it overrides .reveal opacity (see .reveal.visible) */
+    /* Do not set transform transition here - it overrides .reveal opacity (see .reveal.visible) */
     transition:
         box-shadow 0.35s var(--benefit-ease),
         border-color 0.35s var(--benefit-ease);

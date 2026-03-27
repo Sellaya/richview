@@ -1,10 +1,10 @@
 /**
- * Motion specification — Homepage
+ * Motion specification - Homepage
  * Fintech-appropriate, GPU-friendly (transform + opacity only)
  * Respects prefers-reduced-motion
  */
 
-/* ——— 1. Motion variables (complement :root if not present) ——— */
+/* --- 1. Motion variables (complement :root if not present) --- */
 :root {
   --motion-fast: 150ms;
   --motion-medium: 350ms;
@@ -14,7 +14,7 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ——— 2. prefers-reduced-motion ——— */
+/* --- 2. prefers-reduced-motion --- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -22,10 +22,27 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Restore short transitions for interactive controls (focus/hover feedback) */
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"],
+  .faq-q,
+  .faq-icon,
+  .hero-dot-item,
+  .mobile-menu-btn,
+  .cta-nav,
+  .btn-pri,
+  .btn-sec {
+    transition-duration: 0.15s !important;
   }
 }
 
-/* ——— 3. Reveal base (scroll-triggered) ——— */
+/* --- 3. Reveal base (scroll-triggered) --- */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -40,14 +57,16 @@
   .reveal { transform: translateY(16px); }
 }
 
-/* ——— 4. Hero slide content (slide change) ——— */
+/* --- 4. Hero slide content (slide change) --- */
 .hero-slide h1,
+.hero-slide h2.hero-slide-heading,
 .hero-slide p {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
-.hero-slide.hero-slide-in h1 {
+.hero-slide.hero-slide-in h1,
+.hero-slide.hero-slide-in h2.hero-slide-heading {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0ms;
@@ -59,11 +78,12 @@
 }
 @media (max-width: 768px) {
   .hero-slide h1,
+  .hero-slide h2.hero-slide-heading,
   .hero-slide p { transform: translateY(16px); }
   .hero-slide.hero-slide-in p { transition-delay: 60ms; }
 }
 
-/* ——— 5. Hero CTAs (page load stagger) ——— */
+/* --- 5. Hero CTAs (page load stagger) --- */
 .hero-ctas {
   opacity: 0;
   transform: translateY(30px);
@@ -77,13 +97,13 @@
   .hero-ctas { transform: translateY(16px); transition-delay: 0.12s; }
 }
 
-/* ——— 6. Hero form wrap (adjust existing fadeUp timing) ——— */
+/* --- 6. Hero form wrap (adjust existing fadeUp timing) --- */
 .hero-form-wrap {
   transition: opacity 0.6s var(--ease-out) 0.4s,
     transform 0.6s var(--ease-out) 0.4s;
 }
 
-/* ——— 7. Section headings ——— */
+/* --- 7. Section headings --- */
 .sec-head.reveal.visible,
 .services-header.reveal.visible {
   transition-duration: var(--motion-reveal);
@@ -92,7 +112,7 @@
   transition-duration: var(--motion-reveal);
 }
 
-/* ——— 8. Cards: stagger delays ——— */
+/* --- 8. Cards: stagger delays --- */
 .about-value-card.reveal.visible { transition-delay: calc(50ms * var(--i, 0)); }
 .blog-card.reveal.visible { transition-delay: calc(60ms * var(--i, 0)); }
 .faq-item.reveal.visible { transition-delay: calc(50ms * var(--i, 0)); }
@@ -100,7 +120,7 @@
   .about-value-card.reveal.visible { transition-delay: calc(40ms * var(--i, 0)); }
 }
 
-/* ——— 9. Card hover (spec: translateY(-2px)) ——— */
+/* --- 9. Card hover (spec: translateY(-2px)) --- */
 .about-value-card:hover {
   transform: translateY(-2px);
 }
@@ -108,7 +128,7 @@
   transform: translateY(-2px);
 }
 
-/* ——— 10. CTA section ——— */
+/* --- 10. CTA section --- */
 .cta-intro.reveal.visible {
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
   transform: translateY(0);
@@ -118,7 +138,7 @@
   transform: translateY(0);
 }
 
-/* ——— 11. Button active scale ——— */
+/* --- 11. Button active scale --- */
 .btn-pri:active,
 .btn-primary:active,
 .cta-nav:active,
@@ -128,7 +148,7 @@
 .cta-nav:hover { transform: translateY(-2px); }
 .cta-nav:active { transform: scale(0.98); }
 
-/* ——— 12. Partner logo hover ——— */
+/* --- 12. Partner logo hover --- */
 .partner-logo-card img {
   transition: transform 0.2s var(--ease-out);
 }
@@ -136,7 +156,7 @@
   transform: scale(1.02);
 }
 
-/* ——— 13. Hero dots active transition ——— */
+/* --- 13. Hero dots active transition --- */
 .hero-dot-item {
   transition: background-color 0.2s var(--ease-out),
     border-color 0.2s var(--ease-out),
@@ -146,7 +166,7 @@
   transition: transform 0.2s var(--ease-out);
 }
 
-/* ——— 14. Form input focus ——— */
+/* --- 14. Form input focus --- */
 .cta-box input:focus,
 .cta-box select:focus,
 .cta-box textarea:focus,
@@ -155,7 +175,7 @@
   transition: border-color 0.2s var(--ease-out);
 }
 
-/* ——— 15. Mobile menu: nav items stagger ——— */
+/* --- 15. Mobile menu: nav items stagger --- */
 @media (max-width: 1024px) {
   nav.menu-open .nav-links.active > li {
     opacity: 0;

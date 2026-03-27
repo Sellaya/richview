@@ -1,10 +1,10 @@
 /**
- * Lottie/Form states — Loading spinner & success
+ * Lottie/Form states - Loading spinner & success
  * Mobile-first, fintech-appropriate
  * Works without Lottie (CSS fallback)
  */
 
-/* ——— Button loading state ——— */
+/* --- Button loading state --- */
 .btn-loading {
   position: relative;
   color: transparent !important;
@@ -84,7 +84,7 @@
   }
 }
 
-/* ——— Success check (thank-you, in-page) ——— */
+/* --- Success check (thank-you, in-page) --- */
 .ty-success-lottie {
   width: 40px;
   height: 40px;

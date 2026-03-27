@@ -1,8 +1,8 @@
-/* Hero design — mobile-first, 100% responsive
+/* Hero design - mobile-first, 100% responsive
    Shared across Borrowers, Brokers, Investors
    Breakpoints: 360 | 480 | 640 | 768 | 1024 */
 
-/* ——— MOBILE (base: 320px+) ——— */
+/* --- MOBILE (base: 320px+) --- */
 .page-hero {
     text-align: center;
     width: 100%;
@@ -41,7 +41,7 @@
 }
 
 
-/* Stat bar — 2x2 grid on mobile */
+/* Stat bar - 2x2 grid on mobile */
 .page-hero .hero-stat-bar {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -98,7 +98,7 @@
     color: rgba(255, 255, 255, 0.95);
 }
 
-/* CTAs — stacked on mobile, touch-friendly */
+/* CTAs - stacked on mobile, touch-friendly */
 .page-hero .hero-ctas {
     display: flex;
     flex-direction: column;
@@ -146,14 +146,14 @@
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* ——— 480px: large phone ——— */
+/* --- 480px: large phone --- */
 @media (min-width: 480px) {
     .page-hero .hero-ctas {
         max-width: 360px;
     }
 }
 
-/* ——— 640px: tablet ——— */
+/* --- 640px: tablet --- */
 @media (min-width: 640px) {
     .page-hero .hero-tagline {
         flex-wrap: nowrap;
@@ -218,7 +218,7 @@
     }
 }
 
-/* ——— 768px: tablet landscape / small desktop ——— */
+/* --- 768px: tablet landscape / small desktop --- */
 @media (min-width: 768px) {
     .page-hero .hero-stat-item {
         padding: 0 1.5rem;
@@ -231,7 +231,7 @@
     }
 }
 
-/* ——— 1024px: desktop ——— */
+/* --- 1024px: desktop --- */
 @media (min-width: 1024px) {
     .page-hero .hero-stat-disclaimer {
         max-width: 640px;

@@ -4,7 +4,7 @@
 import re
 import os
 
-FULLSCREEN_BLOCK = r'''            /* ——— Mobile menu: full-screen overlay (matches homepage) ——— */
+FULLSCREEN_BLOCK = r'''            /* --- Mobile menu: full-screen overlay (matches homepage) --- */
             .nav-links {
                 display: none !important;
                 position: absolute;

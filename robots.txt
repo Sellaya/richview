@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Thank-you page is noindex in HTML; keep out of bulk crawl hints
+Disallow: /thank-you.html
+
+Sitemap: https://richviewcapitalmic.com/sitemap.xml

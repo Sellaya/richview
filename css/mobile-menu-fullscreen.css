@@ -112,7 +112,7 @@
         transform: translateY(0) !important;
         pointer-events: auto !important;
     }
-    /* ——— Dropdown & link styling (matches homepage, prevents overflow) ——— */
+    /* --- Dropdown & link styling (matches homepage, prevents overflow) --- */
     nav.menu-open .nav-inner,
     nav.menu-open .nav-links,
     nav.menu-open .nav-links > li,

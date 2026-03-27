@@ -1,6 +1,6 @@
-/* FAQ — Minimal list, chevron controls, orange hover, smooth motion (all pages) */
+/* FAQ - Minimal list, chevron controls, orange hover, smooth motion (all pages) */
 
-/* ——— Section ——— */
+/* --- Section --- */
 .faq-section {
     padding: clamp(2.5rem, 6vw, 4.25rem) 0;
     position: relative;
@@ -21,7 +21,7 @@ body:not(.faq-page) .faq-section::after {
     display: none;
 }
 
-/* ——— Container ——— */
+/* --- Container --- */
 .faq-section .container,
 .faq-section .faq-container {
     position: relative;
@@ -35,7 +35,7 @@ body:not(.faq-page) .faq-section::after {
     gap: 0;
 }
 
-/* ——— Headings ——— */
+/* --- Headings --- */
 .faq-section .sec-head,
 .faq-section .section-header {
     text-align: center;
@@ -69,7 +69,7 @@ body:not(.faq-page) .faq-section::after {
     white-space: normal;
 }
 
-/* ——— List ——— */
+/* --- List --- */
 .faq-section .faq-list,
 .faq-section .faq-grid {
     width: 100%;
@@ -82,13 +82,13 @@ body:not(.faq-page) .faq-section::after {
     list-style: none;
 }
 
-/* ——— Rows ——— */
+/* --- Rows --- */
 .faq-section .faq-item {
     background: transparent;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-bottom: 1px solid rgba(11, 22, 53, 0.09);
+    border-bottom: 1px solid rgba(255, 102, 0, 0.32);
     overflow: visible;
     transition:
         background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -96,7 +96,7 @@ body:not(.faq-page) .faq-section::after {
 }
 
 .faq-section .faq-item:first-child {
-    border-top: 1px solid rgba(11, 22, 53, 0.09);
+    border-top: 1px solid rgba(255, 102, 0, 0.32);
 }
 
 .faq-section .faq-item:hover {
@@ -108,11 +108,11 @@ body:not(.faq-page) .faq-section::after {
 .faq-section .faq-item.open,
 .faq-section .faq-item.active {
     background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(11, 22, 53, 0.12);
+    border-bottom-color: rgba(255, 102, 0, 0.45);
     box-shadow: none;
 }
 
-/* ——— Button question (.faq-q) ——— */
+/* --- Button question (.faq-q) --- */
 .faq-section .faq-q {
     width: 100%;
     display: flex;
@@ -149,7 +149,7 @@ body:not(.faq-page) .faq-section::after {
     min-width: 0;
 }
 
-/* ——— Chevron icon (.faq-icon) ——— */
+/* --- Chevron icon (.faq-icon) --- */
 .faq-section .faq-icon::before {
     display: none !important;
     content: none !important;
@@ -223,7 +223,7 @@ body:not(.faq-page) .faq-section::after {
     transform: rotate(180deg);
 }
 
-/* ——— Borrowers layout: .faq-question + .faq-icon (same chevron as .faq-q rows) ——— */
+/* --- Borrowers layout: .faq-question + .faq-icon (same chevron as .faq-q rows) --- */
 .faq-section .faq-question {
     display: flex;
     justify-content: space-between;
@@ -272,7 +272,7 @@ body:not(.faq-page) .faq-section::after {
         0 6px 20px rgba(255, 102, 0, 0.22);
 }
 
-/* ——— Answers ——— */
+/* --- Answers --- */
 .faq-section .faq-a,
 .faq-section .faq-answer {
     max-height: 0;
@@ -314,7 +314,7 @@ body:not(.faq-page) .faq-section::after {
     transition-delay: calc(48ms * var(--i, 0));
 }
 
-/* ——— FAQ dedicated page: keep section backgrounds (body.faq-page) ——— */
+/* --- FAQ dedicated page: keep section backgrounds (body.faq-page) --- */
 .faq-page .faq-section:nth-of-type(2) {
     background: linear-gradient(180deg, #eef1f7 0%, #f2f4f8 45%, #f6f7fb 100%);
 }
@@ -328,7 +328,7 @@ body:not(.faq-page) .faq-section::after {
     background: linear-gradient(180deg, #f0f3f8 0%, #f8f6f4 50%, #faf9f7 100%);
 }
 
-/* ——— Mobile ——— */
+/* --- Mobile --- */
 @media (max-width: 480px) {
     .faq-section {
         padding: 2.25rem 0;

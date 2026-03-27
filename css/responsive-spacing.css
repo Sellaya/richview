@@ -1,9 +1,9 @@
 /**
- * Responsive spacing & alignment — mobile-first, consistent across pages
+ * Responsive spacing & alignment - mobile-first, consistent across pages
  * Ensures grids, sections, and content have proper padding on all devices
  */
 
-/* ——— Mobile: prevent content from touching screen edges ——— */
+/* --- Mobile: prevent content from touching screen edges --- */
 @media (max-width: 768px) {
     /* Products grid (borrowers): horizontal padding when stacked */
     .loan-products .products-grid,

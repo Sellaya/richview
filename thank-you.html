@@ -8,6 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
+    <link rel="canonical" href="https://richviewcapitalmic.com/thank-you.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,7 +61,7 @@
         a, button { -webkit-tap-highlight-color: transparent; }
         h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 
-        /* ——— SKIP LINK ——— */
+        /* --- SKIP LINK --- */
         .skip-link {
             position: absolute; top: -3rem; left: 1rem; z-index: 10000;
             padding: 0.6rem 1rem; background: var(--navy); color: var(--white);
@@ -70,7 +71,7 @@
         .skip-link:focus { top: 1rem; outline: 2px solid var(--gold); outline-offset: 2px; }
         a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-        /* ——— NAVIGATION ——— */
+        /* --- NAVIGATION --- */
         nav {
             position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
             width: min(94%, 1100px); max-width: 100%; background: #ffffff;
@@ -165,7 +166,7 @@
         nav.menu-open .mobile-menu-btn .icon-menu { opacity: 0; visibility: hidden; }
         nav.menu-open .mobile-menu-btn .icon-close { opacity: 1; }
 
-        /* ——— THANK YOU HERO SECTION ——— */
+        /* --- THANK YOU HERO SECTION --- */
         .ty-section {
             display: flex; align-items: flex-start; justify-content: center;
             padding: 9rem var(--gutter) 5rem;
@@ -190,7 +191,7 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ——— CHECK CIRCLE ICON ——— */
+        /* --- CHECK CIRCLE ICON --- */
         .ty-icon-wrap {
             width: 88px; height: 88px; border-radius: 50%;
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
@@ -214,7 +215,7 @@
         .ty-check-path { stroke-dasharray: 60; stroke-dashoffset: 60; animation: tyDraw 0.5s 0.3s var(--ease-out) forwards; }
         @keyframes tyDraw { to { stroke-dashoffset: 0; } }
 
-        /* ——— HEADLINE & TEXT ——— */
+        /* --- HEADLINE & TEXT --- */
         .ty-label {
             font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
             text-transform: uppercase; color: var(--gold); margin-bottom: 0.875rem;
@@ -226,53 +227,19 @@
         .ty-heading .hl { color: var(--gold); }
         .ty-subtext {
             font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--muted);
-            line-height: 1.65; max-width: 500px; margin: 0 auto 2.5rem;
+            line-height: 1.65; max-width: 520px; margin: 0 auto 2.75rem;
         }
+        .ty-meta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.8125rem; font-weight: 500; color: var(--muted);
+            margin-bottom: 2rem; padding: 0.5rem 1rem;
+            background: rgba(11,22,53,0.04);
+            border: 1px solid rgba(11,22,53,0.08);
+            border-radius: 999px;
+        }
+        .ty-meta svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
 
-        /* ——— SUBMITTED DETAILS ——— */
-        .ty-details {
-            width: 100%;
-            margin-bottom: 2.5rem;
-            text-align: left;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-            padding: 1.25rem 1.1rem;
-            max-width: 720px;
-        }
-        .ty-details-label {
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
-            text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
-        }
-        .ty-details-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem 1rem;
-        }
-        .ty-detail-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            padding: 0.65rem 0.75rem;
-            border-radius: 12px;
-            background: rgba(11,22,53,0.03);
-        }
-        .ty-detail-k {
-            font-size: 0.6875rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: rgba(11,22,53,0.6);
-        }
-        .ty-detail-v {
-            font-size: 0.95rem;
-            color: var(--navy);
-            line-height: 1.4;
-            word-break: break-word;
-        }
-
-        /* ——— CTA BUTTONS ——— */
+        /* --- CTA BUTTONS --- */
         .ty-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
         .btn-pri {
             display: inline-flex; align-items: center; gap: 0.5rem;
@@ -296,7 +263,7 @@
         .btn-sec:hover { background: rgba(11,22,53,0.06); border-color: rgba(11,22,53,0.35); transform: translateY(-1px); }
         .btn-sec:active { transform: translateY(0); }
 
-        /* ——— CONTACT REASSURANCE ——— */
+        /* --- CONTACT REASSURANCE --- */
         .ty-contact-row {
             display: flex; align-items: center; gap: 1.5rem; justify-content: center;
             flex-wrap: wrap; padding: 1.25rem 1.5rem;
@@ -313,11 +280,11 @@
         .ty-contact-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
         .ty-contact-divider { width: 1px; height: 20px; background: var(--border); }
 
-        /* ——— FOOTER ——— */
+        /* --- FOOTER --- */
         footer { background: var(--navy); color: rgba(255,255,255,0.7); margin-top: auto; }
         .footer-main { padding: 3.5rem 0 2.5rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2.5rem; }
-        .footer-brand .logo-img { height: 52px; width: auto; object-fit: contain; }
+        .footer-brand .logo-img { width: auto; object-fit: contain; }
         .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-top: 1rem; max-width: 240px; }
         .footer-social { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
         .footer-social a {
@@ -358,7 +325,7 @@
         .footer-back-top:hover { background: rgba(255,255,255,0.12); color: var(--white); }
         .footer-back-top svg { width: 16px; height: 16px; }
 
-        /* ——— MOBILE NAV (bottom sheet, minimal) ——— */
+        /* --- MOBILE NAV (bottom sheet, minimal) --- */
         @media (max-width: 1024px) {
             nav { left: 4%; right: 4%; transform: none; width: auto; border-radius: 20px; top: 1rem; }
             nav.scrolled { top: 0.75rem; border-radius: 0 0 20px 20px; }
@@ -408,7 +375,7 @@
             .cta-nav { display: none; }
         }
 
-        /* ——— RESPONSIVE — THANK YOU PAGE ——— */
+        /* --- RESPONSIVE - THANK YOU PAGE --- */
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .footer-brand { grid-column: 1 / -1; }
@@ -416,6 +383,7 @@
         }
         @media (max-width: 640px) {
             .ty-section { padding-top: 7.5rem; padding-bottom: 3rem; }
+            .ty-meta { max-width: 100%; text-align: center; justify-content: center; flex-wrap: wrap; padding: 0.65rem 1rem; line-height: 1.45; }
             .ty-icon-wrap { width: 72px; height: 72px; margin-bottom: 1.5rem; }
             .ty-icon-wrap svg { width: 32px; height: 32px; }
             .ty-actions { flex-direction: column; width: 100%; }
@@ -436,8 +404,9 @@
     <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/nav-hover-orange.css">
     <link rel="stylesheet" href="css/button-contrast.css">
+    <link rel="stylesheet" href="css/site-global.css">
 </head>
-<body>
+<body class="page-thank-you">
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <nav id="mainNav">
@@ -488,24 +457,15 @@
                 <!-- Label + Headline -->
                 <p class="ty-label">Consultation Request Received</p>
                 <h1 class="ty-heading" id="ty-heading">
-                    Thank you, <span class="hl" id="tyName">we've got it!</span>
+                    Thank you - <span class="hl">we've received your request</span>
                 </h1>
                 <p class="ty-subtext">
                     Your request has been sent to our team. We review every inquiry personally and will be in touch within&nbsp;<strong>24&nbsp;hours</strong>.
                 </p>
-
-                <!-- Submitted details -->
-                <div class="ty-details" aria-label="Submitted details">
-                    <p class="ty-details-label">Submitted Details</p>
-                    <div class="ty-details-grid">
-                        <div class="ty-detail-item"><span class="ty-detail-k">Name</span><span class="ty-detail-v" id="tyUserName">—</span></div>
-                        <div class="ty-detail-item"><span class="ty-detail-k">Email</span><span class="ty-detail-v" id="tyUserEmail">—</span></div>
-                        <div class="ty-detail-item"><span class="ty-detail-k">Phone</span><span class="ty-detail-v" id="tyUserPhone">—</span></div>
-                        <div class="ty-detail-item"><span class="ty-detail-k">Interest</span><span class="ty-detail-v" id="tyUserService">—</span></div>
-                        <div class="ty-detail-item"><span class="ty-detail-k">Message</span><span class="ty-detail-v" id="tyUserMessage">—</span></div>
-                        <div class="ty-detail-item"><span class="ty-detail-k">Consultation</span><span class="ty-detail-v" id="tyUserSchedule">—</span></div>
-                    </div>
-                </div>
+                <p class="ty-meta" role="status">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Confirmation sent - no further action needed from you right now.
+                </p>
 
                 <!-- CTA Buttons -->
                 <div class="ty-actions">
@@ -612,37 +572,11 @@
 
     <script>
         (function() {
-            var params = new URLSearchParams(window.location.search);
-            var nameFromQuery = params.get('name');
-
-            var data = null;
-            try {
-                var raw = sessionStorage.getItem('tyFormData');
-                if (raw) data = JSON.parse(raw);
-            } catch (e) {}
-
-            // Fill UI
-            var name = (data && (data.name || data.first_name)) ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery;
-            var elName = document.getElementById('tyName');
-            if (name && elName) elName.textContent = name.trim() + '!';
-
-            function safeText(v) {
-                if (v === undefined || v === null) return '—';
-                var s = String(v).trim();
-                return s ? s : '—';
+            try { sessionStorage.removeItem('tyFormData'); } catch (e) {}
+            if (window.history && window.history.replaceState && window.location.search) {
+                var clean = window.location.pathname + window.location.hash;
+                window.history.replaceState(null, '', clean);
             }
-
-            var set = function(id, val) {
-                var el = document.getElementById(id);
-                if (el) el.textContent = safeText(val);
-            };
-
-            set('tyUserName', data ? (data.name || (data.first_name || '') + ' ' + (data.last_name || '')) : nameFromQuery);
-            set('tyUserEmail', data ? data.email : params.get('email'));
-            set('tyUserPhone', data ? data.phone : params.get('phone'));
-            set('tyUserService', data ? (data.service || data.interest) : params.get('service'));
-            set('tyUserMessage', data ? data.message : params.get('message'));
-            set('tyUserSchedule', data ? (data.schedule_call || (data.consultation_date && data.consultation_time ? (data.consultation_date + ' ' + data.consultation_time) : '—')) : (params.get('schedule') || params.get('consultation_date')));
         })();
 
         /* Nav: scroll state + mobile toggle */

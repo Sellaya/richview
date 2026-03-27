@@ -1,0 +1,12 @@
+/* CTA / consultation form header stacking (no accent border) */
+.cta-box .cta-box-header {
+    position: relative;
+    z-index: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+.cta-box .cta-box-header > * {
+    position: relative;
+    z-index: 1;
+}

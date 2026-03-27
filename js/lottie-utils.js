@@ -1,5 +1,5 @@
 /**
- * Lottie animation utilities — Richview Capital
+ * Lottie animation utilities - Richview Capital
  * Mobile-first, prefers-reduced-motion compliant
  * CSS fallbacks when Lottie unavailable
  */
@@ -11,7 +11,7 @@
   var LOTTIE_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/' + LOTTIE_VERSION + '/lottie.min.js';
   var SPINNER_URL = 'lottie/forms/spinner-loading.json';
   var SUCCESS_URL = 'lottie/forms/success-check.json';
-  /* Fallback CDN URLs — minimal, fintech-appropriate (LottieFiles) */
+  /* Fallback CDN URLs - minimal, fintech-appropriate (LottieFiles) */
   var SPINNER_CDN = 'https://assets10.lottiefiles.com/packages/lf20_sz1efvkm.json';
   var SUCCESS_CDN = 'https://assets10.lottiefiles.com/packages/lf20_zk3c2dlm.json';
 

@@ -1,9 +1,12 @@
 /**
- * Shared design tokens — fintech premium aesthetic
+ * Shared design tokens - fintech premium aesthetic
  * Shadows, transitions, focus states used across product/benefit cards, FAQ, forms
  */
 
 :root {
+    /* Layout widths (match inline .container / CTA patterns) */
+    --content-max-width: 1200px;
+    --cta-grid-max-width: 1100px;
     --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
     --shadow-faq: 0 4px 16px rgba(11, 22, 53, 0.06);

@@ -1,0 +1,66 @@
+/**
+ * Site-wide UI consistency: footer branding, focus, anchors, safe areas.
+ * Load after page inline <style> and other stylesheets so these rules win.
+ * Z-index reference: nav overlay ~997–1002; date/time pickers ~9998 (calendly-style-picker.css).
+ */
+
+/* --- Layout tokens (used with calc where helpful) --- */
+:root {
+    --rv-footer-logo-max: 108px;
+    --rv-footer-logo-min: 48px;
+}
+
+/* --- Anchor offset for sticky/fixed nav (mobile-first) --- */
+html {
+    scroll-padding-top: clamp(4rem, 12vw, 5.5rem);
+}
+
+/* --- Unified footer wordmark (replaces inline drift across pages) --- */
+.footer-brand .logo-img {
+    height: clamp(var(--rv-footer-logo-min), 12vw, var(--rv-footer-logo-max));
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .footer-brand .logo-img {
+        height: clamp(var(--rv-footer-logo-min), 18vw, 96px);
+    }
+}
+
+/* Thank-you: slightly more compact footer mark (still readable) */
+.page-thank-you .footer-brand .logo-img {
+    height: clamp(44px, 11vw, 64px);
+}
+
+/* --- Focus: visible rings, keyboard-first (works with overflow:hidden parents via box-shadow on some controls) --- */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--gold, #ff6600);
+    outline-offset: 3px;
+}
+
+button:focus-visible,
+.btn-pri:focus-visible,
+.btn-sec:focus-visible,
+.cta-nav:focus-visible,
+a.cta-nav:focus-visible {
+    outline-offset: 2px;
+}
+
+/* Inputs inside cards: avoid clipping with inset shadow */
+.cta-box input:focus-visible,
+.cta-box select:focus-visible,
+.cta-box textarea:focus-visible,
+.faq-q:focus-visible {
+    outline: 2px solid var(--gold, #ff6600);
+    outline-offset: 3px;
+}
+
+.skip-link:focus-visible {
+    outline-offset: 2px;
+}

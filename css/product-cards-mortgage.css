@@ -1,11 +1,11 @@
 /**
- * Mortgage product cards — expandable, compact by default
+ * Mortgage product cards - expandable, compact by default
  * Click the card or chevron to reveal full content (no hover-to-open).
  * Grids: .products-grid or .expandable-card-grid (same markup / .product-card children).
  * Mobile-first: 1 col → 2 cols → 3 cols
  */
 
-/* ——— MOBILE (base) ——— */
+/* --- MOBILE (base) --- */
 .loan-products {
     padding: clamp(1.75rem, 5vw, 2.5rem) 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
@@ -61,7 +61,7 @@
     white-space: normal;
 }
 
-/* ——— Products disclaimer (mobile-first) ——— */
+/* --- Products disclaimer (mobile-first) --- */
 .loan-products .products-disclaimer-wrap {
     width: 100%;
     max-width: var(--container, 1200px);
@@ -96,7 +96,7 @@
     overflow-x: hidden;
 }
 
-/* ——— Expandable card (compact by default) ——— */
+/* --- Expandable card (compact by default) --- */
 .product-card {
     background: #FFFFFF;
     border-radius: 12px;
@@ -134,7 +134,7 @@
     margin-bottom: 0;
 }
 
-/* Expand chevron (in HTML, enhanced by JS) — click target on mobile (44px min) */
+/* Expand chevron (in HTML, enhanced by JS) - click target on mobile (44px min) */
 .product-card-chevron {
     position: absolute;
     top: -0.15rem;
@@ -341,7 +341,7 @@
 }
 
 /* Mobile bug fixes: prevent clipping and oversized cards */
-@media (max-width: 639px) {
+@media (max-width: 640px) {
     .products-grid,
     .expandable-card-grid {
         grid-template-columns: 1fr;
@@ -376,8 +376,8 @@
     }
 }
 
-/* ——— TABLET (640px+) ——— */
-@media (min-width: 640px) {
+/* --- TABLET (641px+): aligns with testimonials breakpoint --- */
+@media (min-width: 641px) {
     .products-grid,
     .expandable-card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -403,7 +403,7 @@
     }
 }
 
-/* ——— TABLET (768px+) ——— */
+/* --- TABLET (768px+) --- */
 @media (min-width: 768px) {
     .products-grid,
     .expandable-card-grid {
@@ -415,7 +415,7 @@
     }
 }
 
-/* ——— DESKTOP (1024px+) ——— */
+/* --- DESKTOP (1024px+) --- */
 @media (min-width: 1024px) {
     .products-grid,
     .expandable-card-grid {
@@ -436,7 +436,7 @@
     }
 }
 
-/* ——— Reduced motion ——— */
+/* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
     .product-card,
     .product-card-chevron,

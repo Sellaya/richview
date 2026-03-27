@@ -1,4 +1,4 @@
-/* Hero stat bar — mobile-first, advanced cards on dark hero background */
+/* Hero stat bar - mobile-first, advanced cards on dark hero background */
 .hero-stat-bar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

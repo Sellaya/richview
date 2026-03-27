@@ -1,5 +1,5 @@
 /**
- * Nav menu — orange hover, brand #FF6600, professional & uniform, mobile-first
+ * Nav menu - orange hover, brand #FF6600, professional & uniform, mobile-first
  * Applied across all pages for consistent nav interaction
  */
 #mainNav .nav-links > li > a:hover,
@@ -22,7 +22,7 @@
   color: #FF6600 !important;
   background: rgba(255, 102, 0, 0.06) !important;
 }
-/* Dropdown links & labels — no underlines / divider lines under headings */
+/* Dropdown links & labels - no underlines / divider lines under headings */
 #mainNav .nav-dropdown-content a,
 #mainNav .nav-dropdown-content a:link,
 #mainNav .nav-dropdown-content a:visited,
@@ -43,7 +43,7 @@
   transition: color 0.2s ease, background 0.2s ease !important;
 }
 
-/* Primary nav — all caps, slightly smaller labels for a tighter bar */
+/* Primary nav - all caps, slightly smaller labels for a tighter bar */
 #mainNav .nav-links > li > a,
 #mainNav .nav-dropdown > a {
   text-transform: uppercase;
@@ -63,7 +63,7 @@
   font-weight: 400;
   letter-spacing: 0.06em;
 }
-/* Mobile / fullscreen menu — override inline 600 !important blocks on some pages */
+/* Mobile / fullscreen menu - override inline 600 !important blocks on some pages */
 @media (max-width: 1024px) {
   #mainNav.menu-open .nav-links > li > a,
   #mainNav.menu-open .nav-dropdown > a {
@@ -86,7 +86,7 @@
   }
 }
 
-/* Footer — orange hovers (match nav #FF6600) */
+/* Footer - orange hovers (match nav #FF6600) */
 footer .footer-col a:hover,
 footer .footer-col a:focus-visible,
 footer .footer-col a:active {

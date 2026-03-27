@@ -185,6 +185,7 @@
 }
 .hero-form-wrap .cta-box-header > p {
     font-size: clamp(0.75rem, 2vw, 0.8375rem);
+    color: var(--gold, #ff6600);
 }
 
 /* ========== Progressive enhancement (tablet+) ========== */
@@ -337,6 +338,7 @@
 }
 .hero-form-wrap .cta-box-header > p {
     font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: var(--gold, #ff6600);
 }
 
 /* ========== Picker dropdowns - above all content, never clipped ========== */

@@ -1,9 +1,9 @@
 /**
- * What is a MIC — advanced, professional, mobile-first layout
+ * What is a MIC - advanced, professional, mobile-first layout
  * Upgrades hero, grids, tables, typography, and section styling
  */
 
-/* ——— Mobile-first base: hero ——— */
+/* --- Mobile-first base: hero --- */
 .page-hero {
     padding: clamp(6.5rem, 14vw, 10rem) var(--gutter) clamp(2.25rem, 6vw, 3.5rem);
     padding-top: clamp(7rem, 16vw, 10rem);
@@ -25,7 +25,7 @@
 
 /* Hero CTAs use hero-services.css (.hero-ctas, .btn-primary, .btn-secondary) */
 
-/* ——— Section headings ——— */
+/* --- Section headings --- */
 .section-heading h2,
 .intro-text h2,
 .cta-box h2,
@@ -66,7 +66,7 @@
     margin: 0 auto;
 }
 
-/* ——— Benefits grid (mobile-first) ——— */
+/* --- Benefits grid (mobile-first) --- */
 .benefits-section .benefits-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -79,7 +79,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .benefits-section .benefits-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;
@@ -94,7 +94,7 @@
     color: var(--navy, #0B1635);
 }
 
-/* ——— Benefit badge as number circle (What is a MIC) + hover ——— */
+/* --- Benefit badge as number circle (What is a MIC) + hover --- */
 .benefits-section .benefit-card {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -138,7 +138,7 @@
     grid-column: 1 / -1;
 }
 
-/* ——— Lifecycle grid (mobile-first) ——— */
+/* --- Lifecycle grid (mobile-first) --- */
 .lifecycle-grid {
     grid-template-columns: 1fr;
     border-radius: var(--radius-card, 14px);
@@ -189,7 +189,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .lifecycle-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -205,7 +205,7 @@
     }
 }
 
-/* ——— Footer grid (mobile-first) ——— */
+/* --- Footer grid (mobile-first) --- */
 .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -238,7 +238,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .footer-grid {
         grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
     }
@@ -247,7 +247,7 @@
     }
 }
 
-/* ——— Term sheet: animations, UX, mobile-first ——— */
+/* --- Term sheet: animations, UX, mobile-first --- */
 .term-sheet-section {
     position: relative;
 }
@@ -352,7 +352,7 @@
     }
 }
 
-/* ——— Term sheet section: animations, UX, mobile-first ——— */
+/* --- Term sheet section: animations, UX, mobile-first --- */
 .term-sheet-section {
     position: relative;
 }
@@ -420,7 +420,7 @@
     }
 }
 
-/* ——— Term sheet section: animations, UX, mobile-first ——— */
+/* --- Term sheet section: animations, UX, mobile-first --- */
 .term-sheet-section {
     position: relative;
 }
@@ -488,7 +488,7 @@
     }
 }
 
-/* ——— Term sheet section: animations, UX, mobile-first ——— */
+/* --- Term sheet section: animations, UX, mobile-first --- */
 .term-sheet-table-wrap {
     position: relative;
     border-radius: 14px;
@@ -547,7 +547,7 @@
     }
 }
 
-/* ——— Protected list: number hover (consistent with benefit badges) ——— */
+/* --- Protected list: number hover (consistent with benefit badges) --- */
 .protected-list li::before {
     transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
@@ -557,7 +557,7 @@
     transform: scale(1.08);
 }
 
-/* ——— Term sheet section: animations, UX, mobile-first ——— */
+/* --- Term sheet section: animations, UX, mobile-first --- */
 .term-sheet-table-wrap {
     position: relative;
     border-radius: 14px;
@@ -616,7 +616,7 @@
     }
 }
 
-/* ——— Comparison section: animations, UX, mobile-first ——— */
+/* --- Comparison section: animations, UX, mobile-first --- */
 .comparison-section {
     position: relative;
 }
@@ -693,14 +693,14 @@
     }
 }
 
-/* ——— Tables: improved mobile ——— */
+/* --- Tables: improved mobile --- */
 .term-sheet-section,
 .protected-section,
 .comparison-section {
     padding: clamp(1.75rem, 5vw, 2.5rem) 0;
 }
 
-/* ——— Comparison section: animations & UX ——— */
+/* --- Comparison section: animations & UX --- */
 .comparison-section {
     position: relative;
 }
@@ -807,7 +807,7 @@
     }
 }
 
-/* ——— Comparison section: animations, UX, mobile-first ——— */
+/* --- Comparison section: animations, UX, mobile-first --- */
 .comparison-section .comparison-table-wrap {
     position: relative;
     box-shadow: 0 2px 12px rgba(11, 22, 53, 0.06);
@@ -915,14 +915,14 @@
     }
 }
 
-/* ——— Body: premium background ——— */
+/* --- Body: premium background --- */
 body {
     background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.4) 28%, transparent 52%),
                 radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.7) 0%, transparent 65%),
                 linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 25%, #FAFAFA 50%, #F8F9FA 75%, #FAFBFC 100%);
 }
 
-/* ——— Sections: refined spacing ——— */
+/* --- Sections: refined spacing --- */
 .intro-section,
 .benefits-section,
 .lifecycle-section {
@@ -937,7 +937,7 @@ body {
     padding: clamp(2rem, 5vw, var(--space-xl)) var(--gutter) var(--space-lg);
 }
 
-/* ——— CTA box header ——— */
+/* --- CTA box header --- */
 .cta-box-header h2 {
     color: var(--white, #fff);
 }
@@ -946,7 +946,7 @@ body {
     color: rgba(255, 255, 255, 0.78);
 }
 
-/* ——— Reveal animation (smooth, consistent) ——— */
+/* --- Reveal animation (smooth, consistent) --- */
 .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -958,7 +958,7 @@ body {
     transform: translateY(0);
 }
 
-/* ——— Hover text colours ——— */
+/* --- Hover text colours --- */
 .nav-links a:hover,
 .nav-dropdown-content a:hover {
     color: var(--navy, #0B1635);
@@ -973,7 +973,7 @@ body {
     transition: var(--transition-card, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease);
 }
 
-/* ——— Buttons: consistent size & style (hero uses hero-services.css) ——— */
+/* --- Buttons: consistent size & style (hero uses hero-services.css) --- */
 .btn-primary,
 .cta-box button[type="submit"] {
     min-height: 2.75rem;

@@ -1,0 +1,81 @@
+/* Single blog article - shared layout */
+.post-wrap {
+    padding: clamp(6.5rem, 10vw, 8rem) var(--gutter, 16px) var(--space-xl, 3rem);
+    background: linear-gradient(180deg, #f8f9fb 0%, #fff 35%);
+}
+.post-wrap .container {
+    max-width: min(90vw, 720px);
+    margin: 0 auto;
+}
+.post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--navy, #0b1635);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+}
+.post-back:hover { color: var(--gold, #ff6600); }
+.post-back svg { width: 16px; height: 16px; flex-shrink: 0; }
+.post-meta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold, #ff6600);
+    margin-bottom: 0.5rem;
+}
+.post-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--navy, #0b1635);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+}
+.post-lead {
+    font-size: 1.0625rem;
+    color: var(--muted, #6b7280);
+    line-height: 1.65;
+    margin: 0 0 1.75rem;
+}
+.post-lead a { font-weight: 600; color: var(--navy, #0b1635); text-decoration: underline; text-underline-offset: 2px; }
+.post-lead a:hover { color: var(--gold, #ff6600); }
+.post-prose {
+    font-size: 1rem;
+    color: var(--charcoal, #1a1a1a);
+    line-height: 1.7;
+}
+.post-prose p { margin: 0 0 1rem; }
+.post-prose h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--navy, #0b1635);
+    margin: 1.75rem 0 0.75rem;
+}
+.post-prose ul { margin: 0 0 1rem 1.25rem; padding: 0; }
+.post-prose li { margin-bottom: 0.35rem; }
+.post-cta {
+    margin-top: 2rem;
+    padding: 1.25rem 1.35rem;
+    background: rgba(11, 22, 53, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    font-size: 0.9375rem;
+    color: var(--charcoal, #1a1a1a);
+}
+.post-cta a {
+    font-weight: 600;
+    color: var(--navy, #0b1635);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.post-cta a:hover { color: var(--gold, #ff6600); }
+.post-disclaimer {
+    margin-top: 2rem;
+    font-size: 0.8125rem;
+    color: var(--muted, #6b7280);
+    line-height: 1.55;
+}

@@ -1,5 +1,5 @@
 /**
- * Expandable mortgage-style cards — click to expand/collapse (card body or chevron).
+ * Expandable mortgage-style cards - click to expand/collapse (card body or chevron).
  * No hover-to-open (CSS must not reveal .product-card children on :hover).
  * Grids: .products-grid or .expandable-card-grid (same markup). Accordion per grid.
  */

@@ -1,10 +1,10 @@
 /**
- * Benefit & guideline cards — white rounded style (matches product cards)
+ * Benefit & guideline cards - white rounded style (matches product cards)
  * Applied across Borrowers, Brokers, Investors, What is a MIC
  * Mobile-first: 1 col → 2 cols → 3 cols
  */
 
-/* ——— BENEFITS SECTION ——— */
+/* --- BENEFITS SECTION --- */
 .benefits-section {
     padding: clamp(1.75rem, 5vw, 2.5rem) 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
@@ -104,7 +104,7 @@
     margin: 0;
 }
 
-/* ——— GUIDELINES SECTION (Brokers) ——— */
+/* --- GUIDELINES SECTION (Brokers) --- */
 .guidelines-section {
     padding: clamp(1.75rem, 5vw, 2.5rem) 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
@@ -209,7 +209,7 @@
     flex-shrink: 0;
 }
 
-/* ——— TABLET (640px+) ——— */
+/* --- TABLET (640px+) --- */
 @media (min-width: 640px) {
     .benefits-section .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -239,7 +239,7 @@
     }
 }
 
-/* ——— TABLET (768px+) ——— */
+/* --- TABLET (768px+) --- */
 @media (min-width: 768px) {
     .benefits-section .benefit-card {
         padding: 1.5rem 1.25rem;
@@ -250,7 +250,7 @@
     }
 }
 
-/* ——— DESKTOP (1024px+) ——— */
+/* --- DESKTOP (1024px+) --- */
 @media (min-width: 1024px) {
     .benefits-section .benefits-grid {
         grid-template-columns: repeat(3, 1fr);

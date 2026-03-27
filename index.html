@@ -7,12 +7,20 @@
     <meta name="description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="https://richviewcapitalmic.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Private Mortgage Lending & Construction Financing in Ontario | Richview Capital MIC">
     <meta property="og:description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="/">
+    <meta property="og:image" content="https://richviewcapitalmic.com/images/logo.png">
+    <meta property="og:url" content="https://richviewcapitalmic.com/">
+    <meta property="og:locale" content="en_CA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Private Mortgage Lending &amp; Construction Financing in Ontario | Richview Capital MIC">
+    <meta name="twitter:description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
+    <meta name="twitter:image" content="https://richviewcapitalmic.com/images/logo.png">
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://richviewcapitalmic.com/#organization","name":"Richview Capital MIC","url":"https://richviewcapitalmic.com/","logo":"https://richviewcapitalmic.com/images/logo.png","description":"Private mortgage lending and construction financing across Ontario. Licensed Mortgage Investment Corporation (MIC #13171).","areaServed":{"@type":"AdministrativeArea","name":"Ontario","containedInPlace":{"@type":"Country","name":"Canada"}},"sameAs":["https://www.instagram.com/richviewcapitalmic"]},{"@type":"WebSite","@id":"https://richviewcapitalmic.com/#website","url":"https://richviewcapitalmic.com/","name":"Richview Capital MIC","publisher":{"@id":"https://richviewcapitalmic.com/#organization"},"inLanguage":"en-CA"}]}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +28,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            /* Typography — Inter, premium fintech aesthetic */
+            /* Typography - Inter, premium fintech aesthetic */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --text-heading: 700;
             --text-subheading: 600;
@@ -47,7 +55,7 @@
             --container: min(90vw, 1400px);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-btn: cubic-bezier(0.22, 1, 0.36, 1);
-            /* Buttons — crisp, advanced */
+            /* Buttons - crisp, advanced */
             --btn-padding: 0.75rem 1.5rem;
             --btn-padding-lg: 0.875rem 1.75rem;
             --btn-font-size: 0.9375rem;
@@ -118,7 +126,7 @@
         /* Section descriptions: natural wraps across full container width */
         .sec-head p, .services-desc { text-wrap: pretty; }
 
-        /* Base heading hierarchy — bold, confident, modern */
+        /* Base heading hierarchy - bold, confident, modern */
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-sans);
             font-weight: var(--text-heading);
@@ -126,12 +134,12 @@
             line-height: var(--leading-tight);
         }
 
-        /* Homepage: single container utility — max-width 1200px, mobile-first horizontal padding via --gutter */
+        /* Homepage: single container utility - max-width 1200px, mobile-first horizontal padding via --gutter */
         .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); width: 100%; min-width: 0; box-sizing: border-box; }
         img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
         a, button { -webkit-tap-highlight-color: transparent; }
 
-        /* ——— SKIP LINK (accessibility) ——— */
+        /* --- SKIP LINK (accessibility) --- */
         .skip-link {
             position: absolute;
             top: -3rem;
@@ -157,8 +165,8 @@
             outline-offset: 2px;
         }
 
-        /* ——— NAVIGATION (premium floating, Framer/Linear/Vercel-inspired) ——— */
-        /* Match hero: same width as .hero-grid — min(container, viewport minus hero gutters), centered */
+        /* --- NAVIGATION (premium floating, Framer/Linear/Vercel-inspired) --- */
+        /* Match hero: same width as .hero-grid - min(container, viewport minus hero gutters), centered */
         nav {
             position: fixed;
             top: 1.5rem;
@@ -405,7 +413,7 @@
             .nav-links.active > li { animation: none; }
         }
 
-        /* ——— HERO ——— */
+        /* --- HERO --- */
         .hero {
             min-height: auto;
             display: flex;
@@ -470,7 +478,7 @@
             position: relative;
             z-index: 2;
         }
-        .hero-content h1, .hero-slide h1 {
+        .hero-content h1, .hero-slide h1, .hero-slide h2.hero-slide-heading {
             font-family: var(--font-sans);
             font-size: clamp(2rem, 4.2vw, 3.5rem);
             font-weight: var(--text-heading);
@@ -478,7 +486,7 @@
             color: var(--white);
             letter-spacing: var(--tracking-tight);
         }
-        .hero-content h1 .hl, .hero-slide h1 .hl { color: var(--gold); font-weight: 600; }
+        .hero-content h1 .hl, .hero-slide h1 .hl, .hero-slide h2.hero-slide-heading .hl { color: var(--gold); font-weight: 600; }
         .hero-content p, .hero-slide p {
             font-size: clamp(1rem, 1.5vw, 1.125rem);
             color: rgba(255, 255, 255, 0.88);
@@ -650,7 +658,7 @@
             visibility: visible;
             transform: translateY(0);
         }
-        .hero-slide h1 {
+        .hero-slide h1, .hero-slide h2.hero-slide-heading {
             flex-shrink: 0;
             margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
             overflow-wrap: break-word;
@@ -779,11 +787,11 @@
         }
         .hero .btn-sec:hover {
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             color: var(--white);
-            border-color: rgba(255, 255, 255, 0.9);
+            border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 18px rgba(255, 102, 0, 0.28);
         }
         .hero .btn-sec:active { transform: translateY(0); }
         .btn-sec {
@@ -895,7 +903,7 @@
             outline: var(--btn-outline);
             outline-offset: var(--btn-outline-offset);
         }
-        /* ——— Multistep form (mobile first) ——— */
+        /* --- Multistep form (mobile first) --- */
         .hero-multistep-fields { width: 100%; }
         .hero-form-steps {
             display: flex;
@@ -1039,7 +1047,7 @@
             .hero-form-submit { transition: none; }
         }
 
-        /* ——— Hero form: design consistency (placeholders, trust row, buttons, pickers) ——— */
+        /* --- Hero form: design consistency (placeholders, trust row, buttons, pickers) --- */
         .hero-form-wrap.cta-box .cta-box-header {
             padding: 1rem 1.25rem;
         }
@@ -1050,6 +1058,7 @@
         .hero-form-wrap.cta-box .cta-box-header > p {
             font-size: 0.8125rem;
             margin-bottom: 0.75rem;
+            color: var(--white);
         }
         .hero-form-wrap .cta-trust-row {
             display: flex;
@@ -1357,7 +1366,7 @@
             transform: scale(1.04);
         }
 
-        /* ——— FLOATING TRUST BAR (Marquee) ——— */
+        /* --- FLOATING TRUST BAR (Marquee) --- */
         .trust-strip {
             position: relative;
             padding: 0.4rem 0;
@@ -1405,7 +1414,7 @@
             margin: 0 0.25rem;
         }
 
-        /* ——— PARTNERS SECTION ——— */
+        /* --- PARTNERS SECTION --- */
         .partners-section {
             --partner-slot: 148px;
             padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(0.75rem, 2vw, 1.25rem);
@@ -1585,7 +1594,7 @@
             max-width: 130px;
         }
 
-        /* ——— SERVICES (Tabbed – Who We Serve) ——— */
+        /* --- SERVICES (Tabbed – Who We Serve) --- */
         .services {
             padding: var(--section-padding) 0;
             background: radial-gradient(ellipse 120% 65% at 50% -12%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.3) 30%, transparent 55%),
@@ -1824,7 +1833,7 @@
         .services-cta:hover svg {
             transform: translateX(3px);
         }
-        /* ——— ABOUT (Who We Are) ——— */
+        /* --- ABOUT (Who We Are) --- */
         .about {
             padding: var(--section-padding) 0;
             background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 50%, #FFFFFF 100%);
@@ -1970,109 +1979,192 @@
         .about-cta:hover { color: var(--charcoal); gap: 0.65rem; }
         .about-cta:hover svg { transform: translateX(3px); }
 
-        /* ——— BLOG ——— */
+        /* --- BLOG (same structure & vibe as testimonials carousel) --- */
         .blog-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 50%, #FFFFFF 100%);
+            padding: 1.5rem 0;
+            background: #f8f9fa;
             position: relative;
             overflow: hidden;
         }
+        @media (min-width: 640px) {
+            .blog-section { padding: 1.75rem 0; }
+        }
         .blog-inner {
-            max-width: var(--container);
+            max-width: min(90vw, 1200px);
             margin: 0 auto;
-            padding: 0 var(--gutter);
+            padding: 0 16px;
             width: 100%;
             min-width: 0;
         }
-        .blog-section::before {
-            content: '';
-            position: absolute;
-            width: 45%;
-            height: 60%;
-            bottom: 10%;
-            right: -5%;
-            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.025) 0%, transparent 65%);
-            pointer-events: none;
+        @media (min-width: 640px) {
+            .blog-inner { padding: 0 24px; }
         }
-        .blog-section .sec-head,
-        .blog-grid {
-            position: relative;
-            z-index: 1;
+        @media (min-width: 768px) {
+            .blog-inner { padding: 0 32px; }
         }
         .blog-section .sec-head {
+            position: relative;
+            z-index: 1;
             text-align: left;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 640px) {
+            .blog-section .sec-head { margin-bottom: 1.25rem; }
         }
         .blog-section .sec-head h2 {
             font-family: var(--font-sans);
-            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+            font-size: 1.125rem;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             letter-spacing: -0.02em;
+        }
+        @media (min-width: 640px) {
+            .blog-section .sec-head h2 { font-size: 1.25rem; }
         }
         .blog-section .sec-head p {
             font-size: clamp(0.875rem, 0.22vw + 0.82rem, 1.0625rem);
+            line-height: 1.55;
             color: var(--muted);
+            margin: 0;
             max-width: none;
             width: 100%;
-            margin: 0;
-            line-height: 1.55;
             text-wrap: pretty;
         }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.85rem;
-        }
-        .blog-card {
-            padding: 0;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
+        .blog-slider {
             position: relative;
+            z-index: 1;
             overflow: hidden;
-            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
-            box-shadow: var(--shadow-sm);
+            margin: 0 -16px;
+            padding: 0.4rem 0 1rem;
+            perspective: 1200px;
         }
-        .blog-card.reveal.visible { transition-delay: calc(0.06s * var(--i, 0)); }
+        .blog-slider::before,
+        .blog-slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 28px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .blog-slider::before {
+            left: 0;
+            background: linear-gradient(90deg, #f8f9fa 50%, transparent 100%);
+        }
+        .blog-slider::after {
+            right: 0;
+            background: linear-gradient(270deg, #f8f9fa 50%, transparent 100%);
+        }
+        @media (min-width: 640px) {
+            .blog-slider { margin: 0 -24px; }
+            .blog-slider::before,
+            .blog-slider::after { width: 36px; }
+        }
+        .blog-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            will-change: transform;
+            animation: blogMarquee 18s linear infinite;
+        }
+        .blog-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes blogMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .blog-track { animation: none; }
+            .blog-card { transform: none !important; }
+            .blog-card:hover { transform: none !important; }
+        }
         .blog-card {
-            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.35s var(--ease-spring);
+            flex-shrink: 0;
+            width: 155px;
+            max-width: calc(100vw - 56px);
+            padding: 0.65rem 0.75rem;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 3px solid transparent;
+            border-radius: 10px;
+            box-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 4px 12px -2px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateX(2deg) rotateY(-1deg);
+            transition:
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-left-color 0.35s ease,
+                background 0.35s ease;
         }
         .blog-card:hover {
-            border-color: rgba(255, 102, 0, 0.2);
-            box-shadow: var(--shadow-card-hover);
-            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.9);
+            transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-3px) scale(1.03);
+            border-left-color: #FF6600;
+            box-shadow:
+                0 8px 24px -4px rgba(255, 102, 0, 0.18),
+                0 12px 32px -6px rgba(11, 22, 53, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
         }
-        .blog-card-image {
-            aspect-ratio: 16/9;
+        .blog-card.reveal.visible { transition-delay: calc(0.06s * var(--i, 0)); }
+        .blog-card-thumb {
+            display: block;
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            border-radius: 6px;
             overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: #eef2f7;
             flex-shrink: 0;
         }
-        .blog-card-image img {
+        .blog-card-thumb:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .blog-card-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .blog-card:hover .blog-card-thumb img {
+            transform: scale(1.05);
         }
         .blog-card-body {
-            padding: 0.95rem 1rem 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.22rem;
+            min-width: 0;
+            flex: 1;
+            padding: 0;
         }
         .blog-card .blog-date {
-            font-size: 0.6875rem;
+            font-size: 0.5rem;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             color: var(--muted);
-            margin-bottom: 0.35rem;
             text-transform: uppercase;
+            margin: 0;
         }
         .blog-card h3 {
             font-family: var(--font-sans);
-            font-size: 1rem;
+            font-size: 0.6875rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 0.4rem;
-            line-height: 1.32;
+            margin: 0;
+            line-height: 1.28;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -2081,16 +2173,16 @@
         .blog-card h3 a {
             color: inherit;
             text-decoration: none;
-            transition: color 0.2s var(--ease-out);
+            transition: color 0.2s ease;
         }
         .blog-card h3 a:hover {
             color: var(--gold);
         }
         .blog-card .blog-excerpt {
-            font-size: 0.875rem;
+            font-size: 0.625rem;
             color: var(--muted);
-            line-height: 1.5;
-            margin-bottom: 0.6rem;
+            line-height: 1.45;
+            margin: 0;
             overflow-wrap: break-word;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -2098,29 +2190,41 @@
             overflow: hidden;
         }
         .blog-card .blog-link {
-            font-size: 0.75rem;
+            font-size: 0.5625rem;
             font-weight: 600;
             color: var(--navy);
             text-decoration: none;
-            letter-spacing: 0.02em;
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            transition: color 0.2s var(--ease-out);
+            gap: 0.2rem;
+            margin-top: auto;
+            padding-top: 0.08rem;
+            transition: color 0.2s ease;
         }
         .blog-card .blog-link:hover {
             color: var(--gold);
         }
         .blog-card .blog-link svg {
-            width: 14px;
-            height: 14px;
-            transition: transform 0.2s var(--ease-out);
+            width: 11px;
+            height: 11px;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
         }
         .blog-card .blog-link:hover svg {
-            transform: translateX(3px);
+            transform: translateX(2px);
+        }
+        @media (min-width: 480px) {
+            .blog-card { width: 168px; padding: 0.72rem 0.85rem; }
+        }
+        @media (min-width: 640px) {
+            .blog-card { width: 188px; padding: 0.8rem 0.95rem; }
+            .blog-card h3 { font-size: 0.75rem; }
+            .blog-card .blog-excerpt { font-size: 0.6875rem; }
+            .blog-card .blog-link { font-size: 0.6875rem; }
+            .blog-card .blog-date { font-size: 0.5625rem; }
         }
 
-        /* ——— CTA SECTION (Book Consultation) ——— */
+        /* --- CTA SECTION (Book Consultation) --- */
         .cta-section {
             padding: clamp(3rem, 6vw, 4.5rem) 0;
             background: var(--white);
@@ -2150,7 +2254,7 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-        @media (min-width: 900px) {
+        @media (min-width: 1024px) {
             .cta-grid {
                 grid-template-columns: 1fr 1.15fr;
                 gap: 3rem;
@@ -2235,7 +2339,7 @@
             margin-right: auto;
         }
 
-        /* ——— FORM HEADER ——— */
+        /* --- FORM HEADER --- */
         .cta-box-header {
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
             padding: 1.25rem 1.5rem;
@@ -2344,7 +2448,7 @@
             border-color: rgba(11, 22, 53, 0.2);
             background: rgba(255, 102, 0, 0.05);
         }
-        /* ——— CTA Schedule (date & time) block ——— */
+        /* --- CTA Schedule (date & time) block --- */
         .cta-schedule-block {
             margin-bottom: 1rem;
             padding: 0.9rem 1rem;
@@ -2384,7 +2488,7 @@
             margin-bottom: 0.25rem;
             letter-spacing: 0.02em;
         }
-        /* ——— Custom date & time picker triggers ——— */
+        /* --- Custom date & time picker triggers --- */
         .cta-picker-wrap { position: relative; }
         .cta-picker-trigger {
             display: flex;
@@ -2453,7 +2557,7 @@
         .cta-picker-trigger:has(.cta-picker-value:not(.placeholder)):hover {
             border-color: rgba(255, 102, 0, 0.5);
         }
-        /* ——— Picker dropdowns ——— */
+        /* --- Picker dropdowns --- */
         .cta-picker-dropdown {
             position: absolute;
             top: calc(100% + 6px);
@@ -2512,7 +2616,7 @@
         .cta-box .form-row-full .form-group { margin-bottom: 1rem; }
         .cta-submit-wrap { margin-top: 0; padding-top: 0; border-top: 1px solid var(--border); }
         
-        /* ——— Consultation schedule step (mobile-first) ——— */
+        /* --- Consultation schedule step (mobile-first) --- */
         .consult-next-wrap { margin-top: 0.75rem; }
         .consult-schedule-section { display: none; margin-top: 0.75rem; }
         #consultSubmitWrap { display: none; }
@@ -2593,7 +2697,7 @@
             box-shadow: none;
         }
 
-        /* ——— MAP STRIP ——— */
+        /* --- MAP STRIP --- */
         .map-strip {
             width: 100%;
             background: linear-gradient(180deg, #FAFBFC 0%, var(--cream) 50%, #F5F6F8 100%);
@@ -2719,7 +2823,7 @@
         }
         .map-strip-address a:hover { color: var(--gold); border-bottom-color: rgba(212, 175, 55, 0.5); }
 
-        /* ——— FOOTER ——— */
+        /* --- FOOTER --- */
         footer {
             background: linear-gradient(180deg, #0d1a3a 0%, var(--navy) 30%, #070E24 100%);
             color: rgba(255,255,255,0.65);
@@ -2751,7 +2855,7 @@
             transition: opacity 0.2s;
         }
         .footer-brand .logo:hover { opacity: 0.8; }
-        .footer-brand .logo-img { height: 108px; width: auto; object-fit: contain; }
+        /* Footer logo height: css/site-global.css (unified) */
         .footer-brand p {
             font-size: 0.9rem;
             line-height: 1.75;
@@ -2939,13 +3043,13 @@
         }
         .footer-back-top svg { width: 16px; height: 16px; }
 
-        /* ——— ANIMATIONS ——— */
+        /* --- ANIMATIONS --- */
         .reveal { opacity: 0; transform: translateY(32px); }
         .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
 
         html { font-size: 100%; }
 
-        /* ——— RESPONSIVE ——— */
+        /* --- RESPONSIVE --- */
 
         /* Tablet */
         @media (max-width: 1024px) {
@@ -2966,7 +3070,7 @@
             nav.nav-hidden {
                 transform: translate(-50%, calc(-100% - 2rem));
             }
-            /* ——— Mobile menu: full-screen overlay ——— */
+            /* --- Mobile menu: full-screen overlay --- */
             .nav-links {
                 display: none;
                 position: absolute;
@@ -3244,10 +3348,10 @@
             .hero-ctas { justify-content: center; margin-top: 1rem; }
             .hero-dots { justify-content: center; margin-left: auto; margin-right: auto; margin-bottom: 0.5rem; }
             .hero-slider { min-height: clamp(280px, 46vw, 340px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.3rem 0 0; margin-left: auto; margin-right: auto; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
+            .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.3rem auto 0; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { height: 3px; min-width: 20px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.4rem; }
+            .hero-slide h1, .hero-slide h2.hero-slide-heading { margin-bottom: 0.4rem; }
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
             .hero-form-wrap {
                 justify-self: center;
@@ -3271,8 +3375,6 @@
             .services-tab { padding: 0.7rem 1.1rem; min-width: 6.5rem; font-size: 0.9375rem; }
             .about-values { grid-template-columns: 1fr; gap: var(--space-sm); padding-left: 0; }
             .about-value-card { padding: 1.75rem 1.5rem; }
-            .blog-grid { grid-template-columns: 1fr; }
-            .blog-card-body { padding: 0.9rem 0.95rem 0.85rem; }
 
             .cta-box .form-row { grid-template-columns: 1fr; }
 
@@ -3295,10 +3397,10 @@
             .hero-form-wrap { padding: 0; }
             .hero-dots { flex-wrap: wrap; justify-content: center; margin-left: auto; margin-right: auto; gap: 0.2rem; padding: 0.3rem; }
             .hero-slider { min-height: clamp(300px, 52vw, 360px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.28rem 0 0; margin: 0.28rem auto 0.5rem; margin-left: auto; margin-right: auto; max-width: min(170px, 100%); min-height: 18px; }
+            .hero-slider-progress { padding: 0.28rem 0 0; margin: 0.28rem auto 0.5rem; max-width: min(170px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { min-width: 24px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.35rem; }
+            .hero-slide h1, .hero-slide h2.hero-slide-heading { margin-bottom: 0.35rem; }
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
 
             .services-panel-content h3 { font-size: 1.375rem; }
@@ -3310,9 +3412,6 @@
             .partners-section { --partner-slot: 118px; }
             .partner-logo-card { height: 56px; padding: 0.4rem 0.5rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
-            .blog-card-image { aspect-ratio: 16/8.8; }
-            .blog-card h3 { font-size: 0.95rem; }
-            .blog-card .blog-excerpt { font-size: 0.84rem; }
 
             .cta-section { padding: var(--space-lg) 0; }
             .cta-grid { gap: 2rem; }
@@ -3333,7 +3432,7 @@
             .cta-box input, .cta-box select, .cta-box textarea { min-height: 48px; font-size: 1rem; -webkit-tap-highlight-color: transparent; }
             .cta-box button[type="submit"] { min-height: 48px; }
 
-            .footer-brand .logo-img { height: 102px; }
+            /* Footer logo: site-global.css */
             .footer-grid { grid-template-columns: 1fr; }
             .footer-brand { grid-column: auto; }
             .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
@@ -3403,10 +3502,10 @@
             .footer-contact-item { flex-direction: column; gap: 0.5rem; }
             .hero-dot-item { font-size: 0.8125rem; padding: 0.5rem 0.9rem; }
             .hero-slider { min-height: clamp(320px, 58vw, 380px); margin-bottom: 1.25rem; }
-            .hero-slider-progress { padding: 0.25rem 0 0; margin: 0.25rem auto 0.45rem; margin-left: auto; margin-right: auto; max-width: min(150px, 100%); min-height: 20px; }
+            .hero-slider-progress { padding: 0.25rem 0 0; margin: 0.25rem auto 0.45rem; max-width: min(150px, 100%); min-height: 20px; }
             .hero-slider-progress-segment { min-width: 28px; height: 4px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.35rem; }
+            .hero-slide h1, .hero-slide h2.hero-slide-heading { margin-bottom: 0.35rem; }
             .hero-slide p { margin-bottom: 0; padding-bottom: 0; font-size: 0.875rem; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
@@ -3442,6 +3541,8 @@
     <link rel="stylesheet" href="css/lottie-forms.css">
     <link rel="stylesheet" href="css/testimonials-google.css">
     <link rel="stylesheet" href="css/calendly-style-picker.css">
+    <link rel="stylesheet" href="css/cta-box-header-border.css">
+    <link rel="stylesheet" href="css/site-global.css">
     <script src="js/testimonials-expand.js" defer></script>
 </head>
 <body>
@@ -3506,11 +3607,11 @@
                                 <p>First mortgages from 6.99%. Close in as little as 24 hours. Up to 75% LTV on residential. Loans up to $3M across the GTA.</p>
                             </div>
                             <div class="hero-slide" data-slide="1">
-                                <h1>First Mortgages, <span class="hl">Second Mortgages</span> &amp; Construction Loans: Up to 75% LTV</h1>
+                                <h2 class="hero-slide-heading">First Mortgages, <span class="hl">Second Mortgages</span> &amp; Construction Loans: Up to 75% LTV</h2>
                                 <p>Second mortgages from 10.99%. Construction loans from 7.99%. Bridge financing from 8.99%. Same-day feedback on every application.</p>
                             </div>
                             <div class="hero-slide" data-slide="2">
-                                <h1><span class="hl">Same-Day Feedback.</span> Close in as Little as 24 Hours.</h1>
+                                <h2 class="hero-slide-heading"><span class="hl">Same-Day Feedback.</span> Close in as Little as 24 Hours.</h2>
                                 <p>Direct access to decision-makers. Case-by-case evaluation. Common-sense underwriting on residential, construction, bridge, HELOC, and commercial loans.</p>
                             </div>
                         </div>
@@ -3523,15 +3624,15 @@
                     <div class="hero-slide-set" data-set="investors">
                         <div class="hero-slides-track">
                             <div class="hero-slide active" data-slide="0">
-                                <h1>Invest in a <span class="hl">MIC</span> in Ontario</h1>
+                                <h2 class="hero-slide-heading">Invest in a <span class="hl">MIC</span> in Ontario</h2>
                                 <p>Target 7-8% annual returns. $100,000 minimum. RRSP, TFSA, and RRIF eligible. Quarterly distributions by direct deposit.</p>
                             </div>
                             <div class="hero-slide" data-slide="1">
-                                <h1><span class="hl">Asset-Backed</span>. Professionally Managed.</h1>
+                                <h2 class="hero-slide-heading"><span class="hl">Asset-Backed</span>. Professionally Managed.</h2>
                                 <p>Every dollar secured by real estate at max 75% LTV. Portfolio diversified across the GTA. Annual audited financials.</p>
                             </div>
                             <div class="hero-slide" data-slide="2">
-                                <h1>Regular <span class="hl">Distributions</span> from Mortgage Income</h1>
+                                <h2 class="hero-slide-heading">Regular <span class="hl">Distributions</span> from Mortgage Income</h2>
                                 <p>Quarterly distributions: March 30, June 30, September 30, December 31. Hold in RRSP, RRIF, TFSA, LIRA, RESP, or LIF.</p>
                             </div>
                         </div>
@@ -3544,15 +3645,15 @@
                     <div class="hero-slide-set" data-set="brokers">
                         <div class="hero-slides-track">
                             <div class="hero-slide active" data-slide="0">
-                                <h1><span class="hl">Private Mortgage Solutions</span> for Ontario Brokers</h1>
+                                <h2 class="hero-slide-heading"><span class="hl">Private Mortgage Solutions</span> for Ontario Brokers</h2>
                                 <p>We're a licensed MIC, not a broker. We never compete for your clients. Same-day feedback. Close in as little as 24 hours.</p>
                             </div>
                             <div class="hero-slide" data-slide="1">
-                                <h1>Fast Response. <span class="hl">Transparent Terms</span>. Reliable Closings.</h1>
+                                <h2 class="hero-slide-heading">Fast Response. <span class="hl">Transparent Terms</span>. Reliable Closings.</h2>
                                 <p>First mortgages from 6.99%. Up to 75% LTV. Loans up to $3M. 2% lender fee. No surprises at closing.</p>
                             </div>
                             <div class="hero-slide" data-slide="2">
-                                <h1>Direct Access to <span class="hl">Decision-Makers</span></h1>
+                                <h2 class="hero-slide-heading">Direct Access to <span class="hl">Decision-Makers</span></h2>
                                 <p>Direct access to decision-makers. 1st and 2nd mortgages, construction, bridge, HELOC, and commercial. Every deal gets individual attention.</p>
                             </div>
                         </div>
@@ -3580,10 +3681,6 @@
                         <div class="cta-trust-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             <span>Confidential &amp; secure</span>
-                        </div>
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Licensed MIC #13171</span>
                         </div>
                     </div>
                 </div>
@@ -3704,7 +3801,7 @@
                             <img src="images/logo.png" alt="Richview Capital" class="hero-form-footer-logo" loading="lazy">
                             <span class="hero-form-footer-name">Richview Capital</span>
                         </div>
-                        <p class="hero-form-footer-meta">Licensed MIC #13171 · Confidential &amp; secure</p>
+                        <p class="hero-form-footer-meta">Confidential &amp; secure</p>
                     </div>
                 </div>
             </div>
@@ -3811,7 +3908,7 @@
         </div>
     </section>
 
-    <!-- ——— PARTNERS / WHO WE WORK WITH ——— -->
+    <!-- --- PARTNERS / WHO WE WORK WITH --- -->
     <section class="partners-section" aria-label="Partners and who we work with">
         <div class="container">
             <div class="partners-head">
@@ -3834,14 +3931,14 @@
                 <div class="partner-logo-card"><img src="images/partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
-                <!-- Set 2 — duplicate for seamless infinite loop -->
+                <!-- Set 2 - duplicate for seamless infinite loop -->
                 <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-gosbeelaw.png" alt="Gosbee Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-cleartrust.png" alt="Clear Trust Mortgages" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-securemortgage.png" alt="Secure Mortgage Experts" loading="lazy"></div>
-                <!-- Set 3 — same sequence (wider track, no end gap on large screens) -->
+                <!-- Set 3 - same sequence (wider track, no end gap on large screens) -->
                 <div class="partner-logo-card"><img src="images/partner-vantagelaw.png" alt="Vantage Law" loading="lazy"></div>
                 <div class="partner-logo-card"><img src="images/partner-spagnuolo.png" alt="Spagnuolo Law" loading="lazy"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="images/partner-axess.png" alt="Axess Law" loading="lazy"></div>
@@ -4032,42 +4129,112 @@
         <div class="blog-inner">
             <div class="sec-head reveal">
                 <h2>From Our Blog</h2>
-                <p>Insights on private&nbsp;mortgages, financing, and investing in&nbsp;Ontario</p>
+                <p>Educational notes tied to our Ontario lending and MIC pages</p>
             </div>
-            <div class="blog-grid">
-                <article class="blog-card reveal" style="--i: 0;">
-                <div class="blog-card-image">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=380&fit=crop" alt="" loading="lazy">
+            <div class="blog-slider" aria-label="Blog articles carousel">
+                <div class="blog-track">
+                    <article class="blog-card reveal" style="--i: 0;">
+                        <a href="blog-second-mortgages-when-they-help.html" class="blog-card-thumb" aria-label="Read: Second mortgages: when they help">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Mar 2025</span>
+                            <h3><a href="blog-second-mortgages-when-they-help.html">Second mortgages: when they help</a></h3>
+                            <p class="blog-excerpt">Equity and underwriting - aligned with our borrower pages.</p>
+                            <a href="blog-second-mortgages-when-they-help.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 1;">
+                        <a href="blog-construction-financing-ontario.html" class="blog-card-thumb" aria-label="Read: Construction financing: draws and completion">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Feb 2025</span>
+                            <h3><a href="blog-construction-financing-ontario.html">Construction financing: draws and completion</a></h3>
+                            <p class="blog-excerpt">How staged draws work - tied to our construction focus.</p>
+                            <a href="blog-construction-financing-ontario.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 2;">
+                        <a href="blog-mics-registered-accounts.html" class="blog-card-thumb" aria-label="Read: MICs and registered accounts">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Jan 2025</span>
+                            <h3><a href="blog-mics-registered-accounts.html">MICs and registered accounts</a></h3>
+                            <p class="blog-excerpt">Same MIC basics as our &ldquo;What Is a MIC?&rdquo; resource.</p>
+                            <a href="blog-mics-registered-accounts.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <!-- Duplicate set for seamless loop -->
+                    <article class="blog-card reveal" style="--i: 0;">
+                        <a href="blog-second-mortgages-when-they-help.html" class="blog-card-thumb" aria-label="Read: Second mortgages: when they help">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Mar 2025</span>
+                            <h3><a href="blog-second-mortgages-when-they-help.html">Second mortgages: when they help</a></h3>
+                            <p class="blog-excerpt">Equity and underwriting - aligned with our borrower pages.</p>
+                            <a href="blog-second-mortgages-when-they-help.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 1;">
+                        <a href="blog-construction-financing-ontario.html" class="blog-card-thumb" aria-label="Read: Construction financing: draws and completion">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Feb 2025</span>
+                            <h3><a href="blog-construction-financing-ontario.html">Construction financing: draws and completion</a></h3>
+                            <p class="blog-excerpt">How staged draws work - tied to our construction focus.</p>
+                            <a href="blog-construction-financing-ontario.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 2;">
+                        <a href="blog-mics-registered-accounts.html" class="blog-card-thumb" aria-label="Read: MICs and registered accounts">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Jan 2025</span>
+                            <h3><a href="blog-mics-registered-accounts.html">MICs and registered accounts</a></h3>
+                            <p class="blog-excerpt">Same MIC basics as our &ldquo;What Is a MIC?&rdquo; resource.</p>
+                            <a href="blog-mics-registered-accounts.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <!-- Third set for continuous flow -->
+                    <article class="blog-card reveal" style="--i: 0;">
+                        <a href="blog-second-mortgages-when-they-help.html" class="blog-card-thumb" aria-label="Read: Second mortgages: when they help">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Mar 2025</span>
+                            <h3><a href="blog-second-mortgages-when-they-help.html">Second mortgages: when they help</a></h3>
+                            <p class="blog-excerpt">Equity and underwriting - aligned with our borrower pages.</p>
+                            <a href="blog-second-mortgages-when-they-help.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 1;">
+                        <a href="blog-construction-financing-ontario.html" class="blog-card-thumb" aria-label="Read: Construction financing: draws and completion">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Feb 2025</span>
+                            <h3><a href="blog-construction-financing-ontario.html">Construction financing: draws and completion</a></h3>
+                            <p class="blog-excerpt">How staged draws work - tied to our construction focus.</p>
+                            <a href="blog-construction-financing-ontario.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal" style="--i: 2;">
+                        <a href="blog-mics-registered-accounts.html" class="blog-card-thumb" aria-label="Read: MICs and registered accounts">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=240&amp;h=150&amp;fit=crop&amp;q=80" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        </a>
+                        <div class="blog-card-body">
+                            <span class="blog-date">Jan 2025</span>
+                            <h3><a href="blog-mics-registered-accounts.html">MICs and registered accounts</a></h3>
+                            <p class="blog-excerpt">Same MIC basics as our &ldquo;What Is a MIC?&rdquo; resource.</p>
+                            <a href="blog-mics-registered-accounts.html" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="blog-card-body">
-                    <span class="blog-date">Mar 2025</span>
-                <h3><a href="#">Second Mortgages: What They Are and When to Use Them</a></h3>
-                <p class="blog-excerpt">Use home equity for renovations, debt consolidation, or investment goals.</p>
-                <a href="#" class="blog-link">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                </div>
-                </article>
-                <article class="blog-card reveal" style="--i: 1;">
-                <div class="blog-card-image">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=380&fit=crop" alt="" loading="lazy">
-                </div>
-                <div class="blog-card-body">
-                    <span class="blog-date">Feb 2025</span>
-                    <h3><a href="#">Construction Financing in Ontario: Quick Starter Guide</a></h3>
-                    <p class="blog-excerpt">Understand draw schedules, lender expectations, and key closing steps.</p>
-                    <a href="#" class="blog-link">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                </div>
-                </article>
-                <article class="blog-card reveal" style="--i: 2;">
-                <div class="blog-card-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=380&fit=crop" alt="" loading="lazy">
-                </div>
-                <div class="blog-card-body">
-                    <span class="blog-date">Jan 2025</span>
-                    <h3><a href="#">Why MIC Investing Fits Your RRSP Strategy</a></h3>
-                    <p class="blog-excerpt">A concise look at RRSP-eligible, asset-backed returns through MICs.</p>
-                    <a href="#" class="blog-link">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                </div>
-                </article>
             </div>
         </div>
     </section>
@@ -4131,17 +4298,11 @@
                             </span>
                             <span>Confidential & secure</span>
                         </li>
-                        <li class="cta-trust-list-item">
-                            <span class="cta-trust-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </span>
-                            <span>Licensed MIC #13171</span>
-                        </li>
                     </ul>
                 </div>
                 <div class="cta-box reveal">
                 <div class="cta-box-header">
-                    <h2>Request a Consultation</h2>
+                    <h2>Book a Free Consultation</h2>
                     <p>Fill out the form and we'll respond instantly.</p>
                     <div class="cta-trust-row">
                         <div class="cta-trust-item">
@@ -4151,10 +4312,6 @@
                         <div class="cta-trust-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             <span>Confidential &amp; secure</span>
-                        </div>
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Licensed MIC #13171</span>
                         </div>
                     </div>
                 </div>
@@ -4830,10 +4987,7 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    var dest = 'thank-you.html';
-                    if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
-                    try { sessionStorage.setItem('tyFormData', JSON.stringify(payload)); } catch (e) {}
-                    window.location.href = dest;
+                    window.location.href = 'thank-you.html';
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
@@ -5170,9 +5324,7 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    var dest = 'thank-you.html';
-                    if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
-                    window.location.href = dest;
+                    window.location.href = 'thank-you.html';
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
@@ -5448,7 +5600,7 @@
     </script>
 
     <script>
-        /* ——— Canadian phone formatter for all tel inputs ——— */
+        /* --- Canadian phone formatter for all tel inputs --- */
         (function () {
             function fmtCA(el) {
                 var d = el.value.replace(/\D/g, '').slice(0, 10);
