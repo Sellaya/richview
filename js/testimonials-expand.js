@@ -15,7 +15,10 @@
       if (!card) return;
       var expanded = card.classList.toggle('is-expanded');
       btn.setAttribute('aria-expanded', expanded);
-      btn.textContent = expanded ? 'Show less' : 'Read more';
+      var span = btn.querySelector('span');
+      if (span) {
+        span.textContent = expanded ? 'Show less' : 'Read more';
+      }
     });
   }
   if (document.readyState === 'loading') {

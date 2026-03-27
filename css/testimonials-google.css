@@ -212,21 +212,25 @@
 
 /* Blockquote - Truncated */
 .testimonial-card blockquote {
-  font-size: clamp(0.75rem, 1.6vw, 0.8125rem);
-  color: #374151;
-  line-height: 1.6;
+  font-size: clamp(0.8125rem, 1.7vw, 0.875rem);
+  color: #1F2937;
+  line-height: 1.65;
   margin: 0;
   font-weight: 400;
+  letter-spacing: 0.01em;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: -webkit-line-clamp 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .testimonial-card.is-expanded blockquote {
   -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
   display: block;
+  overflow: visible;
 }
 
 /* Read More Button */
@@ -236,31 +240,36 @@
   gap: 0.25rem;
   background: none;
   border: none;
-  padding: 0;
+  padding: 0.25rem 0;
   margin: 0;
-  font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
+  font-size: clamp(0.75rem, 1.6vw, 0.8125rem);
   font-weight: 600;
   color: #FF6600;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, gap 0.2s ease;
   text-decoration: none;
   font-family: 'Inter', -apple-system, sans-serif;
   align-self: flex-start;
+  position: relative;
+  z-index: 3;
+  touch-action: manipulation;
 }
 
 .testimonial-read-more:hover {
   color: #FF8833;
-  transform: translateX(2px);
+  gap: 0.375rem;
 }
 
 .testimonial-read-more::after {
   content: '→';
-  font-size: 0.875em;
+  font-size: 1em;
   transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .testimonial-card.is-expanded .testimonial-read-more::after {
   content: '↑';
+  transform: translateY(-1px);
 }
 
 /* Author Section */
