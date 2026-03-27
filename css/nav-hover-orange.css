@@ -86,6 +86,17 @@
   }
 }
 
+/* Desktop: match homepage — rounded hover “pills” (orange/gray fills are not square blocks) */
+@media (min-width: 1025px) {
+  #mainNav .nav-links > li > a,
+  #mainNav .nav-dropdown > a {
+    border-radius: 12px !important;
+  }
+  #mainNav .nav-dropdown-content a {
+    border-radius: 6px !important;
+  }
+}
+
 /* Footer - orange hovers (match nav #FF6600) */
 footer .footer-col a:hover,
 footer .footer-col a:focus-visible,
