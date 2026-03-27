@@ -1162,6 +1162,16 @@
                 padding: 0.85rem 1rem;
             }
             .hero-form-wrap.cta-box .cta-box-header h2 { font-size: 1.0625rem; }
+            .cta-trust-row {
+                gap: 0.5rem;
+            }
+            .cta-trust-item {
+                font-size: 0.75rem;
+            }
+            .cta-trust-item svg {
+                width: 14px;
+                height: 14px;
+            }
             /* Trust badge responsive styles moved to trust-badges-responsive.css */
             .hero-form-wrap .cta-box-body {
                 padding: 0.75rem 0.85rem;
@@ -2252,11 +2262,12 @@
             display: flex;
             align-items: center;
             gap: 0.45rem;
-            font-size: clamp(0.875rem, 2vw, 0.9375rem);
+            font-size: clamp(0.75rem, 2vw, 0.9375rem);
             font-weight: 600;
             color: rgba(255,255,255,0.92);
             white-space: nowrap;
-            flex-shrink: 0;
+            flex-shrink: 1;
+            min-width: 0;
         }
         .cta-trust-item svg {
             flex-shrink: 0;
