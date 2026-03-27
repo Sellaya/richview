@@ -7,19 +7,15 @@
     <meta name="description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
-    <link rel="canonical" href="./index.html">
+    <link rel="canonical" href="/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Private Mortgage Lending & Construction Financing in Ontario | Richview Capital MIC">
     <meta property="og:description" content="Richview Capital MIC provides residential private mortgages, second mortgages, and construction financing across the GTA and Ontario. Licensed MIC with fast approvals.">
     <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="./index.html">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <meta property="og:url" content="/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-    <link rel="stylesheet" href="css/typography-futuristic.css">
-    <link rel="stylesheet" href="css/futuristic-enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -350,7 +346,7 @@
             background: var(--navy);
             color: var(--white);
             padding: 0.55rem 1.25rem;
-            border-radius: 12px;
+            border-radius: 999px;
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
             font-size: 0.8125rem;
@@ -484,15 +480,13 @@
         }
         .hero-content h1 .hl, .hero-slide h1 .hl { color: var(--gold); font-weight: 600; }
         .hero-content p, .hero-slide p {
-            font-size: clamp(1.0625rem, 2vw, 1.1875rem);
-            color: rgba(255, 255, 255, 0.92);
-            line-height: 1.7;
-            max-width: 640px;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            color: rgba(255, 255, 255, 0.88);
+            line-height: var(--leading-relaxed);
+            max-width: 100%;
             width: 100%;
             min-width: 0;
             text-wrap: pretty;
-            margin: 0 auto;
-            letter-spacing: 0.005em;
         }
         .hero-ctas {
             display: flex;
@@ -664,16 +658,13 @@
         }
         .hero-slide p {
             margin-bottom: 0;
-            font-size: clamp(1.0625rem, 2vw, 1.1875rem);
-            max-width: 640px;
+            font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+            max-width: 100%;
             overflow-wrap: break-word;
             word-wrap: break-word;
-            line-height: 1.7;
+            line-height: 1.65;
             flex: 1 1 auto;
             min-height: 0;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.005em;
         }
         .hero-slider-progress {
             flex-shrink: 0;
@@ -755,7 +746,7 @@
             background: var(--navy);
             color: var(--white);
             padding: var(--btn-padding-lg);
-            border-radius: 12px;
+            border-radius: var(--btn-radius-lg);
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
@@ -803,7 +794,7 @@
             background: var(--white);
             color: var(--navy);
             padding: var(--btn-padding-lg);
-            border-radius: 12px;
+            border-radius: var(--btn-radius-lg);
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
@@ -879,7 +870,7 @@
             color: var(--white);
             padding: 0.65rem 1.25rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
             font-size: 0.875rem;
@@ -1060,19 +1051,41 @@
             font-size: 0.8125rem;
             margin-bottom: 0.75rem;
         }
-        /* Trust badge styles moved to trust-badges-responsive.css */
+        .hero-form-wrap .cta-trust-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.75rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .hero-form-wrap .cta-trust-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .hero-form-wrap .cta-trust-item svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
         .hero-form-wrap .hero-form-btn {
             min-height: 36px;
             padding: 0.38rem 0.7rem;
             font-size: 0.78125rem;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 8px;
         }
         .hero-form-wrap button[type="submit"] {
             min-height: 36px;
             padding: 0.38rem 0.7rem;
             font-size: 0.78125rem;
-            border-radius: 12px;
+            border-radius: 8px;
         }
         .hero-form-wrap .hero-form-submit {
             flex: 0 0 auto;
@@ -1169,7 +1182,16 @@
                 padding: 0.85rem 1rem;
             }
             .hero-form-wrap.cta-box .cta-box-header h2 { font-size: 1.0625rem; }
-            /* Trust badge responsive styles moved to trust-badges-responsive.css */
+            .hero-form-wrap .cta-trust-row {
+                gap: 0.4rem 0.6rem;
+            }
+            .hero-form-wrap .cta-trust-item {
+                font-size: 0.625rem;
+            }
+            .hero-form-wrap .cta-trust-item svg {
+                width: 11px;
+                height: 11px;
+            }
             .hero-form-wrap .cta-box-body {
                 padding: 0.75rem 0.85rem;
             }
@@ -2250,26 +2272,25 @@
         }
         .cta-trust-row {
             display: flex;
-            gap: clamp(0.3rem, 1.2vw, 0.6rem);
-            flex-wrap: wrap;
+            gap: clamp(0.4rem, 1.5vw, 0.85rem);
+            flex-wrap: nowrap;
             align-items: center;
             position: relative;
-            row-gap: 0.5rem;
         }
         .cta-trust-item {
             display: flex;
             align-items: center;
-            gap: 0.2rem;
-            font-size: clamp(0.48rem, 1.1vw, 0.58rem);
+            gap: 0.3rem;
+            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
             font-weight: 600;
             color: rgba(255,255,255,0.88);
             white-space: nowrap;
-            flex-shrink: 1;
+            flex-shrink: 0;
         }
         .cta-trust-item svg {
             flex-shrink: 0;
-            width: 11px;
-            height: 11px;
+            width: 12px;
+            height: 12px;
             color: var(--gold);
         }
 
@@ -2502,7 +2523,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
+            border-radius: var(--btn-radius-lg);
             padding: 0.875rem 1.5rem;
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
@@ -2541,7 +2562,7 @@
             color: var(--white);
             padding: 0.875rem 1.5rem;
             border: none;
-            border-radius: 12px;
+            border-radius: var(--btn-radius-lg);
             font-family: var(--font-sans);
             font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
@@ -3226,13 +3247,8 @@
             .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.3rem 0 0; margin-left: auto; margin-right: auto; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { height: 3px; min-width: 20px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2.5vw, 0.75rem); }
-            .hero-slide p {
-                margin-bottom: 0;
-                padding-bottom: 0;
-                font-size: clamp(1rem, 3vw, 1.0625rem);
-                line-height: 1.68;
-            }
+            .hero-slide h1 { margin-bottom: 0.4rem; }
+            .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
             .hero-form-wrap {
                 justify-self: center;
                 width: 100%;
@@ -3282,13 +3298,8 @@
             .hero-slider-progress { padding: 0.28rem 0 0; margin: 0.28rem auto 0.5rem; margin-left: auto; margin-right: auto; max-width: min(170px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { min-width: 24px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2vw, 0.75rem); }
-            .hero-slide p {
-                margin-bottom: 0;
-                padding-bottom: 0;
-                font-size: clamp(1rem, 2vw, 1.0625rem);
-                line-height: 1.68;
-            }
+            .hero-slide h1 { margin-bottom: 0.35rem; }
+            .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
 
             .services-panel-content h3 { font-size: 1.375rem; }
             .services-panels { min-height: 280px; }
@@ -3395,13 +3406,8 @@
             .hero-slider-progress { padding: 0.25rem 0 0; margin: 0.25rem auto 0.45rem; margin-left: auto; margin-right: auto; max-width: min(150px, 100%); min-height: 20px; }
             .hero-slider-progress-segment { min-width: 28px; height: 4px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2vw, 0.65rem); }
-            .hero-slide p {
-                margin-bottom: 0;
-                padding-bottom: 0;
-                font-size: clamp(0.9375rem, 3vw, 1rem);
-                line-height: 1.65;
-            }
+            .hero-slide h1 { margin-bottom: 0.35rem; }
+            .hero-slide p { margin-bottom: 0; padding-bottom: 0; font-size: 0.875rem; }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
         }
@@ -3426,21 +3432,17 @@
         }
     </style>
     <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/typography-system.css">
-    <link rel="stylesheet" href="css/responsive-spacing.css">
-    <link rel="stylesheet" href="css/focus-states.css">
-    <link rel="stylesheet" href="css/animations-professional.css">
-    <link rel="stylesheet" href="css/button-contrast.css">
-    <link rel="stylesheet" href="css/mobile-menu-improved.css">
+    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
     <link rel="stylesheet" href="css/nav-hover-orange.css">
+    <link rel="stylesheet" href="css/button-contrast.css">
     <link rel="stylesheet" href="css/hero-ctas-buttons.css">
     <link rel="stylesheet" href="css/faq-section.css">
+    <link rel="stylesheet" href="css/responsive-spacing.css">
     <link rel="stylesheet" href="css/motion-home.css">
     <link rel="stylesheet" href="css/lottie-forms.css">
-    <link rel="stylesheet" href="css/testimonials-minimal-slider.css">
+    <link rel="stylesheet" href="css/testimonials-google.css">
     <link rel="stylesheet" href="css/calendly-style-picker.css">
-    <link rel="stylesheet" href="css/trust-badges-responsive.css">
-    <script type="module" src="js/testimonials-slider.js" defer></script>
+    <script src="js/testimonials-expand.js" defer></script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -3579,6 +3581,10 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             <span>Confidential &amp; secure</span>
                         </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Licensed MIC #13171</span>
+                        </div>
                     </div>
                 </div>
                 <div class="cta-box-body" id="heroCtaBoxBody">
@@ -3698,7 +3704,7 @@
                             <img src="images/logo.png" alt="Richview Capital" class="hero-form-footer-logo" loading="lazy">
                             <span class="hero-form-footer-name">Richview Capital</span>
                         </div>
-                        <p class="hero-form-footer-meta">Confidential &amp; secure</p>
+                        <p class="hero-form-footer-meta">Licensed MIC #13171 · Confidential &amp; secure</p>
                     </div>
                 </div>
             </div>
@@ -3893,125 +3899,131 @@
 
     <section class="testimonials-section" id="testimonials">
         <div class="testimonials-inner">
-            <div class="sec-head">
+            <div class="sec-head reveal">
                 <h2>What Our Clients Say</h2>
-                <p>Real experiences from clients who trust Richview Capital</p>
+                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
             </div>
-
-            <div class="testimonials-slider-container">
-                <div class="testimonials-slider-viewport">
-                    <div class="testimonials-slider-track">
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                </div>
-                                <p class="testimonial-quote">When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</p>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">MD</div>
-                                    <div class="testimonial-author-info">
-                                        <h5>Michael Davidson</h5>
-                                        <span>Real Estate Developer</span>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="testimonials-slider" aria-label="Testimonials carousel">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
                         </div>
-
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                </div>
-                                <p class="testimonial-quote">The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</p>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">JT</div>
-                                    <div class="testimonial-author-info">
-                                        <h5>Jennifer Torres</h5>
-                                        <span>Homeowner</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                </div>
-                                <p class="testimonial-quote">Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</p>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">RP</div>
-                                    <div class="testimonial-author-info">
-                                        <h5>Robert Patterson</h5>
-                                        <span>Property Owner</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                </div>
-                                <p class="testimonial-quote">Working with Richview Capital was a game changer for our development project. They understood the complexities and delivered financing solutions that worked for us.</p>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">SK</div>
-                                    <div class="testimonial-author-info">
-                                        <h5>Sarah Kim</h5>
-                                        <span>Property Investor</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                    <span class="star" aria-hidden="true">★</span>
-                                </div>
-                                <p class="testimonial-quote">Fast, reliable, and professional. Richview Capital made the entire mortgage process stress-free. I highly recommend them to anyone needing private financing.</p>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">DL</div>
-                                    <div class="testimonial-author-info">
-                                        <h5>David Lee</h5>
-                                        <span>Construction Manager</span>
-                                    </div>
-                                </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="testimonials-nav">
-                    <button class="testimonials-nav-btn testimonials-nav-btn--prev" aria-label="Previous testimonial">
-                        ←
-                    </button>
-                    <div class="testimonials-dots"></div>
-                    <button class="testimonials-nav-btn testimonials-nav-btn--next" aria-label="Next testimonial">
-                        →
-                    </button>
-                </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Duplicate set for seamless loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Third set for continuous flow, no empty gap -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -4117,7 +4129,13 @@
                             <span class="cta-trust-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </span>
-                            <span>Confidential &amp; secure</span>
+                            <span>Confidential & secure</span>
+                        </li>
+                        <li class="cta-trust-list-item">
+                            <span class="cta-trust-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <span>Licensed MIC #13171</span>
                         </li>
                     </ul>
                 </div>
@@ -4133,6 +4151,10 @@
                         <div class="cta-trust-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             <span>Confidential &amp; secure</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Licensed MIC #13171</span>
                         </div>
                     </div>
                 </div>
@@ -4351,7 +4373,7 @@
         </div>
     </footer>
 
-    <script type="module" src="js/lottie-utils.js"></script>
+    <script src="js/lottie-utils.js"></script>
     <script>
         (function() {
             const dotItems = document.querySelectorAll('.hero-dot-item[data-slider]');
@@ -5150,7 +5172,6 @@
                     form.reset();
                     var dest = 'thank-you.html';
                     if (payload.first_name) dest += '?name=' + encodeURIComponent(payload.first_name);
-                    try { sessionStorage.setItem('tyFormData', JSON.stringify(payload)); } catch (e) {}
                     window.location.href = dest;
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
@@ -5459,99 +5480,6 @@
                     var pasted = (e.clipboardData || window.clipboardData).getData('text');
                     this.value = pasted.replace(/\D/g, '').slice(0, 10);
                     fmtCA(this);
-                });
-            });
-        })();
-    </script>
-
-    <script src="js/lottie-utils.js"></script>
-    <script>
-        (function initLottieAnimations() {
-            if (typeof lottie === 'undefined' || !lottie) {
-                console.warn('Lottie library not loaded, using CSS fallbacks');
-                return;
-            }
-
-            var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReducedMotion) {
-                console.log('User prefers reduced motion, skipping Lottie animations');
-                return;
-            }
-
-            var heroBgGrid = document.querySelector('.hero-bg-grid');
-            if (heroBgGrid && window.IntersectionObserver) {
-                var heroAnim = null;
-                var heroObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            if (!heroAnim) {
-                                var lottieContainer = document.createElement('div');
-                                lottieContainer.className = 'hero-lottie-container';
-                                lottieContainer.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.06;pointer-events:none;z-index:0;';
-                                heroBgGrid.appendChild(lottieContainer);
-
-                                heroAnim = lottie.loadAnimation({
-                                    container: lottieContainer,
-                                    renderer: 'svg',
-                                    loop: true,
-                                    autoplay: true,
-                                    path: 'lottie/hero/hero-bg-grid.json'
-                                });
-
-                                heroAnim.addEventListener('data_failed', function() {
-                                    console.warn('Failed to load hero background animation');
-                                    if (lottieContainer && lottieContainer.parentNode) {
-                                        lottieContainer.parentNode.removeChild(lottieContainer);
-                                    }
-                                });
-                            } else if (heroAnim.isPaused) {
-                                heroAnim.play();
-                            }
-                        } else {
-                            if (heroAnim && !heroAnim.isPaused) {
-                                heroAnim.pause();
-                            }
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                heroObserver.observe(heroBgGrid);
-            }
-
-            var successContainers = document.querySelectorAll('.cta-form-success');
-            successContainers.forEach(function(container) {
-                var observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                            var display = window.getComputedStyle(container).display;
-                            if (display !== 'none') {
-                                var lottieWrap = container.querySelector('.lottie-success-icon');
-                                if (!lottieWrap) {
-                                    lottieWrap = document.createElement('div');
-                                    lottieWrap.className = 'lottie-success-icon';
-                                    lottieWrap.style.cssText = 'width:64px;height:64px;margin:0 auto 1rem;';
-                                    var h3 = container.querySelector('h3');
-                                    if (h3 && h3.parentNode) {
-                                        h3.parentNode.insertBefore(lottieWrap, h3);
-                                    } else {
-                                        container.insertBefore(lottieWrap, container.firstChild);
-                                    }
-
-                                    if (window.RichviewLottie && window.RichviewLottie.showSuccessCheck) {
-                                        window.RichviewLottie.showSuccessCheck(lottieWrap, {
-                                            size: 64,
-                                            useLottie: true
-                                        });
-                                    }
-                                }
-                            }
-                        }
-                    });
-                });
-
-                observer.observe(container, {
-                    attributes: true,
-                    attributeFilter: ['style']
                 });
             });
         })();

@@ -1,25 +1,25 @@
 /**
- * Nav menu — orange hover, brand var(--color-gold, #FF6600), professional & uniform, mobile-first
+ * Nav menu — orange hover, brand #FF6600, professional & uniform, mobile-first
  * Applied across all pages for consistent nav interaction
  */
 #mainNav .nav-links > li > a:hover,
 #mainNav .nav-links > li > a:active,
 #mainNav .nav-links a:hover,
 #mainNav .nav-links a:active {
-  color: var(--color-gold, var(--color-gold, #FF6600)) !important;
-  background: rgba(255, 102, 0, 0.12) !important;
+  color: #FF6600 !important;
+  background: rgba(255, 102, 0, 0.06) !important;
 }
 /* Dropdown parent link */
 #mainNav .nav-dropdown > a:hover,
 #mainNav .nav-dropdown > a:active,
 #mainNav .nav-dropdown.open > a {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
   background: rgba(255, 102, 0, 0.06) !important;
 }
 /* Dropdown sub-links */
 #mainNav .nav-dropdown-content a:hover,
 #mainNav .nav-dropdown-content a:active {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
   background: rgba(255, 102, 0, 0.06) !important;
 }
 /* Dropdown links & labels — no underlines / divider lines under headings */
@@ -86,26 +86,26 @@
   }
 }
 
-/* Footer — orange hovers (match nav var(--color-gold, #FF6600)) */
+/* Footer — orange hovers (match nav #FF6600) */
 footer .footer-col a:hover,
 footer .footer-col a:focus-visible,
 footer .footer-col a:active {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
 }
 footer .footer-contact-item a:hover,
 footer .footer-contact-item a:focus-visible,
 footer .footer-contact-item a:active {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
 }
 footer .footer-legal a:hover,
 footer .footer-legal a:focus-visible,
 footer .footer-legal a:active {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
 }
 footer .footer-social a:hover,
 footer .footer-social a:focus-visible,
 footer .footer-social a:active {
-  color: var(--color-gold, #FF6600) !important;
+  color: #FF6600 !important;
   border-color: rgba(255, 102, 0, 0.55) !important;
   background: rgba(255, 102, 0, 0.12) !important;
 }
@@ -113,8 +113,8 @@ footer .footer-back-top:hover,
 footer .footer-back-top:focus-visible,
 footer .footer-back-top:active {
   color: #ffffff !important;
-  background: var(--color-gold, #FF6600) !important;
-  border-color: var(--color-gold, #FF6600) !important;
+  background: #FF6600 !important;
+  border-color: #FF6600 !important;
   box-shadow: 0 4px 14px rgba(255, 102, 0, 0.35) !important;
 }
 footer .footer-brand .logo:hover,
@@ -123,6 +123,6 @@ footer .footer-brand .logo:focus-visible {
   filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5)) !important;
 }
 footer .footer-brand .logo:focus-visible {
-  outline: 2px solid var(--color-gold, #FF6600) !important;
+  outline: 2px solid #FF6600 !important;
   outline-offset: 4px !important;
 }

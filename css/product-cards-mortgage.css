@@ -354,15 +354,12 @@
     }
 
     .product-card-chevron {
-        right: 0;
-        top: 0;
-        width: var(--touch-target-min, 48px);
-        height: var(--touch-target-min, 48px);
-        min-width: var(--touch-target-min, 48px);
-        min-height: var(--touch-target-min, 48px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        right: -0.05rem;
+        top: -0.05rem;
+        width: 2rem;
+        height: 2rem;
+        min-width: 36px;
+        min-height: 36px;
     }
 
     .product-card.expanded .product-card-bottom,

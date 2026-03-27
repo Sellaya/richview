@@ -143,7 +143,17 @@
     height: 13px;
 }
 
-/* Trust badge styles removed - now in trust-badges-responsive.css */
+/* Trust row - fluid wrap */
+.hero-form-wrap .cta-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.35rem, 1.5vw, 0.65rem);
+    align-items: center;
+}
+.hero-form-wrap .cta-trust-item {
+    font-size: clamp(0.58rem, 1.6vw, 0.75rem);
+    white-space: nowrap;
+}
 
 /* Picker wrap: full width */
 .hero-form-wrap .cta-picker-wrap {
