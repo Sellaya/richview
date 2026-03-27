@@ -3440,6 +3440,7 @@
     <link rel="stylesheet" href="css/testimonials-google.css">
     <link rel="stylesheet" href="css/calendly-style-picker.css">
     <link rel="stylesheet" href="css/trust-badges-responsive.css">
+    <script type="module" src="js/testimonials-expand.js" defer></script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -3896,58 +3897,150 @@
                 <h2>What Our Clients Say</h2>
                 <p>Real experiences from clients who trust Richview Capital</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote-mark" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M9.135 9c-.729 0-1.364.24-1.907.72-.542.48-.813 1.08-.813 1.8 0 .48.135.9.407 1.26.27.36.677.677 1.22.95l-.814 3.03c-.77-.364-1.398-.93-1.88-1.7C4.858 14.29 4.6 13.4 4.6 12.4c0-1.364.364-2.477 1.093-3.34.73-.863 1.68-1.485 2.848-1.867L9.135 9zm7.6 0c-.729 0-1.364.24-1.906.72-.542.48-.814 1.08-.814 1.8 0 .48.136.9.407 1.26.271.36.678.677 1.22.95l-.813 3.03c-.77-.364-1.398-.93-1.88-1.7-.49-.77-.735-1.66-.735-2.66 0-1.364.357-2.477 1.073-3.34.72-.863 1.66-1.485 2.828-1.867l.62 1.807z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-                    </div>
-                    <blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MD</div>
-                        <div class="testimonial-author-info">
-                            <h5>Michael Davidson</h5>
-                            <span>Real Estate Developer</span>
+            <div class="testimonials-slider">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote-mark" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M9.135 9c-.729 0-1.364.24-1.907.72-.542.48-.813 1.08-.813 1.8 0 .48.135.9.407 1.26.27.36.677.677 1.22.95l-.814 3.03c-.77-.364-1.398-.93-1.88-1.7C4.858 14.29 4.6 13.4 4.6 12.4c0-1.364.364-2.477 1.093-3.34.73-.863 1.68-1.485 2.848-1.867L9.135 9zm7.6 0c-.729 0-1.364.24-1.906.72-.542.48-.814 1.08-.814 1.8 0 .48.136.9.407 1.26.271.36.678.677 1.22.95l-.813 3.03c-.77-.364-1.398-.93-1.88-1.7-.49-.77-.735-1.66-.735-2.66 0-1.364.357-2.477 1.073-3.34.72-.863 1.66-1.485 2.828-1.867l.62 1.807z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-                    </div>
-                    <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JT</div>
-                        <div class="testimonial-author-info">
-                            <h5>Jennifer Torres</h5>
-                            <span>Homeowner</span>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote-mark" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M9.135 9c-.729 0-1.364.24-1.907.72-.542.48-.813 1.08-.813 1.8 0 .48.135.9.407 1.26.27.36.677.677 1.22.95l-.814 3.03c-.77-.364-1.398-.93-1.88-1.7C4.858 14.29 4.6 13.4 4.6 12.4c0-1.364.364-2.477 1.093-3.34.73-.863 1.68-1.485 2.848-1.867L9.135 9zm7.6 0c-.729 0-1.364.24-1.906.72-.542.48-.814 1.08-.814 1.8 0 .48.136.9.407 1.26.271.36.678.677 1.22.95l-.813 3.03c-.77-.364-1.398-.93-1.88-1.7-.49-.77-.735-1.66-.735-2.66 0-1.364.357-2.477 1.073-3.34.72-.863 1.66-1.485 2.828-1.867l.62 1.807z" fill="currentColor"/>
-                        </svg>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
+                            </div>
+                        </div>
                     </div>
-                    <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RP</div>
-                        <div class="testimonial-author-info">
-                            <h5>Robert Patterson</h5>
-                            <span>Property Owner</span>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>When the bank turned us down, Richview Capital stepped in with a fast approval and competitive terms. Their team understood our vision and made it happen.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-author-info">
+                                <h5>Michael Davidson</h5>
+                                <span>Real Estate Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>The process was incredibly smooth. From application to funding took less than two weeks. The team was professional, transparent, and actually returned my calls.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Torres</h5>
+                                <span>Homeowner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap">
+                            <blockquote>Richview Capital provided a second mortgage when we needed it most. Their flexible approach and quick turnaround helped us consolidate debt and move forward.</blockquote>
+                            <button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RP</div>
+                            <div class="testimonial-author-info">
+                                <h5>Robert Patterson</h5>
+                                <span>Property Owner</span>
+                            </div>
                         </div>
                     </div>
                 </div>
