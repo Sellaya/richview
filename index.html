@@ -482,13 +482,15 @@
         }
         .hero-content h1 .hl, .hero-slide h1 .hl { color: var(--gold); font-weight: 600; }
         .hero-content p, .hero-slide p {
-            font-size: clamp(1rem, 1.5vw, 1.125rem);
-            color: rgba(255, 255, 255, 0.88);
-            line-height: var(--leading-relaxed);
-            max-width: 100%;
+            font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.7;
+            max-width: 640px;
             width: 100%;
             min-width: 0;
             text-wrap: pretty;
+            margin: 0 auto;
+            letter-spacing: 0.005em;
         }
         .hero-ctas {
             display: flex;
@@ -660,13 +662,16 @@
         }
         .hero-slide p {
             margin-bottom: 0;
-            font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-            max-width: 100%;
+            font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+            max-width: 640px;
             overflow-wrap: break-word;
             word-wrap: break-word;
-            line-height: 1.65;
+            line-height: 1.7;
             flex: 1 1 auto;
             min-height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.005em;
         }
         .hero-slider-progress {
             flex-shrink: 0;
@@ -1159,7 +1164,7 @@
         }
         @media (max-width: 480px) {
             .hero-form-wrap.cta-box .cta-box-header {
-                padding: 1rem 1rem;
+                padding: 0.85rem 1rem;
             }
             .hero-form-wrap.cta-box .cta-box-header h2 { font-size: 1.0625rem; }
             /* Trust badge responsive styles moved to trust-badges-responsive.css */
@@ -2213,7 +2218,6 @@
             position: relative;
             overflow: hidden;
             border-radius: var(--card-radius) var(--card-radius) 0 0;
-            box-sizing: border-box;
         }
         .cta-box-header::before {
             content: '';
@@ -2243,33 +2247,26 @@
             position: relative;
         }
         .cta-trust-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
-            gap: clamp(0.5rem, 2vw, 1rem);
-            align-items: start;
+            display: flex;
+            gap: clamp(0.4rem, 1.5vw, 0.85rem);
+            flex-wrap: nowrap;
+            align-items: center;
             position: relative;
-            width: 100%;
         }
         .cta-trust-item {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: clamp(0.35rem, 1vw, 0.5rem);
-            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            gap: 0.3rem;
+            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
             font-weight: 600;
-            color: rgba(255,255,255,0.92);
-            line-height: 1.3;
-            word-break: break-word;
-            hyphens: auto;
-        }
-        .cta-trust-item span {
-            flex: 1;
-            min-width: 0;
+            color: rgba(255,255,255,0.88);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         .cta-trust-item svg {
             flex-shrink: 0;
-            width: clamp(14px, 2.5vw, 18px);
-            height: clamp(14px, 2.5vw, 18px);
+            width: 12px;
+            height: 12px;
             color: var(--gold);
         }
 
@@ -3226,8 +3223,13 @@
             .hero-slider-progress { padding: 0.35rem 0 0; margin: 0.3rem 0 0; margin-left: auto; margin-right: auto; gap: 5px; max-width: min(160px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { height: 3px; min-width: 20px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.4rem; }
-            .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
+            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2.5vw, 0.75rem); }
+            .hero-slide p {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                font-size: clamp(1rem, 3vw, 1.0625rem);
+                line-height: 1.68;
+            }
             .hero-form-wrap {
                 justify-self: center;
                 width: 100%;
@@ -3277,8 +3279,13 @@
             .hero-slider-progress { padding: 0.28rem 0 0; margin: 0.28rem auto 0.5rem; margin-left: auto; margin-right: auto; max-width: min(170px, 100%); min-height: 18px; }
             .hero-slider-progress-segment { min-width: 24px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.35rem; }
-            .hero-slide p { margin-bottom: 0; padding-bottom: 0; }
+            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2vw, 0.75rem); }
+            .hero-slide p {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                font-size: clamp(1rem, 2vw, 1.0625rem);
+                line-height: 1.68;
+            }
 
             .services-panel-content h3 { font-size: 1.375rem; }
             .services-panels { min-height: 280px; }
@@ -3330,8 +3337,9 @@
             .mobile-cta-li { margin-top: 1rem; padding-top: 1rem; }
             li.mobile-cta-li > a { padding: 0.9rem 1.25rem; font-size: 1rem; min-height: 48px; border-radius: 14px; }
 
-            .cta-box-header { padding: 1rem 1rem; }
+            .cta-box-header { padding: 1rem 1.1rem; }
             .cta-box-header h2 { font-size: 1.125rem; }
+            /* .cta-trust-row gap handled by clamp() */
 
             :root { --section-padding: 2rem; }
             .container { padding: 0 var(--gutter); }
@@ -3384,8 +3392,13 @@
             .hero-slider-progress { padding: 0.25rem 0 0; margin: 0.25rem auto 0.45rem; margin-left: auto; margin-right: auto; max-width: min(150px, 100%); min-height: 20px; }
             .hero-slider-progress-segment { min-width: 28px; height: 4px; }
             .hero-slides-track { padding-bottom: 0.2rem; }
-            .hero-slide h1 { margin-bottom: 0.35rem; }
-            .hero-slide p { margin-bottom: 0; padding-bottom: 0; font-size: 0.875rem; }
+            .hero-slide h1 { margin-bottom: clamp(0.5rem, 2vw, 0.65rem); }
+            .hero-slide p {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                font-size: clamp(0.9375rem, 3vw, 1rem);
+                line-height: 1.65;
+            }
             .hero-ctas .btn-pri,
             .hero-ctas .btn-sec { padding: 0.6rem 1rem; font-size: 0.8125rem; }
         }
