@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply full-screen mobile menu (from home.html) to all pages."""
+"""Apply full-screen mobile menu (from index.html) to all pages."""
 
 import re
 import os

@@ -411,7 +411,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
-/* Override home.html cta-picker-dropdown overflow:hidden on mobile - hero dropdowns must stay visible */
+/* Override index hero cta-picker-dropdown overflow:hidden on mobile - hero dropdowns must stay visible */
 @media (max-width: 768px) {
     .hero-date-dropdown,
     .hero-time-dropdown {

@@ -1,2 +1,37 @@
-# Netlify-style redirects (ignored by Apache; use .htaccess there)
+# Netlify redirects (200 = serve file, URL stays clean; 301 = legacy consolidation)
+# Legacy homepage filename
 /home.html  /  301
+
+# Blog posts (list before /blog)
+/blog/second-mortgages-when-they-help    /blog-second-mortgages-when-they-help.html    200
+/blog/construction-financing-ontario    /blog-construction-financing-ontario.html    200
+/blog/mics-registered-accounts    /blog-mics-registered-accounts.html    200
+
+# Main pages
+/about    /richview-about.html    200
+/borrowers    /richview-borrowers.html    200
+/brokers    /richview-capital-brokers.html    200
+/investors    /richview-capital-mic.html    200
+/faq    /richview-faq.html    200
+/blog    /richview-blog.html    200
+/what-is-a-mic    /richview-what-is-a-mic.html    200
+/privacy    /privacy.html    200
+/terms    /terms.html    200
+/disclaimer    /disclaimer.html    200
+/thank-you    /thank-you.html    200
+
+# Old .html permalinks -> canonical paths
+/richview-about.html    /about    301
+/richview-borrowers.html    /borrowers    301
+/richview-capital-brokers.html    /brokers    301
+/richview-capital-mic.html    /investors    301
+/richview-faq.html    /faq    301
+/richview-blog.html    /blog    301
+/richview-what-is-a-mic.html    /what-is-a-mic    301
+/blog-second-mortgages-when-they-help.html    /blog/second-mortgages-when-they-help    301
+/blog-construction-financing-ontario.html    /blog/construction-financing-ontario    301
+/blog-mics-registered-accounts.html    /blog/mics-registered-accounts    301
+/privacy.html    /privacy    301
+/terms.html    /terms    301
+/disclaimer.html    /disclaimer    301
+/thank-you.html    /thank-you    301

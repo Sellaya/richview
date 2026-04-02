@@ -1262,7 +1262,7 @@
             }
         }
 
-        /* Global header/footer overrides from home.html */
+        /* Global header/footer overrides from index.html */
         nav {
             position: fixed;
             top: 1.5rem;
