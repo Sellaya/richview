@@ -1,40 +1,22 @@
-# Apache: pretty URLs (internal rewrite) + legacy .html -> canonical paths (301)
+# Legacy flat *.html → canonical directory URLs (trailing slash)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Legacy homepage filename
   RewriteRule ^home\.html$ / [R=301,L]
 
-  # Old .html URLs -> pretty paths (external)
-  RewriteRule ^richview-about\.html$ /about [R=301,L]
-  RewriteRule ^richview-borrowers\.html$ /borrowers [R=301,L]
-  RewriteRule ^richview-capital-brokers\.html$ /brokers [R=301,L]
-  RewriteRule ^richview-capital-mic\.html$ /investors [R=301,L]
-  RewriteRule ^richview-faq\.html$ /faq [R=301,L]
-  RewriteRule ^richview-blog\.html$ /blog [R=301,L]
-  RewriteRule ^richview-what-is-a-mic\.html$ /what-is-a-mic [R=301,L]
-  RewriteRule ^blog-second-mortgages-when-they-help\.html$ /blog/second-mortgages-when-they-help [R=301,L]
-  RewriteRule ^blog-construction-financing-ontario\.html$ /blog/construction-financing-ontario [R=301,L]
-  RewriteRule ^blog-mics-registered-accounts\.html$ /blog/mics-registered-accounts [R=301,L]
-  RewriteRule ^privacy\.html$ /privacy [R=301,L]
-  RewriteRule ^terms\.html$ /terms [R=301,L]
-  RewriteRule ^disclaimer\.html$ /disclaimer [R=301,L]
-  RewriteRule ^thank-you\.html$ /thank-you [R=301,L]
-
-  # Pretty paths -> real files (internal)
-  RewriteRule ^about/?$ richview-about.html [L]
-  RewriteRule ^borrowers/?$ richview-borrowers.html [L]
-  RewriteRule ^brokers/?$ richview-capital-brokers.html [L]
-  RewriteRule ^investors/?$ richview-capital-mic.html [L]
-  RewriteRule ^faq/?$ richview-faq.html [L]
-  RewriteRule ^blog/?$ richview-blog.html [L]
-  RewriteRule ^what-is-a-mic/?$ richview-what-is-a-mic.html [L]
-  RewriteRule ^privacy/?$ privacy.html [L]
-  RewriteRule ^terms/?$ terms.html [L]
-  RewriteRule ^disclaimer/?$ disclaimer.html [L]
-  RewriteRule ^thank-you/?$ thank-you.html [L]
-  RewriteRule ^blog/second-mortgages-when-they-help/?$ blog-second-mortgages-when-they-help.html [L]
-  RewriteRule ^blog/construction-financing-ontario/?$ blog-construction-financing-ontario.html [L]
-  RewriteRule ^blog/mics-registered-accounts/?$ blog-mics-registered-accounts.html [L]
+  RewriteRule ^richview-about\.html$ /about/ [R=301,L]
+  RewriteRule ^richview-borrowers\.html$ /borrowers/ [R=301,L]
+  RewriteRule ^richview-capital-brokers\.html$ /brokers/ [R=301,L]
+  RewriteRule ^richview-capital-mic\.html$ /investors/ [R=301,L]
+  RewriteRule ^richview-faq\.html$ /faq/ [R=301,L]
+  RewriteRule ^richview-blog\.html$ /blog/ [R=301,L]
+  RewriteRule ^richview-what-is-a-mic\.html$ /what-is-a-mic/ [R=301,L]
+  RewriteRule ^blog-second-mortgages-when-they-help\.html$ /blog/second-mortgages-when-they-help/ [R=301,L]
+  RewriteRule ^blog-construction-financing-ontario\.html$ /blog/construction-financing-ontario/ [R=301,L]
+  RewriteRule ^blog-mics-registered-accounts\.html$ /blog/mics-registered-accounts/ [R=301,L]
+  RewriteRule ^privacy\.html$ /privacy/ [R=301,L]
+  RewriteRule ^terms\.html$ /terms/ [R=301,L]
+  RewriteRule ^disclaimer\.html$ /disclaimer/ [R=301,L]
+  RewriteRule ^thank-you\.html$ /thank-you/ [R=301,L]
 </IfModule>

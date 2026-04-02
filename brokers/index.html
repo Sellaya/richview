@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What is a MIC? | Richview Capital</title>
+    <title>Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC</title>
     <meta name="description"
-        content="Learn how a Mortgage Investment Corporation (MIC) works, its benefits, and how it provides secure, asset-backed returns for investors in Ontario.">
-    <link rel="icon" href="images/logo.png" type="image/png">
+        content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
+    <link rel="icon" href="/images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
-    <link rel="canonical" href="https://richviewcapitalmic.com/what-is-a-mic">
+    <link rel="canonical" href="https://richviewcapitalmic.com/brokers/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="What is a MIC? | Richview Capital">
+    <meta property="og:title" content="Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC">
     <meta property="og:description"
-        content="Learn how a Mortgage Investment Corporation (MIC) works, its benefits, and how it provides secure, asset-backed returns for investors in Ontario.">
+        content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
     <meta property="og:image" content="https://richviewcapitalmic.com/images/logo.png">
-    <meta property="og:url" content="https://richviewcapitalmic.com/what-is-a-mic">
+    <meta property="og:url" content="https://richviewcapitalmic.com/brokers/">
     <meta property="og:locale" content="en_CA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="What is a MIC? | Richview Capital">
-    <meta name="twitter:description" content="Learn how a Mortgage Investment Corporation (MIC) works, its benefits, and how it provides secure, asset-backed returns for investors in Ontario.">
+    <meta name="twitter:title" content="Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC">
+    <meta name="twitter:description" content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
     <meta name="twitter:image" content="https://richviewcapitalmic.com/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,14 +44,21 @@
             --border: rgba(0, 0, 0, 0.08);
             --orange-light: rgba(255, 102, 0, 0.15);
             --dark-blue-deep: #070E24;
-            --container: min(92vw, 1200px);
+            --container: min(90vw, 1400px);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-btn: cubic-bezier(0.22, 1, 0.36, 1);
-            --btn-padding: 0.875rem 1.75rem;
+            --btn-padding: 0.75rem 1.5rem;
+            --btn-padding-lg: 0.875rem 1.75rem;
             --btn-font-size: 0.9375rem;
+            --btn-font-weight: 600;
+            --btn-letter-spacing: 0.025em;
             --btn-radius: 12px;
-            --card-radius: 14px;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --btn-radius-lg: 14px;
+            --btn-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
+            --btn-shadow-hover: 0 8px 24px -4px rgba(11, 22, 53, 0.22);
+            --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
+            --btn-pri-hover: #0c1838;
+            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
             --space-xs: 1rem;
             --space-sm: 1.5rem;
             --space-md: 2rem;
@@ -60,35 +67,21 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            --btn-pri-hover: #0c1838;
-            --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
+            /* Mobile-first: standard horizontal spacing by device (match homepage) */
             --gutter: 16px;
-            --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
-            --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
-        @media (min-width:640px) {
-            :root {
-                --gutter: 24px;
-            }
+        @media (min-width: 640px) {
+            :root { --gutter: 24px; }
         }
-
-        @media (min-width:768px) {
-            :root {
-                --gutter: 32px;
-            }
+        @media (min-width: 768px) {
+            :root { --gutter: 32px; }
         }
-
-        @media (min-width:1024px) {
-            :root {
-                --gutter: 48px;
-            }
+        @media (min-width: 1024px) {
+            :root { --gutter: 48px; }
         }
-
-        @media (min-width:1280px) {
-            :root {
-                --gutter: 64px;
-            }
+        @media (min-width: 1280px) {
+            :root { --gutter: 64px; }
         }
 
         html {
@@ -99,20 +92,42 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--charcoal);
-            font-size: 1rem;
-            line-height: 1.65;
-            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
             background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.35) 28%, transparent 52%),
                         radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
                         linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
             background-attachment: fixed;
-            overflow-x: hidden;
+            font-weight: 400;
             overflow-wrap: break-word;
+            position: relative;
         }
-        @media (max-width: 768px) {
-            body { background-attachment: scroll; }
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        @media (max-width: 768px) { body { background-attachment: scroll; } }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: linear-gradient(rgba(11, 22, 53, 0.016) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(11, 22, 53, 0.016) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
+            mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
+            mask-size: 100% 100%;
+            mask-position: center;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 42%, rgba(11, 22, 53, 0.012) 100%),
+                        radial-gradient(ellipse 95% 95% at 102% -5%, rgba(255, 102, 0, 0.038) 0%, rgba(255, 102, 0, 0.008) 40%, transparent 62%),
+                        radial-gradient(ellipse 95% 95% at -2% 102%, rgba(11, 22, 53, 0.032) 0%, rgba(11, 22, 53, 0.006) 38%, transparent 58%);
+            pointer-events: none;
         }
 
         main {
@@ -124,21 +139,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
         }
 
         .container {
@@ -155,14 +155,14 @@
             top: -3rem;
             left: 1rem;
             z-index: 10000;
-            padding: .6rem 1rem;
+            padding: 0.6rem 1rem;
             background: var(--navy);
             color: var(--white);
             font-weight: 600;
-            font-size: .875rem;
+            font-size: 0.875rem;
             text-decoration: none;
             border-radius: 6px;
-            transition: top .2s var(--ease-out);
+            transition: top 0.2s var(--ease-out);
         }
 
         .skip-link:focus {
@@ -180,22 +180,22 @@
             outline-offset: 2px;
         }
 
-        /* ── Nav (minimal UI) ── */
+        /* --- NAVIGATION (minimal UI) --- */
         nav {
             position: fixed;
             top: 1.25rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 98%;
+            width: min(94%, 1200px);
             max-width: 100%;
             background: #ffffff;
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border-radius: 16px;
+            border-radius: 999px;
             z-index: 1000;
             border: 1px solid rgba(0, 0, 0, 0.05);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-            transition: box-shadow .25s var(--ease-out), top .25s var(--ease-out), border-color .2s;
+            transition: box-shadow 0.25s var(--ease-out), top 0.25s var(--ease-out), border-color 0.2s, transform 0.35s var(--ease-out);
             overflow: visible;
         }
 
@@ -205,11 +205,16 @@
             border-color: rgba(0, 0, 0, 0.06);
         }
 
+        nav.nav-hidden {
+            transform: translateX(-50%) translateY(calc(-100% - 2rem));
+            pointer-events: none;
+        }
+
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: .5rem 1.25rem .5rem 1.75rem;
+            padding: 0.5rem 1.25rem 0.5rem 1.75rem;
             min-height: 64px;
             position: relative;
             overflow: visible;
@@ -220,11 +225,11 @@
             align-items: center;
             text-decoration: none;
             z-index: 2;
-            transition: opacity .2s var(--ease-out);
+            transition: opacity 0.2s var(--ease-out);
         }
 
         .logo:hover {
-            opacity: .82;
+            opacity: 0.82;
         }
 
         .logo-img {
@@ -249,10 +254,10 @@
             text-decoration: none;
             color: var(--muted);
             font-weight: 500;
-            font-size: .8125rem;
-            letter-spacing: .03em;
-            transition: color .2s var(--ease-out);
-            padding: .45rem 0;
+            font-size: 0.8125rem;
+            letter-spacing: 0.03em;
+            transition: color 0.2s var(--ease-out);
+            padding: 0.45rem 0;
         }
 
         .nav-links a:hover {
@@ -302,9 +307,9 @@
             min-width: 200px;
             width: max-content;
             max-width: min(280px, 90vw);
-            background: #ffffff;
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 8px;
             padding: 0.5rem;
             border: 1px solid rgba(0, 0, 0, 0.05);
@@ -341,9 +346,9 @@
             color: #334155;
             font-size: 0.8125rem;
             font-weight: 500;
+            white-space: nowrap;
             letter-spacing: 0.01em;
             line-height: 1.4;
-            white-space: nowrap;
             transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
             border-radius: 6px;
             position: relative;
@@ -379,17 +384,16 @@
             justify-content: center;
             background: var(--navy);
             color: var(--white);
-            padding: .625rem 1.5rem;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: .875rem;
-            letter-spacing: .025em;
+            padding: 0.625rem 1.5rem;
+            border-radius: var(--btn-radius-lg);
+            font-weight: var(--btn-font-weight);
+            font-size: 0.875rem;
+            letter-spacing: var(--btn-letter-spacing);
             text-decoration: none;
             border: none;
             z-index: 2;
-            white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
-            transition: background .25s var(--ease-out), transform .2s var(--ease-out), box-shadow .25s var(--ease-out);
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
 
         .cta-nav:hover {
@@ -401,7 +405,7 @@
 
         .cta-nav:active {
             transform: translateY(0);
-            box-shadow: 0 1px 4px rgba(11, 22, 53, 0.12);
+            box-shadow: var(--btn-shadow-active);
         }
 
         .cta-nav:focus-visible {
@@ -423,7 +427,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            transition: background .2s var(--ease-out);
+            transition: background 0.2s var(--ease-out);
             position: relative;
         }
 
@@ -440,7 +444,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity .25s var(--ease-out);
+            transition: opacity 0.25s var(--ease-out);
         }
 
         .mobile-menu-btn .icon-close {
@@ -459,11 +463,10 @@
             visibility: visible;
         }
 
-        /* ── Hero ── */
+        /* --- PAGE HERO --- */
         .page-hero {
-            padding: clamp(7rem, 14vw, 10rem) var(--gutter) clamp(2.25rem, 5vw, 3.5rem);
+            padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--space-3xl);
             background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -483,136 +486,145 @@
             pointer-events: none;
         }
 
-        .hero-content {
-            max-width: 780px;
+        .page-hero-inner {
+            max-width: var(--container);
             margin: 0 auto;
-            position: relative;
             padding: 0 var(--gutter);
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .page-hero h1 {
-            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
             color: var(--white);
-            margin-bottom: 1.25rem;
-            line-height: 1.15;
-            letter-spacing: -.02em;
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .page-hero p {
-            font-size: 1.125rem;
-            color: rgba(255, 255, 255, .7);
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
-            margin-bottom: 2.25rem;
             max-width: 100%;
             width: 100%;
             min-width: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto var(--space-xl);
             text-wrap: pretty;
         }
 
-        .hero-buttons {
+        .hero-ctas {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
         }
 
-        .btn-hero-primary {
+        .btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: var(--white);
             color: var(--navy);
-            padding: var(--btn-padding);
-            border-radius: 12px;
-            font-weight: 600;
+            padding: var(--btn-padding-lg);
+            border-radius: var(--btn-radius-lg);
+            text-decoration: none;
+            font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: .025em;
+            letter-spacing: var(--btn-letter-spacing);
             border: 2px solid var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-            transition: background .25s, color .2s, border-color .2s, transform .2s, box-shadow .25s;
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
 
-        .btn-hero-primary:hover {
-            background: rgba(255, 255, 255, 0.15);
+        .btn-primary:hover {
+            background: var(--gold);
             color: var(--white);
             border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.3);
+            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-hero-primary:active {
+        .btn-primary:active {
             transform: translateY(0);
         }
 
-        .btn-hero-outline {
+        .btn-primary:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.8);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: transparent;
             color: var(--white);
-            padding: var(--btn-padding);
-            border-radius: 12px;
-            font-weight: 600;
+            padding: var(--btn-padding-lg);
+            border-radius: var(--btn-radius-lg);
+            text-decoration: none;
+            font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: .025em;
-            border: 2px solid rgba(255, 255, 255, .4);
-            transition: border-color .25s, background .25s, color .2s, transform .2s, box-shadow .25s;
+            letter-spacing: var(--btn-letter-spacing);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: background 0.25s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn);
         }
 
-        .btn-hero-outline:hover {
+        .btn-secondary:hover {
             border-color: var(--gold);
-            background: rgba(255, 102, 0, .2);
+            background: rgba(255, 102, 0, 0.2);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2);
         }
 
-        .btn-hero-outline:active {
+        .btn-secondary:active {
             transform: translateY(0);
         }
 
-        /* ── Section Headings ── */
-        .section-heading {
-            margin-bottom: var(--space-lg);
+        .btn-secondary:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.8);
+            outline-offset: 2px;
         }
 
-        .section-heading h2 {
+        /* --- SECTION HEADINGS --- */
+        .sec-head {
+            text-align: left;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .sec-head h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+            font-weight: 700;
             color: var(--navy);
-            letter-spacing: -.02em;
-            margin-bottom: .5rem;
-            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .section-heading p {
+        .sec-head p {
+            font-size: 0.9375rem;
             color: var(--muted);
-            font-size: .9375rem;
             max-width: 100%;
             width: 100%;
             min-width: 0;
-            line-height: 1.6;
+            margin: 0;
             text-wrap: pretty;
         }
 
-        .section-heading.center {
-            text-align: center;
-        }
-
-        .section-heading.center p {
-            margin: 0 auto;
-        }
-
-        /* ── Intro Section ── */
-        .intro-section {
+        /* --- WHY WORK WITH US (Bordered Grid) --- */
+        .why-section {
             padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 40%, #F8F9FA 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .intro-section::before {
+        .why-section::before {
             content: '';
             position: absolute;
             width: 50%;
@@ -623,159 +635,178 @@
             pointer-events: none;
         }
 
-        .intro-section .container,
-        .intro-section .intro-grid {
+        .why-section .sec-head,
+        .why-section .benefits-grid {
             position: relative;
             z-index: 1;
         }
 
-        .intro-grid {
+        /* benefits-grid, benefit-card: styled by benefit-cards-shared.css (when inside .benefits-section) */
+
+        /* Blurb cards: number + title side by side (fund-card only; benefit-card uses benefit-cards-shared) */
+        .fund-card {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-            align-items: start;
-        }
-        @media (min-width: 768px) {
-            .intro-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-xl);
-            }
+            grid-template-columns: auto 1fr;
+            column-gap: 0.85rem;
+            row-gap: 0.35rem;
+            align-items: flex-start;
         }
 
-        .intro-text h2 {
-            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-            color: var(--navy);
-            letter-spacing: -.02em;
-            margin-bottom: var(--space-sm);
-            line-height: 1.2;
-        }
-
-        .intro-text p {
-            font-size: .9375rem;
-            color: var(--muted);
-            line-height: 1.65;
-            margin-bottom: var(--space-sm);
-        }
-
-        .intro-text p:last-child {
+        .fund-number {
+            grid-row: 1;
+            grid-column: 1;
             margin-bottom: 0;
         }
 
-        /* ── Value Cards ── */
-        /* Term sheet, protected, comparison tables */
-        .term-sheet-section,
-        .protected-section,
-        .comparison-section {
-            padding: var(--section-padding) 0;
-        }
-        .term-sheet-section { background: #FFFFFF; }
-        .protected-section { background: #F8F9FA; }
-        .comparison-section { background: #FAFBFC; }
-        .term-sheet-table-wrap,
-        .comparison-table-wrap {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-        .term-sheet-table,
-        .comparison-table {
-            width: 100%;
-            min-width: min(100%, 480px);
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-        .term-sheet-table td,
-        .comparison-table td,
-        .comparison-table th {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        .term-sheet-table tr:last-child td,
-        .comparison-table tbody tr:last-child td { border-bottom: none; }
-        .term-sheet-table td:first-child {
-            font-weight: 500;
-            color: var(--muted);
-            width: 40%;
-        }
-        .comparison-table th {
-            font-weight: 600;
-            color: var(--navy);
-            background: rgba(11, 22, 53, 0.04);
-        }
-        .comparison-table td:first-child { font-weight: 500; }
-        .protected-list {
-            list-style: none;
-            counter-reset: protected;
-            padding: 0;
-        }
-        .protected-list li {
-            counter-increment: protected;
-            padding: 0.75rem 0 0.75rem 3rem;
-            position: relative;
-            border-bottom: 1px solid var(--border);
-        }
-        .protected-list li:last-child { border-bottom: none; }
-        .protected-list li::before {
-            content: counter(protected);
-            position: absolute;
-            left: 0;
-            top: 0.75rem;
-            width: 1.75rem;
-            height: 1.75rem;
-            background: var(--navy);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-        @media (max-width: 768px) {
-            .term-sheet-section,
-            .protected-section,
-            .comparison-section {
-                padding: 2rem 0;
-            }
-            .term-sheet-table-wrap,
-            .comparison-table-wrap {
-                margin: 0 calc(-1 * var(--gutter));
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
-            }
-            .term-sheet-table td:first-child { width: 35%; }
-            .comparison-table { font-size: 0.8125rem; min-width: 480px; }
-            .comparison-table td,
-            .comparison-table th { padding: 0.6rem 0.75rem; }
-            .protected-list li { padding: 0.65rem 0 0.65rem 2.5rem; font-size: 0.9rem; }
-        }
-        @media (max-width: 480px) {
-            .term-sheet-section,
-            .protected-section,
-            .comparison-section {
-                padding: 1.75rem 0;
-            }
-            .term-sheet-table,
-            .comparison-table { font-size: 0.8125rem; }
-            .term-sheet-table td,
-            .comparison-table td,
-            .comparison-table th { padding: 0.5rem 0.65rem; }
+        .fund-card h3 {
+            grid-row: 1;
+            grid-column: 2;
+            margin-bottom: 0.35rem;
         }
 
-        /* Benefits section styled by benefit-cards-shared.css + what-is-a-mic-layout.css */
+        .fund-card p {
+            grid-column: 1 / -1;
+        }
 
-        /* ── Lifecycle Bordered Grid ── */
-        .lifecycle-section {
+        /* --- WHAT WE FUND (Bordered Grid) --- */
+        .fund-section {
             padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 35%, #F8F9FA 100%);
+            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #FAFBFC 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .lifecycle-section::before {
+        .fund-section::before {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 65%;
+            bottom: 15%;
+            left: -8%;
+            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .fund-section .sec-head,
+        .fund-section .fund-grid {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fund-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        .fund-card {
+            padding: 2rem 1.75rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+        }
+
+        .fund-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.35s var(--ease-out);
+        }
+
+        .fund-card:nth-child(3n) {
+            border-right: none;
+        }
+
+        .fund-card:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .fund-card:hover,
+        .fund-card:focus-within {
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .fund-card:hover::before,
+        .fund-card:focus-within::before {
+            transform: scaleY(1);
+        }
+
+        .fund-card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .fund-number {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--light-grey);
+            margin-bottom: 1.25rem;
+            transition: color 0.3s var(--ease-out);
+        }
+
+        .fund-card:hover .fund-number,
+        .fund-card:focus-within .fund-number {
+            color: var(--muted);
+        }
+
+        .fund-card h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .fund-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .fund-features {
+            list-style: none;
+            margin-top: 0.75rem;
+            grid-column: 1 / -1;
+        }
+        .fund-features li {
+            padding: 0.25rem 0;
+            font-size: 0.8125rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .fund-features li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        /* --- SUBMISSION GUIDELINES (Bordered Grid) --- */
+        .guidelines-section {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 40%, #F8F9FA 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guidelines-section::before {
             content: '';
             position: absolute;
             width: 55%;
@@ -786,80 +817,108 @@
             pointer-events: none;
         }
 
-        .lifecycle-section .container,
-        .lifecycle-section .lifecycle-grid {
+        .guidelines-section .sec-head,
+        .guidelines-section .guidelines-grid {
             position: relative;
             z-index: 1;
         }
 
-        .lifecycle-grid {
+        .guidelines-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-card, 12px);
-            overflow: hidden;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
         }
 
-        .lifecycle-item {
-            padding: clamp(1.25rem, 4vw, 2.25rem) clamp(1rem, 3vw, 2rem);
-            border-right: none;
+        .guideline-card {
+            padding: 2rem 1.75rem;
             border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
             position: relative;
-            transition: all .35s var(--ease-out);
+            overflow: hidden;
+            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
         }
 
-        .lifecycle-item:last-child {
+        .guideline-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--navy);
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.35s var(--ease-out);
+        }
+
+        .guideline-card:nth-child(3n) {
+            border-right: none;
+        }
+
+        .guideline-card:last-child {
             border-bottom: none;
         }
 
-        .lifecycle-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--navy);
-            opacity: 0;
-            transition: opacity .3s;
-        }
-
-        .lifecycle-item:hover {
+        .guideline-card:hover {
             background: var(--cream);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
         }
 
-        .lifecycle-item:hover::before {
-            opacity: 1;
+        .guideline-card:hover::before {
+            transform: scaleY(1);
         }
 
-        .lifecycle-number {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: .8125rem;
-            font-weight: 700;
+        .guideline-number {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--light-grey);
+            margin-bottom: 1.25rem;
+            transition: color 0.3s var(--ease-out);
+        }
+
+        .guideline-card:hover .guideline-number {
             color: var(--muted);
-            margin-bottom: var(--space-sm);
-            letter-spacing: .04em;
         }
 
-        .lifecycle-item h4 {
+        .guideline-card h3 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.0625rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: .5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .lifecycle-item p {
-            font-size: .9375rem;
+        .guideline-card ul {
+            list-style: none;
+        }
+
+        .guideline-card ul li {
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.65;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
-        /* ── CTA Section ── */
-                .cta-section {
+        .guideline-card ul li::before {
+            content: '→';
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* FAQ: css/faq-section.css */
+
+        /* --- CTA FORM (Compact Box) --- */
+        .cta-section {
             padding: clamp(3rem, 6vw, 4.5rem) 0;
             background: var(--white);
             position: relative;
@@ -874,48 +933,54 @@
             z-index: 0;
         }
 
-        .cta-section .container,
-        .cta-section .cta-box {
+        .cta-section .cta-box,
+        .cta-box {
+            max-width: 520px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
             position: relative;
-            z-index: 1;
+            border-top: 3px solid var(--gold);
         }
 
-
-        /* --- FORM HEADER --- */
         .cta-box-header {
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
             padding: 1.25rem 1.5rem;
             position: relative;
             overflow: hidden;
-            border-radius: var(--card-radius) var(--card-radius) 0 0;
         }
+
         .cta-box-header::before {
             content: '';
             position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(circle, rgba(255,102,0,0.18) 0%, transparent 70%);
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .cta-box-header h2 {
-            font-family: var(--font-sans);
-            font-size: 1.25rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
-            margin: 0 0 0.3rem;
+            margin-bottom: 0.35rem;
             position: relative;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
         }
-        .cta-box-header > p {
-            font-size: 0.8375rem;
-            color: rgba(255,255,255,0.78);
-            margin: 0 0 0.875rem;
+
+        .cta-box-header>p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.5;
             position: relative;
         }
+
         .cta-trust-row {
             display: flex;
             gap: clamp(0.4rem, 1.5vw, 0.85rem);
@@ -940,63 +1005,138 @@
             color: var(--gold);
         }
 
-        .cta-box {
-            text-align: center;
-            max-width: 520px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+        .cta-box-body {
+            padding: 1.25rem 1.5rem;
         }
 
-        .cta-box h2 {
-            font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+        .cta-form-section {
+            margin-bottom: 1rem;
+        }
+
+        .cta-form-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .cta-form-section-title {
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .cta-box .form-row.form-row-full {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-box .form-group {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-box .form-group label {
+            display: block;
+            text-align: left;
+            font-size: 0.8125rem;
+            font-weight: 600;
             color: var(--navy);
-            letter-spacing: -.02em;
-            margin-bottom: .75rem;
+            margin-bottom: 0.4rem;
         }
 
-        .cta-box p {
-            color: var(--muted);
-            font-size: .9375rem;
-            line-height: 1.65;
-            margin-bottom: var(--space-md);
+        .cta-box input,
+        .cta-box select,
+        .cta-box textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            background: var(--cream);
+            transition: all 0.25s var(--ease-out);
         }
 
-        .btn-primary {
+        .cta-box input::placeholder,
+        .cta-box textarea::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-box input:focus,
+        .cta-box select:focus,
+        .cta-box textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+        }
+
+        .cta-box select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6600' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .cta-box textarea {
+            resize: vertical;
+            min-height: 72px;
+        }
+
+        .cta-submit-wrap {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta-box button[type="submit"] {
+            width: 100%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: var(--navy);
             color: var(--white);
-            padding: var(--btn-padding);
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: var(--btn-font-size);
-            letter-spacing: .025em;
+            padding: 0.875rem 1.5rem;
             border: none;
+            border-radius: var(--btn-radius-lg);
+            font-weight: var(--btn-font-weight);
+            font-size: var(--btn-font-size);
+            letter-spacing: 0.025em;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(11, 22, 53, 0.15);
-            transition: background .25s, transform .2s, box-shadow .25s;
+            font-family: inherit;
+            box-shadow: var(--btn-shadow);
+            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
 
-        .btn-primary:hover {
+        .cta-box button[type="submit"]:hover {
             background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
 
-        .btn-primary:active {
+        .cta-box button[type="submit"]:active {
             transform: translateY(0);
-            box-shadow: 0 1px 4px rgba(11, 22, 53, 0.12);
+            box-shadow: var(--btn-shadow-active);
         }
 
-        .btn-primary:focus-visible {
+        .cta-box button[type="submit"]:focus-visible {
             outline: 2px solid rgba(255, 102, 0, 0.5);
             outline-offset: 2px;
         }
 
-        /* ── Footer ── */
+        /* --- FOOTER --- */
         footer {
             background: linear-gradient(180deg, #0d1a3a 0%, var(--navy) 30%, #070E24 100%);
             color: rgba(255, 255, 255, 0.65);
@@ -1022,7 +1162,7 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
             gap: var(--space-lg);
         }
 
@@ -1270,6 +1410,7 @@
             height: 16px;
         }
 
+        /* --- ANIMATIONS --- */
         .reveal {
             opacity: 0;
             transform: translateY(32px);
@@ -1278,11 +1419,21 @@
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+            transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
         }
 
-        /* ── Responsive 1024 (tablet) ── */
-        @media(max-width:1024px) {
+        /* --- RESPONSIVE --- */
+
+        /* --- Tablet (1024px) --- */
+        @media (max-width: 1024px) {
+            :root {
+                --gutter: 1rem;
+            }
+
+            .container {
+                padding: 0 var(--gutter);
+            }
+
             nav {
                 left: 4%;
                 right: 4%;
@@ -1290,11 +1441,15 @@
                 transform: none;
             }
 
+            nav.nav-hidden {
+                transform: translateY(calc(-100% - 2rem));
+            }
+
             .nav-links {
                 position: fixed;
                 inset: 0;
-                width: 100%;
-                height: 100%;
+            width: 100%;
+            height: 100%;
                 min-height: 100vh;
                 min-height: 100dvh;
                 z-index: 999;
@@ -1314,8 +1469,8 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 list-style: none;
-                pointer-events: none;
-            }
+            pointer-events: none;
+        }
             .nav-links.active {
                 opacity: 1;
                 visibility: visible;
@@ -1497,35 +1652,50 @@
             .mobile-menu-btn { display: flex; }
             .cta-nav { display: none; }
 
+            /* Page hero: centered, reduced top padding */
             .page-hero {
+                padding: 10rem 0 var(--space-xl);
+            }
+
+            .page-hero-inner {
                 text-align: center;
             }
 
-            .intro-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md);
-            }
-
-            .benefits-grid {
+            /* All content grids: 1 column */
+            .benefits-grid,
+            .fund-grid,
+            .guidelines-grid {
                 grid-template-columns: 1fr;
             }
 
-            .lifecycle-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .lifecycle-item {
+            /* Card borders: border-right → border-bottom (fund, guideline; benefit uses shared) */
+            .fund-card,
+            .guideline-card {
+                border-right: none !important;
                 border-bottom: 1px solid var(--border);
             }
 
-            .lifecycle-item:nth-child(2n) {
+            .fund-card:nth-child(3n),
+            .guideline-card:nth-child(3n) {
                 border-right: none;
             }
 
-            .lifecycle-item:nth-last-child(-n+2) {
+            .fund-card:last-child,
+            .guideline-card:last-child {
                 border-bottom: none;
             }
 
+            /* Testimonials: slider card width on tablet */
+            .testimonial-card {
+                width: 320px;
+            }
+
+            /* CTA form: single column form rows */
+            .cta-box .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Footer: 2 columns, brand spanning */
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md);
@@ -1536,146 +1706,298 @@
             }
         }
 
-        /* ── Responsive 768 (mobile) ── */
-        @media(max-width:768px) {
-            :root {
-                --section-padding: 2.75rem;
+        /* --- Mobile (768px) --- */
+        @media (max-width: 768px) {
+
+            /* Nav inner: tighter padding, smaller logo */
+            .nav-inner {
+                padding: 0.55rem 1rem 0.55rem 1.25rem;
+                min-height: 58px;
             }
 
             .logo-img {
                 height: 50px;
             }
 
-            .nav-inner {
-                padding: .55rem 1rem .55rem 1.25rem;
-                min-height: 58px;
-            }
-
+            /* Page hero: reduced top padding, stack hero buttons */
             .page-hero {
-                padding: 8.5rem 0 3.5rem;
+                padding-top: 8.5rem;
+                padding-bottom: var(--space-lg);
             }
 
-            .hero-buttons {
+            .page-hero h1 {
+                font-size: clamp(1.75rem, 5vw, 2.25rem);
+                margin-bottom: var(--space-sm);
+            }
+
+            .page-hero p {
+                margin-bottom: var(--space-md);
+            }
+
+            .hero-ctas {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
+                margin-top: var(--space-sm);
+            }
+
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-secondary {
                 width: 100%;
                 max-width: 320px;
-                margin: 0 auto;
-            }
-
-            .hero-buttons a {
                 text-align: center;
-                width: 100%;
             }
 
-            .intro-text p {
-                margin-bottom: 1rem;
+            /* Section padding: reduce */
+            .why-section,
+            .fund-section,
+            .guidelines-section,
+            .testimonials-section,
+            .faq-section {
+                padding: 3.5rem 0;
             }
 
-            .lifecycle-grid {
-                grid-template-columns: 1fr;
+            /* Cards: reduce padding (fund, guideline; benefit uses shared) */
+            .fund-card,
+            .guideline-card {
+                padding: 1.5rem 1.25rem;
             }
 
-            .lifecycle-item {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
+            /* Testimonials: reduce padding */
+            .testimonial-card {
+                padding: 1.75rem 1.25rem;
             }
 
-            .lifecycle-item:last-child {
-                border-bottom: none;
+            /* CTA/form: tighter padding */
+            .cta-section {
+                padding: var(--space-lg) 0;
             }
 
+            .cta-box-header {
+                padding: 1.25rem;
+            }
+
+            .cta-box-body {
+                padding: 1.25rem;
+            }
+
+            .cta-trust-row {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            /* Footer: 1 column, stack bottom */
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: var(--space-sm);
             }
 
             .footer-brand {
                 grid-column: auto;
             }
 
+            .footer-brand .logo-img {
+                height: 32px;
+            width: auto;
+            object-fit: contain;
+            }
+
+            .footer-main {
+                padding: var(--space-lg) 0 var(--space-md);
+            }
+
             .footer-bottom {
                 flex-direction: column;
-                gap: var(--space-xs);
+                gap: 1rem;
                 text-align: center;
             }
 
             .footer-bottom-left {
                 flex-direction: column;
-                gap: .75rem;
+                gap: 0.75rem;
             }
 
             .footer-legal {
-                flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            /* Buttons: full width on mobile */
+            .btn-primary,
+            .btn-secondary {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Section headings */
+            .sec-head {
+                margin-bottom: var(--space-lg);
             }
         }
 
-        /* ── Responsive 480 (small phone) ── */
-        @media(max-width:480px) {
+        /* --- Small Phone (480px) --- */
+        @media (max-width: 480px) {
             :root {
-                --section-padding: 2rem;
+                --gutter: 0.75rem;
             }
 
             .container {
                 padding: 0 var(--gutter);
             }
 
-            .logo-img {
-                height: 40px;
-            }
-
-            .nav-inner {
-                padding: .5rem .75rem .5rem 1rem;
-                min-height: 52px;
-            }
-
-            .page-hero {
-                padding: 7rem 0 2.5rem;
-            }
-
-            .hero-content {
+            .page-hero-inner {
                 padding: 0 var(--gutter);
             }
 
             .page-hero h1 {
-                font-size: 1.75rem;
+                margin-bottom: var(--space-sm);
             }
 
             .page-hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: var(--space-md);
             }
 
-            .section-heading h2 {
-                font-size: 1.5rem;
+            .hero-ctas {
+                margin-top: var(--space-sm);
             }
 
-            .intro-text h2 {
-                font-size: 1.5rem;
+            .benefits-grid,
+            .fund-grid,
+            .guidelines-grid {
+                padding: 0 var(--gutter);
             }
 
-            .cta-box h2 {
-                font-size: 1.5rem;
+            .testimonials-section .sec-head {
+                padding: 0 var(--gutter);
             }
 
-            .benefits-grid {
-                gap: 1rem;
+            /* Hero padding: 7rem top */
+            .page-hero {
+                padding-top: 7rem;
+                padding-bottom: var(--space-md);
             }
 
-            .lifecycle-item {
-                padding: 1.5rem 1.25rem;
+            .page-hero h1 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
             }
 
-            .footer-grid {
-                gap: var(--space-sm);
+            .page-hero p {
+                font-size: 0.9rem;
+                margin-bottom: var(--space-md);
+            }
+
+            /* Further reduce card and section padding */
+            .why-section,
+            .fund-section,
+            .guidelines-section,
+            .testimonials-section,
+            .faq-section {
+                padding: 2.75rem 0;
+            }
+
+            .fund-card,
+            .guideline-card {
+                padding: 1.25rem 1rem;
+            }
+
+            .testimonial-card {
+                padding: 1.25rem 1rem;
+                width: 300px;
+            }
+
+            /* CTA form compact */
+            .cta-box-header {
+                padding: 1rem;
+            }
+
+            .cta-box-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .cta-box-body {
+                padding: 1rem;
+            }
+
+            .cta-box input,
+            .cta-box select,
+            .cta-box textarea {
+                padding: 0.65rem 0.875rem;
+                font-size: 0.875rem;
+            }
+
+            .cta-box .form-group {
+                margin-bottom: 0.75rem;
+            }
+
+            /* Smaller gaps */
+            .sec-head {
+                margin-bottom: var(--space-md);
+            }
+
+            .sec-head p {
+                font-size: 0.875rem;
+            }
+
+            /* Footer compact */
+            .footer-main {
+                padding: var(--space-md) 0;
+            }
+
+            .footer-col h4 {
+                margin-bottom: 1rem;
+            }
+
+            .footer-col li {
+                margin-bottom: 0.5rem;
             }
 
             .footer-brand p {
-                font-size: .85rem;
+                font-size: 0.85rem;
             }
 
-            .footer-bottom {
-                padding: 1rem 0;
+            /* Nav compact */
+            nav {
+                width: 94%;
+                top: 0.75rem;
+            }
+
+            .nav-inner {
+                padding: 0.5rem 0.75rem 0.5rem 1rem;
+                min-height: 48px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            /* Touch-friendly targets */
+            .nav-links a {
+                padding: 0.75rem 0;
+                font-size: 0.9375rem;
+            }
+
+            .footer-col a {
+                padding: 0.25rem 0;
+            }
+
+            .footer-social a {
+                width: 40px;
+                height: 40px;
+            }
+
+            .footer-back-top {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Hero buttons smaller */
+            .hero-ctas {
+                gap: 0.75rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.875rem;
             }
         }
 
@@ -1802,6 +2124,7 @@
             object-fit: contain;
             }
         }
+
 
         /* --- CTA SECTION (Book Consultation) --- */
         .cta-section {
@@ -2559,6 +2882,7 @@
             box-shadow: none;
         }
 
+
         /* --- GLOBAL MOBILE NAV/FOOTER FIXES (Injected by fix_mobile.py) --- */
         .mobile-menu-btn {
             display: none;
@@ -2590,98 +2914,88 @@
             nav.menu-open .nav-inner { z-index: 1001 !important; position: relative !important; }
             nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
             nav.menu-open .logo, nav.menu-open .mobile-menu-btn { z-index: 1002 !important; position: relative !important; }
-            nav.menu-open::before { content: ''; position: fixed; inset: 0; z-index: 998; background: rgba(11, 22, 53, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; animation: navBackdropIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+            /* --- Mobile menu: bottom sheet, minimal, mobile-first --- */
+            nav.menu-open::before {
+                content: ''; position: fixed; inset: 0; z-index: 998;
+                background: rgba(11, 22, 53, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+                opacity: 0; animation: navBackdropIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
             @keyframes navBackdropIn { to { opacity: 1; } }
             nav.menu-open::after { content: ''; position: fixed; inset: 0; z-index: 997; pointer-events: auto; }
             .nav-links {
                 position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-                width: 100% !important;
+                z-index: 999 !important; width: 100% !important;
                 max-height: clamp(75vh, 88dvh, 92vh) !important;
                 min-height: min(320px, 70vh) !important;
-                z-index: 999 !important;
                 background: #ffffff !important;
-                backdrop-filter: blur(0) !important;
-                -webkit-backdrop-filter: blur(0) !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: stretch !important;
-                padding: max(5.5rem, calc(5.5rem + env(safe-area-inset-top))) max(1.5rem, env(safe-area-inset-right)) max(2.5rem, calc(2rem + env(safe-area-inset-bottom))) max(1.5rem, env(safe-area-inset-left)) !important;
-                gap: 0 !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transform: translateY(100%) !important;
-                transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), visibility 0.3s, transform 0.3s cubic-bezier(0.4,0,0.2,1) !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                margin: 0 !important;
-                overflow-y: auto !important;
-                -webkit-overflow-scrolling: touch !important;
+                display: flex !important; flex-direction: column !important; align-items: stretch !important;
+                padding: 0 max(1.5rem, env(safe-area-inset-right)) max(2rem, calc(1.5rem + env(safe-area-inset-bottom))) max(1.5rem, env(safe-area-inset-left)) !important;
+                padding-top: 1rem !important; gap: 0 !important;
+                border-radius: 24px 24px 0 0 !important;
+                box-shadow: 0 -8px 40px -8px rgba(11, 22, 53, 0.15) !important;
+                list-style: none !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important;
+                overscroll-behavior: contain !important; touch-action: manipulation !important;
+                opacity: 0 !important; visibility: hidden !important; transform: translateY(100%) !important;
+                transition: opacity 0.35s cubic-bezier(0.32, 0.72, 0, 1), visibility 0.35s, transform 0.35s cubic-bezier(0.32, 0.72, 0, 1) !important;
                 pointer-events: none !important;
-                list-style: none !important;
             }
             .nav-links.active {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) !important;
-                pointer-events: auto !important;
+                opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important;
+            }
+            .nav-links::before {
+                content: ''; display: block; width: 40px; height: 4px; background: rgba(11, 22, 53, 0.12);
+                border-radius: 2px; margin: 0 auto 1.25rem; flex-shrink: 0;
             }
             .nav-mobile-logo { display: none !important; }
-            .nav-links > li { border-bottom: 1px solid rgba(11,22,53,0.06) !important; flex-shrink: 0 !important; }
-            .nav-links > li:last-child { border-bottom: none !important; }
-            .nav-links > li > a { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 0.9rem 0 !important; font-size: 1.0625rem !important; font-weight: 600 !important; color: var(--navy) !important; min-height: 52px !important; border-radius: 0 !important; margin: 0 !important; -webkit-tap-highlight-color: transparent !important; transition: color 0.2s !important; }
-            .nav-links > li > a:hover, .nav-links > li > a:active { color: var(--gold) !important; background: transparent !important; }
-            .nav-dropdown-content {
-                position: static !important;
-                transform: none !important;
-                display: block !important;
-                box-shadow: none !important;
-                background: rgba(11,22,53,0.03) !important;
-                border: 1px solid rgba(11,22,53,0.07) !important;
-                min-width: unset !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                border-radius: 12px !important;
-                max-height: 0 !important;
-                overflow: hidden !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                opacity: 1 !important;
-                visibility: visible !important;
-                pointer-events: none !important;
-                transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.25s, margin 0.25s !important;
+            .nav-links > li { flex-shrink: 0 !important; border: none !important; }
+            .nav-links > li > a {
+                display: flex !important; align-items: center !important; justify-content: space-between !important;
+                padding: 1rem 0 !important; font-size: 1.125rem !important; font-weight: 600 !important;
+                color: var(--navy) !important; min-height: 56px !important; -webkit-tap-highlight-color: transparent !important;
+                transition: color 0.2s, background 0.2s !important; border-radius: 14px !important; letter-spacing: -0.01em !important; line-height: 1.3 !important;
             }
-            .nav-dropdown.open .nav-dropdown-content,
-            .nav-dropdown.open:hover .nav-dropdown-content {
-                max-height: 400px !important;
-                overflow: visible !important;
-                padding: 0.5rem !important;
-                margin: 0.35rem 0 0.5rem !important;
+            .nav-links > li > a:hover, .nav-links > li > a:active { color: var(--gold) !important; background: rgba(255, 102, 0, 0.06) !important; }
+            .nav-dropdown-content {
+                position: static !important; transform: none !important; display: block !important; box-shadow: none !important;
+                background: transparent !important; border: none !important; min-width: unset !important; width: 100% !important; max-width: 100% !important;
+                border-radius: 0 !important; max-height: 0 !important; overflow: hidden !important;
+                padding: 0 !important; margin: 0 !important; opacity: 1 !important; visibility: visible !important;
+                pointer-events: none !important; transition: max-height 0.3s cubic-bezier(0.32, 0.72, 0, 1) !important;
+            }
+            .nav-dropdown.open .nav-dropdown-content, .nav-dropdown.open:hover .nav-dropdown-content {
+                max-height: 280px !important; overflow: visible !important;
+                padding: 0 0 0.5rem 1rem !important; margin: 0 0 0.5rem !important;
+                border-left: 2px solid rgba(255, 102, 0, 0.3) !important; margin-left: 0.5rem !important;
                 pointer-events: auto !important;
             }
-            .nav-dropdown-content .nav-dropdown-label { display: block !important; font-size: 0.625rem !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: var(--muted) !important; padding: 0.5rem 0.75rem 0.35rem !important; margin-bottom: 0.15rem !important; border-bottom: 1px solid rgba(11,22,53,0.07) !important; white-space: nowrap !important; }
-            .nav-dropdown > a::after { transform: rotate(45deg) !important; border-right: 2.5px solid currentColor !important; border-bottom: 2.5px solid currentColor !important; width: 8px !important; height: 8px !important; }
-            .nav-dropdown.open > a::after { transform: rotate(-135deg) !important; }
-            .nav-dropdown-content a {
-                display: flex !important;
-                align-items: center !important;
-                gap: 0.65rem !important;
-                padding: 0.8rem 0.85rem !important;
-                font-size: 0.9375rem !important;
-                font-weight: 500 !important;
-                color: #334155 !important;
-                border-left: none !important;
-                border-radius: 9px !important;
-                margin: 0.15rem 0 !important;
-                min-height: 48px !important;
-                -webkit-tap-highlight-color: transparent !important;
-                white-space: normal !important;
-                transition: color 0.18s, background 0.18s !important;
+            .nav-dropdown-content .nav-dropdown-label {
+                font-size: 0.6875rem !important; font-weight: 600 !important; letter-spacing: 0.08em !important;
+                text-transform: uppercase !important; color: var(--muted) !important;
+                padding: 0.5rem 0 0.25rem !important; margin-bottom: 0.25rem !important; border: none !important;
             }
-            .nav-dropdown-content a:hover, .nav-dropdown-content a:active { color: var(--navy) !important; background: rgba(11,22,53,0.06) !important; }
-            .mobile-cta-li { display: block !important; margin-top: 1.5rem !important; padding-top: 1.5rem !important; border-top: 1px solid rgba(11,22,53,0.08) !important; width: 100% !important; }
-            li.mobile-cta-li > a { display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; background: var(--navy) !important; color: var(--white) !important; padding: 1rem 1.5rem !important; border-radius: 14px !important; font-weight: 700 !important; min-height: 52px !important; font-size: 1rem !important; -webkit-tap-highlight-color: transparent !important; }
-            li.mobile-cta-li > a:hover, li.mobile-cta-li > a:active { background: var(--gold) !important; color: var(--white) !important; }
-            .mobile-menu-btn { display: flex !important; }
+            .nav-dropdown > a::after {
+                content: ''; display: block; width: 10px; height: 10px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+                transform: rotate(45deg); flex-shrink: 0; margin-left: 0.5rem; transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1); opacity: 0.5;
+            }
+            .nav-dropdown.open > a::after { transform: rotate(-135deg); opacity: 1; }
+            .nav-dropdown-content a {
+                display: flex !important; align-items: center !important; gap: 0 !important;
+                padding: 0.85rem 0 !important; font-size: 1rem !important; font-weight: 500 !important;
+                color: var(--muted) !important; border: none !important; border-radius: 12px !important;
+                margin: 0.15rem 0 !important; min-height: 48px !important; -webkit-tap-highlight-color: transparent !important;
+                white-space: normal !important; transition: color 0.2s, background 0.2s !important;
+            }
+            .nav-dropdown-content a:hover, .nav-dropdown-content a:active { color: var(--navy) !important; background: rgba(11, 22, 53, 0.04) !important; }
+            .mobile-cta-li { display: block !important; margin-top: 1.25rem !important; padding-top: 1.25rem !important; border-top: none !important; width: 100% !important; }
+            li.mobile-cta-li > a {
+                display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important;
+                width: 100% !important; max-width: 100% !important; box-sizing: border-box !important;
+                background: var(--navy) !important; color: var(--white) !important; padding: 1.1rem 1.5rem !important;
+                border-radius: 16px !important; font-weight: 700 !important; min-height: 56px !important; font-size: 1.0625rem !important;
+                -webkit-tap-highlight-color: transparent !important; transition: background 0.25s, color 0.2s, transform 0.2s !important; letter-spacing: 0.01em !important;
+            }
+            li.mobile-cta-li > a:hover, li.mobile-cta-li > a:active { background: var(--gold) !important; color: var(--white) !important; transform: scale(0.98) !important; }
+            .mobile-menu-btn { display: flex !important; min-width: 48px !important; min-height: 48px !important; }
             .cta-nav { display: none !important; }
             
             /* Form / Footer fixes */
@@ -2707,10 +3021,6 @@
             .footer-bottom-left { flex-direction: column !important; gap: 0.75rem !important; }
         }
         @media (max-width: 480px) {
-            .cta-box-header { padding: 1rem 1.1rem; }
-            .cta-box-header h2 { font-size: 1.125rem; }
-            /* .cta-trust-row gap handled by clamp() */
-
             .nav-inner { padding: 0.5rem 0.75rem !important; min-height: 52px !important; }
             .logo-img { height: 40px !important; }
             .cta-box { margin-left: 0 !important; margin-right: 0 !important; max-width: 100% !important; border-radius: 12px !important; padding: 1.5rem !important; }
@@ -2722,26 +3032,31 @@
         }
 
     </style>
-    <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/hero-services.css">
-    <link rel="stylesheet" href="css/hero-ctas-buttons.css">
-    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
-    <link rel="stylesheet" href="css/nav-hover-orange.css">
-    <link rel="stylesheet" href="css/button-contrast.css">
-    <link rel="stylesheet" href="css/responsive-spacing.css">
-    <link rel="stylesheet" href="css/benefit-cards-shared.css">
-    <link rel="stylesheet" href="css/what-is-a-mic-layout.css">
-    <link rel="stylesheet" href="css/benefits-section-premium.css">
-    <link rel="stylesheet" href="css/lottie-forms.css">
-    <link rel="stylesheet" href="css/cta-box-header-border.css">
-    <link rel="stylesheet" href="css/site-global.css">
+    <link rel="stylesheet" href="/css/design-tokens.css">
+    <link rel="stylesheet" href="/css/mobile-menu-fullscreen.css">
+    <link rel="stylesheet" href="/css/nav-hover-orange.css">
+    <link rel="stylesheet" href="/css/button-contrast.css">
+    <link rel="stylesheet" href="/css/faq-section.css">
+    <link rel="stylesheet" href="/css/responsive-spacing.css">
+    <link rel="stylesheet" href="/css/hero-stat-bar.css">
+    <link rel="stylesheet" href="/css/hero-services.css">
+    <link rel="stylesheet" href="/css/hero-ctas-buttons.css">
+    <link rel="stylesheet" href="/css/product-cards-mortgage.css">
+    <link rel="stylesheet" href="/css/benefit-cards-shared.css">
+    <link rel="stylesheet" href="/css/benefits-section-premium.css">
+    <link rel="stylesheet" href="/css/lottie-forms.css">
+    <link rel="stylesheet" href="/css/testimonials-google.css">
+    <link rel="stylesheet" href="/css/cta-box-header-border.css">
+    <link rel="stylesheet" href="/css/site-global.css">
+    <script src="/js/testimonials-expand.js" defer></script>
+    <script src="/js/product-cards-expand.js" defer></script>
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-        <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Richview Capital" class="logo-img"></a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -2754,9 +3069,9 @@
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg></span>
-        </button>
+            </button>
         <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="/images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
                 <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
@@ -2764,378 +3079,744 @@
                         aria-controls="navMenuServices">Services</a>
                     <div class="nav-dropdown-content" id="navMenuServices" role="menu" aria-label="Services">
                         <span class="nav-dropdown-label">Who we serve</span>
-                        <a href="/borrowers" role="menuitem">Borrowers</a>
-                        <a href="/brokers" role="menuitem">Brokers</a>
-                        <a href="/investors" role="menuitem">Investors</a>
+                        <a href="/borrowers/" role="menuitem">Borrowers</a>
+                        <a href="/brokers/" role="menuitem">Brokers</a>
+                        <a href="/investors/" role="menuitem">Investors</a>
                     </div>
                 </li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about/">About</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuResources">Resources</a>
                     <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
-                        <a href="/what-is-a-mic" role="menuitem">What Is a MIC?</a>
-                        <a href="/faq" role="menuitem">FAQ</a>
+                        <a href="/what-is-a-mic/" role="menuitem">What Is a MIC?</a>
+                        <a href="/faq/" role="menuitem">FAQ</a>
                     </div>
                 </li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/blog/">Blog</a></li>
                 <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get
                         Started</a></li>
-        </ul>
-            <a href="#contact" class="cta-nav">Get Started</a>
+            </ul>
+        <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="page-hero" id="main">
-        <div class="hero-content reveal page-hero-content">
-            <h1>Understanding Mortgage Investment Corporations</h1>
-            <p>A proven, regulated way to invest in the Canadian real estate market without the hassle of property
-                management.</p>
+        <div class="page-hero-inner reveal">
+            <h1>Private Mortgage Solutions for Ontario Mortgage Brokers</h1>
+            <p class="hero-tagline"><span class="hero-tagline-line"></span><span class="hero-tagline-text">Fast underwriting. Clear terms. Reliable closings.</span><span class="hero-tagline-line"></span></p>
+            <div class="hero-stat-bar" aria-label="Key rates and terms">
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                    <span class="hero-stat-value">6.99%</span>
+                    <span class="hero-stat-label">1st Mortgages</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+                    <span class="hero-stat-value">75%</span>
+                    <span class="hero-stat-label">Max LTV</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                    <span class="hero-stat-value">$3M</span>
+                    <span class="hero-stat-label">Loan Amounts</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                    <span class="hero-stat-value">24h-48h</span>
+                    <span class="hero-stat-label">Fast Closings</span>
+                </div>
+            </div>
+            <p class="hero-stat-disclaimer"><a href="/disclaimer/">Rates subject to change. Terms and conditions apply. See full disclaimers.</a></p>
             <div class="hero-ctas">
-                <a href="/investors" class="btn-primary">Ready to invest? →</a>
-                <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+                <a href="#contact" class="btn-primary">Submit a Deal</a>
+                <a href="#guidelines" class="btn-secondary">View Guidelines</a>
             </div>
         </div>
     </section>
 
-    <!-- Intro: What is a MIC? -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-text reveal">
-                    <h2>What exactly is a MIC?</h2>
-                    <p>A Mortgage Investment Corporation (MIC) is an investment vehicle created by the Government of
-                        Canada under the Income Tax Act. It is designed to make it easier for individuals to invest in
-                        the Canadian real estate market.</p>
-                    <p>Essentially, a MIC pools capital from many investors to lend out as private mortgages to
-                        borrowers. The interest collected from these mortgages, after operational expenses, is passed
-                        directly to the investors in the form of dividends.</p>
-                    <p>Key regulatory requirements: MICs must have at least 20 shareholders; no single shareholder (plus related persons) may own more than 25% of shares; MICs must distribute 100% of net income and pay no corporate tax; at least 50% of assets must be in residential mortgages or cash; MIC shares are qualified investments for RRSP, RRIF, and TFSA.</p>
+    <section class="why-section benefits-section">
+        <div class="sec-head reveal"
+            style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
+            <h2>Why Work With Richview Capital</h2>
+            <p>Your trusted partner for alternative&nbsp;lending solutions</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card reveal" style="--i: 0;">
+                <span class="benefit-number">01</span>
+                <h3>Fast Response Times</h3>
+                <p>Same-day feedback on all applications. Close in as little as 24-48 hours with a complete application and appraisal. Direct access to decision-makers.</p>
                 </div>
-                <div class="intro-text reveal">
-                    <h2>Why invest in a MIC?</h2>
-                    <p>Unlike volatile equities, MIC returns are backed by tangible real estate. You earn consistent,
-                        passive income without the overhead of property management, tenant issues, or maintenance costs.
-                    </p>
-                    <p>MIC shares are eligible for registered accounts such as RRSPs, RRIFs, and TFSAs, giving you
-                        tax-advantaged access to the private mortgage market.</p>
+            <div class="benefit-card reveal" style="--i: 1;">
+                <span class="benefit-number">02</span>
+                <h3>Transparent Underwriting</h3>
+                <p>Clear communication throughout the process. No surprises at closing. You'll always know where your
+                    deal stands and what's needed to close.</p>
+                </div>
+            <div class="benefit-card reveal" style="--i: 2;">
+                <span class="benefit-number">03</span>
+                <h3>Competitive LTV Ratios</h3>
+                <p>Up to 75% LTV on residential first mortgages. Up to 65% of end value on construction. Every file evaluated individually.</p>
+                </div>
+            <div class="benefit-card reveal" style="--i: 3;">
+                <span class="benefit-number">04</span>
+                <h3>Relationship Focus</h3>
+                <p>We are not a mortgage broker and do not compete with our channel partners. As a privately owned MIC, we are open to exploring unique financing arrangements to find solutions for our partners and their clients.</p>
+                </div>
+            <div class="benefit-card reveal" style="--i: 4;">
+                <span class="benefit-number">05</span>
+                <h3>Case-by-Case Evaluation</h3>
+                <p>Every deal gets individual attention. Not cookie-cutter decisions. We understand every client
+                    situation is unique and deserves thoughtful review.</p>
+                </div>
+            <div class="benefit-card reveal" style="--i: 5;">
+                <span class="benefit-number">06</span>
+                <h3>Experienced Team</h3>
+                <p>Decades of combined experience in alternative lending. We've seen it all and know how to structure
+                    deals that work for everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="loan-products" id="products">
+        <div class="section-header reveal">
+            <h2>What We Fund</h2>
+            <p>Flexible financing solutions for your&nbsp;clients across Ontario</p>
+        </div>
+        <div class="products-grid reveal">
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                    </div>
+                    <h3>First Mortgages</h3>
+                    <p>Residential first mortgages for clients who don't fit traditional bank criteria. Same-day feedback, close in as little as 24 hours.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>Rates from 6.99%</li>
+                        <li>2% lender fee</li>
+                        <li>Open &amp; closed terms: 6-12 months, up to 3 years</li>
+                        <li>Up to 75% LTV (case by case)</li>
+                        <li>No renewal fee on 3-year terms</li>
+                        <li>Loans up to $3M</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+                    </div>
+                    <h3>Second Mortgages</h3>
+                    <p>Flexible second position financing for debt consolidation, renovations, or investment. Quick closings when timing matters.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>Under 65% LTV: rates from 10.99%</li>
+                        <li>65% LTV and above: rates from 11.99%</li>
+                        <li>2% lender fee</li>
+                        <li>Open and closed 6-12 month terms</li>
+                        <li>Up to 75% LTV (case by case)</li>
+                        <li>Loans up to $1M</li>
+                        <li>No appraisal required on qualifying low-LTV files</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v6"/><path d="M12 16v6"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m4.93 19.07 4.24-4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="M2 12h6"/><path d="M16 12h6"/></svg></span>
+                    </div>
+                    <h3>Construction Loans</h3>
+                    <p>Construction financing with staged draws. 24-hour on-site inspections and funds advanced within 24 hours of inspection.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>Land 1st mortgage: 65% LTV, from 7.99% + 2% lender fee</li>
+                        <li>Construction 1st: up to 65% end value, from 9.99% + 2% lender fee</li>
+                        <li>Construction 2nd: up to 65% end value, from 11.99% + 2% lender fee</li>
+                        <li>3-5 draws per project</li>
+                        <li>24-hour on-site inspections</li>
+                        <li>Funds advanced within 24 hours of inspection</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                    </div>
+                    <h3>Bridge Financing</h3>
+                    <p>Short-term bridge loans for purchase-before-sale or quick capital during transitions.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>1 to 90 day loan terms</li>
+                        <li>Rates from 8.99%</li>
+                        <li>2% lender fee</li>
+                        <li>Fast approvals, same-day feedback</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22c-4-4-8-8-8-14a8 8 0 0 1 16 0c0 6-4 10-8 14z"/></svg></span>
+                    </div>
+                    <h3>Land Financing</h3>
+                    <p>Financing for land acquisition and development-ready properties across Ontario.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>1st mortgage on land at 65% LTV</li>
+                        <li>Rates from 7.99% + 2% lender fee</li>
+                        <li>Same-day feedback</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                    </div>
+                    <h3>HELOC</h3>
+                    <p>Home Equity Line of Credit with open terms and flexible access for your clients.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>1st mortgage HELOC: rates from 7.99%</li>
+                        <li>2nd mortgage HELOC: rates from 11.99%</li>
+                        <li>2% lender fee</li>
+                        <li>Open term</li>
+                        <li>Up to 75% LTV (case by case)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span>
+                    </div>
+                    <h3>Commercial Loans</h3>
+                    <p>Income-producing commercial properties: multi-family, office, retail, industrial, mixed-use.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>Multi-family rental, office, retail, industrial, mixed use</li>
+                        <li>Up to 75% LTV</li>
+                        <li>Approvals within 1 business day</li>
+                        <li>Rates from 9.99%</li>
+                        <li>Loans up to $3M</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-top">
+                    <div class="product-card-header">
+                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
+                    </div>
+                    <h3>Refinancing</h3>
+                    <p>Refinancing for clients looking to consolidate debt, access equity, or improve terms.</p>
+                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
+                </div>
+                <div class="product-card-bottom">
+                    <h4 class="product-highlights-title">Highlights</h4>
+                    <ul class="product-features">
+                        <li>Rates from 6.99%</li>
+                        <li>2% lender fee</li>
+                        <li>Open &amp; closed terms: 6-12 months, up to 3 years</li>
+                        <li>Up to 75% LTV (case by case)</li>
+                        <li>Loans up to $3M</li>
+                        <li>No renewal fee on 3-year terms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="products-disclaimer-wrap">
+            <p class="products-disclaimer">All rates are subject to change. All mortgages subject to credit approval and appraisal. This is not a commitment to lend. Managed by Richview Capital Management Inc. Lic #13171.</p>
+        </div>
+    </section>
+
+    <section class="guidelines-section" id="guidelines">
+        <div class="sec-head reveal"
+            style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
+                <h2>Submission Guidelines</h2>
+                <p>Six topic areas - from documentation and appraisals to timelines and eligibility - to help you submit complete files faster</p>
+            </div>
+            <div class="guidelines-grid">
+            <div class="guideline-card reveal" style="--i: 0;">
+                <span class="guideline-number">01</span>
+                <h3>Required Documentation</h3>
+                    <ul>
+                        <li>Completed application form</li>
+                        <li>Property details and address</li>
+                        <li>Borrower financials (income verification)</li>
+                        <li>Credit report (recent)</li>
+                        <li>Property appraisal (current)</li>
+                        <li>Purpose of financing</li>
+                    </ul>
+                </div>
+            <div class="guideline-card reveal" style="--i: 1;">
+                <span class="guideline-number">02</span>
+                <h3>Appraisal Requirements</h3>
+                    <ul>
+                        <li>Full appraisal from approved appraiser</li>
+                        <li>Recent (within 90 days preferred)</li>
+                        <li>MPAC assessment included</li>
+                        <li>Comparable sales analysis</li>
+                        <li>Property photos</li>
+                        <li>Appraisal list available on request</li>
+                    </ul>
+                </div>
+            <div class="guideline-card reveal" style="--i: 2;">
+                <span class="guideline-number">03</span>
+                <h3>Geographic Focus</h3>
+                    <ul>
+                        <li>Greater Toronto Area (GTA)</li>
+                        <li>Ontario-wide coverage</li>
+                        <li>Urban and suburban markets</li>
+                        <li>Select rural properties (case-by-case)</li>
+                        <li>Primary residential focus</li>
+                        <li>Strong market knowledge</li>
+                    </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 3;">
+                <span class="guideline-number">04</span>
+                <h3>Construction Loan Requirements</h3>
+                <ul>
+                    <li>Appraisal: both as-is and as-if completed reports</li>
+                    <li>All required building permits for the project</li>
+                    <li>Builder's portfolio: background, experience, completed projects, credentials</li>
+                    <li>Detailed construction budget with line-item costs</li>
+                    <li>Mortgage application and additional documentation</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 4;">
+                <span class="guideline-number">05</span>
+                <h3>Timelines &amp; communication</h3>
+                <ul>
+                    <li>Same-day feedback when the file is complete</li>
+                    <li>Submit through your usual BDM or dedicated channel contact</li>
+                    <li>One consolidated email thread per deal reduces delays</li>
+                    <li>Flag rush or financing-due dates in the subject line</li>
+                    <li>Underwriting may request clarifications - reply promptly</li>
+                    <li>Closing windows depend on appraisal and solicitor readiness</li>
+                </ul>
+            </div>
+            <div class="guideline-card reveal" style="--i: 5;">
+                <span class="guideline-number">06</span>
+                <h3>Eligible property &amp; deal types</h3>
+                <ul>
+                    <li>Residential first and second mortgages (Ontario)</li>
+                    <li>Owner-occupied, rental, and select investment properties</li>
+                    <li>Construction and renovation (with required docs above)</li>
+                    <li>Case-by-case exceptions - ask before you decline the client</li>
+                    <li>LTV and loan size follow published product guidelines</li>
+                    <li>Commercial-only or non-Ontario deals: confirm eligibility first</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+        <div class="sec-head reveal">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
+        </div>
+        <div class="testimonials-slider" aria-label="Testimonials carousel">
+            <div class="testimonials-track">
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SC</div>
+                            <div class="testimonial-author-info">
+                                <h5>Sarah Chen</h5>
+                                <span>Mortgage Broker, Toronto</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JK</div>
+                            <div class="testimonial-author-info">
+                                <h5>James Kumar</h5>
+                                <span>Broker, Mississauga</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Maria Thompson</h5>
+                                <span>Senior Broker, Oakville</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SC</div>
+                            <div class="testimonial-author-info">
+                                <h5>Sarah Chen</h5>
+                                <span>Mortgage Broker, Toronto</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JK</div>
+                            <div class="testimonial-author-info">
+                                <h5>James Kumar</h5>
+                                <span>Broker, Mississauga</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Maria Thompson</h5>
+                                <span>Senior Broker, Oakville</span>
+                            </div>
+                        </div>
+                </div>
+                <!-- Third set for continuous flow -->
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SC</div>
+                            <div class="testimonial-author-info">
+                                <h5>Sarah Chen</h5>
+                                <span>Mortgage Broker, Toronto</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JK</div>
+                            <div class="testimonial-author-info">
+                                <h5>James Kumar</h5>
+                                <span>Broker, Mississauga</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MT</div>
+                            <div class="testimonial-author-info">
+                                <h5>Maria Thompson</h5>
+                                <span>Senior Broker, Oakville</span>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Investment Term Sheet -->
-    <section class="term-sheet-section">
+    <section class="faq-section" id="faq">
         <div class="container">
-            <div class="section-heading reveal">
-                <h2>Investment Term Sheet</h2>
-                <p>Key terms for Richview Capital MIC&nbsp;investments</p>
+            <div class="sec-head reveal">
+                <h2>Frequently Asked</h2>
+                <p>Common questions from mortgage&nbsp;brokers</p>
             </div>
-            <div class="term-sheet-table-wrap reveal">
-                <table class="term-sheet-table">
-                    <tbody>
-                        <tr class="reveal" style="--i: 0"><td>Investment type</td><td>Preference Class Shares of Richview Capital MIC Inc.</td></tr>
-                        <tr class="reveal" style="--i: 1"><td>Share price</td><td>$10.00 per share</td></tr>
-                        <tr class="reveal" style="--i: 2"><td>Minimum investment</td><td>$100,000</td></tr>
-                        <tr class="reveal" style="--i: 3"><td>Minimum hold period</td><td>2 years, quarterly liquidity thereafter</td></tr>
-                        <tr class="reveal" style="--i: 4"><td>Target annual return</td><td>7-8%</td></tr>
-                        <tr class="reveal" style="--i: 5"><td>Distributions</td><td>Quarterly by direct deposit</td></tr>
-                        <tr class="reveal" style="--i: 6"><td>Distribution dates</td><td>March 30, June 30, September 30, December 31</td></tr>
-                        <tr class="reveal" style="--i: 7"><td>Eligible accounts</td><td>RRSP, RRIF, TFSA, LIRA, RESP, LIF, and non-registered (cash)</td></tr>
-                        <tr class="reveal" style="--i: 8"><td>Fees: registered accounts</td><td>Fees apply for registered and self-directed accounts</td></tr>
-                        <tr class="reveal" style="--i: 9"><td>Fees: non-registered (cash)</td><td>No fees charged</td></tr>
-                        <tr class="reveal" style="--i: 10"><td>Portfolio</td><td>Short-term 1st and 2nd mortgages, GTA</td></tr>
-                        <tr class="reveal" style="--i: 11"><td>Property types</td><td>Mixed residential, high-rise condos (max 20 years old), construction</td></tr>
-                        <tr class="reveal" style="--i: 12"><td>Max LTV</td><td>75%</td></tr>
-                        <tr class="reveal" style="--i: 13"><td>Min borrower credit score</td><td>600</td></tr>
-                        <tr class="reveal" style="--i: 14"><td>Financial statements</td><td>Audited annually</td></tr>
-                        <tr class="reveal" style="--i: 15"><td>Dividend statements</td><td>Issued every quarter</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- How Your Investment Is Protected -->
-    <section class="protected-section">
-        <div class="container">
-            <div class="section-heading reveal">
-                <h2>How Your Investment Is Protected</h2>
-                <p>Risk management and security measures for your&nbsp;capital</p>
-            </div>
-            <ol class="protected-list reveal">
-                <li>Maximum 75% loan-to-value ratio on all mortgages</li>
-                <li>Minimum 600 credit score on every borrower application</li>
-                <li>Lending diversified across the GTA: multiple properties and borrowers</li>
-                <li>Property types: mixed residential, condos max 20 years old, construction</li>
-                <li>Every deal sourced through select network of top-tier mortgage professionals</li>
-                <li>Financial statements audited annually</li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- MIC vs Traditional Investments -->
-    <section class="comparison-section">
-        <div class="container">
-            <div class="section-heading center reveal">
-                <h2>MIC vs. Traditional Investments</h2>
-                <p>Compare MIC investing to other asset&nbsp;classes</p>
-            </div>
-            <div class="comparison-table-wrap reveal">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>MIC</th>
-                            <th>Public REITs</th>
-                            <th>Mutual Funds</th>
-                            <th>Direct Property</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="reveal" style="--i: 0"><td>Backed by real estate</td><td>Yes</td><td>Yes</td><td>Varies</td><td>Yes</td></tr>
-                        <tr class="reveal" style="--i: 1"><td>Daily price fluctuation</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-                        <tr class="reveal" style="--i: 2"><td>Quarterly income</td><td>Yes</td><td>Varies</td><td>Varies</td><td>Rental income</td></tr>
-                        <tr class="reveal" style="--i: 3"><td>RRSP/TFSA eligible</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Generally no</td></tr>
-                        <tr class="reveal" style="--i: 4"><td>Property management</td><td>None</td><td>None</td><td>None</td><td>Required</td></tr>
-                        <tr class="reveal" style="--i: 5"><td>Minimum investment</td><td>$100,000</td><td>Low</td><td>Low</td><td>High</td></tr>
-                        <tr class="reveal" style="--i: 6"><td>Liquidity</td><td>Quarterly after 2-year hold</td><td>Daily</td><td>Daily</td><td>Low</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="benefits-section">
-        <div class="container">
-            <div class="section-heading center reveal">
-                <h2>Key Benefits of a MIC</h2>
-                <p>Why thousands of Canadians choose this path to steady&nbsp;returns</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card reveal">
-                    <div class="benefit-badge">01</div>
-                    <h3>Regulated &amp; Secure</h3>
-                    <p>MICs are strictly regulated under Section 130.1 of the Income Tax Act, requiring an annual audit
-                        and specific portfolio compositions to ensure safety.</p>
+            <div class="faq-list">
+                <div class="faq-item reveal" style="--i: 0;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What is your typical turnaround time?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Same-day feedback on all complete submissions. Close in as little as 24-48 hours with a full application and appraisal.</p>
+                    </div>
+                    </div>
+                <div class="faq-item reveal" style="--i: 1;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What are your LTV limits?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Up to 75% LTV on residential first mortgages (case by case). Second mortgages up to 75% LTV. Construction loans up to 65% of end value. Commercial up to 75% LTV.</p>
+                    </div>
+                    </div>
+                <div class="faq-item reveal" style="--i: 2;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>Do you have broker fees or commission structures?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes, we offer competitive broker compensation. Contact our team directly to discuss our fee
+                            structure and commission arrangements. We value our broker partnerships and ensure fair
+                            compensation for your referrals.</p>
+                    </div>
                 </div>
-                <div class="benefit-card reveal">
-                    <div class="benefit-badge">02</div>
-                    <h3>Tax-Advantaged Growth</h3>
-                    <p>Because MICs distribute 100% of their net income, they pay no corporate tax. Furthermore, shares
-                        in a MIC are an eligible investment for RRSPs, RRIFs, and TFSAs.</p>
+                <div class="faq-item reveal" style="--i: 3;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>Can I submit deals outside the GTA?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes, we fund mortgages across Ontario, not just in the GTA. While we focus primarily on the
+                            Greater Toronto Area, we have extensive experience with properties throughout Southern
+                            Ontario and select markets province-wide. Contact us to discuss your specific location.</p>
+                    </div>
+                    </div>
+                <div class="faq-item reveal" style="--i: 4;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>What credit scores do you accept?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Minimum credit score is 600. We also review and confirm debt serviceability on every application. Each file is evaluated case by case.</p>
+                    </div>
+                    </div>
+                <div class="faq-item reveal" style="--i: 5;">
+                    <button class="faq-q" aria-expanded="false">
+                        <span>How do I become an approved broker partner?</span>
+                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Simply submit your first deal, or contact us directly to introduce yourself and your
+                            brokerage. We welcome new broker relationships and will provide you with all necessary
+                            submission guidelines, rate sheets, and contact information to get started.</p>
+                    </div>
                 </div>
-                <div class="benefit-card reveal">
-                    <div class="benefit-badge">03</div>
-                    <h3>Asset-Backed Security</h3>
-                    <p>Unlike stocks which can be volatile, MIC investments are backed by tangible real estate assets. A
-                        registered mortgage is placed on the property to secure the loan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lifecycle -->
-    <section class="lifecycle-section" id="how-it-works">
-        <div class="container">
-            <div class="section-heading reveal">
-                <h2>The MIC Life Cycle</h2>
-                <p>How your capital transforms into steady dividend&nbsp;returns</p>
-            </div>
-            <div class="lifecycle-grid reveal">
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">01</div>
-                    <h4>Pooling Capital</h4>
-                    <p>Investors purchase shares in the MIC, pooling their capital together to create a large lending
-                        fund.</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">02</div>
-                    <h4>Lending to Borrowers</h4>
-                    <p>The MIC lends this money to carefully vetted borrowers, securing the loans against Ontario real
-                        estate.</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">03</div>
-                    <h4>Collecting Interest</h4>
-                    <p>Borrowers make regular payments containing interest, which forms the revenue of the MIC.</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">04</div>
-                    <h4>Paying Dividends</h4>
-                    <p>The net income is distributed back to you, the investor, as consistent, stable dividends.</p>
-                </div>
-            </div>
-        </div>
+                    </div>
+                    </div>
     </section>
 
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-intro reveal">
-                    <p class="cta-intro-label">Start Investing</p>
-                    <h2 class="cta-intro-title">Invest in a MIC</h2>
-                    <p class="cta-intro-desc">Earn 7–8% annual returns through Richview's licensed Mortgage Investment Corporation. Asset-backed, regulated, and accessible.</p>
+                    <p class="cta-intro-label">Partner With Us</p>
+                    <h2 class="cta-intro-title">Submit a Deal</h2>
+                    <p class="cta-intro-desc">Fast approvals and competitive rates. Our broker-first approach means quick decisions and reliable closings for your clients.</p>
                     <ul class="cta-trust-list" aria-label="Why choose us">
                         <li class="cta-trust-list-item">
                             <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
                             <span>Instant Response</span>
                         </li>
                         <li class="cta-trust-list-item">
-                            <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                            <span>Confidential &amp; secure</span>
+                            <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                            <span>Competitive Compensation</span>
                         </li>
                     </ul>
                 </div>
             <div class="cta-box reveal">
                 <div class="cta-box-header">
                     <h2>Book a Free Consultation</h2>
-                    <p>Take the first step toward secure, asset-backed&nbsp;returns.</p>
+                    <p>Complete the form below and our team will respond instantly.</p>
                     <div class="cta-trust-row">
                         <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
                             <span>Instant Response</span>
-                        </div>
+                </div>
                         <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <span>Confidential &amp; secure</span>
-                        </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            <span>Confidential & secure</span>
                     </div>
                 </div>
-                <div class="cta-box-body" id="ctaBoxBody">
-                        <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
-                            <h3>Thank you!</h3>
-                            <p>We've received your consultation request. Our team will confirm shortly.</p>
-                        </div>
-                        <div class="cta-form-fields">
-                            <form id="consultationForm">
-                                <div class="cta-form-section">
-                                    <div class="cta-form-section-title">Your Details</div>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="consultFirstName">First Name</label>
-                                            <input type="text" id="consultFirstName" name="consultFirstName"
-                                                placeholder="e.g. John" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="consultLastName">Last Name</label>
-                                            <input type="text" id="consultLastName" name="consultLastName"
-                                                placeholder="e.g. Smith" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="consultEmail">Email Address</label>
-                                            <input type="email" id="consultEmail" name="consultEmail"
-                                                placeholder="john@example.com" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="consultPhone">Phone Number</label>
-                                            <input type="tel" id="consultPhone" name="consultPhone"
-                                                placeholder="(416) 555-0123" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cta-form-section">
-                                    <div class="cta-form-section-title">Consultation Details</div>
-                            <div class="form-row form-row-full">
-                                        <div class="form-group">
-                                            <label for="consultInterest">I'm interested in</label>
-                                            <select id="consultInterest" name="consultInterest" required>
-                                                <option value="" disabled selected>Select your interest</option>
-                                                <option value="borrowing">Borrowing: Private mortgage or construction
-                                                    financing</option>
-                                                <option value="investing">Investing: MIC investment opportunities
-                                                </option>
-                                                <option value="brokering">Brokering: Partner with us</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                            <div class="form-row form-row-full">
-                                        <div class="form-group">
-                                            <label for="consultMessage">How can we help?</label>
-                                            <textarea id="consultMessage" name="consultMessage"
-                                                placeholder="Tell us about your project, financing needs, or any questions you have."
-                                                required></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="consult-next-wrap" id="consultNextWrap">
-                                    <button type="button" id="consultFormNextBtn" class="consult-form-next">Next</button>
-                                </div>
-                                <div class="cta-form-section consult-schedule-section" id="consultScheduleSection">
-                                    <div class="cta-form-section-title">Schedule Your Call</div>
-                                    <div class="consult-back-wrap" id="consultBackWrap">
-                                        <button type="button" id="consultFormBackBtn" class="consult-form-back">Back</button>
-                                    </div>
-                                    <div class="cta-schedule-block hero-schedule-block">
-                                        <div class="cta-schedule-fields">
-                                            <div class="cta-schedule-field">
-                                                <label for="consultDateTrigger">Select Date</label>
-                                                <div class="cta-picker-wrap">
-                                                    <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
-                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-                                                        <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
-                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
-                                                    </button>
-                                                    <div class="cta-picker-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
-                                                        <div class="cta-picker-dropdown-inner">
-                                                            <div class="cta-calendar-header">
-                                                                <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
-                                                                <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
-                                                                <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
-                                                            </div>
-                                                            <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
-                                                            <div class="cta-calendar-days" id="consultCalendarDays"></div>
-                                                            <button type="button" class="cta-calendar-action" data-today>Today</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" id="consultDate" name="consultDate" required>
-                                            </div>
-                                            <div class="cta-schedule-field">
-                                                <label for="consultTimeTrigger">Select time</label>
-                                                <div class="cta-picker-wrap">
-                                                    <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
-                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-                                                        <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
-                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
-                                                    </button>
-                                                    <div class="cta-picker-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
-                                                        <div class="cta-picker-dropdown-inner">
-                                                            <div class="cta-time-inner">
-                                                                <div class="cta-time-grid" id="consultTimeGrid"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" id="consultTime" name="consultTime" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cta-submit-wrap" id="consultSubmitWrap">
-                                    <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
-                                </div>
-                            </form>
-                        </div>
                     </div>
+                <div class="cta-box-body" id="ctaBoxBody">
+                    <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
+                        <h3>Thank you!</h3>
+                        <p>We've received your consultation request. Our team will confirm shortly.</p>
+                    </div>
+                    <div class="cta-form-fields">
+                        <form id="consultationForm">
+                        <div class="cta-form-section">
+                            <div class="cta-form-section-title">Your Details</div>
+                <div class="form-row">
+                    <div class="form-group">
+                                        <label for="consultFirstName">First Name</label>
+                                        <input type="text" id="consultFirstName" name="consultFirstName"
+                                            placeholder="e.g. John" required>
+                    </div>
+                    <div class="form-group">
+                                        <label for="consultLastName">Last Name</label>
+                                        <input type="text" id="consultLastName" name="consultLastName"
+                                            placeholder="e.g. Smith" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                                        <label for="consultEmail">Email Address</label>
+                                        <input type="email" id="consultEmail" name="consultEmail"
+                                            placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                                        <label for="consultPhone">Phone Number</label>
+                                        <input type="tel" id="consultPhone" name="consultPhone"
+                                            placeholder="(416) 555-0123" required>
+                    </div>
+                </div>
+                        </div>
+                        <div class="cta-form-section">
+                                <div class="cta-form-section-title">Consultation Details</div>
+                            <div class="form-row form-row-full">
+                    <div class="form-group">
+                                        <label for="consultInterest">I'm interested in</label>
+                                        <select id="consultInterest" name="consultInterest" required>
+                                            <option value="" disabled selected>Select your interest</option>
+                                            <option value="borrowing">Borrowing: Private mortgage or construction
+                                                financing</option>
+                                            <option value="investing">Investing: MIC investment opportunities</option>
+                                            <option value="brokering">Brokering: Partner with us</option>
+                        </select>
+                    </div>
+                </div>
+                            <div class="form-row form-row-full">
+                <div class="form-group">
+                                        <label for="consultMessage">How can we help?</label>
+                                        <textarea id="consultMessage" name="consultMessage"
+                                            placeholder="Tell us about your project, financing needs, or any questions you have."
+                                            required></textarea>
+                </div>
+                            </div>
+                        </div>
+                        <div class="consult-next-wrap" id="consultNextWrap">
+                            <button type="button" id="consultFormNextBtn" class="consult-form-next">Next</button>
+                        </div>
+                        <div class="cta-form-section consult-schedule-section" id="consultScheduleSection">
+                                <div class="cta-form-section-title">Schedule Your Call</div>
+                                <div class="consult-back-wrap" id="consultBackWrap">
+                                    <button type="button" id="consultFormBackBtn" class="consult-form-back">Back</button>
+                                </div>
+                                <div class="cta-schedule-block hero-schedule-block">
+                                    <div class="cta-schedule-fields">
+                                        <div class="cta-schedule-field">
+                                            <label for="consultDateTrigger">Select Date</label>
+                                            <div class="cta-picker-wrap">
+                                                <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
+                                                    <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+                                                    <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
+                                                    <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                </button>
+                                                <div class="cta-picker-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
+                                                    <div class="cta-picker-dropdown-inner">
+                                                        <div class="cta-calendar-header">
+                                                            <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
+                                                            <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
+                                                            <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
+                                                        </div>
+                                                        <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                                                        <div class="cta-calendar-days" id="consultCalendarDays"></div>
+                                                        <button type="button" class="cta-calendar-action" data-today>Today</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="consultDate" name="consultDate" required>
+                                        </div>
+                                        <div class="cta-schedule-field">
+                                            <label for="consultTimeTrigger">Select time</label>
+                                            <div class="cta-picker-wrap">
+                                                <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
+                                                    <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                                    <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
+                                                    <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                </button>
+                                                <div class="cta-picker-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
+                                                    <div class="cta-picker-dropdown-inner">
+                                                        <div class="cta-time-inner">
+                                                            <div class="cta-time-grid" id="consultTimeGrid"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="consultTime" name="consultTime" required>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="cta-submit-wrap" id="consultSubmitWrap">
+                                <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
+                        </div>
+            </form>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-    <!-- Footer -->
     <footer>
         <div class="footer-main">
             <div class="container">
                 <div class="footer-grid">
-                    <div class="footer-brand">
-                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
+            <div class="footer-brand">
+                        <a href="/" class="logo"><img src="/images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
@@ -3146,28 +3827,28 @@
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                                 </svg></a>
-                        </div>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="/borrowers">Borrowers</a></li>
-                            <li><a href="/brokers">Brokers</a></li>
-                            <li><a href="/investors">Investors</a></li>
-                            </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/faq">FAQ</a></li>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                            <li><a href="/borrowers/">Borrowers</a></li>
+                            <li><a href="/brokers/">Brokers</a></li>
+                            <li><a href="/investors/">Investors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/faq/">FAQ</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="/privacy">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
+                            <li><a href="/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
                         <h4>Get in Touch</h4>
-                        <div class="footer-contact-item">
+                <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -3177,8 +3858,8 @@
                                 target="_blank" rel="noopener">
                                 7681 Highway 27 Unit 15, Suite 200<br>Woodbridge ON, L4L 4M5
                             </a>
-                        </div>
-                        <div class="footer-contact-item">
+                </div>
+                <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
@@ -3186,17 +3867,17 @@
                                     <polyline points="22,6 12,13 2,6" />
                                 </svg></span>
                             <a href="mailto:info@richviewcapitalmic.com">info@richviewcapitalmic.com</a>
-                        </div>
-                        <div class="footer-contact-item">
+                </div>
+                <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
                                         d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg></span>
                             <a href="tel:+14163072336">416 307 2336</a>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
             </div>
         </div>
         <div class="footer-divider">
@@ -3210,10 +3891,10 @@
                         # - 13171</span>
                 </div>
                 <div class="footer-bottom-right">
-                <div class="footer-legal">
-                    <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-                    <a href="/disclaimer">Disclaimer</a>
+            <div class="footer-legal">
+                    <a href="/privacy/">Privacy</a>
+                    <a href="/terms/">Terms</a>
+                    <a href="/disclaimer/">Disclaimer</a>
                 </div>
                 <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
                     aria-label="Back to top">
@@ -3227,16 +3908,18 @@
         </div>
     </footer>
 
-    <script src="js/lottie-utils.js"></script>
+    <script src="/js/lottie-utils.js"></script>
     <script>
+
         (function () {
+            function initMobileNav() {
             var nav = document.getElementById('mainNav');
             var btn = document.getElementById('mobileMenuBtn');
             var menu = document.getElementById('navLinks');
             if (!btn || !menu) return;
-            if (btn.hasAttribute('data-listener-attached')) return;
-            btn.setAttribute('data-listener-attached', 'true');
-            btn.addEventListener('click', function () {
+                if (btn._navInit) return;
+                btn._navInit = true;
+                btn.addEventListener('click', function () {
                 var isOpen = menu.classList.toggle('active');
                 nav.classList.toggle('menu-open', isOpen);
                 btn.setAttribute('aria-expanded', isOpen);
@@ -3249,7 +3932,7 @@
                     var dropdown = this.closest('.nav-dropdown');
                     var isTrigger = dropdown && (dropdown.firstElementChild === this);
                     if (isTrigger) {
-                        e.preventDefault();
+                e.preventDefault();
                         e.stopPropagation();
                         dropdown.classList.toggle('open');
                         return;
@@ -3260,16 +3943,49 @@
                     btn.setAttribute('aria-label', 'Open menu');
                     document.body.style.overflow = '';
                     document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
-                });
             });
-        })();
-        window.addEventListener('scroll', () => {
-            document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 30);
         });
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileNav);
+            } else {
+                initMobileNav();
+            }
+        })();
+
+        (function () { var nav = document.getElementById('mainNav'); var lastScrollY = 0; var scrollThreshold = 120; function onScroll() { if (!nav) return; var y = window.pageYOffset || document.documentElement.scrollTop; nav.classList.toggle('scrolled', y > 30); if (nav.classList.contains('menu-open')) { lastScrollY = y; return; } if (y <= scrollThreshold) nav.classList.remove('nav-hidden'); else if (y > lastScrollY) nav.classList.add('nav-hidden'); else nav.classList.remove('nav-hidden'); lastScrollY = y; document.querySelectorAll('.reveal').forEach(function (el) { var rect = el.getBoundingClientRect(); if (rect.top < window.innerHeight - 80) el.classList.add('visible'); }); } window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); })();
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+        });
+
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    const b = i.querySelector('.faq-q');
+                    if (b) b.setAttribute('aria-expanded', 'false');
+                });
+                if (!wasOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const h = this.getAttribute('href');
+                if (h && h !== '#' && !this.closest('.nav-dropdown')) {
+                    const t = document.querySelector(h);
+                    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }
+            });
+        });
+
+
 
         (function() {
             var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/cc5524bb-cf46-4c3f-b7a9-ab502924fbe3';
@@ -3353,7 +4069,7 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    window.location.href = '/thank-you';
+                    window.location.href = '/thank-you/';
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
@@ -3404,6 +4120,7 @@
             }
 
             function closeDropdown(dd) { if (dd) dd.classList.remove('is-open'); }
+
             function openDropdown(dd, trigger) {
                 closeDropdown(dateDropdown);
                 closeDropdown(timeDropdown);

@@ -166,10 +166,10 @@ def fix_file(path):
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pages = [
-        'terms.html', 'privacy.html', 'disclaimer.html', 'thank-you.html',
-        'richview-about.html', 'richview-faq.html', 'richview-blog.html',
-        'richview-borrowers.html', 'richview-what-is-a-mic.html',
-        'richview-capital-brokers.html', 'richview-capital-mic.html'
+        'terms/index.html', 'privacy/index.html', 'disclaimer/index.html', 'thank-you/index.html',
+        'about/index.html', 'faq/index.html', 'blog/index.html',
+        'borrowers/index.html', 'what-is-a-mic/index.html',
+        'brokers/index.html', 'investors/index.html',
     ]
     for name in pages:
         path = os.path.join(root, name)

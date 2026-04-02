@@ -1,0 +1,3 @@
+# Static site root; routing is handled by _redirects (extensionless URLs).
+[build]
+  publish = "."

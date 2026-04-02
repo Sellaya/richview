@@ -3,6 +3,6 @@ User-agent: *
 Allow: /
 
 # Thank-you page is noindex in HTML; keep out of bulk crawl hints
-Disallow: /thank-you
+Disallow: /thank-you/
 
 Sitemap: https://richviewcapitalmic.com/sitemap.xml

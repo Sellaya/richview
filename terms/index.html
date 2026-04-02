@@ -4,22 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Richview Capital MIC</title>
-    <meta name="description"
-        content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Terms of Use &amp; Disclaimer | Richview Capital MIC</title>
+    <meta name="description" content="Terms of Use and Disclaimer for Richview Capital MIC website and services.">
+    <link rel="icon" href="/images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
-    <link rel="canonical" href="https://richviewcapitalmic.com/privacy">
+    <link rel="canonical" href="https://richviewcapitalmic.com/terms/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Privacy Policy | Richview Capital MIC">
+    <meta property="og:title" content="Terms of Use &amp; Disclaimer | Richview Capital MIC">
     <meta property="og:description"
-        content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
+        content="Terms of Use and Disclaimer for Richview Capital MIC website and services.">
     <meta property="og:image" content="https://richviewcapitalmic.com/images/logo.png">
-    <meta property="og:url" content="https://richviewcapitalmic.com/privacy">
+    <meta property="og:url" content="https://richviewcapitalmic.com/terms/">
     <meta property="og:locale" content="en_CA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Privacy Policy | Richview Capital MIC">
-    <meta name="twitter:description" content="Privacy Policy for Richview Capital MIC. How we collect, use, and protect your personal information.">
+    <meta name="twitter:title" content="Terms of Use &amp; Disclaimer | Richview Capital MIC">
+    <meta name="twitter:description" content="Terms of Use and Disclaimer for Richview Capital MIC website and services.">
     <meta name="twitter:image" content="https://richviewcapitalmic.com/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +36,11 @@
             --charcoal: #1A1A1A;
             --white: #FFFFFF;
             --muted: #6B7280;
-            --border: rgba(0, 0, 0, 0.08);
             --dark-blue-deep: #070E24;
             --container: min(90vw, 1400px);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --section-padding: 2.5rem;
-            --gutter: clamp(0.75rem, 2vw, 1rem);
+            --gutter: 16px;
             --btn-pri-hover: #0c1838;
             --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
 
@@ -53,6 +51,30 @@
             --space-xl: 3.5rem;
             --space-2xl: 4rem;
             --space-3xl: 5rem;
+        }
+
+        @media (min-width:640px) {
+            :root {
+                --gutter: 24px;
+            }
+        }
+
+        @media (min-width:768px) {
+            :root {
+                --gutter: 32px;
+            }
+        }
+
+        @media (min-width:1024px) {
+            :root {
+                --gutter: 48px;
+            }
+        }
+
+        @media (min-width:1280px) {
+            :root {
+                --gutter: 64px;
+            }
         }
 
         html {
@@ -392,7 +414,7 @@
             letter-spacing: -0.02em;
         }
 
-        
+
         .legal-content {
             padding: 5rem 0;
             background: #ffffff;
@@ -414,7 +436,7 @@
             color: var(--navy);
             margin: 2.5rem 0 1rem;
             letter-spacing: -0.02em;
-            border-bottom: 2px solid rgba(0,0,0,0.05);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
             padding-bottom: 0.5rem;
         }
 
@@ -1039,99 +1061,47 @@
             .nav-inner { padding: 0.4rem 1.35rem !important; min-height: 60px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
             nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
             /* --- Mobile menu: full-screen overlay (matches homepage) --- */
-            .nav-links {
-                display: none !important;
-                position: absolute;
-                left: 0; right: 0; top: 0; bottom: 0;
-                list-style: none !important;
-            }
+            .nav-links { display: none !important; position: absolute; left: 0; right: 0; top: 0; bottom: 0; list-style: none !important; }
             nav.menu-open {
-                position: fixed !important;
-                top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-                width: 100% !important; height: 100% !important;
-                min-height: 100vh; min-height: 100dvh;
-                max-height: 100vh; max-height: 100dvh;
-                z-index: 9999 !important;
-                transform: none !important;
-                margin: 0 !important;
-                background: #ffffff !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                border: none !important;
-                display: flex !important;
-                flex-direction: column !important;
-                overflow: hidden;
+                position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+                width: 100% !important; height: 100% !important; min-height: 100vh; min-height: 100dvh;
+                max-height: 100vh; max-height: 100dvh; z-index: 9999 !important; transform: none !important;
+                margin: 0 !important; background: #ffffff !important; border-radius: 0 !important;
+                box-shadow: none !important; border: none !important; display: flex !important;
+                flex-direction: column !important; overflow: hidden;
             }
             nav.menu-open .nav-inner {
-                flex: 1;
-                min-height: 0;
-                display: grid !important;
-                grid-template-rows: minmax(60px, auto) 1fr;
-                grid-template-columns: 1fr auto;
+                flex: 1; min-height: 0; display: grid !important;
+                grid-template-rows: minmax(60px, auto) 1fr; grid-template-columns: 1fr auto;
                 grid-template-areas: "menu-header menu-header" "menu-links menu-links";
-                gap: 0;
-                padding: 0;
-                background: #ffffff;
-                width: 100%;
+                gap: 0; padding: 0; background: #ffffff; width: 100%;
             }
             nav.menu-open .logo {
-                grid-area: menu-header;
-                grid-column: 1;
-                align-self: center;
-                justify-self: start;
-                margin: 0; padding: 0;
-                padding-top: max(0.75rem, env(safe-area-inset-top));
-                padding-bottom: 0.75rem;
-                padding-left: max(1rem, env(safe-area-inset-left));
+                grid-area: menu-header; grid-column: 1; align-self: center; justify-self: start;
+                margin: 0; padding: 0; padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem; padding-left: max(1rem, env(safe-area-inset-left));
             }
             nav.menu-open .mobile-menu-btn {
-                grid-area: menu-header;
-                grid-column: 2;
-                align-self: center;
-                justify-self: end;
-                margin: 0; padding: 0;
-                padding-top: max(0.75rem, env(safe-area-inset-top));
-                padding-bottom: 0.75rem;
-                padding-right: max(1rem, env(safe-area-inset-right));
-                padding-left: 1rem;
-                min-width: 48px !important;
-                min-height: 48px !important;
+                grid-area: menu-header; grid-column: 2; align-self: center; justify-self: end;
+                margin: 0; padding: 0; padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem; padding-right: max(1rem, env(safe-area-inset-right));
+                padding-left: 1rem; min-width: 48px !important; min-height: 48px !important;
             }
             nav.menu-open .cta-nav { display: none !important; }
             nav.menu-open .nav-links {
-                display: flex !important;
-                grid-area: menu-links;
-                grid-column: 1 / -1;
-                flex-direction: column;
-                align-items: stretch;
-                align-self: stretch;
-                justify-self: stretch;
-                position: relative;
-                width: 100%;
-                height: 100%;
-                min-height: 0;
-                margin: 0;
+                display: flex !important; grid-area: menu-links; grid-column: 1 / -1;
+                flex-direction: column; align-items: stretch; align-self: stretch; justify-self: stretch;
+                position: relative; width: 100%; height: 100%; min-height: 0; margin: 0;
                 padding: 1rem max(1rem, env(safe-area-inset-right)) max(1.5rem, calc(1rem + env(safe-area-inset-bottom))) max(1rem, env(safe-area-inset-left)) !important;
-                gap: 0;
-                background: #ffffff;
-                border-top: 1px solid rgba(11, 22, 53, 0.08);
-                border-radius: 0;
-                box-shadow: none;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: contain;
-                touch-action: manipulation;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(6px);
+                gap: 0; background: #ffffff; border-top: 1px solid rgba(11, 22, 53, 0.08);
+                border-radius: 0; box-shadow: none; overflow-y: auto; -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain; touch-action: manipulation;
+                opacity: 0; visibility: hidden; transform: translateY(6px);
                 transition: opacity 0.25s ease, visibility 0.25s, transform 0.25s ease;
                 pointer-events: none;
             }
             nav.menu-open .nav-links.active {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-                pointer-events: auto;
+                opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
             }
             .nav-mobile-logo { display: none !important; }
             .nav-links > li { border-bottom: 1px solid rgba(11,22,53,0.06) !important; flex-shrink: 0 !important; }
@@ -1215,17 +1185,17 @@
         }
 
     </style>
-    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
-    <link rel="stylesheet" href="css/nav-hover-orange.css">
-    <link rel="stylesheet" href="css/button-contrast.css">
-    <link rel="stylesheet" href="css/site-global.css">
+    <link rel="stylesheet" href="/css/mobile-menu-fullscreen.css">
+    <link rel="stylesheet" href="/css/nav-hover-orange.css">
+    <link rel="stylesheet" href="/css/button-contrast.css">
+    <link rel="stylesheet" href="/css/site-global.css">
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-            <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt="Richview Capital" class="logo-img"></a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -1240,7 +1210,7 @@
                     </svg></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="/images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
                 <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1248,21 +1218,21 @@
                         aria-controls="navMenuServices">Services</a>
                     <div class="nav-dropdown-content" id="navMenuServices" role="menu" aria-label="Services">
                         <span class="nav-dropdown-label">Who we serve</span>
-                        <a href="/borrowers" role="menuitem">Borrowers</a>
-                        <a href="/brokers" role="menuitem">Brokers</a>
-                        <a href="/investors" role="menuitem">Investors</a>
+                        <a href="/borrowers/" role="menuitem">Borrowers</a>
+                        <a href="/brokers/" role="menuitem">Brokers</a>
+                        <a href="/investors/" role="menuitem">Investors</a>
                     </div>
                 </li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about/">About</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuResources">Resources</a>
                     <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
-                        <a href="/what-is-a-mic" role="menuitem">What Is a MIC?</a>
-                        <a href="/faq" role="menuitem">FAQ</a>
+                        <a href="/what-is-a-mic/" role="menuitem">What Is a MIC?</a>
+                        <a href="/faq/" role="menuitem">FAQ</a>
                     </div>
                 </li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li class="mobile-cta-li" style="display:none"><a href="/#contact" style="color:var(--orange)">Get
                         Started</a></li>
             </ul>
@@ -1272,164 +1242,129 @@
 
     <section class="page-hero" id="main">
         <div class="container">
-            <h1>Privacy Policy</h1>
-            <p style="color:rgba(255,255,255,0.75);font-size:1.0625rem;margin-top:0.5rem;">How we collect, use, and
-                protect your information.</p>
+            <h1>Terms of Use &amp; Disclaimer</h1>
+            <p style="color:rgba(255,255,255,0.75);font-size:1.0625rem;margin-top:0.5rem;">Please read these terms
+                before using our website or services.</p>
         </div>
     </section>
 
     <section class="legal-content">
         <div class="container">
-            <h3><strong>Privacy Policy</strong></h3>
-            <p>How Richview Capital Corp. collects, uses, and protects your personal information.
+            <h3><strong>Terms of Use</strong></h3>
+            <p>Please read these terms carefully before using our website or engaging our services.
             </p>
-            <p>Effective Date: January 1, 2025  | Last Updated: March 2025  | Richview Capital Corp., Woodbridge,
+            <p>Effective Date: January 1, 2025  |  Last Updated: March 2025  |  Richview Capital Corp., Woodbridge,
                 Ontario</p>
-            <p>This Privacy Policy applies to Richview Capital Corp. ("Richview Capital," "we," "us," or "our"), a
-                licensed Mortgage Investment Corporation (MIC #13171) registered in Ontario. It governs the collection,
-                use, and disclosure of personal information through our website at richviewcapitalmic.com and through
-                our lending, investing, and brokerage partnership services.</p>
-            <h3><strong>1. Our Commitment to Your Privacy</strong></h3>
-            <p>Richview Capital Corp. is committed to protecting the privacy and confidentiality of all personal
-                information we receive in connection with our services. We comply with the <em>Personal Information
-                    Protection and Electronic Documents Act</em> (PIPEDA), the <em>Financial Services Regulatory
-                    Authority of Ontario</em> (FSRA) requirements, and all applicable Ontario privacy legislation.</p>
-            <h3><strong>2. What Personal Information We Collect</strong></h3>
-            <p>Depending on how you interact with us, we may collect the following types of personal information:</p>
-            <p><strong>Identity information:</strong> Full name, date of birth, government-issued identification</p>
-            <p><strong>Contact information:</strong> Email address, phone number, mailing address</p>
-            <p><strong>Financial information:</strong> Income, employment status, credit history, assets and
-                liabilities, banking details</p>
-            <p><strong>Property information:</strong> Address, legal description, appraisal details, mortgage history
-            </p>
-            <p><strong>Investment information:</strong> RRSP/RRIF/TFSA account details, investment objectives, risk
-                profile</p>
-            <p><strong>Website usage data:</strong> IP address, browser type, pages visited, time on site, referral
-                sources (collected via cookies and analytics tools)</p>
-            <p><strong>Communications:</strong> Records of your inquiries, emails, and consultation requests</p>
-            <h3><strong>3. How We Collect Your Information</strong></h3>
-            <p>We collect personal information through:</p>
-            <p>Online inquiry forms and consultation booking requests on our website</p>
-            <p>Direct communications (phone, email, in-person meetings)</p>
-            <p>Mortgage applications and supporting documentation submitted by you or your broker</p>
-            <p>Third-party sources such as credit bureaus, land registry databases, and appraisal firms (with your
-                consent where required)</p>
-            <p>Automated collection through cookies and web analytics tools when you visit our website</p>
-            <h3><strong>4. How We Use Your Information</strong></h3>
-            <p>We use personal information for the following purposes:</p>
-            <p>Evaluating and processing mortgage and financing applications</p>
-            <p>Assessing investor applications and administering MIC investments</p>
-            <p>Verifying identity and conducting anti-money laundering (AML) and know-your-client (KYC) checks as
-                required by law</p>
-            <p>Communicating with you about your application, account, or inquiry</p>
-            <p>Administering loan servicing, payments, and investor distributions</p>
-            <p>Improving our website and services</p>
-            <p>Complying with legal, regulatory, and reporting obligations</p>
-            <p>Sending relevant updates or information about our services (with your consent)</p>
-            <h3><strong>5. Disclosure of Your Information</strong></h3>
-            <p>We do not sell, rent, or trade your personal information. We may share your information only in the
-                following circumstances:</p>
-            <p><strong>Service providers:</strong> Legal counsel, accountants, appraisers, title insurers, mortgage
-                administrators, and IT providers who assist us in delivering our services, under confidentiality
-                obligations</p>
-            <p><strong>Regulatory bodies:</strong> FSRA, FINTRAC, and other government or regulatory authorities as
-                required by law</p>
-            <p><strong>Affiliated brokers:</strong> With your explicit consent, when your file is submitted by or
-                referred to a licensed mortgage broker</p>
-            <p><strong>Business transactions:</strong> In the event of a merger, acquisition, or sale of assets, subject
-                to confidentiality protections</p>
-            <p><strong>Legal requirements:</strong> Where required by court order, subpoena, or applicable law</p>
-            <h3><strong>6. Marketing Communications and CASL Compliance</strong></h3>
-            <p>Richview Capital Corp. complies with Canada's Anti-Spam Legislation (CASL). We will only send you
-                commercial electronic messages (CEMs), including emails, newsletters, and follow-up communications
-                about our products and services, if we have your express or implied consent to do so.</p>
-            <p><strong>Express consent:</strong> When you submit an inquiry or consultation request through our website
-                forms, you may be asked to indicate whether you wish to receive future marketing communications from us.
-                Consent checkboxes are never pre-checked. You must actively opt in. Your consent, along with the date,
-                time, and manner it was obtained, is recorded and retained.</p>
-            <p><strong>Implied consent:</strong> If you submit an inquiry, application, or consultation request, we may
-                contact you in relation to that specific request under an implied existing business relationship for up
-                to two (2) years from your last transaction or inquiry with us, or six (6) months from an inquiry that
-                did not result in a transaction, in accordance with CASL.</p>
-            <p><strong>Unsubscribe:</strong> Every commercial electronic message we send will include a clear and
-                functional unsubscribe mechanism. We will honour all unsubscribe requests within 10 business days. To
-                opt out at any time, click "Unsubscribe" in any email we send, or contact us at .</p>
-            <p>Transactional messages, such as confirmation of your inquiry submission, responses to your consultation
-                request, or communications directly related to a mortgage or investment application you have initiated,
-                are not commercial electronic messages under CASL and may be sent without a separate marketing consent.
-            </p>
-            <h3><strong>7. Information Collected Through Our Website Forms</strong></h3>
-            <p>When you submit a form on this Site (inquiry form, consultation booking, or application), we collect the
-                personal information you provide (such as name, email, phone number, and your stated interest). This
-                information is used to:</p>
-            <p>Respond to your inquiry within our standard 24-hour response window</p>
-            <p>Assess your eligibility for our lending or investment products</p>
-            <p>Schedule and conduct consultations you have requested</p>
-            <p>Comply with KYC, AML, and other regulatory obligations that may arise</p>
-            <p>Contact you regarding your specific inquiry or related services (under implied consent)</p>
-            <p>Send marketing communications, if you have provided express consent to do so</p>
-            <p>By submitting a form on this Site, you acknowledge that you have read this Privacy Policy and consent to
-                the collection and use of your information as described herein for the purpose of responding to your
-                inquiry. Marketing communications are separate and require your express opt-in consent.</p>
-            <h3><strong>8. Cookies and Website Tracking</strong></h3>
-            <p>Our website uses cookies and similar tracking technologies to understand how visitors use our site and to
-                improve user experience. This may include analytics tools such as Google Analytics. You can disable
-                cookies through your browser settings; however, some features of our website may not function properly
-                as a result.</p>
-            <p>We do not use cookies for targeted advertising or sell browsing data to third-party advertisers.</p>
-            <h3><strong>9. Data Retention</strong></h3>
-            <p>We retain personal information for as long as necessary to fulfill the purposes for which it was
-                collected, and as required by applicable law and regulation. For mortgage and financial records, this is
-                typically a minimum of seven (7) years following the conclusion of a transaction. Website inquiry data
-                is retained for a reasonable period to address your request and for internal reporting purposes.</p>
-            <h3><strong>10. Security</strong></h3>
-            <p>We implement reasonable physical, administrative, and technical safeguards to protect your personal
-                information against unauthorized access, disclosure, loss, or alteration. These measures include secure
-                data storage, restricted access controls, and confidentiality obligations for all staff and service
-                providers with access to personal data.</p>
-            <p>While we take reasonable precautions, no method of electronic transmission or storage is completely
-                secure. We encourage you to exercise caution when transmitting sensitive information.</p>
-            <h3><strong>11. Your Rights</strong></h3>
-            <p>Subject to applicable law, you have the right to:</p>
-            <p>Request access to the personal information we hold about you</p>
-            <p>Request correction of inaccurate or incomplete information</p>
-            <p>Withdraw consent to the use of your information for non-essential purposes (subject to legal and
-                contractual limitations)</p>
-            <p>Request information about how your data is being used</p>
-            <p>To exercise any of these rights, please contact our Privacy Officer using the contact details below.</p>
-            <h3><strong>12. Third-Party Links</strong></h3>
-            <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices
-                of those sites and encourage you to review their privacy policies before submitting any personal
-                information.</p>
-            <h3><strong>13. Changes to This Policy</strong></h3>
-            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal
-                requirements. The updated version will be posted on our website with the revised effective date. We
-                encourage you to review this page periodically.</p>
-            <h3><strong>13. AML/KYC and Mandatory Reporting</strong></h3>
-            <p>As of October 11, 2024, Richview Capital Corp. is a reporting entity under the <em>Proceeds of Crime
-                    (Money Laundering) and Terrorist Financing Act</em> (PCMLTFA) as a mortgage administrator and
-                lender. We are required by law to collect, verify, and retain identity information from borrowers and
-                investors, and to report certain transactions and suspicious activities to FINTRAC. These obligations
-                override consent requirements under PIPEDA and are non-negotiable conditions of using our services.</p>
-            <h3><strong>14. Transfer of Information Outside Canada</strong></h3>
-            <p>In some cases, personal information we collect may be transferred to, processed, or stored by service
-                providers located outside of Canada (for example, cloud-based software providers). When this occurs, the
-                information may be subject to the laws of the jurisdiction in which it is processed, which may differ
-                from Canadian privacy law. We take reasonable contractual steps to ensure such providers maintain
-                appropriate privacy protections. By using our Site and services, you acknowledge and consent to such
-                transfers where necessary.</p>
+            <p>By accessing or using the Richview Capital website at richviewcapitalmic.com (the "Site"), or by
+                submitting an inquiry, application, or consultation request, you agree to be bound by these Terms of
+                Use. If you do not agree, please discontinue use of the Site immediately.</p>
+            <h3><strong>1. About Richview Capital Corp.</strong></h3>
+            <p>Richview Capital Corp. is a licensed Mortgage Investment Corporation (MIC) registered in Ontario, holding
+                Mortgage Administrator Licence #13171 under the supervision of the Financial Services Regulatory
+                Authority of Ontario (FSRA). We provide private mortgage lending, construction financing, and MIC
+                investment opportunities to borrowers, brokers, and investors across Ontario.</p>
+            <h3><strong>2. Acceptance of Terms</strong></h3>
+            <p>These Terms of Use govern your access to and use of the Site and any related services, features, or
+                content made available by Richview Capital Corp. These terms apply to all visitors, borrowers,
+                investors, brokers, and any other individuals accessing the Site.</p>
+            <p>We reserve the right to modify these terms at any time. Changes will be posted to this page with an
+                updated effective date. Your continued use of the Site after any such changes constitutes your
+                acceptance of the revised terms.</p>
+            <h3><strong>3. Permitted Use</strong></h3>
+            <p>You may use the Site solely for lawful purposes and in accordance with these terms. Specifically, you
+                agree not to:</p>
+            <p>Use the Site for any unlawful purpose or in violation of applicable federal, provincial, or local law</p>
+            <p>Transmit any unsolicited commercial communications or spam</p>
+            <p>Attempt to gain unauthorized access to any part of the Site or its underlying systems</p>
+            <p>Upload or transmit viruses, malware, or any other harmful code</p>
+            <p>Scrape, harvest, or collect information from the Site without our express written consent</p>
+            <p>Use the Site in any way that could damage, disable, or impair its functionality</p>
+            <p>Impersonate any person or entity, or misrepresent your affiliation with any person or entity</p>
+            <h3><strong>4. No Financial or Legal Advice</strong></h3>
+            <p>The content on this Site is provided for general informational purposes only. Nothing on this Site
+                constitutes financial, investment, legal, tax, or mortgage advice, and it should not be relied upon as
+                such. Richview Capital Corp. strongly recommends that you consult with qualified legal, financial, and
+                tax advisors before making any financial decisions.</p>
+            <p>Submission of an inquiry or consultation request does not create a borrower-lender, investor, or advisory
+                relationship. All financing and investment arrangements are subject to formal underwriting, due
+                diligence, applicable regulatory requirements, and the execution of binding agreements.</p>
+            <h3><strong>5. Accuracy of Information</strong></h3>
+            <p>While we make reasonable efforts to ensure the accuracy and currency of the information presented on this
+                Site, we make no representations or warranties regarding its completeness, accuracy, or suitability for
+                any particular purpose. Loan terms, rates, LTV ratios, investment returns, and processing timelines
+                referenced on the Site are illustrative and subject to change without notice based on market conditions
+                and individual file characteristics.</p>
+            <h3><strong>6. Intellectual Property</strong></h3>
+            <p>All content on this Site, including text, graphics, logos, images, and the overall design, is the
+                property of Richview Capital Corp. or its content licensors and is protected by Canadian and
+                international copyright, trademark, and other intellectual property laws.</p>
+            <p>You may view and print pages from the Site for your own personal, non-commercial use, provided you retain
+                all copyright and proprietary notices. No other reproduction, distribution, republication, or
+                modification of Site content is permitted without our prior written consent.</p>
+            <h3><strong>7. User-Submitted Information and Marketing Consent</strong></h3>
+            <p>When you submit an inquiry form, consultation request, or application through the Site, you represent and
+                warrant that all information provided is accurate, complete, and not misleading. Submission of false or
+                fraudulent information may result in refusal of services and may have legal consequences.</p>
+            <p>By submitting a form on this Site, you consent to Richview Capital Corp. contacting you in connection
+                with your specific inquiry or request. This may include follow-up by phone, email, or other means
+                related directly to your submission.</p>
+            <p><strong>Marketing communications (CASL):</strong> Richview Capital Corp. complies with Canada's Anti-Spam
+                Legislation (CASL). We will only send you commercial electronic messages, such as promotional emails,
+                market updates, or service announcements, if you have provided express consent (by actively checking an
+                unchecked opt-in box on our forms) or if implied consent applies under CASL (e.g., you have an existing
+                business relationship with us within the applicable timeframes). Every marketing message will include an
+                unsubscribe mechanism. You may withdraw consent at any time by clicking "Unsubscribe" in any email or by
+                contacting .</p>
+            <p>By submitting information to us through the Site, you consent to its collection, use, and disclosure in
+                accordance with our .</p>
+            <h3><strong>8. Third-Party Links and Content</strong></h3>
+            <p>The Site may contain links to third-party websites for convenience and reference purposes. These links do
+                not constitute an endorsement of those sites or their content. Richview Capital Corp. has no control
+                over and accepts no responsibility for the content, privacy practices, or availability of any
+                third-party sites. Your use of any linked site is at your own risk and subject to the terms and policies
+                of that site.</p>
+            <h3><strong>9. Limitation of Liability</strong></h3>
+            <p>To the maximum extent permitted by applicable law, Richview Capital Corp., its directors, officers,
+                employees, agents, and affiliates shall not be liable for any direct, indirect, incidental,
+                consequential, special, or punitive damages arising from your use of, or inability to use, the Site or
+                any content or services made available through it, even if we have been advised of the possibility of
+                such damages.</p>
+            <p>This limitation applies regardless of whether the claim is based in contract, tort, negligence, strict
+                liability, or any other legal theory.</p>
+            <h3><strong>10. Indemnification</strong></h3>
+            <p>You agree to indemnify, defend, and hold harmless Richview Capital Corp. and its affiliates, officers,
+                directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or
+                expenses (including reasonable legal fees) arising out of or related to your use of the Site, your
+                violation of these terms, or your violation of any applicable law or the rights of any third party.</p>
+            <h3><strong>11. Regulatory Compliance</strong></h3>
+            <p>Richview Capital Corp. operates as a licensed Mortgage Investment Corporation and Mortgage Administrator
+                in Ontario under the <em>Mortgage Brokerages, Lenders and Administrators Act, 2006</em> (MBLAA), subject
+                to oversight by the Financial Services Regulatory Authority of Ontario (FSRA) (Licence #13171).</p>
+            <p>As of October 11, 2024, Richview Capital is also a reporting entity under the <em>Proceeds of Crime
+                    (Money Laundering) and Terrorist Financing Act</em> (PCMLTFA), administered by FINTRAC. All
+                borrowers and investors are subject to identity verification, know-your-client (KYC), and anti-money
+                laundering (AML) requirements as a mandatory condition of using our services. We reserve the right to
+                decline any application or transaction that does not satisfy our compliance obligations.</p>
+            <p>We are a member of the Ontario Mortgage Investment Companies Association (ONMICA).</p>
+            <h3><strong>12. Governing Law</strong></h3>
+            <p>These Terms of Use are governed by and construed in accordance with the laws of the Province of Ontario
+                and the federal laws of Canada applicable therein. Any dispute arising from these terms shall be subject
+                to the exclusive jurisdiction of the courts of Ontario.</p>
+            <h3><strong>13. Severability</strong></h3>
+            <p>If any provision of these Terms of Use is found to be invalid, illegal, or unenforceable, the remaining
+                provisions shall continue in full force and effect.</p>
+            <h3><strong>14. Entire Agreement</strong></h3>
+            <p>These Terms of Use, together with our  and , constitute the entire agreement between you and Richview
+                Capital Corp. with respect to your use of the Site and supersede all prior communications,
+                representations, or agreements.</p>
             <h3><strong>15. Contact Us</strong></h3>
-            <p>If you have questions, concerns, or requests regarding this Privacy Policy or how we handle your personal
-                information, please contact our Privacy Officer:</p>
+            <p>Questions about these Terms of Use may be directed to:</p>
             <p><strong>Richview Capital Corp.</strong>
-                Privacy Officer
                 7681 Highway 27, Unit 15, Suite 200
                 Woodbridge, ON  L4L 4M5
 
                 Email: 
                 Phone: </p>
-            <p>If you are not satisfied with our response, you may contact the <strong>Office of the Privacy
-                    Commissioner of Canada</strong> at .</p>
         </div>
     </section>
     <footer>
@@ -1437,7 +1372,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
+                        <a href="/" class="logo"><img src="/images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
@@ -1453,18 +1388,18 @@
                     <div class="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/borrowers">Borrowers</a></li>
-                            <li><a href="/brokers">Brokers</a></li>
-                            <li><a href="/investors">Investors</a></li>
+                            <li><a href="/borrowers/">Borrowers</a></li>
+                            <li><a href="/brokers/">Brokers</a></li>
+                            <li><a href="/investors/">Investors</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/faq/">FAQ</a></li>
                             <li><a href="/#contact">Contact</a></li>
-                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/privacy/">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -1513,9 +1448,9 @@
                 </div>
                 <div class="footer-bottom-right">
                 <div class="footer-legal">
-                    <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-                    <a href="/disclaimer">Disclaimer</a>
+                    <a href="/privacy/">Privacy</a>
+                    <a href="/terms/">Terms</a>
+                    <a href="/disclaimer/">Disclaimer</a>
                 </div>
                 <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
                     aria-label="Back to top">

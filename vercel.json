@@ -1,0 +1,20 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/home.html", "destination": "/", "permanent": true },
+    { "source": "/richview-about.html", "destination": "/about/", "permanent": true },
+    { "source": "/richview-borrowers.html", "destination": "/borrowers/", "permanent": true },
+    { "source": "/richview-capital-brokers.html", "destination": "/brokers/", "permanent": true },
+    { "source": "/richview-capital-mic.html", "destination": "/investors/", "permanent": true },
+    { "source": "/richview-faq.html", "destination": "/faq/", "permanent": true },
+    { "source": "/richview-blog.html", "destination": "/blog/", "permanent": true },
+    { "source": "/richview-what-is-a-mic.html", "destination": "/what-is-a-mic/", "permanent": true },
+    { "source": "/blog-second-mortgages-when-they-help.html", "destination": "/blog/second-mortgages-when-they-help/", "permanent": true },
+    { "source": "/blog-construction-financing-ontario.html", "destination": "/blog/construction-financing-ontario/", "permanent": true },
+    { "source": "/blog-mics-registered-accounts.html", "destination": "/blog/mics-registered-accounts/", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy/", "permanent": true },
+    { "source": "/terms.html", "destination": "/terms/", "permanent": true },
+    { "source": "/disclaimer.html", "destination": "/disclaimer/", "permanent": true },
+    { "source": "/thank-you.html", "destination": "/thank-you/", "permanent": true }
+  ]
+}

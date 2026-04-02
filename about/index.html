@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC</title>
+    <title>About Richview Capital MIC | Our Team & Company Values</title>
     <meta name="description"
-        content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
-    <link rel="icon" href="images/logo.png" type="image/png">
+        content="Meet the team and learn the values behind Richview Capital MIC. Industry experts driving strategic vision in private mortgage lending across Ontario.">
+    <link rel="icon" href="/images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
-    <link rel="canonical" href="https://richviewcapitalmic.com/brokers">
+    <link rel="canonical" href="https://richviewcapitalmic.com/about/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC">
+    <meta property="og:title" content="About Richview Capital MIC | Our Team & Company Values">
     <meta property="og:description"
-        content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
+        content="Meet the team and learn the values behind Richview Capital MIC. Industry experts driving strategic vision in private mortgage lending across Ontario.">
     <meta property="og:image" content="https://richviewcapitalmic.com/images/logo.png">
-    <meta property="og:url" content="https://richviewcapitalmic.com/brokers">
+    <meta property="og:url" content="https://richviewcapitalmic.com/about/">
     <meta property="og:locale" content="en_CA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Private Mortgage Solutions for Ontario Mortgage Brokers | Richview Capital MIC">
-    <meta name="twitter:description" content="Fast underwriting. Clear terms. Reliable closings. Partner with Richview Capital MIC for private mortgage solutions your clients need.">
+    <meta name="twitter:title" content="About Richview Capital MIC | Our Team &amp; Company Values">
+    <meta name="twitter:description" content="Meet the team and learn the values behind Richview Capital MIC. Industry experts driving strategic vision in private mortgage lending across Ontario.">
     <meta name="twitter:image" content="https://richviewcapitalmic.com/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +37,12 @@
             --light-grey: #BFBFBF;
             --navy: #0B1635;
             --gold: #FF6600;
-            --cream: #F5F5F5;
+            --cream: #FAFAFA;
             --charcoal: #1A1A1A;
             --white: #FFFFFF;
             --muted: #6B7280;
-            --border: rgba(0, 0, 0, 0.08);
-            --orange-light: rgba(255, 102, 0, 0.15);
+            --border: rgba(0, 0, 0, 0.06);
+            --orange-light: rgba(255, 102, 0, 0.08);
             --dark-blue-deep: #070E24;
             --container: min(90vw, 1400px);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -59,6 +59,7 @@
             --btn-shadow-active: 0 1px 4px rgba(11, 22, 53, 0.12);
             --btn-pri-hover: #0c1838;
             --btn-gold-glow: 0 6px 20px -2px rgba(212, 175, 55, 0.25);
+            --card-radius: 16px;
             --space-xs: 1rem;
             --space-sm: 1.5rem;
             --space-md: 2rem;
@@ -67,21 +68,37 @@
             --space-2xl: 4.5rem;
             --space-3xl: 5rem;
             --section-padding: 2.5rem;
-            /* Mobile-first: standard horizontal spacing by device (match homepage) */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.08);
+            --shadow-card-hover: 0 20px 50px -12px rgba(11, 22, 53, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            /* Standard horizontal spacing by device (match homepage) */
             --gutter: 16px;
         }
 
         @media (min-width: 640px) {
-            :root { --gutter: 24px; }
+            :root {
+                --gutter: 24px;
+            }
         }
+
         @media (min-width: 768px) {
-            :root { --gutter: 32px; }
+            :root {
+                --gutter: 32px;
+            }
         }
+
         @media (min-width: 1024px) {
-            :root { --gutter: 48px; }
+            :root {
+                --gutter: 48px;
+            }
         }
+
         @media (min-width: 1280px) {
-            :root { --gutter: 64px; }
+            :root {
+                --gutter: 64px;
+            }
         }
 
         html {
@@ -94,51 +111,16 @@
             color: var(--charcoal);
             line-height: 1.6;
             overflow-x: hidden;
-            background: radial-gradient(ellipse 120% 70% at 50% -18%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.35) 28%, transparent 52%),
-                        radial-gradient(ellipse 85% 55% at 50% 55%, rgba(250, 251, 252, 0.6) 0%, transparent 65%),
-                        linear-gradient(180deg, #EEF0F3 0%, #F3F4F6 18%, #F8F9FA 38%, #FAFBFC 50%, #F8F9FA 62%, #F3F4F6 82%, #EEF0F3 100%);
+            background: linear-gradient(180deg, #FAFBFC 0%, #F5F6F8 35%, #FAFAFA 70%, #FFFFFF 100%);
             background-attachment: fixed;
             font-weight: 400;
             overflow-wrap: break-word;
-            position: relative;
         }
         @media (max-width: 768px) { body { background-attachment: scroll; } }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background-image: linear-gradient(rgba(11, 22, 53, 0.016) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(11, 22, 53, 0.016) 1px, transparent 1px);
-            background-size: 56px 56px;
-            -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
-            mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 72%);
-            mask-size: 100% 100%;
-            mask-position: center;
-            pointer-events: none;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 42%, rgba(11, 22, 53, 0.012) 100%),
-                        radial-gradient(ellipse 95% 95% at 102% -5%, rgba(255, 102, 0, 0.038) 0%, rgba(255, 102, 0, 0.008) 40%, transparent 62%),
-                        radial-gradient(ellipse 95% 95% at -2% 102%, rgba(11, 22, 53, 0.032) 0%, rgba(11, 22, 53, 0.006) 38%, transparent 58%);
-            pointer-events: none;
-        }
 
         main {
             overflow-x: hidden;
             min-width: 0;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
         }
 
         .container {
@@ -148,6 +130,17 @@
             width: 100%;
             min-width: 0;
             box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
         }
 
         .skip-link {
@@ -346,9 +339,9 @@
             color: #334155;
             font-size: 0.8125rem;
             font-weight: 500;
-            white-space: nowrap;
             letter-spacing: 0.01em;
             line-height: 1.4;
+            white-space: nowrap;
             transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
             border-radius: 6px;
             position: relative;
@@ -463,10 +456,13 @@
             visibility: visible;
         }
 
-        /* --- PAGE HERO --- */
+        /* --- PAGE HERO (office image with dark blue mask) --- */
         .page-hero {
             padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--space-3xl);
-            background: linear-gradient(145deg, #0B1635 0%, #0d1f4a 45%, #0a1330 100%);
+            min-height: clamp(340px, 42vw, 420px);
+            display: flex;
+            align-items: center;
+            background: linear-gradient(145deg, rgba(11, 22, 53, 0.78) 0%, rgba(13, 31, 74, 0.72) 45%, rgba(10, 19, 48, 0.82) 100%), url('/images/about-hero-office.png') center center / cover no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -475,24 +471,21 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.08) 0%, transparent 50%);
+            background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
         .page-hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.4) 0%, transparent 50%);
+            background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.25) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        .page-hero-inner {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-            text-align: center;
+        .page-hero .container {
             position: relative;
             z-index: 1;
+            max-width: 800px;
         }
 
         .page-hero h1 {
@@ -500,100 +493,23 @@
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             color: var(--white);
-            margin-bottom: var(--space-sm);
-            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .page-hero p {
-            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            font-size: 1.0625rem;
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
             max-width: 100%;
             width: 100%;
             min-width: 0;
-            margin: 0 auto var(--space-xl);
             text-wrap: pretty;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            color: var(--navy);
-            padding: var(--btn-padding-lg);
-            border-radius: var(--btn-radius-lg);
-            text-decoration: none;
-            font-weight: var(--btn-font-weight);
-            font-size: var(--btn-font-size);
-            letter-spacing: var(--btn-letter-spacing);
-            border: 2px solid var(--white);
-            box-shadow: var(--btn-shadow);
-            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold);
-            color: var(--white);
-            border-color: var(--gold);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
-            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-primary:focus-visible {
-            outline: 2px solid rgba(255, 255, 255, 0.8);
-            outline-offset: 2px;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            color: var(--white);
-            padding: var(--btn-padding-lg);
-            border-radius: var(--btn-radius-lg);
-            text-decoration: none;
-            font-weight: var(--btn-font-weight);
-            font-size: var(--btn-font-size);
-            letter-spacing: var(--btn-letter-spacing);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            transition: background 0.25s var(--ease-btn), border-color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--gold);
-            background: rgba(255, 102, 0, 0.2);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary:focus-visible {
-            outline: 2px solid rgba(255, 255, 255, 0.8);
-            outline-offset: 2px;
         }
 
         /* --- SECTION HEADINGS --- */
         .sec-head {
-            text-align: left;
             margin-bottom: var(--space-2xl);
         }
 
@@ -612,349 +528,492 @@
             max-width: 100%;
             width: 100%;
             min-width: 0;
-            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.65;
             text-wrap: pretty;
         }
 
-        /* --- WHY WORK WITH US (Bordered Grid) --- */
-        .why-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 45%, #F8F9FA 100%);
+        /* --- OUR STORY --- */
+        .our-story {
+            padding: var(--space-xl) 0 var(--space-lg) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 50%, #FFFFFF 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .why-section::before {
+        .our-story::before {
             content: '';
             position: absolute;
             width: 50%;
-            height: 65%;
+            height: 70%;
             top: 15%;
-            right: -10%;
-            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.035) 0%, transparent 60%);
+            right: -5%;
+            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .why-section .sec-head,
-        .why-section .benefits-grid {
+        .our-story .container {
             position: relative;
             z-index: 1;
-        }
-
-        /* benefits-grid, benefit-card: styled by benefit-cards-shared.css (when inside .benefits-section) */
-
-        /* Blurb cards: number + title side by side (fund-card only; benefit-card uses benefit-cards-shared) */
-        .fund-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            column-gap: 0.85rem;
-            row-gap: 0.35rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
             align-items: flex-start;
         }
 
-        .fund-number {
-            grid-row: 1;
-            grid-column: 1;
+        .our-story .sec-head {
+            margin-bottom: var(--space-md);
+            text-align: left;
+        }
+
+        .our-story .sec-head p {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
+            width: 100%;
+            min-width: 0;
+            line-height: 1.6;
+        }
+
+        .our-story .story-content {
+            max-width: 42rem;
+            width: 100%;
+            margin: 0;
+            line-height: 1.75;
+            text-align: left;
+            text-wrap: pretty;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+
+        .our-story .story-content p {
+            font-size: 1rem;
+            color: var(--muted);
+            margin-bottom: 1.125rem;
+            letter-spacing: 0.01em;
+        }
+
+        .our-story .story-content p:last-child {
             margin-bottom: 0;
         }
 
-        .fund-card h3 {
-            grid-row: 1;
-            grid-column: 2;
-            margin-bottom: 0.35rem;
-        }
-
-        .fund-card p {
-            grid-column: 1 / -1;
-        }
-
-        /* --- WHAT WE FUND (Bordered Grid) --- */
-        .fund-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #F8F9FA 0%, var(--cream) 50%, #FAFBFC 100%);
+        /* --- OUR VALUES --- */
+        .our-values {
+            padding: var(--space-lg) 0 var(--section-padding) 0;
+            background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 50%, #F8F9FA 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .fund-section::before {
+        .our-values::before {
             content: '';
             position: absolute;
             width: 45%;
-            height: 65%;
-            bottom: 15%;
-            left: -8%;
-            background: radial-gradient(ellipse at center, rgba(11, 22, 53, 0.03) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .fund-section .sec-head,
-        .fund-section .fund-grid {
-            position: relative;
-            z-index: 1;
-        }
-
-        .fund-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-        }
-
-        .fund-card {
-            padding: 2rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            background: var(--white);
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
-        }
-
-        .fund-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--navy);
-            transform: scaleY(0);
-            transform-origin: center bottom;
-            transition: transform 0.35s var(--ease-out);
-        }
-
-        .fund-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .fund-card:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-
-        .fund-card:hover,
-        .fund-card:focus-within {
-            background: var(--cream);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        .fund-card:hover::before,
-        .fund-card:focus-within::before {
-            transform: scaleY(1);
-        }
-
-        .fund-card:focus-visible {
-            outline: 2px solid var(--gold);
-            outline-offset: 2px;
-        }
-
-        .fund-number {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            color: var(--light-grey);
-            margin-bottom: 1.25rem;
-            transition: color 0.3s var(--ease-out);
-        }
-
-        .fund-card:hover .fund-number,
-        .fund-card:focus-within .fund-number {
-            color: var(--muted);
-        }
-
-        .fund-card h3 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-        }
-
-        .fund-card p {
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.65;
-        }
-
-        .fund-features {
-            list-style: none;
-            margin-top: 0.75rem;
-            grid-column: 1 / -1;
-        }
-        .fund-features li {
-            padding: 0.25rem 0;
-            font-size: 0.8125rem;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .fund-features li::before {
-            content: '✓';
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 0.75rem;
-        }
-
-        /* --- SUBMISSION GUIDELINES (Bordered Grid) --- */
-        .guidelines-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 40%, #F8F9FA 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .guidelines-section::before {
-            content: '';
-            position: absolute;
-            width: 55%;
-            height: 70%;
-            top: 10%;
-            right: -12%;
+            height: 60%;
+            bottom: 20%;
+            left: -5%;
             background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.04) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .guidelines-section .sec-head,
-        .guidelines-section .guidelines-grid {
+        .our-values .container,
+        .our-values .sec-head,
+        .our-values .values-grid {
             position: relative;
             z-index: 1;
         }
 
-        .guidelines-grid {
+        .our-values .sec-head {
+            text-align: left;
+            margin-bottom: var(--space-md);
+        }
+
+        .our-values .sec-head p {
+            margin: 0;
+        }
+
+        .values-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
         }
 
-        .guideline-card {
-            padding: 2rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
+        .value-card {
+            padding: 2.25rem 2rem;
+            background: var(--white);
+            border-radius: var(--card-radius);
+            border: 1px solid var(--border);
             position: relative;
-            overflow: hidden;
-            transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+            transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+            box-shadow: var(--shadow-sm);
         }
 
-        .guideline-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(255, 102, 0, 0.2);
+            transition: border-color 0.3s var(--ease-out), transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-out);
+        }
+
+        .value-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             background: var(--navy);
-            transform: scaleY(0);
-            transform-origin: center bottom;
-            transition: transform 0.35s var(--ease-out);
-        }
-
-        .guideline-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .guideline-card:last-child {
-            border-bottom: none;
-        }
-
-        .guideline-card:hover {
-            background: var(--cream);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        .guideline-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .guideline-number {
-            font-size: 0.6875rem;
+            color: var(--white);
+            font-size: 0.8125rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
-            color: var(--light-grey);
             margin-bottom: 1.25rem;
-            transition: color 0.3s var(--ease-out);
+            transition: transform 0.35s var(--ease-out), background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
         }
 
-        .guideline-card:hover .guideline-number {
-            color: var(--muted);
+        .value-card:hover .value-badge {
+            transform: scale(1.08);
+            background: var(--gold);
+            box-shadow: 0 2px 12px rgba(255, 102, 0, 0.35);
         }
 
-        .guideline-card h3 {
+        .value-card h3 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
         }
 
-        .guideline-card ul {
-            list-style: none;
-        }
-
-        .guideline-card ul li {
-            padding: 0.4rem 0;
+        .value-card p {
             font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.65;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
         }
 
-        .guideline-card ul li::before {
-            content: '→';
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-
-        /* FAQ: css/faq-section.css */
-
-        /* --- CTA FORM (Compact Box) --- */
-        .cta-section {
+        /* --- TEAM SECTION (unified cards) --- */
+        .team-section {
             padding: clamp(3rem, 6vw, 4.5rem) 0;
-            background: var(--white);
+            background: linear-gradient(180deg, #F5F6F8 0%, var(--cream) 40%, #F8F9FA 100%);
             position: relative;
             overflow: hidden;
         }
-        .cta-section::before {
+
+        .team-section::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(165deg, #FAFBFC 0%, #F5F6F8 40%, #FAFAFA 100%);
+            width: 50%;
+            height: 60%;
+            top: 10%;
+            right: -10%;
+            background: radial-gradient(ellipse at center, rgba(255, 102, 0, 0.03) 0%, transparent 65%);
             pointer-events: none;
-            z-index: 0;
         }
 
-        .cta-section .cta-box,
-        .cta-box {
-            max-width: 520px;
+        .team-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-section .sec-head {
+            text-align: left;
+            margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+        }
+
+        .team-section .sec-head p {
+            margin: 0;
+        }
+
+        /* Mission quote */
+        .team-mission {
+            max-width: 680px;
+            margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+            font-size: clamp(0.9rem, 1.4vw, 1rem);
+            color: var(--muted);
+            line-height: 1.75;
+            font-style: italic;
+            padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+            border-left: 3px solid var(--gold);
+            background: rgba(255, 102, 0, 0.035);
+            border-radius: 0 12px 12px 0;
+            text-align: left;
+        }
+
+        /* Leadership 2-col grid */
+        .team-leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2.5vw, 1.75rem);
+            max-width: 820px;
+            margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+        }
+
+        /* Team sub-heading */
+        .team-sub-head {
+            margin-top: 0 !important;
+            margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+        }
+
+        /* Team 3-col grid */
+        .team-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        /* --- UNIFIED TEAM CARD --- */
+        .team-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+            position: relative;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), rgba(255, 102, 0, 0.35));
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-out);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1), 0 4px 14px rgba(0, 0, 0, 0.05);
+            border-color: rgba(255, 102, 0, 0.18);
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Card header */
+        .tc-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.75rem 1.25rem 0.85rem;
+            text-align: center;
+        }
+
+        .tc-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-bottom: 0.85rem;
+            border: 3px solid rgba(255, 102, 0, 0.22);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+            background: #f0f0f0;
+            /* Isolate from parent transform (reveal/hover) so bitmaps stay sharp on GPU */
+            isolation: isolate;
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .team-card:hover .tc-photo {
+            border-color: var(--gold);
+            box-shadow: 0 6px 22px rgba(255, 102, 0, 0.15);
+        }
+
+        /* Larger photo for leadership */
+        .team-leaders-grid .tc-photo {
+            width: 140px;
+            height: 140px;
+        }
+
+        .tc-photo img {
+            /* Override global img { max-width:100%; height:auto } — that combo breaks object-fit in fixed circles */
+            max-width: none;
+            max-height: none;
             width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center 22%;
+            display: block;
+        }
+
+        .tc-name {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: clamp(1rem, 1.4vw, 1.125rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 0.25rem;
+            line-height: 1.2;
+        }
+
+        .tc-role {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 0;
+            line-height: 1.35;
+        }
+
+        /* Card body */
+        .tc-body {
+            padding: 0.85rem 1.25rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .tc-teaser {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0 0 0.75rem;
+        }
+
+        /* Expandable bio */
+        .tc-bio {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+        }
+
+        .team-card.is-open .tc-bio {
+            max-height: 1200px;
+            opacity: 1;
+        }
+
+        .tc-bio-inner {
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+            margin-bottom: 0.5rem;
+        }
+
+        .tc-bio-inner p {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin: 0 0 0.55rem;
+        }
+
+        .tc-bio-inner p:last-child { margin-bottom: 0; }
+
+        /* Toggle button */
+        .tc-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: auto;
+            font-family: inherit;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--gold);
+            cursor: pointer;
+            transition: color 0.2s var(--ease-out);
+            -webkit-tap-highlight-color: transparent;
+            align-self: flex-start;
+        }
+
+        .tc-toggle:hover { color: var(--navy); }
+
+        .tc-toggle:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .tc-toggle-icon {
+            flex-shrink: 0;
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .team-card.is-open .tc-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Card footer */
+        .tc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 0.7rem 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tc-email {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s var(--ease-out);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tc-email:hover { color: var(--gold); }
+
+        .tc-linkedin {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+        }
+
+        .tc-linkedin:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-form-section {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+
+        .contact-form-container {
+            max-width: 580px;
+            margin: 0 auto;
             background: var(--white);
             border-radius: 16px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
             overflow: hidden;
-            position: relative;
             border-top: 3px solid var(--gold);
         }
 
-        .cta-box-header {
+        .contact-form-header {
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
-            padding: 1.25rem 1.5rem;
+            padding: 1.5rem 1.75rem;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-box-header::before {
+        .contact-form-header::before {
             content: '';
             position: absolute;
             top: 0;
@@ -965,7 +1024,7 @@
             pointer-events: none;
         }
 
-        .cta-box-header h2 {
+        .contact-form-header h2 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
@@ -974,77 +1033,32 @@
             position: relative;
         }
 
-        .cta-box-header>p {
+        .contact-form-header p {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.5;
             position: relative;
         }
 
-        .cta-trust-row {
-            display: flex;
-            gap: clamp(0.4rem, 1.5vw, 0.85rem);
-            flex-wrap: nowrap;
-            align-items: center;
-            position: relative;
-        }
-        .cta-trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
-            font-weight: 600;
-            color: rgba(255,255,255,0.88);
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        .cta-trust-item svg {
-            flex-shrink: 0;
-            width: 12px;
-            height: 12px;
-            color: var(--gold);
+        .contact-form-body {
+            padding: 1.5rem 1.75rem;
         }
 
-        .cta-box-body {
-            padding: 1.25rem 1.5rem;
-        }
-
-        .cta-form-section {
-            margin-bottom: 1rem;
-        }
-
-        .cta-form-section:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .cta-form-section-title {
-            font-size: 0.625rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-box .form-row {
+        .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
 
-        .cta-box .form-row.form-row-full {
-            grid-template-columns: 1fr;
+        .form-group {
+            margin-bottom: 1rem;
         }
 
-        .cta-box .form-group {
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-box .form-group:last-child {
+        .form-group:last-child {
             margin-bottom: 0;
         }
 
-        .cta-box .form-group label {
+        .form-group label {
             display: block;
             text-align: left;
             font-size: 0.8125rem;
@@ -1053,34 +1067,34 @@
             margin-bottom: 0.4rem;
         }
 
-        .cta-box input,
-        .cta-box select,
-        .cta-box textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.75rem 1rem;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             font-family: inherit;
-            font-size: 0.9375rem;
+            font-size: 1rem;
             background: var(--cream);
             transition: all 0.25s var(--ease-out);
         }
 
-        .cta-box input::placeholder,
-        .cta-box textarea::placeholder {
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
             color: rgba(0, 0, 0, 0.4);
         }
 
-        .cta-box input:focus,
-        .cta-box select:focus,
-        .cta-box textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
             background: var(--white);
             box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
         }
 
-        .cta-box select {
+        .form-group select {
             cursor: pointer;
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6600' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -1089,49 +1103,49 @@
             padding-right: 2.5rem;
         }
 
-        .cta-box textarea {
+        .form-group textarea {
             resize: vertical;
-            min-height: 72px;
+            min-height: 80px;
         }
 
-        .cta-submit-wrap {
+        .form-submit-wrap {
             margin-top: 1.25rem;
             padding-top: 1.25rem;
             border-top: 1px solid var(--border);
         }
 
-        .cta-box button[type="submit"] {
+        .btn-submit {
             width: 100%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: var(--navy);
             color: var(--white);
-            padding: 0.875rem 1.5rem;
+            padding: var(--btn-padding-lg);
             border: none;
             border-radius: var(--btn-radius-lg);
             font-weight: var(--btn-font-weight);
             font-size: var(--btn-font-size);
-            letter-spacing: 0.025em;
+            letter-spacing: var(--btn-letter-spacing);
             cursor: pointer;
             font-family: inherit;
             box-shadow: var(--btn-shadow);
-            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
+            transition: background 0.25s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
         }
 
-        .cta-box button[type="submit"]:hover {
+        .btn-submit:hover {
             background: var(--gold);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
         }
 
-        .cta-box button[type="submit"]:active {
+        .btn-submit:active {
             transform: translateY(0);
             box-shadow: var(--btn-shadow-active);
         }
 
-        .cta-box button[type="submit"]:focus-visible {
+        .btn-submit:focus-visible {
             outline: 2px solid rgba(255, 102, 0, 0.5);
             outline-offset: 2px;
         }
@@ -1426,14 +1440,6 @@
 
         /* --- Tablet (1024px) --- */
         @media (max-width: 1024px) {
-            :root {
-                --gutter: 1rem;
-            }
-
-            .container {
-                padding: 0 var(--gutter);
-            }
-
             nav {
                 left: 4%;
                 right: 4%;
@@ -1448,8 +1454,8 @@
             .nav-links {
                 position: fixed;
                 inset: 0;
-            width: 100%;
-            height: 100%;
+                width: 100%;
+                height: 100%;
                 min-height: 100vh;
                 min-height: 100dvh;
                 z-index: 999;
@@ -1469,8 +1475,8 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 list-style: none;
-            pointer-events: none;
-        }
+                pointer-events: none;
+            }
             .nav-links.active {
                 opacity: 1;
                 visibility: visible;
@@ -1652,50 +1658,41 @@
             .mobile-menu-btn { display: flex; }
             .cta-nav { display: none; }
 
-            /* Page hero: centered, reduced top padding */
             .page-hero {
-                padding: 10rem 0 var(--space-xl);
-            }
-
-            .page-hero-inner {
                 text-align: center;
+                padding-bottom: var(--space-lg);
             }
 
-            /* All content grids: 1 column */
-            .benefits-grid,
-            .fund-grid,
-            .guidelines-grid {
+            .page-hero .container {
+                max-width: 640px;
+            }
+
+            .page-hero p {
+                margin: 0 auto;
+            }
+
+            .values-grid {
                 grid-template-columns: 1fr;
+                gap: var(--space-sm);
             }
 
-            /* Card borders: border-right → border-bottom (fund, guideline; benefit uses shared) */
-            .fund-card,
-            .guideline-card {
-                border-right: none !important;
-                border-bottom: 1px solid var(--border);
+            .value-card {
+                padding: 1.75rem 1.5rem;
             }
 
-            .fund-card:nth-child(3n),
-            .guideline-card:nth-child(3n) {
-                border-right: none;
+            .team-leaders-grid {
+                max-width: 100%;
+                gap: 1rem;
             }
 
-            .fund-card:last-child,
-            .guideline-card:last-child {
-                border-bottom: none;
+            .team-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
-            /* Testimonials: slider card width on tablet */
-            .testimonial-card {
-                width: 320px;
-            }
+            .tc-photo { width: 80px; height: 80px; }
+            .team-leaders-grid .tc-photo { width: 120px; height: 120px; }
 
-            /* CTA form: single column form rows */
-            .cta-box .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            /* Footer: 2 columns, brand spanning */
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md);
@@ -1704,95 +1701,81 @@
             .footer-brand {
                 grid-column: 1 / -1;
             }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
         }
 
         /* --- Mobile (768px) --- */
         @media (max-width: 768px) {
+            :root {
+                --section-padding: 2.75rem;
+            }
 
-            /* Nav inner: tighter padding, smaller logo */
-            .nav-inner {
-                padding: 0.55rem 1rem 0.55rem 1.25rem;
-                min-height: 58px;
+            .container {
+                padding: 0 var(--gutter);
             }
 
             .logo-img {
                 height: 50px;
             }
 
-            /* Page hero: reduced top padding, stack hero buttons */
+            .nav-inner {
+                padding: 0.55rem 1rem 0.55rem 1.25rem;
+                min-height: 58px;
+            }
+
             .page-hero {
                 padding-top: 8.5rem;
-                padding-bottom: var(--space-lg);
             }
 
             .page-hero h1 {
                 font-size: clamp(1.75rem, 5vw, 2.25rem);
-                margin-bottom: var(--space-sm);
             }
 
-            .page-hero p {
-                margin-bottom: var(--space-md);
+            .sec-head {
+                margin-bottom: var(--space-lg);
             }
 
-            .hero-ctas {
-                flex-direction: column;
-                align-items: center;
-                margin-top: var(--space-sm);
+            .sec-head h2 {
+                font-size: clamp(1.5rem, 4vw, 1.875rem);
             }
 
-            .hero-ctas .btn-primary,
-            .hero-ctas .btn-secondary {
-                width: 100%;
-                max-width: 320px;
-                text-align: center;
+            .our-story .story-content p {
+                font-size: 0.9375rem;
             }
 
-            /* Section padding: reduce */
-            .why-section,
-            .fund-section,
-            .guidelines-section,
-            .testimonials-section,
-            .faq-section {
-                padding: 3.5rem 0;
-            }
-
-            /* Cards: reduce padding (fund, guideline; benefit uses shared) */
-            .fund-card,
-            .guideline-card {
+            .value-card {
                 padding: 1.5rem 1.25rem;
             }
 
-            /* Testimonials: reduce padding */
-            .testimonial-card {
-                padding: 1.75rem 1.25rem;
+            .value-card h3 {
+                font-size: 1.1rem;
             }
 
-            /* CTA/form: tighter padding */
-            .cta-section {
-                padding: var(--space-lg) 0;
+            .team-section {
+                padding: 2rem 0 2.5rem;
             }
 
-            .cta-box-header {
-                padding: 1.25rem;
-            }
-
-            .cta-box-body {
-                padding: 1.25rem;
-            }
-
-            .cta-trust-row {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            /* Footer: 1 column, stack bottom */
-            .footer-grid {
+            .team-leaders-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-sm);
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .footer-brand {
-                grid-column: auto;
+            .team-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tc-name { font-size: 0.975rem; }
+            .tc-bio-inner p { font-size: 0.78125rem; }
+
+            .contact-form-header,
+            .contact-form-body {
+                padding: 1.25rem;
             }
 
             .footer-brand .logo-img {
@@ -1801,8 +1784,16 @@
             object-fit: contain;
             }
 
-            .footer-main {
-                padding: var(--space-lg) 0 var(--space-md);
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-brand p {
+                max-width: 100%;
             }
 
             .footer-bottom {
@@ -1819,321 +1810,15 @@
             .footer-legal {
                 justify-content: center;
             }
-
-            /* Buttons: full width on mobile */
-            .btn-primary,
-            .btn-secondary {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
-
-            /* Section headings */
-            .sec-head {
-                margin-bottom: var(--space-lg);
-            }
         }
 
-        /* --- Small Phone (480px) --- */
-        @media (max-width: 480px) {
-            :root {
-                --gutter: 0.75rem;
-            }
-
-            .container {
-                padding: 0 var(--gutter);
-            }
-
-            .page-hero-inner {
-                padding: 0 var(--gutter);
-            }
-
-            .page-hero h1 {
-                margin-bottom: var(--space-sm);
-            }
-
-            .page-hero p {
-                margin-bottom: var(--space-md);
-            }
-
-            .hero-ctas {
-                margin-top: var(--space-sm);
-            }
-
-            .benefits-grid,
-            .fund-grid,
-            .guidelines-grid {
-                padding: 0 var(--gutter);
-            }
-
-            .testimonials-section .sec-head {
-                padding: 0 var(--gutter);
-            }
-
-            /* Hero padding: 7rem top */
-            .page-hero {
-                padding-top: 7rem;
-                padding-bottom: var(--space-md);
-            }
-
-            .page-hero h1 {
-                font-size: clamp(1.5rem, 6vw, 2rem);
-            }
-
-            .page-hero p {
-                font-size: 0.9rem;
-                margin-bottom: var(--space-md);
-            }
-
-            /* Further reduce card and section padding */
-            .why-section,
-            .fund-section,
-            .guidelines-section,
-            .testimonials-section,
-            .faq-section {
-                padding: 2.75rem 0;
-            }
-
-            .fund-card,
-            .guideline-card {
-                padding: 1.25rem 1rem;
-            }
-
-            .testimonial-card {
-                padding: 1.25rem 1rem;
-                width: 300px;
-            }
-
-            /* CTA form compact */
-            .cta-box-header {
-                padding: 1rem;
-            }
-
-            .cta-box-header h2 {
-                font-size: 1.25rem;
-            }
-
-            .cta-box-body {
-                padding: 1rem;
-            }
-
-            .cta-box input,
-            .cta-box select,
-            .cta-box textarea {
-                padding: 0.65rem 0.875rem;
-                font-size: 0.875rem;
-            }
-
-            .cta-box .form-group {
-                margin-bottom: 0.75rem;
-            }
-
-            /* Smaller gaps */
-            .sec-head {
-                margin-bottom: var(--space-md);
-            }
-
-            .sec-head p {
-                font-size: 0.875rem;
-            }
-
-            /* Footer compact */
-            .footer-main {
-                padding: var(--space-md) 0;
-            }
-
-            .footer-col h4 {
-                margin-bottom: 1rem;
-            }
-
-            .footer-col li {
-                margin-bottom: 0.5rem;
-            }
-
-            .footer-brand p {
-                font-size: 0.85rem;
-            }
-
-            /* Nav compact */
-            nav {
-                width: 94%;
-                top: 0.75rem;
-            }
-
-            .nav-inner {
-                padding: 0.5rem 0.75rem 0.5rem 1rem;
-                min-height: 48px;
-            }
-
-            .logo-img {
-                height: 40px;
-            }
-
-            /* Touch-friendly targets */
-            .nav-links a {
-                padding: 0.75rem 0;
-                font-size: 0.9375rem;
-            }
-
-            .footer-col a {
-                padding: 0.25rem 0;
-            }
-
-            .footer-social a {
-                width: 40px;
-                height: 40px;
-            }
-
-            .footer-back-top {
-                width: 40px;
-                height: 40px;
-            }
-
-            /* Hero buttons smaller */
-            .hero-ctas {
-                gap: 0.75rem;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                padding: 0.75rem 1.25rem;
-                font-size: 0.875rem;
-            }
-        }
-
-        /* Global header/footer overrides from index.html */
-        nav {
-            position: fixed;
-            top: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(94%, 1100px);
-            max-width: 100%;
-            background: #ffffff;
-
-            border-radius: 999px;
-            z-index: 1000;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 12px 40px -12px rgba(0, 0, 0, 0.08);
-            transition: box-shadow 0.35s var(--ease-out), top 0.3s var(--ease-out), transform 0.35s var(--ease-out), background 0.35s var(--ease-out);
-            overflow: visible;
-        }
-
-        nav.scrolled {
-            background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 48px -12px rgba(0, 0, 0, 0.1);
-            top: 1rem;
-            border-color: rgba(0, 0, 0, 0.06);
-        }
-
-        nav.nav-hidden {
-            transform: translateX(-50%) translateY(calc(-100% - 2rem));
-            pointer-events: none;
-        }
-
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.45rem 1.75rem 0.45rem 2rem;
-            min-height: 68px;
-            position: relative;
-            overflow: visible;
-            gap: 1.5rem;
-        }
-
-        .logo-img {
-            height: 68px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        .cta-nav {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--navy);
-            color: var(--white);
-            padding: 0.7rem 1.8rem;
-            border-radius: 999px;
-            font-family: var(--font-sans);
-            font-weight: var(--btn-font-weight);
-            font-size: 0.875rem;
-            letter-spacing: var(--btn-letter-spacing);
-            text-decoration: none;
-            border: none;
-            z-index: 2;
-            flex-shrink: 0;
-            box-shadow: var(--btn-shadow);
-            transition: background 0.25s var(--ease-btn), color 0.2s var(--ease-btn), transform 0.2s var(--ease-btn), box-shadow 0.25s var(--ease-btn);
-        }
-
-        .cta-nav:hover {
-            background: var(--gold);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px -2px rgba(255, 102, 0, 0.4);
-        }
-
-        .cta-nav:active {
-            transform: translateY(0);
-            box-shadow: var(--btn-shadow-active);
-        }
-
-        .cta-nav:focus-visible {
-            outline: var(--btn-outline);
-            outline-offset: var(--btn-outline-offset);
-        }
-
-        .nav-dropdown-content {
-            top: 100%;
-        }
-
-        .footer-brand .logo-img {
-            height: 108px;
-            width: auto;
-            object-fit: contain;
-            
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-sans);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 1024px) {
-            .logo-img {
-                height: 48px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo-img {
-                height: 40px;
-            }
-
-            .footer-brand .logo-img {
-                height: 102px;
-            width: auto;
-            object-fit: contain;
-            }
-        }
-
-
-        /* --- CTA SECTION (Book Consultation) --- */
-        .cta-section {
+        /* === CTA SECTION === */
+                .cta-section {
             padding: clamp(3rem, 6vw, 4.5rem) 0;
             background: var(--white);
             position: relative;
             overflow: hidden;
         }
-
         .cta-section::before {
             content: '';
             position: absolute;
@@ -2142,11 +1827,7 @@
             pointer-events: none;
             z-index: 0;
         }
-
         .cta-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--gutter);
             position: relative;
             z-index: 1;
         }
@@ -2159,7 +1840,6 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         @media (min-width: 1024px) {
             .cta-grid {
                 grid-template-columns: 1fr 1.15fr;
@@ -2168,14 +1848,49 @@
             }
         }
 
-        .cta-intro {
-            padding-top: 0.25rem;
+        .cta-box-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue-deep) 100%);
+            padding: 1.25rem 1.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-intro.reveal.visible {
-            animation: ctaBoxReveal 0.6s var(--ease-out) forwards;
+        .cta-box-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
+            pointer-events: none;
         }
 
+        .cta-box-header h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+            position: relative;
+        }
+
+        .cta-box-header > p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            position: relative;
+        }
+
+        /* --- Small phone (480px) --- */
+        @media (max-width: 480px) {
+            .cta-box-header { padding: 1rem 1.1rem; }
+            .cta-box-header h2 { font-size: 1.125rem; }
+        }
+
+        
+        .cta-intro { padding-top: 0.25rem; }
+        .cta-intro.reveal.visible { animation: ctaBoxReveal 0.6s var(--ease-out) forwards; }
         .cta-intro-label {
             font-size: 0.75rem;
             font-weight: 600;
@@ -2185,17 +1900,15 @@
             margin-bottom: 0.75rem;
             display: block;
         }
-
         .cta-intro-title {
-            font-family: var(--font-sans);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: clamp(1.75rem, 3vw, 2.25rem);
             font-weight: 700;
             color: var(--navy);
-            letter-spacing: var(--tracking-tight);
-            line-height: var(--leading-tight);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
             margin-bottom: 1rem;
         }
-
         .cta-intro-desc {
             font-size: 1rem;
             color: var(--muted);
@@ -2206,7 +1919,6 @@
             text-wrap: pretty;
             margin-bottom: 1.75rem;
         }
-
         .cta-trust-list {
             list-style: none;
             margin: 0;
@@ -2215,7 +1927,6 @@
             flex-direction: column;
             gap: 0.875rem;
         }
-
         .cta-trust-list-item {
             display: flex;
             align-items: center;
@@ -2224,7 +1935,6 @@
             font-weight: 500;
             color: var(--navy);
         }
-
         .cta-trust-icon {
             width: 40px;
             height: 40px;
@@ -2237,25 +1947,47 @@
             color: var(--gold);
             transition: background 0.25s var(--ease-out), color 0.25s var(--ease-out);
         }
-
         .cta-trust-list-item:hover .cta-trust-icon {
             background: rgba(255, 102, 0, 0.12);
             color: var(--gold);
         }
+        .cta-trust-icon svg { width: 18px; height: 18px; }
 
-        .cta-trust-icon svg {
-            width: 18px;
-            height: 18px;
+        .cta-trust-row {
+            display: flex;
+            gap: clamp(0.4rem, 1.5vw, 0.85rem);
+            flex-wrap: nowrap;
+            align-items: center;
+            position: relative;
+        }
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: clamp(0.58rem, 1.6vw, 0.75rem);
+            font-weight: 600;
+            color: rgba(255,255,255,0.88);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .cta-trust-item svg {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            color: var(--gold);
         }
 
         .cta-box {
+            max-width: 520px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
             background: var(--white);
-            border-radius: var(--card-radius);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
             overflow: hidden;
             position: relative;
-            border: 1px solid var(--border);
-            transition: box-shadow 0.3s var(--ease-out);
+            border-top: 3px solid var(--gold);
         }
 
         .cta-box:hover {
@@ -2911,47 +2643,108 @@
 
         @media (max-width: 1024px) {
             .nav-inner { padding: 0.4rem 1.35rem !important; min-height: 60px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
-            nav.menu-open .nav-inner { z-index: 1001 !important; position: relative !important; }
             nav { left: 4% !important; right: 4% !important; width: auto !important; transform: none !important; }
-            nav.menu-open .logo, nav.menu-open .mobile-menu-btn { z-index: 1002 !important; position: relative !important; }
-            /* --- Mobile menu: bottom sheet, minimal, mobile-first --- */
-            nav.menu-open::before {
-                content: ''; position: fixed; inset: 0; z-index: 998;
-                background: rgba(11, 22, 53, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-                opacity: 0; animation: navBackdropIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
-            @keyframes navBackdropIn { to { opacity: 1; } }
-            nav.menu-open::after { content: ''; position: fixed; inset: 0; z-index: 997; pointer-events: auto; }
+            /* --- Mobile menu: full-screen overlay (matches homepage) --- */
             .nav-links {
-                position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-                z-index: 999 !important; width: 100% !important;
-                max-height: clamp(75vh, 88dvh, 92vh) !important;
-                min-height: min(320px, 70vh) !important;
+                display: none !important;
+                position: absolute;
+                left: 0; right: 0; top: 0; bottom: 0;
+                list-style: none !important;
+            }
+            nav.menu-open {
+                position: fixed !important;
+                top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+                width: 100% !important; height: 100% !important;
+                min-height: 100vh; min-height: 100dvh;
+                max-height: 100vh; max-height: 100dvh;
+                z-index: 9999 !important;
+                transform: none !important;
+                margin: 0 !important;
                 background: #ffffff !important;
-                display: flex !important; flex-direction: column !important; align-items: stretch !important;
-                padding: 0 max(1.5rem, env(safe-area-inset-right)) max(2rem, calc(1.5rem + env(safe-area-inset-bottom))) max(1.5rem, env(safe-area-inset-left)) !important;
-                padding-top: 1rem !important; gap: 0 !important;
-                border-radius: 24px 24px 0 0 !important;
-                box-shadow: 0 -8px 40px -8px rgba(11, 22, 53, 0.15) !important;
-                list-style: none !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important;
-                overscroll-behavior: contain !important; touch-action: manipulation !important;
-                opacity: 0 !important; visibility: hidden !important; transform: translateY(100%) !important;
-                transition: opacity 0.35s cubic-bezier(0.32, 0.72, 0, 1), visibility 0.35s, transform 0.35s cubic-bezier(0.32, 0.72, 0, 1) !important;
-                pointer-events: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden;
             }
-            .nav-links.active {
-                opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important;
+            nav.menu-open .nav-inner {
+                flex: 1;
+                min-height: 0;
+                display: grid !important;
+                grid-template-rows: minmax(60px, auto) 1fr;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: "menu-header menu-header" "menu-links menu-links";
+                gap: 0;
+                padding: 0;
+                background: #ffffff;
+                width: 100%;
             }
-            .nav-links::before {
-                content: ''; display: block; width: 40px; height: 4px; background: rgba(11, 22, 53, 0.12);
-                border-radius: 2px; margin: 0 auto 1.25rem; flex-shrink: 0;
+            nav.menu-open .logo {
+                grid-area: menu-header;
+                grid-column: 1;
+                align-self: center;
+                justify-self: start;
+                margin: 0; padding: 0;
+                padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem;
+                padding-left: max(1rem, env(safe-area-inset-left));
+            }
+            nav.menu-open .mobile-menu-btn {
+                grid-area: menu-header;
+                grid-column: 2;
+                align-self: center;
+                justify-self: end;
+                margin: 0; padding: 0;
+                padding-top: max(0.75rem, env(safe-area-inset-top));
+                padding-bottom: 0.75rem;
+                padding-right: max(1rem, env(safe-area-inset-right));
+                padding-left: 1rem;
+                min-width: 48px !important;
+                min-height: 48px !important;
+            }
+            nav.menu-open .cta-nav { display: none !important; }
+            nav.menu-open .nav-links {
+                display: flex !important;
+                grid-area: menu-links;
+                grid-column: 1 / -1;
+                flex-direction: column;
+                align-items: stretch;
+                align-self: stretch;
+                justify-self: stretch;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                min-height: 0;
+                margin: 0;
+                padding: 1rem max(1rem, env(safe-area-inset-right)) max(1.5rem, calc(1rem + env(safe-area-inset-bottom))) max(1rem, env(safe-area-inset-left)) !important;
+                gap: 0;
+                background: #ffffff;
+                border-top: 1px solid rgba(11, 22, 53, 0.08);
+                border-radius: 0;
+                box-shadow: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+                touch-action: manipulation;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(6px);
+                transition: opacity 0.25s ease, visibility 0.25s, transform 0.25s ease;
+                pointer-events: none;
+            }
+            nav.menu-open .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
             }
             .nav-mobile-logo { display: none !important; }
             .nav-links > li { flex-shrink: 0 !important; border: none !important; }
             .nav-links > li > a {
                 display: flex !important; align-items: center !important; justify-content: space-between !important;
-                padding: 1rem 0 !important; font-size: 1.125rem !important; font-weight: 600 !important;
-                color: var(--navy) !important; min-height: 56px !important; -webkit-tap-highlight-color: transparent !important;
+                padding: clamp(0.6rem, 2vw, 0.85rem) 0 !important; font-size: clamp(1rem, 2.5vw, 1.125rem) !important; font-weight: 600 !important;
+                color: var(--navy) !important; min-height: 48px !important; -webkit-tap-highlight-color: transparent !important;
                 transition: color 0.2s, background 0.2s !important; border-radius: 14px !important; letter-spacing: -0.01em !important; line-height: 1.3 !important;
             }
             .nav-links > li > a:hover, .nav-links > li > a:active { color: var(--gold) !important; background: rgba(255, 102, 0, 0.06) !important; }
@@ -2963,9 +2756,9 @@
                 pointer-events: none !important; transition: max-height 0.3s cubic-bezier(0.32, 0.72, 0, 1) !important;
             }
             .nav-dropdown.open .nav-dropdown-content, .nav-dropdown.open:hover .nav-dropdown-content {
-                max-height: 280px !important; overflow: visible !important;
-                padding: 0 0 0.5rem 1rem !important; margin: 0 0 0.5rem !important;
-                border-left: 2px solid rgba(255, 102, 0, 0.3) !important; margin-left: 0.5rem !important;
+                max-height: 220px !important; overflow: visible !important;
+                padding: 0 0 clamp(0.35rem, 1.5vw, 0.5rem) clamp(0.65rem, 2vw, 1rem) !important; margin: 0 0 clamp(0.35rem, 1.5vw, 0.5rem) !important;
+                border-left: 2px solid rgba(255, 102, 0, 0.3) !important; margin-left: clamp(0.35rem, 1.5vw, 0.5rem) !important;
                 pointer-events: auto !important;
             }
             .nav-dropdown-content .nav-dropdown-label {
@@ -2980,18 +2773,18 @@
             .nav-dropdown.open > a::after { transform: rotate(-135deg); opacity: 1; }
             .nav-dropdown-content a {
                 display: flex !important; align-items: center !important; gap: 0 !important;
-                padding: 0.85rem 0 !important; font-size: 1rem !important; font-weight: 500 !important;
-                color: var(--muted) !important; border: none !important; border-radius: 12px !important;
-                margin: 0.15rem 0 !important; min-height: 48px !important; -webkit-tap-highlight-color: transparent !important;
+                padding: clamp(0.6rem, 1.5vw, 0.75rem) 0 !important; font-size: clamp(0.9375rem, 2vw, 1rem) !important; font-weight: 500 !important;
+                color: var(--muted) !important; border: none !important; border-radius: 10px !important;
+                margin: 0.1rem 0 !important; min-height: 44px !important; -webkit-tap-highlight-color: transparent !important;
                 white-space: normal !important; transition: color 0.2s, background 0.2s !important;
             }
             .nav-dropdown-content a:hover, .nav-dropdown-content a:active { color: var(--navy) !important; background: rgba(11, 22, 53, 0.04) !important; }
-            .mobile-cta-li { display: block !important; margin-top: 1.25rem !important; padding-top: 1.25rem !important; border-top: none !important; width: 100% !important; }
+            .mobile-cta-li { display: block !important; margin-top: clamp(0.9rem, 2.5vw, 1.25rem) !important; padding-top: clamp(0.9rem, 2.5vw, 1.25rem) !important; border-top: none !important; width: 100% !important; }
             li.mobile-cta-li > a {
                 display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important;
                 width: 100% !important; max-width: 100% !important; box-sizing: border-box !important;
-                background: var(--navy) !important; color: var(--white) !important; padding: 1.1rem 1.5rem !important;
-                border-radius: 16px !important; font-weight: 700 !important; min-height: 56px !important; font-size: 1.0625rem !important;
+                background: var(--navy) !important; color: var(--white) !important; padding: clamp(0.8rem, 2vw, 1rem) clamp(1rem, 3vw, 1.25rem) !important;
+                border-radius: 14px !important; font-weight: 700 !important; min-height: 48px !important; font-size: clamp(0.9375rem, 2vw, 1rem) !important;
                 -webkit-tap-highlight-color: transparent !important; transition: background 0.25s, color 0.2s, transform 0.2s !important; letter-spacing: 0.01em !important;
             }
             li.mobile-cta-li > a:hover, li.mobile-cta-li > a:active { background: var(--gold) !important; color: var(--white) !important; transform: scale(0.98) !important; }
@@ -3010,10 +2803,10 @@
         @media (max-width: 768px) {
             .nav-inner { padding: 0.5rem 1rem !important; min-height: 56px !important; }
             .logo-img { height: 48px !important; }
-            .cta-box { margin-left: 0.75rem !important; margin-right: 0.75rem !important; max-width: none !important; }
             .cta-schedule-fields { grid-template-columns: 1fr !important; gap: 0.5rem !important; }
             .cta-picker-trigger { min-height: 44px !important; padding: 0.55rem 0.65rem 0.55rem 2.25rem !important; font-size: 1rem !important; }
             .cta-picker-wrap .cta-schedule-input-icon { left: 0.65rem !important; width: 14px !important; height: 14px !important; }
+            .cta-box { margin-left: 0.75rem !important; margin-right: 0.75rem !important; max-width: none !important; }
             
             .footer-grid { grid-template-columns: 1fr !important; }
             .footer-brand { grid-column: auto !important; }
@@ -3021,8 +2814,13 @@
             .footer-bottom-left { flex-direction: column !important; gap: 0.75rem !important; }
         }
         @media (max-width: 480px) {
-            .nav-inner { padding: 0.5rem 0.75rem !important; min-height: 52px !important; }
-            .logo-img { height: 40px !important; }
+            .nav-inner { padding: 0.5rem clamp(0.65rem, 3vw, 0.75rem) !important; min-height: 52px !important; }
+            .logo-img { height: clamp(36px, 9vw, 40px) !important; }
+            .nav-links { padding: 0 clamp(0.75rem, 4vw, 1rem) max(1rem, calc(1rem + env(safe-area-inset-bottom))) clamp(0.75rem, 4vw, 1rem) !important; padding-top: 0.5rem !important; max-height: clamp(75vh, 85dvh, 90vh) !important; border-radius: clamp(16px, 6vw, 24px) clamp(16px, 6vw, 24px) 0 0 !important; }
+            .nav-links::before { margin-bottom: 0.6rem !important; }
+            .nav-links > li > a { padding: 0.65rem 0 !important; font-size: clamp(1rem, 2.5vw, 1.0625rem) !important; min-height: 48px !important; }
+            .nav-dropdown-content a { padding: 0.6rem 0 !important; font-size: 0.9375rem !important; min-height: 44px !important; }
+            li.mobile-cta-li > a { padding: 0.9rem 1.2rem !important; min-height: 48px !important; font-size: 1rem !important; }
             .cta-box { margin-left: 0 !important; margin-right: 0 !important; max-width: 100% !important; border-radius: 12px !important; padding: 1.5rem !important; }
             .cta-grid { gap: 1.5rem !important; }
             .cta-schedule-fields { gap: 0.4rem !important; }
@@ -3032,32 +2830,21 @@
         }
 
     </style>
-    <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/mobile-menu-fullscreen.css">
-    <link rel="stylesheet" href="css/nav-hover-orange.css">
-    <link rel="stylesheet" href="css/button-contrast.css">
-    <link rel="stylesheet" href="css/faq-section.css">
-    <link rel="stylesheet" href="css/responsive-spacing.css">
-    <link rel="stylesheet" href="css/hero-stat-bar.css">
-    <link rel="stylesheet" href="css/hero-services.css">
-    <link rel="stylesheet" href="css/hero-ctas-buttons.css">
-    <link rel="stylesheet" href="css/product-cards-mortgage.css">
-    <link rel="stylesheet" href="css/benefit-cards-shared.css">
-    <link rel="stylesheet" href="css/benefits-section-premium.css">
-    <link rel="stylesheet" href="css/lottie-forms.css">
-    <link rel="stylesheet" href="css/testimonials-google.css">
-    <link rel="stylesheet" href="css/cta-box-header-border.css">
-    <link rel="stylesheet" href="css/site-global.css">
-    <script src="js/testimonials-expand.js" defer></script>
-    <script src="js/product-cards-expand.js" defer></script>
+    <link rel="stylesheet" href="/css/design-tokens.css">
+    <link rel="stylesheet" href="/css/mobile-menu-fullscreen.css">
+    <link rel="stylesheet" href="/css/nav-hover-orange.css">
+    <link rel="stylesheet" href="/css/button-contrast.css">
+    <link rel="stylesheet" href="/css/lottie-forms.css">
+    <link rel="stylesheet" href="/css/cta-box-header-border.css">
+    <link rel="stylesheet" href="/css/site-global.css">
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="mainNav">
         <div class="nav-inner">
-        <a href="/" class="logo"><img src="images/logo.png" alt="Richview Capital" class="logo-img"></a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+            <a href="/" class="logo"><img src="/images/logo.png" alt="Richview Capital" class="logo-img"></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="icon-menu" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -3070,8 +2857,8 @@
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg></span>
             </button>
-        <ul class="nav-links" id="navLinks">
-                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="images/logo.png"
+            <ul class="nav-links" id="navLinks">
+                <li class="nav-mobile-logo" style="display:none"><a href="/"><img src="/images/logo.png"
                             alt="Richview Capital" class="logo-img"></a></li>
                 <li><a href="/">Home</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
@@ -3079,734 +2866,535 @@
                         aria-controls="navMenuServices">Services</a>
                     <div class="nav-dropdown-content" id="navMenuServices" role="menu" aria-label="Services">
                         <span class="nav-dropdown-label">Who we serve</span>
-                        <a href="/borrowers" role="menuitem">Borrowers</a>
-                        <a href="/brokers" role="menuitem">Brokers</a>
-                        <a href="/investors" role="menuitem">Investors</a>
+                        <a href="/borrowers/" role="menuitem">Borrowers</a>
+                        <a href="/brokers/" role="menuitem">Brokers</a>
+                        <a href="/investors/" role="menuitem">Investors</a>
                     </div>
                 </li>
-            <li><a href="/about">About</a></li>
+                <li><a href="/about/">About</a></li>
                 <li class="nav-dropdown" aria-haspopup="true" aria-expanded="false">
                     <a href="#" id="navTriggerResources" aria-haspopup="true" aria-expanded="false"
                         aria-controls="navMenuResources">Resources</a>
                     <div class="nav-dropdown-content" id="navMenuResources" role="menu" aria-label="Resources">
-                        <a href="/what-is-a-mic" role="menuitem">What Is a MIC?</a>
-                        <a href="/faq" role="menuitem">FAQ</a>
+                        <a href="/what-is-a-mic/" role="menuitem">What Is a MIC?</a>
+                        <a href="/faq/" role="menuitem">FAQ</a>
                     </div>
                 </li>
-            <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get
                         Started</a></li>
             </ul>
-        <a href="#contact" class="cta-nav">Get Started</a>
+            <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
     <section class="page-hero" id="main">
-        <div class="page-hero-inner reveal">
-            <h1>Private Mortgage Solutions for Ontario Mortgage Brokers</h1>
-            <p class="hero-tagline"><span class="hero-tagline-line"></span><span class="hero-tagline-text">Fast underwriting. Clear terms. Reliable closings.</span><span class="hero-tagline-line"></span></p>
-            <div class="hero-stat-bar" aria-label="Key rates and terms">
-                <div class="hero-stat-item">
-                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-                    <span class="hero-stat-value">6.99%</span>
-                    <span class="hero-stat-label">1st Mortgages</span>
-                </div>
-                <div class="hero-stat-item">
-                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
-                    <span class="hero-stat-value">75%</span>
-                    <span class="hero-stat-label">Max LTV</span>
-                </div>
-                <div class="hero-stat-item">
-                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-                    <span class="hero-stat-value">$3M</span>
-                    <span class="hero-stat-label">Loan Amounts</span>
-                </div>
-                <div class="hero-stat-item">
-                    <span class="hero-stat-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                    <span class="hero-stat-value">24h-48h</span>
-                    <span class="hero-stat-label">Fast Closings</span>
-                </div>
-            </div>
-            <p class="hero-stat-disclaimer"><a href="/disclaimer">Rates subject to change. Terms and conditions apply. See full disclaimers.</a></p>
-            <div class="hero-ctas">
-                <a href="#contact" class="btn-primary">Submit a Deal</a>
-                <a href="#guidelines" class="btn-secondary">View Guidelines</a>
-            </div>
+        <div class="container">
+            <h1>About Richview Capital MIC</h1>
+            <p>A licensed Ontario MIC with 30+ years of combined experience in private lending, construction financing, and mortgage investing. Based in Woodbridge, serving the entire GTA.</p>
         </div>
     </section>
 
-    <section class="why-section benefits-section">
-        <div class="sec-head reveal"
-            style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
-            <h2>Why Work With Richview Capital</h2>
-            <p>Your trusted partner for alternative&nbsp;lending solutions</p>
-        </div>
-        <div class="benefits-grid">
-            <div class="benefit-card reveal" style="--i: 0;">
-                <span class="benefit-number">01</span>
-                <h3>Fast Response Times</h3>
-                <p>Same-day feedback on all applications. Close in as little as 24-48 hours with a complete application and appraisal. Direct access to decision-makers.</p>
-                </div>
-            <div class="benefit-card reveal" style="--i: 1;">
-                <span class="benefit-number">02</span>
-                <h3>Transparent Underwriting</h3>
-                <p>Clear communication throughout the process. No surprises at closing. You'll always know where your
-                    deal stands and what's needed to close.</p>
-                </div>
-            <div class="benefit-card reveal" style="--i: 2;">
-                <span class="benefit-number">03</span>
-                <h3>Competitive LTV Ratios</h3>
-                <p>Up to 75% LTV on residential first mortgages. Up to 65% of end value on construction. Every file evaluated individually.</p>
-                </div>
-            <div class="benefit-card reveal" style="--i: 3;">
-                <span class="benefit-number">04</span>
-                <h3>Relationship Focus</h3>
-                <p>We are not a mortgage broker and do not compete with our channel partners. As a privately owned MIC, we are open to exploring unique financing arrangements to find solutions for our partners and their clients.</p>
-                </div>
-            <div class="benefit-card reveal" style="--i: 4;">
-                <span class="benefit-number">05</span>
-                <h3>Case-by-Case Evaluation</h3>
-                <p>Every deal gets individual attention. Not cookie-cutter decisions. We understand every client
-                    situation is unique and deserves thoughtful review.</p>
-                </div>
-            <div class="benefit-card reveal" style="--i: 5;">
-                <span class="benefit-number">06</span>
-                <h3>Experienced Team</h3>
-                <p>Decades of combined experience in alternative lending. We've seen it all and know how to structure
-                    deals that work for everyone.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="loan-products" id="products">
-        <div class="section-header reveal">
-            <h2>What We Fund</h2>
-            <p>Flexible financing solutions for your&nbsp;clients across Ontario</p>
-        </div>
-        <div class="products-grid reveal">
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-                    </div>
-                    <h3>First Mortgages</h3>
-                    <p>Residential first mortgages for clients who don't fit traditional bank criteria. Same-day feedback, close in as little as 24 hours.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>Rates from 6.99%</li>
-                        <li>2% lender fee</li>
-                        <li>Open &amp; closed terms: 6-12 months, up to 3 years</li>
-                        <li>Up to 75% LTV (case by case)</li>
-                        <li>No renewal fee on 3-year terms</li>
-                        <li>Loans up to $3M</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
-                    </div>
-                    <h3>Second Mortgages</h3>
-                    <p>Flexible second position financing for debt consolidation, renovations, or investment. Quick closings when timing matters.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>Under 65% LTV: rates from 10.99%</li>
-                        <li>65% LTV and above: rates from 11.99%</li>
-                        <li>2% lender fee</li>
-                        <li>Open and closed 6-12 month terms</li>
-                        <li>Up to 75% LTV (case by case)</li>
-                        <li>Loans up to $1M</li>
-                        <li>No appraisal required on qualifying low-LTV files</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v6"/><path d="M12 16v6"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m4.93 19.07 4.24-4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="M2 12h6"/><path d="M16 12h6"/></svg></span>
-                    </div>
-                    <h3>Construction Loans</h3>
-                    <p>Construction financing with staged draws. 24-hour on-site inspections and funds advanced within 24 hours of inspection.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>Land 1st mortgage: 65% LTV, from 7.99% + 2% lender fee</li>
-                        <li>Construction 1st: up to 65% end value, from 9.99% + 2% lender fee</li>
-                        <li>Construction 2nd: up to 65% end value, from 11.99% + 2% lender fee</li>
-                        <li>3-5 draws per project</li>
-                        <li>24-hour on-site inspections</li>
-                        <li>Funds advanced within 24 hours of inspection</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                    </div>
-                    <h3>Bridge Financing</h3>
-                    <p>Short-term bridge loans for purchase-before-sale or quick capital during transitions.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>1 to 90 day loan terms</li>
-                        <li>Rates from 8.99%</li>
-                        <li>2% lender fee</li>
-                        <li>Fast approvals, same-day feedback</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22c-4-4-8-8-8-14a8 8 0 0 1 16 0c0 6-4 10-8 14z"/></svg></span>
-                    </div>
-                    <h3>Land Financing</h3>
-                    <p>Financing for land acquisition and development-ready properties across Ontario.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>1st mortgage on land at 65% LTV</li>
-                        <li>Rates from 7.99% + 2% lender fee</li>
-                        <li>Same-day feedback</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-                    </div>
-                    <h3>HELOC</h3>
-                    <p>Home Equity Line of Credit with open terms and flexible access for your clients.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>1st mortgage HELOC: rates from 7.99%</li>
-                        <li>2nd mortgage HELOC: rates from 11.99%</li>
-                        <li>2% lender fee</li>
-                        <li>Open term</li>
-                        <li>Up to 75% LTV (case by case)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span>
-                    </div>
-                    <h3>Commercial Loans</h3>
-                    <p>Income-producing commercial properties: multi-family, office, retail, industrial, mixed-use.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>Multi-family rental, office, retail, industrial, mixed use</li>
-                        <li>Up to 75% LTV</li>
-                        <li>Approvals within 1 business day</li>
-                        <li>Rates from 9.99%</li>
-                        <li>Loans up to $3M</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-top">
-                    <div class="product-card-header">
-                        <span class="product-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
-                    </div>
-                    <h3>Refinancing</h3>
-                    <p>Refinancing for clients looking to consolidate debt, access equity, or improve terms.</p>
-                    <button class="product-card-chevron" type="button" aria-label="Expand details" aria-expanded="false"></button>
-                </div>
-                <div class="product-card-bottom">
-                    <h4 class="product-highlights-title">Highlights</h4>
-                    <ul class="product-features">
-                        <li>Rates from 6.99%</li>
-                        <li>2% lender fee</li>
-                        <li>Open &amp; closed terms: 6-12 months, up to 3 years</li>
-                        <li>Up to 75% LTV (case by case)</li>
-                        <li>Loans up to $3M</li>
-                        <li>No renewal fee on 3-year terms</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="products-disclaimer-wrap">
-            <p class="products-disclaimer">All rates are subject to change. All mortgages subject to credit approval and appraisal. This is not a commitment to lend. Managed by Richview Capital Management Inc. Lic #13171.</p>
-        </div>
-    </section>
-
-    <section class="guidelines-section" id="guidelines">
-        <div class="sec-head reveal"
-            style="max-width: var(--container); margin-left: auto; margin-right: auto; padding: 0 var(--gutter);">
-                <h2>Submission Guidelines</h2>
-                <p>Six topic areas - from documentation and appraisals to timelines and eligibility - to help you submit complete files faster</p>
-            </div>
-            <div class="guidelines-grid">
-            <div class="guideline-card reveal" style="--i: 0;">
-                <span class="guideline-number">01</span>
-                <h3>Required Documentation</h3>
-                    <ul>
-                        <li>Completed application form</li>
-                        <li>Property details and address</li>
-                        <li>Borrower financials (income verification)</li>
-                        <li>Credit report (recent)</li>
-                        <li>Property appraisal (current)</li>
-                        <li>Purpose of financing</li>
-                    </ul>
-                </div>
-            <div class="guideline-card reveal" style="--i: 1;">
-                <span class="guideline-number">02</span>
-                <h3>Appraisal Requirements</h3>
-                    <ul>
-                        <li>Full appraisal from approved appraiser</li>
-                        <li>Recent (within 90 days preferred)</li>
-                        <li>MPAC assessment included</li>
-                        <li>Comparable sales analysis</li>
-                        <li>Property photos</li>
-                        <li>Appraisal list available on request</li>
-                    </ul>
-                </div>
-            <div class="guideline-card reveal" style="--i: 2;">
-                <span class="guideline-number">03</span>
-                <h3>Geographic Focus</h3>
-                    <ul>
-                        <li>Greater Toronto Area (GTA)</li>
-                        <li>Ontario-wide coverage</li>
-                        <li>Urban and suburban markets</li>
-                        <li>Select rural properties (case-by-case)</li>
-                        <li>Primary residential focus</li>
-                        <li>Strong market knowledge</li>
-                    </ul>
-            </div>
-            <div class="guideline-card reveal" style="--i: 3;">
-                <span class="guideline-number">04</span>
-                <h3>Construction Loan Requirements</h3>
-                <ul>
-                    <li>Appraisal: both as-is and as-if completed reports</li>
-                    <li>All required building permits for the project</li>
-                    <li>Builder's portfolio: background, experience, completed projects, credentials</li>
-                    <li>Detailed construction budget with line-item costs</li>
-                    <li>Mortgage application and additional documentation</li>
-                </ul>
-            </div>
-            <div class="guideline-card reveal" style="--i: 4;">
-                <span class="guideline-number">05</span>
-                <h3>Timelines &amp; communication</h3>
-                <ul>
-                    <li>Same-day feedback when the file is complete</li>
-                    <li>Submit through your usual BDM or dedicated channel contact</li>
-                    <li>One consolidated email thread per deal reduces delays</li>
-                    <li>Flag rush or financing-due dates in the subject line</li>
-                    <li>Underwriting may request clarifications - reply promptly</li>
-                    <li>Closing windows depend on appraisal and solicitor readiness</li>
-                </ul>
-            </div>
-            <div class="guideline-card reveal" style="--i: 5;">
-                <span class="guideline-number">06</span>
-                <h3>Eligible property &amp; deal types</h3>
-                <ul>
-                    <li>Residential first and second mortgages (Ontario)</li>
-                    <li>Owner-occupied, rental, and select investment properties</li>
-                    <li>Construction and renovation (with required docs above)</li>
-                    <li>Case-by-case exceptions - ask before you decline the client</li>
-                    <li>LTV and loan size follow published product guidelines</li>
-                    <li>Commercial-only or non-Ontario deals: confirm eligibility first</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-section" id="testimonials">
-        <div class="testimonials-inner">
-        <div class="sec-head reveal">
-                <h2>What Our Clients Say</h2>
-                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
-            <div class="testimonials-track">
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-                <!-- Third set for continuous flow -->
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq-section" id="faq">
+    <section class="our-story">
         <div class="container">
             <div class="sec-head reveal">
-                <h2>Frequently Asked</h2>
-                <p>Common questions from mortgage&nbsp;brokers</p>
+                <h2>Our Story</h2>
+                <p>Building trust through expertise and client-focused solutions.</p>
             </div>
-            <div class="faq-list">
-                <div class="faq-item reveal" style="--i: 0;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>What is your typical turnaround time?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Same-day feedback on all complete submissions. Close in as little as 24-48 hours with a full application and appraisal.</p>
+            <div class="story-content reveal">
+                <p>Richview Capital Mortgage Investment Corporation focuses on residential mortgage opportunities, filling the gap created by tighter lending guidelines at traditional banks and trust companies. Reputation and trust are earned; experience reinforces our foundation again and again.</p>
+                <p>We measure success by helping clients reach their goals and earning their referrals. We lean toward practical solutions, and those ideals define Richview Capital.</p>
+                <p>Guided by strong corporate governance and a seasoned advisory board, Richview Capital MIC is led by experts who have previously managed and guided operations at highly efficient alternative lenders across Canada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="sec-head reveal">
+                <h2>Our Leadership Team</h2>
+                <p>Industry experts driving strategic vision and operational excellence</p>
+            </div>
+
+            <!-- Mission quote -->
+            <blockquote class="team-mission reveal">
+                Over 20+ years of combined experience in private lending, banking, and mortgage investing. We've funded thousands of deals across the GTA, and we pick up the phone when you call.
+            </blockquote>
+
+            <!-- ── Leadership: 2-col ── -->
+            <div class="team-leaders-grid">
+
+                <!-- Guido Di Franco -->
+                <article class="team-card reveal" style="--i:0;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Guido.jpeg" alt="Guido Di Franco" width="3413" height="5120" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Guido Di Franco</h3>
+                        <p class="tc-role">President &amp; CEO, Founder</p>
                     </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Sets lending parameters and leads portfolio quality with 15+ years of lending experience and 25+ years as an entrepreneur.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
+                                <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
+                                <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales.</p>
+                                <p>Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
                     </div>
-                <div class="faq-item reveal" style="--i: 1;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>What are your LTV limits?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Up to 75% LTV on residential first mortgages (case by case). Second mortgages up to 75% LTV. Construction loans up to 65% of end value. Commercial up to 75% LTV.</p>
+                    <div class="tc-footer">
+                        <a href="mailto:guido@richviewcapital.com" class="tc-email">guido@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/guido-di-franco-9b34a533/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Guido Di Franco on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
                     </div>
+                </article>
+
+                <!-- Teresa Di Franco -->
+                <article class="team-card reveal" style="--i:1;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc52d590acb5154d16ddd.jpg" alt="Teresa Di Franco" width="660" height="760" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Teresa Di Franco</h3>
+                        <p class="tc-role">Executive VP &amp; COO, Co-Founder</p>
                     </div>
-                <div class="faq-item reveal" style="--i: 2;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>Do you have broker fees or commission structures?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Yes, we offer competitive broker compensation. Contact our team directly to discuss our fee
-                            structure and commission arrangements. We value our broker partnerships and ensure fair
-                            compensation for your referrals.</p>
+                    <div class="tc-body">
+                        <p class="tc-teaser">30+ years in banking, investments, and credit adjudication. Award-winning industry leader, PFP and AMP designations.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
+                                <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine, awarded to women who made a difference in the mortgage industry, and the Canada-wide 2018 Spotlight Achievement Award.</p>
+                                <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation. Currently, Teresa is the principal broker and general manager of Mortgage Architects Experts, Inc., a multi award-winning mortgage brokerage.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
                     </div>
+                    <div class="tc-footer">
+                        <a href="mailto:teresa@richviewcapital.com" class="tc-email">teresa@richviewcapital.com</a>
+                    </div>
+                </article>
+
+            </div><!-- /team-leaders-grid -->
+
+            <!-- ── Our Team sub-heading ── -->
+            <div class="sec-head team-sub-head reveal">
+                <h2>Our Team</h2>
+                <p>Dedicated professionals committed to your success</p>
+            </div>
+
+            <!-- ── Team: 3-col ── -->
+            <div class="team-cards-grid">
+
+                <!-- Maurizio Sera -->
+                <article class="team-card reveal" style="--i:0;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Maurizio.jpeg" alt="Maurizio Sera" width="3413" height="5120" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Maurizio Sera</h3>
+                        <p class="tc-role">Director of Investments / Underwriting</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">22+ years as a successful entrepreneur and 10+ years as a mortgage investor, overseeing investor relations and underwriting precision.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Maurizio Sera is our Director of Investor Relations and Underwriting. Prior to joining Richview Capital MIC Inc, Maurizio accumulated 22 years of experience as a successful entrepreneur and over 10 years of experience as a mortgage investor.</p>
+                                <p>Maurizio's hands-on experience in personal financial discipline enables him to fully understand the goals and objectives of a client, whether as an investor or as a borrower.</p>
+                                <p>As part of the executive team, Maurizio ensures the meticulous internal business processes are adhered to with precision and with emphasis on risk mitigation and quality control. Maurizio also oversees investor relations including ensuring timely delivery of information and documentation.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:maurizio@richviewcapital.com" class="tc-email">maurizio@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/maurizio-sera-7249a020/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Maurizio Sera on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Natasha Barranca -->
+                <article class="team-card reveal" style="--i:1;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Natashaa.jpeg" alt="Natasha Barranca" width="1024" height="1536" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Natasha Barranca</h3>
+                        <p class="tc-role">Director of Operations</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">18+ years in financial management, overseeing accounting, auditing, and investor relations across all operations.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Natasha has over 18 years of extensive financial management and administration experience encompassing various industries. In her current role, Natasha manages the accounting department and oversees all financial operations, including general ledgers, cost accounting, bookkeeping, auditing, and day-to-day administrative operations.</p>
+                                <p>Additionally, she assists in investor relations and managing client portfolios. Her solid experience and love for business and finance has allowed her to achieve exceptional growth and continued success.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:natasha@richviewcapital.com" class="tc-email">natasha@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/natasha-barranca-958052142/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Natasha Barranca on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Randall Olivares -->
+                <article class="team-card reveal" style="--i:2;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Randall Olivares.jpeg" alt="Randall Olivares" width="3413" height="5120" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Randall Olivares</h3>
+                        <p class="tc-role">Underwriting &amp; Fulfillment Officer</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">7+ years evaluating loan applications, analyzing financial data, and managing the end-to-end mortgage fulfillment process.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Randall is our Underwriting and Fulfillment Officer and comes with over 7 years of experience in the mortgage industry. His role involves meticulously evaluating loan applications, analyzing financial data, and managing the intricate process of mortgage fulfillment.</p>
+                                <p>Thanks to his expertise, he has consistently facilitated seamless transactions, mitigated risks, and plays a pivotal role in the company's continued growth and success.</p>
+                                <p>Beyond underwriting, his sales and management experience have allowed him to effectively collaborate with clients and team members alike, fostering relationships that drive business growth and operational efficiency.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:randall@richviewcapital.com" class="tc-email">randall@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/randall-olivares-b84526158/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Randall Olivares on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Laura Novello -->
+                <article class="team-card reveal" style="--i:3;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Laura.jpeg" alt="Laura Novello" width="1024" height="1536" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Laura Novello</h3>
+                        <p class="tc-role">Renewals</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Renewal Specialist turning every client interaction into a smooth, personalized experience built on genuine connection.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Laura Novello is an energetic and outgoing Renewal Specialist who thrives on building genuine connections with clients and making every interaction count. With a strong background in customer success and account management, she brings a fresh, positive energy to the renewal process, turning what could feel transactional into a smooth, personalized experience.</p>
+                                <p>Known for her proactive communication style and attention to detail, Laura works closely with clients to ensure renewals are seamless, timely, and aligned with their goals. She's passionate about helping customers feel supported and valued at every stage of their journey.</p>
+                                <p>It's not just about closing renewals. It's about strengthening relationships, creating trust, and keeping customers excited to stay.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:laura@richviewcapital.com" class="tc-email">laura@richviewcapital.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Laura Novello on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Emely Sanchez -->
+                <article class="team-card reveal" style="--i:4;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Emely.jpeg" alt="Emely Sanchez" width="682" height="1024" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Emely Sanchez</h3>
+                        <p class="tc-role">Accountant</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">10+ years in office administration and records management, continuously expanding expertise in private lending.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Emely Sanchez is our Director of Administration. She brings over 10 years of experience in office administration and records maintenance.</p>
+                                <p>Emely has developed a profound interest in developing her career in the mortgage industry. Her knowledge of the private lending sector is continuously expanding as her role evolves to meet the needs of the company's steady growth.</p>
+                                <p>Emely proudly capitalizes on her Bachelor's degree at the University of Toronto with a focus in environmental conservation, ensuring that maximum conservation of resources are observed in our firm. She consistently maintains efficient procedures, allowing her to maximize her contribution to the team's success.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:emely@richviewcapital.com" class="tc-email">emely@richviewcapital.com</a>
+                        <a href="https://www.linkedin.com/in/emely-sanchez-170201250/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Emely Sanchez on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Mark Shun-Yin Leung -->
+                <article class="team-card reveal" style="--i:5;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Markshun.jpeg" alt="Mark Leung" width="3413" height="5120" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Mark Shun-Yin Leung</h3>
+                        <p class="tc-role">Controller</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">ACCA member and former KPMG auditor specializing in IFRS, U.S. GAAP, SOX compliance, and mortgage loan servicing.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Mark Leung is our Controller. He is a member in good standing of the Association of Chartered Certified Accountants (ACCA), having completed his Bachelor's degree at Staffordshire University (U.K.) and built his wealth of auditing and financial reporting experience at KPMG. He is highly experienced with the International Financial Reporting Standards (IFRS) and the U.S. GAAP, including SOX-Sarbanes compliance.</p>
+                                <p>Mark has also gained valuable years of experience in the mortgage loan industry that includes loan origination, underwriting, regulations, compliance, and account servicing.</p>
+                                <p>Mark is appreciated for his exceptional skills in analytical and strategic thinking, attention to detail, and effective communication. He has a proven track record of delivering high-quality work in a timely and efficient manner with focus on optimizing cash balances, reducing idle cash, and managing cash flow.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:mark@richviewcapital.com" class="tc-email">mark@richviewcapital.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Mark Leung on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Gabriella Di Franco -->
+                <article class="team-card reveal" style="--i:6;">
+                    <div class="tc-header">
+                        <div class="tc-photo">
+                            <img src="/images/Gabriella.jpeg" alt="Gabriella Di Franco" width="682" height="1024" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="tc-name">Gabriella Di Franco</h3>
+                        <p class="tc-role">Executive Assistant</p>
+                    </div>
+                    <div class="tc-body">
+                        <p class="tc-teaser">Highly organized Executive Assistant supporting leadership with expertise in scheduling, coordination, and process improvement.</p>
+                        <div class="tc-bio" aria-hidden="true">
+                            <div class="tc-bio-inner">
+                                <p>Gabriella Di Franco is a highly organized and detail-oriented Executive Administrator with years of experience supporting day-to-day operations. Known for exceptional communication skills and a proactive approach, she excels in calendar management, meeting coordination, stakeholder communication, and process improvement.</p>
+                                <p>Gabriella is committed to maintaining professionalism and efficiency in fast-paced environments, contributing significantly to organizational growth and leadership effectiveness.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tc-toggle" aria-expanded="false">
+                            <span class="tc-toggle-text">Read more</span>
+                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+                        </button>
+                    </div>
+                    <div class="tc-footer">
+                        <a href="mailto:gabriella@adminexec.com" class="tc-email">gabriella@adminexec.com</a>
+                        <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Gabriella Di Franco on LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div><!-- /team-cards-grid -->
+
+        </div>
+    </section>
+
+    <section class="our-values">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we&nbsp;do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal" style="--i: 0;">
+                    <span class="value-badge">1</span>
+                    <h3>Solutions-Oriented</h3>
+                    <p>We constantly aim for solutions, working tirelessly to help our clients achieve their financial
+                        goals through creative and disciplined approaches.</p>
                 </div>
-                <div class="faq-item reveal" style="--i: 3;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>Can I submit deals outside the GTA?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Yes, we fund mortgages across Ontario, not just in the GTA. While we focus primarily on the
-                            Greater Toronto Area, we have extensive experience with properties throughout Southern
-                            Ontario and select markets province-wide. Contact us to discuss your specific location.</p>
-                    </div>
-                    </div>
-                <div class="faq-item reveal" style="--i: 4;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>What credit scores do you accept?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Minimum credit score is 600. We also review and confirm debt serviceability on every application. Each file is evaluated case by case.</p>
-                    </div>
-                    </div>
-                <div class="faq-item reveal" style="--i: 5;">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>How do I become an approved broker partner?</span>
-                        <span class="faq-icon" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 1l4 4 4-4" />
-                            </svg></span>
-                    </button>
-                    <div class="faq-a">
-                        <p>Simply submit your first deal, or contact us directly to introduce yourself and your
-                            brokerage. We welcome new broker relationships and will provide you with all necessary
-                            submission guidelines, rate sheets, and contact information to get started.</p>
-                    </div>
+                <div class="value-card reveal" style="--i: 1;">
+                    <span class="value-badge">2</span>
+                    <h3>Trust & Integrity</h3>
+                    <p>Reputation and trust are earned through consistent delivery, transparent communication, and
+                        ethical business practices in every transaction.</p>
                 </div>
-                    </div>
-                    </div>
+                <div class="value-card reveal" style="--i: 2;">
+                    <span class="value-badge">3</span>
+                    <h3>Experience Matters</h3>
+                    <p>Decades of combined expertise in alternative lending solidifies our foundation and enables
+                        superior decision-making for our clients.</p>
+                </div>
+                <div class="value-card reveal" style="--i: 3;">
+                    <span class="value-badge">4</span>
+                    <h3>Client-Focused</h3>
+                    <p>Your goals and success drive our decisions. We respond quickly, communicate clearly, and tailor
+                        solutions to fit your unique situation.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-intro reveal">
-                    <p class="cta-intro-label">Partner With Us</p>
-                    <h2 class="cta-intro-title">Submit a Deal</h2>
-                    <p class="cta-intro-desc">Fast approvals and competitive rates. Our broker-first approach means quick decisions and reliable closings for your clients.</p>
+                    <p class="cta-intro-label">Work With Us</p>
+                    <h2 class="cta-intro-title">Let's Talk</h2>
+                    <p class="cta-intro-desc">Whether you're borrowing, investing, or referring deals, our team is ready to help you move forward.</p>
                     <ul class="cta-trust-list" aria-label="Why choose us">
                         <li class="cta-trust-list-item">
                             <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
                             <span>Instant Response</span>
                         </li>
                         <li class="cta-trust-list-item">
-                            <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-                            <span>Competitive Compensation</span>
+                            <span class="cta-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                            <span>Confidential &amp; secure</span>
                         </li>
                     </ul>
                 </div>
-            <div class="cta-box reveal">
-                <div class="cta-box-header">
-                    <h2>Book a Free Consultation</h2>
-                    <p>Complete the form below and our team will respond instantly.</p>
-                    <div class="cta-trust-row">
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 6v6l4 2" />
-                            </svg>
-                            <span>Instant Response</span>
-                </div>
-                        <div class="cta-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                            <span>Confidential & secure</span>
-                    </div>
-                </div>
-                    </div>
-                <div class="cta-box-body" id="ctaBoxBody">
-                    <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
-                        <h3>Thank you!</h3>
-                        <p>We've received your consultation request. Our team will confirm shortly.</p>
-                    </div>
-                    <div class="cta-form-fields">
-                        <form id="consultationForm">
-                        <div class="cta-form-section">
-                            <div class="cta-form-section-title">Your Details</div>
-                <div class="form-row">
-                    <div class="form-group">
-                                        <label for="consultFirstName">First Name</label>
-                                        <input type="text" id="consultFirstName" name="consultFirstName"
-                                            placeholder="e.g. John" required>
-                    </div>
-                    <div class="form-group">
-                                        <label for="consultLastName">Last Name</label>
-                                        <input type="text" id="consultLastName" name="consultLastName"
-                                            placeholder="e.g. Smith" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                                        <label for="consultEmail">Email Address</label>
-                                        <input type="email" id="consultEmail" name="consultEmail"
-                                            placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                                        <label for="consultPhone">Phone Number</label>
-                                        <input type="tel" id="consultPhone" name="consultPhone"
-                                            placeholder="(416) 555-0123" required>
-                    </div>
-                </div>
-                        </div>
-                        <div class="cta-form-section">
-                                <div class="cta-form-section-title">Consultation Details</div>
-                            <div class="form-row form-row-full">
-                    <div class="form-group">
-                                        <label for="consultInterest">I'm interested in</label>
-                                        <select id="consultInterest" name="consultInterest" required>
-                                            <option value="" disabled selected>Select your interest</option>
-                                            <option value="borrowing">Borrowing: Private mortgage or construction
-                                                financing</option>
-                                            <option value="investing">Investing: MIC investment opportunities</option>
-                                            <option value="brokering">Brokering: Partner with us</option>
-                        </select>
-                    </div>
-                </div>
-                            <div class="form-row form-row-full">
-                <div class="form-group">
-                                        <label for="consultMessage">How can we help?</label>
-                                        <textarea id="consultMessage" name="consultMessage"
-                                            placeholder="Tell us about your project, financing needs, or any questions you have."
-                                            required></textarea>
-                </div>
+                <div class="cta-box reveal">
+                    <div class="cta-box-header">
+                        <h2>Book a Free Consultation</h2>
+                        <p>We'd love to hear from you. Reach out today.</p>
+                        <div class="cta-trust-row">
+                            <div class="cta-trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                <span>Instant Response</span>
+                            </div>
+                            <div class="cta-trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>Confidential &amp; secure</span>
                             </div>
                         </div>
-                        <div class="consult-next-wrap" id="consultNextWrap">
-                            <button type="button" id="consultFormNextBtn" class="consult-form-next">Next</button>
+                    </div>
+                    <div class="cta-box-body" id="ctaBoxBody">
+                        <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
+                            <h3>Thank you!</h3>
+                            <p>We've received your consultation request. Our team will confirm shortly.</p>
                         </div>
-                        <div class="cta-form-section consult-schedule-section" id="consultScheduleSection">
-                                <div class="cta-form-section-title">Schedule Your Call</div>
-                                <div class="consult-back-wrap" id="consultBackWrap">
-                                    <button type="button" id="consultFormBackBtn" class="consult-form-back">Back</button>
-                                </div>
-                                <div class="cta-schedule-block hero-schedule-block">
-                                    <div class="cta-schedule-fields">
-                                        <div class="cta-schedule-field">
-                                            <label for="consultDateTrigger">Select Date</label>
-                                            <div class="cta-picker-wrap">
-                                                <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
-                                                    <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-                                                    <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
-                                                    <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
-                                                </button>
-                                                <div class="cta-picker-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
-                                                    <div class="cta-picker-dropdown-inner">
-                                                        <div class="cta-calendar-header">
-                                                            <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
-                                                            <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
-                                                            <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
-                                                        </div>
-                                                        <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
-                                                        <div class="cta-calendar-days" id="consultCalendarDays"></div>
-                                                        <button type="button" class="cta-calendar-action" data-today>Today</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input type="hidden" id="consultDate" name="consultDate" required>
+                        <div class="cta-form-fields">
+                            <form id="consultationForm">
+                                <div class="cta-form-section">
+                                    <div class="cta-form-section-title">Your Details</div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="consultFirstName">First Name</label>
+                                            <input type="text" id="consultFirstName" name="consultFirstName" placeholder="e.g. John" required>
                                         </div>
-                                        <div class="cta-schedule-field">
-                                            <label for="consultTimeTrigger">Select time</label>
-                                            <div class="cta-picker-wrap">
-                                                <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
-                                                    <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-                                                    <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
-                                                    <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
-                                                </button>
-                                                <div class="cta-picker-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
-                                                    <div class="cta-picker-dropdown-inner">
-                                                        <div class="cta-time-inner">
-                                                            <div class="cta-time-grid" id="consultTimeGrid"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input type="hidden" id="consultTime" name="consultTime" required>
+                                        <div class="form-group">
+                                            <label for="consultLastName">Last Name</label>
+                                            <input type="text" id="consultLastName" name="consultLastName" placeholder="e.g. Smith" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="consultEmail">Email Address</label>
+                                            <input type="email" id="consultEmail" name="consultEmail" placeholder="john@example.com" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="consultPhone">Phone Number</label>
+                                            <input type="tel" id="consultPhone" name="consultPhone" placeholder="(416) 555-0123" required>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="cta-form-section">
+                                    <div class="cta-form-section-title">Consultation Details</div>
+                                    <div class="form-row form-row-full">
+                                        <div class="form-group">
+                                            <label for="consultInterest">I'm interested in</label>
+                                            <select id="consultInterest" name="consultInterest" required>
+                                                <option value="" disabled selected>Select your interest</option>
+                                                <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
+                                                <option value="investing">Investing: MIC investment opportunities</option>
+                                                <option value="brokering">Brokering: Partner with us</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row form-row-full">
+                                        <div class="form-group">
+                                            <label for="consultMessage">How can we help?</label>
+                                            <textarea id="consultMessage" name="consultMessage" placeholder="Tell us about your project, financing needs, or any questions you have." required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="consult-next-wrap" id="consultNextWrap">
+                                    <button type="button" id="consultFormNextBtn" class="consult-form-next">Next</button>
+                                </div>
+                                <div class="cta-form-section consult-schedule-section" id="consultScheduleSection">
+                                    <div class="cta-form-section-title">Schedule Your Call</div>
+                                    <div class="consult-back-wrap" id="consultBackWrap">
+                                        <button type="button" id="consultFormBackBtn" class="consult-form-back">Back</button>
+                                    </div>
+                                    <div class="cta-schedule-block hero-schedule-block">
+                                        <div class="cta-schedule-fields">
+                                            <div class="cta-schedule-field">
+                                                <label for="consultDateTrigger">Select Date</label>
+                                                <div class="cta-picker-wrap">
+                                                    <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
+                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+                                                        <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
+                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                    </button>
+                                                    <div class="cta-picker-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
+                                                        <div class="cta-picker-dropdown-inner">
+                                                            <div class="cta-calendar-header">
+                                                                <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
+                                                                <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
+                                                                <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
+                                                            </div>
+                                                            <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                                                            <div class="cta-calendar-days" id="consultCalendarDays"></div>
+                                                            <button type="button" class="cta-calendar-action" data-today>Today</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="consultDate" name="consultDate" required>
+                                            </div>
+                                            <div class="cta-schedule-field">
+                                                <label for="consultTimeTrigger">Select time</label>
+                                                <div class="cta-picker-wrap">
+                                                    <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
+                                                        <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                                        <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
+                                                        <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                                    </button>
+                                                    <div class="cta-picker-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
+                                                        <div class="cta-picker-dropdown-inner">
+                                                            <div class="cta-time-inner">
+                                                                <div class="cta-time-grid" id="consultTimeGrid"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="consultTime" name="consultTime" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta-submit-wrap" id="consultSubmitWrap">
+                                    <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="cta-submit-wrap" id="consultSubmitWrap">
-                                <button type="submit" id="consultSubmitBtn">Schedule Consultation</button>
-                        </div>
-            </form>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -3815,8 +3403,8 @@
         <div class="footer-main">
             <div class="container">
                 <div class="footer-grid">
-            <div class="footer-brand">
-                        <a href="/" class="logo"><img src="images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
+                    <div class="footer-brand">
+                        <a href="/" class="logo"><img src="/images/RC-logo-white.png" alt="Richview Capital" width="400" height="254" decoding="async" loading="lazy" class="logo-img"></a>
                         <p>Private mortgage lending and construction financing with disciplined underwriting. A licensed
                             Mortgage Investment Corporation serving Ontario homeowners, investors, and brokers.</p>
                         <div class="footer-social">
@@ -3827,28 +3415,28 @@
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                                 </svg></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                            <li><a href="/borrowers">Borrowers</a></li>
-                            <li><a href="/brokers">Brokers</a></li>
-                            <li><a href="/investors">Investors</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/faq">FAQ</a></li>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/borrowers/">Borrowers</a></li>
+                            <li><a href="/brokers/">Brokers</a></li>
+                            <li><a href="/investors/">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/faq/">FAQ</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="/privacy">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
+                            <li><a href="/privacy/">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
                         <h4>Get in Touch</h4>
-                <div class="footer-contact-item">
+                        <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -3858,8 +3446,8 @@
                                 target="_blank" rel="noopener">
                                 7681 Highway 27 Unit 15, Suite 200<br>Woodbridge ON, L4L 4M5
                             </a>
-                </div>
-                <div class="footer-contact-item">
+                        </div>
+                        <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
@@ -3867,17 +3455,17 @@
                                     <polyline points="22,6 12,13 2,6" />
                                 </svg></span>
                             <a href="mailto:info@richviewcapitalmic.com">info@richviewcapitalmic.com</a>
-                </div>
-                <div class="footer-contact-item">
+                        </div>
+                        <div class="footer-contact-item">
                             <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
                                         d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg></span>
                             <a href="tel:+14163072336">416 307 2336</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
             </div>
         </div>
         <div class="footer-divider">
@@ -3891,10 +3479,10 @@
                         # - 13171</span>
                 </div>
                 <div class="footer-bottom-right">
-            <div class="footer-legal">
-                    <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-                    <a href="/disclaimer">Disclaimer</a>
+                    <div class="footer-legal">
+                    <a href="/privacy/">Privacy</a>
+                    <a href="/terms/">Terms</a>
+                    <a href="/disclaimer/">Disclaimer</a>
                 </div>
                 <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
                     aria-label="Back to top">
@@ -3908,18 +3496,17 @@
         </div>
     </footer>
 
-    <script src="js/lottie-utils.js"></script>
+    <script src="/js/lottie-utils.js"></script>
     <script>
 
         (function () {
-            function initMobileNav() {
             var nav = document.getElementById('mainNav');
             var btn = document.getElementById('mobileMenuBtn');
             var menu = document.getElementById('navLinks');
             if (!btn || !menu) return;
-                if (btn._navInit) return;
-                btn._navInit = true;
-                btn.addEventListener('click', function () {
+            if (btn.hasAttribute('data-listener-attached')) return;
+            btn.setAttribute('data-listener-attached', 'true');
+            btn.addEventListener('click', function () {
                 var isOpen = menu.classList.toggle('active');
                 nav.classList.toggle('menu-open', isOpen);
                 btn.setAttribute('aria-expanded', isOpen);
@@ -3932,7 +3519,7 @@
                     var dropdown = this.closest('.nav-dropdown');
                     var isTrigger = dropdown && (dropdown.firstElementChild === this);
                     if (isTrigger) {
-                e.preventDefault();
+                        e.preventDefault();
                         e.stopPropagation();
                         dropdown.classList.toggle('open');
                         return;
@@ -3943,49 +3530,57 @@
                     btn.setAttribute('aria-label', 'Open menu');
                     document.body.style.overflow = '';
                     document.querySelectorAll('#navLinks .nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
+                });
             });
-        });
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMobileNav);
-            } else {
-                initMobileNav();
-            }
         })();
 
-        (function () { var nav = document.getElementById('mainNav'); var lastScrollY = 0; var scrollThreshold = 120; function onScroll() { if (!nav) return; var y = window.pageYOffset || document.documentElement.scrollTop; nav.classList.toggle('scrolled', y > 30); if (nav.classList.contains('menu-open')) { lastScrollY = y; return; } if (y <= scrollThreshold) nav.classList.remove('nav-hidden'); else if (y > lastScrollY) nav.classList.add('nav-hidden'); else nav.classList.remove('nav-hidden'); lastScrollY = y; document.querySelectorAll('.reveal').forEach(function (el) { var rect = el.getBoundingClientRect(); if (rect.top < window.innerHeight - 80) el.classList.add('visible'); }); } window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); })();
-        document.querySelectorAll('.reveal').forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 80) el.classList.add('visible');
-        });
+        (function () {
+            var nav = document.getElementById('mainNav');
+            var lastScrollY = 0;
+            var scrollThreshold = 120;
+            function onScroll() {
+                if (!nav) return;
+                var y = window.pageYOffset || document.documentElement.scrollTop;
+                nav.classList.toggle('scrolled', y > 30);
+                if (nav.classList.contains('menu-open')) { lastScrollY = y; return; }
+                if (y <= scrollThreshold) nav.classList.remove('nav-hidden');
+                else if (y > lastScrollY) nav.classList.add('nav-hidden');
+                else nav.classList.remove('nav-hidden');
+                lastScrollY = y;
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
 
-        document.querySelectorAll('.faq-q').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.faq-item');
-                const wasOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('open');
-                    const b = i.querySelector('.faq-q');
-                    if (b) b.setAttribute('aria-expanded', 'false');
-                });
-                if (!wasOpen) {
-                    item.classList.add('open');
-                    btn.setAttribute('aria-expanded', 'true');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+
+        document.querySelectorAll('.tc-toggle').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var card = this.closest('.team-card');
+                var isOpen = card.classList.toggle('is-open');
+                this.setAttribute('aria-expanded', isOpen);
+                this.querySelector('.tc-toggle-text').textContent = isOpen ? 'Show less' : 'Read more';
+                var bio = card.querySelector('.tc-bio');
+                if (bio) bio.setAttribute('aria-hidden', !isOpen);
             });
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
             a.addEventListener('click', function (e) {
-                const h = this.getAttribute('href');
+                var h = this.getAttribute('href');
                 if (h && h !== '#' && !this.closest('.nav-dropdown')) {
-                    const t = document.querySelector(h);
+                    var t = document.querySelector(h);
                     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
                 }
-            });
+            })
         });
-
-
 
         (function() {
             var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/cc5524bb-cf46-4c3f-b7a9-ab502924fbe3';
@@ -4069,7 +3664,7 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    window.location.href = '/thank-you';
+                    window.location.href = '/thank-you/';
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
@@ -4120,7 +3715,6 @@
             }
 
             function closeDropdown(dd) { if (dd) dd.classList.remove('is-open'); }
-
             function openDropdown(dd, trigger) {
                 closeDropdown(dateDropdown);
                 closeDropdown(timeDropdown);

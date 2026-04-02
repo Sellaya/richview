@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Richview Capital MIC - canonical pretty URLs; lastmod = source file mtime (UTC date). Excluded: /thank-you (noindex). -->
+<!-- Directory-style URLs (trailing slash); matches folder/index.html layout. Excluded: /thank-you/ (noindex). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://richviewcapitalmic.com/</loc>
@@ -8,79 +8,79 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/about</loc>
+    <loc>https://richviewcapitalmic.com/about/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/borrowers</loc>
+    <loc>https://richviewcapitalmic.com/borrowers/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/brokers</loc>
+    <loc>https://richviewcapitalmic.com/brokers/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/investors</loc>
+    <loc>https://richviewcapitalmic.com/investors/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/faq</loc>
+    <loc>https://richviewcapitalmic.com/faq/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/blog</loc>
+    <loc>https://richviewcapitalmic.com/blog/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/blog/second-mortgages-when-they-help</loc>
+    <loc>https://richviewcapitalmic.com/blog/second-mortgages-when-they-help/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/blog/construction-financing-ontario</loc>
+    <loc>https://richviewcapitalmic.com/blog/construction-financing-ontario/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/blog/mics-registered-accounts</loc>
+    <loc>https://richviewcapitalmic.com/blog/mics-registered-accounts/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/what-is-a-mic</loc>
+    <loc>https://richviewcapitalmic.com/what-is-a-mic/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/privacy</loc>
+    <loc>https://richviewcapitalmic.com/privacy/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/terms</loc>
+    <loc>https://richviewcapitalmic.com/terms/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/disclaimer</loc>
+    <loc>https://richviewcapitalmic.com/disclaimer/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
