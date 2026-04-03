@@ -64,3 +64,11 @@ a.cta-nav:focus-visible {
 .skip-link:focus-visible {
     outline-offset: 2px;
 }
+
+/* Borrower-only financing type (hero + consultation forms); toggled with .is-visible */
+.hero-borrower-loan-type-wrap {
+    display: none !important;
+}
+.hero-borrower-loan-type-wrap.is-visible {
+    display: block !important;
+}

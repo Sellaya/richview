@@ -3526,6 +3526,18 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-row form-row-full hero-borrower-loan-type-wrap" id="consultBorrowerLoanTypeWrap" aria-hidden="true">
+                                    <div class="form-group">
+                                        <label for="consultBorrowerLoanType">Financing type</label>
+                                        <select id="consultBorrowerLoanType" name="consultBorrowerLoanType" tabindex="-1">
+                                            <option value="" selected disabled>Select financing type</option>
+                                            <option value="Construction Financing">Construction Financing</option>
+                                            <option value="First Mortgage">First Mortgage</option>
+                                            <option value="Second Mortgage">Second Mortgage</option>
+                                            <option value="Bridge Financing">Bridge Financing</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-row form-row-full">
                                     <div class="form-group">
                                         <label for="consultMessage">How can we help?</label>
@@ -3768,6 +3780,30 @@
 
 
 
+        (function consultBorrowerLoanTypeInit() {
+            var interest = document.getElementById('consultInterest');
+            var wrap = document.getElementById('consultBorrowerLoanTypeWrap');
+            var loanSel = document.getElementById('consultBorrowerLoanType');
+            if (!interest || !wrap || !loanSel) return;
+            function sync() {
+                var borrowing = interest.value === 'borrowing';
+                if (borrowing) {
+                    wrap.classList.add('is-visible');
+                    wrap.setAttribute('aria-hidden', 'false');
+                    loanSel.removeAttribute('tabindex');
+                    loanSel.setAttribute('required', 'required');
+                } else {
+                    wrap.classList.remove('is-visible');
+                    wrap.setAttribute('aria-hidden', 'true');
+                    loanSel.setAttribute('tabindex', '-1');
+                    loanSel.removeAttribute('required');
+                    loanSel.selectedIndex = 0;
+                }
+            }
+            interest.addEventListener('change', sync);
+            sync();
+        })();
+
         (function() {
             var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/cc5524bb-cf46-4c3f-b7a9-ab502924fbe3';
             var form = document.getElementById('consultationForm');
@@ -3786,6 +3822,15 @@
                 }
                 var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
                 var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
+                var _interest = ((document.getElementById('consultInterest') || {}).value || '').trim();
+                var _loanType = ((document.getElementById('consultBorrowerLoanType') || {}).value || '').trim();
+                var _msgRaw = ((document.getElementById('consultMessage')  || {}).value || '').trim();
+                if (_interest === 'borrowing' && !_loanType) {
+                    alert('Please select a financing type (Construction, First Mortgage, Second Mortgage, or Bridge).');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    return;
+                }
                 var _date = ((document.getElementById('consultDate') || {}).value || '').trim();
                 var _time = ((document.getElementById('consultTime') || {}).value || '').trim();
 
@@ -3816,6 +3861,10 @@
                     schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + timeStr;
                 }
                 var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
+                var messageForGhl = _msgRaw;
+                if (_interest === 'borrowing' && _loanType) {
+                    messageForGhl = 'Financing type: ' + _loanType + (_msgRaw ? '\n\n' + _msgRaw : '');
+                }
                 var payload = {
                     form_name:    'Book a Free Consultation',
                     first_name:   _fn,
@@ -3823,8 +3872,10 @@
                     name:         (_fn + ' ' + _ln).trim(),
                     email:        ((document.getElementById('consultEmail')    || {}).value || '').trim(),
                     phone:        ((document.getElementById('consultPhone')    || {}).value || '').trim(),
-                    service:      ((document.getElementById('consultInterest') || {}).value || '').trim(),
-                    message:      ((document.getElementById('consultMessage')  || {}).value || '').trim(),
+                    service:      _interest,
+                    borrower_loan_type: _interest === 'borrowing' ? _loanType : '',
+                    message:      messageForGhl,
+                    message_user: _msgRaw,
                     consultation_date: _date,
                     consultation_time: _time,
                     schedule_call: schedule_call,
