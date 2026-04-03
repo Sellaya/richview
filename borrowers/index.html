@@ -3531,10 +3531,14 @@
                                         <label for="consultBorrowerLoanType">Financing type</label>
                                         <select id="consultBorrowerLoanType" name="consultBorrowerLoanType" tabindex="-1">
                                             <option value="" selected disabled>Select financing type</option>
+                                            <option value="First Mortgages">First Mortgages</option>
+                                            <option value="Second Mortgages">Second Mortgages</option>
                                             <option value="Construction Financing">Construction Financing</option>
-                                            <option value="First Mortgage">First Mortgage</option>
-                                            <option value="Second Mortgage">Second Mortgage</option>
                                             <option value="Bridge Financing">Bridge Financing</option>
+                                            <option value="Land Financing">Land Financing</option>
+                                            <option value="HELOC">HELOC</option>
+                                            <option value="Commercial Mortgages">Commercial Mortgages</option>
+                                            <option value="Refinancing">Refinancing</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3826,7 +3830,7 @@
                 var _loanType = ((document.getElementById('consultBorrowerLoanType') || {}).value || '').trim();
                 var _msgRaw = ((document.getElementById('consultMessage')  || {}).value || '').trim();
                 if (_interest === 'borrowing' && !_loanType) {
-                    alert('Please select a financing type (Construction, First Mortgage, Second Mortgage, or Bridge).');
+                    alert('Please select a financing type.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
                     else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                     return;
