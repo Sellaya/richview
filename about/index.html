@@ -9,6 +9,9 @@
         content="Meet the team and learn the values behind Richview Capital MIC. Industry experts driving strategic vision in private mortgage lending across Ontario.">
     <link rel="icon" href="/images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
+    <!-- Meta Pixel -->
+    <script src="/js/meta-pixel.js"></script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3033942923462161&ev=PageView&noscript=1" alt="" /></noscript>
     <link rel="canonical" href="https://richviewcapitalmic.com/about/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="About Richview Capital MIC | Our Team & Company Values">
@@ -3751,7 +3754,11 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    window.location.href = '/thank-you/';
+                    if (window.RichviewMetaPixel && window.RichviewMetaPixel.trackLeadAndRedirect) {
+                        window.RichviewMetaPixel.trackLeadAndRedirect({ content_name: payload.form_name });
+                    } else {
+                        window.location.href = '/thank-you/';
+                    }
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');

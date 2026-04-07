@@ -9,6 +9,9 @@
         content="Learn how a Mortgage Investment Corporation (MIC) works, its benefits, and how it provides secure, asset-backed returns for investors in Ontario.">
     <link rel="icon" href="/images/logo.png" type="image/png">
     <meta name="theme-color" content="#0B1635">
+    <!-- Meta Pixel -->
+    <script src="/js/meta-pixel.js"></script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3033942923462161&ev=PageView&noscript=1" alt="" /></noscript>
     <link rel="canonical" href="https://richviewcapitalmic.com/what-is-a-mic/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="What is a MIC? | Richview Capital">
@@ -3380,7 +3383,11 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
-                    window.location.href = '/thank-you/';
+                    if (window.RichviewMetaPixel && window.RichviewMetaPixel.trackLeadAndRedirect) {
+                        window.RichviewMetaPixel.trackLeadAndRedirect({ content_name: payload.form_name });
+                    } else {
+                        window.location.href = '/thank-you/';
+                    }
                 } catch (err) {
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
