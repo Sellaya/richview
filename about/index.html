@@ -833,8 +833,9 @@
             box-shadow: 0 6px 22px rgba(255, 102, 0, 0.15);
         }
 
-        /* Larger photo for leadership */
-        .team-leaders-grid .tc-photo {
+        /* Leadership + Our Team: same headshot size */
+        .team-leaders-grid .tc-photo,
+        .team-cards-grid .tc-photo {
             width: 160px;
             height: 160px;
         }
@@ -1734,7 +1735,8 @@
             }
 
             .tc-photo { width: 100px; height: 100px; }
-            .team-leaders-grid .tc-photo { width: 140px; height: 140px; }
+            .team-leaders-grid .tc-photo,
+            .team-cards-grid .tc-photo { width: 140px; height: 140px; }
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
