@@ -15,6 +15,11 @@ html {
     scroll-padding-top: clamp(4rem, 12vw, 5.5rem);
 }
 
+/* Deep link to consultation form fields (skips section intro / trust copy on mobile) */
+#contact-form {
+    scroll-margin-top: clamp(5.25rem, 14vw, 7rem);
+}
+
 /* --- Unified footer wordmark (replaces inline drift across pages) --- */
 .footer-brand .logo-img {
     height: clamp(var(--rv-footer-logo-min), 12vw, var(--rv-footer-logo-max));
