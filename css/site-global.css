@@ -77,3 +77,58 @@ a.cta-nav:focus-visible {
 .hero-borrower-loan-type-wrap.is-visible {
     display: block !important;
 }
+
+/* --- Footer: legal links + back-to-top stay on one row (fixes missing .footer-bottom-right flex on some pages) --- */
+footer .footer-bottom-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: clamp(0.65rem, 2vw, 1.25rem);
+    min-width: 0;
+}
+
+footer .footer-bottom-right .footer-legal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(0.5rem, 1.5vw, 1.25rem);
+    min-width: 0;
+}
+
+footer .footer-bottom-right .footer-legal a {
+    white-space: nowrap;
+}
+
+footer .footer-bottom-right .footer-back-top {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    footer .footer-bottom-right {
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    footer .footer-bottom-right .footer-legal {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    footer .footer-bottom-right {
+        gap: 0.45rem;
+    }
+
+    footer .footer-bottom-right .footer-legal {
+        gap: 0.4rem;
+    }
+
+    footer .footer-bottom-right .footer-legal a {
+        font-size: 0.75rem;
+    }
+}
