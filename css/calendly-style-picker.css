@@ -306,18 +306,28 @@
 /* ========== Schedule consultation button - fluid, mobile first ========== */
 .hero-form-wrap .hero-form-submit {
     flex: 0 1 auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     min-height: var(--form-btn-min-h);
-    padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.65rem, 3vw, 1rem);
+    padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.75rem, 3vw, 1.05rem);
     font-size: clamp(0.8rem, 2vw, 0.9375rem);
     font-weight: 600;
     border-radius: var(--form-radius-lg);
+    box-sizing: border-box;
 }
 .hero-form-wrap .hero-form-back,
 .hero-form-wrap .hero-form-next {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     min-height: var(--form-btn-min-h);
     padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.5rem, 2.2vw, 0.8rem);
     font-size: clamp(0.8rem, 2vw, 0.9375rem);
     border-radius: var(--form-radius-lg);
+    box-sizing: border-box;
 }
 
 /* Step dots - fluid size */

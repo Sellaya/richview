@@ -28,9 +28,9 @@ section.map-strip {
     z-index: 2;
 }
 
-/* Match homepage hero multistep card width in the CTA grid (calendly-style-picker caps .hero-form-wrap at ~360px) */
+/* Width + overflow: hero-multistep-form.css aligns max-width with homepage hero */
 #contact .cta-box.hero-form-wrap {
-    max-width: min(100%, 520px);
+    overflow: visible;
 }
 
 #contact .cta-box-body,
@@ -39,7 +39,7 @@ section.map-strip {
 }
 
 /*
- * Schedule step must stack above #consultSubmitWrap (later sibling), or the submit
+ * Schedule step must stack above the nav row (later sibling), or the submit
  * bar captures clicks and the time/calendar popovers look "broken".
  */
 #consultScheduleSection {
@@ -48,7 +48,7 @@ section.map-strip {
     z-index: 20;
 }
 
-#contact #consultSubmitWrap {
+#contact .hero-form-wrap .hero-form-nav {
     position: relative;
     z-index: 0;
 }

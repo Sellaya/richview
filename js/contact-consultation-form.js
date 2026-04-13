@@ -1,4 +1,11 @@
-(function consultBorrowerLoanTypeInit() {
+(function consultPhoneTitleInit() {
+            var p = document.getElementById('consultPhone');
+            if (p && !p.getAttribute('title')) {
+                p.setAttribute('title', 'Enter a 10-digit Canadian phone number');
+            }
+        })();
+
+        (function consultBorrowerLoanTypeInit() {
             var interest = document.getElementById('consultInterest');
             var wrap = document.getElementById('consultBorrowerLoanTypeWrap');
             var loanSel = document.getElementById('consultBorrowerLoanType');
@@ -40,6 +47,15 @@
                 }
                 var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
                 var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
+                var _phoneDigits = ((document.getElementById('consultPhone') || {}).value || '').replace(/\D/g, '');
+                if (_phoneDigits.length !== 10) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    var telEl = document.getElementById('consultPhone');
+                    if (telEl && telEl.focus) telEl.focus();
+                    return;
+                }
                 var _interest = ((document.getElementById('consultInterest') || {}).value || '').trim();
                 var _loanType = ((document.getElementById('consultBorrowerLoanType') || {}).value || '').trim();
                 var _msgRaw = ((document.getElementById('consultMessage')  || {}).value || '').trim();
@@ -397,7 +413,9 @@
                 timeTrigger.setAttribute('aria-expanded', 'false');
             });
 
-(function consultMultistepInit() {
+        })();
+
+        (function consultMultistepInit() {
             var form = document.getElementById('consultationForm');
             var steps = form && form.querySelectorAll('.hero-form-step');
             var stepDots = form && form.querySelectorAll('.hero-step-dot');
@@ -427,6 +445,12 @@
                 submitBtn.style.display = step === totalSteps ? 'inline-flex' : 'none';
             }
 
+            function phoneHasTenDigits(el) {
+                if (!el || el.type !== 'tel') return true;
+                var digits = (el.value || '').replace(/\D/g, '');
+                return digits.length === 10;
+            }
+
             function validateStep(step) {
                 var panel = form.querySelector('.hero-form-step[data-step="' + step + '"]');
                 if (!panel) return true;
@@ -437,6 +461,16 @@
                     if (!el.value || (typeof el.value === 'string' && !el.value.trim())) {
                         if (el.type !== 'hidden') el.reportValidity && el.reportValidity();
                         else alert('Please select date and time.');
+                        return false;
+                    }
+                }
+                if (step === 1) {
+                    var tel = document.getElementById('consultPhone');
+                    var telInStep = tel && tel.closest && tel.closest('.hero-form-step.active');
+                    if (telInStep && !phoneHasTenDigits(tel)) {
+                        tel.setCustomValidity('Please enter a 10-digit phone number.');
+                        if (tel.reportValidity) tel.reportValidity();
+                        tel.setCustomValidity('');
                         return false;
                     }
                 }
@@ -455,6 +489,7 @@
                 });
             });
             goToStep(1);
+        })();
 
         (function () {
             function fmtCA(el) {
@@ -473,7 +508,10 @@
                 el.setAttribute('maxlength', '14');
                 el.setAttribute('inputmode', 'numeric');
                 el.setAttribute('autocomplete', 'tel-national');
-                el.addEventListener('input', function () { fmtCA(this); });
+                el.addEventListener('input', function () {
+                    fmtCA(this);
+                    this.setCustomValidity('');
+                });
                 el.addEventListener('keydown', function (e) {
                     // Allow: backspace(8), delete(46), tab(9), enter(13), esc(27),
                     //        arrows(35-40), and ctrl/cmd shortcuts
@@ -489,9 +527,9 @@
                     fmtCA(this);
                 });
             });
+        })();
 
-
-(function contactCtaRevealInit() {
+        (function contactCtaRevealInit() {
     if (!document.getElementById('contact')) return;
     var els = document.querySelectorAll('#contact .reveal');
     if (!els.length) return;
