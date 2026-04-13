@@ -35,6 +35,10 @@
     <link rel="stylesheet" href="/css/nav-hover-orange.css">
     <link rel="stylesheet" href="/css/button-contrast.css">
     <link rel="stylesheet" href="/css/site-global.css">
+
+    <link rel="stylesheet" href="/css/contact-cta-section.css">
+    <link rel="stylesheet" href="/css/consult-schedule-section.css">
+    <link rel="stylesheet" href="/css/calendly-style-picker.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -66,9 +70,9 @@
                     </div>
                 </li>
                 <li><a href="/blog/">Blog</a></li>
-                <li class="mobile-cta-li" style="display:none"><a href="/#contact" style="color:var(--orange)">Get Started</a></li>
+                <li class="mobile-cta-li" style="display:none"><a href="#contact" style="color:var(--orange)">Get Started</a></li>
             </ul>
-            <a href="/#contact" class="cta-nav">Get Started</a>
+            <a href="#contact" class="cta-nav">Get Started</a>
         </div>
     </nav>
 
@@ -89,12 +93,190 @@
                     <h2>On our site</h2>
                     <p>Program specifics and eligibility are outlined in our borrower-facing materials and FAQ - not in this summary.</p>
                 </div>
-                <p class="post-cta">Next steps: <a href="/borrowers/">Borrowers</a> · <a href="/#contact">Contact</a> · <a href="/faq/">FAQ</a></p>
+                <p class="post-cta">Next steps: <a href="/borrowers/">Borrowers</a> · <a href="#contact">Contact</a> · <a href="/faq/">FAQ</a></p>
                 <p class="post-disclaimer">General information only; not an offer. All financing is subject to approval and underwriting.</p>
             </div>
         </article>
     </main>
 
+
+<section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-intro reveal">
+                    <p class="cta-intro-label">Get in touch</p>
+                    <h2 class="cta-intro-title">Book a Consultation</h2>
+                    <p class="cta-intro-desc">Speak with our experienced team about your financing needs. We'll help you explore options and find the right solution.</p>
+                    <ul class="cta-trust-list" aria-label="Why choose us">
+                        <li class="cta-trust-list-item">
+                            <span class="cta-trust-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </span>
+                            <span>Licensed MIC #13171</span>
+                        </li>
+                        <li class="cta-trust-list-item">
+                            <span class="cta-trust-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </span>
+                            <span>Confidential & secure</span>
+                        </li>
+                    </ul>
+                </div>
+                                <div class="cta-box hero-form-wrap reveal">
+                <div class="cta-box-header">
+                    <h2>Book a Free Consultation</h2>
+                    <p>Get expert guidance with no obligation.</p>
+                    <div class="cta-trust-row">
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Licensed MIC #13171</span>
+                        </div>
+                        <div class="cta-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Confidential &amp; secure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-box-body" id="ctaBoxBody">
+                    <div class="cta-form-success" id="ctaFormSuccess" aria-live="polite">
+                        <h3>Thank you!</h3>
+                        <p>We've received your consultation request. Our team will confirm shortly.</p>
+                    </div>
+                    <div class="cta-form-fields hero-multistep-fields" id="contact-form">
+                    <form id="consultationForm">
+                        <div class="hero-form-steps" role="tablist" aria-label="Form steps">
+                            <button type="button" class="hero-step-dot active" data-step="1" aria-current="step" aria-label="Step 1"><span></span></button>
+                            <button type="button" class="hero-step-dot" data-step="2" aria-label="Step 2"><span></span></button>
+                            <button type="button" class="hero-step-dot" data-step="3" aria-label="Step 3"><span></span></button>
+                        </div>
+                        <div class="hero-form-step active" data-step="1" role="tabpanel">
+                            <div class="hero-step-title">Your Details</div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="consultFirstName">First Name</label>
+                                    <input type="text" id="consultFirstName" name="consultFirstName" placeholder="e.g. John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="consultLastName">Last Name</label>
+                                    <input type="text" id="consultLastName" name="consultLastName" placeholder="e.g. Smith" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="consultEmail">Email Address</label>
+                                    <input type="email" id="consultEmail" name="consultEmail" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="consultPhone">Phone Number</label>
+                                    <input type="tel" id="consultPhone" name="consultPhone" placeholder="(416) 555-0123" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-form-step" data-step="2" role="tabpanel">
+                            <div class="hero-step-title">Consultation Details</div>
+                            <div class="form-row form-row-full">
+                                <div class="form-group">
+                                    <label for="consultInterest">I'm interested in</label>
+                                    <select id="consultInterest" name="consultInterest" required>
+                                        <option value="" disabled selected>Select your interest</option>
+                                        <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
+                                        <option value="investing">Investing: MIC investment opportunities</option>
+                                        <option value="brokering">Brokering: Partner with us</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-full hero-borrower-loan-type-wrap" id="consultBorrowerLoanTypeWrap" aria-hidden="true">
+                                <div class="form-group">
+                                    <label for="consultBorrowerLoanType">Financing type</label>
+                                    <select id="consultBorrowerLoanType" name="consultBorrowerLoanType" tabindex="-1">
+                                        <option value="" selected disabled>Select financing type</option>
+                                        <option value="First Mortgages">First Mortgages</option>
+                                        <option value="Second Mortgages">Second Mortgages</option>
+                                        <option value="Construction Financing">Construction Financing</option>
+                                        <option value="Bridge Financing">Bridge Financing</option>
+                                        <option value="Land Financing">Land Financing</option>
+                                        <option value="HELOC">HELOC</option>
+                                        <option value="Commercial Mortgages">Commercial Mortgages</option>
+                                        <option value="Refinancing">Refinancing</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-full">
+                                <div class="form-group">
+                                    <label for="consultMessage">How can we help?</label>
+                                    <textarea id="consultMessage" name="consultMessage" placeholder="Tell us about your project, financing needs, or any questions you have." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-form-step consult-schedule-section" id="consultScheduleSection" data-step="3" role="tabpanel">
+                            <div class="hero-step-title">Schedule Your Call</div>
+                            <div class="cta-schedule-block hero-schedule-block">
+                                <div class="cta-schedule-fields">
+                                    <div class="cta-schedule-field">
+                                        <label for="consultDateTrigger">Select Date</label>
+                                        <div class="cta-picker-wrap">
+                                            <button type="button" id="consultDateTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick date">
+                                                <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+                                                <span class="cta-picker-value placeholder" id="consultDateValue">Choose date</span>
+                                                <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                            </button>
+                                            <div class="cta-picker-dropdown hero-date-dropdown" id="consultDateDropdown" role="dialog" aria-label="Calendar">
+                                                <div class="cta-picker-dropdown-inner cta-calendar-card">
+                                                    <div class="cta-calendar-header">
+                                                        <button type="button" class="cta-calendar-nav cta-calendar-prev" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
+                                                        <span class="cta-calendar-month-year" id="consultCalendarMonthYear">March 2026</span>
+                                                        <button type="button" class="cta-calendar-nav cta-calendar-next" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
+                                                    </div>
+                                                    <div class="cta-calendar-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                                                    <div class="cta-calendar-days" id="consultCalendarDays"></div>
+                                                    <button type="button" class="cta-calendar-today" data-today>Today</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="consultDate" name="consultDate" required>
+                                    </div>
+                                    <div class="cta-schedule-field">
+                                        <label for="consultTimeTrigger">Select time</label>
+                                        <div class="cta-picker-wrap">
+                                            <button type="button" id="consultTimeTrigger" class="cta-picker-trigger" aria-expanded="false" aria-haspopup="dialog" aria-label="Pick time">
+                                                <svg class="cta-schedule-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                                <span class="cta-picker-value placeholder" id="consultTimeValue">Choose time</span>
+                                                <svg class="cta-picker-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l5 5 5-5"></path></svg>
+                                            </button>
+                                            <div class="cta-picker-dropdown hero-time-dropdown" id="consultTimeDropdown" role="dialog" aria-label="Time slots">
+                                                <div class="cta-picker-dropdown-inner cta-time-card">
+                                                    <div class="cta-time-header">Available times (30 min)</div>
+                                                    <div class="cta-time-inner">
+                                                        <div class="cta-time-grid" id="consultTimeGrid"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="consultTime" name="consultTime" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-form-nav" id="consultSubmitWrap">
+                            <button type="button" class="hero-form-btn hero-form-back" id="consultFormBackBtn" aria-label="Go back">Back</button>
+                            <div class="hero-form-nav-spacer"></div>
+                            <button type="button" class="hero-form-btn hero-form-next" id="consultFormNextBtn">Next</button>
+                            <button type="submit" id="consultSubmitBtn" class="hero-form-btn hero-form-submit">Schedule Consultation</button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="hero-form-footer" aria-label="Form trust footer">
+                        <div class="hero-form-footer-brand">
+                            <img src="/images/logo.png" alt="Richview Capital" class="hero-form-footer-logo" loading="lazy" width="20" height="20">
+                            <span class="hero-form-footer-name">Richview Capital</span>
+                        </div>
+                        <p class="hero-form-footer-meta">Confidential &amp; secure</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -119,7 +301,7 @@
                         <ul>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/faq/">FAQ</a></li>
-                            <li><a href="/#contact">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                             <li><a href="/privacy/">Privacy Policy</a></li>
                         </ul>
                     </div>
@@ -163,5 +345,9 @@
     (function(){var n=document.getElementById('mainNav'),b=document.getElementById('mobileMenuBtn'),m=document.getElementById('navLinks');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('active');n.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',function(e){var d=this.closest('.nav-dropdown'),t=d&&d.firstElementChild===this;if(t){e.preventDefault();d.classList.toggle('open');return}m.classList.remove('active');n.classList.remove('menu-open');document.body.style.overflow=''})})})();
     (function(){var n=document.getElementById('mainNav');if(!n)return;var y0=0;function s(){var y=window.pageYOffset||0;n.classList.toggle('scrolled',y>30);if(y<=120)n.classList.remove('nav-hidden');else if(y>y0)n.classList.add('nav-hidden');else n.classList.remove('nav-hidden');y0=y}window.addEventListener('scroll',s,{passive:true});s()})();
     </script>
+
+    <script src="/js/lottie-utils.js"></script>
+    <script src="/js/contact-consultation-form.js"></script>
+
 </body>
 </html>
