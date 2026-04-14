@@ -171,6 +171,9 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
+                    if (window.RichviewGoogle && window.RichviewGoogle.trackConsultationLead) {
+                        window.RichviewGoogle.trackConsultationLead({ form_name: payload.form_name });
+                    }
                     if (window.RichviewMetaPixel && window.RichviewMetaPixel.trackLeadAndRedirect) {
                         window.RichviewMetaPixel.trackLeadAndRedirect({ content_name: payload.form_name });
                     } else {
@@ -298,6 +301,9 @@
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
+                    if (window.RichviewGoogle && window.RichviewGoogle.trackConsultationLead) {
+                        window.RichviewGoogle.trackConsultationLead({ form_name: payload.form_name });
+                    }
                     if (window.RichviewMetaPixel && window.RichviewMetaPixel.trackLeadAndRedirect) {
                         window.RichviewMetaPixel.trackLeadAndRedirect({ content_name: payload.form_name });
                     } else {
