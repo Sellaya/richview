@@ -79,3 +79,164 @@
     color: var(--muted, #6b7280);
     line-height: 1.55;
 }
+
+/* Long-form articles: tables, quotes, subheads, lists */
+.post-prose h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy, #0b1635);
+    margin: 1.35rem 0 0.5rem;
+    line-height: 1.35;
+}
+.post-prose ol {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+}
+.post-prose ol li { margin-bottom: 0.4rem; }
+.post-prose blockquote {
+    margin: 1.25rem 0;
+    padding: 1rem 1.15rem 1rem 1.25rem;
+    border-left: 4px solid var(--gold, #ff6600);
+    background: rgba(11, 22, 53, 0.04);
+    font-style: italic;
+    color: var(--navy, #0b1635);
+}
+.post-prose blockquote cite {
+    display: block;
+    margin-top: 0.65rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--muted, #6b7280);
+}
+.post-prose .post-lead-em {
+    font-size: 1.0625rem;
+    color: var(--charcoal, #1a1a1a);
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-style: italic;
+    line-height: 1.75;
+}
+.post-prose .post-table-wrap {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.post-prose .post-table-wrap table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+.post-prose .post-table-wrap th,
+.post-prose .post-table-wrap td {
+    padding: 0.65rem 0.85rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.post-prose .post-table-wrap th {
+    background: var(--navy, #0b1635);
+    color: #fff;
+    font-weight: 600;
+}
+.post-prose .post-table-wrap tr:nth-child(even) td {
+    background: rgba(11, 22, 53, 0.03);
+}
+.post-prose .post-inline-cta {
+    margin: 1.75rem 0;
+    padding: 1.35rem 1.5rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--navy, #0b1635) 0%, #11254f 100%);
+    color: #fff;
+    text-align: center;
+}
+.post-prose .post-inline-cta p {
+    margin: 0 0 0.75rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.9375rem;
+}
+.post-prose .post-inline-cta .post-inline-cta-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0 0 0.35rem;
+    color: #fff;
+}
+.post-prose .post-inline-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+    padding: 0.55rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy, #0b1635);
+    background: var(--gold, #ff6600);
+    border-radius: 10px;
+    text-decoration: none;
+}
+.post-prose .post-inline-cta a:hover {
+    filter: brightness(1.06);
+    color: #fff;
+}
+.post-prose .post-related {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.9375rem;
+}
+.post-prose .post-related h3 {
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold, #ff6600);
+    margin-top: 0;
+}
+.post-prose .post-related ul { margin-bottom: 0.75rem; }
+.post-prose .post-related a {
+    font-weight: 600;
+    color: var(--navy, #0b1635);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.post-prose .post-related a:hover { color: var(--gold, #ff6600); }
+.post-prose .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+.post-prose .post-tags li {
+    margin: 0;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted, #6b7280);
+    background: rgba(11, 22, 53, 0.06);
+    border-radius: 6px;
+}
+.post-prose .post-external-note {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--muted, #6b7280);
+}
+.post-prose .key-term { font-weight: 600; color: var(--navy, #0b1635); }
+.post-prose .post-byline {
+    margin-top: 1.75rem;
+    padding: 1rem 1.15rem;
+    background: rgba(11, 22, 53, 0.04);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    color: var(--charcoal, #1a1a1a);
+}
+.post-prose .post-byline a {
+    font-weight: 600;
+    color: var(--navy, #0b1635);
+}
