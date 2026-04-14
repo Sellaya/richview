@@ -7,6 +7,19 @@
             body: JSON.stringify(payload)
         });
     };
+    window.RichviewGhlPayload = {
+        leadCategory: function (code) {
+            if (code === 'borrowing') return 'Borrower';
+            if (code === 'investing') return 'Investor';
+            if (code === 'brokering') return 'Broker';
+            return String(code || '').trim();
+        },
+        selectLabel: function (el) {
+            if (!el || el.nodeName !== 'SELECT') return '';
+            var opt = el.options[el.selectedIndex];
+            return opt ? String(opt.textContent || '').trim() : '';
+        }
+    };
 })();
 
 (function consultPhoneTitleInit() {
@@ -55,9 +68,11 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
                 }
-                var _fn = ((document.getElementById('consultFirstName') || {}).value || '').trim();
-                var _ln = ((document.getElementById('consultLastName')  || {}).value || '').trim();
-                var _phoneDigits = ((document.getElementById('consultPhone') || {}).value || '').replace(/\D/g, '');
+                var fd = new FormData(form);
+                var H = window.RichviewGhlPayload || {};
+                var _fn = String(fd.get('consultFirstName') || '').trim();
+                var _ln = String(fd.get('consultLastName') || '').trim();
+                var _phoneDigits = String(fd.get('consultPhone') || '').replace(/\D/g, '');
                 if (_phoneDigits.length !== 10) {
                     alert('Please enter a valid 10-digit phone number.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
@@ -66,17 +81,19 @@
                     if (telEl && telEl.focus) telEl.focus();
                     return;
                 }
-                var _interest = ((document.getElementById('consultInterest') || {}).value || '').trim();
-                var _loanType = ((document.getElementById('consultBorrowerLoanType') || {}).value || '').trim();
-                var _msgRaw = ((document.getElementById('consultMessage')  || {}).value || '').trim();
+                var interestEl = form.querySelector('[name="consultInterest"]');
+                var loanEl = form.querySelector('[name="consultBorrowerLoanType"]');
+                var _interest = String(fd.get('consultInterest') || (interestEl && interestEl.value) || '').trim();
+                var _loanType = String(fd.get('consultBorrowerLoanType') || (loanEl && loanEl.value) || '').trim();
+                var _msgRaw = String(fd.get('consultMessage') || '').trim();
                 if (_interest === 'borrowing' && !_loanType) {
                     alert('Please select a financing type.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
                     else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                     return;
                 }
-                var _date = ((document.getElementById('consultDate') || {}).value || '').trim();
-                var _time = ((document.getElementById('consultTime') || {}).value || '').trim();
+                var _date = String(fd.get('consultDate') || '').trim();
+                var _time = String(fd.get('consultTime') || '').trim();
 
                 if (!_date || !_time) {
                     alert('Please select both date and time for your consultation.');
@@ -105,19 +122,35 @@
                     schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + timeStr;
                 }
                 var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
+                var interestLabel = H.selectLabel ? H.selectLabel(interestEl) : '';
+                var loanLabel = _interest === 'borrowing' && H.selectLabel ? H.selectLabel(loanEl) : '';
+                var leadCat = H.leadCategory ? H.leadCategory(_interest) : '';
                 var messageForGhl = _msgRaw;
                 if (_interest === 'borrowing' && _loanType) {
                     messageForGhl = 'Financing type: ' + _loanType + (_msgRaw ? '\n\n' + _msgRaw : '');
                 }
+                var _email = String(fd.get('consultEmail') || '').trim();
+                var _phone = String(fd.get('consultPhone') || '').trim();
                 var payload = {
                     form_name:    'Book a Free Consultation',
                     first_name:   _fn,
                     last_name:    _ln,
+                    firstName:    _fn,
+                    lastName:     _ln,
                     name:         (_fn + ' ' + _ln).trim(),
-                    email:        ((document.getElementById('consultEmail')    || {}).value || '').trim(),
-                    phone:        ((document.getElementById('consultPhone')    || {}).value || '').trim(),
+                    email:        _email,
+                    phone:        _phone,
                     service:      _interest,
+                    interest:     _interest,
+                    interest_label: interestLabel,
+                    service_label: interestLabel,
+                    financing_type: _interest === 'borrowing' ? _loanType : '',
+                    financing_type_label: loanLabel,
+                    lead_category: leadCat,
+                    contact_type: leadCat,
                     borrower_loan_type: _interest === 'borrowing' ? _loanType : '',
+                    borrower_financing_type: _interest === 'borrowing' ? _loanType : '',
+                    borrower_loan_type_label: _interest === 'borrowing' ? loanLabel : '',
                     message:      messageForGhl,
                     message_user: _msgRaw,
                     consultation_date: _date,
@@ -165,9 +198,11 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
                 }
-                var _fn = ((document.getElementById('heroConsultFirstName') || {}).value || '').trim();
-                var _ln = ((document.getElementById('heroConsultLastName') || {}).value || '').trim();
-                var _phoneDigits = ((document.getElementById('heroConsultPhone') || {}).value || '').replace(/\D/g, '');
+                var fd = new FormData(form);
+                var H = window.RichviewGhlPayload || {};
+                var _fn = String(fd.get('heroConsultFirstName') || '').trim();
+                var _ln = String(fd.get('heroConsultLastName') || '').trim();
+                var _phoneDigits = String(fd.get('heroConsultPhone') || '').replace(/\D/g, '');
                 if (_phoneDigits.length !== 10) {
                     alert('Please enter a valid 10-digit phone number.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
@@ -176,17 +211,19 @@
                     if (telEl && telEl.focus) telEl.focus();
                     return;
                 }
-                var _interest = ((document.getElementById('heroConsultInterest') || {}).value || '').trim();
-                var _loanType = ((document.getElementById('heroBorrowerLoanType') || {}).value || '').trim();
-                var _msgRaw = ((document.getElementById('heroConsultMessage') || {}).value || '').trim();
+                var interestEl = form.querySelector('[name="heroConsultInterest"]');
+                var loanEl = form.querySelector('[name="heroBorrowerLoanType"]');
+                var _interest = String(fd.get('heroConsultInterest') || (interestEl && interestEl.value) || '').trim();
+                var _loanType = String(fd.get('heroBorrowerLoanType') || (loanEl && loanEl.value) || '').trim();
+                var _msgRaw = String(fd.get('heroConsultMessage') || '').trim();
                 if (_interest === 'borrowing' && !_loanType) {
                     alert('Please select a financing type.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
                     else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
                     return;
                 }
-                var _date = ((document.getElementById('heroConsultDate') || {}).value || '').trim();
-                var _time = ((document.getElementById('heroConsultTime') || {}).value || '').trim();
+                var _date = String(fd.get('heroConsultDate') || '').trim();
+                var _time = String(fd.get('heroConsultTime') || '').trim();
                 if (!_date || !_time) {
                     alert('Please select both date and time for your consultation.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
@@ -212,19 +249,35 @@
                     schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + timeStr;
                 }
                 var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
+                var interestLabel = H.selectLabel ? H.selectLabel(interestEl) : '';
+                var loanLabel = _interest === 'borrowing' && H.selectLabel ? H.selectLabel(loanEl) : '';
+                var leadCat = H.leadCategory ? H.leadCategory(_interest) : '';
                 var messageForGhl = _msgRaw;
                 if (_interest === 'borrowing' && _loanType) {
                     messageForGhl = 'Financing type: ' + _loanType + (_msgRaw ? '\n\n' + _msgRaw : '');
                 }
+                var _email = String(fd.get('heroConsultEmail') || '').trim();
+                var _phone = String(fd.get('heroConsultPhone') || '').trim();
                 var payload = {
                     form_name: 'Hero Consultation (Schedule)',
                     first_name: _fn,
                     last_name: _ln,
+                    firstName: _fn,
+                    lastName: _ln,
                     name: (_fn + ' ' + _ln).trim(),
-                    email: ((document.getElementById('heroConsultEmail') || {}).value || '').trim(),
-                    phone: ((document.getElementById('heroConsultPhone') || {}).value || '').trim(),
+                    email: _email,
+                    phone: _phone,
                     service: _interest,
+                    interest: _interest,
+                    interest_label: interestLabel,
+                    service_label: interestLabel,
+                    financing_type: _interest === 'borrowing' ? _loanType : '',
+                    financing_type_label: loanLabel,
+                    lead_category: leadCat,
+                    contact_type: leadCat,
                     borrower_loan_type: _interest === 'borrowing' ? _loanType : '',
+                    borrower_financing_type: _interest === 'borrowing' ? _loanType : '',
+                    borrower_loan_type_label: _interest === 'borrowing' ? loanLabel : '',
                     message: messageForGhl,
                     message_user: _msgRaw,
                     consultation_date: _date,
