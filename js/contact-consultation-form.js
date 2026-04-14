@@ -1,3 +1,14 @@
+(function richviewGhlPostInit() {
+    var RICHVIEW_GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/cc5524bb-cf46-4c3f-b7a9-ab502924fbe3';
+    window.RichviewPostGhl = function (payload) {
+        return fetch(RICHVIEW_GHL_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+    };
+})();
+
 (function consultPhoneTitleInit() {
             var p = document.getElementById('consultPhone');
             if (p && !p.getAttribute('title')) {
@@ -30,7 +41,6 @@
         })();
 
         (function() {
-            var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6nNoIJcrYfqxWyIeR9xc/webhook-trigger/cc5524bb-cf46-4c3f-b7a9-ab502924fbe3';
             var form = document.getElementById('consultationForm');
             if (!form) return;
             form.addEventListener('submit', async function(e) {
@@ -124,14 +134,114 @@
                 console.log('[GHL] Form submit triggered');
                 console.log('[GHL] Payload:', JSON.stringify(payload, null, 2));
                 try {
-                    var response = await fetch(GHL_WEBHOOK, {
-                        method:  'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept':        'application/json'
-                        },
-                        body: JSON.stringify(payload)
-                    });
+                    var response = await window.RichviewPostGhl(payload);
+                    console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
+                    if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
+                    form.reset();
+                    if (window.RichviewMetaPixel && window.RichviewMetaPixel.trackLeadAndRedirect) {
+                        window.RichviewMetaPixel.trackLeadAndRedirect({ content_name: payload.form_name });
+                    } else {
+                        window.location.href = '/thank-you/';
+                    }
+                } catch (err) {
+                    console.error('[GHL] Webhook submission failed:', err);
+                    alert('Something went wrong. Please try again or call us directly.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                }
+            });
+        })();
+
+        (function heroConsultationGhlInit() {
+            var form = document.getElementById('heroConsultationForm');
+            if (!form) return;
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var submitBtn = document.getElementById('heroConsultSubmitBtn');
+                var spinnerHandle = null;
+                if (submitBtn && window.RichviewLottie) {
+                    spinnerHandle = window.RichviewLottie.showButtonSpinner(submitBtn, { size: window.innerWidth < 640 ? 18 : 20 });
+                } else if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+                var _fn = ((document.getElementById('heroConsultFirstName') || {}).value || '').trim();
+                var _ln = ((document.getElementById('heroConsultLastName') || {}).value || '').trim();
+                var _phoneDigits = ((document.getElementById('heroConsultPhone') || {}).value || '').replace(/\D/g, '');
+                if (_phoneDigits.length !== 10) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    var telEl = document.getElementById('heroConsultPhone');
+                    if (telEl && telEl.focus) telEl.focus();
+                    return;
+                }
+                var _interest = ((document.getElementById('heroConsultInterest') || {}).value || '').trim();
+                var _loanType = ((document.getElementById('heroBorrowerLoanType') || {}).value || '').trim();
+                var _msgRaw = ((document.getElementById('heroConsultMessage') || {}).value || '').trim();
+                if (_interest === 'borrowing' && !_loanType) {
+                    alert('Please select a financing type.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    return;
+                }
+                var _date = ((document.getElementById('heroConsultDate') || {}).value || '').trim();
+                var _time = ((document.getElementById('heroConsultTime') || {}).value || '').trim();
+                if (!_date || !_time) {
+                    alert('Please select both date and time for your consultation.');
+                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    return;
+                }
+                var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+                var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+                var formatTime = function (d) {
+                    var h = d.getHours(), min = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
+                    h = h % 12 || 12;
+                    return pad(h) + ':' + pad(min) + ' ' + ampm;
+                };
+                var dtStr = _time.length === 5 ? _date + 'T' + _time + ':00' : _date + 'T' + _time;
+                var d = new Date(dtStr);
+                var timeStr = !isNaN(d.getTime()) ? formatTime(d) : '';
+                var schedule_mm_dd_yyyy = '';
+                var schedule_dd_mmm_yyyy = '';
+                var schedule_yyyy_mm_dd = '';
+                if (!isNaN(d.getTime()) && timeStr) {
+                    schedule_mm_dd_yyyy = pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_dd_mmm_yyyy = pad(d.getDate()) + '-' + months[d.getMonth()] + '-' + d.getFullYear() + ' ' + timeStr;
+                    schedule_yyyy_mm_dd = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + timeStr;
+                }
+                var schedule_call = [schedule_mm_dd_yyyy, schedule_dd_mmm_yyyy, schedule_yyyy_mm_dd].filter(Boolean).join(', ');
+                var messageForGhl = _msgRaw;
+                if (_interest === 'borrowing' && _loanType) {
+                    messageForGhl = 'Financing type: ' + _loanType + (_msgRaw ? '\n\n' + _msgRaw : '');
+                }
+                var payload = {
+                    form_name: 'Hero Consultation (Schedule)',
+                    first_name: _fn,
+                    last_name: _ln,
+                    name: (_fn + ' ' + _ln).trim(),
+                    email: ((document.getElementById('heroConsultEmail') || {}).value || '').trim(),
+                    phone: ((document.getElementById('heroConsultPhone') || {}).value || '').trim(),
+                    service: _interest,
+                    borrower_loan_type: _interest === 'borrowing' ? _loanType : '',
+                    message: messageForGhl,
+                    message_user: _msgRaw,
+                    consultation_date: _date,
+                    consultation_time: _time,
+                    schedule_call: schedule_call,
+                    schedule_mm_dd_yyyy: schedule_mm_dd_yyyy,
+                    schedule_dd_mmm_yyyy: schedule_dd_mmm_yyyy,
+                    schedule_yyyy_mm_dd: schedule_yyyy_mm_dd,
+                    source_url: window.location.href,
+                    page_url: window.location.href,
+                    submitted_at: new Date().toISOString(),
+                    user_agent: navigator.userAgent
+                };
+                console.log('[GHL] Hero form submit triggered');
+                console.log('[GHL] Payload:', JSON.stringify(payload, null, 2));
+                try {
+                    var response = await window.RichviewPostGhl(payload);
                     console.log('[GHL] Response status:', response.status, '| ok:', response.ok);
                     if (!response.ok) { throw new Error('Webhook responded with status ' + response.status); }
                     form.reset();
