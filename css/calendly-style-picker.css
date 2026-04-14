@@ -265,6 +265,20 @@
     padding-top: clamp(0.55rem, 2.2vw, 0.85rem);
     gap: clamp(0.35rem, 1.5vw, 0.5rem);
     border-top: 1px solid rgba(11, 22, 53, 0.06);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.hero-form-wrap .hero-form-nav-spacer {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+}
+.hero-form-wrap .hero-form-back {
+    margin-right: 0;
 }
 .hero-form-wrap .hero-form-steps {
     margin-bottom: clamp(0.75rem, 2.5vw, 0.95rem);
