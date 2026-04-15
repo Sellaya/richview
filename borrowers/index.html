@@ -3789,8 +3789,7 @@
             });
         })();
         (function () { var nav = document.getElementById('mainNav'); var lastScrollY = 0; var scrollThreshold = 120; function onScroll() { if (!nav) return; var y = window.pageYOffset || document.documentElement.scrollTop; nav.classList.toggle('scrolled', y > 30); if (nav.classList.contains('menu-open')) { lastScrollY = y; return; } if (y <= scrollThreshold) nav.classList.remove('nav-hidden'); else if (y > lastScrollY) nav.classList.add('nav-hidden'); else nav.classList.remove('nav-hidden'); lastScrollY = y; } window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); })();
-
-
+    </script>
 
     <script src="/js/lottie-utils.js"></script>
     <script src="/js/contact-consultation-form.js"></script>
