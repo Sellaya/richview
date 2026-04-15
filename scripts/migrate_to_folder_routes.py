@@ -24,9 +24,7 @@ MOVES: list[tuple[str, str]] = [
     ("terms.html", "terms/index.html"),
     ("disclaimer.html", "disclaimer/index.html"),
     ("thank-you.html", "thank-you/index.html"),
-    ("blog-second-mortgages-when-they-help.html", "blog/second-mortgages-when-they-help/index.html"),
     ("blog-construction-financing-ontario.html", "blog/construction-financing-ontario/index.html"),
-    ("blog-mics-registered-accounts.html", "blog/mics-registered-accounts/index.html"),
 ]
 
 

@@ -1,0 +1,27 @@
+---
+description: Richview blog posts must follow the canonical HTML template and structure.
+globs: blog/**/index.html
+alwaysApply: false
+---
+
+# Blog posts — canonical template
+
+When **creating or editing** a file under `blog/**/index.html` (except `blog/index.html`):
+
+1. **Source of truth** — Copy `scripts/templates/blog-post-template.html` to `blog/[slug]/index.html` when starting a new post. That file matches production chrome (nav, footer, consultation form, CSS, JSON-LD shape).
+
+2. **Before publishing** — Replace every `[placeholder]` in `<head>` (title, description, canonical, `og:*`, `twitter:*`, dates, JSON-LD `headline`/`url`/`image`). Use absolute image URL `https://richviewcapitalmic.com/images/blog/[slug].jpg` and add the asset under `/images/blog/`. **Remove** the `<meta name="robots" content="noindex, nofollow">` line (template only).
+
+3. **Content mapping** — Inside `.post-prose`, follow the **section order** and **class names** documented in the HTML comment at the top of the template. Map draft content from any format into:
+   - `h2` / `h3` for hierarchy  
+   - `.post-lead-em` for the opening body paragraph  
+   - `span.key-term` for defined terms  
+   - `.post-stat-row`, `.post-table-wrap`, `blockquote`, `.post-related`, `.post-inline-cta`, `.post-tags`, `.post-author-bio` as needed  
+
+4. **Tone** — Professional, educational, Ontario and regulatory context where relevant (FSRA, licensing). No hype; include balanced disclosures when mentioning returns, minimums, or eligibility.
+
+5. **Author in JSON-LD** — Default in the template is `Organization` author. For a **bylined** article (e.g. Guido DiFranco), match `author` in JSON-LD to the existing pattern in `blog/mic-investing-ontario-rrsp/index.html` (`Person` + name).
+
+6. **After publish** — Add the URL to `sitemap.xml`, add a card on `blog/index.html` and refresh the homepage blog carousel if appropriate; update `scripts/inject_contact_form_pages.py` targets if the new post should receive the shared contact block.
+
+Do **not** invent new layout patterns for blog articles; extend the template components only when necessary and keep parity with existing live posts.

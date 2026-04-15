@@ -69,8 +69,8 @@ def main():
     targets = [
         ROOT / "blog/index.html",
         ROOT / "blog/construction-financing-ontario/index.html",
-        ROOT / "blog/second-mortgages-when-they-help/index.html",
-        ROOT / "blog/mics-registered-accounts/index.html",
+        ROOT / "blog/mic-investing-ontario-rrsp/index.html",
+        ROOT / "blog/private-mortgage-ontario/index.html",
         ROOT / "privacy/index.html",
         ROOT / "terms/index.html",
         ROOT / "disclaimer/index.html",

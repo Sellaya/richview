@@ -240,3 +240,82 @@
     font-weight: 600;
     color: var(--navy, #0b1635);
 }
+
+/* Stat strip (investor / MIC articles) */
+.post-prose .post-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.post-prose .post-stat-item {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: rgba(11, 22, 53, 0.04);
+    border-radius: 10px;
+    border-top: 3px solid var(--gold, #ff6600);
+}
+.post-prose .post-stat-num {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--navy, #0b1635);
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+}
+.post-prose .post-stat-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted, #6b7280);
+    line-height: 1.35;
+}
+@media (max-width: 600px) {
+    .post-prose .post-stat-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.post-prose .post-author-bio {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    padding: 1.35rem 1.25rem;
+    background: rgba(11, 22, 53, 0.04);
+    border-radius: 12px;
+    border-top: 3px solid var(--gold, #ff6600);
+}
+.post-prose .post-author-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--navy, #0b1635);
+    color: var(--gold, #ff6600);
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.post-prose .post-author-bio strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--navy, #0b1635);
+    margin-bottom: 0.25rem;
+}
+.post-prose .post-author-role {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--muted, #6b7280);
+    font-weight: 600;
+}
+@media (max-width: 520px) {
+    .post-prose .post-author-bio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

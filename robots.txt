@@ -5,4 +5,7 @@ Allow: /
 # Thank-you page is noindex in HTML; keep out of bulk crawl hints
 Disallow: /thank-you/
 
+# Authoring template (not a published article)
+Disallow: /scripts/templates/
+
 Sitemap: https://richviewcapitalmic.com/sitemap.xml
