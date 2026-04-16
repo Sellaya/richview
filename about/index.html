@@ -460,21 +460,52 @@
             visibility: visible;
         }
 
-        /* --- PAGE HERO (office image with dark blue mask) --- */
+        /* --- PAGE HERO (HD office photo + masks; img uses srcset — avoid tiny bitmap stretched by CSS cover) --- */
         .page-hero {
+            width: 100%;
+            max-width: 100%;
             padding: clamp(8rem, 12vw, 10rem) var(--gutter) var(--space-3xl);
             min-height: clamp(340px, 42vw, 420px);
             display: flex;
             align-items: center;
-            background: linear-gradient(145deg, rgba(11, 22, 53, 0.78) 0%, rgba(13, 31, 74, 0.72) 45%, rgba(10, 19, 48, 0.82) 100%), url('/images/about-hero-office.png') center center / cover no-repeat;
             position: relative;
             overflow: hidden;
+            background: #0b1635;
+            box-sizing: border-box;
+        }
+
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page-hero-bg img {
+            /* Beat global img { max-width:100% } so cover always fills ultra-wide viewports */
+            max-width: none;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        .page-hero-linear-mask {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: linear-gradient(145deg, rgba(11, 22, 53, 0.78) 0%, rgba(13, 31, 74, 0.72) 45%, rgba(10, 19, 48, 0.82) 100%);
         }
 
         .page-hero::before {
             content: '';
             position: absolute;
             inset: 0;
+            z-index: 2;
             background: radial-gradient(ellipse 70% 60% at 75% 20%, rgba(255, 102, 0, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
@@ -482,13 +513,14 @@
             content: '';
             position: absolute;
             inset: 0;
+            z-index: 2;
             background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(11, 22, 53, 0.25) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .page-hero .container {
             position: relative;
-            z-index: 1;
+            z-index: 3;
             max-width: 800px;
         }
 
@@ -2925,6 +2957,17 @@
     </nav>
 
     <section class="page-hero" id="main">
+        <div class="page-hero-bg" aria-hidden="true">
+            <img src="/images/about-hero-office-1920.jpg"
+                srcset="/images/about-hero-office-1920.jpg 1920w, /images/about-hero-office-2560.jpg 2560w, /images/about-hero-office-3840.jpg 3840w"
+                sizes="100vw"
+                alt=""
+                width="3840"
+                height="2081"
+                fetchpriority="high"
+                decoding="async">
+        </div>
+        <div class="page-hero-linear-mask" aria-hidden="true"></div>
         <div class="container">
             <h1>About Richview Capital MIC</h1>
             <p>A licensed Ontario MIC with 30+ years of combined experience in private lending, construction financing, and mortgage investing. Based in Woodbridge, serving the entire GTA.</p>
@@ -2998,7 +3041,7 @@
                 <article class="team-card reveal" style="--i:1;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="https://assets.cdn.filesafe.space/k1ye0TjNw4Oldm8fuNdL/media/699cc52d590acb5154d16ddd.jpg" alt="Teresa Di Franco" width="660" height="760" loading="lazy" decoding="async">
+                            <img src="/images/teresa-di-franco.jpg" alt="Teresa Di Franco" width="660" height="760" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Teresa Di Franco</h3>
                         <p class="tc-role">Executive VP &amp; COO, Co-Founder</p>
