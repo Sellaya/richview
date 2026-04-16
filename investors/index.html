@@ -636,11 +636,17 @@
             border: 3px solid rgba(11, 22, 53, 0.08);
         }
         .leadership-block .leadership-photo img {
+            max-width: none;
             width: 100%;
             height: 100%;
+            min-width: 100%;
+            min-height: 100%;
             object-fit: cover;
+            object-position: center center;
+            border-radius: 50%;
             display: block;
             vertical-align: middle;
+            image-rendering: auto;
         }
         .leadership-block .leadership-info {
             display: flex;
@@ -2847,7 +2853,7 @@
     <section class="leadership-block">
         <div class="container">
             <div class="leadership-card">
-                <div class="leadership-photo"><img src="/images/Guido.png" alt="Guido Di Franco" width="682" height="1024" loading="lazy" decoding="async"></div>
+                <div class="leadership-photo"><img src="/images/guido-di-franco-full.png" srcset="/images/guido-di-franco-full.png 682w" sizes="140px" alt="Guido Di Franco" width="682" height="1024" loading="lazy" decoding="async"></div>
                 <div class="leadership-info">
                     <h3>Guido Di Franco</h3>
                     <p class="leadership-role">President &amp; CEO, Founder</p>

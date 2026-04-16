@@ -827,9 +827,10 @@
             transition: opacity 0.3s var(--ease-out);
         }
 
+        /* No translateY on hover — combined with overflow/clip on photos it often rasterizes team headshots blurry in Chrome/Safari */
         .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1), 0 4px 14px rgba(0, 0, 0, 0.05);
+            transform: none;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.11), 0 6px 18px rgba(0, 0, 0, 0.06);
             border-color: rgba(255, 102, 0, 0.18);
         }
 
@@ -857,11 +858,7 @@
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
             transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
             background: #f0f0f0;
-            /* Isolate from parent transform (reveal/hover) so bitmaps stay sharp on GPU */
             isolation: isolate;
-            transform: translateZ(0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
         }
 
         .team-card:hover .tc-photo {
@@ -887,6 +884,9 @@
             object-fit: cover;
             object-position: center 22%;
             display: block;
+            border-radius: 50%;
+            image-rendering: auto;
+            -ms-interpolation-mode: bicubic;
         }
 
         .tc-name {
@@ -1468,6 +1468,16 @@
             opacity: 1;
             transform: translateY(0);
             transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+        }
+
+        /* Team cards: fade only (no transform) — translateY layers blur circular headshots in WebKit/Blink */
+        .team-card.reveal {
+            transform: none;
+        }
+
+        .team-card.reveal.visible {
+            transform: none;
+            transition: opacity 0.6s var(--ease-out);
         }
 
         /* Team mission: dedicated entrance (overrides generic .reveal transition) */
@@ -3009,7 +3019,10 @@
                 <article class="team-card reveal" style="--i:0;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Guido.png" alt="Guido Di Franco" width="682" height="1024" loading="lazy" decoding="async">
+                            <img src="/images/guido-di-franco-full.png"
+                                srcset="/images/guido-di-franco-full.png 682w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Guido Di Franco" width="682" height="1024" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Guido Di Franco</h3>
                         <p class="tc-role">President &amp; CEO, Founder</p>
@@ -3041,7 +3054,10 @@
                 <article class="team-card reveal" style="--i:1;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/teresa-di-franco.jpg" alt="Teresa Di Franco" width="660" height="760" loading="lazy" decoding="async">
+                            <img src="/images/teresa-di-franco-opt.jpg"
+                                srcset="/images/teresa-di-franco-opt.jpg 660w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Teresa Di Franco" width="660" height="760" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Teresa Di Franco</h3>
                         <p class="tc-role">Executive VP &amp; COO, Co-Founder</p>
@@ -3080,7 +3096,10 @@
                 <article class="team-card reveal" style="--i:0;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Maurizio.jpeg" alt="Maurizio Sera" width="3413" height="5120" loading="lazy" decoding="async">
+                            <img src="/images/maurizio-sera-1280.jpg"
+                                srcset="/images/maurizio-sera-1280.jpg 1280w, /images/maurizio-sera-full.jpg 3413w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Maurizio Sera" width="1280" height="1920" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Maurizio Sera</h3>
                         <p class="tc-role">Director of Investments / Underwriting</p>
@@ -3111,7 +3130,10 @@
                 <article class="team-card reveal" style="--i:1;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Natashaa.jpeg" alt="Natasha Barranca" width="1024" height="1536" loading="lazy" decoding="async">
+                            <img src="/images/natasha-barranca-opt.jpg"
+                                srcset="/images/natasha-barranca-opt.jpg 1024w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Natasha Barranca" width="1024" height="1536" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Natasha Barranca</h3>
                         <p class="tc-role">Director of Operations</p>
@@ -3141,7 +3163,10 @@
                 <article class="team-card reveal" style="--i:2;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Randall Olivares.jpeg" alt="Randall Olivares" width="3413" height="5120" loading="lazy" decoding="async">
+                            <img src="/images/randall-olivares.jpg"
+                                srcset="/images/randall-olivares.jpg 1280w, /images/randall-olivares-full.jpg 3413w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Randall Olivares" width="1280" height="1920" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Randall Olivares</h3>
                         <p class="tc-role">Underwriting &amp; Fulfillment Officer</p>
@@ -3172,7 +3197,10 @@
                 <article class="team-card reveal" style="--i:3;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Laura.jpeg" alt="Laura Novello" width="1024" height="1536" loading="lazy" decoding="async">
+                            <img src="/images/laura-novello-opt.jpg"
+                                srcset="/images/laura-novello-opt.jpg 1024w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Laura Novello" width="1024" height="1536" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Laura Novello</h3>
                         <p class="tc-role">Renewals</p>
@@ -3203,7 +3231,10 @@
                 <article class="team-card reveal" style="--i:4;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Emely.jpeg" alt="Emely Sanchez" width="682" height="1024" loading="lazy" decoding="async">
+                            <img src="/images/emely-sanchez-opt.jpg"
+                                srcset="/images/emely-sanchez-opt.jpg 682w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Emely Sanchez" width="682" height="1024" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Emely Sanchez</h3>
                         <p class="tc-role">Accountant</p>
@@ -3234,7 +3265,10 @@
                 <article class="team-card reveal" style="--i:5;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Markshun.jpeg" alt="Mark Leung" width="3413" height="5120" loading="lazy" decoding="async">
+                            <img src="/images/mark-leung-1280.jpg"
+                                srcset="/images/mark-leung-1280.jpg 1280w, /images/mark-leung-full.jpg 3413w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Mark Leung" width="1280" height="1920" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Mark Shun-Yin Leung</h3>
                         <p class="tc-role">Controller</p>
@@ -3265,7 +3299,10 @@
                 <article class="team-card reveal" style="--i:6;">
                     <div class="tc-header">
                         <div class="tc-photo">
-                            <img src="/images/Gabriella.jpeg" alt="Gabriella Di Franco" width="682" height="1024" loading="lazy" decoding="async">
+                            <img src="/images/gabriella-di-franco-opt.jpg"
+                                srcset="/images/gabriella-di-franco-opt.jpg 682w"
+                                sizes="(max-width: 1024px) 140px, 160px"
+                                alt="Gabriella Di Franco" width="682" height="1024" loading="lazy" decoding="async">
                         </div>
                         <h3 class="tc-name">Gabriella Di Franco</h3>
                         <p class="tc-role">Executive Assistant</p>
