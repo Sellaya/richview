@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # href= (longer paths first)
 HREF = [
     ('href="/blog/mic-investing-ontario-rrsp"', 'href="/blog/mic-investing-ontario-rrsp/"'),
+    ('href="/blog/private-mortgage-lender-toronto-honest-gta-guide"', 'href="/blog/private-mortgage-lender-toronto-honest-gta-guide/"'),
     ('href="/blog/private-mortgage-ontario"', 'href="/blog/private-mortgage-ontario/"'),
     ('href="/blog/construction-financing-ontario"', 'href="/blog/construction-financing-ontario/"'),
     ('href="/what-is-a-mic"', 'href="/what-is-a-mic/"'),
@@ -25,6 +26,7 @@ HREF = [
 # Absolute site URLs in meta / JSON-LD (no trailing slash on domain root)
 ABS = [
     ("https://richviewcapitalmic.com/blog/mic-investing-ontario-rrsp\"", "https://richviewcapitalmic.com/blog/mic-investing-ontario-rrsp/\""),
+    ("https://richviewcapitalmic.com/blog/private-mortgage-lender-toronto-honest-gta-guide\"", "https://richviewcapitalmic.com/blog/private-mortgage-lender-toronto-honest-gta-guide/\""),
     ("https://richviewcapitalmic.com/blog/private-mortgage-ontario\"", "https://richviewcapitalmic.com/blog/private-mortgage-ontario/\""),
     ("https://richviewcapitalmic.com/blog/construction-financing-ontario\"", "https://richviewcapitalmic.com/blog/construction-financing-ontario/\""),
     ("https://richviewcapitalmic.com/what-is-a-mic\"", "https://richviewcapitalmic.com/what-is-a-mic/\""),
@@ -43,6 +45,7 @@ ABS = [
 # JSON-LD url field (no extra quote)
 ABS_JSON = [
     ('"url":"https://richviewcapitalmic.com/blog/mic-investing-ontario-rrsp"', '"url":"https://richviewcapitalmic.com/blog/mic-investing-ontario-rrsp/"'),
+    ('"url":"https://richviewcapitalmic.com/blog/private-mortgage-lender-toronto-honest-gta-guide"', '"url":"https://richviewcapitalmic.com/blog/private-mortgage-lender-toronto-honest-gta-guide/"'),
     ('"url":"https://richviewcapitalmic.com/blog/private-mortgage-ontario"', '"url":"https://richviewcapitalmic.com/blog/private-mortgage-ontario/"'),
     ('"url":"https://richviewcapitalmic.com/blog/construction-financing-ontario"', '"url":"https://richviewcapitalmic.com/blog/construction-financing-ontario/"'),
 ]
