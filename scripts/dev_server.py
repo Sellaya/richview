@@ -34,7 +34,6 @@ REDIRECT: dict[str, str] = {
     "/terms.html": "/terms/",
     "/disclaimer.html": "/disclaimer/",
     "/thank-you.html": "/thank-you/",
-    "/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded": "/blog/private-construction-loan-ontario/",
 }
 
 

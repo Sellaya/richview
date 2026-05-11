@@ -43,22 +43,6 @@
 }
 .post-lead a { font-weight: 600; color: var(--navy, #0b1635); text-decoration: underline; text-underline-offset: 2px; }
 .post-lead a:hover { color: var(--gold, #ff6600); }
-/* In-article hero: left-heavy branded art (headline on the left) */
-.post-hero-figure.post-hero-figure--object-left {
-    margin: 0 0 1.75rem;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #0b1635;
-    aspect-ratio: 936 / 492;
-    max-height: min(58vh, 440px);
-}
-.post-hero-figure.post-hero-figure--object-left img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: left center;
-    display: block;
-}
 .post-prose {
     font-size: 1rem;
     color: var(--charcoal, #1a1a1a);

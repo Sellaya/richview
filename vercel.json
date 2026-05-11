@@ -15,8 +15,6 @@
     { "source": "/privacy.html", "destination": "/privacy/", "permanent": true },
     { "source": "/terms.html", "destination": "/terms/", "permanent": true },
     { "source": "/disclaimer.html", "destination": "/disclaimer/", "permanent": true },
-    { "source": "/thank-you.html", "destination": "/thank-you/", "permanent": true },
-    { "source": "/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded", "destination": "/blog/private-construction-loan-ontario/", "permanent": true },
-    { "source": "/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/", "destination": "/blog/private-construction-loan-ontario/", "permanent": true }
+    { "source": "/thank-you.html", "destination": "/thank-you/", "permanent": true }
   ]
 }
