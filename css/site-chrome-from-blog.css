@@ -565,19 +565,15 @@
             transition: transform 0.4s var(--ease-out);
         }
 
-        /* Hero art with headline on the left — cover clips left copy at 16:10 */
+        /* Branded left copy: cover fills frame; left anchor avoids center-cropping the headline */
         .blog-card-image.blog-card-image--object-left img {
-            object-fit: contain;
+            object-fit: cover;
             object-position: left center;
             transform-origin: left center;
         }
 
         .blog-card:hover .blog-card-image img {
             transform: scale(1.03);
-        }
-
-        .blog-card:hover .blog-card-image.blog-card-image--object-left img {
-            transform: scale(1.02);
         }
 
         .blog-card-body {

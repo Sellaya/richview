@@ -2179,7 +2179,6 @@
             background: #eef2f7;
             flex-shrink: 0;
         }
-        /* Branded art: letterbox blends with dark panel; avoids clipping left copy on cover */
         .blog-card-thumb.blog-card-thumb--object-left {
             background: #0b1635;
         }
@@ -2194,17 +2193,14 @@
             display: block;
             transition: transform 0.35s var(--ease-out);
         }
-        /* Branded hero with copy on the left — contain + left anchor keeps type in frame */
+        /* Branded left copy: cover fills thumb; left anchor keeps type visible at 2:1 */
         .blog-card-thumb.blog-card-thumb--object-left img {
-            object-fit: contain;
+            object-fit: cover;
             object-position: left center;
             transform-origin: left center;
         }
         .blog-card:hover .blog-card-thumb img {
             transform: scale(1.05);
-        }
-        .blog-card:hover .blog-card-thumb.blog-card-thumb--object-left img {
-            transform: scale(1.04);
         }
         .blog-card-body {
             display: flex;

@@ -592,18 +592,15 @@
             transition: transform 0.4s var(--ease-out);
         }
 
+        /* Branded left copy: cover fills 16:10 (no letterboxing); left anchor keeps headline in frame */
         .blog-card-image.blog-card-image--object-left img {
-            object-fit: contain;
+            object-fit: cover;
             object-position: left center;
             transform-origin: left center;
         }
 
         .blog-card:hover .blog-card-image img {
             transform: scale(1.03);
-        }
-
-        .blog-card:hover .blog-card-image.blog-card-image--object-left img {
-            transform: scale(1.02);
         }
 
         .blog-card-body {
