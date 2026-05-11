@@ -72,7 +72,7 @@ def main():
         ROOT / "blog/mic-investing-ontario-rrsp/index.html",
         ROOT / "blog/private-mortgage-ontario/index.html",
         ROOT / "blog/private-mortgage-lender-toronto-honest-gta-guide/index.html",
-        ROOT / "blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/index.html",
+        ROOT / "blog/private-construction-loan-ontario/index.html",
         ROOT / "privacy/index.html",
         ROOT / "terms/index.html",
         ROOT / "disclaimer/index.html",

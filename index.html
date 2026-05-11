@@ -2179,6 +2179,10 @@
             background: #eef2f7;
             flex-shrink: 0;
         }
+        /* Branded art: letterbox blends with dark panel; avoids clipping left copy on cover */
+        .blog-card-thumb.blog-card-thumb--object-left {
+            background: #0b1635;
+        }
         .blog-card-thumb:focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 2px;
@@ -2190,8 +2194,17 @@
             display: block;
             transition: transform 0.35s var(--ease-out);
         }
+        /* Branded hero with copy on the left — contain + left anchor keeps type in frame */
+        .blog-card-thumb.blog-card-thumb--object-left img {
+            object-fit: contain;
+            object-position: left center;
+            transform-origin: left center;
+        }
         .blog-card:hover .blog-card-thumb img {
             transform: scale(1.05);
+        }
+        .blog-card:hover .blog-card-thumb.blog-card-thumb--object-left img {
+            transform: scale(1.04);
         }
         .blog-card-body {
             display: flex;
@@ -4239,14 +4252,14 @@
             <div class="blog-slider" aria-label="Blog articles carousel">
                 <div class="blog-track">
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-card-thumb" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
-                            <img src="/images/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
+                            <img src="/images/blog/private-construction-loan-ontario-hero.jpg" alt="" width="120" height="63" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
-                            <h3><a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
+                            <h3><a href="/blog/private-construction-loan-ontario/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
                             <p class="blog-excerpt">Draw timing, QS workflow, holdback math, and take-out strategy for GTA builds.</p>
-                            <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="/blog/private-construction-loan-ontario/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         </div>
                     </article>
                     <article class="blog-card reveal" style="--i: 1;">
@@ -4295,14 +4308,14 @@
                     </article>
                     <!-- Duplicate set for seamless loop -->
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-card-thumb" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
-                            <img src="/images/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
+                            <img src="/images/blog/private-construction-loan-ontario-hero.jpg" alt="" width="120" height="63" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
-                            <h3><a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
+                            <h3><a href="/blog/private-construction-loan-ontario/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
                             <p class="blog-excerpt">Draw timing, QS workflow, holdback math, and take-out strategy for GTA builds.</p>
-                            <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="/blog/private-construction-loan-ontario/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         </div>
                     </article>
                     <article class="blog-card reveal" style="--i: 1;">
@@ -4351,14 +4364,14 @@
                     </article>
                     <!-- Third set for continuous flow -->
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-card-thumb" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
-                            <img src="/images/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
+                            <img src="/images/blog/private-construction-loan-ontario-hero.jpg" alt="" width="120" height="63" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
-                            <h3><a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
+                            <h3><a href="/blog/private-construction-loan-ontario/">Private construction loan Ontario: how GTA builds actually get funded</a></h3>
                             <p class="blog-excerpt">Draw timing, QS workflow, holdback math, and take-out strategy for GTA builds.</p>
-                            <a href="/blog/private-construction-loan-ontario-how-gta-builds-actually-get-funded/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="/blog/private-construction-loan-ontario/" class="blog-link">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         </div>
                     </article>
                     <article class="blog-card reveal" style="--i: 1;">
