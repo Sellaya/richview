@@ -553,6 +553,10 @@
             flex-shrink: 0;
         }
 
+        .blog-card-image.blog-card-image--object-left {
+            background: linear-gradient(135deg, #0b1635 0%, rgba(11, 22, 53, 0.92) 28%, rgba(11, 22, 53, 0.06) 55%, rgba(255, 102, 0, 0.06) 100%);
+        }
+
         .blog-card-image img {
             width: 100%;
             height: 100%;
@@ -561,8 +565,19 @@
             transition: transform 0.4s var(--ease-out);
         }
 
+        /* Hero art with headline on the left — cover clips left copy at 16:10 */
+        .blog-card-image.blog-card-image--object-left img {
+            object-fit: contain;
+            object-position: left center;
+            transform-origin: left center;
+        }
+
         .blog-card:hover .blog-card-image img {
             transform: scale(1.03);
+        }
+
+        .blog-card:hover .blog-card-image.blog-card-image--object-left img {
+            transform: scale(1.02);
         }
 
         .blog-card-body {
