@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "python3 scripts/dev_server.py",
-    "start": "python3 -m http.server 8080"
+    "start": "python3 -m http.server 8080",
+    "emails:generate": "python3 scripts/generate_broker_emails.py"
   }
 }

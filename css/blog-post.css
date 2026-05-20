@@ -43,7 +43,28 @@
 }
 .post-lead a { font-weight: 600; color: var(--navy, #0b1635); text-decoration: underline; text-underline-offset: 2px; }
 .post-lead a:hover { color: var(--gold, #ff6600); }
-/* In-article hero: left-heavy branded art (headline on the left) */
+/* In-article hero image */
+.post-hero-figure {
+    margin: 0 0 1.75rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0b1635;
+}
+.post-hero-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+.post-filogix-note {
+    margin: 0 0 1.25rem;
+    padding: 1rem 1.15rem;
+    border-left: 4px solid var(--gold, #ff6600);
+    background: rgba(255, 102, 0, 0.08);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+/* Left-heavy branded art (headline on the left) */
 .post-hero-figure.post-hero-figure--object-left {
     margin: 0 0 1.75rem;
     border-radius: 10px;
