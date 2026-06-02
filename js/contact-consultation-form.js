@@ -95,13 +95,6 @@
                 var _date = String(fd.get('consultDate') || '').trim();
                 var _time = String(fd.get('consultTime') || '').trim();
 
-                if (!_date || !_time) {
-                    alert('Please select both date and time for your consultation.');
-                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
-                    return;
-                }
-
                 var pad = function(n) { return (n < 10 ? '0' : '') + n; };
                 var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
                 var formatTime = function(d) {
@@ -227,12 +220,6 @@
                 }
                 var _date = String(fd.get('heroConsultDate') || '').trim();
                 var _time = String(fd.get('heroConsultTime') || '').trim();
-                if (!_date || !_time) {
-                    alert('Please select both date and time for your consultation.');
-                    if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
-                    return;
-                }
                 var pad = function (n) { return (n < 10 ? '0' : '') + n; };
                 var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
                 var formatTime = function (d) {
