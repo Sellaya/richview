@@ -886,86 +886,6 @@
             line-height: 1.35;
         }
 
-        /* Card body */
-        .tc-body {
-            padding: 0.85rem 1.25rem 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-        }
-
-        .tc-teaser {
-            font-size: 0.875rem;
-            color: var(--muted);
-            line-height: 1.6;
-            margin: 0 0 0.75rem;
-        }
-
-        /* Expandable bio */
-        .tc-bio {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
-        }
-
-        .team-card.is-open .tc-bio {
-            max-height: 1200px;
-            opacity: 1;
-        }
-
-        .tc-bio-inner {
-            padding-top: 0.6rem;
-            border-top: 1px solid var(--border);
-            margin-bottom: 0.5rem;
-        }
-
-        .tc-bio-inner p {
-            font-size: 0.8125rem;
-            color: var(--muted);
-            line-height: 1.65;
-            margin: 0 0 0.55rem;
-        }
-
-        .tc-bio-inner p:last-child { margin-bottom: 0; }
-
-        /* Toggle button */
-        .tc-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            background: none;
-            border: none;
-            padding: 0;
-            margin-top: auto;
-            font-family: inherit;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--gold);
-            cursor: pointer;
-            transition: color 0.2s var(--ease-out);
-            -webkit-tap-highlight-color: transparent;
-            align-self: flex-start;
-        }
-
-        .tc-toggle:hover { color: var(--navy); }
-
-        .tc-toggle:focus-visible {
-            outline: 2px solid var(--gold);
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-
-        .tc-toggle-icon {
-            flex-shrink: 0;
-            transition: transform 0.3s var(--ease-out);
-        }
-
-        .team-card.is-open .tc-toggle-icon {
-            transform: rotate(180deg);
-        }
-
         /* Card footer */
         .tc-footer {
             display: flex;
@@ -1833,7 +1753,6 @@
             }
 
             .tc-name { font-size: 0.975rem; }
-            .tc-bio-inner p { font-size: 0.78125rem; }
 
             .contact-form-header,
             .contact-form-body {
@@ -3005,21 +2924,6 @@
                         <h3 class="tc-name">Guido Di Franco</h3>
                         <p class="tc-role">President &amp; CEO, Founder</p>
                     </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">Sets lending parameters and leads portfolio quality with 15+ years of lending experience and 25+ years as an entrepreneur.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Guido's focus is maintaining high quality mortgage portfolios by setting our lending parameters and guidelines, and ensuring our company is constantly adapting to changing dynamics in the industry.</p>
-                                <p>Guido has over 15 years of personal lending experience which brought him extensive knowledge of real estate investing and residential home building.</p>
-                                <p>Guido was a business entrepreneur for over 25 years building start-ups and turning them into successful businesses grossing multi-million dollars in sales.</p>
-                                <p>Currently, Guido is a principal broker for a mortgage brokerage with over 10 years of industry experience.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
-                    </div>
                     <div class="tc-footer">
                         <a href="mailto:guido@richviewcapital.com" class="tc-email">guido@richviewcapital.com</a>
                         <a href="https://www.linkedin.com/in/guido-di-franco-9b34a533/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Guido Di Franco on LinkedIn">
@@ -3039,20 +2943,6 @@
                         </div>
                         <h3 class="tc-name">Teresa Di Franco</h3>
                         <p class="tc-role">Executive VP &amp; COO, Co-Founder</p>
-                    </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">30+ years in banking, investments, and credit adjudication. Award-winning industry leader, PFP and AMP designations.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Teresa is primarily responsible for business development and day-to-day operations. She holds the oversight on risk and human resources. Teresa has over 30 years of experience in banking, investments and credit adjudication, starting with a productive management career with The Toronto Dominion Bank.</p>
-                                <p>Teresa has won multiple awards in the industry including the prestigious "Women of Influence 2016," from the CMP-Canadian Mortgage Professional Magazine, awarded to women who made a difference in the mortgage industry, and the Canada-wide 2018 Spotlight Achievement Award.</p>
-                                <p>Teresa is also an accredited financial planner having earned the Personal Financial Planner (PFP) designation and holds the Accredited Mortgage Professional (AMP) designation. Currently, Teresa is the principal broker and general manager of Mortgage Architects Experts, Inc., a multi award-winning mortgage brokerage.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
                     </div>
                     <div class="tc-footer">
                         <a href="mailto:teresa@richviewcapital.com" class="tc-email">teresa@richviewcapital.com</a>
@@ -3082,20 +2972,6 @@
                         <h3 class="tc-name">Maurizio Sera</h3>
                         <p class="tc-role">Director of Investments / Underwriting</p>
                     </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">22+ years as a successful entrepreneur and 10+ years as a mortgage investor, overseeing investor relations and underwriting precision.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Maurizio Sera is our Director of Investor Relations and Underwriting. Prior to joining Richview Capital MIC Inc, Maurizio accumulated 22 years of experience as a successful entrepreneur and over 10 years of experience as a mortgage investor.</p>
-                                <p>Maurizio's hands-on experience in personal financial discipline enables him to fully understand the goals and objectives of a client, whether as an investor or as a borrower.</p>
-                                <p>As part of the executive team, Maurizio ensures the meticulous internal business processes are adhered to with precision and with emphasis on risk mitigation and quality control. Maurizio also oversees investor relations including ensuring timely delivery of information and documentation.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
-                    </div>
                     <div class="tc-footer">
                         <a href="mailto:maurizio@richviewcapital.com" class="tc-email">maurizio@richviewcapital.com</a>
                         <a href="https://www.linkedin.com/in/maurizio-sera-7249a020/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Maurizio Sera on LinkedIn">
@@ -3115,19 +2991,6 @@
                         </div>
                         <h3 class="tc-name">Natasha Barranca</h3>
                         <p class="tc-role">Director of Operations</p>
-                    </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">18+ years in financial management, overseeing accounting, auditing, and investor relations across all operations.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Natasha has over 18 years of extensive financial management and administration experience encompassing various industries. In her current role, Natasha manages the accounting department and oversees all financial operations, including general ledgers, cost accounting, bookkeeping, auditing, and day-to-day administrative operations.</p>
-                                <p>Additionally, she assists in investor relations and managing client portfolios. Her solid experience and love for business and finance has allowed her to achieve exceptional growth and continued success.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
                     </div>
                     <div class="tc-footer">
                         <a href="mailto:natasha@richviewcapital.com" class="tc-email">natasha@richviewcapital.com</a>
@@ -3149,20 +3012,6 @@
                         <h3 class="tc-name">Randall Olivares</h3>
                         <p class="tc-role">Underwriting &amp; Fulfillment Officer</p>
                     </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">7+ years evaluating loan applications, analyzing financial data, and managing the end-to-end mortgage fulfillment process.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Randall is our Underwriting and Fulfillment Officer and comes with over 7 years of experience in the mortgage industry. His role involves meticulously evaluating loan applications, analyzing financial data, and managing the intricate process of mortgage fulfillment.</p>
-                                <p>Thanks to his expertise, he has consistently facilitated seamless transactions, mitigated risks, and plays a pivotal role in the company's continued growth and success.</p>
-                                <p>Beyond underwriting, his sales and management experience have allowed him to effectively collaborate with clients and team members alike, fostering relationships that drive business growth and operational efficiency.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
-                    </div>
                     <div class="tc-footer">
                         <a href="mailto:randall@richviewcapital.com" class="tc-email">randall@richviewcapital.com</a>
                         <a href="https://www.linkedin.com/in/randall-olivares-b84526158/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Randall Olivares on LinkedIn">
@@ -3182,20 +3031,6 @@
                         </div>
                         <h3 class="tc-name">Laura Novello</h3>
                         <p class="tc-role">Renewals</p>
-                    </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">Renewal Specialist turning every client interaction into a smooth, personalized experience built on genuine connection.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Laura Novello is an energetic and outgoing Renewal Specialist who thrives on building genuine connections with clients and making every interaction count. With a strong background in customer success and account management, she brings a fresh, positive energy to the renewal process, turning what could feel transactional into a smooth, personalized experience.</p>
-                                <p>Known for her proactive communication style and attention to detail, Laura works closely with clients to ensure renewals are seamless, timely, and aligned with their goals. She's passionate about helping customers feel supported and valued at every stage of their journey.</p>
-                                <p>It's not just about closing renewals. It's about strengthening relationships, creating trust, and keeping customers excited to stay.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
                     </div>
                     <div class="tc-footer">
                         <a href="mailto:laura@richviewcapital.com" class="tc-email">laura@richviewcapital.com</a>
@@ -3217,20 +3052,6 @@
                         <h3 class="tc-name">Emely Sanchez</h3>
                         <p class="tc-role">Accountant</p>
                     </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">10+ years in office administration and records management, continuously expanding expertise in private lending.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Emely Sanchez is our Director of Administration. She brings over 10 years of experience in office administration and records maintenance.</p>
-                                <p>Emely has developed a profound interest in developing her career in the mortgage industry. Her knowledge of the private lending sector is continuously expanding as her role evolves to meet the needs of the company's steady growth.</p>
-                                <p>Emely proudly capitalizes on her Bachelor's degree at the University of Toronto with a focus in environmental conservation, ensuring that maximum conservation of resources are observed in our firm. She consistently maintains efficient procedures, allowing her to maximize her contribution to the team's success.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
-                    </div>
                     <div class="tc-footer">
                         <a href="mailto:emely@richviewcapital.com" class="tc-email">emely@richviewcapital.com</a>
                         <a href="https://www.linkedin.com/in/emely-sanchez-170201250/" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Emely Sanchez on LinkedIn">
@@ -3251,20 +3072,6 @@
                         <h3 class="tc-name">Mark Shun-Yin Leung</h3>
                         <p class="tc-role">Controller</p>
                     </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">ACCA member and former KPMG auditor specializing in IFRS, U.S. GAAP, SOX compliance, and mortgage loan servicing.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Mark Leung is our Controller. He is a member in good standing of the Association of Chartered Certified Accountants (ACCA), having completed his Bachelor's degree at Staffordshire University (U.K.) and built his wealth of auditing and financial reporting experience at KPMG. He is highly experienced with the International Financial Reporting Standards (IFRS) and the U.S. GAAP, including SOX-Sarbanes compliance.</p>
-                                <p>Mark has also gained valuable years of experience in the mortgage loan industry that includes loan origination, underwriting, regulations, compliance, and account servicing.</p>
-                                <p>Mark is appreciated for his exceptional skills in analytical and strategic thinking, attention to detail, and effective communication. He has a proven track record of delivering high-quality work in a timely and efficient manner with focus on optimizing cash balances, reducing idle cash, and managing cash flow.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
-                    </div>
                     <div class="tc-footer">
                         <a href="mailto:mark@richviewcapital.com" class="tc-email">mark@richviewcapital.com</a>
                         <a href="#" class="tc-linkedin" target="_blank" rel="noopener" aria-label="Mark Leung on LinkedIn">
@@ -3284,19 +3091,6 @@
                         </div>
                         <h3 class="tc-name">Gabriella Di Franco</h3>
                         <p class="tc-role">Executive Administrator</p>
-                    </div>
-                    <div class="tc-body">
-                        <p class="tc-teaser">Highly organized Executive Administrator supporting leadership with expertise in scheduling, coordination, and process improvement.</p>
-                        <div class="tc-bio" aria-hidden="true">
-                            <div class="tc-bio-inner">
-                                <p>Gabriella Di Franco is a highly organized and detail-oriented Executive Administrator with years of experience supporting day-to-day operations. Known for exceptional communication skills and a proactive approach, she excels in calendar management, meeting coordination, stakeholder communication, and process improvement.</p>
-                                <p>Gabriella is committed to maintaining professionalism and efficiency in fast-paced environments, contributing significantly to organizational growth and leadership effectiveness.</p>
-                            </div>
-                        </div>
-                        <button type="button" class="tc-toggle" aria-expanded="false">
-                            <span class="tc-toggle-text">Read more</span>
-                            <svg class="tc-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-                        </button>
                     </div>
                     <div class="tc-footer">
                         <a href="mailto:gabriella@adminexec.com" class="tc-email">gabriella@adminexec.com</a>
@@ -3634,17 +3428,6 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
         document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
-
-        document.querySelectorAll('.tc-toggle').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var card = this.closest('.team-card');
-                var isOpen = card.classList.toggle('is-open');
-                this.setAttribute('aria-expanded', isOpen);
-                this.querySelector('.tc-toggle-text').textContent = isOpen ? 'Show less' : 'Read more';
-                var bio = card.querySelector('.tc-bio');
-                if (bio) bio.setAttribute('aria-hidden', !isOpen);
-            });
-        });
 
         document.querySelectorAll('a[href^="#"]').forEach(function (a) {
             a.addEventListener('click', function (e) {
