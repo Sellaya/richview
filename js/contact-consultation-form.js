@@ -76,7 +76,7 @@
                 if (_phoneDigits.length !== 10) {
                     alert('Please enter a valid 10-digit phone number.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                     var telEl = document.getElementById('consultPhone');
                     if (telEl && telEl.focus) telEl.focus();
                     return;
@@ -89,7 +89,7 @@
                 if (_interest === 'borrowing' && !_loanType) {
                     alert('Please select a financing type.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                     return;
                 }
                 var _date = String(fd.get('consultDate') || '').trim();
@@ -176,7 +176,7 @@
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                 }
             });
         })();
@@ -202,7 +202,7 @@
                 if (_phoneDigits.length !== 10) {
                     alert('Please enter a valid 10-digit phone number.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                     var telEl = document.getElementById('heroConsultPhone');
                     if (telEl && telEl.focus) telEl.focus();
                     return;
@@ -215,7 +215,7 @@
                 if (_interest === 'borrowing' && !_loanType) {
                     alert('Please select a financing type.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                     return;
                 }
                 var _date = String(fd.get('heroConsultDate') || '').trim();
@@ -300,7 +300,7 @@
                     console.error('[GHL] Webhook submission failed:', err);
                     alert('Something went wrong. Please try again or call us directly.');
                     if (spinnerHandle && spinnerHandle.restore) spinnerHandle.restore();
-                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Schedule Consultation'; }
+                    else if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Form'; }
                 }
             });
         })();
