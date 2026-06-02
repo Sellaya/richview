@@ -1682,11 +1682,6 @@
                 border-bottom: none;
             }
 
-            /* Testimonials: slider card width on tablet */
-            .testimonial-card {
-                width: 320px;
-            }
-
             /* CTA form: single column form rows */
             .cta-box .form-row {
                 grid-template-columns: 1fr;
@@ -1748,7 +1743,6 @@
             .why-section,
             .fund-section,
             .guidelines-section,
-            .testimonials-section,
             .faq-section {
                 padding: 3.5rem 0;
             }
@@ -1757,11 +1751,6 @@
             .fund-card,
             .guideline-card {
                 padding: 1.5rem 1.25rem;
-            }
-
-            /* Testimonials: reduce padding */
-            .testimonial-card {
-                padding: 1.75rem 1.25rem;
             }
 
             /* CTA/form: tighter padding */
@@ -1857,10 +1846,6 @@
                 padding: 0 var(--gutter);
             }
 
-            .testimonials-section .sec-head {
-                padding: 0 var(--gutter);
-            }
-
             /* Hero padding: 7rem top */
             .page-hero {
                 padding-top: 7rem;
@@ -1880,7 +1865,6 @@
             .why-section,
             .fund-section,
             .guidelines-section,
-            .testimonials-section,
             .faq-section {
                 padding: 2.75rem 0;
             }
@@ -1888,11 +1872,6 @@
             .fund-card,
             .guideline-card {
                 padding: 1.25rem 1rem;
-            }
-
-            .testimonial-card {
-                padding: 1.25rem 1rem;
-                width: 300px;
             }
 
             /* CTA form compact */
@@ -3009,13 +2988,11 @@
     <link rel="stylesheet" href="/css/benefit-cards-shared.css">
     <link rel="stylesheet" href="/css/benefits-section-premium.css">
     <link rel="stylesheet" href="/css/lottie-forms.css">
-    <link rel="stylesheet" href="/css/testimonials-google.css">
     <link rel="stylesheet" href="/css/cta-box-header-border.css">
     <link rel="stylesheet" href="/css/site-global.css">
     <link rel="stylesheet" href="/css/consult-schedule-section.css">
     <link rel="stylesheet" href="/css/calendly-style-picker.css">
     <link rel="stylesheet" href="/css/hero-multistep-form.css">
-    <script src="/js/testimonials-expand.js" defer></script>
     <script src="/js/product-cards-expand.js" defer></script>
 </head>
 
@@ -3400,174 +3377,6 @@
         </div>
     </section>
 
-    <section class="testimonials-section" id="testimonials">
-        <div class="testimonials-inner">
-        <div class="sec-head reveal">
-                <h2>What Our Clients Say</h2>
-                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
-            <div class="testimonials-track">
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I wanted to recognize and give kudos to your entire team. Working with them on this file was genuinely a pleasure. From Maurizio to Natasha to Randall to Emely, every single person involved was professional, flexible, and consistently strong on communication throughout.<br><br>It was a long process that could have been complex, but your team made it feel simple and seamless. While hospitality is a word more often associated with restaurants and hotels, it genuinely describes the experience of working with Richview. The level of care and thoughtfulness your team brought to every interaction reflected a true sense of hospitality in the service provided.<br><br>It&rsquo;s clear you&rsquo;ve built an incredible organization, and I truly appreciate the care and attention your team put into this deal.<br><br>I look forward to many more opportunities to work together and to placing future clients with Richview.<br><br>Thank you again.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JN</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jim Ngo</h5>
-                                <span>Mortgage Broker, Ontario</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I wanted to recognize and give kudos to your entire team. Working with them on this file was genuinely a pleasure. From Maurizio to Natasha to Randall to Emely, every single person involved was professional, flexible, and consistently strong on communication throughout.<br><br>It was a long process that could have been complex, but your team made it feel simple and seamless. While hospitality is a word more often associated with restaurants and hotels, it genuinely describes the experience of working with Richview. The level of care and thoughtfulness your team brought to every interaction reflected a true sense of hospitality in the service provided.<br><br>It&rsquo;s clear you&rsquo;ve built an incredible organization, and I truly appreciate the care and attention your team put into this deal.<br><br>I look forward to many more opportunities to work together and to placing future clients with Richview.<br><br>Thank you again.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JN</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jim Ngo</h5>
-                                <span>Mortgage Broker, Ontario</span>
-                            </div>
-                        </div>
-                </div>
-                <!-- Third set for continuous flow -->
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>Richview Capital is my go-to for alternative lending. They deliver on their promises with fast approvals and transparent communication. My clients trust them because I trust them.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SC</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Chen</h5>
-                                <span>Mortgage Broker, Toronto</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've worked with many private lenders, but Richview stands out for their professionalism and reliability. They close deals on time, every time. That's invaluable in this business.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JK</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Kumar</h5>
-                                <span>Broker, Mississauga</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>When I have a tough deal, I know I can count on Richview Capital. Their case-by-case approach means they actually listen and find solutions instead of just saying no.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div class="testimonial-author-info">
-                                <h5>Maria Thompson</h5>
-                                <span>Senior Broker, Oakville</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I wanted to recognize and give kudos to your entire team. Working with them on this file was genuinely a pleasure. From Maurizio to Natasha to Randall to Emely, every single person involved was professional, flexible, and consistently strong on communication throughout.<br><br>It was a long process that could have been complex, but your team made it feel simple and seamless. While hospitality is a word more often associated with restaurants and hotels, it genuinely describes the experience of working with Richview. The level of care and thoughtfulness your team brought to every interaction reflected a true sense of hospitality in the service provided.<br><br>It&rsquo;s clear you&rsquo;ve built an incredible organization, and I truly appreciate the care and attention your team put into this deal.<br><br>I look forward to many more opportunities to work together and to placing future clients with Richview.<br><br>Thank you again.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JN</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jim Ngo</h5>
-                                <span>Mortgage Broker, Ontario</span>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="faq-section" id="faq">
         <div class="container">

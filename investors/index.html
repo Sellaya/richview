@@ -1576,7 +1576,6 @@
             .mic-process,
             .benefits-section,
             .why-invest,
-            .testimonials-section,
             .faq-section {
                 padding: 3.5rem 0;
             }
@@ -1588,15 +1587,6 @@
 
             .value-card {
                 padding: 1.5rem 1.25rem;
-            }
-
-            /* Testimonials: reduce padding */
-            .testimonial-card {
-                padding: 1.35rem 1.15rem;
-            }
-
-            .testimonials-section .sec-head {
-                padding: 0 var(--gutter);
             }
 
             /* CTA/Contact: tighter padding */
@@ -2632,13 +2622,11 @@
     <link rel="stylesheet" href="/css/benefit-cards-shared.css">
     <link rel="stylesheet" href="/css/benefits-section-premium.css">
     <link rel="stylesheet" href="/css/lottie-forms.css">
-    <link rel="stylesheet" href="/css/testimonials-google.css">
     <link rel="stylesheet" href="/css/cta-box-header-border.css">
     <link rel="stylesheet" href="/css/site-global.css">
     <link rel="stylesheet" href="/css/consult-schedule-section.css">
     <link rel="stylesheet" href="/css/calendly-style-picker.css">
     <link rel="stylesheet" href="/css/hero-multistep-form.css">
-    <script src="/js/testimonials-expand.js" defer></script>
 </head>
 
 <body>
@@ -2864,136 +2852,6 @@
         </div>
     </section>
 
-    <section class="testimonials-section" id="testimonials">
-        <div class="testimonials-inner">
-        <div class="sec-head reveal">
-                <h2>What Our Clients Say</h2>
-                <p>Real experiences from clients who&nbsp;trust Richview&nbsp;Capital</p>
-        </div>
-        <div class="testimonials-slider" aria-label="Testimonials carousel">
-            <div class="testimonials-track">
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>The consistent returns and professional management make Richview Capital MIC an excellent addition to my investment portfolio. The asset-backed security gives me confidence.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">RP</div>
-                            <div class="testimonial-author-info">
-                                <h5>Robert Patterson</h5>
-                                <span>Private Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've been investing with Richview Capital for several years. Their transparent reporting and regular distributions have made this a cornerstone of my retirement income strategy.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JM</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jennifer Morrison</h5>
-                                <span>RRSP Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>As a sophisticated investor, I appreciate their disciplined underwriting and focus on principal protection. The management team's experience is evident in every decision.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">DK</div>
-                            <div class="testimonial-author-info">
-                                <h5>David Kim</h5>
-                                <span>Accredited Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>The consistent returns and professional management make Richview Capital MIC an excellent addition to my investment portfolio. The asset-backed security gives me confidence.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">RP</div>
-                            <div class="testimonial-author-info">
-                                <h5>Robert Patterson</h5>
-                                <span>Private Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've been investing with Richview Capital for several years. Their transparent reporting and regular distributions have made this a cornerstone of my retirement income strategy.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JM</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jennifer Morrison</h5>
-                                <span>RRSP Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>As a sophisticated investor, I appreciate their disciplined underwriting and focus on principal protection. The management team's experience is evident in every decision.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">DK</div>
-                            <div class="testimonial-author-info">
-                                <h5>David Kim</h5>
-                                <span>Accredited Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <!-- Third set for continuous flow -->
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>The consistent returns and professional management make Richview Capital MIC an excellent addition to my investment portfolio. The asset-backed security gives me confidence.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">RP</div>
-                            <div class="testimonial-author-info">
-                                <h5>Robert Patterson</h5>
-                                <span>Private Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>I've been investing with Richview Capital for several years. Their transparent reporting and regular distributions have made this a cornerstone of my retirement income strategy.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JM</div>
-                            <div class="testimonial-author-info">
-                                <h5>Jennifer Morrison</h5>
-                                <span>RRSP Investor</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
-                        </div>
-                        <div class="testimonial-quote-wrap"><blockquote>As a sophisticated investor, I appreciate their disciplined underwriting and focus on principal protection. The management team's experience is evident in every decision.</blockquote><button type="button" class="testimonial-read-more" aria-expanded="false">Read more</button></div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">DK</div>
-                            <div class="testimonial-author-info">
-                                <h5>David Kim</h5>
-                                <span>Accredited Investor</span>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="faq-section" id="faq">
         <div class="container">
