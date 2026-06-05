@@ -74,6 +74,7 @@ def main():
         ROOT / "blog/private-mortgage-lender-toronto-honest-gta-guide/index.html",
         ROOT / "blog/private-construction-loan-ontario/index.html",
         ROOT / "blog/private-mortgage-deal-submission-ontario-2026/index.html",
+        ROOT / "blog/second-mortgage-ontario/index.html",
         ROOT / "privacy/index.html",
         ROOT / "terms/index.html",
         ROOT / "disclaimer/index.html",
