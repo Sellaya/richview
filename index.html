@@ -1608,41 +1608,39 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 0.65rem;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
+            padding: 0.55rem 0.75rem;
+            background: #fff;
+            border: 1px solid rgba(11, 22, 53, 0.08);
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(11, 22, 53, 0.05);
             flex: 0 0 var(--partner-slot);
             width: var(--partner-slot);
             min-width: var(--partner-slot);
             max-width: var(--partner-slot);
             box-sizing: border-box;
-            height: 64px;
-            transition: transform 0.22s var(--ease-out), opacity 0.22s;
+            height: 68px;
+            transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out);
             cursor: default;
         }
         .partner-logo-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(11, 22, 53, 0.08);
         }
         .partner-logo-card img {
-            height: 44px;
+            height: 40px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
-            mix-blend-mode: multiply;
-            filter: grayscale(0.15) brightness(0.97);
-            opacity: 0.8;
-            transition: filter 0.22s, opacity 0.22s;
+            object-position: center;
+            mix-blend-mode: normal;
+            filter: none;
+            opacity: 1;
+            transition: transform 0.22s var(--ease-out);
             display: block;
         }
-        .partner-logo-card:hover img {
-            filter: grayscale(0) brightness(1);
-            opacity: 1;
-        }
         .partner-logo-card--axess img {
-            height: 48px;
-            max-width: 130px;
+            height: 44px;
+            max-width: 118px;
         }
         .partner-logo-card--wide {
             flex: 0 0 188px;
@@ -1651,24 +1649,23 @@
             max-width: 188px;
         }
         .partner-logo-card--wide img {
-            height: 40px;
-            max-width: 172px;
+            height: 36px;
+            max-width: 168px;
         }
         .partner-logo-card--tall img {
-            height: 52px;
-            max-width: 88px;
+            height: 46px;
+            max-width: 80px;
         }
         .partner-logo-card--on-dark {
-            background: transparent;
-            border-radius: 0;
-            padding: 0.55rem 0.85rem;
+            background: var(--navy);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 1px 3px rgba(11, 22, 53, 0.12);
+        }
+        .partner-logo-card--on-dark:hover {
+            box-shadow: 0 4px 12px rgba(11, 22, 53, 0.18);
         }
         .partner-logo-card--on-dark img {
             mix-blend-mode: normal;
-            filter: none;
-            opacity: 1;
-        }
-        .partner-logo-card--on-dark:hover img {
             filter: none;
             opacity: 1;
         }
@@ -3501,7 +3498,7 @@
                 min-width: 148px;
                 max-width: 148px;
             }
-            .partner-logo-card { height: 56px; padding: 0.4rem 0.5rem; }
+            .partner-logo-card { height: 60px; padding: 0.45rem 0.55rem; }
             .about-value-card { padding: 1.5rem 1.25rem; }
 
             .cta-section { padding: var(--space-lg) 0; }
@@ -3987,17 +3984,17 @@
                 <div class="partner-logo-card"><img src="/images/partner-spagnuolo.png" alt="Tony Spagnuolo Law" width="140" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-iappraise.png" alt="iAppraise" width="120" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-sharp-appraisal.png" alt="Sharp Appraisal" width="110" height="48" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-solidifi.png" alt="Solidifi" width="100" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--tall"><img src="/images/partner-crosstown-appraisal.png" alt="Cross-Town Appraisal Ltd." width="56" height="56" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-architects.png" alt="Mortgage Architects" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-alliance.png" alt="Mortgage Alliance" width="110" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-mortgage-edge.png" alt="Mortgage Edge" width="150" height="44" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-fairchoice.png" alt="Fairchoice Mortgage Co." width="160" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
                 <!-- Set 2 — duplicate for seamless infinite loop -->
                 <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-vantagelaw.png" alt="Vantage Law" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="/images/partner-axess.png" alt="Axess Law" width="130" height="48" loading="lazy" decoding="async"></div>
@@ -4005,17 +4002,17 @@
                 <div class="partner-logo-card"><img src="/images/partner-spagnuolo.png" alt="Tony Spagnuolo Law" width="140" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-iappraise.png" alt="iAppraise" width="120" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-sharp-appraisal.png" alt="Sharp Appraisal" width="110" height="48" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-solidifi.png" alt="Solidifi" width="100" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--tall"><img src="/images/partner-crosstown-appraisal.png" alt="Cross-Town Appraisal Ltd." width="56" height="56" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-architects.png" alt="Mortgage Architects" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-alliance.png" alt="Mortgage Alliance" width="110" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-mortgage-edge.png" alt="Mortgage Edge" width="150" height="44" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-fairchoice.png" alt="Fairchoice Mortgage Co." width="160" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
                 <!-- Set 3 -->
                 <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-vantagelaw.png" alt="Vantage Law" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--axess"><img src="/images/partner-axess.png" alt="Axess Law" width="130" height="48" loading="lazy" decoding="async"></div>
@@ -4023,17 +4020,17 @@
                 <div class="partner-logo-card"><img src="/images/partner-spagnuolo.png" alt="Tony Spagnuolo Law" width="140" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-iappraise.png" alt="iAppraise" width="120" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-sharp-appraisal.png" alt="Sharp Appraisal" width="110" height="48" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-approved-appraisal.png" alt="Approved Appraisal Services" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-solidifi.png" alt="Solidifi" width="100" height="40" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--tall"><img src="/images/partner-crosstown-appraisal.png" alt="Cross-Town Appraisal Ltd." width="56" height="56" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-architects.png" alt="Mortgage Architects" width="120" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card"><img src="/images/partner-mortgage-alliance.png" alt="Mortgage Alliance" width="110" height="48" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-mortgage-edge.png" alt="Mortgage Edge" width="150" height="44" loading="lazy" decoding="async"></div>
                 <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-fairchoice.png" alt="Fairchoice Mortgage Co." width="160" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
-                <div class="partner-logo-card partner-logo-card--on-dark partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-capital360.png" alt="Capital360" width="150" height="40" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-cleartrust.png" alt="Clear Trust Mortgages" width="120" height="52" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card"><img src="/images/partner-securemortgage.png" alt="Secure Mortgage Experts" width="130" height="44" loading="lazy" decoding="async"></div>
+                <div class="partner-logo-card partner-logo-card--wide"><img src="/images/partner-flow-lending.png" alt="Flow Lending Group" width="170" height="40" loading="lazy" decoding="async"></div>
             </div>
         </div>
     </section>
