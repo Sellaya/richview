@@ -17,7 +17,7 @@ fbq('track', 'PageView');
 window.RichviewMetaPixel = window.RichviewMetaPixel || {};
 window.RichviewMetaPixel.trackLeadAndRedirect = function (opts) {
     opts = opts || {};
-    var contentName = opts.content_name || 'Book a Free Consultation';
+    var contentName = opts.content_name || 'Speak With Our Team';
     if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
             content_name: contentName,

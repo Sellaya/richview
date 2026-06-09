@@ -317,7 +317,7 @@
         max-width: calc(100vw - 1rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
     }
 }
-/* ========== Schedule consultation button - fluid, mobile first ========== */
+/* ========== Speak With Our Team button - fluid, mobile first ========== */
 .hero-form-wrap .hero-form-submit {
     flex: 0 1 auto;
     display: inline-flex;

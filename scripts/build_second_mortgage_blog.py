@@ -352,7 +352,7 @@ def build_article() -> str:
                 <div class="post-prose">
 {build_post_prose()}
                 </div>
-                <p class="post-cta">Next steps: <a href="/borrowers/">Borrowers</a> · <a href="/borrowers/#contact-form">Book a consultation</a> · <a href="/faq/">FAQ</a></p>
+                <p class="post-cta">Next steps: <a href="/borrowers/">Borrowers</a> · <a href="/borrowers/#contact-form">Speak With Our Team</a> · <a href="/faq/">FAQ</a></p>
                 <p class="post-disclaimer">Richview Capital MIC is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners, not legal, financial, or tax advice. Rates, fees, LTV limits, and approvals vary by file and underwriting, and published ranges are subject to change and are not an offer of credit.</p>
             </div>
         </article>

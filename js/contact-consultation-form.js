@@ -125,7 +125,7 @@
                 var _email = String(fd.get('consultEmail') || '').trim();
                 var _phone = String(fd.get('consultPhone') || '').trim();
                 var payload = {
-                    form_name:    'Book a Free Consultation',
+                    form_name:    'Speak With Our Team',
                     first_name:   _fn,
                     last_name:    _ln,
                     firstName:    _fn,
@@ -249,7 +249,7 @@
                 var _email = String(fd.get('heroConsultEmail') || '').trim();
                 var _phone = String(fd.get('heroConsultPhone') || '').trim();
                 var payload = {
-                    form_name: 'Hero Consultation (Schedule)',
+                    form_name: 'Speak With Our Team (Schedule)',
                     first_name: _fn,
                     last_name: _ln,
                     firstName: _fn,

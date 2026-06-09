@@ -112,7 +112,7 @@
      */
     window.RichviewGoogle.trackConsultationLead = function (opts) {
         opts = opts || {};
-        var formName = opts.form_name || 'Book a Free Consultation';
+        var formName = opts.form_name || 'Speak With Our Team';
         var payload = {
             event: 'generate_lead',
             lead_source: 'consultation_form',

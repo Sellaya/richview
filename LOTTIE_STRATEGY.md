@@ -207,7 +207,7 @@ Lottie animations on this site must feel **minimal, elegant, professional, trust
 | **Style** | Circular, 2px stroke, single rotation |
 | **Playback** | Loop while loading |
 | **Duration** | 1s per rotation |
-| **Placement** | Inside button; replace "Schedule Consultation" / "Submit" |
+| **Placement** | Inside button; replace "Speak With Our Team" / "Submit" |
 | **Fallback** | CSS `animation: spin` or text "Sending..." |
 
 #### 6.2 Form Success
