@@ -38,11 +38,11 @@ UL_STYLE = 'style="padding-left:24px; margin-bottom:22px;"'
 FAQS: list[tuple[str, str]] = [
     (
         "What are second mortgage rates in Ontario in 2026?",
-        "Private second mortgage rates in Ontario typically run from about 10.99% for lower-LTV files up to the 11.99%+ range for higher-LTV files, plus a lender fee of around 2%. Your exact rate depends on your LTV, property type and location, and the strength of your file.",
+        "Private second mortgage rates in Ontario typically run from 8.99% for higher-LTV files, plus a lender fee of around 2%. Your exact rate depends on your LTV, property type and location, and the strength of your file.",
     ),
     (
         "How much can I borrow with a second mortgage?",
-        "It depends on your equity. Most Ontario lenders cap total mortgages at 75% of value in the GTA and 65% on condos and properties outside the GTA. You subtract your existing first mortgage balance from that limit to find what's available. Second mortgages at Richview go up to $1,000,000.",
+        "It depends on your equity. Richview second mortgages are available up to $1,000,000 at up to 75% LTV (case by case). Subtract your existing first mortgage balance from that limit to find what's available.",
     ),
     (
         "Can I get a second mortgage with bad credit in Ontario?",
@@ -211,7 +211,7 @@ def build_post_prose() -> str:
   <p>Most private second mortgages are short-term, typically 6 to 12 months, sometimes up to two years, and many are structured interest-only, which keeps the monthly payment lower because you&apos;re not paying down principal over such a short window. They&apos;re designed to solve a specific problem and then be paid out, not to sit on title for decades.</p>
 
   <h2>How much can you borrow? Honest Ontario LTV bands</h2>
-  <p>The number that decides your loan is <span class="key-term">loan-to-value (LTV)</span>, which is all the debt against your home divided by its appraised value. You&apos;ll see other lenders advertise &ldquo;up to 85% LTV.&rdquo; That&apos;s optimistic for much of Ontario, especially condos. Here&apos;s the realistic framework a disciplined Ontario lender actually uses:</p>
+  <p>The number that decides your loan is <span class="key-term">loan-to-value (LTV)</span>, which is all the debt against your home divided by its appraised value. Richview&apos;s published cap is <strong>up to 75% LTV (case by case)</strong>. The table below shows how many Ontario lenders adjust by property type:</p>
 
   <div class="post-table-wrap">
     <table>
@@ -243,8 +243,7 @@ def build_post_prose() -> str:
         <tr><th>Product</th><th>Starting rate</th><th>Lender fee</th><th>Typical term</th><th>LTV cap</th></tr>
       </thead>
       <tbody>
-        <tr><td>Second mortgage (under 65% LTV)</td><td>from 10.99%</td><td>2%</td><td>6–12 months</td><td>75% GTA / 65% condos &amp; outskirts</td></tr>
-        <tr><td>Second mortgage (65% LTV and above)</td><td>from 11.99%</td><td>2%</td><td>6–12 months</td><td>75% GTA / 65% condos &amp; outskirts</td></tr>
+        <tr><td>Second mortgage</td><td>from 8.99%</td><td>2%</td><td>6–12 months</td><td>Up to 75% LTV (case by case)</td></tr>
       </tbody>
     </table>
   </div>
@@ -296,7 +295,7 @@ def build_post_prose() -> str:
     <li><strong>Business or investment capital.</strong> Common for self-employed owners whose income is hard to prove to a bank</li>
     <li><strong>Bridging a short-term gap.</strong> Covering a timing mismatch until a sale or refinance closes</li>
   </ul>
-  <p>In each of these cases the same principle applies: Richview underwrites on the equity in the property and the strength of your exit, not on a perfect credit score. That&apos;s why a second mortgage can fund when a bank won&apos;t, and why a clean, complete file in the GTA can get same-day feedback and close in as little as 48 hours, with second mortgages starting from <strong>10.99%</strong> and loans up to <strong>$1,000,000</strong>.</p>
+  <p>In each of these cases the same principle applies: Richview underwrites on the equity in the property and the strength of your exit, not on a perfect credit score. That&apos;s why a second mortgage can fund when a bank won&apos;t, and why a clean, complete file in the GTA can get same-day feedback and close in as little as 48 hours, with second mortgages starting from <strong>8.99%</strong> and loans up to <strong>$1,000,000</strong>.</p>
 
   <h2>Your exit strategy: the part that matters most</h2>
   <p>A second mortgage is a bridge, not a destination. Before you sign, you need a realistic plan to pay it off at the end of the term. A responsible lender won&apos;t fund one without it. There are two credible exits:</p>
@@ -311,7 +310,7 @@ def build_post_prose() -> str:
 
   <h2>Talk to Richview about your second mortgage</h2>
   <p>What makes a second mortgage work is realistic LTV bands, published rates, and a fast, equity-based decision. That&apos;s what we built <a href="/borrowers/">Richview Capital</a> around. We&apos;re a licensed Ontario Mortgage Investment Corporation (Lic #13171), and because we lend directly, you deal with the people who actually fund your file.</p>
-  <p>If you have real equity in a GTA or Ontario home and a clear reason for the funds, we can tell you quickly whether a second mortgage fits, with second mortgages from <strong>10.99%</strong>, loans up to <strong>$1,000,000</strong>, and same-day feedback on a complete application.</p>
+  <p>If you have real equity in a GTA or Ontario home and a clear reason for the funds, we can tell you quickly whether a second mortgage fits, with second mortgages from <strong>8.99%</strong>, loans up to <strong>$1,000,000</strong>, and same-day feedback on a complete application.</p>
   <p>Get in touch with Richview Capital to talk through your options, or read more in our <a href="/faq/">lending FAQ</a>.</p>
 
   <div class="post-related">

@@ -49,7 +49,7 @@ FAQS: list[tuple[str, str]] = [
     ),
     (
         "How much equity do I need for a HELOC or home equity loan?",
-        "Banks generally want you to keep at least 20% equity, with a HELOC capped at 65% of value and combined borrowing capped at 80%. Private lenders are more flexible and lend on the equity available, commonly up to about 75% of value in the GTA.",
+        "Banks generally want you to keep at least 20% equity, with a HELOC capped at 65% of value and combined borrowing capped at 80%. At Richview, private HELOC and home equity products are available up to 75% LTV (case by case).",
     ),
     (
         "Can I get a home equity loan with bad credit or no income proof?",
@@ -61,7 +61,7 @@ FAQS: list[tuple[str, str]] = [
     ),
     (
         "What does a home equity loan cost in the GTA?",
-        "A bank HELOC is typically prime plus half to one point (about 5% to 6% at a June 2026 prime of 4.45%). A private home equity loan or second mortgage generally runs 8% to 12% plus a one-time lender fee, with legal and appraisal costs on top.",
+        "A bank HELOC is typically prime plus half to one point (about 5% to 6% at a June 2026 prime of 4.45%). A private home equity loan or second mortgage at Richview starts from 8.99% plus a one-time lender fee, with legal and appraisal costs on top.",
     ),
     (
         "Is my home at risk with a HELOC or home equity loan?",
@@ -246,13 +246,13 @@ def build_post_prose() -> str:
 
   <h2>How much you can borrow against a GTA home</h2>
   <p>How much you can pull out depends on your equity and on the lender&apos;s <span class="key-term">loan-to-value (LTV)</span> limits.</p>
-  <p>At a federally regulated bank, a HELOC is generally capped at 65% of your home&apos;s value, and your HELOC plus your mortgage together cannot exceed 80% of the home&apos;s value, according to the <a href="{FCAC_URL}" rel="noopener noreferrer" target="_blank">Financial Consumer Agency of Canada</a>. Private lenders work on equity rather than those federal caps, and commonly lend up to about 75% of value in the GTA, with the ceiling closer to 65% for condominiums and properties outside the GTA.</p>
+  <p>At a federally regulated bank, a HELOC is generally capped at 65% of your home&apos;s value, and your HELOC plus your mortgage together cannot exceed 80% of the home&apos;s value, according to the <a href="{FCAC_URL}" rel="noopener noreferrer" target="_blank">Financial Consumer Agency of Canada</a>. Private lenders like Richview work on equity rather than those federal caps, with published products up to 75% LTV (case by case) on HELOC and home equity loans.</p>
   <p>The GTA&apos;s high values make this meaningful. The average GTA selling price was about $1.07 million in May 2026, per the <a href="{TRREB_URL}" rel="noopener noreferrer" target="_blank">Toronto Regional Real Estate Board</a>. Take a home worth $1.1 million with a $500,000 mortgage. At the bank&apos;s 80% combined ceiling, total borrowing can reach $880,000, which leaves roughly $380,000 of room above your existing mortgage. That is a large amount of accessible equity, assuming you also meet the income and credit tests, which is where many owners get stuck.</p>
 
   <h2>What it costs in 2026: rates and fees</h2>
   <p>Cost rises as you move from a bank to a private lender, and that trade-off is the heart of the decision.</p>
-  <p>A bank HELOC is tied to prime, commonly prime plus half a point to a full point. With the prime rate at 4.45% as of June 2026 (the Bank of Canada held its policy rate at 2.25% that month, per <a href="{WOWA_URL}" rel="noopener noreferrer" target="_blank">WOWA</a>), that puts most bank HELOCs in roughly the 5% to 6% range. A private home equity loan or second mortgage generally runs about 8% to 12%, plus a one-time lender fee and the usual legal and appraisal costs. You pay more on the private side, and in exchange you get approval based on equity rather than on income and credit.</p>
-  <p>To make it concrete, take that $380,000 of available room and assume you draw $200,000. At a bank HELOC rate of 5.5%, interest-only carrying cost is about <strong>$917 a month</strong>. Through a private home equity loan at 9.99%, the same $200,000 would carry at about <strong>$1,665 a month</strong>, plus a one-time fee in the range of 1% to 3%. Those figures are illustrative, not a quote; your actual numbers depend on the property, your equity, and the lender. The point is that the private route costs more but stays available when the bank&apos;s does not.</p>
+  <p>A bank HELOC is tied to prime, commonly prime plus half a point to a full point. With the prime rate at 4.45% as of June 2026 (the Bank of Canada held its policy rate at 2.25% that month, per <a href="{WOWA_URL}" rel="noopener noreferrer" target="_blank">WOWA</a>), that puts most bank HELOCs in roughly the 5% to 6% range. A private home equity loan or second mortgage generally runs from about 8.99%, plus a one-time lender fee and the usual legal and appraisal costs. You pay more on the private side, and in exchange you get approval based on equity rather than on income and credit.</p>
+  <p>To make it concrete, take that $380,000 of available room and assume you draw $200,000. At a bank HELOC rate of 5.5%, interest-only carrying cost is about <strong>$917 a month</strong>. Through a private home equity loan at 8.99%, the same $200,000 would carry at about <strong>$1,498 a month</strong>, plus a one-time fee in the range of 1% to 3%. Those figures are illustrative, not a quote; your actual numbers depend on the property, your equity, and the lender. The point is that the private route costs more but stays available when the bank&apos;s does not.</p>
 
   <h2>Why banks decline homeowners who clearly have equity</h2>
   <p>This is the part that surprises people. You can have hundreds of thousands of dollars of equity and still be turned down, because at a bank, equity is necessary but not sufficient.</p>
