@@ -226,6 +226,8 @@ def build_post_prose() -> str:
     </table>
   </div>
 
+  <p>Richview&apos;s published cap is <strong>up to 75% LTV (case by case)</strong> on second mortgages. The regional bands above reflect how many Ontario lenders adjust by property type; Richview evaluates each file individually against our published limits.</p>
+
   <p>Here&apos;s how the math works on a GTA home appraised at $1,000,000 with a $500,000 first mortgage:</p>
   <ul {UL_STYLE}>
     <li>Maximum total lending at 75% LTV: <strong>$750,000</strong></li>
@@ -334,7 +336,7 @@ def build_post_prose() -> str:
 {tags_html}
   </ul>
 
-  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
+  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about-us/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
 
 
 def build_article() -> str:

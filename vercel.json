@@ -1,8 +1,9 @@
 {
   "trailingSlash": true,
   "redirects": [
-    { "source": "/home.html", "destination": "/", "permanent": true },
-    { "source": "/richview-about.html", "destination": "/about/", "permanent": true },
+    { "source": "/about", "destination": "/about-us/", "permanent": true },
+    { "source": "/about/", "destination": "/about-us/", "permanent": true },
+    { "source": "/richview-about.html", "destination": "/about-us/", "permanent": true },
     { "source": "/richview-borrowers.html", "destination": "/borrowers/", "permanent": true },
     { "source": "/richview-capital-brokers.html", "destination": "/brokers/", "permanent": true },
     { "source": "/richview-capital-mic.html", "destination": "/investors/", "permanent": true },

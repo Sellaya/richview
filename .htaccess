@@ -5,7 +5,8 @@
 
   RewriteRule ^home\.html$ / [R=301,L]
 
-  RewriteRule ^richview-about\.html$ /about/ [R=301,L]
+  RewriteRule ^richview-about\.html$ /about-us/ [R=301,L]
+  RewriteRule ^about/?$ /about-us/ [R=301,L]
   RewriteRule ^richview-borrowers\.html$ /borrowers/ [R=301,L]
   RewriteRule ^richview-capital-brokers\.html$ /brokers/ [R=301,L]
   RewriteRule ^richview-capital-mic\.html$ /investors/ [R=301,L]

@@ -261,7 +261,7 @@ def build_post_prose() -> str:
         <tr><td>Who they are</td><td>Banks, most credit unions</td><td>Regulated alternative institutions</td><td>Individuals, syndicates, mortgage investment corporations</td></tr>
         <tr><td>Typical credit expectation</td><td>Roughly 680+</td><td>Roughly 580 to 680</td><td>No fixed minimum; equity-driven</td></tr>
         <tr><td>Approval driven by</td><td>Score, ratios, stress test</td><td>Credit story plus income</td><td>Property value and equity (LTV)</td></tr>
-        <tr><td>Rate ballpark</td><td>Lowest available</td><td>About 1 to 2 points above bank rates</td><td>First mortgages from about 7%, seconds from about 11%</td></tr>
+        <tr><td>Rate ballpark</td><td>Lowest available</td><td>About 1 to 2 points above bank rates</td><td>1st from 6.49%*, 2nd from 8.99%*</td></tr>
         <tr><td>Typical fees</td><td>Usually none</td><td>About 1% lender fee</td><td>Lender fee of about 2%, plus broker and legal costs</td></tr>
         <tr><td>Term length</td><td>1 to 5+ years</td><td>1 to 3 years</td><td>Usually 1 year</td></tr>
         <tr><td>Speed</td><td>Weeks</td><td>1 to 3 weeks</td><td>Days; as little as 48 hours</td></tr>
@@ -358,7 +358,7 @@ def build_post_prose() -> str:
 {tags_html}
   </ul>
 
-  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
+  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about-us/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
 
 
 def build_article() -> str:

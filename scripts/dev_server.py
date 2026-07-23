@@ -20,7 +20,9 @@ PORT = int(os.environ.get("PORT", "8080"))
 # Removed root *.html files → extensionless path (301)
 REDIRECT: dict[str, str] = {
     "/home.html": "/",
-    "/richview-about.html": "/about/",
+    "/about": "/about-us/",
+    "/about/": "/about-us/",
+    "/richview-about.html": "/about-us/",
     "/richview-borrowers.html": "/borrowers/",
     "/richview-capital-brokers.html": "/brokers/",
     "/richview-capital-mic.html": "/investors/",

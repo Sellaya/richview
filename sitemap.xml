@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Directory-style URLs (trailing slash); matches folder/index.html layout. Excluded: /thank-you/ (noindex). -->
+<!-- Directory-style URLs (trailing slash); matches folder/index.html layout. Excluded: /thank-you/ (noindex), /about/ (archived). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://richviewcapitalmic.com/</loc>
@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://richviewcapitalmic.com/about/</loc>
+    <loc>https://richviewcapitalmic.com/about-us/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

@@ -54,7 +54,7 @@ FSRA = "https://www.fsrao.ca/industry/mortgage-brokering"
 FAQS: list[tuple[str, str]] = [
     (
         "How much equity do I need for a debt consolidation mortgage in Ontario?",
-        "You generally need at least 20 to 25 percent equity in your home. Banks lend to 80 percent of appraised value on a refinance, standalone HELOCs are capped at 65 percent, and private lenders in Ontario typically go up to 75 percent in the GTA and 65 percent for condos or properties outside the GTA.",
+        "You generally need at least 20 to 25 percent equity in your home. Banks lend to 80 percent of appraised value on a refinance, standalone HELOCs are capped at 65 percent, and at Richview Capital published caps are up to 75 percent LTV (case by case) on 1st, 2nd, and HELOC, and up to 65 percent on construction and commercial (case by case).",
     ),
     (
         "Can I get a debt consolidation mortgage if my bank turned me down?",
@@ -298,14 +298,14 @@ def build_post_prose() -> str:
       <tbody>
         <tr><td>Bank refinance</td><td>80%</td></tr>
         <tr><td>Standalone HELOC</td><td>65%</td></tr>
-        <tr><td>Private lending, GTA properties</td><td>Up to 75%</td></tr>
-        <tr><td>Private lending, condos and outside the GTA</td><td>Up to 65%</td></tr>
+        <tr><td>Richview Capital (1st, 2nd &amp; HELOC)</td><td>Up to 75% LTV (case by case)</td></tr>
+        <tr><td>Richview Capital (construction &amp; commercial)</td><td>Up to 65% LTV (case by case)</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p>Quick check: multiply your home&apos;s realistic value by the applicable LTV cap, then subtract every mortgage already registered on the property. What is left is roughly your consolidation room. A $900,000 GTA home with a $550,000 first mortgage has about $170,000 of room at 80 percent LTV, or about $125,000 at a private lender&apos;s 75 percent cap.</p>
-  <p>As a rule of thumb, you need at least 20 to 25 percent equity for consolidation to be workable, and more for condos or properties outside major centres.</p>
+  <p>Quick check: multiply your home&apos;s realistic value by the applicable LTV cap, then subtract every mortgage already registered on the property. What is left is roughly your consolidation room. A $900,000 home with a $550,000 first mortgage has about $170,000 of room at 80 percent LTV on a bank refinance, or about $125,000 at Richview&apos;s published 75 percent cap (case by case).</p>
+  <p>As a rule of thumb, you need at least 20 to 25 percent equity for consolidation to be workable. Every file is evaluated case by case.</p>
 
   <h2>When the bank says no: consolidating through a private mortgage</h2>
   <p>Here is the frustrating irony of bank-based debt consolidation: the debts you want to eliminate are often the reason the bank declines you. High balances push your total debt service ratio over the line, high utilization drags your credit score down, and the stress test forces you to qualify at roughly 2 points above your actual rate. Add self-employment income that does not fit neatly on a T4 and many strong homeowners get a no. It is a common story for <a href="/blog/self-employed-mortgage-gta/">self-employed borrowers in the GTA</a> in particular.</p>
@@ -372,7 +372,7 @@ def build_post_prose() -> str:
 {tags_html}
   </ul>
 
-  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
+  <p class="post-byline"><strong>Richview Capital MIC</strong> is a licensed Mortgage Investment Corporation (Mortgage Administrator License #13171). This article is educational information for Ontario homeowners — not legal, financial, or tax advice. See <a href="/about-us/">About</a> and <a href="/disclaimer/">Disclaimer</a>.</p>"""
 
 
 def build_article() -> str:

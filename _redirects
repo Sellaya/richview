@@ -1,7 +1,7 @@
 # Legacy flat *.html filenames → canonical directory URLs (trailing slash)
 /home.html  /  301
 
-/richview-about.html    /about/    301
+/richview-about.html    /about-us/    301
 /richview-borrowers.html    /borrowers/    301
 /richview-capital-brokers.html    /brokers/    301
 /richview-capital-mic.html    /investors/    301
@@ -17,7 +17,8 @@
 /thank-you.html    /thank-you/    301
 
 # Optional: no-trailing-slash → trailing-slash (directory index)
-/about    /about/    301
+/about    /about-us/    301
+/about/    /about-us/    301
 /borrowers    /borrowers/    301
 /brokers    /brokers/    301
 /investors    /investors/    301
