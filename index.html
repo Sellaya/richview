@@ -3766,11 +3766,12 @@
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact-form" class="btn-pri">Apply Now</a>
-                    <a href="#services" class="btn-sec">View Services</a>
+                    <a href="#contact-form" class="btn-pri hero-cta-apply">Apply Now</a>
+                    <a href="/investors/" class="btn-pri hero-cta-investors-learn" hidden>Learn More</a>
+                    <a href="#services" class="btn-sec hero-cta-view">View Services</a>
                 </div>
             </div>
-            <div class="hero-form-wrap cta-box">
+            <div class="hero-form-wrap cta-box" id="heroConsultFormWrap">
                 <div class="cta-box-header">
                     <h2>Speak With Our Team</h2>
                     <p>Get expert guidance with no obligation.</p>
@@ -3827,7 +3828,6 @@
                                         <select id="heroConsultInterest" name="heroConsultInterest" required>
                                             <option value="" disabled selected>Select your interest</option>
                                             <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
-                                            <option value="investing">Investing: MIC investment opportunities</option>
                                             <option value="brokering">Brokering: Partner with us</option>
                                         </select>
                                     </div>
@@ -3920,11 +3920,11 @@
             </div>
             <div class="services-tabs" role="tablist" aria-label="Services">
                 <button type="button" class="services-tab active" role="tab" aria-selected="true" aria-controls="panel-borrowers" id="tab-borrowers" data-service="borrowers">Borrowers</button>
-                <button type="button" class="services-tab" role="tab" aria-selected="false" aria-controls="panel-investors" id="tab-investors" data-service="investors">Investors</button>
                 <button type="button" class="services-tab" role="tab" aria-selected="false" aria-controls="panel-brokers" id="tab-brokers" data-service="brokers">Brokers</button>
+                <button type="button" class="services-tab" role="tab" aria-selected="false" aria-controls="panel-investors" id="tab-investors" data-service="investors">Investors</button>
             </div>
             <div class="services-panels">
-                <div class="services-panel active" id="panel-borrowers" role="tabpanel" aria-labelledby="tab-borrowers" aria-hidden="false">
+<div class="services-panel active" id="panel-borrowers" role="tabpanel" aria-labelledby="tab-borrowers" aria-hidden="false">
                     <div class="services-panel-content">
                         <h3>Private mortgage & construction financing</h3>
                         <p class="services-desc">Need extra funds for renovations or debt consolidation? We offer flexible equity-based solutions.</p>
@@ -3941,24 +3941,7 @@
                         <a href="/borrowers/" class="services-cta">Explore Financing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
                 </div>
-                <div class="services-panel" id="panel-investors" role="tabpanel" aria-labelledby="tab-investors" aria-hidden="true">
-                    <div class="services-panel-content">
-                        <h3>MIC investing & RRSP-eligible returns</h3>
-                        <p class="services-desc">Target 7–8% annual returns from a professionally managed mortgage portfolio secured by Ontario real estate. Conservative LTV limits up to 75% on 1st, 2nd, and HELOC, and up to 65% on construction and commercial (case by case). Quarterly distributions by direct deposit.</p>
-                        <ul class="services-features services-features--grid">
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>7–8% target annual return</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>$25,000 minimum investment</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Quarterly distributions: March, June, September, December</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>RRSP, TFSA, RRIF, LIRA, RESP, LIF eligible</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Secured by real estate — up to 75% LTV on 1st, 2nd, and HELOC; up to 65% on construction and commercial (case by case)</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Portfolio diversified across the GTA and Ontario</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Annual audited financial statements</li>
-                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Licensed MIC #13171 · ONMICA member</li>
-                        </ul>
-                        <a href="/investors/" class="services-cta">Start Investing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="services-panel" id="panel-brokers" role="tabpanel" aria-labelledby="tab-brokers" aria-hidden="true">
+<div class="services-panel" id="panel-brokers" role="tabpanel" aria-labelledby="tab-brokers" aria-hidden="true">
                     <div class="services-panel-content">
                         <h3>Fast underwriting & broker partnership</h3>
                         <p class="services-desc">Quick approvals and transparent processes to help your clients secure the funding they need.</p>
@@ -3975,6 +3958,23 @@
                             <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Loans up to $5,000,000 across the GTA</li>
                         </ul>
                         <a href="/brokers/" class="services-cta">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+<div class="services-panel" id="panel-investors" role="tabpanel" aria-labelledby="tab-investors" aria-hidden="true">
+                    <div class="services-panel-content">
+                        <h3>MIC investing & RRSP-eligible returns</h3>
+                        <p class="services-desc">Target 7–8% annual returns from a professionally managed mortgage portfolio secured by Ontario real estate. Conservative LTV limits up to 75% on 1st, 2nd, and HELOC, and up to 65% on construction and commercial (case by case). Quarterly distributions by direct deposit.</p>
+                        <ul class="services-features services-features--grid">
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>7–8% target annual return</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>$25,000 minimum investment</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Quarterly distributions: March, June, September, December</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>RRSP, TFSA, RRIF, LIRA, RESP, LIF eligible</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Secured by real estate — up to 75% LTV on 1st, 2nd, and HELOC; up to 65% on construction and commercial (case by case)</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Portfolio diversified across the GTA and Ontario</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Annual audited financial statements</li>
+                            <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Licensed MIC #13171 · ONMICA member</li>
+                        </ul>
+                        <a href="/investors/" class="services-cta">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -4649,7 +4649,6 @@
                                     <select id="consultInterest" name="consultInterest" required>
                                         <option value="" disabled selected>Select your interest</option>
                                         <option value="borrowing">Borrowing: Private mortgage or construction financing</option>
-                                        <option value="investing">Investing: MIC investment opportunities</option>
                                         <option value="brokering">Brokering: Partner with us</option>
                                     </select>
                                 </div>
@@ -4807,6 +4806,18 @@
             const SLIDE_INTERVAL = 5000;
             let slideTimers = {};
 
+            function updateHeroAudience(setId) {
+                var applyBtn = document.querySelector('.hero-cta-apply');
+                var learnBtn = document.querySelector('.hero-cta-investors-learn');
+                var viewBtn = document.querySelector('.hero-cta-view');
+                var formWrap = document.getElementById('heroConsultFormWrap');
+                var isInvestors = setId === 'investors';
+                if (applyBtn) applyBtn.hidden = isInvestors;
+                if (viewBtn) viewBtn.hidden = isInvestors;
+                if (learnBtn) learnBtn.hidden = !isInvestors;
+                if (formWrap) formWrap.hidden = isInvestors;
+            }
+
             function setActiveSet(setId) {
                 dotItems.forEach(d => {
                     d.classList.toggle('active', d.dataset.slider === setId);
@@ -4815,6 +4826,7 @@
                 slideSets.forEach(s => {
                     s.classList.toggle('active', s.dataset.set === setId);
                 });
+                updateHeroAudience(setId);
                 goToSlide(setId, 0);
                 startAutoAdvance(setId);
             }
