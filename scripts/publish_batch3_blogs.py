@@ -464,7 +464,7 @@ def build_article(cfg: dict, lead: str, prose_html: str) -> str:
                 <p class="post-meta">{escape(cfg['post_meta'])}</p>
                 <h1 class="post-title">{escape(cfg['h1'])}</h1>
 
-                <figure class="post-hero-figure" aria-label="Article hero image">
+                <figure class="post-hero-figure post-hero-figure--object-contain" aria-label="Article hero image">
                     <img src="{image_path}" width="1280" height="702" alt="{escape(cfg['hero_alt'], quote=True)}" loading="eager" decoding="async">
                 </figure>
                 <p class="post-lead">{escape(lead)}</p>
@@ -498,7 +498,7 @@ def build_page(shell: str, cfg: dict, lead: str, prose_html: str) -> str:
 def blog_card_grid(cfg: dict) -> str:
     slug = cfg["slug"]
     return f"""                    <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
+                        <div class="blog-card-image blog-card-image--object-contain">
                             <a href="/blog/{slug}/" aria-hidden="true" tabindex="-1"><img src="/images/blog/{slug}.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -523,7 +523,7 @@ def blog_card_home(cfg: dict, index: int) -> str:
     title = escape(cfg["card_title"])
     excerpt = escape(cfg["card_excerpt"])
     return f"""                    <article class="blog-card reveal" style="--i: {index};">
-                        <a href="/blog/{slug}/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: {title}">
+                        <a href="/blog/{slug}/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: {title}">
                             <img src="/images/blog/{slug}.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">

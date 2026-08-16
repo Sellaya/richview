@@ -80,6 +80,17 @@
     object-position: left center;
     display: block;
 }
+/* Branded banner (headline left + logo top-right): show full frame, no crop */
+.post-hero-figure.post-hero-figure--object-contain {
+    background: #0b1635;
+}
+.post-hero-figure.post-hero-figure--object-contain img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+}
 .post-prose {
     font-size: 1rem;
     color: var(--charcoal, #1a1a1a);

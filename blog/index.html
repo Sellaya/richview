@@ -599,6 +599,15 @@
             transform-origin: left center;
         }
 
+        /* Branded banner (headline left + logo top-right): show full frame */
+        .blog-card-image.blog-card-image--object-contain {
+            background: #0b1635;
+        }
+        .blog-card-image.blog-card-image--object-contain img {
+            object-fit: contain;
+            object-position: center center;
+        }
+
         .blog-card:hover .blog-card-image img {
             transform: scale(1.03);
         }
@@ -1620,7 +1629,7 @@
 
                 <div class="blog-grid">
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
+                        <div class="blog-card-image blog-card-image--object-contain">
                             <a href="/blog/private-mortgage-rates-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-rates-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1638,7 +1647,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
+                        <div class="blog-card-image blog-card-image--object-contain">
                             <a href="/blog/mortgage-after-consumer-proposal-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/mortgage-after-consumer-proposal-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1656,7 +1665,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
+                        <div class="blog-card-image blog-card-image--object-contain">
                             <a href="/blog/home-renovation-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/home-renovation-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
