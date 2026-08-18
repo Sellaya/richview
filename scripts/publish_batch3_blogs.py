@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish Richview SEO Batch 3 (first 3 articles) from client markdown + hero images."""
+"""Publish Richview SEO Batch 3 articles from client markdown + hero images."""
 
 from __future__ import annotations
 
@@ -198,6 +198,66 @@ BLOGS = [
         ],
         "card_title": "Home renovation financing in Ontario: every option compared",
         "card_excerpt": "HELOCs, refinances, second mortgages, private loans, and 2026 government programs with real cost comparisons.",
+    },
+    {
+        "slug": "newcomer-mortgage-canada-ontario",
+        "md": BATCH_ROOT
+        / "richview-capital-newcomer-mortgage-ontario-20260816"
+        / "Newcomer Mortgage Canada- The Ontario Guide to Buying Without a Canadian Credit.md",
+        "image_src": SEO_ROOT / "WhatsApp Image 2026-08-16 at 14.26.28 (3).jpeg",
+        "title": "Newcomer Mortgage Canada: Ontario Guide for New Arrivals | Richview Capital MIC",
+        "og_title": "Newcomer Mortgage Canada: Ontario Guide for New Arrivals",
+        "description": (
+            "Newcomer mortgage Canada guide for Ontario: qualify with no credit history, "
+            "compare bank programs, B lenders and private lenders, then exit to prime."
+        ),
+        "h1": "Newcomer Mortgage Canada: The Ontario Guide to Buying Without a Canadian Credit History",
+        "jsonld_headline": "Newcomer Mortgage Canada: The Ontario Guide to Buying Without a Canadian Credit History",
+        "breadcrumb": "Newcomer Mortgage Canada",
+        "hero_alt": (
+            "Newcomer couple reviewing mortgage documents with a mortgage advisor in Ontario — "
+            "Richview Capital guide to buying without Canadian credit history"
+        ),
+        "published": "2026-08-18T09:00:00-04:00",
+        "post_meta": "August 2026 · Borrowers · Ontario",
+        "tags": [
+            "Newcomer Mortgage Canada",
+            "New to Canada Mortgage Ontario",
+            "Mortgage No Credit History",
+            "Private Mortgage Newcomers",
+            "CMHC Newcomers",
+            "Work Permit Mortgage Canada",
+            "Richview Capital Borrowers",
+            "Ontario Newcomer Home Buying",
+        ],
+        "faqs": [
+            (
+                "Can I get a mortgage in Canada with no credit history?",
+                "Yes. Insurer programs from CMHC, Sagen, and Canada Guaranty let banks accept international credit reports or 12 months of rent and bill payment history instead of a Canadian score. If those programs do not fit, B lenders and private lenders qualify you on income and equity rather than credit.",
+            ),
+            (
+                "Can I get a mortgage on a work permit in Canada?",
+                "Yes, work permit holders can qualify through newcomer insurance programs, B lenders, or private lenders. Expect a larger down payment than a permanent resident would need, and be ready to show meaningful time remaining on your permit or evidence of a PR application in progress.",
+            ),
+            (
+                "How much down payment does a newcomer need?",
+                "Permanent residents can put down as little as 5 percent on the first $500,000 and 10 percent on the portion above that, with mortgage default insurance. Work permit holders usually need 10 percent or more, and private lenders typically want 20 to 35 percent equity.",
+            ),
+            (
+                "Do private lenders check credit?",
+                "Most pull a credit report, but it is rarely the deciding factor. Private lending decisions rest on the property's value and marketability, your down payment or equity, and a credible exit plan, which is why a blank Canadian credit file is not a barrier.",
+            ),
+            (
+                "How long before I can refinance into a bank mortgage?",
+                "Typically 12 to 24 months. You need two active credit tradelines reporting for at least a year, on-time payment history, a filed Canadian tax return, and stable employment past probation. Many newcomers refinance at the end of a 1 year private term or shortly after.",
+            ),
+            (
+                "Can I use money from overseas for my down payment?",
+                "Yes, foreign funds are accepted, but anti-money-laundering rules require a full paper trail: 90 days of account history, wire transfer records, and source-of-funds documentation. Transfer the money to a Canadian account well before you apply to avoid delays.",
+            ),
+        ],
+        "card_title": "Newcomer Mortgage Canada: The Ontario Guide to Buying Without a Canadian Credit History",
+        "card_excerpt": "Bank newcomer programs, B lenders, and private bridges — plus AML docs and the exit plan back to prime.",
     },
 ]
 
@@ -537,10 +597,10 @@ def blog_card_home(cfg: dict, index: int) -> str:
 """
 
 
-def sitemap_entry(slug: str) -> str:
+def sitemap_entry(slug: str, lastmod: str = "2026-08-16") -> str:
     return f"""  <url>
     <loc>{BASE_URL}/blog/{slug}/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>{lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -576,7 +636,7 @@ def update_homepage(cards_html: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-def update_sitemap(slugs: list[str]) -> None:
+def update_sitemap(slugs: list[str], lastmod: str = "2026-08-16") -> None:
     path = REPO / "sitemap.xml"
     text = path.read_text(encoding="utf-8")
     blog_idx = text.find("<loc>https://richviewcapitalmic.com/blog/</loc>")
@@ -584,13 +644,12 @@ def update_sitemap(slugs: list[str]) -> None:
         raise ValueError("blog index url not found in sitemap")
     insert_at = text.find("</url>", blog_idx) + len("</url>")
     insert_at = text.find("\n", insert_at) + 1
-    entries = "".join(sitemap_entry(s) for s in slugs)
+    new_slugs = [s for s in slugs if f"/blog/{s}/" not in text]
+    if not new_slugs:
+        print("Sitemap already lists new posts; skipping sitemap update.")
+        return
+    entries = "".join(sitemap_entry(s, lastmod) for s in new_slugs)
     text = text[:insert_at] + entries + text[insert_at:]
-    text = text.replace(
-        "<lastmod>2026-07-12</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.85</priority>\n  </url>\n  <url>\n    <loc>https://richviewcapitalmic.com/blog/land-financing-ontario/",
-        "<lastmod>2026-08-16</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.85</priority>\n  </url>\n  <url>\n    <loc>https://richviewcapitalmic.com/blog/land-financing-ontario/",
-        1,
-    )
     path.write_text(text, encoding="utf-8")
 
 
@@ -606,6 +665,10 @@ def main() -> int:
     index_text = (REPO / "blog/index.html").read_text(encoding="utf-8")
 
     for i, cfg in enumerate(BLOGS):
+        out = REPO / f"blog/{cfg['slug']}/index.html"
+        if out.is_file():
+            print(f"Skipping /blog/{cfg['slug']}/ (already published)")
+            continue
         if not cfg["md"].is_file():
             print(f"Markdown missing: {cfg['md']}", file=sys.stderr)
             return 1
@@ -618,7 +681,6 @@ def main() -> int:
         prose_html = md_body_to_html(body)
 
         page = build_page(shell, cfg, lead, prose_html)
-        out = REPO / f"blog/{cfg['slug']}/index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page, encoding="utf-8")
 
@@ -627,16 +689,26 @@ def main() -> int:
         shutil.copy2(cfg["image_src"], img_out)
 
         grid_cards += blog_card_grid(cfg)
-        home_cards += blog_card_home(cfg, i)
+        home_cards += blog_card_home(cfg, 0)
         slugs.append(cfg["slug"])
         print(f"Published /blog/{cfg['slug']}/")
 
-    if f"/blog/{BLOGS[0]['slug']}/" not in index_text:
+    if not slugs:
+        print("No new posts to publish.")
+        return 0
+
+    if f"/blog/{slugs[0]}/" not in index_text:
         update_blog_index(grid_cards)
     else:
-        print("Blog index already lists batch 3 posts; skipping index update.")
+        print(f"Blog index already lists /blog/{slugs[0]}/; skipping index update.")
     update_homepage(home_cards)
-    update_sitemap(slugs)
+    lastmod = slugs[0] if slugs else "2026-08-16"
+    if BLOGS and slugs:
+        for cfg in BLOGS:
+            if cfg["slug"] == slugs[0]:
+                lastmod = cfg["published"][:10]
+                break
+    update_sitemap(slugs, lastmod)
     print("Updated blog index, homepage carousel, and sitemap.")
     return 0
 
