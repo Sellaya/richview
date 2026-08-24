@@ -8,4 +8,7 @@ Disallow: /thank-you/
 # Authoring template (not a published article)
 Disallow: /scripts/templates/
 
+# Internal email preview pages (not public content)
+Disallow: /emails/
+
 Sitemap: https://richviewcapitalmic.com/sitemap.xml
