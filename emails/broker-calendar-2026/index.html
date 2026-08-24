@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Broker email calendar preview — Richview Capital</title>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { font-size: 1.35rem; color: #0b1635; }
+    p.meta { color: #6b7280; font-size: 0.9rem; }
+    ul { line-height: 1.8; padding-left: 1.25rem; }
+    a { color: #ff6600; font-weight: 600; }
+    code { background: #f3f4f6; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <h1>Broker email calendar — May 18 → Aug 17, 2026</h1>
+  <p class="meta">27 sends · Open any file to preview HTML. See <code>calendar.json</code> for subjects.</p>
+  <ul id="list"></ul>
+  <script>
+    const sends = [
+      ["2026-05-18","Mon","General","Deal Spotlight: Bridge Financing"],
+      ["2026-05-20","Wed","General","Speed Story: 48-Hour Refi"],
+      ["2026-05-25","Mon","General","Broker Education: 5 Signs"],
+      ["2026-05-27","Wed","General","Deal Spotlight: BFS"],
+      ["2026-06-01","Mon","General","Speed Story: Direct Underwriter"],
+      ["2026-06-03","Wed","General","Deal Spotlight: Equity Take-Outs"],
+      ["2026-06-08","Mon","General","Broker Education: Structuring Mistakes"],
+      ["2026-06-10","Wed","Lady Arlington","Save the Date"],
+      ["2026-06-15","Mon","General","Speed Story: Construction & Land"],
+      ["2026-06-17","Wed","Lady Arlington","Why We Built the Event"],
+      ["2026-06-22","Mon","General","Deal Spotlight: 1st & 2nd"],
+      ["2026-06-24","Wed","Lady Arlington","Last Year's Recap"],
+      ["2026-06-29","Mon","General","Bank Decline Pivot"],
+      ["2026-07-01","Wed","Lady Arlington","Deal Types On Board"],
+      ["2026-07-06","Mon","General","Speed Story: 72-Hour Close"],
+      ["2026-07-08","Wed","Lady Arlington","Behind the Scenes"],
+      ["2026-07-13","Mon","General","New-to-Canada & Credit-Challenged"],
+      ["2026-07-15","Wed","Lady Arlington","One Month To Go"],
+      ["2026-07-20","Mon","General","Equity Take-Out vs Refi"],
+      ["2026-07-22","Wed","Lady Arlington","Spots Are Filling"],
+      ["2026-07-27","Mon","General","Broker Spotlight"],
+      ["2026-07-29","Wed","Lady Arlington","Last Window"],
+      ["2026-08-03","Mon","Lady Arlington","48 Hours Out — Logistics"],
+      ["2026-08-05","Wed","Event","Today's the Day"],
+      ["2026-08-10","Mon","Post-Event","2026 Recap"],
+      ["2026-08-12","Wed","General","Back to Business"],
+      ["2026-08-17","Mon","General","Setting Up Q4"]
+    ];
+    document.getElementById("list").innerHTML = sends.map(([d, day, track, title]) =>
+      `<li><a href="${d}.html">${d}</a> (${day}) · ${track} — ${title}</li>`
+    ).join("");
+  </script>
+</body>
+</html>
