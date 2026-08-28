@@ -2218,9 +2218,6 @@
             background: #eef2f7;
             flex-shrink: 0;
         }
-        .blog-card-thumb.blog-card-thumb--object-left {
-            background: #0b1635;
-        }
         .blog-card-thumb:focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 2px;
@@ -2232,19 +2229,17 @@
             display: block;
             transition: transform 0.35s var(--ease-out);
         }
-        /* Branded left copy: cover fills thumb; left anchor keeps type visible at 2:1 */
-        .blog-card-thumb.blog-card-thumb--object-left img {
-            object-fit: cover;
-            object-position: left center;
-            transform-origin: left center;
-        }
-        /* Branded banner (headline left + logo top-right): show full frame */
-        .blog-card-thumb.blog-card-thumb--object-contain {
+        /* Branded 1280×702 heroes — standard for all carousel thumbs */
+        .blog-card-thumb.blog-card-thumb--hero-fit {
+            aspect-ratio: 1280 / 702;
             background: #0b1635;
+            display: block;
+            overflow: hidden;
         }
-        .blog-card-thumb.blog-card-thumb--object-contain img {
-            object-fit: contain;
-            object-position: center center;
+        .blog-card-thumb.blog-card-thumb--hero-fit img {
+            object-fit: cover;
+            object-position: 38% center;
+            transform-origin: 38% center;
         }
         .blog-card:hover .blog-card-thumb img {
             transform: scale(1.05);
@@ -4119,8 +4114,8 @@
             <div class="blog-slider" aria-label="Blog articles carousel">
                 <div class="blog-track">
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/place-declined-mortgage-files-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Where to Place Declined Mortgage Deals in Ontario: A Broker&#x27;s Decision Tree">
-                            <img src="/images/blog/place-declined-mortgage-files-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/place-declined-mortgage-files-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Where to Place Declined Mortgage Deals in Ontario: A Broker&#x27;s Decision Tree">
+                            <img src="/images/blog/place-declined-mortgage-files-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4131,8 +4126,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/high-ltv-second-mortgage-lenders-gta/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: 85% LTV Second Mortgage Lenders in Ontario: Where GTA Brokers Place High LTV Seconds">
-                            <img src="/images/logo.png" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/high-ltv-second-mortgage-lenders-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: 85% LTV Second Mortgage Lenders in Ontario: Where GTA Brokers Place High LTV Seconds">
+                            <img src="/images/blog/high-ltv-second-mortgage-lenders-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4143,8 +4138,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/fast-private-mortgage-closing-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Fast Private Mortgage Closing in Ontario: The Same Week Funding Checklist for Brokers">
-                            <img src="/images/blog/fast-private-mortgage-closing-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/fast-private-mortgage-closing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Fast Private Mortgage Closing in Ontario: The Same Week Funding Checklist for Brokers">
+                            <img src="/images/blog/fast-private-mortgage-closing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4155,8 +4150,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/vendor-take-back-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Vendor Take-Back Mortgage in Ontario: How VTBs Work for Buyers and Sellers">
-                            <img src="/images/logo.png" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/vendor-take-back-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Vendor Take-Back Mortgage in Ontario: How VTBs Work for Buyers and Sellers">
+                            <img src="/images/blog/vendor-take-back-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4167,8 +4162,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/mortgage-on-inherited-property-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Mortgage on Inherited Property in Ontario: How Estate and Probate Financing Actually Works">
-                            <img src="/images/logo.png" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/mortgage-on-inherited-property-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Mortgage on Inherited Property in Ontario: How Estate and Probate Financing Actually Works">
+                            <img src="/images/blog/mortgage-on-inherited-property-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4179,8 +4174,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/reverse-mortgage-alternatives-canada/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Reverse Mortgage Alternatives in Canada: What Ontario Homeowners 55+ Should Compare First">
-                            <img src="/images/blog/reverse-mortgage-alternatives-canada.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/reverse-mortgage-alternatives-canada/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Reverse Mortgage Alternatives in Canada: What Ontario Homeowners 55+ Should Compare First">
+                            <img src="/images/blog/reverse-mortgage-alternatives-canada.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4191,8 +4186,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/brrrr-method-canada-financing-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: The BRRRR Method in Canada: How to Finance Every Stage in Ontario">
-                            <img src="/images/blog/brrrr-method-canada-financing-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/brrrr-method-canada-financing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: The BRRRR Method in Canada: How to Finance Every Stage in Ontario">
+                            <img src="/images/blog/brrrr-method-canada-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4203,8 +4198,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/interest-only-mortgage-canada/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Interest Only Mortgage in Canada: How It Works, the Math, and When It Makes Sense">
-                            <img src="/images/blog/interest-only-mortgage-canada.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/interest-only-mortgage-canada/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Interest Only Mortgage in Canada: How It Works, the Math, and When It Makes Sense">
+                            <img src="/images/blog/interest-only-mortgage-canada.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4215,8 +4210,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/garden-suite-financing-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Garden Suite Financing in Ontario: How to Fund a Laneway Home or Secondary Suite">
-                            <img src="/images/blog/garden-suite-financing-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/garden-suite-financing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Garden Suite Financing in Ontario: How to Fund a Laneway Home or Secondary Suite">
+                            <img src="/images/blog/garden-suite-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4227,8 +4222,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/newcomer-mortgage-canada-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Newcomer Mortgage Canada: The Ontario Guide to Buying Without a Canadian Credit History">
-                            <img src="/images/blog/newcomer-mortgage-canada-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/newcomer-mortgage-canada-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Newcomer Mortgage Canada: The Ontario Guide to Buying Without a Canadian Credit History">
+                            <img src="/images/blog/newcomer-mortgage-canada-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4239,8 +4234,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/private-mortgage-rates-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Private mortgage rates in Ontario: what a private mortgage really costs in 2026">
-                            <img src="/images/blog/private-mortgage-rates-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-mortgage-rates-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Private mortgage rates in Ontario: what a private mortgage really costs in 2026">
+                            <img src="/images/blog/private-mortgage-rates-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4251,8 +4246,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 1;">
-                        <a href="/blog/mortgage-after-consumer-proposal-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Getting a mortgage after a consumer proposal in Ontario">
-                            <img src="/images/blog/mortgage-after-consumer-proposal-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/mortgage-after-consumer-proposal-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Getting a mortgage after a consumer proposal in Ontario">
+                            <img src="/images/blog/mortgage-after-consumer-proposal-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4263,8 +4258,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 2;">
-                        <a href="/blog/home-renovation-financing-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Home renovation financing in Ontario: every option compared">
-                            <img src="/images/blog/home-renovation-financing-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/home-renovation-financing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Home renovation financing in Ontario: every option compared">
+                            <img src="/images/blog/home-renovation-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -4275,8 +4270,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/land-financing-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Land financing in Ontario: how to get a loan for vacant land">
-                            <img src="/images/blog/land-financing-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/land-financing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Land financing in Ontario: how to get a loan for vacant land">
+                            <img src="/images/blog/land-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4287,8 +4282,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 1;">
-                        <a href="/blog/debt-consolidation-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Debt consolidation mortgage in Ontario: how to use home equity to pay off high-interest debt">
-                            <img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/debt-consolidation-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Debt consolidation mortgage in Ontario: how to use home equity to pay off high-interest debt">
+                            <img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4299,8 +4294,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 2;">
-                        <a href="/blog/private-commercial-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private commercial mortgage Ontario: rates, qualifying, and when it makes sense">
-                            <img src="/images/blog/private-commercial-mortgage-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-commercial-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Private commercial mortgage Ontario: rates, qualifying, and when it makes sense">
+                            <img src="/images/blog/private-commercial-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4311,8 +4306,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 3;">
-                        <a href="/blog/bad-credit-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Bad credit mortgage in Ontario: your real options after the bank says no">
-                            <img src="/images/blog/bad-credit-mortgage-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/bad-credit-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Bad credit mortgage in Ontario: your real options after the bank says no">
+                            <img src="/images/blog/bad-credit-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4323,8 +4318,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 4;">
-                        <a href="/blog/heloc-home-equity-loan-gta/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: HELOC and home equity loans in the GTA: how to tap your equity (even if the bank says no)">
-                            <img src="/images/blog/heloc-home-equity-loan-gta.jpg" alt="" width="120" height="80" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/heloc-home-equity-loan-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: HELOC and home equity loans in the GTA: how to tap your equity (even if the bank says no)">
+                            <img src="/images/blog/heloc-home-equity-loan-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">June 2026</span>
@@ -4335,8 +4330,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 5;">
-                        <a href="/blog/self-employed-mortgage-gta/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Self-employed mortgages in the GTA: how to qualify when your income isn't a paycheque">
-                            <img src="/images/blog/self-employed-mortgage-gta.jpg" alt="" width="120" height="80" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/self-employed-mortgage-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Self-employed mortgages in the GTA: how to qualify when your income isn't a paycheque">
+                            <img src="/images/blog/self-employed-mortgage-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">June 2026</span>
@@ -4347,8 +4342,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 6;">
-                        <a href="/blog/second-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Second mortgage in Ontario: rates, LTV, and how to qualify (2026)">
-                            <img src="/images/blog/second-mortgage-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/second-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Second mortgage in Ontario: rates, LTV, and how to qualify (2026)">
+                            <img src="/images/blog/second-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
@@ -4358,8 +4353,8 @@
                         </div>
                     </article>
                     <article class="blog-card reveal" style="--i: 7;">
-                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
-                            <img src="/images/blog/private-construction-loan-ontario-hero.jpg" alt="" width="120" height="63" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
+                            <img src="/images/blog/private-construction-loan-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
@@ -4370,7 +4365,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 8;">
                         <a href="/blog/private-mortgage-lender-toronto-honest-gta-guide/" class="blog-card-thumb" aria-label="Read: Private mortgage lender Toronto: the honest GTA guide">
-                            <img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4381,7 +4376,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 9;">
                         <a href="/blog/mic-investing-ontario-rrsp/" class="blog-card-thumb" aria-label="Read: MIC investing in Ontario: RRSP-eligible returns">
-                            <img src="/images/blog/mic-investing-ontario-rrsp.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/mic-investing-ontario-rrsp.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4392,7 +4387,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 10;">
                         <a href="/blog/private-mortgage-ontario/" class="blog-card-thumb" aria-label="Read: Private mortgages in Ontario: what borrowers should know">
-                            <img src="/images/blog/private-mortgage-ontario.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/private-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4403,7 +4398,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 11;">
                         <a href="/blog/construction-financing-ontario/" class="blog-card-thumb" aria-label="Read: Construction financing in Ontario: draws and private lenders">
-                            <img src="/images/blog/construction-financing-ontario.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/construction-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4414,8 +4409,8 @@
                     </article>
                     <!-- Third set for continuous flow -->
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/land-financing-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Land financing in Ontario: how to get a loan for vacant land">
-                            <img src="/images/blog/land-financing-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/land-financing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Land financing in Ontario: how to get a loan for vacant land">
+                            <img src="/images/blog/land-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4426,8 +4421,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 1;">
-                        <a href="/blog/debt-consolidation-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Debt consolidation mortgage in Ontario: how to use home equity to pay off high-interest debt">
-                            <img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/debt-consolidation-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Debt consolidation mortgage in Ontario: how to use home equity to pay off high-interest debt">
+                            <img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4438,8 +4433,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 2;">
-                        <a href="/blog/private-commercial-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private commercial mortgage Ontario: rates, qualifying, and when it makes sense">
-                            <img src="/images/blog/private-commercial-mortgage-ontario.jpg" alt="" width="120" height="60" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-commercial-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Private commercial mortgage Ontario: rates, qualifying, and when it makes sense">
+                            <img src="/images/blog/private-commercial-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4450,8 +4445,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 3;">
-                        <a href="/blog/bad-credit-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Bad credit mortgage in Ontario: your real options after the bank says no">
-                            <img src="/images/blog/bad-credit-mortgage-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/bad-credit-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Bad credit mortgage in Ontario: your real options after the bank says no">
+                            <img src="/images/blog/bad-credit-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">July 2026</span>
@@ -4462,8 +4457,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 4;">
-                        <a href="/blog/heloc-home-equity-loan-gta/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: HELOC and home equity loans in the GTA: how to tap your equity (even if the bank says no)">
-                            <img src="/images/blog/heloc-home-equity-loan-gta.jpg" alt="" width="120" height="80" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/heloc-home-equity-loan-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: HELOC and home equity loans in the GTA: how to tap your equity (even if the bank says no)">
+                            <img src="/images/blog/heloc-home-equity-loan-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">June 2026</span>
@@ -4474,8 +4469,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 5;">
-                        <a href="/blog/self-employed-mortgage-gta/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Self-employed mortgages in the GTA: how to qualify when your income isn't a paycheque">
-                            <img src="/images/blog/self-employed-mortgage-gta.jpg" alt="" width="120" height="80" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/self-employed-mortgage-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Self-employed mortgages in the GTA: how to qualify when your income isn't a paycheque">
+                            <img src="/images/blog/self-employed-mortgage-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">June 2026</span>
@@ -4486,8 +4481,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 6;">
-                        <a href="/blog/second-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Second mortgage in Ontario: rates, LTV, and how to qualify (2026)">
-                            <img src="/images/blog/second-mortgage-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/second-mortgage-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Second mortgage in Ontario: rates, LTV, and how to qualify (2026)">
+                            <img src="/images/blog/second-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
@@ -4497,8 +4492,8 @@
                         </div>
                     </article>
                     <article class="blog-card reveal" style="--i: 7;">
-                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--object-left" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
-                            <img src="/images/blog/private-construction-loan-ontario-hero.jpg" alt="" width="120" height="63" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/private-construction-loan-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Private construction loan Ontario: how GTA builds actually get funded">
+                            <img src="/images/blog/private-construction-loan-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">May 2026</span>
@@ -4509,7 +4504,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 8;">
                         <a href="/blog/private-mortgage-lender-toronto-honest-gta-guide/" class="blog-card-thumb" aria-label="Read: Private mortgage lender Toronto: the honest GTA guide">
-                            <img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4520,7 +4515,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 9;">
                         <a href="/blog/mic-investing-ontario-rrsp/" class="blog-card-thumb" aria-label="Read: MIC investing in Ontario: RRSP-eligible returns">
-                            <img src="/images/blog/mic-investing-ontario-rrsp.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/mic-investing-ontario-rrsp.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4531,7 +4526,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 10;">
                         <a href="/blog/private-mortgage-ontario/" class="blog-card-thumb" aria-label="Read: Private mortgages in Ontario: what borrowers should know">
-                            <img src="/images/blog/private-mortgage-ontario.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/private-mortgage-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -4542,7 +4537,7 @@
                     </article>
                     <article class="blog-card reveal" style="--i: 11;">
                         <a href="/blog/construction-financing-ontario/" class="blog-card-thumb" aria-label="Read: Construction financing in Ontario: draws and private lenders">
-                            <img src="/images/blog/construction-financing-ontario.jpg" alt="" width="120" height="75" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                            <img src="/images/blog/construction-financing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">Apr 2026</span>
@@ -5463,8 +5458,8 @@
 </body>
 </html>
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/place-declined-mortgage-files-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Where to Place Declined Mortgage Deals in Ontario: A Broker&#x27;s Decision Tree">
-                            <img src="/images/blog/place-declined-mortgage-files-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/place-declined-mortgage-files-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Where to Place Declined Mortgage Deals in Ontario: A Broker&#x27;s Decision Tree">
+                            <img src="/images/blog/place-declined-mortgage-files-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -5475,8 +5470,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/high-ltv-second-mortgage-lenders-gta/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: 85% LTV Second Mortgage Lenders in Ontario: Where GTA Brokers Place High LTV Seconds">
-                            <img src="/images/logo.png" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/high-ltv-second-mortgage-lenders-gta/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: 85% LTV Second Mortgage Lenders in Ontario: Where GTA Brokers Place High LTV Seconds">
+                            <img src="/images/blog/high-ltv-second-mortgage-lenders-gta.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -5487,8 +5482,8 @@
                     </article>
 
                     <article class="blog-card reveal" style="--i: 0;">
-                        <a href="/blog/fast-private-mortgage-closing-ontario/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: Fast Private Mortgage Closing in Ontario: The Same Week Funding Checklist for Brokers">
-                            <img src="/images/blog/fast-private-mortgage-closing-ontario.jpg" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/fast-private-mortgage-closing-ontario/" class="blog-card-thumb blog-card-thumb--hero-fit" aria-label="Read: Fast Private Mortgage Closing in Ontario: The Same Week Funding Checklist for Brokers">
+                            <img src="/images/blog/fast-private-mortgage-closing-ontario.jpg" alt="" width="1280" height="702" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>

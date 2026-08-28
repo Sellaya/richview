@@ -574,9 +574,6 @@
             overflow: hidden;
             flex-shrink: 0;
         }
-        .blog-card-image.blog-card-image--object-left {
-            background: linear-gradient(135deg, #0b1635 0%, rgba(11, 22, 53, 0.92) 28%, rgba(11, 22, 53, 0.06) 55%, rgba(255, 102, 0, 0.06) 100%);
-        }
 
         .blog-card-image > a {
             display: block;
@@ -592,20 +589,15 @@
             transition: transform 0.4s var(--ease-out);
         }
 
-        /* Branded left copy: cover fills 16:10 (no letterboxing); left anchor keeps headline in frame */
-        .blog-card-image.blog-card-image--object-left img {
-            object-fit: cover;
-            object-position: left center;
-            transform-origin: left center;
-        }
-
-        /* Branded banner (headline left + logo top-right): show full frame */
-        .blog-card-image.blog-card-image--object-contain {
+        /* Branded 1280×702 heroes — standard for all blog cards */
+        .blog-card-image.blog-card-image--hero-fit {
+            aspect-ratio: 1280 / 702;
             background: #0b1635;
         }
-        .blog-card-image.blog-card-image--object-contain img {
-            object-fit: contain;
-            object-position: center center;
+        .blog-card-image.blog-card-image--hero-fit img {
+            object-fit: cover;
+            object-position: 38% center;
+            transform-origin: 38% center;
         }
 
         .blog-card:hover .blog-card-image img {
@@ -1629,7 +1621,7 @@
 
                 <div class="blog-grid">
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/place-declined-mortgage-files-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/place-declined-mortgage-files-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1647,8 +1639,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
-                            <a href="/blog/high-ltv-second-mortgage-lenders-gta/" aria-hidden="true" tabindex="-1"><img src="/images/logo.png" width="1280" height="702" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/high-ltv-second-mortgage-lenders-gta/" aria-hidden="true" tabindex="-1"><img src="/images/blog/high-ltv-second-mortgage-lenders-gta.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">August 2026 · Brokers</span>
@@ -1665,7 +1657,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/fast-private-mortgage-closing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/fast-private-mortgage-closing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1683,8 +1675,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
-                            <a href="/blog/vendor-take-back-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/logo.png" width="1280" height="702" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/vendor-take-back-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/vendor-take-back-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">August 2026 · Borrowers</span>
@@ -1701,8 +1693,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
-                            <a href="/blog/mortgage-on-inherited-property-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/logo.png" width="1280" height="702" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/mortgage-on-inherited-property-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/mortgage-on-inherited-property-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">August 2026 · Borrowers</span>
@@ -1719,7 +1711,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/reverse-mortgage-alternatives-canada/" aria-hidden="true" tabindex="-1"><img src="/images/blog/reverse-mortgage-alternatives-canada.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1737,7 +1729,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/brrrr-method-canada-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/brrrr-method-canada-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1755,7 +1747,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/interest-only-mortgage-canada/" aria-hidden="true" tabindex="-1"><img src="/images/blog/interest-only-mortgage-canada.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1773,7 +1765,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/garden-suite-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/garden-suite-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1791,7 +1783,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/newcomer-mortgage-canada-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/newcomer-mortgage-canada-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1809,7 +1801,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/private-mortgage-rates-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-rates-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1827,7 +1819,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/mortgage-after-consumer-proposal-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/mortgage-after-consumer-proposal-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1845,7 +1837,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image blog-card-image--hero-fit">
                             <a href="/blog/home-renovation-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/home-renovation-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -1863,8 +1855,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/land-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/land-financing-ontario.jpg" width="1024" height="512" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/land-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/land-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">July 2026 · Borrowers</span>
@@ -1881,8 +1873,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/debt-consolidation-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" width="1024" height="512" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/debt-consolidation-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/debt-consolidation-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">July 2026 · Borrowers</span>
@@ -1899,8 +1891,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/private-commercial-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-commercial-mortgage-ontario.jpg" width="1024" height="512" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/private-commercial-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-commercial-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">July 2026 · Borrowers</span>
@@ -1917,8 +1909,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/bad-credit-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/bad-credit-mortgage-ontario.jpg" width="1024" height="561" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/bad-credit-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/bad-credit-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">July 2026 · Borrowers</span>
@@ -1935,8 +1927,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/heloc-home-equity-loan-gta/" aria-hidden="true" tabindex="-1"><img src="/images/blog/heloc-home-equity-loan-gta.jpg" width="1024" height="682" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/heloc-home-equity-loan-gta/" aria-hidden="true" tabindex="-1"><img src="/images/blog/heloc-home-equity-loan-gta.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">June 2026 · Borrowers</span>
@@ -1953,8 +1945,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/self-employed-mortgage-gta/" aria-hidden="true" tabindex="-1"><img src="/images/blog/self-employed-mortgage-gta.jpg" width="1024" height="682" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/self-employed-mortgage-gta/" aria-hidden="true" tabindex="-1"><img src="/images/blog/self-employed-mortgage-gta.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">June 2026 · Borrowers</span>
@@ -1971,8 +1963,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/second-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/second-mortgage-ontario.jpg" width="1024" height="561" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/second-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/second-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">May 2026 · Borrowers</span>
@@ -1989,8 +1981,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image">
-                            <a href="/blog/private-mortgage-deal-submission-ontario-2026/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-deal-submission-ontario-2026.jpg" width="600" height="329" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/private-mortgage-deal-submission-ontario-2026/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-deal-submission-ontario-2026.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">May 2026 · Brokers</span>
@@ -2007,8 +1999,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/private-construction-loan-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-construction-loan-ontario-hero.jpg" width="600" height="315" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/private-construction-loan-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-construction-loan-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">May 2026 · Construction</span>
@@ -2025,8 +2017,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-left">
-                            <a href="/blog/private-mortgage-lender-toronto-honest-gta-guide/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" width="600" height="380" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/private-mortgage-lender-toronto-honest-gta-guide/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-lender-toronto-honest-gta-guide.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">Apr 2026 · Borrowers</span>
@@ -2043,8 +2035,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image">
-                            <a href="/blog/mic-investing-ontario-rrsp/" aria-hidden="true" tabindex="-1"><img src="/images/blog/mic-investing-ontario-rrsp.jpg" width="600" height="380" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/mic-investing-ontario-rrsp/" aria-hidden="true" tabindex="-1"><img src="/images/blog/mic-investing-ontario-rrsp.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">Apr 2026 · Investors</span>
@@ -2061,8 +2053,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image">
-                            <a href="/blog/private-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-ontario.jpg" width="600" height="380" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/private-mortgage-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/private-mortgage-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">Apr 2026 · Borrowers</span>
@@ -2079,8 +2071,8 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="blog-card-image">
-                            <a href="/blog/construction-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/construction-financing-ontario.jpg" width="600" height="380" alt="" loading="lazy"></a>
+                        <div class="blog-card-image blog-card-image--hero-fit">
+                            <a href="/blog/construction-financing-ontario/" aria-hidden="true" tabindex="-1"><img src="/images/blog/construction-financing-ontario.jpg" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
                             <span class="blog-card-meta">Apr 2026 · Construction</span>

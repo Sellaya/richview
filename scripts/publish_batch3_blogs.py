@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import json
 import re
-import shutil
 import sys
 from html import escape
 from pathlib import Path
@@ -17,6 +16,8 @@ SHELL_PATH = REPO / "blog/land-financing-ontario/index.html"
 BASE_URL = "https://richviewcapitalmic.com"
 UL_STYLE = 'style="padding-left:24px; margin-bottom:22px;"'
 OL_STYLE = 'style="padding-left:24px; margin-bottom:22px;"'
+
+from blog_image_utils import BLOG_CARD_IMAGE_CLASS, BLOG_CARD_THUMB_CLASS, export_hero, export_hero_placeholder
 
 BLOGS = [
     {
@@ -927,16 +928,25 @@ def build_page(shell: str, cfg: dict, lead: str, prose_html: str) -> str:
 
 
 def card_image_path(slug: str) -> str:
-    if (REPO / f"images/blog/{slug}.jpg").is_file():
+    hero = REPO / f"images/blog/{slug}.jpg"
+    if hero.is_file():
         return f"/images/blog/{slug}.jpg"
     return "/images/logo.png"
+
+
+def ensure_placeholder_hero(slug: str) -> None:
+    """Create a centered-logo 1280×702 JPG when no hero exists yet."""
+    out = REPO / f"images/blog/{slug}.jpg"
+    if out.is_file():
+        return
+    export_hero_placeholder(slug)
 
 
 def blog_card_grid(cfg: dict) -> str:
     slug = cfg["slug"]
     image_path = card_image_path(slug)
     return f"""                    <article class="blog-card reveal">
-                        <div class="blog-card-image blog-card-image--object-contain">
+                        <div class="blog-card-image {BLOG_CARD_IMAGE_CLASS}">
                             <a href="/blog/{slug}/" aria-hidden="true" tabindex="-1"><img src="{image_path}" width="1280" height="702" alt="" loading="lazy"></a>
                         </div>
                         <div class="blog-card-body">
@@ -962,8 +972,8 @@ def blog_card_home(cfg: dict, index: int) -> str:
     excerpt = escape(cfg["card_excerpt"])
     image_path = card_image_path(slug)
     return f"""                    <article class="blog-card reveal" style="--i: {index};">
-                        <a href="/blog/{slug}/" class="blog-card-thumb blog-card-thumb--object-contain" aria-label="Read: {title}">
-                            <img src="{image_path}" alt="" width="120" height="66" sizes="(max-width: 480px) 45vw, 190px" loading="lazy" decoding="async">
+                        <a href="/blog/{slug}/" class="blog-card-thumb {BLOG_CARD_THUMB_CLASS}" aria-label="Read: {title}">
+                            <img src="{image_path}" alt="" width="1280" height="702" loading="lazy" decoding="async">
                         </a>
                         <div class="blog-card-body">
                             <span class="blog-date">August 2026</span>
@@ -1073,8 +1083,7 @@ def main() -> int:
 
         img_out = REPO / f"images/blog/{cfg['slug']}.jpg"
         if has_hero_file:
-            img_out.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(image_src, img_out)
+            export_hero(cfg["slug"], Path(image_src))
 
         page = build_page(shell, cfg, lead, prose_html)
         out.parent.mkdir(parents=True, exist_ok=True)
