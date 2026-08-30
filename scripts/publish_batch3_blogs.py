@@ -1016,10 +1016,19 @@ def update_homepage(cards_html: str) -> None:
         raise ValueError("blog-track not found")
     insert_at = text.find("\n", idx) + 1
     text = text[:insert_at] + cards_html + text[insert_at:]
-    dup_marker = "<!-- Duplicate set for seamless loop -->"
-    dup_idx = text.find(dup_marker)
+    dup_markers = (
+        "<!-- Duplicate set for seamless loop -->",
+        "<!-- Third set for continuous flow -->",
+        "<!-- Set 2 — duplicate for seamless infinite loop -->",
+    )
+    dup_idx = -1
+    for dup_marker in dup_markers:
+        pos = text.find(dup_marker, idx)
+        if pos != -1:
+            dup_idx = pos
+            break
     if dup_idx == -1:
-        raise ValueError("duplicate set marker not found")
+        raise ValueError("duplicate set marker not found in blog-track")
     insert_at = text.find("\n", dup_idx) + 1
     text = text[:insert_at] + cards_html + text[insert_at:]
     path.write_text(text, encoding="utf-8")
